@@ -1,1 +1,269 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Seneca · Vom glücklichen Leben</title>
+<meta name="description" content="Seneca, De vita beata, Kapitel 1, in einer Neufassung der Übersetzung: zum Hören und Mitlesen.">
+<meta property="og:title" content="Seneca · Vom glücklichen Leben">
+<meta property="og:description" content="Neufassung der Übersetzung zum Hören und Mitlesen (1:47 min)">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#161a19">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  /* Eine Fassung, ein Knopf: Abspielen öffnet den Lesemodus, in dem der Text gleichmäßig durch einen Lesestreifen läuft */
+  :root {
+    --stein: #e9ecea; --tafel: #f7f8f7; --tinte: #1f2523; --grau: #5d6763; --linie: #cfd5d2; --bronze: #8b5e2b; --bronze-hell: #f1e6d6;
+    --display: "Cinzel", "Trajan Pro", Georgia, serif; --text: "Literata", Georgia, "Times New Roman", serif;
+    --ui: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+    --stein: #161a19; --tafel: #1e2422; --tinte: #e3e8e5; --grau: #9aa5a0; --linie: #333b38; --bronze: #d29f62; --bronze-hell: #3a2c1c; color-scheme: dark; } }
+  :root[data-theme="dark"] {
+    --stein: #161a19; --tafel: #1e2422; --tinte: #e3e8e5; --grau: #9aa5a0; --linie: #333b38; --bronze: #d29f62; --bronze-hell: #3a2c1c; color-scheme: dark; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body { background: var(--stein); color: var(--tinte); font: 17px/1.6 var(--text); min-height: 100dvh; display: grid; place-items: center; }
+  [hidden] { display: none !important; }
+  button { touch-action: manipulation; font: inherit; }
+  button:focus-visible { outline: 2px solid var(--bronze); outline-offset: 3px; }
+  .start { width: 100%; max-width: 560px; padding: 48px max(24px, env(safe-area-inset-right, 0px)) 56px max(24px, env(safe-area-inset-left, 0px));
+    display: grid; justify-items: center; text-align: center; gap: 10px; }
+  .eyebrow { font: 600 12px/1.3 var(--ui); letter-spacing: .14em; text-transform: uppercase; color: var(--bronze); }
+  h1 { font: 600 clamp(30px, 8vw, 44px)/1.15 var(--display); letter-spacing: .04em; margin: 0; text-wrap: balance; }
+  .lead { margin: 4px 0 0; color: var(--grau); max-width: 34ch; }
+  .gross { margin-top: 28px; width: 96px; height: 96px; border-radius: 50%; border: 0; background: var(--bronze); color: var(--tafel);
+    display: grid; place-items: center; cursor: pointer; box-shadow: 0 10px 30px rgba(0, 0, 0, .25); }
+  .gross svg { width: 40px; height: 40px; }
+  .gross[aria-label="Abspielen"] svg, .lesen-play[aria-label="Abspielen"] svg { margin-left: 4px; }   /* Dreieck optisch mittig */
+  .dauer { margin: 14px 0 0; font: 500 14px/1.4 var(--ui); color: var(--grau); font-variant-numeric: tabular-nums; }
+  .nurlesen { margin-top: 6px; border: 0; background: transparent; color: var(--bronze); font: 600 15px/1 var(--ui); padding: 10px 12px; cursor: pointer; }
+  /* Lesemodus: Fenster in der Bildschirmmitte, Hintergrund stark abgedunkelt */
+  html:has(.lesen[open]) { overflow: hidden; }
+  .lesen { width: min(680px, calc(100% - 32px)); max-width: none; max-height: calc(100dvh - 32px); margin: auto;
+    padding: 14px 20px 18px; border: 1px solid var(--linie); border-radius: 16px; background: var(--tafel); color: var(--tinte);
+    box-shadow: 0 24px 70px rgba(0, 0, 0, .55); }
+  .lesen[open] { display: grid; gap: 14px; animation: lesen-auf .22s ease-out; }
+  .lesen:focus { outline: none; }
+  .lesen::backdrop { background: rgba(6, 8, 8, .88); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+  @keyframes lesen-auf { from { opacity: 0; transform: translateY(10px) scale(.98); } }
+  .lesen-kopf { display: flex; align-items: center; gap: 10px; min-height: 40px; }
+  .lesen-kopf span { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    font: 600 11px/1.2 var(--ui); letter-spacing: .12em; text-transform: uppercase; color: var(--bronze); }
+  .lesen-knopf { flex: 0 0 auto; border: 0; border-radius: 50%; display: grid; place-items: center; cursor: pointer; padding: 0; }
+  .lesen-zu { width: 40px; height: 40px; margin-right: -10px; background: transparent; color: var(--grau); }
+  .lesen-zu svg { width: 22px; height: 22px; }
+  .lesen-play { width: 52px; height: 52px; background: var(--bronze); color: var(--tafel); }
+  .lesen-play svg { width: 24px; height: 24px; }
+  .lesen-text { position: relative; font: 400 22px/33px var(--text); height: 198px; max-height: calc(100dvh - 200px); overflow: hidden;
+    touch-action: none; user-select: none; -webkit-user-select: none;
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,.18) 0%, #000 32%, #000 68%, rgba(0,0,0,.18) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,.18) 0%, #000 32%, #000 68%, rgba(0,0,0,.18) 100%); }
+  .lesen-band { position: absolute; left: -10px; right: -10px; top: 50%; height: 54px; margin-top: -27px; border-radius: 10px; pointer-events: none;
+    background: linear-gradient(to bottom, transparent 0%, var(--bronze-hell) 26%, var(--bronze-hell) 74%, transparent 100%); }
+  .lesen-inhalt { position: relative; will-change: transform; }
+  .lesen-text p { margin: 0; hyphens: auto; -webkit-hyphens: auto; text-align: left; }
+  .lesen-text p + p { text-indent: 1.4em; }
+  .lesen-fuss { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 14px; }
+  .lesen-balken { height: 4px; border-radius: 2px; background: var(--linie); overflow: hidden; }
+  .lesen-balken span { display: block; height: 100%; width: 0; background: var(--bronze); }
+  .lesen-zeit { font: 500 14px/1 var(--ui); font-variant-numeric: tabular-nums; color: var(--grau); min-width: 4.2em; text-align: right; }
+  .lw { color: var(--grau); cursor: pointer; }
+  .lw.vorbei { color: var(--tinte); }
+  /* Fließende Markierung: das gerade gesprochene Wort färbt sich mit weicher Kante von links nach rechts (--f von 0 bis 1) */
+  @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+    .lesen-text .lw { color: transparent; -webkit-background-clip: text; background-clip: text;
+      background-image: linear-gradient(90deg, var(--tinte) calc(var(--f, 0) * (100% + 1em) - 1em), var(--grau) calc(var(--f, 0) * (100% + 1em)));
+      -webkit-box-decoration-break: slice; box-decoration-break: slice; }
+    .lesen-text .lw.vorbei { --f: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) { .lesen[open] { animation: none; } }
+</style>
+</head>
+<body>
+<main class="start">
+  <span class="eyebrow">Seneca · De vita beata · Kapitel 1</span>
+  <h1>Vom glücklichen Leben</h1>
+  <p class="lead">Neufassung der Übersetzung, zum Hören und Mitlesen</p>
+  <button type="button" class="gross" id="start" aria-label="Abspielen"></button>
+  <p class="dauer" id="dauer">1:47 min · der Text läuft beim Hören mit</p>
+  <button type="button" class="nurlesen" id="nurlesen">Nur den Text ansehen</button>
+  <audio id="ton" preload="metadata" src="audio/lupert_ruhig.m4a"></audio>
+</main>
+<dialog class="lesen" id="lesen" aria-labelledby="lesen-titel" tabindex="-1">
+  <div class="lesen-kopf">
+    <span id="lesen-titel">Vom glücklichen Leben</span>
+    <button type="button" class="lesen-knopf lesen-zu" id="lesen-zu" aria-label="Schließen"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div class="lesen-text" id="lesen-text" lang="de">
+    <div class="lesen-band" aria-hidden="true"></div>
+    <div class="lesen-inhalt" id="lesen-inhalt">
+<p><span class="lw" data-i="0">Glücklich</span> <span class="lw" data-i="1">leben,</span> <span class="lw" data-i="2">mein</span> <span class="lw" data-i="3">Bruder</span> <span class="lw" data-i="4">Gallio,</span> <span class="lw" data-i="5">das</span> <span class="lw" data-i="6">wollen</span> <span class="lw" data-i="7">alle.</span> <span class="lw" data-i="8">Doch</span> <span class="lw" data-i="9">wenn</span> <span class="lw" data-i="10">es</span> <span class="lw" data-i="11">darum</span> <span class="lw" data-i="12">geht,</span> <span class="lw" data-i="13">klar</span> <span class="lw" data-i="14">zu</span> <span class="lw" data-i="15">erkennen,</span> <span class="lw" data-i="16">wodurch</span> <span class="lw" data-i="17">ein</span> <span class="lw" data-i="18">Leben</span> <span class="lw" data-i="19">eigentlich</span> <span class="lw" data-i="20">glücklich</span> <span class="lw" data-i="21">wird,</span> <span class="lw" data-i="22">ist</span> <span class="lw" data-i="23">ihr</span> <span class="lw" data-i="24">Blick</span> <span class="lw" data-i="25">getrübt.</span> <span class="lw" data-i="26">Und</span> <span class="lw" data-i="27">es</span> <span class="lw" data-i="28">ist</span> <span class="lw" data-i="29">so</span> <span class="lw" data-i="30">schwer,</span> <span class="lw" data-i="31">das</span> <span class="lw" data-i="32">glückliche</span> <span class="lw" data-i="33">Leben</span> <span class="lw" data-i="34">zu</span> <span class="lw" data-i="35">erreichen,</span> <span class="lw" data-i="36">dass</span> <span class="lw" data-i="37">sich</span> <span class="lw" data-i="38">jeder</span> <span class="lw" data-i="39">umso</span> <span class="lw" data-i="40">weiter</span> <span class="lw" data-i="41">davon</span> <span class="lw" data-i="42">entfernt,</span> <span class="lw" data-i="43">je</span> <span class="lw" data-i="44">hastiger</span> <span class="lw" data-i="45">er</span> <span class="lw" data-i="46">ihm</span> <span class="lw" data-i="47">zustrebt –</span> <span class="lw" data-i="48">sofern</span> <span class="lw" data-i="49">er</span> <span class="lw" data-i="50">vom</span> <span class="lw" data-i="51">Weg</span> <span class="lw" data-i="52">abgekommen</span> <span class="lw" data-i="53">ist.</span> <span class="lw" data-i="54">Führt</span> <span class="lw" data-i="55">sein</span> <span class="lw" data-i="56">Weg</span> <span class="lw" data-i="57">in</span> <span class="lw" data-i="58">die</span> <span class="lw" data-i="59">entgegengesetzte</span> <span class="lw" data-i="60">Richtung,</span> <span class="lw" data-i="61">wird</span> <span class="lw" data-i="62">gerade</span> <span class="lw" data-i="63">die</span> <span class="lw" data-i="64">Eile</span> <span class="lw" data-i="65">zur</span> <span class="lw" data-i="66">Ursache</span> <span class="lw" data-i="67">einer</span> <span class="lw" data-i="68">noch</span> <span class="lw" data-i="69">größeren</span> <span class="lw" data-i="70">Entfernung.</span></p>
+<p><span class="lw" data-i="71">Deshalb</span> <span class="lw" data-i="72">müssen</span> <span class="lw" data-i="73">wir</span> <span class="lw" data-i="74">uns</span> <span class="lw" data-i="75">zuerst</span> <span class="lw" data-i="76">vor</span> <span class="lw" data-i="77">Augen</span> <span class="lw" data-i="78">führen,</span> <span class="lw" data-i="79">was</span> <span class="lw" data-i="80">wir</span> <span class="lw" data-i="81">erstreben.</span> <span class="lw" data-i="82">Dann</span> <span class="lw" data-i="83">müssen</span> <span class="lw" data-i="84">wir</span> <span class="lw" data-i="85">uns</span> <span class="lw" data-i="86">umsehen,</span> <span class="lw" data-i="87">auf</span> <span class="lw" data-i="88">welchem</span> <span class="lw" data-i="89">Weg</span> <span class="lw" data-i="90">wir</span> <span class="lw" data-i="91">am</span> <span class="lw" data-i="92">schnellsten</span> <span class="lw" data-i="93">dorthin</span> <span class="lw" data-i="94">gelangen.</span> <span class="lw" data-i="95">Unterwegs</span> <span class="lw" data-i="96">werden</span> <span class="lw" data-i="97">wir –</span> <span class="lw" data-i="98">wenn</span> <span class="lw" data-i="99">der</span> <span class="lw" data-i="100">Weg</span> <span class="lw" data-i="101">nur</span> <span class="lw" data-i="102">der</span> <span class="lw" data-i="103">richtige</span> <span class="lw" data-i="104">ist –</span> <span class="lw" data-i="105">erkennen,</span> <span class="lw" data-i="106">wie</span> <span class="lw" data-i="107">viel</span> <span class="lw" data-i="108">wir</span> <span class="lw" data-i="109">Tag</span> <span class="lw" data-i="110">für</span> <span class="lw" data-i="111">Tag</span> <span class="lw" data-i="112">zurücklegen</span> <span class="lw" data-i="113">und</span> <span class="lw" data-i="114">wie</span> <span class="lw" data-i="115">viel</span> <span class="lw" data-i="116">näher</span> <span class="lw" data-i="117">wir</span> <span class="lw" data-i="118">dem</span> <span class="lw" data-i="119">Ziel</span> <span class="lw" data-i="120">kommen,</span> <span class="lw" data-i="121">zu</span> <span class="lw" data-i="122">dem</span> <span class="lw" data-i="123">uns</span> <span class="lw" data-i="124">ein</span> <span class="lw" data-i="125">natürliches</span> <span class="lw" data-i="126">Verlangen</span> <span class="lw" data-i="127">treibt.</span></p>
+<p><span class="lw" data-i="128">Solange</span> <span class="lw" data-i="129">wir</span> <span class="lw" data-i="130">aber</span> <span class="lw" data-i="131">ziellos</span> <span class="lw" data-i="132">umherschweifen</span> <span class="lw" data-i="133">und</span> <span class="lw" data-i="134">keinem</span> <span class="lw" data-i="135">Kundigen</span> <span class="lw" data-i="136">folgen,</span> <span class="lw" data-i="137">sondern</span> <span class="lw" data-i="138">dem</span> <span class="lw" data-i="139">Lärm</span> <span class="lw" data-i="140">und</span> <span class="lw" data-i="141">dem</span> <span class="lw" data-i="142">wirren</span> <span class="lw" data-i="143">Geschrei</span> <span class="lw" data-i="144">derer,</span> <span class="lw" data-i="145">die</span> <span class="lw" data-i="146">uns</span> <span class="lw" data-i="147">in</span> <span class="lw" data-i="148">alle</span> <span class="lw" data-i="149">Richtungen</span> <span class="lw" data-i="150">rufen,</span> <span class="lw" data-i="151">wird</span> <span class="lw" data-i="152">sich</span> <span class="lw" data-i="153">unser</span> <span class="lw" data-i="154">Leben</span> <span class="lw" data-i="155">zwischen</span> <span class="lw" data-i="156">Irrwegen</span> <span class="lw" data-i="157">aufreiben –</span> <span class="lw" data-i="158">ein</span> <span class="lw" data-i="159">Leben,</span> <span class="lw" data-i="160">das</span> <span class="lw" data-i="161">selbst</span> <span class="lw" data-i="162">dann</span> <span class="lw" data-i="163">kurz</span> <span class="lw" data-i="164">wäre,</span> <span class="lw" data-i="165">wenn</span> <span class="lw" data-i="166">wir</span> <span class="lw" data-i="167">uns</span> <span class="lw" data-i="168">Tag</span> <span class="lw" data-i="169">und</span> <span class="lw" data-i="170">Nacht</span> <span class="lw" data-i="171">um</span> <span class="lw" data-i="172">Vernunft</span> <span class="lw" data-i="173">bemühten.</span></p>
+<p><span class="lw" data-i="174">Darum</span> <span class="lw" data-i="175">müssen</span> <span class="lw" data-i="176">wir</span> <span class="lw" data-i="177">beides</span> <span class="lw" data-i="178">entscheiden:</span> <span class="lw" data-i="179">wohin</span> <span class="lw" data-i="180">wir</span> <span class="lw" data-i="181">streben</span> <span class="lw" data-i="182">und</span> <span class="lw" data-i="183">auf</span> <span class="lw" data-i="184">welchem</span> <span class="lw" data-i="185">Weg.</span> <span class="lw" data-i="186">Und</span> <span class="lw" data-i="187">das</span> <span class="lw" data-i="188">nicht</span> <span class="lw" data-i="189">ohne</span> <span class="lw" data-i="190">einen</span> <span class="lw" data-i="191">erfahrenen</span> <span class="lw" data-i="192">Begleiter,</span> <span class="lw" data-i="193">dem</span> <span class="lw" data-i="194">die</span> <span class="lw" data-i="195">Gegend</span> <span class="lw" data-i="196">vertraut</span> <span class="lw" data-i="197">ist,</span> <span class="lw" data-i="198">in</span> <span class="lw" data-i="199">die</span> <span class="lw" data-i="200">wir</span> <span class="lw" data-i="201">aufbrechen.</span> <span class="lw" data-i="202">Denn</span> <span class="lw" data-i="203">hier</span> <span class="lw" data-i="204">gilt</span> <span class="lw" data-i="205">nicht</span> <span class="lw" data-i="206">dasselbe</span> <span class="lw" data-i="207">wie</span> <span class="lw" data-i="208">auf</span> <span class="lw" data-i="209">anderen</span> <span class="lw" data-i="210">Reisen:</span> <span class="lw" data-i="211">Dort</span> <span class="lw" data-i="212">verhindern</span> <span class="lw" data-i="213">ein</span> <span class="lw" data-i="214">markierter</span> <span class="lw" data-i="215">Pfad</span> <span class="lw" data-i="216">und</span> <span class="lw" data-i="217">Einheimische,</span> <span class="lw" data-i="218">die</span> <span class="lw" data-i="219">man</span> <span class="lw" data-i="220">fragen</span> <span class="lw" data-i="221">kann,</span> <span class="lw" data-i="222">dass</span> <span class="lw" data-i="223">man</span> <span class="lw" data-i="224">sich</span> <span class="lw" data-i="225">verirrt.</span> <span class="lw" data-i="226">Hier</span> <span class="lw" data-i="227">aber,</span> <span class="lw" data-i="228">im</span> <span class="lw" data-i="229">Leben,</span> <span class="lw" data-i="230">trügt</span> <span class="lw" data-i="231">gerade</span> <span class="lw" data-i="232">der</span> <span class="lw" data-i="233">ausgetretenste</span> <span class="lw" data-i="234">und</span> <span class="lw" data-i="235">belebteste</span> <span class="lw" data-i="236">Weg</span> <span class="lw" data-i="237">am</span> <span class="lw" data-i="238">meisten.</span></p>
+    </div>
+  </div>
+  <div class="lesen-fuss">
+    <button type="button" class="lesen-knopf lesen-play" id="lesen-play" aria-label="Abspielen"></button>
+    <div class="lesen-balken" aria-hidden="true"><span id="lesen-balken"></span></div>
+    <span class="lesen-zeit" id="lesen-zeit" aria-label="Restzeit"></span>
+  </div>
+</dialog>
+<script type="application/json" id="daten">{"w": ["Glücklich", "leben,", "mein", "Bruder", "Gallio,", "das", "wollen", "alle.", "Doch", "wenn", "es", "darum", "geht,", "klar", "zu", "erkennen,", "wodurch", "ein", "Leben", "eigentlich", "glücklich", "wird,", "ist", "ihr", "Blick", "getrübt.", "Und", "es", "ist", "so", "schwer,", "das", "glückliche", "Leben", "zu", "erreichen,", "dass", "sich", "jeder", "umso", "weiter", "davon", "entfernt,", "je", "hastiger", "er", "ihm", "zustrebt –", "sofern", "er", "vom", "Weg", "abgekommen", "ist.", "Führt", "sein", "Weg", "in", "die", "entgegengesetzte", "Richtung,", "wird", "gerade", "die", "Eile", "zur", "Ursache", "einer", "noch", "größeren", "Entfernung.", "Deshalb", "müssen", "wir", "uns", "zuerst", "vor", "Augen", "führen,", "was", "wir", "erstreben.", "Dann", "müssen", "wir", "uns", "umsehen,", "auf", "welchem", "Weg", "wir", "am", "schnellsten", "dorthin", "gelangen.", "Unterwegs", "werden", "wir –", "wenn", "der", "Weg", "nur", "der", "richtige", "ist –", "erkennen,", "wie", "viel", "wir", "Tag", "für", "Tag", "zurücklegen", "und", "wie", "viel", "näher", "wir", "dem", "Ziel", "kommen,", "zu", "dem", "uns", "ein", "natürliches", "Verlangen", "treibt.", "Solange", "wir", "aber", "ziellos", "umherschweifen", "und", "keinem", "Kundigen", "folgen,", "sondern", "dem", "Lärm", "und", "dem", "wirren", "Geschrei", "derer,", "die", "uns", "in", "alle", "Richtungen", "rufen,", "wird", "sich", "unser", "Leben", "zwischen", "Irrwegen", "aufreiben –", "ein", "Leben,", "das", "selbst", "dann", "kurz", "wäre,", "wenn", "wir", "uns", "Tag", "und", "Nacht", "um", "Vernunft", "bemühten.", "Darum", "müssen", "wir", "beides", "entscheiden:", "wohin", "wir", "streben", "und", "auf", "welchem", "Weg.", "Und", "das", "nicht", "ohne", "einen", "erfahrenen", "Begleiter,", "dem", "die", "Gegend", "vertraut", "ist,", "in", "die", "wir", "aufbrechen.", "Denn", "hier", "gilt", "nicht", "dasselbe", "wie", "auf", "anderen", "Reisen:", "Dort", "verhindern", "ein", "markierter", "Pfad", "und", "Einheimische,", "die", "man", "fragen", "kann,", "dass", "man", "sich", "verirrt.", "Hier", "aber,", "im", "Leben,", "trügt", "gerade", "der", "ausgetretenste", "und", "belebteste", "Weg", "am", "meisten."], "t": [0.0, 0.48, 1.08, 1.26, 1.58, 2.46, 2.72, 3.04, 4.14, 4.76, 4.92, 5.04, 5.3, 5.8, 5.94, 6.18, 6.86, 7.14, 7.32, 7.58, 8.12, 8.58, 9.34, 9.74, 9.9, 10.1, 11.52, 12.14, 12.3, 12.5, 12.72, 13.18, 13.4, 13.86, 14.12, 14.3, 15.08, 15.34, 15.52, 15.82, 16.26, 16.54, 16.9, 17.88, 18.02, 18.52, 18.76, 18.94, 19.96, 20.64, 20.78, 20.92, 21.14, 21.66, 23.03, 23.59, 23.79, 24.05, 24.21, 24.35, 25.25, 25.81, 26.03, 26.37, 26.61, 27.03, 27.25, 27.75, 27.99, 28.25, 28.79, 30.81, 31.37, 31.67, 31.83, 32.01, 32.49, 32.69, 32.93, 33.45, 33.73, 33.95, 35.39, 35.95, 36.23, 36.39, 36.57, 37.41, 37.53, 37.91, 38.17, 38.33, 38.47, 39.03, 39.39, 41.19, 41.75, 42.05, 42.53, 42.81, 42.95, 43.13, 43.29, 43.43, 43.71, 44.32, 45.52, 45.66, 45.98, 46.18, 46.5, 46.66, 46.92, 47.6, 48.14, 48.34, 48.6, 48.96, 49.12, 49.3, 49.58, 50.12, 50.24, 50.38, 50.58, 50.72, 51.36, 51.72, 53.84, 54.42, 54.6, 54.8, 55.4, 56.28, 56.5, 56.9, 57.34, 58.22, 58.42, 58.64, 59.08, 59.26, 59.42, 59.74, 60.16, 60.72, 60.82, 61.0, 61.14, 61.4, 61.82, 62.86, 63.1, 63.26, 63.54, 63.84, 64.18, 64.76, 65.9, 66.34, 66.82, 67.18, 67.44, 67.68, 68.04, 68.6, 68.72, 68.86, 69.04, 69.36, 69.56, 69.84, 70.04, 70.48, 72.58, 73.14, 73.34, 73.52, 73.94, 74.86, 75.42, 75.58, 76.06, 76.54, 76.78, 77.12, 78.36, 78.92, 79.16, 79.44, 79.74, 80.02, 80.64, 81.4, 81.76, 81.96, 82.24, 82.74, 83.08, 83.18, 83.28, 83.44, 84.86, 85.42, 85.64, 85.92, 86.14, 86.7, 86.84, 87.0, 87.38, 88.34, 88.92, 89.48, 89.66, 90.16, 90.6, 91.08, 91.86, 91.94, 92.06, 92.44, 92.88, 93.0, 93.14, 93.32, 94.88, 95.24, 95.82, 96.3, 97.46, 97.7, 98.12, 98.34, 99.32, 99.52, 100.2, 100.48, 100.68], "ende": 101.45, "tempo": 0.95}</script>
+<script>
+(function () {
+  var D = JSON.parse(document.getElementById("daten").textContent), TEMPO = D.tempo;
+  var a = document.getElementById("ton"), start = document.getElementById("start"), nurlesen = document.getElementById("nurlesen");
+  var dlg = document.getElementById("lesen"), ftext = document.getElementById("lesen-text"), inhalt = document.getElementById("lesen-inhalt");
+  var fplay = document.getElementById("lesen-play"), balken = document.getElementById("lesen-balken"), zeit = document.getElementById("lesen-zeit");
+  var spans = Array.prototype.slice.call(ftext.querySelectorAll(".lw"));
+  var reduziert = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var jetzt = -2, eingabe = 0, endeTimer = 0, klickSperre = 0;
+  var LH = 33, zeilen = 1, zeileVon = [], kurve = null, y = 0, sprung = true, ziehen = null;
+  var raf = 0, letzt = 0, letzteZeit = 0, mtWert = -1, mtZeit = 0;
+  var PLAY = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5.5v13a1 1 0 0 0 1.5.86l10.2-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>';
+  var PAUSE = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="13.5" y="5" width="4" height="14" rx="1" fill="currentColor"/></svg>';
 
+  // Tempo 0,95 bei gleicher Tonhöhe; manche Browser setzen es beim Laden zurück, darum bei jedem Start erneut
+  function tempo() { try { a.preservesPitch = true; a.webkitPreservesPitch = true; } catch (e) {} a.defaultPlaybackRate = TEMPO; a.playbackRate = TEMPO; }
+  tempo(); a.addEventListener("loadedmetadata", tempo);
+  if ("mediaSession" in navigator && window.MediaMetadata) {
+    try { navigator.mediaSession.metadata = new MediaMetadata({ title: "Vom glücklichen Leben", artist: "Seneca", album: "De vita beata, Kapitel 1" }); } catch (e) {}
+  }
+  function symbole() {
+    var still = a.paused;
+    [start, fplay].forEach(function (b) { b.innerHTML = still ? PLAY : PAUSE; b.setAttribute("aria-label", still ? "Abspielen" : "Anhalten"); });
+  }
+  function restzeit() {   // in echter Hörzeit, also mit dem eingestellten Tempo
+    if (!isFinite(a.duration)) { zeit.textContent = ""; return; }
+    var r = Math.max(0, (a.duration - a.currentTime) / (a.playbackRate || 1)), m = Math.floor(r / 60), s = Math.round(r % 60);
+    if (s === 60) { m++; s = 0; }
+    zeit.textContent = "−" + m + ":" + (s < 10 ? "0" : "") + s;
+    balken.style.width = (100 * a.currentTime / a.duration).toFixed(2) + "%";
+  }
+
+  // Monotone kubische Interpolation (Fritsch–Carlson): stetige Geschwindigkeit, kein Überschießen
+  function pchip(x, v) {
+    var n = x.length, h = [], d = [], m = [], i;
+    if (n < 2) return function () { return v[0] || 0; };
+    for (i = 0; i < n - 1; i++) { h[i] = x[i + 1] - x[i]; d[i] = (v[i + 1] - v[i]) / h[i]; }
+    m[0] = d[0]; m[n - 1] = d[n - 2];
+    for (i = 1; i < n - 1; i++) {
+      if (d[i - 1] * d[i] <= 0) m[i] = 0;
+      else { var w1 = 2 * h[i] + h[i - 1], w2 = h[i] + 2 * h[i - 1]; m[i] = (w1 + w2) / (w1 / d[i - 1] + w2 / d[i]); }
+    }
+    return function (t) {
+      if (t <= x[0]) return v[0]; if (t >= x[n - 1]) return v[n - 1];
+      var lo = 0, hi = n - 1;
+      while (hi - lo > 1) { var mi = (lo + hi) >> 1; if (x[mi] <= t) lo = mi; else hi = mi; }
+      var hh = x[hi] - x[lo], s = (t - x[lo]) / hh, s2 = s * s, s3 = s2 * s;
+      return (2 * s3 - 3 * s2 + 1) * v[lo] + (s3 - 2 * s2 + s) * hh * m[lo] + (3 * s2 - 2 * s3) * v[hi] + (s3 - s2) * hh * m[hi];
+    };
+  }
+  function layout() {   // Zeile k steht im Streifen, wenn der Text um k·Zeilenhöhe nach oben geschoben ist
+    LH = parseFloat(getComputedStyle(ftext).lineHeight) || 33;
+    var rand = Math.max(0, (ftext.clientHeight - LH) / 2) + "px";
+    inhalt.style.paddingTop = rand; inhalt.style.paddingBottom = rand;
+    var basis = spans.length ? spans[0].offsetTop : 0;
+    zeileVon = spans.map(function (s) { return Math.round((s.offsetTop - basis) / LH); });
+    zeilen = zeileVon.length ? zeileVon[zeileVon.length - 1] + 1 : 1;
+    var start = [], k, xs = [], vs = [];
+    for (k = 0; k < zeilen; k++) start.push(Infinity);
+    D.t.forEach(function (t, i) { var z = zeileVon[i]; if (t < start[z]) start[z] = t; });
+    for (k = 0; k < zeilen; k++) start[k] = Math.max(isFinite(start[k]) ? start[k] : 0, k ? start[k - 1] : 0);
+    for (k = 0; k < zeilen; k++) {   // Stützstelle: Mitte der Sprechzeit jeder Zeile
+      var mitte = (start[k] + (k + 1 < zeilen ? start[k + 1] : D.ende)) / 2;
+      if (xs.length && mitte <= xs[xs.length - 1]) mitte = xs[xs.length - 1] + 0.01;
+      xs.push(mitte); vs.push(k * LH);
+    }
+    kurve = pchip(xs, vs); sprung = true;
+  }
+  function setze(v) { y = Math.max(0, Math.min((zeilen - 1) * LH, v)); inhalt.style.transform = "translate3d(0," + (-y).toFixed(2) + "px,0)"; }
+  function wortBei(t) {
+    var lo = 0, hi = D.t.length - 1, r = -1;
+    while (lo <= hi) { var mi = (lo + hi) >> 1; if (D.t[mi] <= t) { r = mi; lo = mi + 1; } else hi = mi - 1; }
+    return r;
+  }
+  function fuelle(t) {   // gelesene Wörter hell, das aktuelle anteilig (Wortende aus der Wortlänge geschätzt), der Rest grau
+    var i = wortBei(t + 0.03);
+    if (i !== jetzt) {
+      spans.forEach(function (s, k) { s.classList.toggle("vorbei", k < i); if (k !== i) s.style.removeProperty("--f"); });
+      jetzt = i;
+    }
+    if (i < 0) return;
+    var t0 = D.t[i], t1 = i + 1 < D.t.length ? D.t[i + 1] : D.ende, e = Math.min(t1, t0 + 0.08 + 0.07 * D.w[i].length);
+    spans[i].style.setProperty("--f", Math.max(0, Math.min(1, (t - t0) / Math.max(0.05, e - t0))).toFixed(3));
+  }
+  function medienzeit(now) {   // currentTime kommt in Stufen; dazwischen mit dem Tempo hochrechnen
+    var t = a.currentTime;
+    if (a.paused || t !== mtWert) { mtWert = t; mtZeit = now; return t; }
+    return t + Math.min(0.3, (now - mtZeit) / 1000) * (a.playbackRate || 1);
+  }
+  function bild(now) {
+    raf = 0; if (!dlg.open) return;
+    var dt = letzt ? Math.min(0.1, (now - letzt) / 1000) : 0.016; letzt = now;
+    if (kurve) {
+      var t = medienzeit(now); fuelle(t);
+      if (!ziehen && Date.now() - eingabe > 3000) {
+        var ziel = kurve(t), d = ziel - y;
+        if (sprung || reduziert) { setze(ziel); sprung = false; }
+        else setze(Math.abs(d) < 0.05 ? ziel : y + d * (1 - Math.exp(-dt / (Math.abs(d) > LH ? 0.2 : 0.08))));
+      }
+    }
+    if (now - letzteZeit > 250) { letzteZeit = now; restzeit(); }
+    raf = requestAnimationFrame(bild);
+  }
+  function oeffne() {
+    clearTimeout(endeTimer);
+    if (!dlg.open) {
+      try { dlg.showModal(); } catch (e) { dlg.setAttribute("open", ""); }
+      dlg.focus({ preventScroll: true });
+      layout();
+    }
+    restzeit(); eingabe = 0;
+    if (!raf) { letzt = 0; raf = requestAnimationFrame(bild); }
+  }
+  function schliesse() { clearTimeout(endeTimer); if (dlg.open) { try { dlg.close(); } catch (e) { dlg.removeAttribute("open"); } } }
+
+  a.addEventListener("play", function () { if (Math.abs(a.playbackRate - TEMPO) > 0.001) tempo(); symbole(); oeffne(); });
+  a.addEventListener("pause", function () { symbole(); restzeit(); });
+  a.addEventListener("ended", function () { symbole(); restzeit(); endeTimer = setTimeout(function () { if (a.paused) schliesse(); }, 1500); });
+  function umschalten() { if (a.paused) a.play(); else a.pause(); }
+  start.addEventListener("click", umschalten);
+  fplay.addEventListener("click", umschalten);
+  nurlesen.addEventListener("click", oeffne);
+  document.getElementById("lesen-zu").addEventListener("click", schliesse);
+  dlg.addEventListener("click", function (e) {   // Tippen neben das Fenster schließt; die Wiedergabe läuft weiter
+    if (e.target !== dlg) return;
+    var r = dlg.getBoundingClientRect();
+    if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) schliesse();
+  });
+  // Selbst blättern: ziehen oder Mausrad; nach 3 s Ruhe gleitet der Text zurück zur gesprochenen Stelle
+  ftext.addEventListener("pointerdown", function (e) { ziehen = { id: e.pointerId, y0: e.clientY, s0: y, bewegt: false }; });
+  ftext.addEventListener("pointermove", function (e) {
+    if (!ziehen || e.pointerId !== ziehen.id) return;
+    var dy = e.clientY - ziehen.y0;
+    if (!ziehen.bewegt && Math.abs(dy) > 6) { ziehen.bewegt = true; try { ftext.setPointerCapture(e.pointerId); } catch (x) {} }
+    if (ziehen.bewegt) { setze(ziehen.s0 - dy); eingabe = Date.now(); }
+  });
+  ["pointerup", "pointercancel"].forEach(function (ev) {
+    ftext.addEventListener(ev, function () { if (ziehen && ziehen.bewegt) { klickSperre = Date.now(); eingabe = Date.now(); } ziehen = null; });
+  });
+  ftext.addEventListener("wheel", function (e) { e.preventDefault(); setze(y + e.deltaY); eingabe = Date.now(); }, { passive: false });
+  ftext.addEventListener("click", function (e) {   // Wort antippen: dorthin springen und weiterhören
+    if (Date.now() - klickSperre < 400) return;
+    var s = e.target.closest(".lw"); if (!s) return;
+    var i = +s.dataset.i, los = function () { a.currentTime = D.t[i]; eingabe = 0; };
+    if (a.readyState >= 1) los(); else a.addEventListener("loadedmetadata", los, { once: true });
+    if (a.paused) a.play();
+  });
+  window.addEventListener("resize", function () { if (dlg.open) layout(); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { if (dlg.open) layout(); });
+  symbole();
+})();
+</script>
+</body>
+</html>
