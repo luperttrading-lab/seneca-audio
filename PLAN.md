@@ -17,7 +17,10 @@ Festgelegt an Teil 1 nach den Rückmeldungen des Auftraggebers:
 
 ## Ablauf je Teil
 
-1. Übersetzung aus dem Latein, gegen den lateinischen Text geprüft; Freigabe durch den Auftraggeber.
+1. Übersetzung aus dem Latein, gegen den lateinischen Text geprüft und mit zwei freien Übersetzungen abgeglichen:
+   Aubrey Stewart, englisch 1900 ([Project Gutenberg 64576](https://www.gutenberg.org/ebooks/64576), „Of a Happy Life“)
+   und Albert Forbiger, deutsch 1867 (nur als [LibriVox-Lesung](https://archive.org/details/vom_glueckseligen_leben_rr_librivox),
+   per Whisper abgeschrieben; zeno.org sperrt automatische Abrufe). Freigabe durch den Auftraggeber.
 2. Vertonung in ElevenLabs mit der Stimme Lupert (eleven v4), Datei hochladen.
 3. Prüfung auf Worttreue (Whisper), Pausen auf natürliche Länge (`werkzeuge/pausen2.py`, Werte der Fassung „ruhig“),
    Lautheit −18 LUFS, Wortzeiten für den Lesemodus.
