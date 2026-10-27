@@ -1,0 +1,391 @@
+<title>Seneca Hörproben</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  /* Layout: eine ruhige Lesespalte wie ein Buchsatz; nur die zwei fertigen Fassungen sind hervorgehobene Tafeln */
+  :root {
+    --stein: #e9ecea; --tafel: #f7f8f7; --tinte: #1f2523; --grau: #5d6763; --linie: #cfd5d2; --bronze: #8b5e2b; --bronze-hell: #f1e6d6;
+    --display: "Cinzel", "Trajan Pro", Georgia, serif; --text: "Literata", Georgia, "Times New Roman", serif;
+    --ui: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+    --stein: #161a19; --tafel: #1e2422; --tinte: #e3e8e5; --grau: #9aa5a0; --linie: #333b38; --bronze: #d29f62; --bronze-hell: #3a2c1c; color-scheme: dark; } }
+  :root[data-theme="dark"] {
+    --stein: #161a19; --tafel: #1e2422; --tinte: #e3e8e5; --grau: #9aa5a0; --linie: #333b38; --bronze: #d29f62; --bronze-hell: #3a2c1c; color-scheme: dark; }
+  body { background: var(--stein); color: var(--tinte); font: 17px/1.6 var(--text); }
+  [hidden] { display: none !important; }
+  button, .lw, .rad { touch-action: manipulation; }   /* schnelles Doppeltippen (Pause, weiter) soll nicht die Seite vergrößern */
+  .wrap { max-width: 680px; margin: 0 auto; padding-block: 40px 64px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+    display: grid; gap: 40px; }
+  header { display: grid; gap: 6px; }
+  .eyebrow { font: 600 12px/1.3 var(--ui); letter-spacing: .14em; text-transform: uppercase; color: var(--bronze); }
+  h1 { font: 600 clamp(28px, 7vw, 40px)/1.15 var(--display); letter-spacing: .04em; margin: 0; text-wrap: balance; }
+  .lead { margin: 6px 0 0; color: var(--grau); max-width: 60ch; }
+  h2 { font: 600 13px/1.3 var(--ui); letter-spacing: .12em; text-transform: uppercase; color: var(--grau); margin: 0; text-wrap: balance; }
+  section { display: grid; gap: 14px; }
+  .tafeln { display: grid; gap: 16px; }
+  .tafel { background: var(--tafel); border: 1px solid var(--linie); border-radius: 6px; padding: 20px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; min-width: 0; }
+  .tafel h3 { font: 600 22px/1.25 var(--text); margin: 0; hyphens: auto; -webkit-hyphens: auto; overflow-wrap: break-word; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px; font: 500 13px/1 var(--ui); }
+  .chip { padding: 6px 9px; border-radius: 999px; background: var(--bronze-hell); color: var(--tinte); font: inherit; font-variant-numeric: tabular-nums; border: 0; }
+  .chip-info, .dist { cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+  .chip-info::after, .dist::after { content: "?"; display: inline-grid; place-items: center; width: 16px; height: 16px; border-radius: 50%;
+    border: 1.5px solid currentColor; font: 600 11px/1 var(--ui); opacity: .8; }
+  .chip-info { color: var(--bronze); }
+  .tafel > p { margin: 0; color: var(--grau); font-size: 15px; }
+  audio { width: 100%; max-width: 100%; display: block; }
+  .pop { background: var(--bronze-hell); border-radius: 6px; padding: 12px 14px; font: 400 14px/1.5 var(--ui); display: grid; gap: 6px; }
+  .pop p { margin: 0; }
+  .pop ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; }
+  .tempo { display: grid; grid-template-columns: auto minmax(0, 1fr) 58px; align-items: center; gap: 10px; font: 500 14px/1 var(--ui); }
+  .tempo-label { color: var(--grau); }
+  .tempo output { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; }
+  /* Drehrad: waagerechtes Band mit Einrasten; die Mitte (Kerbe) ist der gewählte Wert */
+  .rad { position: relative; min-width: 0; height: 52px; border-radius: 10px; background: var(--tafel); border: 1px solid var(--linie); outline-offset: 3px; }
+  .rad::before { content: ""; position: absolute; left: 50%; top: 0; height: 17px; width: 2px; margin-left: -1px; background: var(--bronze); z-index: 2; pointer-events: none; }
+  .rad::after { content: ""; position: absolute; left: 50%; top: -1px; margin-left: -6px; border: 6px solid transparent; border-top-color: var(--bronze); z-index: 2; pointer-events: none; }
+  .rad-band { display: flex; height: 100%; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scrollbar-width: none;
+    -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; perspective: 260px;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 28%, #000 72%, transparent); mask-image: linear-gradient(90deg, transparent, #000 28%, #000 72%, transparent); }
+  .rad-band::-webkit-scrollbar { display: none; }
+  .rad-rand { flex: 0 0 calc(50% - 5px); }   /* Rand = halbe Bandbreite minus halber Strich: Wert k steht bei scrollLeft = 10·k */
+  .rad-wert { flex: 0 0 10px; height: 100%; scroll-snap-align: center; position: relative; }
+  .rad-wert::before { content: ""; position: absolute; top: 9px; left: 50%; width: 1px; height: 6px; background: var(--grau); }
+  .rad-wert.halb::before { height: 10px; }
+  .rad-wert.zehntel::before { height: 13px; width: 2px; margin-left: -1px; background: var(--tinte); }
+  .rad-wert b { position: absolute; top: 25px; left: 50%; transform: translateX(-50%); padding: 2px 4px; cursor: pointer;
+    font: 500 14px/1 var(--ui); font-variant-numeric: tabular-nums; color: var(--tinte); white-space: nowrap; }
+  .erkl { font: 400 14px/1.5 var(--ui); color: var(--grau); margin: 0; max-width: 62ch; }
+  .kopfzeile { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+  .kopfzeile h3 { min-width: 0; }
+  .mitlesen { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px; margin-top: -3px;
+    border-radius: 999px; border: 1px solid var(--bronze); background: transparent; color: var(--bronze); font: 600 14px/1 var(--ui); cursor: pointer; }
+  .mitlesen svg { width: 18px; height: 18px; flex: 0 0 auto; }
+  .mitlesen[aria-expanded="true"] { background: var(--bronze); color: var(--tafel); }
+  button:focus-visible, audio:focus-visible, input:focus-visible { outline: 2px solid var(--bronze); outline-offset: 3px; }
+  /* Lesemodus: Fenster in der Bildschirmmitte, Hintergrund stark abgedunkelt, sechs Zeilen Text, das gesprochene Wort hervorgehoben */
+  html:has(.lesen[open]) { overflow: hidden; }
+  .lesen { width: min(680px, calc(100% - 32px)); max-width: none; max-height: calc(100dvh - 32px); box-sizing: border-box; margin: auto;
+    padding: 14px 20px 18px; border: 1px solid var(--linie); border-radius: 16px; background: var(--tafel); color: var(--tinte);
+    box-shadow: 0 24px 70px rgba(0, 0, 0, .55); }
+  .lesen[open] { display: grid; gap: 14px; animation: lesen-auf .22s ease-out; }
+  .lesen:focus { outline: none; }
+  .lesen::backdrop { background: rgba(6, 8, 8, .88); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+  @keyframes lesen-auf { from { opacity: 0; transform: translateY(10px) scale(.98); } }
+  .lesen-kopf { display: flex; align-items: center; gap: 10px; min-height: 40px; }
+  .lesen-kopf span { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    font: 600 11px/1.2 var(--ui); letter-spacing: .12em; text-transform: uppercase; color: var(--bronze); }
+  .lesen-knopf { flex: 0 0 auto; border: 0; border-radius: 50%; display: grid; place-items: center; cursor: pointer; padding: 0; }
+  .lesen-zu { width: 40px; height: 40px; margin-right: -10px; background: transparent; color: var(--grau); }
+  .lesen-zu svg { width: 22px; height: 22px; }
+  .lesen-play { width: 52px; height: 52px; background: var(--bronze); color: var(--tafel); }
+  .lesen-play svg { width: 24px; height: 24px; }
+  /* Text läuft gleichmäßig durch einen weichen Lesestreifen in der Mitte; oben und unten blendet er aus */
+  .lesen-text { position: relative; font: 400 22px/33px var(--text); height: 198px; max-height: calc(100dvh - 200px); overflow: hidden;
+    touch-action: none; user-select: none; -webkit-user-select: none;
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,.18) 0%, #000 32%, #000 68%, rgba(0,0,0,.18) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,.18) 0%, #000 32%, #000 68%, rgba(0,0,0,.18) 100%); }
+  .lesen-band { position: absolute; left: -10px; right: -10px; top: 50%; height: 54px; margin-top: -27px; border-radius: 10px; pointer-events: none;
+    background: linear-gradient(to bottom, transparent 0%, var(--bronze-hell) 26%, var(--bronze-hell) 74%, transparent 100%); }
+  .lesen-inhalt { position: relative; will-change: transform; }
+  .lesen-text p { margin: 0; hyphens: auto; -webkit-hyphens: auto; }
+  .lesen-text p + p { text-indent: 1.4em; }
+  .lesen-fuss { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 14px; }
+  .lesen-balken { height: 4px; border-radius: 2px; background: var(--linie); overflow: hidden; }
+  .lesen-balken span { display: block; height: 100%; width: 0; background: var(--bronze); }
+  .lesen-zeit { font: 500 14px/1 var(--ui); font-variant-numeric: tabular-nums; color: var(--grau); min-width: 4.2em; text-align: right; }
+  .lw { color: var(--grau); border-radius: 3px; cursor: pointer; }
+  .lw.vorbei { color: var(--tinte); }
+  /* Fließende Markierung: das gerade gesprochene Wort färbt sich mit weicher Kante von links nach rechts (--f von 0 bis 1) */
+  @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+    .lesen-text .lw { color: transparent; -webkit-background-clip: text; background-clip: text;
+      background-image: linear-gradient(90deg, var(--tinte) calc(var(--f, 0) * (100% + 1em) - 1em), var(--grau) calc(var(--f, 0) * (100% + 1em)));
+      -webkit-box-decoration-break: slice; box-decoration-break: slice; }
+    .lesen-text .lw.vorbei { --f: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) { .lesen[open] { animation: none; } }
+</style>
+<div class="wrap" lang="de">
+  <header>
+    <span class="eyebrow">Seneca · De vita beata · Kapitel 1</span>
+    <h1>Vom glücklichen Leben</h1>
+    <p class="lead">Der überarbeitete Text in fünf Hörfassungen: dreimal dein Stimmklon Lupert, einmal ElevenLabs Christian, einmal Gemini.</p>
+  </header>
+
+  <section aria-labelledby="h-fertig">
+    <h2 id="h-fertig">Fertige Fassungen</h2>
+    <div class="tafeln">{{TAFELN}}
+    </div>
+    <p class="erkl">Tippe auf eine Abstand-Zahl, um zu sehen, was sie bedeutet und wo die Fassung von echten Vorlesern abweicht. Das Tempo stellst du am Drehrad unter jedem Player ein: langsam drehen verstellt in Schritten von 0,01, schnelles Wischen springt weiter. Es gilt der Wert an der Kerbe, von 0,50 bis 1,50. Antippen einer Zahl springt direkt dorthin. Die Tonhöhe bleibt gleich. Beim Abspielen öffnet sich der Lesemodus in der Bildschirmmitte, alles andere wird abgedunkelt. Der Text läuft gleichmäßig durch den Lesestreifen und färbt sich beim Sprechen hell. Mit dem Finger kannst du zurückblättern; nach 3 Sekunden gleitet er zurück. Antippen eines Wortes springt dorthin. Er schließt am Ende von selbst, mit × oder durch Tippen daneben; die Wiedergabe läuft dann weiter. „Mitlesen“ neben der Stimme öffnet ihn ohne Abspielen.</p>
+  </section>
+</div>
+<dialog class="lesen" id="lesen" aria-labelledby="lesen-titel" tabindex="-1">
+  <div class="lesen-kopf">
+    <span id="lesen-titel">Mitlesen</span>
+    <button type="button" class="lesen-knopf lesen-zu" id="lesen-zu" aria-label="Lesemodus schließen"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div class="lesen-text" id="lesen-text" lang="de">
+    <div class="lesen-band" aria-hidden="true"></div>
+    <div class="lesen-inhalt" id="lesen-inhalt">
+{{NEU2}}
+    </div>
+  </div>
+  <div class="lesen-fuss">
+    <button type="button" class="lesen-knopf lesen-play" id="lesen-play" aria-label="Abspielen"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5.5v13a1 1 0 0 0 1.5.86l10.2-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg></button>
+    <div class="lesen-balken" aria-hidden="true"><span id="lesen-balken"></span></div>
+    <span class="lesen-zeit" id="lesen-zeit" aria-label="Restzeit"></span>
+  </div>
+</dialog>
+<script type="application/json" id="karaoke-daten">{{KARAOKE}}</script>
+<script>
+(function () {
+  // Erklärungen zu den Abstand-Zahlen: Antippen klappt die Erklärung auf und wieder zu
+  document.querySelectorAll(".chip-info, .dist").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var pop = document.getElementById(b.getAttribute("aria-controls"));
+      var auf = pop.hidden;
+      pop.hidden = !auf;
+      b.setAttribute("aria-expanded", auf ? "true" : "false");
+    });
+  });
+
+  // Tempo 0,50 bis 1,50 in 0,01-Schritten über ein Drehrad; Tonhöhe bleibt erhalten; Wahl je Player im Browser gemerkt
+  var fmt = function (r) { return r.toLocaleString("de-DE", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + "×"; };
+  function lies(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function schreib(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  var reduziert = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.querySelectorAll(".tempo").forEach(function (t) {
+    var audio = document.getElementById(t.dataset.for);
+    var rad = t.querySelector(".rad"), band = t.querySelector(".rad-band"), out = t.querySelector("output");
+    var werte = Array.prototype.slice.call(t.querySelectorAll(".rad-wert"));
+    var key = "tempo-v2-" + audio.id, soll = 1, idx = 50, rahmen = 0;
+    function breite() { return werte[0].offsetWidth || 10; }   // ungedrehte Breite (die Wölbung verkleinert die sichtbare)
+    function wendeAn(r) {
+      try { audio.preservesPitch = true; audio.webkitPreservesPitch = true; } catch (e) {}
+      audio.defaultPlaybackRate = r; audio.playbackRate = r;
+    }
+    function zeige(r) {
+      out.textContent = fmt(r);
+      rad.setAttribute("aria-valuenow", String(r)); rad.setAttribute("aria-valuetext", fmt(r).replace("×", "-fach"));
+    }
+    function waehle(i, quelle) {
+      i = Math.max(0, Math.min(100, Math.round(i)));
+      var r = Math.round(50 + i) / 100;
+      idx = i; soll = r; wendeAn(r); zeige(r); schreib(key, String(r));
+      if (quelle !== "rad") band.scrollTo({ left: i * breite(), behavior: (quelle === "start" || reduziert) ? "auto" : "smooth" });
+    }
+    function wolbung() {   // Striche und Zahlen zur Seite hin wegdrehen wie auf einer Walze
+      var halb = band.clientWidth / 2, mitte = band.scrollLeft + halb, b = breite();
+      werte.forEach(function (w) {
+        var d = (w.offsetLeft + b / 2 - mitte) / halb;
+        if (Math.abs(d) > 1.3) return;
+        w.style.transform = reduziert ? "" : "rotateY(" + Math.max(-70, Math.min(70, d * 55)) + "deg)";
+        w.style.opacity = String(Math.max(0.2, 1 - Math.abs(d) * 0.7));
+      });
+    }
+    band.addEventListener("scroll", function () {
+      if (rahmen) return;
+      rahmen = requestAnimationFrame(function () {
+        rahmen = 0; wolbung();
+        var i = Math.round(band.scrollLeft / breite());
+        if (i !== idx) waehle(i, "rad");
+      });
+    }, { passive: true });
+    t.querySelectorAll(".rad-wert b").forEach(function (l) { l.addEventListener("click", function () { waehle(parseInt(l.dataset.k, 10), "tipp"); }); });
+    rad.addEventListener("keydown", function (e) {
+      var s = { ArrowLeft: -1, ArrowDown: -1, ArrowRight: 1, ArrowUp: 1, PageDown: -10, PageUp: 10 }[e.key];
+      if (s) { e.preventDefault(); waehle(idx + s, "taste"); }
+    });
+    // Tempo aus dem eingebauten Player-Menü übernehmen (z. B. 1,25×), beim Laden und Starten wieder anwenden
+    audio.addEventListener("ratechange", function () {
+      var r = Math.round(audio.playbackRate * 100) / 100;
+      if (Math.abs(r - soll) > 0.001) { if (r >= 0.5 && r <= 1.5) waehle(Math.round(r * 100) - 50, "menue"); else { soll = r; zeige(r); } }
+    });
+    ["loadedmetadata", "play"].forEach(function (ev) { audio.addEventListener(ev, function () { if (Math.abs(audio.playbackRate - soll) > 0.001) wendeAn(soll); }); });
+    window.addEventListener("resize", function () { band.scrollLeft = idx * breite(); wolbung(); });
+    var g = parseFloat(lies(key));
+    var std = parseFloat(t.dataset.standard || "1");
+    waehle(Math.round((isFinite(g) ? g : std) * 100) - 50, "start");
+    wolbung();
+  });
+
+
+  // Lesemodus: öffnet beim Abspielen in der Bildschirmmitte; der Text läuft gleichmäßig durch den Lesestreifen,
+  // das gesprochene Wort färbt sich fließend; schließt am Ende von selbst, mit ×, Escape oder Tippen daneben (Wiedergabe läuft weiter)
+  var DATEN = JSON.parse(document.getElementById("karaoke-daten").textContent);
+  var dlg = document.getElementById("lesen"), ftext = document.getElementById("lesen-text"), inhalt = document.getElementById("lesen-inhalt");
+  var ftitel = document.getElementById("lesen-titel"), fplay = document.getElementById("lesen-play");
+  var balken = document.getElementById("lesen-balken"), zeit = document.getElementById("lesen-zeit");
+  var spans = Array.prototype.slice.call(ftext.querySelectorAll(".lw"));
+  var aktiv = null, daten = null, jetzt = -2, eingabe = 0, endeTimer = 0, klickSperre = 0;
+  var LH = 33, zeilen = 1, zeileVon = [], kurve = null, y = 0, sprung = true, ziehen = null;
+  var raf = 0, letzt = 0, letzteZeit = 0, mtWert = -1, mtZeit = 0;
+  var ICON_PLAY = fplay.innerHTML, ICON_PAUSE = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="13.5" y="5" width="4" height="14" rx="1" fill="currentColor"/></svg>';
+  function titelVon(a) { var t = a.closest(".tafel"); return t ? t.querySelector("h3").textContent : "Mitlesen"; }
+  function knoepfe() {
+    document.querySelectorAll(".mitlesen").forEach(function (b) { b.setAttribute("aria-expanded", dlg.open && aktiv && b.dataset.audio === aktiv.id ? "true" : "false"); });
+  }
+  function playSymbol() {
+    var still = !aktiv || aktiv.paused; fplay.innerHTML = still ? ICON_PLAY : ICON_PAUSE; fplay.setAttribute("aria-label", still ? "Abspielen" : "Anhalten");
+  }
+  function restzeit() {   // in echter Hörzeit, also mit dem eingestellten Tempo
+    if (!aktiv || !isFinite(aktiv.duration)) { zeit.textContent = ""; balken.style.width = "0"; return; }
+    var r = Math.max(0, (aktiv.duration - aktiv.currentTime) / (aktiv.playbackRate || 1)), m = Math.floor(r / 60), s = Math.round(r % 60);
+    if (s === 60) { m++; s = 0; }
+    zeit.textContent = "−" + m + ":" + (s < 10 ? "0" : "") + s;
+    balken.style.width = (100 * aktiv.currentTime / aktiv.duration).toFixed(2) + "%";
+  }
+
+  // Monotone kubische Interpolation (Fritsch–Carlson, gewichtetes harmonisches Mittel der Steigungen):
+  // stetige Geschwindigkeit, kein Überschießen, auch wenn Zeilen unterschiedlich lange gesprochen werden
+  function pchip(x, v) {
+    var n = x.length, h = [], d = [], m = [], i;
+    if (n < 2) return function () { return v[0] || 0; };
+    for (i = 0; i < n - 1; i++) { h[i] = x[i + 1] - x[i]; d[i] = (v[i + 1] - v[i]) / h[i]; }
+    m[0] = d[0]; m[n - 1] = d[n - 2];
+    for (i = 1; i < n - 1; i++) {
+      if (d[i - 1] * d[i] <= 0) m[i] = 0;
+      else { var w1 = 2 * h[i] + h[i - 1], w2 = h[i] + 2 * h[i - 1]; m[i] = (w1 + w2) / (w1 / d[i - 1] + w2 / d[i]); }
+    }
+    return function (t) {
+      if (t <= x[0]) return v[0]; if (t >= x[n - 1]) return v[n - 1];
+      var lo = 0, hi = n - 1;
+      while (hi - lo > 1) { var mi = (lo + hi) >> 1; if (x[mi] <= t) lo = mi; else hi = mi; }
+      var hh = x[hi] - x[lo], s = (t - x[lo]) / hh, s2 = s * s, s3 = s2 * s;
+      return (2 * s3 - 3 * s2 + 1) * v[lo] + (s3 - 2 * s2 + s) * hh * m[lo] + (3 * s2 - 2 * s3) * v[hi] + (s3 - s2) * hh * m[hi];
+    };
+  }
+  function layout() {   // Zeilenumbruch auslesen: Zeile k steht genau im Streifen, wenn der Text um k·Zeilenhöhe nach oben geschoben ist
+    LH = parseFloat(getComputedStyle(ftext).lineHeight) || 33;
+    var rand = Math.max(0, (ftext.clientHeight - LH) / 2) + "px";
+    inhalt.style.paddingTop = rand; inhalt.style.paddingBottom = rand;
+    var basis = spans.length ? spans[0].offsetTop : 0;
+    zeileVon = spans.map(function (s) { return Math.round((s.offsetTop - basis) / LH); });
+    zeilen = zeileVon.length ? zeileVon[zeileVon.length - 1] + 1 : 1;
+    kurveBauen(); sprung = true;
+  }
+  function kurveBauen() {   // Stützstellen: Mitte der Sprechzeit jeder Zeile ↦ ihre Lage
+    kurve = null; if (!daten) return;
+    var start = [], k;
+    for (k = 0; k < zeilen; k++) start.push(Infinity);
+    daten.t.forEach(function (t, i) { var z = zeileVon[daten.map ? daten.map[i] : i]; if (z !== undefined && t < start[z]) start[z] = t; });
+    for (k = 0; k < zeilen; k++) start[k] = Math.max(isFinite(start[k]) ? start[k] : 0, k ? start[k - 1] : 0);
+    var xs = [], vs = [];
+    for (k = 0; k < zeilen; k++) {
+      var mitte = (start[k] + (k + 1 < zeilen ? start[k + 1] : daten.ende)) / 2;
+      if (xs.length && mitte <= xs[xs.length - 1]) mitte = xs[xs.length - 1] + 0.01;
+      xs.push(mitte); vs.push(k * LH);
+    }
+    kurve = pchip(xs, vs);
+  }
+  function setze(v) { y = Math.max(0, Math.min((zeilen - 1) * LH, v)); inhalt.style.transform = "translate3d(0," + (-y).toFixed(2) + "px,0)"; }
+  function wortBei(t) {   // letztes Wort, das bis t begonnen hat
+    var lo = 0, hi = daten.t.length - 1, r = -1;
+    while (lo <= hi) { var mi = (lo + hi) >> 1; if (daten.t[mi] <= t) { r = mi; lo = mi + 1; } else hi = mi - 1; }
+    return r;
+  }
+  function fuelle(t) {   // gelesene Wörter hell, das aktuelle anteilig (Wortende geschätzt aus der Wortlänge), der Rest grau
+    var i = wortBei(t + 0.03), j = i < 0 ? -1 : (daten.map ? daten.map[i] : i);
+    if (j !== jetzt) {
+      spans.forEach(function (s, k) { s.classList.toggle("vorbei", k < j); s.classList.toggle("jetzt", k === j); if (k !== j) s.style.removeProperty("--f"); });
+      jetzt = j;
+    }
+    if (i < 0) return;
+    var t0 = daten.t[i], t1 = i + 1 < daten.t.length ? daten.t[i + 1] : daten.ende;
+    var e = Math.min(t1, t0 + 0.08 + 0.07 * daten.w[i].length);
+    spans[j].style.setProperty("--f", Math.max(0, Math.min(1, (t - t0) / Math.max(0.05, e - t0))).toFixed(3));
+  }
+  function medienzeit(now) {   // currentTime kommt in Stufen; zwischen zwei Stufen mit dem Tempo hochrechnen
+    var t = aktiv.currentTime;
+    if (aktiv.paused || t !== mtWert) { mtWert = t; mtZeit = now; return t; }
+    return t + Math.min(0.3, (now - mtZeit) / 1000) * (aktiv.playbackRate || 1);
+  }
+  function bild(now) {
+    raf = 0; if (!dlg.open) return;
+    var dt = letzt ? Math.min(0.1, (now - letzt) / 1000) : 0.016; letzt = now;
+    if (aktiv && daten && kurve) {
+      var t = medienzeit(now); fuelle(t);
+      if (!ziehen && Date.now() - eingabe > 3000) {
+        var ziel = kurve(t), d = ziel - y;
+        if (sprung || reduziert) { setze(ziel); sprung = false; }
+        else setze(Math.abs(d) < 0.05 ? ziel : y + d * (1 - Math.exp(-dt / (Math.abs(d) > LH ? 0.2 : 0.08))));   // nach Sprung oder Blättern sanft zurückgleiten
+      }
+    }
+    if (now - letzteZeit > 250) { letzteZeit = now; restzeit(); }
+    raf = requestAnimationFrame(bild);
+  }
+  function waehle(a) {
+    if (aktiv === a) return;
+    aktiv = a; daten = DATEN[a.id] || null; jetzt = -2; ftitel.textContent = titelVon(a); playSymbol();
+    spans.forEach(function (s) { s.classList.remove("vorbei", "jetzt"); s.style.removeProperty("--f"); });
+    kurveBauen(); sprung = true;
+  }
+  function oeffne() {
+    clearTimeout(endeTimer); if (!daten) return;
+    if (!dlg.open) {
+      try { dlg.showModal(); } catch (e) { dlg.setAttribute("open", ""); }
+      dlg.focus({ preventScroll: true });   // Fokus aufs Fenster, kein Rahmen um einen Knopf
+      layout();
+    }
+    knoepfe(); restzeit(); eingabe = 0;
+    if (!raf) { letzt = 0; raf = requestAnimationFrame(bild); }
+  }
+  function schliesse() { clearTimeout(endeTimer); if (dlg.open) { try { dlg.close(); } catch (e) { dlg.removeAttribute("open"); } } knoepfe(); }
+  dlg.addEventListener("close", knoepfe);
+  document.querySelectorAll("audio").forEach(function (a) {
+    a.addEventListener("play", function () {
+      document.querySelectorAll("audio").forEach(function (b) { if (b !== a && !b.paused) b.pause(); });   // immer nur eine Fassung
+      waehle(a); playSymbol();
+      if (!daten) { schliesse(); return; }
+      oeffne();
+    });
+    a.addEventListener("pause", function () { if (a === aktiv) { playSymbol(); restzeit(); } });
+    a.addEventListener("ended", function () {
+      if (a !== aktiv) return;
+      playSymbol(); restzeit();
+      endeTimer = setTimeout(function () { if (a.paused) schliesse(); }, 1500);   // letztes Wort kurz stehen lassen
+    });
+  });
+  // Knopf „Mitlesen“ neben der Stimme: öffnet den Lesemodus für diese Fassung, ohne sie gleich zu starten
+  document.querySelectorAll(".mitlesen").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var a = document.getElementById(b.dataset.audio);
+      if (aktiv && aktiv !== a && !aktiv.paused) aktiv.pause();
+      waehle(a); oeffne();
+    });
+  });
+  fplay.addEventListener("click", function () { if (aktiv) { if (aktiv.paused) aktiv.play(); else aktiv.pause(); } });
+  document.getElementById("lesen-zu").addEventListener("click", schliesse);
+  dlg.addEventListener("click", function (e) {   // Tippen neben das Fenster (auf den abgedunkelten Hintergrund) schließt
+    if (e.target !== dlg) return;
+    var r = dlg.getBoundingClientRect();
+    if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) schliesse();
+  });
+  // Selbst blättern: mit dem Finger ziehen oder Mausrad; nach 3 s Ruhe gleitet der Text zurück zur gesprochenen Stelle
+  ftext.addEventListener("pointerdown", function (e) { ziehen = { id: e.pointerId, y0: e.clientY, s0: y, bewegt: false }; });
+  ftext.addEventListener("pointermove", function (e) {
+    if (!ziehen || e.pointerId !== ziehen.id) return;
+    var dy = e.clientY - ziehen.y0;
+    if (!ziehen.bewegt && Math.abs(dy) > 6) { ziehen.bewegt = true; try { ftext.setPointerCapture(e.pointerId); } catch (x) {} }
+    if (ziehen.bewegt) { setze(ziehen.s0 - dy); eingabe = Date.now(); }
+  });
+  ["pointerup", "pointercancel"].forEach(function (ev) {
+    ftext.addEventListener(ev, function () { if (ziehen && ziehen.bewegt) { klickSperre = Date.now(); eingabe = Date.now(); } ziehen = null; });
+  });
+  ftext.addEventListener("wheel", function (e) { e.preventDefault(); setze(y + e.deltaY); eingabe = Date.now(); }, { passive: false });
+  ftext.addEventListener("click", function (e) {   // Wort antippen: dorthin springen und weiterhören
+    if (Date.now() - klickSperre < 400) return;
+    var s = e.target.closest(".lw"); if (!s || !aktiv || !daten) return;
+    var j = +s.dataset.i, i = j;
+    if (daten.map) { i = daten.map.indexOf(j); if (i < 0) { i = 0; while (i < daten.map.length - 1 && daten.map[i] < j) i++; } }
+    var los = function () { aktiv.currentTime = daten.t[i]; eingabe = 0; };
+    if (aktiv.readyState >= 1) los(); else aktiv.addEventListener("loadedmetadata", los, { once: true });
+    if (aktiv.paused) aktiv.play();
+  });
+  window.addEventListener("resize", function () { if (dlg.open) layout(); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { if (dlg.open) layout(); });
+})();
+</script>
