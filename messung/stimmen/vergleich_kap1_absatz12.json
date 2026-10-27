@@ -1,0 +1,67 @@
+{
+ "v_lupert": {
+  "name": "Lupert (roh)",
+  "abstand": "5,34",
+  "tempo": 2.9527104959630903,
+  "pausen": 8.447729672650475,
+  "wph": 11.181818181818182,
+  "schw": 0.29790938219532465,
+  "mel": 12.998267435462363,
+  "abfall": -3.115441406378324,
+  "f0": 118.35406417283076,
+  "dauer": 47.74,
+  "pop": "<p>Abstand 5,34. 0 heißt: alle sechs Messwerte liegen im Zielbereich. Je kleiner, desto natürlicher. Das Tempo misst sich an deinem Wunsch von 2,6 bis 3,0 Wörtern pro Sekunde, die übrigen Werte an sieben echten Vorlesern.</p><p>1 von 6 Werten liegen im Zielbereich. Abweichungen:</p><ul><li>macht zu wenig Pausen: 8,4 statt 13,4 bis 20,2 % Pausenanteil</li><li>zu viele Wörter ohne Pause am Stück: 11,18 statt 4,35 bis 7,41 Wörter je Phrase</li><li>Pausen zu gleichförmig, Schwankung der Pausenlängen: 0,30 statt 0,62 bis 0,89</li><li>Satzmelodie zu lebhaft: 13,0 statt 10,0 bis 11,7 Halbtöne</li><li>Phrasenenden fallen zu stark ab: −3,12 statt −1,58 bis −0,51 Halbtöne je Sekunde</li></ul>"
+ },
+ "v_christian": {
+  "name": "Christian",
+  "abstand": "2,45",
+  "tempo": 2.6958719460825606,
+  "pausen": 11.019490254872563,
+  "wph": 8.0,
+  "schw": 0.48653725132057324,
+  "mel": 13.323518026216753,
+  "abfall": -2.102128063900031,
+  "f0": 91.45692604871013,
+  "dauer": 53.630438,
+  "pop": "<p>Abstand 2,45. 0 heißt: alle sechs Messwerte liegen im Zielbereich. Je kleiner, desto natürlicher. Das Tempo misst sich an deinem Wunsch von 2,6 bis 3,0 Wörtern pro Sekunde, die übrigen Werte an sieben echten Vorlesern.</p><p>1 von 6 Werten liegen im Zielbereich. Abweichungen:</p><ul><li>macht zu wenig Pausen: 11,0 statt 13,4 bis 20,2 % Pausenanteil</li><li>zu viele Wörter ohne Pause am Stück: 8,00 statt 4,35 bis 7,41 Wörter je Phrase</li><li>Pausen zu gleichförmig, Schwankung der Pausenlängen: 0,49 statt 0,62 bis 0,89</li><li>Satzmelodie zu lebhaft: 13,3 statt 10,0 bis 11,7 Halbtöne</li><li>Phrasenenden fallen zu stark ab: −2,10 statt −1,58 bis −0,51 Halbtöne je Sekunde</li></ul>"
+ },
+ "v_brian": {
+  "name": "Brian",
+  "abstand": "5,27",
+  "tempo": 3.0403800475059377,
+  "pausen": 12.87251655629139,
+  "wph": 7.176470588235294,
+  "schw": 0.3441415874945316,
+  "mel": 14.795595062884956,
+  "abfall": -4.035695113813872,
+  "f0": 105.96864146650958,
+  "dauer": 48.509375,
+  "pop": "<p>Abstand 5,27. 0 heißt: alle sechs Messwerte liegen im Zielbereich. Je kleiner, desto natürlicher. Das Tempo misst sich an deinem Wunsch von 2,6 bis 3,0 Wörtern pro Sekunde, die übrigen Werte an sieben echten Vorlesern.</p><p>1 von 6 Werten liegen im Zielbereich. Abweichungen:</p><ul><li>schneller als dein Wunschtempo: 3,04 statt 2,60 bis 3,00 Wörter pro Sekunde</li><li>macht zu wenig Pausen: 12,9 statt 13,4 bis 20,2 % Pausenanteil</li><li>Pausen zu gleichförmig, Schwankung der Pausenlängen: 0,34 statt 0,62 bis 0,89</li><li>Satzmelodie zu lebhaft: 14,8 statt 10,0 bis 11,7 Halbtöne</li><li>Phrasenenden fallen zu stark ab: −4,04 statt −1,58 bis −0,51 Halbtöne je Sekunde</li></ul>"
+ },
+ "v_ralf": {
+  "name": "Ralf Benz",
+  "abstand": "1,30",
+  "tempo": 3.00681230913789,
+  "pausen": 16.101694915254235,
+  "wph": 6.105263157894737,
+  "schw": 0.4957099898387856,
+  "mel": 13.133270627863872,
+  "abfall": -1.144396383919008,
+  "f0": 124.08098112724781,
+  "dauer": 51.069375,
+  "pop": "<p>Abstand 1,30. 0 heißt: alle sechs Messwerte liegen im Zielbereich. Je kleiner, desto natürlicher. Das Tempo misst sich an deinem Wunsch von 2,6 bis 3,0 Wörtern pro Sekunde, die übrigen Werte an sieben echten Vorlesern.</p><p>3 von 6 Werten liegen im Zielbereich. Abweichungen:</p><ul><li>schneller als dein Wunschtempo: 3,01 statt 2,60 bis 3,00 Wörter pro Sekunde</li><li>Pausen zu gleichförmig, Schwankung der Pausenlängen: 0,50 statt 0,62 bis 0,89</li><li>Satzmelodie zu lebhaft: 13,1 statt 10,0 bis 11,7 Halbtöne</li></ul>"
+ },
+ "v_robert": {
+  "name": "Robert Ranger",
+  "abstand": "3,98",
+  "tempo": 2.976744186046512,
+  "pausen": 12.743506493506493,
+  "wph": 7.5,
+  "schw": 0.344022756904312,
+  "mel": 15.96630095190769,
+  "abfall": -1.9925939156493848,
+  "f0": 109.19878228491412,
+  "dauer": 49.475938,
+  "pop": "<p>Abstand 3,98. 0 heißt: alle sechs Messwerte liegen im Zielbereich. Je kleiner, desto natürlicher. Das Tempo misst sich an deinem Wunsch von 2,6 bis 3,0 Wörtern pro Sekunde, die übrigen Werte an sieben echten Vorlesern.</p><p>1 von 6 Werten liegen im Zielbereich. Abweichungen:</p><ul><li>macht zu wenig Pausen: 12,7 statt 13,4 bis 20,2 % Pausenanteil</li><li>zu viele Wörter ohne Pause am Stück: 7,50 statt 4,35 bis 7,41 Wörter je Phrase</li><li>Pausen zu gleichförmig, Schwankung der Pausenlängen: 0,34 statt 0,62 bis 0,89</li><li>Satzmelodie zu lebhaft: 16,0 statt 10,0 bis 11,7 Halbtöne</li><li>Phrasenenden fallen zu stark ab: −1,99 statt −1,58 bis −0,51 Halbtöne je Sekunde</li></ul>"
+ }
+}

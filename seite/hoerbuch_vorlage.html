@@ -46,6 +46,11 @@
   .teil-dauer { color: var(--grau); font-variant-numeric: tabular-nums; }
   .teil[aria-current="true"] .teil-zeichen { border-color: var(--bronze); background: var(--bronze); color: var(--tafel); }
   .teil[aria-current="true"] .teil-name b { color: var(--bronze); }
+  .vergleich { width: 100%; max-width: 420px; margin-top: 30px; display: grid; gap: 6px; text-align: left; }
+  .vergleich h2 { margin: 0; font: 600 12px/1.3 var(--ui); letter-spacing: .14em; text-transform: uppercase; color: var(--bronze); }
+  .vergleich p { margin: 0; font: 400 14px/1.45 var(--ui); color: var(--grau); }
+  .vergleich .teile { margin-top: 8px; }
+  .teil-mess { display: block; margin-top: 2px; font-size: 13px; color: var(--grau); }
   .nurlesen { margin-top: 10px; border: 0; background: transparent; color: var(--bronze); font: 600 15px/1 var(--ui); padding: 10px 12px; cursor: pointer; }
   /* Lesemodus: Fenster in der Bildschirmmitte, Hintergrund stark abgedunkelt */
   html:has(.lesen[open]) { overflow: hidden; }
@@ -106,6 +111,7 @@
   <ol class="teile" id="teile">
 {{LISTE}}
   </ol>
+{{VERGLEICH}}
   <button type="button" class="nurlesen" id="nurlesen">Nur den Text ansehen</button>
   <audio id="ton" preload="metadata"></audio>
 </main>
@@ -131,6 +137,7 @@
 <script>
 (function () {
   var D = JSON.parse(document.getElementById("daten").textContent), TEMPO = D.tempo, TEILE = D.teile;
+  var ALLE = TEILE.concat(D.vergleich || []), rate = TEMPO;   // Vergleichsstimmen hinter den Hörbuch-Teilen, mit eigenem Tempo
   var a = document.getElementById("ton"), start = document.getElementById("start"), nurlesen = document.getElementById("nurlesen");
   var dlg = document.getElementById("lesen"), ftext = document.getElementById("lesen-text"), inhalt = document.getElementById("lesen-inhalt");
   var ftitel = document.getElementById("lesen-titel"), fplay = document.getElementById("lesen-play");
@@ -146,8 +153,8 @@
   var PAUSE = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="13.5" y="5" width="4" height="14" rx="1" fill="currentColor"/></svg>';
   function mmss(s) { var m = Math.floor(s / 60), r = Math.floor(s % 60); return m + ":" + (r < 10 ? "0" : "") + r; }
 
-  // Tempo 0,95 bei gleicher Tonhöhe; manche Browser setzen es beim Laden zurück, darum bei jedem Start erneut
-  function tempo() { try { a.preservesPitch = true; a.webkitPreservesPitch = true; } catch (e) {} a.defaultPlaybackRate = TEMPO; a.playbackRate = TEMPO; }
+  // Tempo (Hörbuch 0,95) bei gleicher Tonhöhe; manche Browser setzen es beim Laden zurück, darum bei jedem Start erneut
+  function tempo() { try { a.preservesPitch = true; a.webkitPreservesPitch = true; } catch (e) {} a.defaultPlaybackRate = rate; a.playbackRate = rate; }
   a.addEventListener("loadedmetadata", tempo);
   var sitzung = "mediaSession" in navigator && window.MediaMetadata;
   if (sitzung) {   // Sperrbildschirm: Pause/Weiter
@@ -158,14 +165,14 @@
   }
   function waehle(k) {   // Teil k laden: Ton, Text, Liste, Sperrbildschirm
     if (k === n) return;
-    n = k; T = TEILE[k];
+    n = k; T = ALLE[k]; rate = T.tempo || TEMPO;
     a.src = "audio/" + T.datei; tempo();
     texte.forEach(function (el, i) { el.hidden = i !== k; });
     spans = Array.prototype.slice.call(texte[k].querySelectorAll(".lw"));
     spans.forEach(function (s) { s.classList.remove("vorbei"); s.style.removeProperty("--f"); });
     jetzt = -2; kurve = null; mtWert = -1;
     ftitel.textContent = T.titel + " · " + T.stelle;
-    listeKnoepfe.forEach(function (b, i) { b.setAttribute("aria-current", i === k ? "true" : "false"); });
+    listeKnoepfe.forEach(function (b) { b.setAttribute("aria-current", +b.dataset.n === k ? "true" : "false"); });
     if (sitzung) { try { navigator.mediaSession.metadata = new MediaMetadata({ title: "Vom glücklichen Leben, " + T.titel, artist: "Seneca", album: "De vita beata" }); } catch (e) {} }
     if (dlg.open) layout();
   }
@@ -174,10 +181,10 @@
     var wort = still ? (angefangen ? "Weiter" : "Abspielen") : "Pause";
     start.innerHTML = still ? PLAY : PAUSE; start.setAttribute("aria-label", wort); start.classList.toggle("spielt-nicht", still);
     fplay.innerHTML = (still ? PLAY : PAUSE) + "<span>" + wort + "</span>"; fplay.setAttribute("aria-label", wort);
-    listeKnoepfe.forEach(function (b, i) {
-      var spielt = i === n && !still;
+    listeKnoepfe.forEach(function (b) {
+      var i = +b.dataset.n, spielt = i === n && !still;
       b.querySelector(".teil-zeichen").innerHTML = spielt ? PAUSE : PLAY;
-      b.setAttribute("aria-label", TEILE[i].titel + ", " + TEILE[i].stelle + (spielt ? ", anhalten" : ", abspielen"));
+      b.setAttribute("aria-label", ALLE[i].titel + ", " + ALLE[i].stelle + (spielt ? ", anhalten" : ", abspielen"));
     });
     dauerEl.textContent = n < 0 ? DAUER_TEXT
       : !still ? T.titel + " läuft · zum Anhalten tippen"
@@ -281,19 +288,20 @@
   }
   dlg.addEventListener("close", function () { if (!a.paused) a.pause(); });   // auch beim Schließen mit Escape
 
-  a.addEventListener("play", function () { if (Math.abs(a.playbackRate - TEMPO) > 0.001) tempo(); symbole(); oeffne(); });
+  a.addEventListener("play", function () { if (Math.abs(a.playbackRate - rate) > 0.001) tempo(); symbole(); oeffne(); });
   a.addEventListener("pause", function () { symbole(); restzeit(); });
   a.addEventListener("ended", function () {   // nächster Teil schließt nahtlos an; nach dem letzten schließt der Lesemodus
     if (n + 1 < TEILE.length) { waehle(n + 1); a.play(); return; }
     symbole(); restzeit(); endeTimer = setTimeout(function () { if (a.paused) schliesse(); }, 1500);
   });
   function umschalten() {   // nach dem Ende des letzten Teils beginnt der große Knopf wieder bei Teil 1
-    if (n < 0 || (a.ended && n + 1 >= TEILE.length)) waehle(0);
+    if (n < 0 || (a.ended && n === TEILE.length - 1)) waehle(0);
     if (a.paused) a.play(); else a.pause();
   }
   start.addEventListener("click", umschalten);
   fplay.addEventListener("click", umschalten);
-  listeKnoepfe.forEach(function (b, i) {
+  listeKnoepfe.forEach(function (b) {
+    var i = +b.dataset.n;
     b.addEventListener("click", function () { if (i === n) { umschalten(); return; } waehle(i); a.play(); });
   });
   nurlesen.addEventListener("click", oeffne);
