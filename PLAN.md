@@ -80,10 +80,12 @@ Satzende −1,1 HT/s). Teil 1 und 2 werden nach der Entscheidung mit der neuen S
 Vorgehen, sobald ein ElevenLabs-API-Schlüssel als Umgebungsvariable `ELEVENLABS_API_KEY` vorliegt (ohne Anmeldung
 liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
 
-1. Bibliothek abfragen (`GET /v1/shared-voices`, Sprache Deutsch, Einsatz Erzählung/Hörbuch, nach Nutzung sortiert),
+1. Bibliothek abfragen (`GET /v1/shared-voices`, Sprache Deutsch, nur Männerstimmen, Einsatz Erzählung/Hörbuch, nach Nutzung sortiert),
    Hörproben (`preview_url`) laden; das kostet keine Credits.
 2. Jede Probe messen wie in `werkzeuge/prosodie.py`: Tempo, Pausen, Melodie-Spannweite, Abfall am Satzende, Tonlage,
    Stimmqualität (HNR); Sprache per Whisper prüfen. Satzmelodie und Abfall zählen am meisten, weil sie sich nachträglich
    nicht korrigieren lassen; Pausen und Tempo schon.
-3. Die besten 8 bis 10 mit ihren Hörproben in die Vorschau-App, Auswahl durch den Auftraggeber.
+3. Die besten 8 bis 10 mit ihren Hörproben in die Vorschau-App. Der Auftraggeber kann nicht benennen, was ihn stört;
+   darum Vorliebe aus Paarvergleichen ermitteln (A/B-Duelle, Bradley-Terry-Schätzung) und gegen die Messwerte legen,
+   um gezielt weiterzusuchen. Erste Stufe: Rangfolge der fünf bisherigen Stimmen.
 4. Die 2 bis 3 Favoriten mit Kapitel 1, Absatz 1–2 erzeugen (je etwa 800 Credits) und wie oben vergleichen.
