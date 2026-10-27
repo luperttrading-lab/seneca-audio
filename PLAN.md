@@ -41,7 +41,7 @@ Hördauer geschätzt aus Teil 1 (0,65 s je lateinisches Wort bei Tempo 0,95).
 |---|---|---|---|---|
 | 1 | 1,1–2 | 162 | 1:45 | fertig, öffentlich (1:47) |
 | 2 | 1,3–5 | 181 | 1:57 | fertig, öffentlich (1:51) |
-| 3 | 2,1–4 | 246 | 2:39 |  |
+| 3 | 2,1–4 | 246 | 2:39 | Übersetzung fertig |
 | 4 | 3,1–4 | 227 | 2:27 |  |
 | 5 | 4,1–5 | 308 | 3:20 |  |
 | 6 | 5,1–4 + 6,1–2 | 255 | 2:45 |  |
