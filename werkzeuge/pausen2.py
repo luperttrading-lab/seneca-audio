@@ -50,6 +50,7 @@ for i, w in enumerate(W[:-1]):
     if lang < 0.06 or beststart is None: continue
     soll = ZIEL["absatz"] if (i in ABSATZ and zeichen in ".?!") else ZIEL[zeichen]
     if lang >= soll: continue
+    if zeichen == "," and lang < ZIEL.get("komma_ab", 0): continue   # Komma ohne echte Sprechpause bleibt, wie gesprochen
     # Einfügepunkt: leisteste Stelle, an der die Überblendung ganz in der Pause liegt (Wortränder unberührt)
     xf = int(min(0.025, max(0.005, lang / 2 - 0.005)) * SR)
     lo, hi = beststart * n + xf, (beststart + best) * n - xf
