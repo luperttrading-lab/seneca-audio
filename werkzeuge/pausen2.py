@@ -8,7 +8,7 @@ ABSATZ = set()   # Wortnummern am Absatzende (aus der Textdatei, 5. Argument; Ge
 if len(sys.argv) > 5:
     k = -1
     for para in open(sys.argv[5], encoding="utf-8").read().strip().split("\n\n"):
-        k += sum(1 for t in para.split() if t != "–"); ABSATZ.add(k)
+        k += sum(1 for t in para.split() if any(c.isalnum() for c in t)); ABSATZ.add(k)   # „–“ und „–,“ sind keine Wörter
 SR = 44100   # Überblendung je Pause bis 25 ms, ganz innerhalb der Pause
 rng = np.random.default_rng(1)
 x = np.frombuffer(subprocess.run(["ffmpeg","-loglevel","error","-i",src,"-ac","1","-ar",str(SR),"-f","s16le","-"],capture_output=True,check=True).stdout, np.int16).astype(np.float64)/32768
@@ -36,6 +36,7 @@ for i, w in enumerate(W[:-1]):
     z = w["w"].rstrip("»«“\"'")
     zeichen = next((c for c in ["–", ".", "?", "!", ":", ";", ","] if z.endswith(c)), None)
     if not zeichen: continue
+    if "–" in z and zeichen == ",": zeichen = "–"          # „Verhängnis –,“: Gedankenstrich zählt, nicht das Komma
     a0, a1 = int((w["s"] + 0.5*(W[i+1]["s"]-w["s"])) / 0.01), int(W[i+1]["s"] / 0.01) + 5
     a0 = max(int(w["s"]/0.01), a0 - 40)
     best, cur, beststart, start = 0, 0, None, None

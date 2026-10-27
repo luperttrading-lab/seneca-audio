@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="de" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Seneca · Vom glücklichen Leben</title>
+<meta name="description" content="Seneca, De vita beata, in einer Neufassung der Übersetzung: zum Hören und Mitlesen.">
+<meta property="og:title" content="Seneca · Vom glücklichen Leben">
+<meta property="og:description" content="Neufassung der Übersetzung zum Hören und Mitlesen ({{UMFANG}})">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#161a19">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  /* Hörbuch in Teilen: ein großer Knopf startet oder setzt fort, die Liste wählt einen Teil, am Ende eines Teils geht es mit dem nächsten weiter */
+  :root {
+    --stein: #161a19; --tafel: #1e2422; --tinte: #e3e8e5; --grau: #9aa5a0; --linie: #333b38; --bronze: #d29f62; --bronze-hell: #3a2c1c;
+    --display: "Cinzel", "Trajan Pro", Georgia, serif; --text: "Literata", Georgia, "Times New Roman", serif;
+    --ui: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body { background: var(--stein); color: var(--tinte); font: 17px/1.6 var(--text); min-height: 100dvh; display: grid; place-items: center; }
+  [hidden] { display: none !important; }
+  button { touch-action: manipulation; font: inherit; color: inherit; }
+  button:focus-visible { outline: 2px solid var(--bronze); outline-offset: 3px; }
+  .start { width: 100%; max-width: 560px; padding: 48px max(24px, env(safe-area-inset-right, 0px)) 56px max(24px, env(safe-area-inset-left, 0px));
+    display: grid; justify-items: center; text-align: center; gap: 10px; }
+  .eyebrow { font: 600 12px/1.3 var(--ui); letter-spacing: .14em; text-transform: uppercase; color: var(--bronze); }
+  h1 { font: 600 clamp(30px, 8vw, 44px)/1.15 var(--display); letter-spacing: .04em; margin: 0; text-wrap: balance; }
+  .lead { margin: 4px 0 0; color: var(--grau); max-width: 34ch; }
+  .gross { margin-top: 28px; width: 96px; height: 96px; border-radius: 50%; border: 0; background: var(--bronze); color: var(--tafel);
+    display: grid; place-items: center; cursor: pointer; box-shadow: 0 10px 30px rgba(0, 0, 0, .25); }
+  .gross svg { width: 40px; height: 40px; }
+  .gross.spielt-nicht svg { margin-left: 4px; }   /* Dreieck optisch mittig */
+  .dauer { margin: 14px 0 0; font: 500 14px/1.4 var(--ui); color: var(--grau); font-variant-numeric: tabular-nums; }
+  .teile { list-style: none; margin: 22px 0 0; padding: 0; width: 100%; max-width: 420px; display: grid; border-top: 1px solid var(--linie); }
+  .teile li { border-bottom: 1px solid var(--linie); }
+  .teil { width: 100%; min-height: 52px; border: 0; background: transparent; cursor: pointer; padding: 10px 4px;
+    display: grid; grid-template-columns: 28px minmax(0, 1fr) auto; align-items: center; gap: 10px; text-align: left; font: 500 15px/1.3 var(--ui); }
+  .teil-zeichen { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; border: 1.5px solid var(--linie); color: var(--grau); }
+  .teil-zeichen svg { width: 13px; height: 13px; }
+  .teil-name b { font-weight: 600; } .teil-name span { color: var(--grau); }
+  .teil-dauer { color: var(--grau); font-variant-numeric: tabular-nums; }
+  .teil[aria-current="true"] .teil-zeichen { border-color: var(--bronze); background: var(--bronze); color: var(--tafel); }
+  .teil[aria-current="true"] .teil-name b { color: var(--bronze); }
+  .nurlesen { margin-top: 10px; border: 0; background: transparent; color: var(--bronze); font: 600 15px/1 var(--ui); padding: 10px 12px; cursor: pointer; }
+  /* Lesemodus: Fenster in der Bildschirmmitte, Hintergrund stark abgedunkelt */
+  html:has(.lesen[open]) { overflow: hidden; }
+  .lesen { width: min(680px, calc(100% - 32px)); max-width: none; max-height: calc(100dvh - 32px); margin: auto;
+    padding: 14px 20px 18px; border: 1px solid var(--linie); border-radius: 16px; background: var(--tafel); color: var(--tinte);
+    box-shadow: 0 24px 70px rgba(0, 0, 0, .55); }
+  .lesen[open] { display: grid; gap: 14px; animation: lesen-auf .22s ease-out; }
+  .lesen:focus { outline: none; }
+  .lesen::backdrop { background: rgba(6, 8, 8, .88); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+  @keyframes lesen-auf { from { opacity: 0; transform: translateY(10px) scale(.98); } }
+  .lesen-kopf { display: flex; align-items: center; gap: 10px; min-height: 40px; }
+  .lesen-kopf span { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    font: 600 11px/1.2 var(--ui); letter-spacing: .12em; text-transform: uppercase; color: var(--bronze); }
+  .lesen-knopf { flex: 0 0 auto; border: 0; border-radius: 50%; display: grid; place-items: center; cursor: pointer; padding: 0; }
+  .lesen-zu { width: 40px; height: 40px; margin-right: -10px; background: transparent; color: var(--grau); }
+  .lesen-zu svg { width: 22px; height: 22px; }
+  .lesen-play { height: 48px; padding: 0 18px 0 14px; border-radius: 999px; display: inline-flex; gap: 8px; background: var(--bronze); color: var(--tafel);
+    font: 600 16px/1 var(--ui); min-width: 112px; justify-content: center; }
+  .lesen-play svg { width: 22px; height: 22px; flex: 0 0 auto; }
+  .lesen-text { position: relative; font: 400 22px/33px var(--text); height: 198px; max-height: calc(100dvh - 200px); overflow: hidden;
+    touch-action: none; user-select: none; -webkit-user-select: none;
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,.18) 0%, #000 32%, #000 68%, rgba(0,0,0,.18) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,.18) 0%, #000 32%, #000 68%, rgba(0,0,0,.18) 100%); }
+  .lesen-band { position: absolute; left: -10px; right: -10px; top: 50%; height: 54px; margin-top: -27px; border-radius: 10px; pointer-events: none;
+    background: linear-gradient(to bottom, transparent 0%, var(--bronze-hell) 26%, var(--bronze-hell) 74%, transparent 100%); }
+  /* kurzes Zeichen in der Textmitte, wenn Antippen des Textes anhält oder weiterspielt */
+  .lesen-zeichen { position: absolute; left: 50%; top: 50%; width: 72px; height: 72px; margin: -36px 0 0 -36px; border-radius: 50%; z-index: 2;
+    display: grid; place-items: center; background: rgba(0, 0, 0, .55); color: #fff; opacity: 0; pointer-events: none; }
+  .lesen-zeichen svg { width: 32px; height: 32px; }
+  .lesen-zeichen.blink { animation: zeichen .7s ease-out; }
+  @keyframes zeichen { 0% { opacity: 0; transform: scale(.85); } 20% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: scale(1.1); } }
+  .lesen-inhalt { position: relative; will-change: transform; }
+  .lesen-text p { margin: 0; hyphens: auto; -webkit-hyphens: auto; text-align: left; }
+  .lesen-text p + p { text-indent: 1.4em; }
+  .lesen-fuss { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 14px; }
+  .lesen-balken { height: 4px; border-radius: 2px; background: var(--linie); overflow: hidden; }
+  .lesen-balken span { display: block; height: 100%; width: 0; background: var(--bronze); }
+  .lesen-zeit { font: 500 14px/1 var(--ui); font-variant-numeric: tabular-nums; color: var(--grau); min-width: 4.2em; text-align: right; }
+  .lw { color: var(--grau); cursor: pointer; }
+  .lw.vorbei { color: var(--tinte); }
+  /* Fließende Markierung: das gerade gesprochene Wort färbt sich mit weicher Kante von links nach rechts (--f von 0 bis 1) */
+  @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+    .lesen-text .lw { color: transparent; -webkit-background-clip: text; background-clip: text;
+      background-image: linear-gradient(90deg, var(--tinte) calc(var(--f, 0) * (100% + 1em) - 1em), var(--grau) calc(var(--f, 0) * (100% + 1em)));
+      -webkit-box-decoration-break: slice; box-decoration-break: slice; }
+    .lesen-text .lw.vorbei { --f: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) { .lesen[open] { animation: none; } }
+</style>
+</head>
+<body>
+<main class="start">
+  <span class="eyebrow">Seneca · De vita beata</span>
+  <h1>Vom glücklichen Leben</h1>
+  <p class="lead">Neufassung der Übersetzung, zum Hören und Mitlesen</p>
+  <button type="button" class="gross spielt-nicht" id="start" aria-label="Abspielen"></button>
+  <p class="dauer" id="dauer">{{UMFANG}} · der Text läuft beim Hören mit</p>
+  <ol class="teile" id="teile">
+{{LISTE}}
+  </ol>
+  <button type="button" class="nurlesen" id="nurlesen">Nur den Text ansehen</button>
+  <audio id="ton" preload="metadata"></audio>
+</main>
+<dialog class="lesen" id="lesen" aria-labelledby="lesen-titel" tabindex="-1">
+  <div class="lesen-kopf">
+    <span id="lesen-titel">Vom glücklichen Leben</span>
+    <button type="button" class="lesen-knopf lesen-zu" id="lesen-zu" aria-label="Schließen"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div class="lesen-text" id="lesen-text" lang="de">
+    <div class="lesen-band" aria-hidden="true"></div>
+    <div class="lesen-zeichen" id="lesen-zeichen" aria-hidden="true"></div>
+    <div class="lesen-inhalt" id="lesen-inhalt">
+{{TEXTE}}
+    </div>
+  </div>
+  <div class="lesen-fuss">
+    <button type="button" class="lesen-knopf lesen-play" id="lesen-play" aria-label="Abspielen"></button>
+    <div class="lesen-balken" aria-hidden="true"><span id="lesen-balken"></span></div>
+    <span class="lesen-zeit" id="lesen-zeit" aria-label="Restzeit"></span>
+  </div>
+</dialog>
+<script type="application/json" id="daten">{{DATEN}}</script>
+<script>
+(function () {
+  var D = JSON.parse(document.getElementById("daten").textContent), TEMPO = D.tempo, TEILE = D.teile;
+  var a = document.getElementById("ton"), start = document.getElementById("start"), nurlesen = document.getElementById("nurlesen");
+  var dlg = document.getElementById("lesen"), ftext = document.getElementById("lesen-text"), inhalt = document.getElementById("lesen-inhalt");
+  var ftitel = document.getElementById("lesen-titel"), fplay = document.getElementById("lesen-play");
+  var balken = document.getElementById("lesen-balken"), zeit = document.getElementById("lesen-zeit"), zeichen = document.getElementById("lesen-zeichen");
+  var dauerEl = document.getElementById("dauer"), DAUER_TEXT = dauerEl.textContent;
+  var listeKnoepfe = Array.prototype.slice.call(document.querySelectorAll(".teil"));
+  var texte = Array.prototype.slice.call(inhalt.querySelectorAll(".teiltext"));
+  var reduziert = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var n = -1, T = null, spans = [], jetzt = -2, eingabe = 0, endeTimer = 0, klickSperre = 0;
+  var LH = 33, zeilen = 1, zeileVon = [], kurve = null, y = 0, sprung = true, ziehen = null;
+  var raf = 0, letzt = 0, letzteZeit = 0, mtWert = -1, mtZeit = 0;
+  var PLAY = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5.5v13a1 1 0 0 0 1.5.86l10.2-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>';
+  var PAUSE = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="13.5" y="5" width="4" height="14" rx="1" fill="currentColor"/></svg>';
+  function mmss(s) { var m = Math.floor(s / 60), r = Math.floor(s % 60); return m + ":" + (r < 10 ? "0" : "") + r; }
+
+  // Tempo 0,95 bei gleicher Tonhöhe; manche Browser setzen es beim Laden zurück, darum bei jedem Start erneut
+  function tempo() { try { a.preservesPitch = true; a.webkitPreservesPitch = true; } catch (e) {} a.defaultPlaybackRate = TEMPO; a.playbackRate = TEMPO; }
+  a.addEventListener("loadedmetadata", tempo);
+  var sitzung = "mediaSession" in navigator && window.MediaMetadata;
+  if (sitzung) {   // Sperrbildschirm: Pause/Weiter
+    try {
+      navigator.mediaSession.setActionHandler("play", function () { a.play(); });
+      navigator.mediaSession.setActionHandler("pause", function () { a.pause(); });
+    } catch (e) {}
+  }
+  function waehle(k) {   // Teil k laden: Ton, Text, Liste, Sperrbildschirm
+    if (k === n) return;
+    n = k; T = TEILE[k];
+    a.src = "audio/" + T.datei; tempo();
+    texte.forEach(function (el, i) { el.hidden = i !== k; });
+    spans = Array.prototype.slice.call(texte[k].querySelectorAll(".lw"));
+    spans.forEach(function (s) { s.classList.remove("vorbei"); s.style.removeProperty("--f"); });
+    jetzt = -2; kurve = null; mtWert = -1;
+    ftitel.textContent = T.titel + " · " + T.stelle;
+    listeKnoepfe.forEach(function (b, i) { b.setAttribute("aria-current", i === k ? "true" : "false"); });
+    if (sitzung) { try { navigator.mediaSession.metadata = new MediaMetadata({ title: "Vom glücklichen Leben, " + T.titel, artist: "Seneca", album: "De vita beata" }); } catch (e) {} }
+    if (dlg.open) layout();
+  }
+  function symbole() {   // Knöpfe sagen in Worten, was ein Tippen bewirkt
+    var still = a.paused, angefangen = still && n >= 0 && a.currentTime > 0.5 && !a.ended;
+    var wort = still ? (angefangen ? "Weiter" : "Abspielen") : "Pause";
+    start.innerHTML = still ? PLAY : PAUSE; start.setAttribute("aria-label", wort); start.classList.toggle("spielt-nicht", still);
+    fplay.innerHTML = (still ? PLAY : PAUSE) + "<span>" + wort + "</span>"; fplay.setAttribute("aria-label", wort);
+    listeKnoepfe.forEach(function (b, i) {
+      var spielt = i === n && !still;
+      b.querySelector(".teil-zeichen").innerHTML = spielt ? PAUSE : PLAY;
+      b.setAttribute("aria-label", TEILE[i].titel + ", " + TEILE[i].stelle + (spielt ? ", anhalten" : ", abspielen"));
+    });
+    dauerEl.textContent = n < 0 ? DAUER_TEXT
+      : !still ? T.titel + " läuft · zum Anhalten tippen"
+      : angefangen ? T.titel + " angehalten bei " + mmss(a.currentTime / (a.playbackRate || 1)) + " · zum Weiterhören tippen"
+      : DAUER_TEXT;
+  }
+  function restzeit() {   // in echter Hörzeit, also mit dem eingestellten Tempo
+    if (!isFinite(a.duration)) { zeit.textContent = ""; balken.style.width = "0"; return; }
+    var r = Math.max(0, (a.duration - a.currentTime) / (a.playbackRate || 1)), m = Math.floor(r / 60), s = Math.round(r % 60);
+    if (s === 60) { m++; s = 0; }
+    zeit.textContent = "−" + m + ":" + (s < 10 ? "0" : "") + s;
+    balken.style.width = (100 * a.currentTime / a.duration).toFixed(2) + "%";
+  }
+
+  // Monotone kubische Interpolation (Fritsch–Carlson): stetige Geschwindigkeit, kein Überschießen
+  function pchip(x, v) {
+    var m = [], h = [], d = [], len = x.length, i;
+    if (len < 2) return function () { return v[0] || 0; };
+    for (i = 0; i < len - 1; i++) { h[i] = x[i + 1] - x[i]; d[i] = (v[i + 1] - v[i]) / h[i]; }
+    m[0] = d[0]; m[len - 1] = d[len - 2];
+    for (i = 1; i < len - 1; i++) {
+      if (d[i - 1] * d[i] <= 0) m[i] = 0;
+      else { var w1 = 2 * h[i] + h[i - 1], w2 = h[i] + 2 * h[i - 1]; m[i] = (w1 + w2) / (w1 / d[i - 1] + w2 / d[i]); }
+    }
+    return function (t) {
+      if (t <= x[0]) return v[0]; if (t >= x[len - 1]) return v[len - 1];
+      var lo = 0, hi = len - 1;
+      while (hi - lo > 1) { var mi = (lo + hi) >> 1; if (x[mi] <= t) lo = mi; else hi = mi; }
+      var hh = x[hi] - x[lo], s = (t - x[lo]) / hh, s2 = s * s, s3 = s2 * s;
+      return (2 * s3 - 3 * s2 + 1) * v[lo] + (s3 - 2 * s2 + s) * hh * m[lo] + (3 * s2 - 2 * s3) * v[hi] + (s3 - s2) * hh * m[hi];
+    };
+  }
+  function layout() {   // Zeile k steht im Streifen, wenn der Text um k·Zeilenhöhe nach oben geschoben ist
+    if (!T) return;
+    LH = parseFloat(getComputedStyle(ftext).lineHeight) || 33;
+    var rand = Math.max(0, (ftext.clientHeight - LH) / 2) + "px";
+    inhalt.style.paddingTop = rand; inhalt.style.paddingBottom = rand;
+    var basis = spans.length ? spans[0].offsetTop : 0;
+    zeileVon = spans.map(function (s) { return Math.round((s.offsetTop - basis) / LH); });
+    zeilen = zeileVon.length ? zeileVon[zeileVon.length - 1] + 1 : 1;
+    var anfang = [], k, xs = [], vs = [];
+    for (k = 0; k < zeilen; k++) anfang.push(Infinity);
+    T.t.forEach(function (t, i) { var z = zeileVon[i]; if (t < anfang[z]) anfang[z] = t; });
+    for (k = 0; k < zeilen; k++) anfang[k] = Math.max(isFinite(anfang[k]) ? anfang[k] : 0, k ? anfang[k - 1] : 0);
+    for (k = 0; k < zeilen; k++) {   // Stützstelle: Mitte der Sprechzeit jeder Zeile
+      var mitte = (anfang[k] + (k + 1 < zeilen ? anfang[k + 1] : T.ende)) / 2;
+      if (xs.length && mitte <= xs[xs.length - 1]) mitte = xs[xs.length - 1] + 0.01;
+      xs.push(mitte); vs.push(k * LH);
+    }
+    kurve = pchip(xs, vs); sprung = true;
+  }
+  function setze(v) { y = Math.max(0, Math.min((zeilen - 1) * LH, v)); inhalt.style.transform = "translate3d(0," + (-y).toFixed(2) + "px,0)"; }
+  function wortBei(t) {
+    var lo = 0, hi = T.t.length - 1, r = -1;
+    while (lo <= hi) { var mi = (lo + hi) >> 1; if (T.t[mi] <= t) { r = mi; lo = mi + 1; } else hi = mi - 1; }
+    return r;
+  }
+  function fuelle(t) {   // gelesene Wörter hell, das aktuelle anteilig (Wortende aus der Wortlänge geschätzt), der Rest grau
+    var i = wortBei(t + 0.03);
+    if (i !== jetzt) {
+      spans.forEach(function (s, k) { s.classList.toggle("vorbei", k < i); if (k !== i) s.style.removeProperty("--f"); });
+      jetzt = i;
+    }
+    if (i < 0) return;
+    var t0 = T.t[i], t1 = i + 1 < T.t.length ? T.t[i + 1] : T.ende, e = Math.min(t1, t0 + 0.08 + 0.07 * T.w[i].length);
+    spans[i].style.setProperty("--f", Math.max(0, Math.min(1, (t - t0) / Math.max(0.05, e - t0))).toFixed(3));
+  }
+  function medienzeit(now) {   // currentTime kommt in Stufen; dazwischen mit dem Tempo hochrechnen
+    var t = a.currentTime;
+    if (a.paused || t !== mtWert) { mtWert = t; mtZeit = now; return t; }
+    return t + Math.min(0.3, (now - mtZeit) / 1000) * (a.playbackRate || 1);
+  }
+  function bild(now) {
+    raf = 0; if (!dlg.open) return;
+    var dt = letzt ? Math.min(0.1, (now - letzt) / 1000) : 0.016; letzt = now;
+    if (kurve) {
+      var t = medienzeit(now); fuelle(t);
+      if (!ziehen && Date.now() - eingabe > 3000) {
+        var ziel = kurve(t), d = ziel - y;
+        if (sprung || reduziert) { setze(ziel); sprung = false; }
+        else setze(Math.abs(d) < 0.05 ? ziel : y + d * (1 - Math.exp(-dt / (Math.abs(d) > LH ? 0.2 : 0.08))));
+      }
+    }
+    if (now - letzteZeit > 250) { letzteZeit = now; restzeit(); }
+    raf = requestAnimationFrame(bild);
+  }
+  function oeffne() {
+    clearTimeout(endeTimer);
+    if (n < 0) waehle(0);
+    if (!dlg.open) {
+      try { dlg.showModal(); } catch (e) { dlg.setAttribute("open", ""); }
+      dlg.focus({ preventScroll: true });
+      layout();
+    }
+    restzeit(); eingabe = 0;
+    if (!raf) { letzt = 0; raf = requestAnimationFrame(bild); }
+  }
+  function schliesse() {   // Schließen hält auch an; weiter geht es mit dem großen Knopf
+    clearTimeout(endeTimer); if (!a.paused) a.pause();
+    if (dlg.open) { try { dlg.close(); } catch (e) { dlg.removeAttribute("open"); } }
+  }
+  dlg.addEventListener("close", function () { if (!a.paused) a.pause(); });   // auch beim Schließen mit Escape
+
+  a.addEventListener("play", function () { if (Math.abs(a.playbackRate - TEMPO) > 0.001) tempo(); symbole(); oeffne(); });
+  a.addEventListener("pause", function () { symbole(); restzeit(); });
+  a.addEventListener("ended", function () {   // nächster Teil schließt nahtlos an; nach dem letzten schließt der Lesemodus
+    if (n + 1 < TEILE.length) { waehle(n + 1); a.play(); return; }
+    symbole(); restzeit(); endeTimer = setTimeout(function () { if (a.paused) schliesse(); }, 1500);
+  });
+  function umschalten() {   // nach dem Ende des letzten Teils beginnt der große Knopf wieder bei Teil 1
+    if (n < 0 || (a.ended && n + 1 >= TEILE.length)) waehle(0);
+    if (a.paused) a.play(); else a.pause();
+  }
+  start.addEventListener("click", umschalten);
+  fplay.addEventListener("click", umschalten);
+  listeKnoepfe.forEach(function (b, i) {
+    b.addEventListener("click", function () { if (i === n) { umschalten(); return; } waehle(i); a.play(); });
+  });
+  nurlesen.addEventListener("click", oeffne);
+  document.getElementById("lesen-zu").addEventListener("click", schliesse);
+  dlg.addEventListener("click", function (e) {   // Tippen neben das Fenster schließt und hält an
+    if (e.target !== dlg) return;
+    var r = dlg.getBoundingClientRect();
+    if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) schliesse();
+  });
+  // Selbst blättern: ziehen oder Mausrad; nach 3 s Ruhe gleitet der Text zurück zur gesprochenen Stelle
+  ftext.addEventListener("pointerdown", function (e) { ziehen = { id: e.pointerId, y0: e.clientY, s0: y, bewegt: false }; });
+  ftext.addEventListener("pointermove", function (e) {
+    if (!ziehen || e.pointerId !== ziehen.id) return;
+    var dy = e.clientY - ziehen.y0;
+    if (!ziehen.bewegt && Math.abs(dy) > 6) { ziehen.bewegt = true; try { ftext.setPointerCapture(e.pointerId); } catch (x) {} }
+    if (ziehen.bewegt) { setze(ziehen.s0 - dy); eingabe = Date.now(); }
+  });
+  ["pointerup", "pointercancel"].forEach(function (ev) {
+    ftext.addEventListener(ev, function () { if (ziehen && ziehen.bewegt) { klickSperre = Date.now(); eingabe = Date.now(); } ziehen = null; });
+  });
+  ftext.addEventListener("wheel", function (e) { e.preventDefault(); setze(y + e.deltaY); eingabe = Date.now(); }, { passive: false });
+  ftext.addEventListener("click", function () {   // Text antippen: anhalten oder weiterhören, wie bei einem Video
+    if (Date.now() - klickSperre < 400) return;
+    var anhalten = !a.paused;
+    umschalten(); eingabe = 0;
+    zeichen.innerHTML = anhalten ? PAUSE : PLAY;
+    zeichen.classList.remove("blink"); void zeichen.offsetWidth; zeichen.classList.add("blink");
+  });
+  window.addEventListener("resize", function () { if (dlg.open) layout(); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { if (dlg.open) layout(); });
+  symbole();
+})();
+</script>
+</body>
+</html>
