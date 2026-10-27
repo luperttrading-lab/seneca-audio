@@ -39,8 +39,8 @@ Hördauer geschätzt aus Teil 1 (0,65 s je lateinisches Wort bei Tempo 0,95).
 
 | Teil | Stelle | lat. Wörter | Hördauer bei 0,95 (geschätzt) | Stand |
 |---|---|---|---|---|
-| 1 | 1,1–2 | 162 | 1:45 | fertig (Lupert, ruhig) |
-| 2 | 1,3–5 | 181 | 1:57 | Aufnahme fertig (1:51), noch nicht öffentlich |
+| 1 | 1,1–2 | 162 | 1:45 | fertig, öffentlich (1:47) |
+| 2 | 1,3–5 | 181 | 1:57 | fertig, öffentlich (1:51) |
 | 3 | 2,1–4 | 246 | 2:39 |  |
 | 4 | 3,1–4 | 227 | 2:27 |  |
 | 5 | 4,1–5 | 308 | 3:20 |  |

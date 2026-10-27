@@ -11,13 +11,14 @@ LibriVox-Vorleser.
 | `seite/` | `vorlage.html` (Layout, Drehrad, Lesemodus), `bau.py` erzeugt daraus `index.html`; `karaoke_daten.py` legt Whisper-Wortzeiten auf den Text (`karaoke.json`); Playwright-Tests und ein Testserver mit Range-Unterstützung |
 | `werkzeuge/` | `pausen2.py` verlängert Pausen an Satzzeichen mit nachgebildetem Raumton (ohne Schleife, kein Knattern); `prosodie.py` misst Tempo, Pausen, Melodie; `pruef.py` prüft Worttreue mit Whisper; `knatter_pruef.py` misst eingefügte Pausen |
 | `messung/` | `merkmale.json` (Prosodie aller Fassungen und Referenzen), Wortzeiten, Einfügestellen der Pausen |
-| `audio/` | Fassungen auf −18 LUFS: ElevenLabs Christian, Gemini-Montage, und als einzige Lupert-Fassung (Stimmklon) `lupert_ruhig.m4a` für die Startseite. Weitere Lupert-Dateien nur nach Absprache, das Repo ist öffentlich |
+| `audio/` | Fassungen auf −18 LUFS: ElevenLabs Christian, Gemini-Montage, und die Hörbuch-Teile in Luperts Stimme (`teilNN.m4a`, auf Wunsch veröffentlicht). Weitere Lupert-Dateien nur nach Absprache, das Repo ist öffentlich |
 
-## Startseite zum Teilen
+## Startseite: das Hörbuch
 
-`index.html` ist die Seite für Empfänger: eine Fassung („Lupert, ruhig“, Tempo 0,95), großer Play-Knopf, Lesemodus mit
-durchlaufendem Text. Erzeugt mit `python3 seite/bau_teilen.py` aus `seite/teilen_vorlage.html` und `seite/karaoke.json`.
-Datenmenge beim Öffnen: etwa 0,9 MB (Seite 32 kB, Ton 0,84 MB als AAC 64 kbit/s).
+`index.html` ist die öffentliche Seite unter https://luperttrading-lab.github.io/seneca-audio/: alle fertigen Teile mit
+Liste, großem Play-Knopf, Lesemodus mit durchlaufendem Text und nahtlosem Weiterspielen; Tempo 0,95, immer dunkel.
+Erzeugt mit `python3 seite/bau_hoerbuch.py seite/karaoke.json .` aus `seite/hoerbuch_vorlage.html`; neue Teile werden
+in der Liste `TEILE` in `seite/bau_hoerbuch.py` eingetragen. Ton je Teil in `audio/teilNN.m4a` (AAC 64 kbit/s, −18 LUFS).
 
 ## Bauen
 
