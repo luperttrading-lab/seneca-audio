@@ -70,3 +70,20 @@ Hördauer geschätzt aus Teil 1 (0,65 s je lateinisches Wort bei Tempo 0,95).
 | 29 | 27,1–6 + 28,1 | 370 | 4:00 |  |
 
 Gesamt: 29 Teile, etwa 77 Minuten.
+
+## Stimmensuche (offen)
+
+Mit Lupert, Christian, Brian, Ralf Benz und Robert Ranger ist der Auftraggeber nicht zufrieden (Vergleich in
+`messung/stimmen/vergleich_kap1_absatz12.json`; bester Messwert roh: Ralf Benz, Abstand 1,30, natürlicher Abfall am
+Satzende −1,1 HT/s). Teil 1 und 2 werden nach der Entscheidung mit der neuen Stimme neu erzeugt.
+
+Vorgehen, sobald ein ElevenLabs-API-Schlüssel als Umgebungsvariable `ELEVENLABS_API_KEY` vorliegt (ohne Anmeldung
+liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
+
+1. Bibliothek abfragen (`GET /v1/shared-voices`, Sprache Deutsch, Einsatz Erzählung/Hörbuch, nach Nutzung sortiert),
+   Hörproben (`preview_url`) laden; das kostet keine Credits.
+2. Jede Probe messen wie in `werkzeuge/prosodie.py`: Tempo, Pausen, Melodie-Spannweite, Abfall am Satzende, Tonlage,
+   Stimmqualität (HNR); Sprache per Whisper prüfen. Satzmelodie und Abfall zählen am meisten, weil sie sich nachträglich
+   nicht korrigieren lassen; Pausen und Tempo schon.
+3. Die besten 8 bis 10 mit ihren Hörproben in die Vorschau-App, Auswahl durch den Auftraggeber.
+4. Die 2 bis 3 Favoriten mit Kapitel 1, Absatz 1–2 erzeugen (je etwa 800 Credits) und wie oben vergleichen.
