@@ -94,6 +94,16 @@ Phrase; Tempo-Wunsch 2,6–3,0 W/s.
   Stimmen schreiben; API-Weg wäre `DELETE /v1/voices/{voice_id}/samples/{sample_id}`), dann zwei Proben Lupert v4 wie
   05:23 erzeugen und messen. Geht das Entfernen in der App nicht: die 30-s-Aufnahme per API laden
   (`GET /v1/voices/{voice_id}/samples/{sample_id}/audio`) und daraus einen neuen Instant-Klon anlegen lassen.
+- Inhalt der beiden Lupert-Proben (per API geladen, nur im Sitzungsordner, nicht im Repo): `Seneca.mp3` ist die
+  eigene Lesung des Nutzers von Absatz 1–2, akustisch identisch mit `mensch_nutzer` (alle 12 Merkmale gleich), also
+  keine neue Aufnahme von heute. `recording-….mp3` ist der Mustertext von ElevenLabs („Ich erinnere mich noch gut an das
+  erste Mal …“), schnell und mit langen Phrasen gelesen (Pausen 11,6 %, 13,3 Wörter je Phrase, Melodie 6,4 HT).
+  Wann `Seneca.mp3` hinzukam, liefert die API nicht. Klangfarbe (Langzeitspektrum und MFCC, `klang.py`-Ansatz: Lage auf
+  der Achse Aufnahme → Seneca): 05:23 −0,24 / −0,20, gestern 07:32–11:38 −0,04 bis +0,34, heute per API +0,74 / +0,56
+  (gleicher Text wie 05:23). Also wahrscheinlich am 27.10. zwischen 05:23 und 07:32 UTC hinzugefügt.
+- **Lupert spricht 2,5 HT höher als der Nutzer:** Grundfrequenz 116–120 Hz, der Nutzer 99 Hz (Mustertext) und 104 Hz
+  (Seneca). Gestern wurde die Tonhöhe nicht bearbeitet: Teil 1 hat 117,7 Hz wie der rohe Take, Teil 2 116,2 Hz; die
+  Seite spielt mit Tempo 0,95 bei festgehaltener Tonhöhe (`preservesPitch`). Bearbeitet wurden nur Pausen und Lautheit.
 - Storytel v2 ist zugänglich, macht Ralf aber sehr flach (6,9 HT) und langsam; Whisper hört „Ziel“ als „Seel“ und
   „entgegen“ verschliffen. Die anderen sechs Proben sind wortgetreu (`pruef.py large-v3-turbo`).
 - Grenze der Messung: n = 2 Proben für Ralf v2, n = 1 für die übrigen; der Abfall streut stark (−1,51 / −0,58).
