@@ -77,6 +77,10 @@ Mit Lupert, Christian, Brian, Ralf Benz und Robert Ranger ist der Auftraggeber n
 `messung/stimmen/vergleich_kap1_absatz12.json`; bester Messwert roh: Ralf Benz, Abstand 1,30, natürlicher Abfall am
 Satzende −1,1 HT/s). Teil 1 und 2 werden nach der Entscheidung mit der neuen Stimme neu erzeugt.
 
+Modellprüfung vom 28.10. (Einzelheiten in `UEBERGABE.md`): Das Modell bestimmt die Satzmelodie. Ralf Benz mit
+Multilingual v2 (Stability 0,75) liegt bei 9,4 und 10,0 HT statt 13–14 HT mit v4 und hat den besten Abstand bisher
+(0,66 und 1,01). Lupert taugt mit v2 nicht (kaum Pausen). Entscheidung per Hörvergleich steht aus.
+
 Vorgehen, sobald ein ElevenLabs-API-Schlüssel als Umgebungsvariable `ELEVENLABS_API_KEY` vorliegt (ohne Anmeldung
 liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
 

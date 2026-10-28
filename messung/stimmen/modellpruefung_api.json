@@ -1,0 +1,160 @@
+{
+ "lupert_v4_wie0523_a": {
+  "modell": "eleven_v4",
+  "einstellungen": {
+   "stability": 0.5
+  },
+  "datum": "28.10.2026, API",
+  "Tempo W/s": 3.025289529662018,
+  "Tempo-Schwankung": 0.17273885510435935,
+  "Pausenanteil %": 8.617710583153348,
+  "Pausen-Schwankung": 0.39157944785125987,
+  "Wörter/Phrase": 9.461538461538462,
+  "Melodie-Spannweite HT": 12.842641014114955,
+  "Phrasen-Tonhöhe HT": 1.6788510265763044,
+  "Abfall HT/s": -2.5646590486554697,
+  "Jitter %": 2.919529444422614,
+  "Shimmer %": 14.575702832136587,
+  "HNR dB": 10.225628687973593,
+  "Atem/min": 0.0,
+  "Abstand": 3.862188064122653,
+  "Dauer": 46.56
+ },
+ "lupert_v4_wie0523_b": {
+  "modell": "eleven_v4",
+  "einstellungen": {
+   "stability": 0.5
+  },
+  "datum": "28.10.2026, API",
+  "Tempo W/s": 3.032456763800047,
+  "Tempo-Schwankung": 0.16750354210080023,
+  "Pausenanteil %": 9.381708887934737,
+  "Pausen-Schwankung": 0.311027674099403,
+  "Wörter/Phrase": 9.0,
+  "Melodie-Spannweite HT": 13.419482211560382,
+  "Phrasen-Tonhöhe HT": 1.7228277397225216,
+  "Abfall HT/s": -2.5326792909605875,
+  "Jitter %": 2.916363378055542,
+  "Shimmer %": 14.433316410590457,
+  "HNR dB": 10.570363902477316,
+  "Atem/min": 0.0,
+  "Abstand": 4.220631935284781,
+  "Dauer": 46.8
+ },
+ "ralf_storytel": {
+  "modell": "eleven_storytel_v2",
+  "einstellungen": {
+   "stability": 0.75,
+   "similarity_boost": 0.8
+  },
+  "datum": "28.10.2026, API",
+  "Tempo W/s": 2.6778242677824267,
+  "Tempo-Schwankung": 0.1582319231215098,
+  "Pausenanteil %": 20.939464108501486,
+  "Pausen-Schwankung": 0.5082593145512914,
+  "Wörter/Phrase": 6.052631578947368,
+  "Melodie-Spannweite HT": 6.897856266497588,
+  "Phrasen-Tonhöhe HT": 1.00490070974991,
+  "Abfall HT/s": -2.970339375871314,
+  "Jitter %": 3.077383676090192,
+  "Shimmer %": 9.090696155904856,
+  "HNR dB": 10.491020824702582,
+  "Atem/min": 0.0,
+  "Abstand": 3.6043067216954414,
+  "Dauer": 60.7434375
+ },
+ "ralf_v2_stab075": {
+  "modell": "eleven_multilingual_v2",
+  "einstellungen": {
+   "stability": 0.75,
+   "similarity_boost": 0.8,
+   "style": 0.0,
+   "use_speaker_boost": true
+  },
+  "datum": "28.10.2026, API",
+  "Tempo W/s": 3.135717785399314,
+  "Tempo-Schwankung": 0.12072267493950616,
+  "Pausenanteil %": 14.2436974789916,
+  "Pausen-Schwankung": 0.5754632272174454,
+  "Wörter/Phrase": 7.933333333333334,
+  "Melodie-Spannweite HT": 9.419142910538483,
+  "Phrasen-Tonhöhe HT": 1.261461619529049,
+  "Abfall HT/s": -1.5123152552274994,
+  "Jitter %": 3.5392820705325416,
+  "Shimmer %": 10.54021536305037,
+  "HNR dB": 8.926787809717883,
+  "Atem/min": 0.0,
+  "Abstand": 1.008899342423589,
+  "Dauer": 47.9724375
+ },
+ "ralf_v4_stab10": {
+  "modell": "eleven_v4",
+  "einstellungen": {
+   "stability": 1.0,
+   "similarity_boost": 0.81
+  },
+  "datum": "28.10.2026, API",
+  "Tempo W/s": 2.9670839128419106,
+  "Tempo-Schwankung": 0.12801183040340522,
+  "Pausenanteil %": 13.512429831595831,
+  "Pausen-Schwankung": 0.49926201823016325,
+  "Wörter/Phrase": 7.4375,
+  "Melodie-Spannweite HT": 13.587657805520529,
+  "Phrasen-Tonhöhe HT": 2.0977256532230966,
+  "Abfall HT/s": -2.02762160134183,
+  "Jitter %": 3.4718946159608333,
+  "Shimmer %": 10.74855858811456,
+  "HNR dB": 8.207537445948539,
+  "Atem/min": 0.0,
+  "Abstand": 1.94618206417828,
+  "Dauer": 50.08
+ },
+ "lupert_v2_stab075": {
+  "modell": "eleven_multilingual_v2",
+  "einstellungen": {
+   "stability": 0.75,
+   "similarity_boost": 0.8,
+   "style": 0.0,
+   "use_speaker_boost": true
+  },
+  "datum": "28.10.2026, API",
+  "Tempo W/s": 3.2072162365321972,
+  "Tempo-Schwankung": 0.08384855843181341,
+  "Pausenanteil %": 3.854492893278728,
+  "Pausen-Schwankung": 0.11180339887498951,
+  "Wörter/Phrase": 12.5,
+  "Melodie-Spannweite HT": 7.917489981770939,
+  "Phrasen-Tonhöhe HT": 1.1088639770529467,
+  "Abfall HT/s": -1.9939803370652598,
+  "Jitter %": 3.009013514005837,
+  "Shimmer %": 12.07333835507072,
+  "HNR dB": 10.856609071941943,
+  "Atem/min": 0.0,
+  "Abstand": 7.076918591635879,
+  "Dauer": 41.842375
+ },
+ "ralf_v2_stab075_b": {
+  "modell": "eleven_multilingual_v2",
+  "einstellungen": {
+   "stability": 0.75,
+   "similarity_boost": 0.8,
+   "style": 0.0,
+   "use_speaker_boost": true
+  },
+  "datum": "28.10.2026, API",
+  "Tempo W/s": 3.2628090746877385,
+  "Tempo-Schwankung": 0.12179754634348809,
+  "Pausenanteil %": 16.139375801624624,
+  "Pausen-Schwankung": 0.6643278712709143,
+  "Wörter/Phrase": 7.375,
+  "Melodie-Spannweite HT": 10.033704056320687,
+  "Phrasen-Tonhöhe HT": 1.2125193489144355,
+  "Abfall HT/s": -0.5836909033167504,
+  "Jitter %": 3.7584385378154104,
+  "Shimmer %": 10.738881557740731,
+  "HNR dB": 9.08402484656111,
+  "Atem/min": 0.0,
+  "Abstand": 0.6570226867193464,
+  "Dauer": 47.1365
+ }
+}

@@ -1,9 +1,12 @@
-# Übergabe – Stand 28.10.2026, nachmittags
+# Übergabe – Stand 28.10.2026, abends
 
 ## Links
 
 - Öffentliche Hörbuch-Seite (Teil 1 und 2): https://luperttrading-lab.github.io/seneca-audio/
-- Private Vorschau mit Stimmenvergleich (Claude-Artifact, Quelle mit `seite/bau_hoerbuch.py … --artifact --vergleich`):
+- **Private Vorschau mit Modellvergleich vom 28.10.** (Teil 1 und 2 plus 7 Proben Ralf/Lupert; Quelle:
+  `seite/bau_hoerbuch.py seite/karaoke.json <ordner> --artifact --vergleich messung/stimmen/vergleich_modelle.json`):
+  https://claude.ai/artifact/Mj5fSGP6WhXq3iSCjZCqxt
+- Ältere private Vorschau mit dem Stimmenvergleich vom 27.10. (Lupert, Christian, Brian, Ralf, Robert, alle v4):
   https://claude.ai/artifact/Mi3DHEtyiHRPXEYfwj5XA9
 - Ältere private Vergleichsseite zu Teil 1 (Lupert, Christian, Gemini): https://claude.ai/artifact/RfZhGX4jPHk6ZFfHaLhjVr
 
@@ -22,12 +25,15 @@
 Eingerichtet als Umgebungsvariable `ELEVENLABS_API_KEY` (eingeschränkt: Text zu Sprache, Stimmen lesen, Modelle,
 Verlauf lesen, Benutzer; Abschalten bei Leak an). Stimmen schreiben ist bewusst gesperrt (könnte den Lupert-Klon löschen):
 Bibliotheksstimmen fügt der Nutzer in der App selbst zu seinen Stimmen hinzu. `api.elevenlabs.io` ist erreichbar.
-Der erste Schlüssel hatte nur 30 Credits Kontingent (Fehlermeldung `quota_exceeded`). Am 28.10. hat der Nutzer einen
-**neuen Schlüssel mit 30.000 Credits** erzeugt; er muss als `ELEVENLABS_API_KEY` in den Einstellungen der
-Cloud-Umgebung stehen und gilt erst in einer neuen Sitzung. Zu Beginn prüfen, ohne ihn anzuzeigen: Eine Anfrage mit
-Absatz 1–2 (785 Zeichen) braucht laut API 337 Credits; kommt wieder „quota of 30“, ist noch der alte Schlüssel
-eingetragen. Der alte Schlüssel war am 28.10. noch gültig und sollte gelöscht werden. `/v1/user` und
-`/v1/user/subscription` antworten mit 401.
+`/v1/user` und `/v1/user/subscription` antworten mit 401, das Kontingent ist also nicht abfragbar.
+
+Seit 28.10. ist der **neue Schlüssel (30.000 Credits Grenze)** aktiv. Eine API-Anfrage kostet laut Kopfzeile
+`character-cost` 336–337 Credits für Absatz 1–2 (785 Zeichen), also etwa **0,43 Credits je Zeichen**, bei v4, v2 und
+Storytel gleich. Die App hat für dieselben 785 Zeichen 766 Credits berechnet. Am 28.10. verbraucht: 7 Anfragen, 2.356
+Credits; Rest also höchstens etwa 27.600. **Das reicht nicht für das ganze Werk:** etwa 67.000 Zeichen (9,1 Zeichen je
+lateinisches Wort aus Teil 1–4, 7.395 Wörter) kosten etwa 28.800 Credits für einen einzigen Durchgang ohne Neuversuche.
+Der Nutzer muss die Grenze des Schlüssels erhöhen, sofern das Konto die Credits hat. Der alte Schlüssel sollte gelöscht
+werden, falls noch nicht geschehen.
 
 ## Befunde vom 28.10. (Messung der Takes aus dem Verlauf)
 
@@ -53,19 +59,42 @@ Werte in `messung/stimmen/takes_verlauf.json`, gemessen mit `werkzeuge/messen_ab
   Screening von 189 Stimmen (Erzählung/Bildung, nicht jung) mit `werkzeuge/bib_screening.py`: 47 gemessen, Werte in
   `messung/stimmen/screening_hoerproben.json`; abgebrochen, weil Hörproben wenig vorhersagen.
 
+## Befunde der Modellprüfung vom 28.10. (API, Absatz 1–2)
+
+Werte in `messung/stimmen/modellpruefung_api.json` (alle Merkmale, Modell, Einstellungen) und
+`messung/stimmen/vergleich_modelle.json` (Auszug für die Vorschau). Je Anfrage liefert die API nur einen Take. Proben
+liegen nur im Artifact (`audio/v_*.mp3`, −18 LUFS, Limiter 0,84), nicht im Repo.
+
+| Probe | Melodie HT | Abfall HT/s | Pausen % | Wörter/Phrase | Tempo W/s | Abstand |
+|---|---|---|---|---|---|---|
+| Ralf, Multilingual v2, Stab. 0,75, Probe 1 | 9,42 | −1,51 | 14,2 | 7,9 | 3,14 | 1,01 |
+| Ralf, Multilingual v2, Stab. 0,75, Probe 2 | 10,03 | −0,58 | 16,1 | 7,4 | 3,26 | 0,66 |
+| Ralf, v4, Stab. 1,0 | 13,59 | −2,03 | 13,5 | 7,4 | 2,97 | 1,95 |
+| Ralf, Storytel v2, Stab. 0,75 | 6,90 | −2,97 | 20,9 | 6,1 | 2,68 | 3,60 |
+| Lupert, v4, Stab. 0,5 (wie 27.10. 05:23), Probe 1 | 12,84 | −2,56 | 8,6 | 9,5 | 3,03 | 3,86 |
+| Lupert, v4, wie oben, Probe 2 | 13,42 | −2,53 | 9,4 | 9,0 | 3,03 | 4,22 |
+| Lupert, Multilingual v2, Stab. 0,75 | 7,92 | −1,99 | 3,9 | 12,5 | 3,21 | 7,08 |
+
+Zielbereich echter Vorleser: Melodie 10,0–11,7 HT, Abfall −1,58 bis −0,51, Pausen 13,4–20,2 %, 4,4–7,4 Wörter je
+Phrase; Tempo-Wunsch 2,6–3,0 W/s.
+
+- **Das Modell ist der Hebel für die Melodie, nicht die Stability.** Ralf mit v4 bleibt auch bei Stability 1,0 bei
+  13,6 HT. Mit Multilingual v2 kommt er auf 9,4 und 10,0 HT; der Unterschied zwischen den beiden Anfragen (0,6 HT) ist
+  klein gegen den Modellunterschied (etwa 3,9 HT). Ralf v2 hat die besten Abstände bisher (0,66 und 1,01). Er ist
+  etwas zu schnell (3,1–3,3 W/s); v2 kennt `voice_settings.speed` (Brian lief im April mit 0,92), ungeprüft für Ralf.
+- **Luperts 10,5 HT vom 27.10. lassen sich per API nicht wiederholen:** gleicher Text, gleiche Einstellungen, 12,8 und
+  13,4 HT. Ursache offen: Die App schickt vielleicht andere Standardwerte als die API (Similarity „Standard“), oder die
+  Streuung zwischen Anfragen ist groß. Mit v2 hetzt Lupert (3,9 % Pausen, 12,5 Wörter je Phrase); als
+  Hörbuchstimme mit v2 also unbrauchbar, mit v4 bleibt die Phrasierung die Schwäche.
+- Storytel v2 ist zugänglich, macht Ralf aber sehr flach (6,9 HT) und langsam; Whisper hört „Ziel“ als „Seel“ und
+  „entgegen“ verschliffen. Die anderen sechs Proben sind wortgetreu (`pruef.py large-v3-turbo`).
+- Grenze der Messung: n = 2 Proben für Ralf v2, n = 1 für die übrigen; der Abfall streut stark (−1,51 / −0,58).
+
 ## Offen, in dieser Reihenfolge
 
-1. **Modellprüfung mit dem neuen Schlüssel**, angepasst an die Befunde (Empfehlung: 1.2 zuerst, dann 1.1):
-   1. Ralf Benz, Absatz 1–2, je eine Anfrage: `eleven_v4` mit Stability 1,0; `eleven_multilingual_v2` mit Stability
-      0,75, Style 0; `eleven_storytel_v2` (Hörbuchmodell, Zugang ungeprüft). Je etwa 340 Credits laut Fehlermeldung.
-      `werkzeuge/erzeuge_varianten.py <text> <ordner>` (enthält auch 1.2); Text = Absatz 1–2 aus Teil 1, wie er im
-      Verlauf steht (`GET /v1/history`, Feld `dialogue[0].text`). Messen: Wortzeiten mit
-      `seite/karaoke_daten.py --einzeln`, dann `werkzeuge/messen_abstand.py <aus.json> <mp3 …>`.
-   2. Lupert mit denselben Einstellungen wie 05:23 (Absatz 1–2 allein, Similarity Standard) noch einmal: klärt, ob
-      10,5 HT reproduzierbar ist. Wenn ja, ist Lupert mit v4 der beste Kandidat für die Melodie, und die Pausen lassen
-      sich mit `pausen2.py` verbessern (aber nur verlängern, wo Lupert schon pausiert).
-   3. Bei Melodie unter etwa 12 HT: A/B-Vergleich mit dem Nutzer. Wegen der Take-Streuung nur Unterschiede über
-      etwa 1 HT ernst nehmen, beim Abfall nur Mittel aus mehreren Takes.
+1. **Hörvergleich durch den Nutzer** in der neuen Vorschau (Link oben): Ralf v2 gegen Ralf v4 (27.10.) und Lupert v4.
+   Leitfrage: Behebt v2, was ihn an Ralf gestört hat? Wenn ja: eine Probe Ralf v2 mit `speed` 0,92 (Tempo prüfen,
+   etwa 340 Credits), dann Kreditgrenze des Schlüssels klären.
 2. Mit der gewählten Stimme und dem gewählten Modell Teil 1 und 2 neu erzeugen, Teil 3 und 4 aufnehmen, alles neu
    verarbeiten.
 3. Teil 4 freigeben lassen. Entscheidungen im Entwurf, die der Nutzer prüfen sollte:

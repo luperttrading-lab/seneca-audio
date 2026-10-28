@@ -8,6 +8,7 @@ VARIANTEN = {
     "ralf_v2_stab075": (RALF, {"model_id": "eleven_multilingual_v2", "voice_settings": {"stability": 0.75, "similarity_boost": 0.8, "style": 0.0, "use_speaker_boost": True}}),
     "ralf_storytel": (RALF, {"model_id": "eleven_storytel_v2", "voice_settings": {"stability": 0.75, "similarity_boost": 0.8}}),
     "lupert_v4_wie0523": (LUPERT, {"model_id": "eleven_v4", "voice_settings": {"stability": 0.5}}),
+    "lupert_v2_stab075": (LUPERT, {"model_id": "eleven_multilingual_v2", "voice_settings": {"stability": 0.75, "similarity_boost": 0.8, "style": 0.0, "use_speaker_boost": True}}),
 }
 text, aus = open(sys.argv[1], encoding="utf-8").read(), sys.argv[2]
 os.makedirs(aus, exist_ok=True)
