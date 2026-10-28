@@ -1,0 +1,280 @@
+{
+ "text": "Glücklich leben, mein Bruder Gallio, das wollen alle. Doch wenn es darum geht, klar zu erkennen, wodurch ein Leben eigentlich glücklich wird, ist ihr Blick getrübt.",
+ "stimmen": [
+  {
+   "id": "FTNCalFNG5bRnkkaP5Ug",
+   "name": "Otto - Casual and Normal",
+   "anker": false,
+   "nr": 1,
+   "datei": "s01.mp3",
+   "dauer": 10.48,
+   "f0": 120.9,
+   "mel": 16.6,
+   "abw": []
+  },
+  {
+   "id": "re2r5d74PqDzicySNW0I",
+   "name": "Leon Stern - Rich and Deep",
+   "anker": false,
+   "nr": 2,
+   "datei": "s02.mp3",
+   "dauer": 9.92,
+   "f0": 112.0,
+   "mel": 19.1,
+   "abw": []
+  },
+  {
+   "id": "kkJxCnlRCckmfFvzDW5Q",
+   "name": "Alexander - Deep TV Narrator",
+   "anker": false,
+   "nr": 3,
+   "datei": "s03.mp3",
+   "dauer": 10.48,
+   "f0": 99.4,
+   "mel": 17.0,
+   "abw": []
+  },
+  {
+   "id": "IWm8DnJ4NGjFI7QAM5lM",
+   "name": "Stephan - Warm and Friendly",
+   "anker": false,
+   "nr": 4,
+   "datei": "s04.mp3",
+   "dauer": 9.84,
+   "f0": 135.2,
+   "mel": 16.2,
+   "abw": []
+  },
+  {
+   "id": "JiW03c2Gt43XNUQAumRP",
+   "name": "Helmut Stieglbauer - Deep and Dynamic",
+   "anker": false,
+   "nr": 5,
+   "datei": "s05.mp3",
+   "dauer": 10.72,
+   "f0": 102.6,
+   "mel": 17.6,
+   "abw": []
+  },
+  {
+   "id": "r8MyP4qUsq5WFFSkPdfV",
+   "name": "Johannes - Clear and Neutral",
+   "anker": false,
+   "nr": 6,
+   "datei": "s06.mp3",
+   "dauer": 10.08,
+   "f0": 123.5,
+   "mel": 13.8,
+   "abw": []
+  },
+  {
+   "id": "Fghah4fztZORbiKfIGAs",
+   "name": "Thomas Schendel - Authoritative and Calm",
+   "anker": false,
+   "nr": 7,
+   "datei": "s07.mp3",
+   "dauer": 10.4,
+   "f0": 117.2,
+   "mel": 17.5,
+   "abw": []
+  },
+  {
+   "id": "sx7WD8TJIOrk5RQOptDH",
+   "name": "Tristan Medersburg - Trustworthy",
+   "anker": false,
+   "nr": 8,
+   "datei": "s08.mp3",
+   "dauer": 9.92,
+   "f0": 100.8,
+   "mel": 14.3,
+   "abw": []
+  },
+  {
+   "id": "elrPOnQZaau5IoISMrJe",
+   "name": "Clemens - Mature and Engaging",
+   "anker": false,
+   "nr": 9,
+   "datei": "s09.mp3",
+   "dauer": 9.76,
+   "f0": 107.0,
+   "mel": 15.2,
+   "abw": []
+  },
+  {
+   "id": "b0JqlN5qkeuPi5BoQiHn",
+   "name": "Hermann - Sympathetic and Trusthworthy",
+   "anker": false,
+   "nr": 10,
+   "datei": "s10.mp3",
+   "dauer": 10.4,
+   "f0": 108.5,
+   "mel": 13.7,
+   "abw": []
+  },
+  {
+   "id": "87AwpS6yC86wa2WglbsK",
+   "name": "Michael Danisch - Deep and Soulful",
+   "anker": false,
+   "nr": 11,
+   "datei": "s11.mp3",
+   "dauer": 10.96,
+   "f0": 107.1,
+   "mel": 17.0,
+   "abw": []
+  },
+  {
+   "id": "NlRO8ABjJNJNYaRaLiPJ",
+   "name": "KonradKlar - Deep, Warm and Storytelling",
+   "anker": false,
+   "nr": 12,
+   "datei": "s12.mp3",
+   "dauer": 10.64,
+   "f0": 109.0,
+   "mel": 15.3,
+   "abw": []
+  },
+  {
+   "id": "j6tJ8jbxXyUvoq0QGMNY",
+   "name": "Christian Plasa - Deep Narration",
+   "anker": false,
+   "nr": 13,
+   "datei": "s13.mp3",
+   "dauer": 9.92,
+   "f0": 116.5,
+   "mel": 17.3,
+   "abw": []
+  },
+  {
+   "id": "jdKpAe6rxAe99tFGbsAc",
+   "name": "Daniel - Corporate Narration",
+   "anker": false,
+   "nr": 14,
+   "datei": "s14.mp3",
+   "dauer": 9.52,
+   "f0": 117.0,
+   "mel": 17.4,
+   "abw": []
+  },
+  {
+   "id": "PTDRoXRJnOXDLIs03WqF",
+   "name": "Marko - Gentle and Quiet",
+   "anker": false,
+   "nr": 15,
+   "datei": "s15.mp3",
+   "dauer": 9.84,
+   "f0": 93.2,
+   "mel": 15.4,
+   "abw": []
+  },
+  {
+   "id": "HzBCRGsOskP44taMg2CT",
+   "name": "Marc  – Warm & Clear",
+   "anker": false,
+   "nr": 16,
+   "datei": "s16.mp3",
+   "dauer": 10.88,
+   "f0": 116.4,
+   "mel": 16.2,
+   "abw": []
+  },
+  {
+   "id": "4u3R5vsV3x092eJ1kFuh",
+   "name": "Jan - Confident and Natural",
+   "anker": false,
+   "nr": 17,
+   "datei": "s17.mp3",
+   "dauer": 9.84,
+   "f0": 128.8,
+   "mel": 16.4,
+   "abw": []
+  },
+  {
+   "id": "mN2MS5qHVRhNpqcfTpaV",
+   "name": "Marcus - Emphatic and Reflective",
+   "anker": false,
+   "nr": 18,
+   "datei": "s18.mp3",
+   "dauer": 10.24,
+   "f0": 103.4,
+   "mel": 12.4,
+   "abw": []
+  },
+  {
+   "id": "PAWzMWYQQXv6vAhaujU4",
+   "name": "Matthias - Historical and Humble",
+   "anker": false,
+   "nr": 19,
+   "datei": "s19.mp3",
+   "dauer": 10.0,
+   "f0": 116.2,
+   "mel": 14.2,
+   "abw": []
+  },
+  {
+   "id": "9T2VzpdyzVPMLIjcYVqp",
+   "name": "Leo Liest - Deep and calm",
+   "anker": false,
+   "nr": 20,
+   "datei": "s20.mp3",
+   "dauer": 10.72,
+   "f0": 97.4,
+   "mel": 12.2,
+   "abw": []
+  },
+  {
+   "id": "xoLW9SizYThZnEEVer1q",
+   "name": "Lupert",
+   "anker": true,
+   "nr": 21,
+   "datei": "s21.mp3",
+   "dauer": 10.08,
+   "f0": 116.0,
+   "mel": 11.6,
+   "abw": []
+  },
+  {
+   "id": "NBqeXKdZHweef6y0B67V",
+   "name": "Christian - Warm and Captivating",
+   "anker": true,
+   "nr": 22,
+   "datei": "s22.mp3",
+   "dauer": 11.36,
+   "f0": 90.7,
+   "mel": 13.7,
+   "abw": []
+  },
+  {
+   "id": "jJxw1Rvgr2c60UdJHPBn",
+   "name": "Ralf Benz - Premium Audiobook & Documentary",
+   "anker": true,
+   "nr": 23,
+   "datei": "s23.mp3",
+   "dauer": 10.72,
+   "f0": 118.3,
+   "mel": 15.1,
+   "abw": []
+  },
+  {
+   "id": "ML23UVoFL5mI6APbRAeR",
+   "name": "Robert Ranger - Cool Storyteller",
+   "anker": true,
+   "nr": 24,
+   "datei": "s24.mp3",
+   "dauer": 10.64,
+   "f0": 103.8,
+   "mel": 14.6,
+   "abw": []
+  },
+  {
+   "id": "3SS1Mem5uFQXQc0kb54t",
+   "name": "Gottfried - Dark Thriller & Crime",
+   "anker": true,
+   "nr": 25,
+   "datei": "s25.mp3",
+   "dauer": 10.64,
+   "f0": 110.0,
+   "mel": 13.8,
+   "abw": []
+  }
+ ]
+}

@@ -6,6 +6,8 @@
 - **Private Vorschau mit Modellvergleich vom 28.10.** (Teil 1 und 2 plus 7 Proben Ralf/Lupert; Quelle:
   `seite/bau_hoerbuch.py seite/karaoke.json <ordner> --artifact --vergleich messung/stimmen/vergleich_modelle.json`):
   https://claude.ai/artifact/Mj5fSGP6WhXq3iSCjZCqxt
+- **Stimmen-Duell** (privat, Speicher `duelle` mit `{a, b, w: "a"|"b"|"=", t}`; Quelle `seite/duell.html`, Stimmen in
+  `messung/stimmen/duell_stimmen.json`, Ton nur im Artifact): https://claude.ai/artifact/SMVhWQ4Qcto92tmNYbE6fM
 - Ältere private Vorschau mit dem Stimmenvergleich vom 27.10. (Lupert, Christian, Brian, Ralf, Robert, alle v4):
   https://claude.ai/artifact/Mi3DHEtyiHRPXEYfwj5XA9
 - Ältere private Vergleichsseite zu Teil 1 (Lupert, Christian, Gemini): https://claude.ai/artifact/RfZhGX4jPHk6ZFfHaLhjVr
@@ -24,13 +26,14 @@
 
 Eingerichtet als Umgebungsvariable `ELEVENLABS_API_KEY` (eingeschränkt: Text zu Sprache, Stimmen lesen, Modelle,
 Verlauf lesen, Benutzer; Abschalten bei Leak an). Stimmen schreiben ist bewusst gesperrt (könnte den Lupert-Klon löschen):
-Bibliotheksstimmen fügt der Nutzer in der App selbst zu seinen Stimmen hinzu. `api.elevenlabs.io` ist erreichbar.
+Bibliotheksstimmen lassen sich trotzdem direkt per API sprechen lassen (am 28.10. mit Otto geprüft), ohne sie hinzuzufügen. `api.elevenlabs.io` ist erreichbar.
 `/v1/user` und `/v1/user/subscription` antworten mit 401, das Kontingent ist also nicht abfragbar.
 
 Seit 28.10. ist der **neue Schlüssel (30.000 Credits Grenze)** aktiv. Eine API-Anfrage kostet laut Kopfzeile
 `character-cost` 336–337 Credits für Absatz 1–2 (785 Zeichen), also etwa **0,43 Credits je Zeichen**, bei v4, v2 und
 Storytel gleich. Die App hat für dieselben 785 Zeichen 766 Credits berechnet. Am 28.10. verbraucht: 7 Anfragen, 2.356
-Credits; Rest also höchstens etwa 27.600. **Das reicht nicht für das ganze Werk:** etwa 67.000 Zeichen (9,1 Zeichen je
+Credits; Rest also höchstens etwa 27.600. Dazu Stimmen-Duell 1.757 Credits (25 × 70 plus Test), Stand abends also etwa
+4.100 verbraucht und höchstens etwa 25.900 übrig. **Das reicht nicht für das ganze Werk:** etwa 67.000 Zeichen (9,1 Zeichen je
 lateinisches Wort aus Teil 1–4, 7.395 Wörter) kosten etwa 28.800 Credits für einen einzigen Durchgang ohne Neuversuche.
 Der Nutzer muss die Grenze des Schlüssels erhöhen, sofern das Konto die Credits hat. Der alte Schlüssel sollte gelöscht
 werden, falls noch nicht geschehen.
@@ -144,12 +147,22 @@ spielt mit 0,95. Seit 28.10. spielt die Vorschau alle Vergleichsproben mit 0,95;
 was schnelle Proben (Lupert v2: 3,21 W/s) noch gehetzter klingen ließ. Die parallele Sitzung „Seneca Hörspiel“ empfahl
 einen zweiten Klon aus der 30-s-Aufnahme; das ist nach dem Pausentest überholt (Teil 1 entstand schon mit `Seneca.mp3`).
 
+## Stimmensuche vom 28.10. abends
+
+Nutzerurteil: Ralf gefällt ihm auch mit v2 nicht; Teil 3 noch nicht erzeugen, er will erst Textstellen überarbeiten.
+Weil die Messwerte seinen Geschmack nicht vorhersagen (Teil 1 mit 13 HT gefällt), entscheidet sein Ohr per Paarvergleich.
+Stufe 1: 25 Stimmen sprechen dieselben zwei Sätze („Glücklich leben … ist ihr Blick getrübt.“, 164 Zeichen) mit v4,
+Stability 0,5; −18 LUFS; alle wortgetreu. 20 neue deutsche Muttersprachler aus 990 Bibliotheksstimmen (Erzählung/Bildung,
+Standarddeutsch, nicht jung, ruhige Beschreibungen, Rate 1,0, nach Nutzung) und 5 bekannte Anker (Lupert, Christian,
+Ralf, Robert, Gottfried). Das Duell paart blind und adaptiv (wenig gehörte Stimmen zuerst, ähnliche Stärke), schätzt
+Bradley-Terry mit einem gedachten Sieg und einer Niederlage je Stimme. Prüfstein: Landen Lupert und Christian oben und
+Ralf unten, misst das Duell seinen Geschmack. Stufe 2: die 3 bis 5 Besten mit Absatz 1–2 (je etwa 340 Credits),
+bearbeitet wie Teil 1, gegen Lupert.
+
 ## Offen, in dieser Reihenfolge
 
-1. **Hörvergleich durch den Nutzer** in der Vorschau (Link oben), zuerst Abschnitt „Teil 1 gegen heute: Pausen“:
-   Klingt „heute bearbeitet“ so gut wie Teil 1? Wenn ja, ist Lupert mit v4 plus Pausenbearbeitung gesetzt, und Ralf v2
-   ist nur noch die Gegenprobe. Erst danach über Löschen von `Seneca.mp3` oder Tonhöhe (Lupert 2,5 HT über dem Nutzer)
-   entscheiden. Credits: siehe oben, die Grenze des Schlüssels reicht nicht für das ganze Werk.
+1. **Stimmen-Duell auswerten** (Link oben): `ArtifactData list duelle`, Bradley-Terry wie in der Seite, dann Stufe 2.
+   Teil 3 erst erzeugen, wenn der Nutzer seine Textstellen überarbeitet hat und die Stimme feststeht.
 2. Mit der gewählten Stimme und dem gewählten Modell Teil 1 und 2 neu erzeugen, Teil 3 und 4 aufnehmen, alles neu
    verarbeiten.
 3. Teil 4 freigeben lassen. Entscheidungen im Entwurf, die der Nutzer prüfen sollte:

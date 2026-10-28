@@ -1,0 +1,263 @@
+<title>Seneca Stimmen-Duell</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Blinde Paarvergleiche von 25 Hörbuchstimmen mit demselben Seneca-Satz.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Literata:ital,opsz,wght@0,7..72,400;1,7..72,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  /* Layout: eine schmale Spalte wie die Hörbuch-Seite; oben der Satz, darunter zwei Hörtafeln nebeneinander, darunter die Wahl */
+  :root {
+    --stein: #161a19; --tafel: #1e2422; --tafel-hoch: #252c2a; --tinte: #e3e8e5; --grau: #9aa5a0; --linie: #333b38;
+    --bronze: #d29f62; --bronze-tief: #3a2c1c; --gut: #8fbf9a;
+    --display: "Cinzel", "Trajan Pro", Georgia, serif; --text: "Literata", Georgia, "Times New Roman", serif;
+    --ui: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--stein); color: var(--tinte); font: 16px/1.55 var(--ui); }
+  button { font: inherit; color: inherit; touch-action: manipulation; cursor: pointer; }
+  button:focus-visible { outline: 2px solid var(--bronze); outline-offset: 3px; }
+  button:disabled { cursor: default; opacity: .45; }
+  main { max-width: 520px; margin: 0 auto; display: grid; gap: 22px;
+    padding-block: 36px 48px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .kopf { display: grid; gap: 8px; text-align: center; justify-items: center; }
+  .eyebrow { font: 600 12px/1.3 var(--ui); letter-spacing: .14em; text-transform: uppercase; color: var(--bronze); }
+  h1 { margin: 0; font: 600 clamp(28px, 8vw, 40px)/1.15 var(--display); letter-spacing: .04em; text-wrap: balance; }
+  .lead { margin: 0; color: var(--grau); max-width: 40ch; }
+  .satz { margin: 0; padding: 14px 16px; border-left: 2px solid var(--bronze); background: var(--tafel); border-radius: 0 10px 10px 0;
+    font: italic 400 17px/1.55 var(--text); color: var(--tinte); }
+  .duell { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .tafel { min-width: 0; display: grid; justify-items: center; gap: 12px; padding: 18px 12px 16px; border: 1px solid var(--linie);
+    border-radius: 14px; background: var(--tafel); }
+  .tafel[data-aktiv="true"] { border-color: var(--bronze); background: var(--tafel-hoch); }
+  .buchstabe { font: 600 30px/1 var(--display); color: var(--bronze); }
+  .spiel { width: 64px; height: 64px; border-radius: 50%; border: 0; background: var(--bronze); color: var(--stein); display: grid; place-items: center; }
+  .spiel svg { width: 26px; height: 26px; }
+  .balken { width: 100%; height: 4px; border-radius: 2px; background: var(--linie); overflow: hidden; }
+  .balken span { display: block; height: 100%; width: 0; background: var(--bronze); }
+  .gehoert { font-size: 13px; color: var(--grau); min-height: 1.4em; }
+  .wahl { display: grid; grid-template-columns: 1fr auto 1fr; gap: 10px; }
+  .wahl button { min-height: 52px; border-radius: 12px; border: 1px solid var(--linie); background: var(--tafel); font-weight: 600; padding: 0 12px; }
+  .wahl button.haupt { background: var(--bronze-tief); border-color: var(--bronze); color: var(--tinte); }
+  .wahl button:not(:disabled):active { transform: translateY(1px); }
+  .stand { display: flex; flex-wrap: wrap; gap: 8px 16px; justify-content: space-between; align-items: center; font-size: 14px; color: var(--grau);
+    font-variant-numeric: tabular-nums; }
+  .textknopf { border: 0; background: transparent; color: var(--bronze); font-weight: 600; padding: 8px 0; }
+  .hinweis { margin: 0; font-size: 14px; color: var(--grau); }
+  .hinweis[data-art="fehler"] { color: #e9a27e; }
+  .zwischen { display: grid; gap: 10px; }
+  .zwischen h2 { margin: 0; font: 600 12px/1.3 var(--ui); letter-spacing: .14em; text-transform: uppercase; color: var(--bronze); }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; font-variant-numeric: tabular-nums; }
+  th, td { padding: 8px 6px; border-bottom: 1px solid var(--linie); text-align: left; vertical-align: top; }
+  th { font-weight: 500; color: var(--grau); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
+  td.zahl, th.zahl { text-align: right; white-space: nowrap; }
+  .anker { display: inline-block; margin-left: 6px; padding: 0 6px; border-radius: 999px; border: 1px solid var(--linie); font-size: 11px; color: var(--grau); }
+  .quote { display: inline-block; height: 6px; border-radius: 3px; background: var(--bronze); vertical-align: middle; margin-right: 6px; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+
+<main>
+  <header class="kopf">
+    <span class="eyebrow">Seneca · Stimmensuche</span>
+    <h1>Stimmen-Duell</h1>
+    <p class="lead">Zwei Stimmen lesen denselben Satz. Hör beide und tippe die an, die du im Hörbuch lieber hören würdest. Die Namen bleiben verborgen.</p>
+  </header>
+
+  <p class="satz">„Glücklich leben, mein Bruder Gallio, das wollen alle. Doch wenn es darum geht, klar zu erkennen, wodurch ein Leben eigentlich glücklich wird, ist ihr Blick getrübt.“</p>
+
+  <section class="duell" aria-label="Aktuelles Duell">
+    <div class="tafel" id="tafel-a" data-aktiv="false">
+      <span class="buchstabe">A</span>
+      <button type="button" class="spiel" id="spiel-a" aria-label="Stimme A abspielen"></button>
+      <div class="balken" aria-hidden="true"><span id="balken-a"></span></div>
+      <span class="gehoert" id="gehoert-a">noch nicht gehört</span>
+    </div>
+    <div class="tafel" id="tafel-b" data-aktiv="false">
+      <span class="buchstabe">B</span>
+      <button type="button" class="spiel" id="spiel-b" aria-label="Stimme B abspielen"></button>
+      <div class="balken" aria-hidden="true"><span id="balken-b"></span></div>
+      <span class="gehoert" id="gehoert-b">noch nicht gehört</span>
+    </div>
+  </section>
+
+  <div class="wahl">
+    <button type="button" class="haupt" id="wahl-a" disabled>A ist besser</button>
+    <button type="button" id="wahl-gleich" disabled>gleich</button>
+    <button type="button" class="haupt" id="wahl-b" disabled>B ist besser</button>
+  </div>
+
+  <div class="stand">
+    <span id="zaehler">Duell 1 · Ziel etwa 50</span>
+    <button type="button" class="textknopf" id="zurueck" hidden>Letzte Wahl zurücknehmen</button>
+  </div>
+  <p class="hinweis" id="hinweis">Abgespielt wird mit Tempo 0,95 wie im Hörbuch. Die Wahl wird frei, sobald du beide angespielt hast.</p>
+
+  <section class="zwischen">
+    <button type="button" class="textknopf" id="zeige" aria-expanded="false" aria-controls="rang">Zwischenstand zeigen</button>
+    <div id="rang" hidden>
+      <h2>Zwischenstand</h2>
+      <p class="hinweis">Gewinnchance gegen eine durchschnittliche Stimme, geschätzt nach Bradley-Terry. Aussagekräftig ab etwa drei Duellen je Stimme. Wer hier schaut, hört danach nicht mehr ganz blind.</p>
+      <table>
+        <thead><tr><th>#</th><th>Stimme</th><th class="zahl">Chance</th><th class="zahl">Duelle</th></tr></thead>
+        <tbody id="rang-zeilen"></tbody>
+      </table>
+    </div>
+  </section>
+  <audio id="ton" preload="auto"></audio>
+</main>
+
+<script>
+(function () {
+  var STIMMEN = [{"k": "s01", "n": "Otto - Casual and Normal", "a": false}, {"k": "s02", "n": "Leon Stern - Rich and Deep", "a": false}, {"k": "s03", "n": "Alexander - Deep TV Narrator", "a": false}, {"k": "s04", "n": "Stephan - Warm and Friendly", "a": false}, {"k": "s05", "n": "Helmut Stieglbauer - Deep and Dynamic", "a": false}, {"k": "s06", "n": "Johannes - Clear and Neutral", "a": false}, {"k": "s07", "n": "Thomas Schendel - Authoritative and Calm", "a": false}, {"k": "s08", "n": "Tristan Medersburg - Trustworthy", "a": false}, {"k": "s09", "n": "Clemens - Mature and Engaging", "a": false}, {"k": "s10", "n": "Hermann - Sympathetic and Trusthworthy", "a": false}, {"k": "s11", "n": "Michael Danisch - Deep and Soulful", "a": false}, {"k": "s12", "n": "KonradKlar - Deep, Warm and Storytelling", "a": false}, {"k": "s13", "n": "Christian Plasa - Deep Narration", "a": false}, {"k": "s14", "n": "Daniel - Corporate Narration", "a": false}, {"k": "s15", "n": "Marko - Gentle and Quiet", "a": false}, {"k": "s16", "n": "Marc – Warm & Clear", "a": false}, {"k": "s17", "n": "Jan - Confident and Natural", "a": false}, {"k": "s18", "n": "Marcus - Emphatic and Reflective", "a": false}, {"k": "s19", "n": "Matthias - Historical and Humble", "a": false}, {"k": "s20", "n": "Leo Liest - Deep and calm", "a": false}, {"k": "s21", "n": "Lupert", "a": true}, {"k": "s22", "n": "Christian - Warm and Captivating", "a": true}, {"k": "s23", "n": "Ralf Benz - Premium Audiobook & Documentary", "a": true}, {"k": "s24", "n": "Robert Ranger - Cool Storyteller", "a": true}, {"k": "s25", "n": "Gottfried - Dark Thriller & Crime", "a": true}];   // k = Tondatei-Schlüssel, n = Name, a = bekannte Stimme
+  var TEMPO = 0.95, ZIEL = 50, LS = "seneca-duelle-v1";
+  var PLAY = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5.5v13a1 1 0 0 0 1.5.86l10.2-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>';
+  var PAUSE = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>';
+  var $ = function (id) { return document.getElementById(id); };
+  var ton = $("ton"), duelle = [], paar = null, gehoert = { a: false, b: false }, seite = null, db = null, sammlung = null, eigene = [];
+
+  function idx(k) { for (var i = 0; i < STIMMEN.length; i++) if (STIMMEN[i].k === k) return i; return -1; }
+
+  // Bradley-Terry mit Ausgleich: jede Stimme hat je einen gedachten Sieg und eine Niederlage gegen eine Durchschnittsstimme (Stärke 1)
+  function staerken() {
+    var n = STIMMEN.length, p = [], W = [], N = [], i, j, it;
+    for (i = 0; i < n; i++) { p.push(1); W.push(1); N.push([]); for (j = 0; j < n; j++) N[i].push(0); }
+    duelle.forEach(function (d) {
+      var a = idx(d.a), b = idx(d.b); if (a < 0 || b < 0) return;
+      N[a][b]++; N[b][a]++;
+      if (d.w === "a") W[a] += 1; else if (d.w === "b") W[b] += 1; else { W[a] += .5; W[b] += .5; }
+    });
+    for (it = 0; it < 300; it++) {
+      var q = [];
+      for (i = 0; i < n; i++) {
+        var s = 2 / (p[i] + 1);   // die beiden gedachten Duelle gegen Stärke 1
+        for (j = 0; j < n; j++) if (N[i][j]) s += N[i][j] / (p[i] + p[j]);
+        q.push(W[i] / s);
+      }
+      var g = Math.exp(q.reduce(function (t, x) { return t + Math.log(x); }, 0) / n);
+      p = q.map(function (x) { return x / g; });
+    }
+    return p;
+  }
+  function anzahl() {
+    var c = STIMMEN.map(function () { return 0; });
+    duelle.forEach(function (d) { var a = idx(d.a), b = idx(d.b); if (a >= 0) c[a]++; if (b >= 0) c[b]++; });
+    return c;
+  }
+  function schonGepaart(a, b) { return duelle.some(function (d) { return (d.a === a && d.b === b) || (d.a === b && d.b === a); }); }
+
+  function neuesPaar() {
+    var p = staerken(), c = anzahl(), min = Math.min.apply(null, c), kand = [];
+    c.forEach(function (x, i) { if (x === min) kand.push(i); });
+    var i = kand[Math.floor(Math.random() * kand.length)], best = -1, bw = Infinity;
+    STIMMEN.forEach(function (s, j) {
+      if (j === i) return;
+      var w = Math.abs(Math.log(p[i]) - Math.log(p[j])) + .35 * c[j] + Math.random() * .4 + (schonGepaart(STIMMEN[i].k, s.k) ? 3 : 0);
+      if (w < bw) { bw = w; best = j; }
+    });
+    var links = Math.random() < .5;
+    paar = { a: STIMMEN[links ? i : best].k, b: STIMMEN[links ? best : i].k };
+    gehoert = { a: false, b: false }; seite = null;
+    ton.pause(); ton.removeAttribute("src");
+    ["a", "b"].forEach(function (x) { $("balken-" + x).style.width = "0"; $("gehoert-" + x).textContent = "noch nicht gehört"; $("tafel-" + x).dataset.aktiv = "false"; });
+    knoepfe(); wahlFrei(); zaehle();
+  }
+
+  function knoepfe() {
+    ["a", "b"].forEach(function (x) {
+      var spielt = seite === x && !ton.paused;
+      $("spiel-" + x).innerHTML = spielt ? PAUSE : PLAY;
+      $("spiel-" + x).setAttribute("aria-label", (spielt ? "Stimme " + x.toUpperCase() + " anhalten" : "Stimme " + x.toUpperCase() + " abspielen"));
+      $("tafel-" + x).dataset.aktiv = seite === x ? "true" : "false";
+    });
+  }
+  function spiele(x) {
+    if (!paar) return;
+    if (seite === x && !ton.paused) { ton.pause(); return; }
+    if (seite !== x) { ton.src = "audio/" + paar[x] + ".mp3"; seite = x; }
+    try { ton.preservesPitch = true; ton.webkitPreservesPitch = true; } catch (e) {}
+    ton.defaultPlaybackRate = TEMPO; ton.playbackRate = TEMPO;
+    var v = ton.play(); if (v && v.catch) v.catch(function () {});
+    gehoert[x] = true; $("gehoert-" + x).textContent = "angespielt"; wahlFrei();
+  }
+  ton.addEventListener("play", function () { if (Math.abs(ton.playbackRate - TEMPO) > .001) ton.playbackRate = TEMPO; knoepfe(); });
+  ton.addEventListener("pause", knoepfe);
+  ton.addEventListener("ended", function () { if (seite) $("gehoert-" + seite).textContent = "ganz gehört"; knoepfe(); });
+  ton.addEventListener("timeupdate", function () { if (seite && ton.duration) $("balken-" + seite).style.width = (100 * ton.currentTime / ton.duration) + "%"; });
+  $("spiel-a").addEventListener("click", function () { spiele("a"); });
+  $("spiel-b").addEventListener("click", function () { spiele("b"); });
+  $("spiel-a").innerHTML = PLAY; $("spiel-b").innerHTML = PLAY;
+
+  function wahlFrei() { var frei = gehoert.a && gehoert.b; ["wahl-a", "wahl-gleich", "wahl-b"].forEach(function (id) { $(id).disabled = !frei; }); }
+  function zaehle() {
+    var n = duelle.length;
+    $("zaehler").textContent = "Duell " + (n + 1) + " · " + n + " gespeichert · Ziel etwa " + ZIEL;
+    $("zurueck").hidden = eigene.length === 0;
+    if (!$("rang").hidden) rangliste();
+  }
+  function hinweis(t, fehler) { $("hinweis").textContent = t; $("hinweis").dataset.art = fehler ? "fehler" : ""; }
+
+  function lokalLaden() { try { return JSON.parse(localStorage.getItem(LS) || "[]"); } catch (e) { return []; } }
+  function lokalSchreiben() { try { localStorage.setItem(LS, JSON.stringify(duelle)); } catch (e) {} }
+
+  function waehle(w) {
+    if (!paar || !(gehoert.a && gehoert.b)) return;
+    var d = { a: paar.a, b: paar.b, w: w, t: Date.now() }, id = "d" + d.t + "-" + Math.random().toString(36).slice(2, 6);
+    ton.pause();
+    if (sammlung) {
+      duelle.push(Object.assign({ id: id }, d)); eigene.push(id); neuesPaar();
+      sammlung.doc(id).set(d).then(function () { hinweis("Gespeichert. Weiter mit dem nächsten Duell."); })
+        .catch(function (e) {
+          duelle = duelle.filter(function (x) { return x.id !== id; }); eigene = eigene.filter(function (x) { return x !== id; }); zaehle();
+          hinweis(e && e.code === "quota_exceeded" ? "Der Speicher ist voll. Sag Claude Bescheid." : "Die Wahl ließ sich nicht speichern. Bitte das Duell noch einmal wählen.", true);
+        });
+    } else {
+      duelle.push(Object.assign({ id: id }, d)); eigene.push(id); lokalSchreiben(); neuesPaar();
+    }
+  }
+  $("wahl-a").addEventListener("click", function () { waehle("a"); });
+  $("wahl-b").addEventListener("click", function () { waehle("b"); });
+  $("wahl-gleich").addEventListener("click", function () { waehle("="); });
+  $("zurueck").addEventListener("click", function () {
+    var id = eigene.pop(); if (!id) return;
+    duelle = duelle.filter(function (x) { return x.id !== id; });
+    if (sammlung) sammlung.doc(id).delete().catch(function () { hinweis("Zurücknehmen hat nicht geklappt.", true); }); else lokalSchreiben();
+    hinweis("Letzte Wahl zurückgenommen."); zaehle();
+  });
+
+  function rangliste() {
+    var p = staerken(), c = anzahl(), ord = STIMMEN.map(function (s, i) { return i; }).sort(function (x, y) { return p[y] - p[x]; });
+    var body = $("rang-zeilen"); body.textContent = "";
+    ord.forEach(function (i, r) {
+      var tr = document.createElement("tr"), chance = p[i] / (p[i] + 1);
+      var td = function (t, cls) { var e = document.createElement("td"); if (cls) e.className = cls; if (t !== undefined) e.textContent = t; tr.appendChild(e); return e; };
+      td(String(r + 1));
+      var n = td(); n.textContent = STIMMEN[i].n;
+      if (STIMMEN[i].a) { var b = document.createElement("span"); b.className = "anker"; b.textContent = "bekannt"; n.appendChild(b); }
+      var z = td(undefined, "zahl"), bar = document.createElement("span"); bar.className = "quote"; bar.style.width = Math.round(40 * chance) + "px";
+      z.appendChild(bar); z.appendChild(document.createTextNode(Math.round(100 * chance) + " %"));
+      td(String(c[i]), "zahl");
+      body.appendChild(tr);
+    });
+  }
+  $("zeige").addEventListener("click", function () {
+    var auf = $("rang").hidden; $("rang").hidden = !auf; $("zeige").setAttribute("aria-expanded", String(auf));
+    $("zeige").textContent = auf ? "Zwischenstand verbergen" : "Zwischenstand zeigen"; if (auf) rangliste();
+  });
+
+  // Erst ohne Speicher spielbar; sobald der Speicher antwortet, kommen die bisherigen Duelle dazu
+  duelle = []; neuesPaar();
+  var gestartet = false;
+  var w = window.claude && window.claude.use ? window.claude.use("db") : Promise.resolve(null);
+  Promise.resolve(w).then(function (x) {
+    db = x;
+    if (!db) { duelle = lokalLaden(); zaehle(); hinweis("Der gemeinsame Speicher ist hier nicht verfügbar. Deine Wahlen bleiben nur in diesem Browser, Claude kann sie dann nicht lesen.", true); return; }
+    sammlung = db.collection("duelle");
+    sammlung.onSnapshot(function (snap) {
+      var liste = snap.docs.map(function (d) { var b = d.data() || {}; return { id: d.id, a: b.a, b: b.b, w: b.w, t: b.t }; });
+      liste.sort(function (x, y) { return (x.t || 0) - (y.t || 0); });
+      duelle = liste; zaehle();
+      if (!gestartet) { gestartet = true; if (!gehoert.a && !gehoert.b) neuesPaar(); }
+    }, function () { hinweis("Die Verbindung zum Speicher ist abgebrochen. Bitte die Seite neu laden.", true); });
+  }).catch(function () { duelle = lokalLaden(); zaehle(); });
+})();
+</script>
