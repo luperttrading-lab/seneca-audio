@@ -182,6 +182,11 @@ die Messung nicht; das bleibt Sache des Ohrs.
    formanterhaltend um 3,3 HT auf 100 Hz gesenkt (er sprach den Abschnitt mit 121 Hz). In diesem Abschnitt liegen alle
    Stimmen höher als in Runde 1 (Alexander 99 → 114 Hz). Whisper: „Wahlen“ als „Walen“ (Scheinfehler), bei Marcus
    „Prätor“ als „Präter“ (vielleicht falsch ausgesprochen). Auswerten mit `ArtifactData list duelle2`.
+   Der mit Rubber Band abgesenkte Lupert (r2_09) klang laut Nutzer „ganz schlecht“; gemessen: CPPS 7,49 → 5,73, HNR
+   10,3 → 8,9, Spektralhülle 2,2 dB vom Original entfernt. Aus dem Duell genommen (Duelle mit r2_09 beim Auswerten
+   weglassen). Bessere Verfahren: Praat PSOLA („Change gender“, Formantfaktor 1,0) −3,3 HT: CPPS 6,90, Abstand 0,46 dB;
+   WORLD-Vocoder (`pyworld`) −3,3 HT: CPPS 9,52 (Vocoder glättet), Abstand 0,52 dB; PSOLA −2,0 HT: CPPS 7,05, 0,40 dB.
+   Hörproben an den Nutzer geschickt; die gewählte Fassung kommt als neuer Eintrag ins Duell.
    Ursprünglicher Plan: neuer Abschnitt Teil 2, Absatz 3 („Nun aber steht das Volk …“, 350 Zeichen,
    etwa 150 Credits je Stimme) mit Alexander, Leo Liest, Robert, Gottfried, Marcus, Marko, Helmut Stieglbauer und Lupert,
    dazu Lupert um 2,5 HT abgesenkt (formanterhaltend, `rubberband` ist in ffmpeg vorhanden, kostenlos) als Test der
