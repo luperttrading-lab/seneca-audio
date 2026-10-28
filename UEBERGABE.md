@@ -108,11 +108,36 @@ Phrase; Tempo-Wunsch 2,6–3,0 W/s.
   „entgegen“ verschliffen. Die anderen sechs Proben sind wortgetreu (`pruef.py large-v3-turbo`).
 - Grenze der Messung: n = 2 Proben für Ralf v2, n = 1 für die übrigen; der Abfall streut stark (−1,51 / −0,58).
 
+## Pausentest vom 28.10.: warum Teil 1 gut klingt
+
+Der Nutzer findet Teil 1 „richtig gut“ und Luperts API-Probe von heute „Katastrophe“. Herkunft der öffentlichen Teile:
+Teil 1 = Take von 07:32 UTC mit `eleven_v4_exp` (App, 91,44 s, identisch mit `a-lupert_exp` und dem alten `v_lupert`)
+plus 10,0 s Pausen („ruhig“: Satzende 0,9, Absatz 1,3, Doppelpunkt 0,55, Gedankenstrich 0,45, Komma 0,35 s, wo schon
+abgesetzt wird); Teil 2 = Take von 11:38 UTC (94,75 s) plus 10,2 s Pausen. Messung Absatz 1–2:
+
+| Fassung | Melodie HT | Pausen % | Wörter/Phrase | Abstand |
+|---|---|---|---|---|
+| Teil 1 roh (App, v4 exp) | 13,00 | 8,4 | 11,2 | 5,34 |
+| Teil 1 bearbeitet (öffentlich) | 13,22 | 16,6 | 9,2 | 2,98 |
+| heute roh (API, v4) | 12,84 | 8,6 | 9,5 | 3,86 |
+| heute bearbeitet wie Teil 1 | 12,73 | 16,1 | 9,2 | 2,40 |
+| Ralf v2 Probe 2 bearbeitet wie Teil 1 | 10,06 | 25,0 | 6,0 | 1,97 |
+
+- Roh ist Teil 1 nicht besser als die heutige Probe. Der Unterschied liegt in der Nachbearbeitung (Pausen verdoppelt) und
+  im Abspieltempo 0,95. Das gilt als wahrscheinlich, bis der Nutzer „heute bearbeitet“ gehört hat.
+- **Korrektur:** Die Melodie von 13 HT stört den Nutzer offenbar nicht, denn Teil 1 hat sie auch. Der Zielbereich 10–11,7 HT
+  aus den Vorlesern ist also kein Maß für seine Vorliebe. `Seneca.mp3` vorerst **nicht** löschen; Teil 1 entstand
+  wahrscheinlich schon mit beiden Proben.
+- Vergleiche zwischen Stimmen nur noch bearbeitet und mit Tempo 0,95 anbieten; die Vorschau hat dafür den Abschnitt
+  „Teil 1 gegen heute: Pausen“ (`PAUSENTEST` in `seite/bau_hoerbuch.py`). Ralf v2 pausiert schon roh genug; mit dem
+  Teil-1-Profil kommt er auf 25 % Pausen, für ihn wäre ein schwächeres Profil richtig.
+
 ## Offen, in dieser Reihenfolge
 
-1. **Hörvergleich durch den Nutzer** in der neuen Vorschau (Link oben): Ralf v2 gegen Ralf v4 (27.10.) und Lupert v4.
-   Leitfrage: Behebt v2, was ihn an Ralf gestört hat? Wenn ja: eine Probe Ralf v2 mit `speed` 0,92 (Tempo prüfen,
-   etwa 340 Credits), dann Kreditgrenze des Schlüssels klären.
+1. **Hörvergleich durch den Nutzer** in der Vorschau (Link oben), zuerst Abschnitt „Teil 1 gegen heute: Pausen“:
+   Klingt „heute bearbeitet“ so gut wie Teil 1? Wenn ja, ist Lupert mit v4 plus Pausenbearbeitung gesetzt, und Ralf v2
+   ist nur noch die Gegenprobe. Erst danach über Löschen von `Seneca.mp3` oder Tonhöhe (Lupert 2,5 HT über dem Nutzer)
+   entscheiden. Credits: siehe oben, die Grenze des Schlüssels reicht nicht für das ganze Werk.
 2. Mit der gewählten Stimme und dem gewählten Modell Teil 1 und 2 neu erzeugen, Teil 3 und 4 aufnehmen, alles neu
    verarbeiten.
 3. Teil 4 freigeben lassen. Entscheidungen im Entwurf, die der Nutzer prüfen sollte:
