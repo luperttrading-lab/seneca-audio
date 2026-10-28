@@ -1,4 +1,4 @@
-# Übergabe – Stand 28.10.2026
+# Übergabe – Stand 28.10.2026, nachmittags
 
 ## Links
 
@@ -14,35 +14,66 @@
 | 1 (Kap. 1,1–2) | fertig | Lupert, Pausen „ruhig“, öffentlich (`audio/teil01.m4a`) |
 | 2 (Kap. 1,3–5) | fertig, zweimal überarbeitet | Lupert, neue Kommaregel, öffentlich (`audio/teil02.m4a`) |
 | 3 (Kap. 2) | fertig (`texte/teil03.txt`), mit Stewart und Forbiger abgeglichen | fehlt, wartet auf die Stimmenwahl |
-| 4–29 | Latein in `texte/latein/` | – |
+| 4 (Kap. 3) | Entwurf (`texte/teil04.txt`), mit Stewart und Forbiger abgeglichen, Freigabe offen | – |
+| 5–29 | Latein in `texte/latein/` | – |
 
 ## ElevenLabs-Schlüssel
 
 Eingerichtet als Umgebungsvariable `ELEVENLABS_API_KEY` (eingeschränkt: Text zu Sprache, Stimmen lesen, Modelle,
-Verlauf lesen, Benutzer; Limit 30.000 Credits je Abrechnungszeitraum; Abschalten bei Leak an). Zu Beginn prüfen, ob er
-ankommt, ohne ihn anzuzeigen. Stimmen schreiben ist bewusst gesperrt (könnte den Lupert-Klon löschen): Bibliotheksstimmen
-fügt der Nutzer in der App selbst zu seinen Stimmen hinzu. `api.elevenlabs.io` ist aus der Cloud-Umgebung erreichbar.
+Verlauf lesen, Benutzer; Abschalten bei Leak an). Stimmen schreiben ist bewusst gesperrt (könnte den Lupert-Klon löschen):
+Bibliotheksstimmen fügt der Nutzer in der App selbst zu seinen Stimmen hinzu. `api.elevenlabs.io` ist erreichbar.
+**Das Kontingent des Schlüssels steht auf 30 Credits, nicht 30.000** (Fehlermeldung `quota_exceeded`: „quota of 30“).
+Eine Anfrage mit Kapitel 1, Absatz 1–2 (785 Zeichen) braucht laut Fehlermeldung 337 Credits. Der Nutzer muss das Limit
+des Schlüssels „Seneca“ in ElevenLabs hochsetzen; bis dahin geht nur, was nichts kostet (Verlauf, Modelle, Bibliothek,
+Hörproben). `/v1/user` und `/v1/user/subscription` antworten mit 401.
+
+## Befunde vom 28.10. (Messung der Takes aus dem Verlauf)
+
+Werte in `messung/stimmen/takes_verlauf.json`, gemessen mit `werkzeuge/messen_abstand.py` (gleiche Merkmale wie
+`prosodie.py`, Abstand wie im alten Vergleich; Robert, Brian und Ralf Take A treffen die alten Werte exakt).
+
+- Alle v4-Proben liefen mit Stability 0,5, Similarity 0,75–0,81 oder Standard. Höhere Stability ist also ungeprüft.
+- Jede Erzeugung in der App liefert zwei Takes. Streuung zwischen den beiden Takes einer Anfrage (σ je Take):
+  Melodie 0,32 HT, Abfall 0,63 HT/s, Pausenanteil 0,8 %, Abstand 0,82. Zwischen den Stimmen (Absatz 1–2): Melodie
+  1,68 HT, Abfall 0,71 HT/s. Melodie ist eine verlässliche Stimmeigenschaft, der Abfall nicht (Zuverlässigkeit einer
+  einzelnen Messung etwa 0,4). Ralfs Bestwert 1,30 war Glück: Take B hat 2,69.
+- Gottfried (27.10.): Melodie 14,2 / 13,7 HT, Abstand 4,63 / 1,93; gleiches Muster wie die anderen Bibliotheksstimmen.
+- **Lupert widerspricht der Modell-These teilweise:** gleiche Stimme, gleiches Modell v4, Melodie 10,7 / 10,3 HT
+  (05:23, Absatz 1–2 allein, Similarity Standard), 13,0 / 13,05 HT (07:32, ganz Teil 1, Similarity 0,75; daraus stammt
+  der Wert 13,0 im alten Vergleich, Take mit `eleven_v4_exp`), 11,4 / 11,0 und 11,4 / 12,1 HT (Teil 2). v4 kann also
+  ruhig klingen. Der Sprung 10,5 → 13,0 bei Lupert liegt weit über der Take-Streuung; Ursache offen (Similarity,
+  längerer Text im Auftrag oder Streuung zwischen Anfragen, die größer ist als zwischen Takes einer Anfrage).
+- Luperts Schwäche ist das Phrasieren: Pausenanteil 9–11 % statt 13–20 %, 10–11 Wörter je Phrase statt 4–7. Die eigene
+  Lesung des Nutzers (`mensch_nutzer` in `messung/merkmale.json`): Melodie 8,6 HT, Abfall −0,41, Pausen 22 %.
+- Bibliotheksstimmen: Hörprobe gegen v4 (5 Stimmen, Mittel beider Takes): r = 0,80, Steigung 0,28 (p ≈ 0,1, n = 5).
+  Hörproben streuen 8,3–15,4 HT, dieselben Stimmen in v4 nur 13,4–15,9 HT. v4 drückt Bibliotheksstimmen offenbar auf
+  13 HT und mehr; eine Suche über Hörproben findet so keine Stimme unter 12 HT. Hörproben sind zudem nur 4–10 s lang.
+  Screening von 189 Stimmen (Erzählung/Bildung, nicht jung): `werkzeuge/bib_screening.py`, unvollständig.
 
 ## Offen, in dieser Reihenfolge
 
-1. **Erst das Modell prüfen, dann die Stimme suchen.** Geht dem Abschnitt Stimmensuche in `PLAN.md` vor. Befund aus
-   `messung/stimmen/vergleich_kap1_absatz12.json`: Alle fünf Stimmen (Lupert, Christian, Brian, Ralf Benz, Robert
-   Ranger) weichen in dieselbe Richtung ab – Satzmelodie 13,0–16,0 Halbtöne statt 10,0–11,7, Schwankung der
-   Pausenlängen 0,30–0,50 statt 0,62–0,89, Pausenanteil bei vier von fünf zu niedrig, Abfall am Phrasenende bei vier von
-   fünf zu stark. Gemeinsam sind nur Modell (eleven v4) und Text. Verdacht: Das Modell erzeugt den Vorlese-Singsang,
-   der den Nutzer stört; eine Bibliothekssuche mit demselben Modell fände nur weitere Stimmen mit demselben Fehler.
-   Melodie und Abfall lassen sich nachträglich nicht korrigieren, Pausen schon (`pausen2.py`).
-   1. Im Verlauf (History) nachsehen, mit welchem Modell und welchen Einstellungen die bisherigen Proben erzeugt wurden,
-      auch die Stimme Gottfried vom 27.10. (taucht oben noch nicht auf; falls auch zu lebhaft, stützt das den Verdacht).
-   2. Verfügbare Modelle abfragen (`GET /v1/models`), welche Deutsch können.
-   3. Ralf Benz (bester Messwert, Abstand 1,30) mit Kapitel 1, Absatz 1–2 in 2–3 Varianten erzeugen (anderes Modell,
-      höhere Stability; je etwa 800 Credits) und messen. Fällt die Melodie unter etwa 12 Halbtöne: A/B-Vergleich gegen
-      die v4-Fassung.
-   4. Erst wenn das nichts bringt: Bibliothekssuche wie in `PLAN.md` (A/B-Duelle, Bradley-Terry).
-2. Mit der gewählten Stimme und dem gewählten Modell Teil 1 und 2 neu erzeugen, Teil 3 aufnehmen, alles neu verarbeiten.
-3. Teil 4 (Kapitel 3) übersetzen, unabhängig von der Stimme, kann parallel laufen. In 3,4 hat der lateinische Text eine
-   Lücke (`nam uoluptatibus et * * *`) und eine Crux (`~ipsis flagitiis noxia~`): mit dem Nutzer klären, ob die
-   Hörfassung glättet (wie vermutlich Stewart) oder die Lücke hörbar macht.
+1. **Kontingent des Schlüssels erhöhen (Nutzer).** Danach die Modellprüfung, angepasst an die Befunde:
+   1. Ralf Benz, Absatz 1–2, je eine Anfrage: `eleven_v4` mit Stability 1,0; `eleven_multilingual_v2` mit Stability
+      0,75, Style 0; `eleven_storytel_v2` (Hörbuchmodell, Zugang ungeprüft). Je etwa 340 Credits laut Fehlermeldung.
+      `werkzeuge/erzeuge_varianten.py <text> <ordner>` (enthält auch 1.2); Text = Absatz 1–2 aus Teil 1, wie er im
+      Verlauf steht (`GET /v1/history`, Feld `dialogue[0].text`). Messen: Wortzeiten mit
+      `seite/karaoke_daten.py --einzeln`, dann `werkzeuge/messen_abstand.py <aus.json> <mp3 …>`.
+   2. Lupert mit denselben Einstellungen wie 05:23 (Absatz 1–2 allein, Similarity Standard) noch einmal: klärt, ob
+      10,5 HT reproduzierbar ist. Wenn ja, ist Lupert mit v4 der beste Kandidat für die Melodie, und die Pausen lassen
+      sich mit `pausen2.py` verbessern (aber nur verlängern, wo Lupert schon pausiert).
+   3. Bei Melodie unter etwa 12 HT: A/B-Vergleich mit dem Nutzer. Wegen der Take-Streuung nur Unterschiede über
+      etwa 1 HT ernst nehmen, beim Abfall nur Mittel aus mehreren Takes.
+2. Mit der gewählten Stimme und dem gewählten Modell Teil 1 und 2 neu erzeugen, Teil 3 und 4 aufnehmen, alles neu
+   verarbeiten.
+3. Teil 4 freigeben lassen. Entscheidungen im Entwurf, die der Nutzer prüfen sollte:
+   - Lücke und Crux in 3,4 sind geglättet wie bei Stewart und Forbiger (beide glätten): „an die Stelle der Lüste und
+     all dessen, was klein und zerbrechlich ist und schon durch seine Schändlichkeit schadet, tritt …“.
+   - Senatsbild in 3,2 beibehalten: „meine Stimme abgeben“, *sententiam dividere* als „dass über seinen Antrag Punkt
+     für Punkt abgestimmt wird“, *hoc amplius censeo* als „Ich beantrage noch etwas dazu.“
+   - *fortuna* als „Schicksal“, nicht „Glück“, damit „glücklich“ für *beatus* reserviert bleibt.
+   - *voluptas* als „Lust“ (Plural „Lüste“) – Leitbegriff ab Kapitel 4, bitte früh festlegen; *gaudium* als „Freude“.
+   - *solidum* als „fest und gediegen“ (Bild vom reinen Erz, passt zu *eruamus*, „ausgraben“).
+4. Teil 5 (Kapitel 4) übersetzen.
 
 Im Container fehlen `faster-whisper` und `praat-parselmouth` (für `pruef.py`, `prosodie.py`, `karaoke_daten.py`);
 pip ist erreichbar, vor den Messungen installieren.
