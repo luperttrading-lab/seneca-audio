@@ -86,6 +86,14 @@ Phrase; Tempo-Wunsch 2,6–3,0 W/s.
   13,4 HT. Ursache offen: Die App schickt vielleicht andere Standardwerte als die API (Similarity „Standard“), oder die
   Streuung zwischen Anfragen ist groß. Mit v2 hetzt Lupert (3,9 % Pausen, 12,5 Wörter je Phrase); als
   Hörbuchstimme mit v2 also unbrauchbar, mit v4 bleibt die Phrasierung die Schwäche.
+- **Lupert hat zwei Proben** (`GET /v1/voices/xoLW9SizYThZnEEVer1q`, Instant-Klon, angelegt 27.10. 05:23 UTC):
+  `recording-1793078461.mp3` (30 s, im Browser aufgenommen 27.10. 05:21 UTC) und `Seneca.mp3` (55 s, Datum nicht
+  abfragbar; vermutlich die eigene Seneca-Lesung des Nutzers, nachträglich hinzugefügt). Der Nutzer nennt die Stimme
+  seit dem zusätzlichen Text „Katastrophe“. Naheliegende Erklärung für den Sprung 10,5 → 13 HT zwischen 05:23 und 07:32:
+  nicht das Modell, sondern der veränderte Klon. Prüfung: `Seneca.mp3` in der App entfernen (der Schlüssel darf keine
+  Stimmen schreiben; API-Weg wäre `DELETE /v1/voices/{voice_id}/samples/{sample_id}`), dann zwei Proben Lupert v4 wie
+  05:23 erzeugen und messen. Geht das Entfernen in der App nicht: die 30-s-Aufnahme per API laden
+  (`GET /v1/voices/{voice_id}/samples/{sample_id}/audio`) und daraus einen neuen Instant-Klon anlegen lassen.
 - Storytel v2 ist zugänglich, macht Ralf aber sehr flach (6,9 HT) und langsam; Whisper hört „Ziel“ als „Seel“ und
   „entgegen“ verschliffen. Die anderen sechs Proben sind wortgetreu (`pruef.py large-v3-turbo`).
 - Grenze der Messung: n = 2 Proben für Ralf v2, n = 1 für die übrigen; der Abfall streut stark (−1,51 / −0,58).
