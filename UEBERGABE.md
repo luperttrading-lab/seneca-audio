@@ -132,6 +132,12 @@ abgesetzt wird); Teil 2 = Take von 11:38 UTC (94,75 s) plus 10,2 s Pausen. Messu
   „Teil 1 gegen heute: Pausen“ (`PAUSENTEST` in `seite/bau_hoerbuch.py`). Ralf v2 pausiert schon roh genug; mit dem
   Teil-1-Profil kommt er auf 25 % Pausen, für ihn wäre ein schwächeres Profil richtig.
 
+Hörurteil des Nutzers dazu: zwischen den vier Lupert-v4-Fassungen (Teil 1 roh/bearbeitet, heute roh/bearbeitet) „keine
+großen Unterschiede“. Lupert v4 per API klingt also wie in der App, und die Pausenbearbeitung ist für ihn kein großer
+Faktor. Die „Katastrophe“ ist damit wahrscheinlich Lupert mit Multilingual v2 (Bestätigung offen). Tempo 0,5 hat er
+nicht in ElevenLabs eingestellt (kein Verlaufseintrag mit `speed` 0,5, alle Takes 2,9–3,1 W/s), sondern vermutlich am
+Temporad der alten Hörseite (`seite/vorlage.html`, 0,5–1,5, nur Abspielen, Tonhöhe bleibt, im Browser gespeichert).
+
 ## Offen, in dieser Reihenfolge
 
 1. **Hörvergleich durch den Nutzer** in der Vorschau (Link oben), zuerst Abschnitt „Teil 1 gegen heute: Pausen“:
