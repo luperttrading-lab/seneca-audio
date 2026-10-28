@@ -138,6 +138,12 @@ Faktor. Die „Katastrophe“ ist damit wahrscheinlich Lupert mit Multilingual v
 nicht in ElevenLabs eingestellt (kein Verlaufseintrag mit `speed` 0,5, alle Takes 2,9–3,1 W/s), sondern vermutlich am
 Temporad der alten Hörseite (`seite/vorlage.html`, 0,5–1,5, nur Abspielen, Tonhöhe bleibt, im Browser gespeichert).
 
+Tempo-Vorliebe aus der Sitzung „Allgemeine Fragen“ (Bildschirmfoto des Nutzers): Christian gefiel ihm am Temporad bei
+0,93 (128 Wörter/min, eigene Lesung 139); empfohlener Startwert dort 0,92 (2,66 W/s Sprechtempo). Die öffentliche Seite
+spielt mit 0,95. Seit 28.10. spielt die Vorschau alle Vergleichsproben mit 0,95; vorher lief der Stimmenvergleich mit 1,0,
+was schnelle Proben (Lupert v2: 3,21 W/s) noch gehetzter klingen ließ. Die parallele Sitzung „Seneca Hörspiel“ empfahl
+einen zweiten Klon aus der 30-s-Aufnahme; das ist nach dem Pausentest überholt (Teil 1 entstand schon mit `Seneca.mp3`).
+
 ## Offen, in dieser Reihenfolge
 
 1. **Hörvergleich durch den Nutzer** in der Vorschau (Link oben), zuerst Abschnitt „Teil 1 gegen heute: Pausen“:

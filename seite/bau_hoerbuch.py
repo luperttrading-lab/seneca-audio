@@ -3,8 +3,8 @@
 Aufruf: python3 bau_hoerbuch.py <karaoke.json> <Ausgabeordner> [--artifact] [--vergleich <messung.json>]
 Die Tondateien audio/teilNN.m4a liegen im Ausgabeordner. Mit --artifact entsteht eine Fassung ohne Dokumentrahmen
 für eine Claude-Seite (dort wird der Rahmen beim Veröffentlichen ergänzt); sie erwartet audio/teilNN.mp3. Mit
---vergleich kommen unter die Teile die Abschnitte aus ABSCHNITTE (Kapitel 1, Absatz 1–2) mit den Messwerten aus der
-angegebenen Datei.
+--vergleich kommen unter die Teile die Abschnitte aus ABSCHNITTE (Kapitel 1, Absatz 1–2, Tempo 0,95) mit den
+Messwerten aus der angegebenen Datei.
 """
 import html, json, os, sys
 HIER = os.path.dirname(os.path.abspath(__file__))
@@ -33,9 +33,9 @@ ABSCHNITTE = [   # (Kennung, Überschrift, Einleitung, Tempo, nach Abstand sorti
     ("pausen", "Teil 1 gegen heute: Pausen", "Kapitel 1, Absatz 1–2, alle mit Tempo 0,95 wie im Hörbuch und gleich laut. „Bearbeitet“ heißt "
      "nur: Pausen verlängert wie in Teil 1 (Satzende 0,9 s, Absatz 1,3 s, Doppelpunkt 0,55 s, Gedankenstrich 0,45 s, Komma 0,35 s, "
      "wo die Stimme schon kurz absetzt). Tonhöhe und Satzmelodie sind unverändert.", 0.95, False, PAUSENTEST),
-    ("vergleich", "Stimmen und Modelle zum Vergleich", "Kapitel 1, Absatz 1–2, so wie ElevenLabs sie liefert: unbearbeitet, Tempo 1,0, "
-     "gleich laut. Sortiert nach Abstand zu echten Vorlesern; Pausen lassen sich nachträglich verlängern, Satzmelodie und Tonlage nicht. "
-     "Melodie ist die Spannweite der Satzmelodie: echte Vorleser 10 bis 11,7 Halbtöne, deine eigene Lesung 8,6.", 1.0, True, VERGLEICH),
+    ("vergleich", "Stimmen und Modelle zum Vergleich", "Kapitel 1, Absatz 1–2, so wie ElevenLabs sie liefert: unbearbeitet, gleich laut, "
+     "abgespielt mit Tempo 0,95 wie im Hörbuch. Sortiert nach Abstand zu echten Vorlesern; Pausen lassen sich nachträglich verlängern, Satzmelodie und Tonlage nicht. "
+     "Melodie ist die Spannweite der Satzmelodie: echte Vorleser 10 bis 11,7 Halbtöne, deine eigene Lesung 8,6.", 0.95, True, VERGLEICH),
 ]
 PLAY = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5.5v13a1 1 0 0 0 1.5.86l10.2-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>'
 mmss = lambda s: f"{int(s // 60)}:{int(round(s % 60)):02d}"
