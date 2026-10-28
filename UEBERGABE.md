@@ -159,9 +159,20 @@ Bradley-Terry mit einem gedachten Sieg und einer Niederlage je Stimme. Prüfstei
 Ralf unten, misst das Duell seinen Geschmack. Stufe 2: die 3 bis 5 Besten mit Absatz 1–2 (je etwa 340 Credits),
 bearbeitet wie Teil 1, gegen Lupert.
 
+Ergebnis Runde 1 (52 Duelle, 9 unentschieden, 17:18–17:49 UTC, Median 26 s je Duell; Rohdaten
+`messung/stimmen/duell_ergebnis_runde1.json`). Bradley-Terry, Gewinnchance gegen den Durchschnitt (80-%-Bootstrap-Band):
+Alexander – Deep TV Narrator 81 % (65–86), Leo Liest – Deep and calm 81 % (64–87), Robert Ranger 78 %, Gottfried 73 %,
+Marcus – Emphatic and Reflective 69 %, Marko – Gentle and Quiet 68 %, Helmut Stieglbauer 67 %; ganz unten Otto 26 %,
+**Lupert 24 % (1 Sieg, 4 Niederlagen)**, Ralf 18 %, Daniel 11 %. **Die Tonlage erklärt die Wahl:** Spearman Stärke ~ F0
+ρ = −0,72 (Permutations-p < 0,001); in entschiedenen Duellen mit mehr als 3 Hz Unterschied gewinnt die tiefere Stimme 25
+von 33 (76 %, einseitig p = 0,002). Satzmelodie ρ = −0,20 (p = 0,33), also bedeutungslos. Die ersten sieben liegen bei
+93–110 Hz, die letzten fünf bei 116–135 Hz. Lupert (116 Hz) liegt 2,5 HT über der echten Stimme des Nutzers.
+
 ## Offen, in dieser Reihenfolge
 
-1. **Stimmen-Duell auswerten** (Link oben): `ArtifactData list duelle`, Bradley-Terry wie in der Seite, dann Stufe 2.
+1. **Stufe 2 (Freigabe der Credits offen):** Absatz 1–2 mit Alexander, Leo Liest, Marcus, Helmut Stieglbauer (je etwa
+   340 Credits); Robert und Gottfried aus dem Verlauf (27.10., kostenlos); Lupert um etwa 2,5 HT abgesenkt
+   (formanterhaltend, kostenlos) als Test der Tonlagen-These. Alle bearbeitet wie Teil 1, Tempo 0,95, zweite Duellrunde.
    Teil 3 erst erzeugen, wenn der Nutzer seine Textstellen überarbeitet hat und die Stimme feststeht.
 2. Mit der gewählten Stimme und dem gewählten Modell Teil 1 und 2 neu erzeugen, Teil 3 und 4 aufnehmen, alles neu
    verarbeiten.
