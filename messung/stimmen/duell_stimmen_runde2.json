@@ -1,0 +1,114 @@
+{
+ "text": "Nun aber steht das Volk gegen die Vernunft und verteidigt sein eigenes Übel. Darum geht es zu wie bei den Wahlen: Dieselben, die jemanden zum Prätor gemacht haben, wundern sich, dass er es geworden ist, sobald die wankelmütige Gunst sich gedreht hat. Dasselbe loben wir, dasselbe tadeln wir. So endet jedes Urteil, das nach der Mehrheit gefällt wird.",
+ "stimmen": [
+  {
+   "id": "kkJxCnlRCckmfFvzDW5Q",
+   "name": "Alexander - Deep TV Narrator",
+   "anker": false,
+   "nr": 1,
+   "datei": "r2_01.mp3",
+   "dauer": 22.16,
+   "f0": 113.7,
+   "mel": 18.3,
+   "abw": []
+  },
+  {
+   "id": "9T2VzpdyzVPMLIjcYVqp",
+   "name": "Leo Liest - Deep and calm",
+   "anker": false,
+   "nr": 2,
+   "datei": "r2_02.mp3",
+   "dauer": 22.56,
+   "f0": 103.0,
+   "mel": 12.9,
+   "abw": []
+  },
+  {
+   "id": "ML23UVoFL5mI6APbRAeR",
+   "name": "Robert Ranger - Cool Storyteller",
+   "anker": true,
+   "nr": 3,
+   "datei": "r2_03.mp3",
+   "dauer": 22.24,
+   "f0": 110.2,
+   "mel": 15.6,
+   "abw": []
+  },
+  {
+   "id": "3SS1Mem5uFQXQc0kb54t",
+   "name": "Gottfried - Dark Thriller & Crime",
+   "anker": true,
+   "nr": 4,
+   "datei": "r2_04.mp3",
+   "dauer": 22.88,
+   "f0": 112.3,
+   "mel": 15.0,
+   "abw": []
+  },
+  {
+   "id": "mN2MS5qHVRhNpqcfTpaV",
+   "name": "Marcus - Emphatic and Reflective",
+   "anker": false,
+   "nr": 5,
+   "datei": "r2_05.mp3",
+   "dauer": 20.8,
+   "f0": 106.5,
+   "mel": 14.0,
+   "abw": [
+    "wahlen→walen",
+    "prätor→präter"
+   ]
+  },
+  {
+   "id": "PTDRoXRJnOXDLIs03WqF",
+   "name": "Marko - Gentle and Quiet",
+   "anker": false,
+   "nr": 6,
+   "datei": "r2_06.mp3",
+   "dauer": 20.88,
+   "f0": 109.5,
+   "mel": 16.8,
+   "abw": [
+    "wahlen→walen"
+   ]
+  },
+  {
+   "id": "JiW03c2Gt43XNUQAumRP",
+   "name": "Helmut Stieglbauer - Deep and Dynamic",
+   "anker": false,
+   "nr": 7,
+   "datei": "r2_07.mp3",
+   "dauer": 22.32,
+   "f0": 118.4,
+   "mel": 17.6,
+   "abw": [
+    "wahlen→walen"
+   ]
+  },
+  {
+   "id": "xoLW9SizYThZnEEVer1q",
+   "name": "Lupert",
+   "anker": true,
+   "nr": 8,
+   "datei": "r2_08.mp3",
+   "dauer": 21.2,
+   "f0": 121.0,
+   "mel": 12.0,
+   "abw": [
+    "wahlen→walen"
+   ]
+  },
+  {
+   "id": "lupert_tief",
+   "name": "Lupert, 3,3 Halbtöne tiefer",
+   "anker": true,
+   "verschiebung_ht": -3.3,
+   "nr": 9,
+   "datei": "r2_09.mp3",
+   "dauer": 21.2,
+   "f0": 100.0,
+   "mel": 11.6,
+   "abw": []
+  }
+ ]
+}

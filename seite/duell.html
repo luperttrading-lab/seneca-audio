@@ -58,12 +58,12 @@
 
 <main>
   <header class="kopf">
-    <span class="eyebrow">Seneca · Stimmensuche</span>
+    <span class="eyebrow">Seneca · Stimmensuche · Runde 2</span>
     <h1>Stimmen-Duell</h1>
-    <p class="lead">Zwei Stimmen lesen denselben Satz. Hör beide und tippe die an, die du im Hörbuch lieber hören würdest. Die Namen bleiben verborgen.</p>
+    <p class="lead">Neun Stimmen, neuer Abschnitt aus Teil 2. Zwei Stimmen lesen jeweils denselben Text. Hör beide und tippe die an, die du im Hörbuch lieber hören würdest. Die Namen bleiben verborgen.</p>
   </header>
 
-  <p class="satz">„Glücklich leben, mein Bruder Gallio, das wollen alle. Doch wenn es darum geht, klar zu erkennen, wodurch ein Leben eigentlich glücklich wird, ist ihr Blick getrübt.“</p>
+  <p class="satz">„Nun aber steht das Volk gegen die Vernunft und verteidigt sein eigenes Übel. Darum geht es zu wie bei den Wahlen: Dieselben, die jemanden zum Prätor gemacht haben, wundern sich, dass er es geworden ist, sobald die wankelmütige Gunst sich gedreht hat. Dasselbe loben wir, dasselbe tadeln wir. So endet jedes Urteil, das nach der Mehrheit gefällt wird.“</p>
 
   <section class="duell" aria-label="Aktuelles Duell">
     <div class="tafel" id="tafel-a" data-aktiv="false">
@@ -108,8 +108,8 @@
 
 <script>
 (function () {
-  var STIMMEN = [{"k": "s01", "n": "Otto - Casual and Normal", "a": false}, {"k": "s02", "n": "Leon Stern - Rich and Deep", "a": false}, {"k": "s03", "n": "Alexander - Deep TV Narrator", "a": false}, {"k": "s04", "n": "Stephan - Warm and Friendly", "a": false}, {"k": "s05", "n": "Helmut Stieglbauer - Deep and Dynamic", "a": false}, {"k": "s06", "n": "Johannes - Clear and Neutral", "a": false}, {"k": "s07", "n": "Thomas Schendel - Authoritative and Calm", "a": false}, {"k": "s08", "n": "Tristan Medersburg - Trustworthy", "a": false}, {"k": "s09", "n": "Clemens - Mature and Engaging", "a": false}, {"k": "s10", "n": "Hermann - Sympathetic and Trusthworthy", "a": false}, {"k": "s11", "n": "Michael Danisch - Deep and Soulful", "a": false}, {"k": "s12", "n": "KonradKlar - Deep, Warm and Storytelling", "a": false}, {"k": "s13", "n": "Christian Plasa - Deep Narration", "a": false}, {"k": "s14", "n": "Daniel - Corporate Narration", "a": false}, {"k": "s15", "n": "Marko - Gentle and Quiet", "a": false}, {"k": "s16", "n": "Marc – Warm & Clear", "a": false}, {"k": "s17", "n": "Jan - Confident and Natural", "a": false}, {"k": "s18", "n": "Marcus - Emphatic and Reflective", "a": false}, {"k": "s19", "n": "Matthias - Historical and Humble", "a": false}, {"k": "s20", "n": "Leo Liest - Deep and calm", "a": false}, {"k": "s21", "n": "Lupert", "a": true}, {"k": "s22", "n": "Christian - Warm and Captivating", "a": true}, {"k": "s23", "n": "Ralf Benz - Premium Audiobook & Documentary", "a": true}, {"k": "s24", "n": "Robert Ranger - Cool Storyteller", "a": true}, {"k": "s25", "n": "Gottfried - Dark Thriller & Crime", "a": true}];   // k = Tondatei-Schlüssel, n = Name, a = bekannte Stimme
-  var TEMPO = 0.95, ZIEL = 50, LS = "seneca-duelle-v1";
+  var STIMMEN = [{"k": "r2_01", "n": "Alexander - Deep TV Narrator", "a": false}, {"k": "r2_02", "n": "Leo Liest - Deep and calm", "a": false}, {"k": "r2_03", "n": "Robert Ranger - Cool Storyteller", "a": true}, {"k": "r2_04", "n": "Gottfried - Dark Thriller & Crime", "a": true}, {"k": "r2_05", "n": "Marcus - Emphatic and Reflective", "a": false}, {"k": "r2_06", "n": "Marko - Gentle and Quiet", "a": false}, {"k": "r2_07", "n": "Helmut Stieglbauer - Deep and Dynamic", "a": false}, {"k": "r2_08", "n": "Lupert", "a": true}, {"k": "r2_09", "n": "Lupert, 3,3 Halbtöne tiefer", "a": true}];   // k = Tondatei-Schlüssel, n = Name, a = bekannte Stimme
+  var TEMPO = 0.95, ZIEL = 25, LS = "seneca-duelle-r2";
   var PLAY = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5.5v13a1 1 0 0 0 1.5.86l10.2-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>';
   var PAUSE = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>';
   var $ = function (id) { return document.getElementById(id); };
@@ -251,7 +251,7 @@
   Promise.resolve(w).then(function (x) {
     db = x;
     if (!db) { duelle = lokalLaden(); zaehle(); hinweis("Der gemeinsame Speicher ist hier nicht verfügbar. Deine Wahlen bleiben nur in diesem Browser, Claude kann sie dann nicht lesen.", true); return; }
-    sammlung = db.collection("duelle");
+    sammlung = db.collection("duelle2");
     sammlung.onSnapshot(function (snap) {
       var liste = snap.docs.map(function (d) { var b = d.data() || {}; return { id: d.id, a: b.a, b: b.b, w: b.w, t: b.t }; });
       liste.sort(function (x, y) { return (x.t || 0) - (y.t || 0); });
