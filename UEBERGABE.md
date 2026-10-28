@@ -168,11 +168,19 @@ Marcus – Emphatic and Reflective 69 %, Marko – Gentle and Quiet 68 %, Helmut
 von 33 (76 %, einseitig p = 0,002). Satzmelodie ρ = −0,20 (p = 0,33), also bedeutungslos. Die ersten sieben liegen bei
 93–110 Hz, die letzten fünf bei 116–135 Hz. Lupert (116 Hz) liegt 2,5 HT über der echten Stimme des Nutzers.
 
+Was der Nutzer selbst nennt (nach Runde 1): gut war ein klarer Klang der ganzen Aufnahme, nicht nur der Stimme; störend
+ein leichtes Lachen in der Betonung am Ende des ersten Satzes („das wollen alle“). Nächste Proben deshalb mit einem
+anderen Abschnitt, nicht wieder mit dem Anfang. Gemessen (25 Proben): Klarheitsmaße erklären über die Tonlage hinaus
+nichts (HNR, CPPS, Präsenz 2–5 kHz, Luft 5–11 kHz, Grundrauschen: alle |ρ| ≤ 0,08 ohne Tonlage, p ≥ 0,7). Ende von
+„alle“: schwächer fallende Enden schneiden etwas besser ab (ρ = +0,33, p = 0,11, nicht gesichert). Ein Lachen erkennt
+die Messung nicht; das bleibt Sache des Ohrs.
+
 ## Offen, in dieser Reihenfolge
 
-1. **Stufe 2 (Freigabe der Credits offen):** Absatz 1–2 mit Alexander, Leo Liest, Marcus, Helmut Stieglbauer (je etwa
-   340 Credits); Robert und Gottfried aus dem Verlauf (27.10., kostenlos); Lupert um etwa 2,5 HT abgesenkt
-   (formanterhaltend, kostenlos) als Test der Tonlagen-These. Alle bearbeitet wie Teil 1, Tempo 0,95, zweite Duellrunde.
+1. **Stufe 2 (Freigabe der Credits offen):** neuer Abschnitt Teil 2, Absatz 3 („Nun aber steht das Volk …“, 350 Zeichen,
+   etwa 150 Credits je Stimme) mit Alexander, Leo Liest, Robert, Gottfried, Marcus, Marko, Helmut Stieglbauer und Lupert,
+   dazu Lupert um 2,5 HT abgesenkt (formanterhaltend, `rubberband` ist in ffmpeg vorhanden, kostenlos) als Test der
+   Tonlagen-These. Zusammen etwa 1.200 Credits. Tempo 0,95, zweite Duellrunde.
    Teil 3 erst erzeugen, wenn der Nutzer seine Textstellen überarbeitet hat und die Stimme feststeht.
 2. Mit der gewählten Stimme und dem gewählten Modell Teil 1 und 2 neu erzeugen, Teil 3 und 4 aufnehmen, alles neu
    verarbeiten.
