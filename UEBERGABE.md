@@ -16,14 +16,36 @@
 | 3 (Kap. 2) | fertig (`texte/teil03.txt`), mit Stewart und Forbiger abgeglichen | fehlt, wartet auf die Stimmenwahl |
 | 4–29 | Latein in `texte/latein/` | – |
 
+## ElevenLabs-Schlüssel
+
+Eingerichtet als Umgebungsvariable `ELEVENLABS_API_KEY` (eingeschränkt: Text zu Sprache, Stimmen lesen, Modelle,
+Verlauf lesen, Benutzer; Limit 30.000 Credits je Abrechnungszeitraum; Abschalten bei Leak an). Zu Beginn prüfen, ob er
+ankommt, ohne ihn anzuzeigen. Stimmen schreiben ist bewusst gesperrt (könnte den Lupert-Klon löschen): Bibliotheksstimmen
+fügt der Nutzer in der App selbst zu seinen Stimmen hinzu. `api.elevenlabs.io` ist aus der Cloud-Umgebung erreichbar.
+
 ## Offen, in dieser Reihenfolge
 
-1. **Stimmensuche** (siehe `PLAN.md`, Abschnitt Stimmensuche): Der Nutzer ist mit Lupert, Christian, Brian, Ralf Benz
-   und Robert Ranger nicht zufrieden, kann aber nicht benennen warum. Nur Männerstimmen. Vorgehen: ElevenLabs-Bibliothek
-   per API durchsuchen, Hörproben messen, Vorliebe per A/B-Duell (Bradley-Terry) ermitteln. Zusätzlich vorgeschlagen:
-   Ralf Benz mit anderem Modell bzw. höherer Stability testen, ob es am Modell eleven v4 liegt.
-2. Mit der gewählten Stimme Teil 1 und 2 neu erzeugen, Teil 3 aufnehmen, alles neu verarbeiten.
-3. Teil 4 (Kapitel 3) übersetzen.
+1. **Erst das Modell prüfen, dann die Stimme suchen.** Geht dem Abschnitt Stimmensuche in `PLAN.md` vor. Befund aus
+   `messung/stimmen/vergleich_kap1_absatz12.json`: Alle fünf Stimmen (Lupert, Christian, Brian, Ralf Benz, Robert
+   Ranger) weichen in dieselbe Richtung ab – Satzmelodie 13,0–16,0 Halbtöne statt 10,0–11,7, Schwankung der
+   Pausenlängen 0,30–0,50 statt 0,62–0,89, Pausenanteil bei vier von fünf zu niedrig, Abfall am Phrasenende bei vier von
+   fünf zu stark. Gemeinsam sind nur Modell (eleven v4) und Text. Verdacht: Das Modell erzeugt den Vorlese-Singsang,
+   der den Nutzer stört; eine Bibliothekssuche mit demselben Modell fände nur weitere Stimmen mit demselben Fehler.
+   Melodie und Abfall lassen sich nachträglich nicht korrigieren, Pausen schon (`pausen2.py`).
+   1. Im Verlauf (History) nachsehen, mit welchem Modell und welchen Einstellungen die bisherigen Proben erzeugt wurden,
+      auch die Stimme Gottfried vom 27.10. (taucht oben noch nicht auf; falls auch zu lebhaft, stützt das den Verdacht).
+   2. Verfügbare Modelle abfragen (`GET /v1/models`), welche Deutsch können.
+   3. Ralf Benz (bester Messwert, Abstand 1,30) mit Kapitel 1, Absatz 1–2 in 2–3 Varianten erzeugen (anderes Modell,
+      höhere Stability; je etwa 800 Credits) und messen. Fällt die Melodie unter etwa 12 Halbtöne: A/B-Vergleich gegen
+      die v4-Fassung.
+   4. Erst wenn das nichts bringt: Bibliothekssuche wie in `PLAN.md` (A/B-Duelle, Bradley-Terry).
+2. Mit der gewählten Stimme und dem gewählten Modell Teil 1 und 2 neu erzeugen, Teil 3 aufnehmen, alles neu verarbeiten.
+3. Teil 4 (Kapitel 3) übersetzen, unabhängig von der Stimme, kann parallel laufen. In 3,4 hat der lateinische Text eine
+   Lücke (`nam uoluptatibus et * * *`) und eine Crux (`~ipsis flagitiis noxia~`): mit dem Nutzer klären, ob die
+   Hörfassung glättet (wie vermutlich Stewart) oder die Lücke hörbar macht.
+
+Im Container fehlen `faster-whisper` und `praat-parselmouth` (für `pruef.py`, `prosodie.py`, `karaoke_daten.py`);
+pip ist erreichbar, vor den Messungen installieren.
 
 ## Verarbeitung einer Aufnahme (bewährt)
 
