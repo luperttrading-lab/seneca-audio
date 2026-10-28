@@ -134,7 +134,7 @@ abgesetzt wird); Teil 2 = Take von 11:38 UTC (94,75 s) plus 10,2 s Pausen. Messu
 
 Hörurteil des Nutzers dazu: zwischen den vier Lupert-v4-Fassungen (Teil 1 roh/bearbeitet, heute roh/bearbeitet) „keine
 großen Unterschiede“. Lupert v4 per API klingt also wie in der App, und die Pausenbearbeitung ist für ihn kein großer
-Faktor. Die „Katastrophe“ ist damit wahrscheinlich Lupert mit Multilingual v2 (Bestätigung offen). Tempo 0,5 hat er
+Faktor. Die „Katastrophe“ ist Lupert mit Multilingual v2 (vom Nutzer am 28.10. bestätigt). Lupert also nur mit v4 erzeugen. Tempo 0,5 hat er
 nicht in ElevenLabs eingestellt (kein Verlaufseintrag mit `speed` 0,5, alle Takes 2,9–3,1 W/s), sondern vermutlich am
 Temporad der alten Hörseite (`seite/vorlage.html`, 0,5–1,5, nur Abspielen, Tonhöhe bleibt, im Browser gespeichert).
 
