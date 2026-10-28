@@ -22,10 +22,12 @@
 Eingerichtet als Umgebungsvariable `ELEVENLABS_API_KEY` (eingeschränkt: Text zu Sprache, Stimmen lesen, Modelle,
 Verlauf lesen, Benutzer; Abschalten bei Leak an). Stimmen schreiben ist bewusst gesperrt (könnte den Lupert-Klon löschen):
 Bibliotheksstimmen fügt der Nutzer in der App selbst zu seinen Stimmen hinzu. `api.elevenlabs.io` ist erreichbar.
-**Das Kontingent des Schlüssels steht auf 30 Credits, nicht 30.000** (Fehlermeldung `quota_exceeded`: „quota of 30“).
-Eine Anfrage mit Kapitel 1, Absatz 1–2 (785 Zeichen) braucht laut Fehlermeldung 337 Credits. Der Nutzer muss das Limit
-des Schlüssels „Seneca“ in ElevenLabs hochsetzen; bis dahin geht nur, was nichts kostet (Verlauf, Modelle, Bibliothek,
-Hörproben). `/v1/user` und `/v1/user/subscription` antworten mit 401.
+Der erste Schlüssel hatte nur 30 Credits Kontingent (Fehlermeldung `quota_exceeded`). Am 28.10. hat der Nutzer einen
+**neuen Schlüssel mit 30.000 Credits** erzeugt; er muss als `ELEVENLABS_API_KEY` in den Einstellungen der
+Cloud-Umgebung stehen und gilt erst in einer neuen Sitzung. Zu Beginn prüfen, ohne ihn anzuzeigen: Eine Anfrage mit
+Absatz 1–2 (785 Zeichen) braucht laut API 337 Credits; kommt wieder „quota of 30“, ist noch der alte Schlüssel
+eingetragen. Der alte Schlüssel war am 28.10. noch gültig und sollte gelöscht werden. `/v1/user` und
+`/v1/user/subscription` antworten mit 401.
 
 ## Befunde vom 28.10. (Messung der Takes aus dem Verlauf)
 
@@ -48,11 +50,12 @@ Werte in `messung/stimmen/takes_verlauf.json`, gemessen mit `werkzeuge/messen_ab
 - Bibliotheksstimmen: Hörprobe gegen v4 (5 Stimmen, Mittel beider Takes): r = 0,80, Steigung 0,28 (p ≈ 0,1, n = 5).
   Hörproben streuen 8,3–15,4 HT, dieselben Stimmen in v4 nur 13,4–15,9 HT. v4 drückt Bibliotheksstimmen offenbar auf
   13 HT und mehr; eine Suche über Hörproben findet so keine Stimme unter 12 HT. Hörproben sind zudem nur 4–10 s lang.
-  Screening von 189 Stimmen (Erzählung/Bildung, nicht jung): `werkzeuge/bib_screening.py`, unvollständig.
+  Screening von 189 Stimmen (Erzählung/Bildung, nicht jung) mit `werkzeuge/bib_screening.py`: 47 gemessen, Werte in
+  `messung/stimmen/screening_hoerproben.json`; abgebrochen, weil Hörproben wenig vorhersagen.
 
 ## Offen, in dieser Reihenfolge
 
-1. **Kontingent des Schlüssels erhöhen (Nutzer).** Danach die Modellprüfung, angepasst an die Befunde:
+1. **Modellprüfung mit dem neuen Schlüssel**, angepasst an die Befunde (Empfehlung: 1.2 zuerst, dann 1.1):
    1. Ralf Benz, Absatz 1–2, je eine Anfrage: `eleven_v4` mit Stability 1,0; `eleven_multilingual_v2` mit Stability
       0,75, Style 0; `eleven_storytel_v2` (Hörbuchmodell, Zugang ungeprüft). Je etwa 340 Credits laut Fehlermeldung.
       `werkzeuge/erzeuge_varianten.py <text> <ordner>` (enthält auch 1.2); Text = Absatz 1–2 aus Teil 1, wie er im
