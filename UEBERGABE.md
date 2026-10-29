@@ -179,7 +179,15 @@ die Messung nicht; das bleibt Sache des Ohrs.
 
 ## Offen, in dieser Reihenfolge
 
-1. **Runde 2 läuft** (vom Nutzer freigegeben, 1.200 Credits; Speicher `duelle2`, Stimmen in
+1. **Runde 2b läuft** (29.10.): Nutzer wählte auf der Hörseite „Lupert tiefer“ die Fassung PSOLA −3,3 HT mit Pausen und
+   Rauschunterdrückung und will sie **im Duell** gegen die anderen hören, **nicht** schon für Teil 1 und 2. Damit der
+   Vergleich fair ist, bekamen alle neun Proben dieselbe Bearbeitung (Rauschunterdrückung, dann Pausen wie Teil 1,
+   −18 LUFS): 7 Bibliotheksstimmen, Lupert, Lupert tiefer. Speicher `duelle2b`, Stimmen in
+   `messung/stimmen/duell_stimmen_runde2b.json`. Die eine Wahl in `duelle2` (mit der kaputten Fassung) ist verworfen.
+   Vorbereitet, aber nicht angewendet: `werkzeuge/verarbeite.py` (Rohaufnahme → Hörbuchfassung mit Tonlage 100 Hz,
+   Rauschunterdrückung, Pausen nach PLAN-Regel, −18 LUFS, AAC und MP3, Wortzeiten). Teil 1 und 2 damit testweise
+   gerechnet (nur im Sitzungsordner, nicht veröffentlicht; Whisper hört in Teil 1 „anderem Reisen“, ungeprüft).
+   Vorher: **Runde 2** (vom Nutzer freigegeben, 1.200 Credits; Speicher `duelle2`, Stimmen in
    `messung/stimmen/duell_stimmen_runde2.json`, Seite `seite/duell.html` jetzt Runde 2). Lupert wurde mit Rubber Band
    formanterhaltend um 3,3 HT auf 100 Hz gesenkt (er sprach den Abschnitt mit 121 Hz). In diesem Abschnitt liegen alle
    Stimmen höher als in Runde 1 (Alexander 99 → 114 Hz). Whisper: „Wahlen“ als „Walen“ (Scheinfehler), bei Marcus

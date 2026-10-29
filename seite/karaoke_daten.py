@@ -90,6 +90,6 @@ for aid, (mp3, txt) in DATEIEN.items():
     print(f"{aid:14} {len(schnitte)-1} Stücke, {len(disp)} Wörter, {treffer} exakt getroffen ({treffer/len(disp):.0%}), erkannt {len(hyp)}, Dauer {dauer:.1f} s", flush=True)
 if AUS:
     d = out["x"]; t = d["t"] + [d["ende"]]
-    json.dump([{"w": d["w"][i], "s": t[i], "e": min(t[i+1], t[i] + 1.2)} for i in range(len(d["w"])) if t[i] < 100], open(AUS, "w"), ensure_ascii=False)
+    json.dump([{"w": d["w"][i], "s": t[i], "e": min(t[i+1], t[i] + 1.2), "p": d["p"][i]} for i in range(len(d["w"]))], open(AUS, "w"), ensure_ascii=False)
 else:
     json.dump(out, open(f"{H}/karaoke.json", "w", encoding="utf-8"), ensure_ascii=False)

@@ -1,0 +1,69 @@
+{
+ "text": "Nun aber steht das Volk gegen die Vernunft und verteidigt sein eigenes Übel. Darum geht es zu wie bei den Wahlen: Dieselben, die jemanden zum Prätor gemacht haben, wundern sich, dass er es geworden ist, sobald die wankelmütige Gunst sich gedreht hat. Dasselbe loben wir, dasselbe tadeln wir. So endet jedes Urteil, das nach der Mehrheit gefällt wird.",
+ "bearbeitung": "Rauschunterdrückung, dann Pausen wie Teil 1 (Profil ruhig), −18 LUFS",
+ "stimmen": [
+  {
+   "k": "r2b_01",
+   "n": "Alexander - Deep TV Narrator",
+   "a": false,
+   "id": "kkJxCnlRCckmfFvzDW5Q",
+   "dauer": 24.53
+  },
+  {
+   "k": "r2b_02",
+   "n": "Leo Liest - Deep and calm",
+   "a": false,
+   "id": "9T2VzpdyzVPMLIjcYVqp",
+   "dauer": 24.84
+  },
+  {
+   "k": "r2b_03",
+   "n": "Robert Ranger - Cool Storyteller",
+   "a": true,
+   "id": "ML23UVoFL5mI6APbRAeR",
+   "dauer": 24.66
+  },
+  {
+   "k": "r2b_04",
+   "n": "Gottfried - Dark Thriller & Crime",
+   "a": true,
+   "id": "3SS1Mem5uFQXQc0kb54t",
+   "dauer": 24.92
+  },
+  {
+   "k": "r2b_05",
+   "n": "Marcus - Emphatic and Reflective",
+   "a": false,
+   "id": "mN2MS5qHVRhNpqcfTpaV",
+   "dauer": 22.86
+  },
+  {
+   "k": "r2b_06",
+   "n": "Marko - Gentle and Quiet",
+   "a": false,
+   "id": "PTDRoXRJnOXDLIs03WqF",
+   "dauer": 23.04
+  },
+  {
+   "k": "r2b_07",
+   "n": "Helmut Stieglbauer - Deep and Dynamic",
+   "a": false,
+   "id": "JiW03c2Gt43XNUQAumRP",
+   "dauer": 24.61
+  },
+  {
+   "k": "r2b_08",
+   "n": "Lupert",
+   "a": true,
+   "id": "xoLW9SizYThZnEEVer1q",
+   "dauer": 23.61
+  },
+  {
+   "k": "r2b_09",
+   "n": "Lupert, 3,3 Halbtöne tiefer (PSOLA)",
+   "a": true,
+   "id": "lupert_tief",
+   "dauer": 23.61
+  }
+ ]
+}
