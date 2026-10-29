@@ -73,19 +73,20 @@
   <header class="kopf">
     <span class="eyebrow">Seneca · Stimmensuche</span>
     <h1>Lupert tiefer</h1>
-    <p class="lead">Tippe eine Fassung an, sie beginnt von vorn. Rauschunterdrückung und Tempo stellst du unten ein, auch während es läuft.</p>
+    <p class="lead">Tippe eine Fassung an, sie beginnt von vorn. Pausen, Rauschunterdrückung und Tempo stellst du unten ein, auch während es läuft.</p>
   </header>
 
   <p class="satz" id="satz">„<span class="w" data-i="0">Nun</span> <span class="w" data-i="1">aber</span> <span class="w" data-i="2">steht</span> <span class="w" data-i="3">das</span> <span class="w" data-i="4">Volk</span> <span class="w" data-i="5">gegen</span> <span class="w" data-i="6">die</span> <span class="w" data-i="7">Vernunft</span> <span class="w" data-i="8">und</span> <span class="w" data-i="9">verteidigt</span> <span class="w" data-i="10">sein</span> <span class="w" data-i="11">eigenes</span> <span class="w" data-i="12">Übel.</span> <span class="w" data-i="13">Darum</span> <span class="w" data-i="14">geht</span> <span class="w" data-i="15">es</span> <span class="w" data-i="16">zu</span> <span class="w" data-i="17">wie</span> <span class="w" data-i="18">bei</span> <span class="w" data-i="19">den</span> <span class="w" data-i="20">Wahlen:</span> <span class="w" data-i="21">Dieselben,</span> <span class="w" data-i="22">die</span> <span class="w" data-i="23">jemanden</span> <span class="w" data-i="24">zum</span> <span class="w" data-i="25">Prätor</span> <span class="w" data-i="26">gemacht</span> <span class="w" data-i="27">haben,</span> <span class="w" data-i="28">wundern</span> <span class="w" data-i="29">sich,</span> <span class="w" data-i="30">dass</span> <span class="w" data-i="31">er</span> <span class="w" data-i="32">es</span> <span class="w" data-i="33">geworden</span> <span class="w" data-i="34">ist,</span> <span class="w" data-i="35">sobald</span> <span class="w" data-i="36">die</span> <span class="w" data-i="37">wankelmütige</span> <span class="w" data-i="38">Gunst</span> <span class="w" data-i="39">sich</span> <span class="w" data-i="40">gedreht</span> <span class="w" data-i="41">hat.</span> <span class="w" data-i="42">Dasselbe</span> <span class="w" data-i="43">loben</span> <span class="w" data-i="44">wir,</span> <span class="w" data-i="45">dasselbe</span> <span class="w" data-i="46">tadeln</span> <span class="w" data-i="47">wir.</span> <span class="w" data-i="48">So</span> <span class="w" data-i="49">endet</span> <span class="w" data-i="50">jedes</span> <span class="w" data-i="51">Urteil,</span> <span class="w" data-i="52">das</span> <span class="w" data-i="53">nach</span> <span class="w" data-i="54">der</span> <span class="w" data-i="55">Mehrheit</span> <span class="w" data-i="56">gefällt</span> <span class="w" data-i="57">wird.</span>“</p>
 
   <div class="zeit">
     <div class="balken" id="balken" role="slider" aria-label="Stelle im Text" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0"><span id="fuell"></span></div>
-    <span id="uhr">0:00 / 0:22</span>
+    <span id="uhr">0:00 / 0:25</span>
   </div>
 
   <ol id="liste"></ol>
 
   <section class="pult" aria-label="Einstellungen">
+    <button type="button" class="schalter" id="pausen" aria-pressed="true"><i aria-hidden="true"></i><span>Pausen wie in Teil 1<small>Satzende 0,9 s, Doppelpunkt 0,55 s, Komma 0,35 s, wo die Stimme schon absetzt</small></span></button>
     <button type="button" class="schalter" id="ru" aria-pressed="false"><i aria-hidden="true"></i><span>Rauschunterdrückung<small>wie Dolby am Kassettendeck: leiser in den Pausen, die Stimme bleibt unberührt</small></span></button>
     <button type="button" class="schalter" id="gleich" aria-pressed="false"><i aria-hidden="true"></i><span>Beim Umschalten an derselben Stelle weiter</span></button>
     <div class="tempo">
@@ -98,7 +99,7 @@
     <p class="messwert" id="messwert"></p>
   </section>
 
-  <p class="hinweis">Alle Fassungen gleich laut. Sprechweise und Dauer sind identisch, nur Tonlage und Rauschen unterscheiden sich. Die Tonhöhe bleibt beim Tempo gleich.</p>
+  <p class="hinweis">Alle Fassungen gleich laut und mit derselben Sprechweise. Beim Umschalten von Pausen oder Rauschunterdrückung läuft es an derselben Textstelle weiter. Die Tonhöhe bleibt beim Tempo gleich.</p>
   <audio id="ton" preload="auto"></audio>
 </main>
 
@@ -109,11 +110,16 @@
     { k: "p33", n: "2 · PSOLA, 3,3 Halbtöne tiefer", d: "Praat, Klangfarbe erhalten · 100 Hz" },
     { k: "p20", n: "3 · PSOLA, 2 Halbtöne tiefer", d: "Praat, Klangfarbe erhalten · 108 Hz" }
   ];
-  var T = [0.0, 0.2, 0.5, 0.8, 0.98, 1.34, 1.62, 1.8, 2.3, 2.52, 3.06, 3.26, 3.78, 4.44, 5.04, 5.2, 5.36, 5.62, 5.82, 6.0, 6.18, 7.06, 7.78, 7.9, 8.34, 8.5, 8.9, 9.16, 9.96, 10.28, 10.66, 10.76, 10.9, 11.04, 11.44, 12.06, 12.46, 12.56, 13.28, 13.66, 13.84, 14.28, 15.0, 15.48, 15.78, 16.36, 16.78, 17.18, 17.8, 18.14, 18.52, 18.82, 19.48, 19.58, 19.76, 19.92, 20.32, 20.68], WOERTER = T.length, DAUER = 21.24;
+  var T = [0.0, 0.2, 0.5, 0.8, 0.98, 1.34, 1.62, 1.8, 2.3, 2.52, 3.06, 3.26, 3.78, 4.44, 5.04, 5.2, 5.36, 5.62, 5.82, 6.0, 6.18, 7.06, 7.78, 7.9, 8.34, 8.5, 8.9, 9.16, 9.96, 10.28, 10.66, 10.76, 10.9, 11.04, 11.44, 12.06, 12.46, 12.56, 13.28, 13.66, 13.84, 14.28, 15.0, 15.48, 15.78, 16.36, 16.78, 17.18, 17.8, 18.14, 18.52, 18.82, 19.48, 19.58, 19.76, 19.92, 20.32, 20.68], WOERTER = T.length, D = {"o": {"d": 21.238, "e": []}, "o_p": {"d": 23.615, "e": [[4.425, 0.61], [6.79, 0.15], [9.88, 0.16], [12.02, 0.25], [14.61, 0.46], [16.315, 0.17], [17.615, 0.58]]}, "o_ru": {"d": 21.238, "e": []}, "o_ru_p": {"d": 23.589, "e": [[4.449, 0.61], [6.85, 0.15], [9.89, 0.17], [12.025, 0.25], [14.67, 0.39], [16.315, 0.18], [17.675, 0.59]]}, "p33": {"d": 21.238, "e": []}, "p33_p": {"d": 23.562, "e": [[4.425, 0.61], [6.79, 0.15], [9.88, 0.18], [12.02, 0.24], [14.63, 0.39], [16.315, 0.17], [17.615, 0.58]]}, "p33_ru": {"d": 21.238, "e": []}, "p33_ru_p": {"d": 23.615, "e": [[4.425, 0.62], [6.85, 0.15], [9.89, 0.18], [12.025, 0.26], [14.68, 0.39], [16.315, 0.19], [17.68, 0.59]]}, "p20": {"d": 21.238, "e": []}, "p20_p": {"d": 23.641, "e": [[4.325, 0.61], [6.79, 0.15], [9.88, 0.17], [12.02, 0.25], [14.63, 0.47], [16.315, 0.18], [17.615, 0.58]]}, "p20_ru": {"d": 21.238, "e": []}, "p20_ru_p": {"d": 23.615, "e": [[4.425, 0.62], [6.845, 0.15], [9.89, 0.18], [12.025, 0.25], [14.68, 0.39], [16.315, 0.19], [17.665, 0.59]]}};
   var PLAY = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5.5v13a1 1 0 0 0 1.5.86l10.2-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>';
   var PAUSE = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>';
   var $ = function (id) { return document.getElementById(id); };
-  var ton = $("ton"), aktiv = null, tempo = 0.95, gleicheStelle = false, rauschfrei = false;
+  var ton = $("ton"), aktiv = null, tempo = 0.95, gleicheStelle = false, rauschfrei = false, pausen = true;
+  // Zeit in einer Datei mit eingefügten Pausen <-> Zeit im Original (ohne Pausen)
+  function schluessel(k) { return k + (rauschfrei ? "_ru" : "") + (pausen ? "_p" : ""); }
+  function zuOrig(key, t) { var c = 0, e = D[key].e; for (var i = 0; i < e.length; i++) { var a = e[i][0] + c; if (t < a) return t - c; if (t < a + e[i][1]) return e[i][0]; c += e[i][1]; } return t - c; }
+  function ausOrig(key, o) { var c = 0, e = D[key].e; for (var i = 0; i < e.length; i++) { if (e[i][0] < o) c += e[i][1]; } return o + c; }
+  function dauer() { return D[schluessel(aktiv || "o")].d; }
   var woerter = document.querySelectorAll("#satz .w"), zuletzt = -2;
   var mmss = function (s) { s = Math.max(0, s || 0); return Math.floor(s / 60) + ":" + String(Math.floor(s % 60)).padStart(2, "0"); };
   var de = function (x, n) { return x.toLocaleString("de-DE", { minimumFractionDigits: n, maximumFractionDigits: n }); };
@@ -127,18 +133,18 @@
     li.appendChild(b); $("liste").appendChild(li);
   });
 
-  function datei(k) { return "audio/" + k + (rauschfrei ? "_ru" : "") + ".mp3"; }
+  function datei(k) { return "audio/" + schluessel(k) + ".mp3"; }
   function setzeTempo() { try { ton.preservesPitch = true; ton.webkitPreservesPitch = true; } catch (e) {} ton.defaultPlaybackRate = tempo; ton.playbackRate = tempo; }
   function spiel() { setzeTempo(); var p = ton.play(); if (p && p.catch) p.catch(function () {}); }
-  function lade(stelle, weiterspielen) {
-    ton.src = datei(aktiv);
-    var los = function () { try { ton.currentTime = stelle; } catch (e) {} if (weiterspielen) spiel(); zeichne(); markiere(); };
+  function lade(orig, weiterspielen) {   // orig: Stelle im Original ohne Pausen
+    ton.src = datei(aktiv); var ziel = ausOrig(schluessel(aktiv), orig); zuletzt = -2;
+    var los = function () { try { ton.currentTime = ziel; } catch (e) {} if (weiterspielen) spiel(); zeichne(); markiere(); zeigeTempo(); };
     if (ton.readyState >= 1) los(); else ton.addEventListener("loadedmetadata", los, { once: true });
   }
   function waehle(k) {
     if (k === aktiv) { if (ton.paused) spiel(); else ton.pause(); return; }
-    var stelle = (gleicheStelle && aktiv && !ton.ended) ? ton.currentTime : 0;
-    aktiv = k; lade(stelle, true); zeichne();
+    var orig = (gleicheStelle && aktiv && !ton.ended) ? zuOrig(schluessel(aktiv), ton.currentTime) : 0;
+    aktiv = k; lade(orig, true); zeichne();
   }
   function zeichne() {
     F.forEach(function (f) {
@@ -149,7 +155,7 @@
     });
   }
   function markiere() {
-    var t = aktiv ? ton.currentTime : 0, i = -1;
+    var t = aktiv ? zuOrig(schluessel(aktiv), ton.currentTime) : 0, i = -1;
     if (aktiv && t > 0) { while (i + 1 < T.length && T[i + 1] <= t + 0.05) i++; }
     if (ton.ended) i = T.length;
     if (i === zuletzt) return; zuletzt = i;
@@ -159,8 +165,14 @@
 
   // Rauschunterdrückung: gleiche Datei ohne Rauschen, an derselben Stelle, wie ein Dolby-Schalter
   $("ru").addEventListener("click", function () {
+    var orig = aktiv ? zuOrig(schluessel(aktiv), ton.currentTime) : 0;
     rauschfrei = !rauschfrei; this.setAttribute("aria-pressed", String(rauschfrei));
-    if (aktiv) lade(ton.currentTime, !ton.paused && !ton.ended);
+    if (aktiv) lade(orig, !ton.paused && !ton.ended); else zeigeTempo();
+  });
+  $("pausen").addEventListener("click", function () {
+    var orig = aktiv ? zuOrig(schluessel(aktiv), ton.currentTime) : 0;
+    pausen = !pausen; this.setAttribute("aria-pressed", String(pausen));
+    if (aktiv) lade(orig, !ton.paused && !ton.ended); else zeigeTempo();
   });
   $("gleich").addEventListener("click", function () { gleicheStelle = !gleicheStelle; this.setAttribute("aria-pressed", String(gleicheStelle)); });
 
@@ -169,12 +181,12 @@
   ton.addEventListener("ended", function () { zeichne(); markiere(); });
   ton.addEventListener("seeked", markiere);
   ton.addEventListener("timeupdate", function () {
-    var d = ton.duration || DAUER, t = ton.currentTime || 0;
+    var d = ton.duration || dauer(), t = ton.currentTime || 0;
     $("fuell").style.width = (100 * t / d) + "%"; $("balken").setAttribute("aria-valuenow", String(Math.round(100 * t / d)));
     $("uhr").textContent = mmss(t / tempo) + " / " + mmss(d / tempo);
   });
   function springe(anteil) {
-    if (!aktiv) { aktiv = "o"; lade(anteil * DAUER, true); return; }
+    if (!aktiv) { aktiv = "o"; lade(zuOrig(schluessel("o"), anteil * dauer()), true); return; }
     if (ton.duration) ton.currentTime = anteil * ton.duration; markiere();
   }
   $("balken").addEventListener("click", function (e) { var r = this.getBoundingClientRect(); springe(Math.min(1, Math.max(0, (e.clientX - r.left) / r.width))); });
@@ -191,8 +203,8 @@
   function zeigeTempo() {
     $("tempo-wert").textContent = de(tempo, 2) + "×";
     rad.setAttribute("aria-valuenow", String(tempo)); rad.setAttribute("aria-valuetext", de(tempo, 2) + "-fach");
-    var dauer = DAUER / tempo, wpm = 60 * WOERTER / dauer, silben = 95 / dauer;
-    $("messwert").innerHTML = "Bei diesem Tempo: <b>" + Math.round(wpm) + " Wörter pro Minute</b> · " + de(silben, 1) + " Silben pro Sekunde · Abschnitt " + mmss(dauer);
+    var dz = dauer() / tempo, wpm = 60 * WOERTER / dz, silben = 95 / dz;
+    $("messwert").innerHTML = "So eingestellt: <b>" + Math.round(wpm) + " Wörter pro Minute</b> · " + de(silben, 1) + " Silben pro Sekunde · Abschnitt " + mmss(dz) + ". Teil 1 im Hörbuch: 134 Wörter pro Minute.";
   }
   function waehleTempo(i, quelle) {
     i = Math.max(0, Math.min(werte.length - 1, Math.round(i))); idx = i; tempo = Math.round(80 + i) / 100;

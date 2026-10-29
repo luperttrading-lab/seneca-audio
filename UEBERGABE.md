@@ -207,6 +207,9 @@ die Messung nicht; das bleibt Sache des Ohrs.
    eingefügte Pausen), Runde-2-Stimmen bei 0,95 144–159. Richtwert Hörbuch englisch 150–160 W/min (ACX: 9.300 Wörter je
    Stunde ≈ 155, Sekundärquellen); deutsche Wörter haben etwa 1,64 Silben, englische etwa 1,45 (Schätzung), also
    entsprechen 155 englische etwa 135–140 deutschen W/min. Teil 1 und 2 liegen genau dort.
+   **Pausen-Schalter** (Standard an): alle sechs Fassungen mit `pausen2.py` und dem Profil von Teil 1 bearbeitet
+   (7 Stellen, +2,4 s, Rauschunterdrückung jeweils vorher). Mit Pausen bei Tempo 0,95: 140 W/min. Die Seite rechnet beim
+   Umschalten über die Einfügestellen (`stellen.json`) auf dieselbe Textstelle um; das Mitlesen bleibt synchron.
    Ursprünglicher Plan: neuer Abschnitt Teil 2, Absatz 3 („Nun aber steht das Volk …“, 350 Zeichen,
    etwa 150 Credits je Stimme) mit Alexander, Leo Liest, Robert, Gottfried, Marcus, Marko, Helmut Stieglbauer und Lupert,
    dazu Lupert um 2,5 HT abgesenkt (formanterhaltend, `rubberband` ist in ffmpeg vorhanden, kostenlos) als Test der
