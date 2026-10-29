@@ -16,12 +16,12 @@
   * { box-sizing: border-box; }
   html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: var(--stein); color: var(--tinte); }
   body { font: 500 24px/1.4 var(--ui); background: radial-gradient(ellipse 120% 90% at 50% 45%, #1b201f 0%, var(--stein) 70%); }
-  .kopf { position: absolute; top: 60px; left: 120px; right: 120px; display: flex; justify-content: space-between; align-items: flex-start; z-index: 2; }
-  .werk { font: 600 22px/1.3 var(--ui); letter-spacing: .16em; text-transform: uppercase; color: var(--bronze); }
+  .kopf { position: absolute; top: 56px; left: 120px; right: 120px; display: flex; justify-content: space-between; align-items: flex-start; z-index: 2; }
+  .werk { font: 600 34px/1.3 var(--ui); letter-spacing: .14em; text-transform: uppercase; color: var(--bronze); }
   .stelle { text-align: right; }
-  .stelle b { display: block; font: 600 38px/1.1 var(--ui); font-variant-numeric: tabular-nums; color: var(--tinte); }
-  .stelle span { display: block; margin-top: 6px; font-size: 22px; color: var(--grau); }
-  .fenster { position: absolute; left: 240px; right: 240px; top: 170px; bottom: 50px; overflow: hidden;
+  .stelle b { display: block; font: 600 50px/1.1 var(--ui); font-variant-numeric: tabular-nums; color: var(--tinte); }
+  .stelle span { display: block; margin-top: 10px; font-size: 30px; color: var(--grau); }
+  .fenster { position: absolute; left: 240px; right: 240px; top: 200px; bottom: 50px; overflow: hidden;
     -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,.12) 0%, #000 30%, #000 70%, rgba(0,0,0,.12) 100%);
     mask-image: linear-gradient(to bottom, rgba(0,0,0,.12) 0%, #000 30%, #000 70%, rgba(0,0,0,.12) 100%); }
   .band { position: absolute; left: -24px; right: -24px; top: 50%; height: 140px; margin-top: -70px; border-radius: 18px;
@@ -64,7 +64,7 @@
   </section>
   <div id="textbild">
     <header class="kopf">
-      <span class="werk">Seneca · Vom glücklichen Leben</span>
+      <span class="werk">Seneca · De vita beata</span>
       <div class="stelle"><b id="stelle"></b><span id="teil"></span></div>
     </header>
     <div class="fenster" id="fenster"><div class="band"></div><div class="inhalt" id="inhalt"></div></div>
@@ -92,7 +92,7 @@
   }
   // Erst alle Schriften laden: lade() berechnet die Zeilen, mit einer Ersatzschrift bräche der Text anders um
   function bereit() {
-    return Promise.all(["400 54px Literata", "600 27px 'IBM Plex Sans'", "500 22px 'IBM Plex Sans'", "600 96px Cinzel"]
+    return Promise.all(["400 54px Literata", "600 34px 'IBM Plex Sans'", "500 30px 'IBM Plex Sans'", "600 96px Cinzel"]
       .map(function (f) { return document.fonts.load(f, "Glück"); })).then(function () { return document.fonts.ready; });
   }
   function lade(daten) {
