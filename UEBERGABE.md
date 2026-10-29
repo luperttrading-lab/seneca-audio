@@ -50,7 +50,10 @@ die alte Zählung. Gliederung: `GLIEDERUNG.md`; Kapiteltabelle: `PLAN.md`.
  **Durchgang 2 Satz für Satz (199 Credits):** wieder „vor“. Bilanz „vor uns hergeht“: allein ohne Zusammenhang 5/5 richtig,
  allein mit Folgesatz als next_text 2/4, Folgesatz im gesprochenen Text 0/3 (exakter Trendtest p = 0,008). Zwischen zwei
  Durchgängen liegt der Gipfel in 8 von 15 Sprechabschnitten auf anderen Wörtern: Betonung streut stark. **Vorgehen:** Kapitel
- in einem Stück; vom Nutzer gemeldete Sätze 2–3× allein **ohne** Zusammenhang erzeugen, beste einsetzen.; `werkzeuge/kapitel.py 1 <ordner>`, 1.321 Credits, Rohaufnahme wortgetreu (499/499), 58 Pausen verlängert, Tempo 0,96, −18 LUFS, Video 3:57 (1920 × 1080, 66 MB). Liegt nur im Scratchpad, Urteil des Nutzers offen; öffentlich noch Lupert als „Teil 1“ und „Teil 2“ |
+ in einem Stück; vom Nutzer gemeldete Sätze 2–3× allein **ohne** Zusammenhang erzeugen, beste einsetzen.
+ **Rückwärts-Test (Nutzer-Idee, 200 Credits):** eine Anfrage mit Satz 4, 3, 2, 1, danach geschnitten und zurücksortiert: „vor uns
+ hergeht“ richtig (Satz 1 am Ende, Text davor, kein Folgesatz). Bilanz ohne Folgesatz 6/6, Folgesatz als Zusammenhang 2/4,
+ Folgesatz im Text 0/3 (Trendtest p = 0,005): entscheidend ist, was nach dem Satz kommt.; `werkzeuge/kapitel.py 1 <ordner>`, 1.321 Credits, Rohaufnahme wortgetreu (499/499), 58 Pausen verlängert, Tempo 0,96, −18 LUFS, Video 3:57 (1920 × 1080, 66 MB). Liegt nur im Scratchpad, Urteil des Nutzers offen; öffentlich noch Lupert als „Teil 1“ und „Teil 2“ |
 | 2 | fertig (`texte/kapitel02.txt`), mit Stewart und Forbiger abgeglichen; Nutzer will Stellen überarbeiten | fehlt |
 | 3 | Entwurf (`texte/kapitel03.txt`), mit Stewart und Forbiger abgeglichen, Freigabe offen | – |
 | 4–28 | Latein in `texte/latein/kapitelNN.txt` | – |
@@ -71,8 +74,8 @@ Seit 28.10. ist der **neue Schlüssel (30.000 Credits Grenze)** aktiv. Eine API-
 Storytel gleich. Die App hat für dieselben 785 Zeichen 766 Credits berechnet. Am 28.10. verbraucht: 7 Anfragen, 2.356
 Credits; Rest also höchstens etwa 27.600. Dazu Stimmen-Duell 1.757 Credits (25 × 70 plus Test), Runde 2 1.200 Credits und am 29.10. die
 Stimmenprobe 1.348 Credits (4 × 337) und 602 (2 × 301) und 1.505 (5 × 301) und 2.022 (6 × 337), Probefilm 24 (Titel und Startsatz),
-Kapitel 1 mit Helmut 1.321, Paragraf 1 (3) neu 200, Versuch „vor uns hergeht“ 438, Test Satz für Satz 2 × 199: zusammen
-etwa 13.180 verbraucht, höchstens etwa 16.820 übrig. **Das reicht nicht für das ganze Werk:** etwa 67.000 Zeichen (9,1 Zeichen je
+Kapitel 1 mit Helmut 1.321, Paragraf 1 (3) neu 200, Versuch „vor uns hergeht“ 438, Test Satz für Satz 2 × 199, rückwärts 200:
+zusammen etwa 13.380 verbraucht, höchstens etwa 16.620 übrig. **Das reicht nicht für das ganze Werk:** etwa 67.000 Zeichen (9,1 Zeichen je
 lateinisches Wort aus Teil 1–4, 7.395 Wörter) kosten etwa 28.800 Credits für einen einzigen Durchgang ohne Neuversuche.
 Der Nutzer muss die Grenze des Schlüssels erhöhen, sofern das Konto die Credits hat. Der alte Schlüssel sollte gelöscht
 werden, falls noch nicht geschehen.
