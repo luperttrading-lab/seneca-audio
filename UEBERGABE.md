@@ -34,7 +34,11 @@ die alte Zählung. Gliederung: `GLIEDERUNG.md`; Kapiteltabelle: `PLAN.md`.
  neu bearbeitet: wortgetreu, 39 statt 58 Pausen, 3:53, Video im Scratchpad `kapitel01_neu/` (Full HD, 64 MB). Offen: Feinschliff
  „die vor uns hergeht“ (Varianten A/B auf der Prüfseite, Wahl des Nutzers). Nutzer hat den ersten Satz von 1 (3) selbst in der
  App mit Helmut erzeugt (gleiche Stimme, Fingerabdruck 0,95; App-Einstellungen: Stability 0,5, Similarity 0,81, die API
- nimmt ohne Angabe den Standardwert): dort Betonung auf „HERgeht“ statt „VOR“; liegt bearbeitet auf der Prüfseite; `werkzeuge/kapitel.py 1 <ordner>`, 1.321 Credits, Rohaufnahme wortgetreu (499/499), 58 Pausen verlängert, Tempo 0,96, −18 LUFS, Video 3:57 (1920 × 1080, 66 MB). Liegt nur im Scratchpad, Urteil des Nutzers offen; öffentlich noch Lupert als „Teil 1“ und „Teil 2“ |
+ nimmt ohne Angabe den Standardwert): dort Betonung auf „HERgeht“ statt „VOR“; liegt bearbeitet auf der Prüfseite;
+ **Versuch (29.10.):** derselbe Satz sechsmal einzeln erzeugt (je 2× ohne Similarity, mit 0,81, mit 0,81 und Satz davor/danach):
+ alle 6 und die App-Aufnahme betonen „hergeht“ (mit Fall von 10–15 HT wie am Satzende), beide Fassungen aus langem Text
+ „vor“ (`messung/stimmen/versuch_vor_uns_hergeht.json`). Ursache ist also, ob der Satz allein oder im längeren Text steht,
+ nicht Similarity oder Zusammenhang. Stimm-Standard laut API: similarity 0,75, style 0,55, speaker boost an; `werkzeuge/kapitel.py 1 <ordner>`, 1.321 Credits, Rohaufnahme wortgetreu (499/499), 58 Pausen verlängert, Tempo 0,96, −18 LUFS, Video 3:57 (1920 × 1080, 66 MB). Liegt nur im Scratchpad, Urteil des Nutzers offen; öffentlich noch Lupert als „Teil 1“ und „Teil 2“ |
 | 2 | fertig (`texte/kapitel02.txt`), mit Stewart und Forbiger abgeglichen; Nutzer will Stellen überarbeiten | fehlt |
 | 3 | Entwurf (`texte/kapitel03.txt`), mit Stewart und Forbiger abgeglichen, Freigabe offen | – |
 | 4–28 | Latein in `texte/latein/kapitelNN.txt` | – |
@@ -55,7 +59,8 @@ Seit 28.10. ist der **neue Schlüssel (30.000 Credits Grenze)** aktiv. Eine API-
 Storytel gleich. Die App hat für dieselben 785 Zeichen 766 Credits berechnet. Am 28.10. verbraucht: 7 Anfragen, 2.356
 Credits; Rest also höchstens etwa 27.600. Dazu Stimmen-Duell 1.757 Credits (25 × 70 plus Test), Runde 2 1.200 Credits und am 29.10. die
 Stimmenprobe 1.348 Credits (4 × 337) und 602 (2 × 301) und 1.505 (5 × 301) und 2.022 (6 × 337), Probefilm 24 (Titel und Startsatz),
-Kapitel 1 mit Helmut 1.321, Paragraf 1 (3) neu 200: zusammen etwa 12.340 verbraucht, höchstens etwa 17.660 übrig. **Das reicht nicht für das ganze Werk:** etwa 67.000 Zeichen (9,1 Zeichen je
+Kapitel 1 mit Helmut 1.321, Paragraf 1 (3) neu 200, Versuch „vor uns hergeht“ 438: zusammen etwa 12.780 verbraucht,
+höchstens etwa 17.220 übrig. **Das reicht nicht für das ganze Werk:** etwa 67.000 Zeichen (9,1 Zeichen je
 lateinisches Wort aus Teil 1–4, 7.395 Wörter) kosten etwa 28.800 Credits für einen einzigen Durchgang ohne Neuversuche.
 Der Nutzer muss die Grenze des Schlüssels erhöhen, sofern das Konto die Credits hat. Der alte Schlüssel sollte gelöscht
 werden, falls noch nicht geschehen.
