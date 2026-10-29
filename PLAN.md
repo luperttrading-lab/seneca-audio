@@ -36,6 +36,10 @@ ganze Werk, ohne Neuversuche.
 
 ## Abschnitte und gesprochene Titel
 
+**Verworfen am 29.10.** (Nutzer): Abschnitte und ihre Namen sind unsere eigene Einteilung und entfallen, wie die Teile.
+Im Video gibt es nur die Startseite („Seneca. Vom glücklichen Leben.“ gesprochen), danach Kapitel für Kapitel ohne
+Titelkarte. Die Analyse bleibt als Hintergrund:
+
 Titel werden nur dort gesprochen, wo bei Seneca ein neuer Gedankengang beginnt, ohne Nummer, als eigener kurzer
 Clip vor dem Kapitel (fällt ohne Neuaufnahme weg, falls er stört). Kapitel, Paragraf und Abschnitt stehen nur
 geschrieben im Bild. Die Grenzen am Latein geprüft (29.10.); Titel aus Senecas eigenen Worten, Vorschlag, Freigabe offen:
