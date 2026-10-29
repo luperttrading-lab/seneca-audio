@@ -19,6 +19,8 @@ LibriVox-Vorleser.
 Liste, großem Play-Knopf, Lesemodus mit durchlaufendem Text und nahtlosem Weiterspielen; Tempo 0,95, immer dunkel.
 Erzeugt mit `python3 seite/bau_hoerbuch.py seite/karaoke.json .` aus `seite/hoerbuch_vorlage.html`; neue Teile werden
 in der Liste `TEILE` in `seite/bau_hoerbuch.py` eingetragen. Ton je Teil in `audio/teilNN.m4a` (AAC 64 kbit/s, −18 LUFS).
+Seit 29.10. gilt nur noch Senecas Einteilung in 28 Kapitel (`GLIEDERUNG.md`); Texte in `texte/kapitelNN.txt`, Latein in
+`texte/latein/kapitelNN.txt`. Die öffentliche Seite zeigt bis zur Neuvertonung von Kapitel 1 noch die alten Teile 1 und 2.
 
 ## Bauen
 

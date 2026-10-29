@@ -1,12 +1,14 @@
 # Plan: De vita beata vollständig übersetzen und vertonen
 
 Seneca, *De vita beata* (an Gallio), 28 Kapitel, rund 7.260 lateinische Wörter; das Werk bricht in Kapitel 28 mitten im
-Satz ab. Lateinischer Text: [The Latin Library](https://www.thelatinlibrary.com/sen/sen.vita.shtml), je Teil in
-`texte/latein/teilNN.txt`. Eigene Übersetzung je Teil in `texte/teilNN.txt`. Endprodukt: ein YouTube-Video mit mitlaufendem Text.
+Satz ab. Lateinischer Text: [The Latin Library](https://www.thelatinlibrary.com/sen/sen.vita.shtml), je Kapitel in
+`texte/latein/kapitelNN.txt`. Eigene Übersetzung je Kapitel in `texte/kapitelNN.txt`, mit Stellenmarken „[1,2]“ vor dem
+Satz, mit dem der lateinische Paragraf beginnt (nie gesprochen; `werkzeuge/stellen.py` entfernt sie vor Stimme, Prüfung
+und Wortzeiten und liefert je Wort die Stelle für das Video). Endprodukt: ein YouTube-Video mit mitlaufendem Text.
 
 ## Stil der Übersetzung
 
-Festgelegt an Teil 1 nach den Rückmeldungen des Auftraggebers:
+Festgelegt an Kapitel 1 nach den Rückmeldungen des Auftraggebers:
 
 - Nah am Latein: Senecas Bilder, Gedankengang und Satzbau bleiben erkennbar, man soll merken, dass es ein antiker Text ist.
 - Zugleich heutiges, flüssiges Deutsch zum Zuhören: nicht gestelzt, nicht flapsig, keine modernen Redensarten
@@ -17,7 +19,7 @@ Festgelegt an Teil 1 nach den Rückmeldungen des Auftraggebers:
   lange Kommaketten in zwei Sätze teilen. Bildhafte Wörter nur, wenn sie natürlich klingen (kein „Knäuel von Menschen“).
 - Erster Satz ohne „zu“: „Glücklich leben, mein Bruder Gallio, das wollen alle.“
 
-## Ablauf je Teil
+## Ablauf je Kapitel
 
 1. Übersetzung aus dem Latein, gegen den lateinischen Text geprüft und mit zwei freien Übersetzungen abgeglichen:
    Aubrey Stewart, englisch 1900 ([Project Gutenberg 64576](https://www.gutenberg.org/ebooks/64576), „Of a Happy Life“)
@@ -27,73 +29,74 @@ Festgelegt an Teil 1 nach den Rückmeldungen des Auftraggebers:
 3. Prüfung auf Worttreue (Whisper), Pausen auf natürliche Länge (`werkzeuge/pausen2.py`: Satzende 0,9 s, Absatz 1,3 s,
    Doppelpunkt/Semikolon 0,55 s, Gedankenstrich 0,45 s, Komma 0,30 s nur dort, wo die Stimme schon mindestens 0,15 s pausiert),
    Lautheit −18 LUFS, Wortzeiten für den Lesemodus.
-4. In `seite/bau_hoerbuch.py` eintragen und die Hörbuch-Seite neu bauen (Teile-Liste, Lesemodus, nahtloses Weiterspielen).
+4. In `seite/bau_hoerbuch.py` eintragen und die Hörbuch-Seite neu bauen (Kapitel-Liste, Lesemodus, nahtloses Weiterspielen).
 
-Umfang für ElevenLabs: Teil 1 hat 1.486 Zeichen bei 162 lateinischen Wörtern; hochgerechnet etwa 66.000 Zeichen für das
+Umfang für ElevenLabs: Kapitel 1,1–2 hat 1.486 Zeichen bei 162 lateinischen Wörtern; hochgerechnet etwa 66.000 Zeichen für das
 ganze Werk, ohne Neuversuche.
 
 ## Abschnitte und gesprochene Titel
 
-Titel werden nur dort gesprochen, wo bei Seneca ein neuer Gedankengang beginnt, ohne Teilnummer, als eigener kurzer
-Clip vor dem Teil (fällt ohne Neuaufnahme weg, falls er stört). Teilnummer, Stelle und Abschnitt stehen nur geschrieben
-auf der Seite. Die Grenzen am Latein geprüft (29.10.); Titel aus Senecas eigenen Worten, Vorschlag, Freigabe offen:
+Titel werden nur dort gesprochen, wo bei Seneca ein neuer Gedankengang beginnt, ohne Nummer, als eigener kurzer
+Clip vor dem Kapitel (fällt ohne Neuaufnahme weg, falls er stört). Kapitel, Paragraf und Abschnitt stehen nur
+geschrieben im Bild. Die Grenzen am Latein geprüft (29.10.); Titel aus Senecas eigenen Worten, Vorschlag, Freigabe offen:
 
-| Abschnitt | Kapitel | Teile | Dauer | Titel (Vorschlag) | Beleg |
-|---|---|---|---|---|---|
-| 1 | 1–2 | 1–3 | 6:22 | Wohin und auf welchem Weg | 1,2 decernatur et quo tendamus et qua |
-| 2 | 3–6 | 4–6 | 8:33 | Im Einklang mit der Natur | 3,3 vita conveniens naturae suae; 6,2 fasst zusammen |
-| 3 | 7–16 | 7–16 | 26:44 | Tugend und Lust | 7,1 Epikureer: Lust nicht von der Tugend zu trennen; 16,1 ergo … vera felicitas schließt |
-| 4 | 17–20 | 17–20 | 10:27 | Du redest anders, als du lebst | 17,1 quare ergo tu fortius loqueris quam vivis; 18,1 aliter loqueris, aliter vivis |
-| 5 | 21–28 | 21–29 | 25:09 | Der Weise und der Reichtum | 21,1 quare … tam dives vitam agit |
-
-Kapitel 16 ist kein eigener Abschnitt (166 Wörter, beginnt mit ergo und schließt Abschnitt 3); 17–28 zerfällt in die
-Antwort auf den Vorwurf der Heuchelei (17–20) und die Frage nach dem Reichtum (21–28). Möglicher sechster Titel:
-Sokrates’ Rede ab 27,1 (Teil 29, 4:00), offen.
-
-## Teile
-
-Kapitel sind die Einheit; Kapitel 1 ist zweigeteilt, 5 und 6 sowie 27 und 28 sind zusammengelegt, 25 und 26 halbiert.
-Hördauer geschätzt aus Teil 1 (0,65 s je lateinisches Wort bei Tempo 0,95).
-
-| Teil | Stelle | lat. Wörter | Hördauer bei 0,95 (geschätzt) | Stand |
+| Abschnitt | Kapitel | Dauer | Titel (Vorschlag) | Beleg |
 |---|---|---|---|---|
-| 1 | 1,1–2 | 162 | 1:45 | fertig, öffentlich (1:47) |
-| 2 | 1,3–5 | 181 | 1:57 | fertig, öffentlich (1:51) |
-| 3 | 2,1–4 | 246 | 2:39 | Übersetzung fertig |
-| 4 | 3,1–4 | 227 | 2:27 | Entwurf, Freigabe offen |
-| 5 | 4,1–5 | 308 | 3:20 |  |
-| 6 | 5,1–4 + 6,1–2 | 255 | 2:45 |  |
-| 7 | 7,1–4 | 285 | 3:05 |  |
-| 8 | 8,1–6 | 326 | 3:31 |  |
-| 9 | 9,1–4 | 204 | 2:12 |  |
-| 10 | 10,1–3 | 163 | 1:45 |  |
-| 11 | 11,1–4 | 230 | 2:29 |  |
-| 12 | 12,1–5 | 243 | 2:37 |  |
-| 13 | 13,1–5 | 297 | 3:13 |  |
-| 14 | 14,1–3 | 179 | 1:56 |  |
-| 15 | 15,1–7 | 376 | 4:04 |  |
-| 16 | 16,1–3 | 166 | 1:47 |  |
-| 17 | 17,1–4 | 247 | 2:40 |  |
-| 18 | 18,1–3 | 152 | 1:38 |  |
-| 19 | 19,1–3 | 206 | 2:13 |  |
-| 20 | 20,1–6 | 360 | 3:54 |  |
-| 21 | 21,1–4 | 186 | 2:00 |  |
-| 22 | 22,1–5 | 232 | 2:30 |  |
-| 23 | 23,1–5 | 289 | 3:07 |  |
-| 24 | 24,1–5 | 332 | 3:35 |  |
-| 25 | 25,1–4 | 292 | 3:09 |  |
-| 26 | 25,5–8 | 168 | 1:49 |  |
-| 27 | 26,1–4 | 195 | 2:06 |  |
-| 28 | 26,5–8 | 258 | 2:47 |  |
-| 29 | 27,1–6 + 28,1 | 370 | 4:00 |  |
+| 1 | 1–2 | 6:40 | Wohin und auf welchem Weg | 1,2 decernatur et quo tendamus et qua |
+| 2 | 3–6 | 8:58 | Im Einklang mit der Natur | 3,3 vita conveniens naturae suae; 6,2 fasst zusammen |
+| 3 | 7–16 | 28:00 | Tugend und Lust | 7,1 Epikureer: Lust nicht von der Tugend zu trennen; 16,1 ergo … vera felicitas schließt |
+| 4 | 17–20 | 10:56 | Du redest anders, als du lebst | 17,1 quare ergo tu fortius loqueris quam vivis; 18,1 aliter loqueris, aliter vivis |
+| 5 | 21–28 | 26:19 | Der Weise und der Reichtum | 21,1 quare … tam dives vitam agit |
 
-Gesamt: 29 Teile, etwa 77 Minuten.
+Kapitel 16 ist kein eigener Abschnitt (169 Wörter, beginnt mit ergo und schließt Abschnitt 3); 17–28 zerfällt in die
+Antwort auf den Vorwurf der Heuchelei (17–20) und die Frage nach dem Reichtum (21–28). Möglicher sechster Titel:
+Sokrates’ Rede ab 27,1 (Kapitel 27, 3:17), offen.
+
+## Kapitel
+
+Seit 29.10. ist Senecas Kapitel die einzige Einheit (vorher 29 „Teile“ nach Hörlänge: Kapitel 1 geteilt, 5+6 und 27+28
+zusammengelegt, 25 und 26 halbiert). Bisherige Teile: 1+2 → Kapitel 1, 3 → 2, 4 → 3, 5 → 4; ab Teil 7 ist Teil = Kapitel bis 24.
+Wörter gezählt im lateinischen Text ohne Paragrafennummern; Hördauer geschätzt mit 0,669 s je Wort (Helmut, Tempo 0,96,
+gemessen an 1,1–2). Ein Kapitel geht als eine Anfrage an ElevenLabs; das längste (25) hat deutsch etwa 4.300 Zeichen.
+
+| Kapitel | Paragrafen | lat. Wörter | Hördauer (geschätzt) | Stand |
+|---|---|---|---|---|
+| 1 | 5 | 348 | 3:53 | übersetzt, Text am 29.10. nachgebessert; öffentlich noch Lupert als „Teil 1 und 2“ (alter Wortlaut) |
+| 2 | 4 | 250 | 2:47 | übersetzt, Überarbeitung durch den Auftraggeber offen |
+| 3 | 4 | 231 | 2:34 | Entwurf, Freigabe offen |
+| 4 | 5 | 313 | 3:29 |  |
+| 5 | 4 | 164 | 1:50 |  |
+| 6 | 2 | 97 | 1:05 |  |
+| 7 | 4 | 289 | 3:13 |  |
+| 8 | 6 | 332 | 3:42 |  |
+| 9 | 4 | 208 | 2:19 |  |
+| 10 | 3 | 166 | 1:51 |  |
+| 11 | 4 | 234 | 2:36 |  |
+| 12 | 5 | 248 | 2:46 |  |
+| 13 | 5 | 302 | 3:22 |  |
+| 14 | 3 | 182 | 2:02 |  |
+| 15 | 7 | 383 | 4:16 |  |
+| 16 | 3 | 169 | 1:53 |  |
+| 17 | 4 | 251 | 2:48 |  |
+| 18 | 3 | 155 | 1:44 |  |
+| 19 | 3 | 209 | 2:20 |  |
+| 20 | 6 | 366 | 4:05 |  |
+| 21 | 4 | 190 | 2:07 |  |
+| 22 | 5 | 237 | 2:38 |  |
+| 23 | 5 | 294 | 3:17 |  |
+| 24 | 5 | 337 | 3:45 |  |
+| 25 | 8 | 468 | 5:13 |  |
+| 26 | 8 | 461 | 5:08 |  |
+| 27 | 6 | 295 | 3:17 |  |
+| 28 | 1 | 79 | 0:53 |  |
+
+Gesamt: 28 Kapitel, 126 Paragrafen, 7.258 lateinische Wörter, Text etwa 80:53 min.
 
 ## Stimmensuche (offen)
 
 Mit Lupert, Christian, Brian, Ralf Benz und Robert Ranger ist der Auftraggeber nicht zufrieden (Vergleich in
 `messung/stimmen/vergleich_kap1_absatz12.json`; bester Messwert roh: Ralf Benz, Abstand 1,30, natürlicher Abfall am
-Satzende −1,1 HT/s). Teil 1 und 2 werden nach der Entscheidung mit der neuen Stimme neu erzeugt.
+Satzende −1,1 HT/s). Kapitel 1 (bisher Teil 1 und 2) wird mit der gewählten Stimme neu erzeugt.
 
 Modellprüfung vom 28.10. (Einzelheiten in `UEBERGABE.md`): Das Modell bestimmt die Satzmelodie. Ralf Benz mit
 Multilingual v2 (Stability 0,75) liegt bei 9,4 und 10,0 HT statt 13–14 HT mit v4 und hat den besten Abstand bisher

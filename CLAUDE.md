@@ -1,6 +1,6 @@
 # Seneca-Hörbuch (De vita beata)
 
-Eigene Übersetzung und Vertonung von Senecas *De vita beata* in 29 Teilen. Plan, Stilregeln und Ablauf je Teil:
+Eigene Übersetzung und Vertonung von Senecas *De vita beata*, eingeteilt nach Senecas 28 Kapiteln. Plan, Stilregeln und Ablauf je Kapitel:
 `PLAN.md`. Stand, Links und offene Punkte: `UEBERGABE.md` (zu Beginn einer neuen Sitzung zuerst lesen).
 
 ## Regeln

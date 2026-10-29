@@ -18,13 +18,20 @@
 
 ## Stand
 
-| Teil | Text | Aufnahme |
+**Seit 29.10. zählen wir nur noch nach Senecas 28 Kapiteln** (Nutzer: die eigenen „Teile“ verwirren mehr, als sie
+bringen). Bisher Teil 1+2 → Kapitel 1, Teil 3 → Kapitel 2, Teil 4 → Kapitel 3. Weiter unten in dieser Datei meint „Teil“ noch
+die alte Zählung. Gliederung: `GLIEDERUNG.md`; Kapiteltabelle: `PLAN.md`.
+
+| Kapitel | Text | Aufnahme |
 |---|---|---|
-| 1 (Kap. 1,1–2) | fertig | Lupert, Pausen „ruhig“, öffentlich (`audio/teil01.m4a`) |
-| 2 (Kap. 1,3–5) | fertig, zweimal überarbeitet | Lupert, neue Kommaregel, öffentlich (`audio/teil02.m4a`) |
-| 3 (Kap. 2) | fertig (`texte/teil03.txt`), mit Stewart und Forbiger abgeglichen | fehlt, wartet auf die Stimmenwahl |
-| 4 (Kap. 3) | Entwurf (`texte/teil04.txt`), mit Stewart und Forbiger abgeglichen, Freigabe offen | – |
-| 5–29 | Latein in `texte/latein/` | – |
+| 1 | fertig, am 29.10. nachgebessert (`texte/kapitel01.txt`, Marken 1,1–1,5) | öffentlich noch Lupert als „Teil 1“ und „Teil 2“ (`audio/teil01.m4a`, `audio/teil02.m4a`, alter Wortlaut); neu mit Helmut offen |
+| 2 | fertig (`texte/kapitel02.txt`), mit Stewart und Forbiger abgeglichen; Nutzer will Stellen überarbeiten | fehlt |
+| 3 | Entwurf (`texte/kapitel03.txt`), mit Stewart und Forbiger abgeglichen, Freigabe offen | – |
+| 4–28 | Latein in `texte/latein/kapitelNN.txt` | – |
+
+Die öffentliche Seite (`seite/bau_hoerbuch.py`, Liste `TEILE`) zeigt bis zur Neuvertonung von Kapitel 1 weiter die alten
+Teile 1 und 2; umgestellt wird erst mit Freigabe des Nutzers. `seite/karaoke_daten.py` verweist für `a-teil02` noch auf
+`texte/teil02.txt` (gelöscht; der alte Text steht in der Git-Historie).
 
 ## ElevenLabs-Schlüssel
 
@@ -179,7 +186,7 @@ nichts (HNR, CPPS, Präsenz 2–5 kHz, Luft 5–11 kHz, Grundrauschen: alle |ρ|
 „alle“: schwächer fallende Enden schneiden etwas besser ab (ρ = +0,33, p = 0,11, nicht gesichert). Ein Lachen erkennt
 die Messung nicht; das bleibt Sache des Ohrs.
 
-Gesamtgliederung (Abschnitte, Teile, Kapitel, 126 Paragrafen, geschätzte Dauer): `GLIEDERUNG.md`.
+Gesamtgliederung (Abschnitte, Kapitel, 126 Paragrafen, geschätzte Dauer): `GLIEDERUNG.md`.
 
 ## Offen, in dieser Reihenfolge
 
@@ -265,8 +272,10 @@ Gesamtgliederung (Abschnitte, Teile, Kapitel, 126 Paragrafen, geschätzte Dauer)
    dazu Lupert um 2,5 HT abgesenkt (formanterhaltend, `rubberband` ist in ffmpeg vorhanden, kostenlos) als Test der
    Tonlagen-These. Zusammen etwa 1.200 Credits. Tempo 0,95, zweite Duellrunde.
    Teil 3 erst erzeugen, wenn der Nutzer seine Textstellen überarbeitet hat und die Stimme feststeht.
-2. Mit der gewählten Stimme und dem gewählten Modell Teil 1 und 2 neu erzeugen, Teil 3 und 4 aufnehmen, alles neu
-   verarbeiten.
+2. Mit der gewählten Stimme Kapitel 1 neu erzeugen (bisher Teil 1 und 2, jetzt ein Stück), Kapitel 2 und 3 aufnehmen, alles
+   neu verarbeiten. Vorher `werkzeuge/verarbeite.py` anpassen: keine PSOLA-Absenkung mehr (Helmut), Text ohne Marken an
+   Stimme, Whisper und Pausen (`werkzeuge/stellen.py rein`), Stellen je Wort für das Video (`stellen.py liste`), Tempo 0,96
+   direkt bei ElevenLabs.
    **Text von Teil 1 und 2 am 29.10. sprachlich nachgebessert** (vom Nutzer freigegeben, er liest noch einmal gegen):
    Teil 1 „wird gerade die Eile zur Ursache einer noch größeren Entfernung“ bleibt ausdrücklich so (Nutzer); Teil 2
    „Denn nichts verstrickt uns …“ statt „Und doch …“ (atqui ist hier kein Gegensatz) und „jeder ist auch Ursache und
@@ -276,14 +285,16 @@ Gesamtgliederung (Abschnitte, Teile, Kapitel, 126 Paragrafen, geschätzte Dauer)
    werden wir, wenn wir uns nur von der Menge lösen.“ (sanabimur). Die öffentlichen Aufnahmen haben noch den alten
    Wortlaut, bis zur Neuvertonung.
    **Titel (Nutzer: ja, aber nur an echten Wendepunkten, ohne Teilnummer):** fünf Abschnitte, am Latein geprüft, Tabelle
-   in `PLAN.md` (Abschnitte und gesprochene Titel). Für Teil 1–4: gesprochen nur „Wohin und auf welchem Weg“ vor Teil 1
-   und „Im Einklang mit der Natur“ vor Teil 4. Titel als eigener Clip, nicht in `texte/teilNN.txt`.
+   in `PLAN.md` (Abschnitte und gesprochene Titel). Für Kapitel 1–3: gesprochen nur „Wohin und auf welchem Weg“ vor Kapitel 1
+   und „Im Einklang mit der Natur“ vor Kapitel 3. Titel als eigener Clip, nicht in `texte/kapitelNN.txt`.
    **Idee des Nutzers:** Stellenangaben (Kapitel,Paragraf wie 1,4) sichtbar im Text, auf der Seite und später im Video,
    mit Sprungmöglichkeit; nicht gesprochen. **Endprodukt ist ein YouTube-Video** (Nutzer, 29.10.): also nichts zum
    Ein- und Ausblenden, die Darstellung muss vorher feststehen. Nutzer will Marken im Text **und** in der Ecke (siehe
    Probefilm); ursprünglicher Vorschlag war nur die Ecke („Kapitel 1,4“), Titelkarte an den fünf Abschnittsanfängen, YouTube-Kapitelmarken je
    lateinischem Kapitel in der Beschreibung (Regeln: erste Marke 0:00, mindestens drei, je mindestens 10 s).
-   Unsichtbare Marken in `texte/teilNN.txt` liefern die Zeiten. Freigabe offen.
+   Unsichtbare Marken „[1,2]“ in `texte/kapitelNN.txt` liefern die Zeiten (eingetragen für Kapitel 1–3; `werkzeuge/stellen.py`).
+   Im Video als „1 (2)“ in Textgröße und bronze im Text, dazu „Kapitel 1 (2)“ in der Kopfzeile. Kopfzeile: vier Varianten
+   gezeigt (29.10.), Wahl offen; „Teil x von 29“ entfällt.
    **Probefilm Teil 1 (29.10., nicht veröffentlicht):** Stieglbauer aus den vorhandenen Proben (Absatz 1–2 und 3–4, also
    noch alter Wortlaut beim „kurzen Leben“), gesprochener Titel (11 Credits), Tempo 0,96 per atempo, −18 LUFS, 1920 × 1080.
    Fassung 1 (ein Absatz je Bild, Wort im Kasten) gefiel dem Nutzer weniger; **gewünscht ist der Lesemodus der App:**
@@ -297,7 +308,7 @@ Gesamtgliederung (Abschnitte, Teile, Kapitel, 126 Paragrafen, geschätzte Dauer)
    Annaeus Seneca“ / „De vita beata“ / „Vom glücklichen Leben“ / „An seinen Bruder Gallio · aus dem Lateinischen neu
    übersetzt“), nur „Seneca. Vom glücklichen Leben.“ gesprochen (13 Credits); dann Titelkarte mit gesprochenem Titel, dann
    Text. In daten.json `start_ende` (nur Teil 1) und `titel_ende`. 1:59, Render 3:10 min.
-3. Teil 4 freigeben lassen. Entscheidungen im Entwurf, die der Nutzer prüfen sollte:
+3. Kapitel 3 (bisher Teil 4) freigeben lassen. Entscheidungen im Entwurf, die der Nutzer prüfen sollte:
    - Lücke und Crux in 3,4 sind geglättet wie bei Stewart und Forbiger (beide glätten): „an die Stelle der Lüste und
      all dessen, was klein und zerbrechlich ist und schon durch seine Schändlichkeit schadet, tritt …“.
    - Senatsbild in 3,2 beibehalten: „meine Stimme abgeben“, *sententiam dividere* als „dass über seinen Antrag Punkt
@@ -305,7 +316,7 @@ Gesamtgliederung (Abschnitte, Teile, Kapitel, 126 Paragrafen, geschätzte Dauer)
    - *fortuna* als „Schicksal“, nicht „Glück“, damit „glücklich“ für *beatus* reserviert bleibt.
    - *voluptas* als „Lust“ (Plural „Lüste“) – Leitbegriff ab Kapitel 4, bitte früh festlegen; *gaudium* als „Freude“.
    - *solidum* als „fest und gediegen“ (Bild vom reinen Erz, passt zu *eruamus*, „ausgraben“).
-4. Teil 5 (Kapitel 4) übersetzen.
+4. Kapitel 4 übersetzen.
 
 Im Container fehlen `faster-whisper` und `praat-parselmouth` (für `pruef.py`, `prosodie.py`, `karaoke_daten.py`);
 pip ist erreichbar, vor den Messungen installieren.
