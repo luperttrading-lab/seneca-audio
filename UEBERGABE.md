@@ -179,6 +179,8 @@ nichts (HNR, CPPS, Präsenz 2–5 kHz, Luft 5–11 kHz, Grundrauschen: alle |ρ|
 „alle“: schwächer fallende Enden schneiden etwas besser ab (ρ = +0,33, p = 0,11, nicht gesichert). Ein Lachen erkennt
 die Messung nicht; das bleibt Sache des Ohrs.
 
+Gesamtgliederung (Abschnitte, Teile, Kapitel, 126 Paragrafen, geschätzte Dauer): `GLIEDERUNG.md`.
+
 ## Offen, in dieser Reihenfolge
 
 1. **Stimme gewählt: Helmut Stieglbauer – Deep and Dynamic** (`JiW03c2Gt43XNUQAumRP`, 29.10., nach der Stimmenprobe:
