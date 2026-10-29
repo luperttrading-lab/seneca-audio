@@ -8,6 +8,8 @@
   https://claude.ai/artifact/Mj5fSGP6WhXq3iSCjZCqxt
 - **Stimmen-Duell** (privat, Speicher `duelle` mit `{a, b, w: "a"|"b"|"=", t}`; Quelle `seite/duell.html`, Stimmen in
   `messung/stimmen/duell_stimmen.json`, Ton nur im Artifact): https://claude.ai/artifact/SMVhWQ4Qcto92tmNYbE6fM
+- **Kapitel 1 · Vorschau** (privat, 29.10.; Video 720p und Tonspur von Kapitel 1 mit neuem 1 (3); Quelle
+  `seite/vorschau_kapitel01.html`): https://claude.ai/artifact/Pa3cLB5TEbA2WvmnNQiVy9
 - **Kapitel 1 · Prüfstellen** (privat, 29.10.; zwei verdächtige Stellen in 1 (3) zum Anhören mit Mitlesen; Quelle
   `seite/pruefstellen.html`): https://claude.ai/artifact/9oVZgpKioSQuSDG4DCfBJE
 - **Stimmenprobe** (privat; drei Reiter: alle sieben Helmut-Fassungen mit Teil 1, Absatz 1–2 und Absatz 3–4, dazu
@@ -28,7 +30,9 @@ die alte Zählung. Gliederung: `GLIEDERUNG.md`; Kapiteltabelle: `PLAN.md`.
 |---|---|---|
 | 1 | fertig, am 29.10. nachgebessert (`texte/kapitel01.txt`, Marken 1,1–1,5) | **neu mit Helmut erzeugt (29.10.)**; Nutzer fand in 1 (3) zwei holprige Schnitte (Komma-Pausen ohne echte Sprechpause,
  behoben: `komma_ab` 0,15 in `werkzeuge/kette.py`) und eine sinnwidrige Betonung (Stelle offen). 1 (3) neu gesprochen mit
- `werkzeuge/paragraf.py 1 3 <ordner>` (200 Credits, wortgetreu), liegt auf der Prüfseite neben der alten Fassung; `werkzeuge/kapitel.py 1 <ordner>`, 1.321 Credits, Rohaufnahme wortgetreu (499/499), 58 Pausen verlängert, Tempo 0,96, −18 LUFS, Video 3:57 (1920 × 1080, 66 MB). Liegt nur im Scratchpad, Urteil des Nutzers offen; öffentlich noch Lupert als „Teil 1“ und „Teil 2“ |
+ `werkzeuge/paragraf.py 1 3 <ordner>` (200 Credits, wortgetreu), liegt auf der Prüfseite neben der alten Fassung; in Kapitel 1 eingesetzt (Ränder 50/100 ms, Pegel −0,5 dB), Kapitel
+ neu bearbeitet: wortgetreu, 39 statt 58 Pausen, 3:53, Video im Scratchpad `kapitel01_neu/` (Full HD, 64 MB). Offen: Feinschliff
+ „die vor uns hergeht“ (Varianten A/B auf der Prüfseite, Wahl des Nutzers); `werkzeuge/kapitel.py 1 <ordner>`, 1.321 Credits, Rohaufnahme wortgetreu (499/499), 58 Pausen verlängert, Tempo 0,96, −18 LUFS, Video 3:57 (1920 × 1080, 66 MB). Liegt nur im Scratchpad, Urteil des Nutzers offen; öffentlich noch Lupert als „Teil 1“ und „Teil 2“ |
 | 2 | fertig (`texte/kapitel02.txt`), mit Stewart und Forbiger abgeglichen; Nutzer will Stellen überarbeiten | fehlt |
 | 3 | Entwurf (`texte/kapitel03.txt`), mit Stewart und Forbiger abgeglichen, Freigabe offen | – |
 | 4–28 | Latein in `texte/latein/kapitelNN.txt` | – |
