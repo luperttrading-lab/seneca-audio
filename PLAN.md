@@ -32,6 +32,24 @@ Festgelegt an Teil 1 nach den Rückmeldungen des Auftraggebers:
 Umfang für ElevenLabs: Teil 1 hat 1.486 Zeichen bei 162 lateinischen Wörtern; hochgerechnet etwa 66.000 Zeichen für das
 ganze Werk, ohne Neuversuche.
 
+## Abschnitte und gesprochene Titel
+
+Titel werden nur dort gesprochen, wo bei Seneca ein neuer Gedankengang beginnt, ohne Teilnummer, als eigener kurzer
+Clip vor dem Teil (fällt ohne Neuaufnahme weg, falls er stört). Teilnummer, Stelle und Abschnitt stehen nur geschrieben
+auf der Seite. Die Grenzen am Latein geprüft (29.10.); Titel aus Senecas eigenen Worten, Vorschlag, Freigabe offen:
+
+| Abschnitt | Kapitel | Teile | Dauer | Titel (Vorschlag) | Beleg |
+|---|---|---|---|---|---|
+| 1 | 1–2 | 1–3 | 6:22 | Wohin und auf welchem Weg | 1,2 decernatur et quo tendamus et qua |
+| 2 | 3–6 | 4–6 | 8:33 | Im Einklang mit der Natur | 3,3 vita conveniens naturae suae; 6,2 fasst zusammen |
+| 3 | 7–16 | 7–16 | 26:44 | Tugend und Lust | 7,1 Epikureer: Lust nicht von der Tugend zu trennen; 16,1 ergo … vera felicitas schließt |
+| 4 | 17–20 | 17–20 | 10:27 | Du redest anders, als du lebst | 17,1 quare ergo tu fortius loqueris quam vivis; 18,1 aliter loqueris, aliter vivis |
+| 5 | 21–28 | 21–29 | 25:09 | Der Weise und der Reichtum | 21,1 quare … tam dives vitam agit |
+
+Kapitel 16 ist kein eigener Abschnitt (166 Wörter, beginnt mit ergo und schließt Abschnitt 3); 17–28 zerfällt in die
+Antwort auf den Vorwurf der Heuchelei (17–20) und die Frage nach dem Reichtum (21–28). Möglicher sechster Titel:
+Sokrates’ Rede ab 27,1 (Teil 29, 4:00), offen.
+
 ## Teile
 
 Kapitel sind die Einheit; Kapitel 1 ist zweigeteilt, 5 und 6 sowie 27 und 28 sind zusammengelegt, 25 und 26 halbiert.

@@ -273,10 +273,11 @@ die Messung nicht; das bleibt Sache des Ohrs.
    dann kurz, wenn wir uns Tag und Nacht um einen klaren Verstand bemühten.“ (bona mens, nicht ratio) und Teil 2 „Geheilt
    werden wir, wenn wir uns nur von der Menge lösen.“ (sanabimur). Die öffentlichen Aufnahmen haben noch den alten
    Wortlaut, bis zur Neuvertonung.
-   **Titel je Teil (Vorschlag, Nutzer prüft):** nur am Anfang jedes Teils gesprochen, „Teil eins. Wohin und auf welchem
-   Weg.“, aus Senecas eigenen Worten: 1 „Wohin und auf welchem Weg“, 2 „Die Herde“, 3 „Ein besseres Licht“, 4 „Im
-   Einklang mit der Natur“ (conveniens naturae suae). Als eigener kurzer Clip vor den Teil setzen, damit er ohne
-   Neuaufnahme wieder wegfallen kann; nicht in `texte/teilNN.txt`. Nutzer: nur, wenn sie den Wortfluss nicht stören.
+   **Titel (Nutzer: ja, aber nur an echten Wendepunkten, ohne Teilnummer):** fünf Abschnitte, am Latein geprüft, Tabelle
+   in `PLAN.md` (Abschnitte und gesprochene Titel). Für Teil 1–4: gesprochen nur „Wohin und auf welchem Weg“ vor Teil 1
+   und „Im Einklang mit der Natur“ vor Teil 4. Titel als eigener Clip, nicht in `texte/teilNN.txt`.
+   **Idee des Nutzers:** Stellenangaben (Kapitel,Paragraf wie 1,4) sichtbar im Text, auf der Seite und später im Video,
+   mit Sprungmöglichkeit; nicht gesprochen. Vorschlag gemacht, Freigabe offen.
 3. Teil 4 freigeben lassen. Entscheidungen im Entwurf, die der Nutzer prüfen sollte:
    - Lücke und Crux in 3,4 sind geglättet wie bei Stewart und Forbiger (beide glätten): „an die Stelle der Lüste und
      all dessen, was klein und zerbrechlich ist und schon durch seine Schändlichkeit schadet, tritt …“.
