@@ -9,8 +9,9 @@ Eigene Übersetzung und Vertonung von Senecas *De vita beata* in 29 Teilen. Plan
   Aufnahmen mit dem Stimmklon „Lupert“ oder eigene Aufnahmen des Nutzers nur nach ausdrücklicher Zustimmung committen.
 - API-Schlüssel nie in Dateien, Commits oder Chat. Der ElevenLabs-Schlüssel kommt, wenn eingerichtet, als
   Umgebungsvariable `ELEVENLABS_API_KEY` aus den Einstellungen der Cloud-Umgebung.
-- Jede Internetadresse als klickbarer Markdown-Link. Wurde eine Seite oder ein Artifact veröffentlicht oder
-  aktualisiert: den Link als letzte Zeile vor der Kostenzeile wiederholen (`**Link:** [Name](URL)`).
+- Jede Internetadresse als klickbarer Markdown-Link. Am Ende **jeder** Antwort, direkt über der Kostenzeile, ein kurzer
+  Linkblock mit den aktuellen Seiten des Projekts: zuerst die Seite, an der gerade gearbeitet wird (fett), dann die
+  übrigen gültigen Links aus `UEBERGABE.md` (öffentliche Hörbuch-Seite, private Vorschauen). Überholte Links weglassen.
 - Kostenzeile am Ende jeder Antwort: `python3 tools/kosten.py` im Repo ausführen, Ausgabe wörtlich übernehmen.
 - Seiten vor dem Veröffentlichen im Browser testen (Playwright, Handygröße 390 × 844). Playwright-Chromium spielt kein
   AAC: für Tests MP3-Kopien verwenden; `seite/rangeserver.py` liefert Bereichsanfragen wie GitHub Pages.
