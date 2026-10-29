@@ -1,0 +1,146 @@
+[
+ {
+  "id": "dFA3XRddYScy6ylAYTIO",
+  "name": "Helmut - Warm, Gentle and Soothing",
+  "sim": 0.825,
+  "f0": 108.65218612913527,
+  "getestet": false,
+  "sprache": "de"
+ },
+ {
+  "id": "Cqbq4nsuUe1we6J45miU",
+  "name": "Helmut - Clear and Confident",
+  "sim": 0.812,
+  "f0": 99.16007903981291,
+  "getestet": false,
+  "sprache": "de"
+ },
+ {
+  "id": "TUKJhQmz3RPYBNAgC5A1",
+  "name": "German Narration - Clear Professional Voice. Helmut Clark",
+  "sim": 0.794,
+  "f0": 112.02666791811005,
+  "getestet": false,
+  "sprache": "de"
+ },
+ {
+  "id": "Fghah4fztZORbiKfIGAs",
+  "name": "Thomas Schendel - Authoritative and Calm",
+  "sim": 0.566,
+  "f0": 111.38900436107825,
+  "getestet": true,
+  "sprache": "de"
+ },
+ {
+  "id": "wDMPiTMVb5DVgOhn33JP",
+  "name": "Christian - Velvet Close-Up",
+  "sim": 0.536,
+  "f0": 83.63910443351783,
+  "getestet": false,
+  "sprache": "de"
+ },
+ {
+  "id": "Y1YKkqyjyKaKfHzBHI1b",
+  "name": "Alex - Deep, Clear and Steady",
+  "sim": 0.494,
+  "f0": 87.19494858117997,
+  "getestet": false,
+  "sprache": "de"
+ },
+ {
+  "id": "mN2MS5qHVRhNpqcfTpaV",
+  "name": "Marcus - Emphatic and Reflective",
+  "sim": 0.482,
+  "f0": 87.40896392914331,
+  "getestet": true,
+  "sprache": "de"
+ },
+ {
+  "id": "HzBCRGsOskP44taMg2CT",
+  "name": "Marc  – Warm & Clear",
+  "sim": 0.477,
+  "f0": 119.52100256815815,
+  "getestet": true,
+  "sprache": "de"
+ },
+ {
+  "id": "J2VlJLKGmn2IQamC7yIR",
+  "name": "Matt -  Natural and Modest",
+  "sim": 0.469,
+  "f0": 85.14384510621261,
+  "getestet": false,
+  "sprache": "de"
+ },
+ {
+  "id": "uScy1bXtKz8vPzfdFsFw",
+  "name": "Antonio Farina - Expressive and Warm",
+  "sim": 0.467,
+  "f0": 141.55658965255495,
+  "getestet": false,
+  "sprache": "de"
+ },
+ {
+  "id": "QpjWbOlf7AsmWVfceLMT",
+  "name": "Nathan - Natural Narrator",
+  "sim": 0.467,
+  "f0": 89.82508387366204,
+  "getestet": false,
+  "sprache": "de"
+ },
+ {
+  "id": "iMHt6G42evkXunaDU065",
+  "name": "Stefan - Affectionate and Caring",
+  "sim": 0.465,
+  "f0": 105.14101688016586,
+  "getestet": false,
+  "sprache": "de"
+ },
+ {
+  "id": "bRIX82ywyYryS8320ZVY",
+  "name": "Helmut - Polite and Mild",
+  "sim": 0.464,
+  "f0": 88.92622023488599,
+  "getestet": false,
+  "sprache": "de"
+ },
+ {
+  "id": "5hobNnfFWAwxjwZSecAE",
+  "name": "Daniel Dark - Crime Narrator",
+  "sim": 0.462,
+  "f0": 78.65225032647534,
+  "getestet": false,
+  "sprache": "de"
+ },
+ {
+  "id": "DLMxnwJE0a28JQLTMJPJ",
+  "name": "Andy - Warm, Nuanced and Mature",
+  "sim": 0.459,
+  "f0": 97.84056744140105,
+  "getestet": false,
+  "sprache": "de"
+ },
+ {
+  "id": "cQBwjaYSTY9mh3fUvHS3",
+  "name": "Savely - e-learning, documentary",
+  "sim": 0.455,
+  "f0": 98.00120899833756,
+  "getestet": false,
+  "sprache": "de"
+ },
+ {
+  "id": "HuK8QKF35exsCh2e7fLT",
+  "name": "Carmelo La Rosa - Deep and Balanced",
+  "sim": 0.442,
+  "f0": 120.83162678855332,
+  "getestet": false,
+  "sprache": "de"
+ },
+ {
+  "id": "13Cuh3NuYvWOVQtLbRN8",
+  "name": "Marco - Deep, Rich and Reflective",
+  "sim": 0.436,
+  "f0": 105.84153968764312,
+  "getestet": false,
+  "sprache": "de"
+ }
+]
