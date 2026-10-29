@@ -199,6 +199,11 @@ die Messung nicht; das bleibt Sache des Ohrs.
    mit beiden, auf der Stimmenprobe als zweiter Reiter. Laut ElevenLabs-Hilfe belegen gespeicherte Bibliotheksstimmen
    keine eigenen Stimmplätze; die Kündigungsfrist gilt ab der ersten Nutzung auch ohne Speichern.
    Auf Wunsch alle sieben Helmut-Fassungen mit Absatz 3–4 auf der Stimmenprobe (5 × 301 Credits zusätzlich).
+   Unterschiede (Rohaufnahmen, `messung/stimmen/helmut_unterschiede.json`): Fingerabdruck untereinander 0,81–0,94,
+   also derselbe Sprecher. Ausreißer ist Nr. 5 „Distinctive and Authentic“: geringste Ähnlichkeit (Mittel 0,86), tiefster
+   Grundton (103 Hz, die anderen 114–130), deutlich hellerer Klang (Spektralschwerpunkt 964 Hz statt 600–700), rauer
+   (HNR 8,8 statt 10–11). Zweiter Ausreißer Nr. 7 Trailer (hell, rau, am langsamsten). Nutzer hört einen Ausreißer,
+   hat aber noch nicht gesagt, welchen.
    **Kosten laut Nutzer:** 1.000 Credits ≈ 0,10 € im Sparabo, sonst 0,20 €. Das ganze Werk (~29.000 Credits) kostet
    also 3–6 €; die Kosten dieser Claude-Sitzung sind um ein Vielfaches höher. Sparen lohnt bei der Arbeit, nicht bei
    den Credits; die Grenze des Schlüssels (30.000) bleibt aber ein hartes Limit.
