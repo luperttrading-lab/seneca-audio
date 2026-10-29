@@ -269,7 +269,14 @@ die Messung nicht; das bleibt Sache des Ohrs.
    Teil 1 „wird gerade die Eile zur Ursache einer noch größeren Entfernung“ bleibt ausdrücklich so (Nutzer); Teil 2
    „Denn nichts verstrickt uns …“ statt „Und doch …“ (atqui ist hier kein Gegensatz) und „jeder ist auch Ursache und
    Urheber des Irrtums anderer“ statt „… auch fremden Irrtums“. „Am Beispiel der anderen gehen wir zugrunde“ bleibt
-   ausdrücklich so (Nutzer). Die öffentlichen Aufnahmen haben noch den alten Wortlaut, bis zur Neuvertonung.
+   ausdrücklich so (Nutzer). Danach, ebenfalls freigegeben: Teil 1 „… zwischen Irrwegen aufreiben. Dabei wäre es selbst
+   dann kurz, wenn wir uns Tag und Nacht um einen klaren Verstand bemühten.“ (bona mens, nicht ratio) und Teil 2 „Geheilt
+   werden wir, wenn wir uns nur von der Menge lösen.“ (sanabimur). Die öffentlichen Aufnahmen haben noch den alten
+   Wortlaut, bis zur Neuvertonung.
+   **Titel je Teil (Vorschlag, Nutzer prüft):** nur am Anfang jedes Teils gesprochen, „Teil eins. Wohin und auf welchem
+   Weg.“, aus Senecas eigenen Worten: 1 „Wohin und auf welchem Weg“, 2 „Die Herde“, 3 „Ein besseres Licht“, 4 „Im
+   Einklang mit der Natur“ (conveniens naturae suae). Als eigener kurzer Clip vor den Teil setzen, damit er ohne
+   Neuaufnahme wieder wegfallen kann; nicht in `texte/teilNN.txt`. Nutzer: nur, wenn sie den Wortfluss nicht stören.
 3. Teil 4 freigeben lassen. Entscheidungen im Entwurf, die der Nutzer prüfen sollte:
    - Lücke und Crux in 3,4 sind geglättet wie bei Stewart und Forbiger (beide glätten): „an die Stelle der Lüste und
      all dessen, was klein und zerbrechlich ist und schon durch seine Schändlichkeit schadet, tritt …“.
