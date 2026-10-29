@@ -282,7 +282,8 @@ Gesamtgliederung (Abschnitte, Kapitel, 126 Paragrafen, geschätzte Dauer): `GLIE
    Urheber des Irrtums anderer“ statt „… auch fremden Irrtums“. „Am Beispiel der anderen gehen wir zugrunde“ bleibt
    ausdrücklich so (Nutzer). Danach, ebenfalls freigegeben: Teil 1 „… zwischen Irrwegen aufreiben. Dabei wäre es selbst
    dann kurz, wenn wir uns Tag und Nacht um einen klaren Verstand bemühten.“ (bona mens, nicht ratio) und Teil 2 „Geheilt
-   werden wir, wenn wir uns nur von der Menge lösen.“ (sanabimur). Die öffentlichen Aufnahmen haben noch den alten
+   werden wir, wenn wir uns nur von der Menge lösen.“ (sanabimur); dazu 1,1 „je hastiger er darauf zustrebt“ statt „ihm zustrebt“
+   (ab ea … ad illam: davon … darauf). Damit ist Kapitel 1 laut Nutzer fertig. Die öffentlichen Aufnahmen haben noch den alten
    Wortlaut, bis zur Neuvertonung.
    **Titel (Nutzer: ja, aber nur an echten Wendepunkten, ohne Teilnummer):** fünf Abschnitte, am Latein geprüft, Tabelle
    in `PLAN.md` (Abschnitte und gesprochene Titel). Für Kapitel 1–3: gesprochen nur „Wohin und auf welchem Weg“ vor Kapitel 1
