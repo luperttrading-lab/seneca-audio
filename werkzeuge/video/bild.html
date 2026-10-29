@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Seneca Video Bild</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Literata:opsz,wght@7..72,400&family=IBM+Plex+Sans:wght@500;600&display=block">
+<style>
+  /* Ein Videobild 1920 × 1080: Kopfzeile mit Stellenanzeige, darunter ein Absatz Karaoke-Text; oder die Titelkarte eines Abschnitts */
+  :root {
+    --stein: #161a19; --tafel: #1e2422; --tinte: #e9edeb; --grau: #8f9a95; --linie: #333b38; --bronze: #d29f62;
+    --display: "Cinzel", Georgia, serif; --text: "Literata", Georgia, serif; --ui: "IBM Plex Sans", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: var(--stein); color: var(--tinte); }
+  body { font: 500 24px/1.4 var(--ui); background: radial-gradient(ellipse 120% 90% at 50% 40%, #1b201f 0%, var(--stein) 70%); }
+  .kopf { position: absolute; top: 64px; left: 120px; right: 120px; display: flex; justify-content: space-between; align-items: flex-start; }
+  .werk { font: 600 22px/1.3 var(--ui); letter-spacing: .16em; text-transform: uppercase; color: var(--bronze); }
+  .stelle { text-align: right; }
+  .stelle b { display: block; font: 600 38px/1.1 var(--ui); font-variant-numeric: tabular-nums; color: var(--tinte); }
+  .stelle span { display: block; margin-top: 6px; font-size: 22px; color: var(--grau); }
+  .text { position: absolute; left: 50%; top: 54%; transform: translate(-50%, -50%); width: 1440px;
+    font: 400 50px/1.62 var(--text); font-optical-sizing: auto; text-wrap: pretty; }
+  .text .w { color: var(--grau); }
+  .text .w.vorbei { color: var(--tinte); }
+  .text .w.jetzt { color: var(--stein); background: var(--bronze); border-radius: 8px; box-shadow: 0 0 0 4px var(--bronze); }
+  .titelkarte { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 28px; text-align: center; }
+  .titelkarte .ab { font: 600 26px/1 var(--ui); letter-spacing: .18em; text-transform: uppercase; color: var(--bronze); }
+  .titelkarte h1 { margin: 0; font: 600 96px/1.15 var(--display); letter-spacing: .03em; max-width: 1500px; text-wrap: balance; }
+  .titelkarte i { width: 120px; height: 2px; background: var(--bronze); }
+  .titelkarte p { margin: 0; font: 500 28px/1.3 var(--ui); color: var(--grau); }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+  <section class="titelkarte" id="titelkarte">
+    <span class="ab" id="t-ab"></span>
+    <h1 id="t-titel"></h1>
+    <i></i>
+    <p>Seneca · Vom glücklichen Leben</p>
+  </section>
+  <div id="textbild" hidden>
+    <header class="kopf">
+      <span class="werk">Seneca · Vom glücklichen Leben</span>
+      <div class="stelle"><b id="stelle"></b><span id="teil"></span></div>
+    </header>
+    <p class="text" id="text"></p>
+  </div>
+<script>
+  var D = null, absatzJetzt = -1, spans = [];
+  function lade(daten) { D = daten; }
+  // Zustand: {modus: "titel"} oder {modus: "text", absatz, wort (-1 = keins), vorbis (Index des letzten gesprochenen Worts)}
+  function zeige(z) {
+    var titel = z.modus === "titel";
+    document.getElementById("titelkarte").hidden = !titel; document.getElementById("textbild").hidden = titel;
+    if (titel) { document.getElementById("t-ab").textContent = D.abschnitt; document.getElementById("t-titel").textContent = D.titel; return; }
+    if (z.absatz !== absatzJetzt) {
+      absatzJetzt = z.absatz; var t = document.getElementById("text"); t.textContent = ""; spans = [];
+      D.w.forEach(function (w, i) {
+        if (D.p[i] !== z.absatz) return;
+        var s = document.createElement("span"); s.className = "w"; s.dataset.i = i; s.textContent = w;
+        if (spans.length) t.appendChild(document.createTextNode(" "));
+        t.appendChild(s); spans.push(s);
+      });
+    }
+    spans.forEach(function (s) { var i = +s.dataset.i; s.classList.toggle("vorbei", i <= z.vorbis && i !== z.wort); s.classList.toggle("jetzt", i === z.wort); });
+    document.getElementById("stelle").textContent = "Kapitel " + z.stelle;
+    document.getElementById("teil").textContent = D.teil;
+  }
+</script>
+</body>
+</html>

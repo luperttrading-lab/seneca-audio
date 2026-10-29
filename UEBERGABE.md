@@ -282,6 +282,11 @@ die Messung nicht; das bleibt Sache des Ohrs.
    feste Stellenanzeige in der Ecke („Kapitel 1,4“), Titelkarte an den fünf Abschnittsanfängen, YouTube-Kapitelmarken je
    lateinischem Kapitel in der Beschreibung (Regeln: erste Marke 0:00, mindestens drei, je mindestens 10 s).
    Unsichtbare Marken in `texte/teilNN.txt` liefern die Zeiten. Freigabe offen.
+   **Probefilm Teil 1 (29.10., nicht veröffentlicht):** Stieglbauer aus den vorhandenen Proben (Absatz 1–2 und 3–4, also
+   noch alter Wortlaut beim „kurzen Leben“), gesprochener Titel (11 Credits), Tempo 0,96 per atempo, −18 LUFS, 1920 × 1080,
+   1:55, 6 MB. Werkzeuge in `werkzeuge/video/` (bild.html, ereignisse.py, render.js): je Wortwechsel ein Bild per
+   Playwright, dann `ffmpeg -f concat -i liste.txt -i ton.wav -vf fps=25,format=yuv420p -c:v libx264 -tune stillimage
+   -crf 20 -c:a aac -b:a 160k -movflags +faststart`. 269 Bilder in einer Minute. Urteil des Nutzers offen.
 3. Teil 4 freigeben lassen. Entscheidungen im Entwurf, die der Nutzer prüfen sollte:
    - Lücke und Crux in 3,4 sind geglättet wie bei Stewart und Forbiger (beide glätten): „an die Stelle der Lüste und
      all dessen, was klein und zerbrechlich ist und schon durch seine Schändlichkeit schadet, tritt …“.
