@@ -181,7 +181,18 @@ die Messung nicht; das bleibt Sache des Ohrs.
 
 ## Offen, in dieser Reihenfolge
 
-1. **Runde 2b läuft** (29.10.): Nutzer wählte auf der Hörseite „Lupert tiefer“ die Fassung PSOLA −3,3 HT mit Pausen und
+1. **Stimme gewählt: Helmut Stieglbauer – Deep and Dynamic** (`JiW03c2Gt43XNUQAumRP`, 29.10., nach der Stimmenprobe:
+   „definitiv die erste Stimme“; auf der Probe stellte er Tempo 0,96 ein, 134 W/min). Noch offen: Stimme in der App unter
+   „Meine Stimmen“ aufnehmen (Kündigungsfrist 730 Tage gilt vermutlich nur dann).
+   **Suche nach ähnlichen Stimmen** (kostenlos, Hörproben): Sprecher-Fingerabdruck WeSpeaker ResNet34 (ONNX,
+   `werkzeuge/fingerabdruck.py`, Modellpfad in `WESPEAKER_ONNX`). Geprüft an Runde 1: Hörprobe → v4-Probe derselben
+   Stimme auf Platz 1 bei 23 von 24; gleiche Stimme Kosinus Median 0,79, fremde 0,24 (95-%-Quantil 0,45). Ergebnis
+   (`messung/stimmen/aehnlich_helmut.json`): 0,82 „Helmut – Warm, Gentle and Soothing“ (gleicher Besitzer,
+   Märchenerzähler), 0,81 „Helmut – Clear and Confident“ und 0,79 „German Narration … Helmut Clark“ (anderer Besitzer,
+   klingt wie derselbe Sprecher), dann erst 0,57 Thomas Schendel, 0,54 „Christian – Velvet Close-Up“. Derselbe Besitzer
+   hat noch „Helmut – Natural & Engaging“ (Gespräch) und „Helmut – German Epic Trailer Voice“ (Werbung). Nächster
+   Schritt (Credits, Freigabe offen): 2–4 davon mit Absatz 1–2 auf die Stimmenprobe.
+   Davor: **Runde 2b** (29.10.): Nutzer wählte auf der Hörseite „Lupert tiefer“ die Fassung PSOLA −3,3 HT mit Pausen und
    Rauschunterdrückung und will sie **im Duell** gegen die anderen hören, **nicht** schon für Teil 1 und 2. Damit der
    Vergleich fair ist, bekamen alle neun Proben dieselbe Bearbeitung (Rauschunterdrückung, dann Pausen wie Teil 1,
    −18 LUFS): 7 Bibliotheksstimmen, Lupert, Lupert tiefer. Speicher `duelle2b`, Stimmen in

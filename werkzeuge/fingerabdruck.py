@@ -1,6 +1,6 @@
 """Sprecher-Fingerabdruck (WeSpeaker ResNet34, VoxCeleb) für Audiodateien; Kosinus-Ähnlichkeit."""
-import subprocess, numpy as np, onnxruntime as ort, kaldi_native_fbank as knf
-M = "/tmp/claude-0/-home-user-seneca-audio/0f3890f6-5584-570a-ac34-74e78c131d3b/scratchpad/modell/resnet34.onnx"
+import os, subprocess, numpy as np, onnxruntime as ort, kaldi_native_fbank as knf
+M = os.environ.get("WESPEAKER_ONNX", "voxceleb_resnet34_LM.onnx")   # Modell: huggingface.co/Wespeaker/wespeaker-voxceleb-resnet34-LM
 sess = ort.InferenceSession(M, providers=["CPUExecutionProvider"])
 EIN = sess.get_inputs()[0].name
 def lade(f):
