@@ -8,8 +8,8 @@
   https://claude.ai/artifact/Mj5fSGP6WhXq3iSCjZCqxt
 - **Stimmen-Duell** (privat, Speicher `duelle` mit `{a, b, w: "a"|"b"|"=", t}`; Quelle `seite/duell.html`, Stimmen in
   `messung/stimmen/duell_stimmen.json`, Ton nur im Artifact): https://claude.ai/artifact/SMVhWQ4Qcto92tmNYbE6fM
-- **Stimmenprobe** (privat; Helmut, Alexander, Marko, Marcus lesen Teil 1, Absatz 1–2, bearbeitet wie im Hörbuch, mit
-  Mitlesen und Temporad; Quelle `seite/stimmenprobe.html`): https://claude.ai/artifact/G9tMfCirpybCFyQYne2d6L
+- **Stimmenprobe** (privat; drei Reiter: alle sieben Helmut-Fassungen mit Teil 1, Absatz 1–2 und Absatz 3–4, dazu
+  Helmut, Alexander, Marko, Marcus mit Absatz 1–2; bearbeitet wie im Hörbuch, mit Mitlesen und Temporad; Quelle `seite/stimmenprobe.html`): https://claude.ai/artifact/G9tMfCirpybCFyQYne2d6L
 - **Lupert tiefer** (privat, vier Fassungen umschaltbar an derselben Stelle; Quelle `seite/lupert_tiefer.html`):
   https://claude.ai/artifact/4Bx1FXUbjvxuH9n4UDmaWE
 - Ältere private Vorschau mit dem Stimmenvergleich vom 27.10. (Lupert, Christian, Brian, Ralf, Robert, alle v4):
@@ -37,7 +37,7 @@ Seit 28.10. ist der **neue Schlüssel (30.000 Credits Grenze)** aktiv. Eine API-
 `character-cost` 336–337 Credits für Absatz 1–2 (785 Zeichen), also etwa **0,43 Credits je Zeichen**, bei v4, v2 und
 Storytel gleich. Die App hat für dieselben 785 Zeichen 766 Credits berechnet. Am 28.10. verbraucht: 7 Anfragen, 2.356
 Credits; Rest also höchstens etwa 27.600. Dazu Stimmen-Duell 1.757 Credits (25 × 70 plus Test), Runde 2 1.200 Credits und am 29.10. die
-Stimmenprobe 1.348 Credits (4 × 337) und 602 (2 × 301) und 1.505 (5 × 301): zusammen etwa 8.770 verbraucht, höchstens etwa 21.230 übrig. **Das reicht nicht für das ganze Werk:** etwa 67.000 Zeichen (9,1 Zeichen je
+Stimmenprobe 1.348 Credits (4 × 337) und 602 (2 × 301) und 1.505 (5 × 301) und 2.022 (6 × 337): zusammen etwa 10.790 verbraucht, höchstens etwa 19.210 übrig. **Das reicht nicht für das ganze Werk:** etwa 67.000 Zeichen (9,1 Zeichen je
 lateinisches Wort aus Teil 1–4, 7.395 Wörter) kosten etwa 28.800 Credits für einen einzigen Durchgang ohne Neuversuche.
 Der Nutzer muss die Grenze des Schlüssels erhöhen, sofern das Konto die Credits hat. Der alte Schlüssel sollte gelöscht
 werden, falls noch nicht geschehen.
@@ -202,8 +202,12 @@ die Messung nicht; das bleibt Sache des Ohrs.
    Unterschiede (Rohaufnahmen, `messung/stimmen/helmut_unterschiede.json`): Fingerabdruck untereinander 0,81–0,94,
    also derselbe Sprecher. Ausreißer ist Nr. 5 „Distinctive and Authentic“: geringste Ähnlichkeit (Mittel 0,86), tiefster
    Grundton (103 Hz, die anderen 114–130), deutlich hellerer Klang (Spektralschwerpunkt 964 Hz statt 600–700), rauer
-   (HNR 8,8 statt 10–11). Zweiter Ausreißer Nr. 7 Trailer (hell, rau, am langsamsten). Nutzer hört einen Ausreißer,
-   hat aber noch nicht gesagt, welchen.
+   (HNR 8,8 statt 10–11). Zweiter Ausreißer Nr. 7 Trailer (hell, rau, am langsamsten). **Nutzer bestätigt: Nr. 5 ist die,
+   die er als anders hört.** Auf Wunsch alle sieben auch mit Absatz 1–2 (6 × 337 Credits, Stieglbauer aus der ersten
+   Probe), auf der Stimmenprobe als erster Reiter, gleiche Nummern. Gegenprobe an diesem Text
+   (`messung/stimmen/helmut_unterschiede_absatz12.json`): wieder Nr. 5 am fernsten (0,85), tief (105 Hz), hell (1.146 Hz),
+   rau (HNR 8,6); Nr. 7 wieder zweiter. Dieselbe Fassung an beiden Texten 0,96–0,97, verschiedene Fassungen 0,88; jede
+   Aufnahme findet ihre eigene Fassung wieder (7 von 7). Die Fassungen unterscheiden sich also beständig, nicht zufällig.
    **Kosten laut Nutzer:** 1.000 Credits ≈ 0,10 € im Sparabo, sonst 0,20 €. Das ganze Werk (~29.000 Credits) kostet
    also 3–6 €; die Kosten dieser Claude-Sitzung sind um ein Vielfaches höher. Sparen lohnt bei der Arbeit, nicht bei
    den Credits; die Grenze des Schlüssels (30.000) bleibt aber ein hartes Limit.
