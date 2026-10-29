@@ -299,6 +299,9 @@ Gesamtgliederung (Abschnitte, Kapitel, 126 Paragrafen, geschätzte Dauer): `GLIE
    die Startseite. **Kopfzeile gewählt (Variante 4, ganz in Bronze):** links „SENECA“ / „De vita beata“, rechts
    „KAPITEL 1 VON 28“ / „Paragraf 2“, beide Seiten gleich gebaut. Bronze heißt im Bild „wo bin ich“ (Kopfzeile, Marken),
    Weiß/Grau ist Senecas Text. Titelkarte aus `bild.html` entfernt; daten.json: `text_ab`, `start_ende` (nur Kapitel 1).
+   **Schriftgrößen (Nutzer: im Hochformat am Handy unlesbar):** kleinste Schrift im Video jetzt 40 px (vorher 26). Startseite:
+   Autor 46, Titel 150, deutscher Titel 80, Zusatz 44 px in zwei Zeilen; Kopfzeile 40/46 px. Ein 1920er-Bild erscheint im
+   Hochformat mit etwa 0,2-facher Größe, 40 px also wie 8 pt.
    **Probefilm Teil 1 (29.10., nicht veröffentlicht):** Stieglbauer aus den vorhandenen Proben (Absatz 1–2 und 3–4, also
    noch alter Wortlaut beim „kurzen Leben“), gesprochener Titel (11 Credits), Tempo 0,96 per atempo, −18 LUFS, 1920 × 1080.
    Fassung 1 (ein Absatz je Bild, Wort im Kasten) gefiel dem Nutzer weniger; **gewünscht ist der Lesemodus der App:**
