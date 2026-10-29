@@ -9,9 +9,11 @@ Eigene Übersetzung und Vertonung von Senecas *De vita beata*, eingeteilt nach S
   Aufnahmen mit dem Stimmklon „Lupert“ oder eigene Aufnahmen des Nutzers nur nach ausdrücklicher Zustimmung committen.
 - API-Schlüssel nie in Dateien, Commits oder Chat. Der ElevenLabs-Schlüssel kommt, wenn eingerichtet, als
   Umgebungsvariable `ELEVENLABS_API_KEY` aus den Einstellungen der Cloud-Umgebung.
-- Jede Internetadresse als klickbarer Markdown-Link. Am Ende **jeder** Antwort, direkt über der Kostenzeile, ein kurzer
-  Linkblock mit den aktuellen Seiten des Projekts: zuerst die Seite, an der gerade gearbeitet wird (fett), dann die
-  übrigen gültigen Links aus `UEBERGABE.md` (öffentliche Hörbuch-Seite, private Vorschauen). Überholte Links weglassen.
+- Jede Internetadresse als klickbarer Markdown-Link. Am Ende **jeder** Antwort, direkt über der Kostenzeile, **nur der
+  Link der Seite, an der gerade gearbeitet wird** (fett); die übrigen Links nicht mehr aufzählen (Nutzer, 29.10.).
+- **Hörproben und Videos nie als Datei zum Herunterladen schicken**, sondern als Seite zum direkten Anhören bzw.
+  Ansehen (Artifact mit Abspielknopf und mitlaufendem Text, MP3; je Datei höchstens 15 MB, Videos dafür verkleinern).
+  Der Nutzer hört am Handy und will nicht erst herunterladen und mit einem anderen Programm öffnen.
 - Kostenzeile am Ende jeder Antwort: `python3 tools/kosten.py` im Repo ausführen, Ausgabe wörtlich übernehmen.
 - Seiten vor dem Veröffentlichen im Browser testen (Playwright, Handygröße 390 × 844). Playwright-Chromium spielt kein
   AAC: für Tests MP3-Kopien verwenden; `seite/rangeserver.py` liefert Bereichsanfragen wie GitHub Pages.

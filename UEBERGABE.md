@@ -8,6 +8,8 @@
   https://claude.ai/artifact/Mj5fSGP6WhXq3iSCjZCqxt
 - **Stimmen-Duell** (privat, Speicher `duelle` mit `{a, b, w: "a"|"b"|"=", t}`; Quelle `seite/duell.html`, Stimmen in
   `messung/stimmen/duell_stimmen.json`, Ton nur im Artifact): https://claude.ai/artifact/SMVhWQ4Qcto92tmNYbE6fM
+- **Kapitel 1 · Prüfstellen** (privat, 29.10.; zwei verdächtige Stellen in 1 (3) zum Anhören mit Mitlesen; Quelle
+  `seite/pruefstellen.html`): https://claude.ai/artifact/9oVZgpKioSQuSDG4DCfBJE
 - **Stimmenprobe** (privat; drei Reiter: alle sieben Helmut-Fassungen mit Teil 1, Absatz 1–2 und Absatz 3–4, dazu
   Helmut, Alexander, Marko, Marcus mit Absatz 1–2; bearbeitet wie im Hörbuch, mit Mitlesen und Temporad; Quelle `seite/stimmenprobe.html`): https://claude.ai/artifact/G9tMfCirpybCFyQYne2d6L
 - **Lupert tiefer** (privat, vier Fassungen umschaltbar an derselben Stelle; Quelle `seite/lupert_tiefer.html`):
