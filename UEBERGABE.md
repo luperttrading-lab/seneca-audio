@@ -8,6 +8,8 @@
   https://claude.ai/artifact/Mj5fSGP6WhXq3iSCjZCqxt
 - **Stimmen-Duell** (privat, Speicher `duelle` mit `{a, b, w: "a"|"b"|"=", t}`; Quelle `seite/duell.html`, Stimmen in
   `messung/stimmen/duell_stimmen.json`, Ton nur im Artifact): https://claude.ai/artifact/SMVhWQ4Qcto92tmNYbE6fM
+- **Lupert tiefer** (privat, vier Fassungen umschaltbar an derselben Stelle; Quelle `seite/lupert_tiefer.html`):
+  https://claude.ai/artifact/4Bx1FXUbjvxuH9n4UDmaWE
 - Ältere private Vorschau mit dem Stimmenvergleich vom 27.10. (Lupert, Christian, Brian, Ralf, Robert, alle v4):
   https://claude.ai/artifact/Mi3DHEtyiHRPXEYfwj5XA9
 - Ältere private Vergleichsseite zu Teil 1 (Lupert, Christian, Gemini): https://claude.ai/artifact/RfZhGX4jPHk6ZFfHaLhjVr
