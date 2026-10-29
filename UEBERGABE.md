@@ -296,7 +296,9 @@ Gesamtgliederung (Abschnitte, Kapitel, 126 Paragrafen, geschätzte Dauer): `GLIE
    Im Video als „1 (2)“ in Textgröße und bronze im Text, dazu „Kapitel 1 (2)“ in der Kopfzeile. Kopfzeile: vier Varianten
    gezeigt (29.10.), Wahl offen; „Teil x von 29“ entfällt.
    **Abschnitte entfallen** (Nutzer, 29.10.): keine fünf Namen, keine Titelkarten, keine gesprochenen Abschnittstitel; nur
-   die Startseite. Kopfzeile neu nur mit Seneca, De vita beata und Kapitel/Paragraf: vier Varianten gezeigt, Wahl offen.
+   die Startseite. **Kopfzeile gewählt (Variante 4, ganz in Bronze):** links „SENECA“ / „De vita beata“, rechts
+   „KAPITEL 1 VON 28“ / „Paragraf 2“, beide Seiten gleich gebaut. Bronze heißt im Bild „wo bin ich“ (Kopfzeile, Marken),
+   Weiß/Grau ist Senecas Text. Titelkarte aus `bild.html` entfernt; daten.json: `text_ab`, `start_ende` (nur Kapitel 1).
    **Probefilm Teil 1 (29.10., nicht veröffentlicht):** Stieglbauer aus den vorhandenen Proben (Absatz 1–2 und 3–4, also
    noch alter Wortlaut beim „kurzen Leben“), gesprochener Titel (11 Credits), Tempo 0,96 per atempo, −18 LUFS, 1920 × 1080.
    Fassung 1 (ein Absatz je Bild, Wort im Kasten) gefiel dem Nutzer weniger; **gewünscht ist der Lesemodus der App:**
