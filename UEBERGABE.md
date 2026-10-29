@@ -37,7 +37,7 @@ Seit 28.10. ist der **neue Schlüssel (30.000 Credits Grenze)** aktiv. Eine API-
 `character-cost` 336–337 Credits für Absatz 1–2 (785 Zeichen), also etwa **0,43 Credits je Zeichen**, bei v4, v2 und
 Storytel gleich. Die App hat für dieselben 785 Zeichen 766 Credits berechnet. Am 28.10. verbraucht: 7 Anfragen, 2.356
 Credits; Rest also höchstens etwa 27.600. Dazu Stimmen-Duell 1.757 Credits (25 × 70 plus Test), Runde 2 1.200 Credits und am 29.10. die
-Stimmenprobe 1.348 Credits (4 × 337) und 602 (2 × 301): zusammen etwa 7.260 verbraucht, höchstens etwa 22.740 übrig. **Das reicht nicht für das ganze Werk:** etwa 67.000 Zeichen (9,1 Zeichen je
+Stimmenprobe 1.348 Credits (4 × 337) und 602 (2 × 301) und 1.505 (5 × 301): zusammen etwa 8.770 verbraucht, höchstens etwa 21.230 übrig. **Das reicht nicht für das ganze Werk:** etwa 67.000 Zeichen (9,1 Zeichen je
 lateinisches Wort aus Teil 1–4, 7.395 Wörter) kosten etwa 28.800 Credits für einen einzigen Durchgang ohne Neuversuche.
 Der Nutzer muss die Grenze des Schlüssels erhöhen, sofern das Konto die Credits hat. Der alte Schlüssel sollte gelöscht
 werden, falls noch nicht geschehen.
@@ -198,6 +198,10 @@ die Messung nicht; das bleibt Sache des Ohrs.
    „German Narration … Helmut Clark“ und Stieglbauer gut. Neue Probe Teil 1, Absatz 3–4 (700 Zeichen, je 301 Credits)
    mit beiden, auf der Stimmenprobe als zweiter Reiter. Laut ElevenLabs-Hilfe belegen gespeicherte Bibliotheksstimmen
    keine eigenen Stimmplätze; die Kündigungsfrist gilt ab der ersten Nutzung auch ohne Speichern.
+   Auf Wunsch alle sieben Helmut-Fassungen mit Absatz 3–4 auf der Stimmenprobe (5 × 301 Credits zusätzlich).
+   **Kosten laut Nutzer:** 1.000 Credits ≈ 0,10 € im Sparabo, sonst 0,20 €. Das ganze Werk (~29.000 Credits) kostet
+   also 3–6 €; die Kosten dieser Claude-Sitzung sind um ein Vielfaches höher. Sparen lohnt bei der Arbeit, nicht bei
+   den Credits; die Grenze des Schlüssels (30.000) bleibt aber ein hartes Limit.
    Davor: **Runde 2b** (29.10.): Nutzer wählte auf der Hörseite „Lupert tiefer“ die Fassung PSOLA −3,3 HT mit Pausen und
    Rauschunterdrückung und will sie **im Duell** gegen die anderen hören, **nicht** schon für Teil 1 und 2. Damit der
    Vergleich fair ist, bekamen alle neun Proben dieselbe Bearbeitung (Rauschunterdrückung, dann Pausen wie Teil 1,
