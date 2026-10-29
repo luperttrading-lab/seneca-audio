@@ -40,7 +40,10 @@ fertig = credits == 0 and not neu and os.path.exists(b + ".pausen.stellen.json")
 if not fertig: p = py(f"{HIER}/pruef.py", "large-v3-turbo", rein, b + ".roh.mp3", capture_output=True, text=True)
 if not fertig:
     zeile = [l for l in p.stdout.splitlines() if "large-v3-turbo" in l][-1]; print(zeile, flush=True)
-    if "wortgetreu" not in zeile: sys.exit("Abweichungen in der Rohaufnahme – bitte anhören, bevor weiterverarbeitet wird")
+    if "wortgetreu" not in zeile:   # Gegenprobe mit dem großen Modell: turbo verhört sich gelegentlich („Wahlen“ → „Walen“)
+        p = py(f"{HIER}/pruef.py", "large-v3", rein, b + ".roh.mp3", capture_output=True, text=True)
+        zeile = [l for l in p.stdout.splitlines() if "large-v3" in l][-1]; print("Gegenprobe:", zeile, flush=True)
+        if "wortgetreu" not in zeile: sys.exit("Abweichungen in der Rohaufnahme – bitte anhören, bevor weiterverarbeitet wird")
     # 3. Rauschunterdrückung, Wortzeiten, Pausen
     ff("-i", b + ".roh.mp3", "-ac", "1", "-ar", str(SR), "-af", RAUSCH, b + ".ru.wav")
     k = py(f"{R}/seite/karaoke_daten.py", "--einzeln", b + ".ru.wav", rein, b + ".woerter.json", capture_output=True, text=True)
