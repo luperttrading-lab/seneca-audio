@@ -37,7 +37,7 @@ Seit 28.10. ist der **neue Schlüssel (30.000 Credits Grenze)** aktiv. Eine API-
 `character-cost` 336–337 Credits für Absatz 1–2 (785 Zeichen), also etwa **0,43 Credits je Zeichen**, bei v4, v2 und
 Storytel gleich. Die App hat für dieselben 785 Zeichen 766 Credits berechnet. Am 28.10. verbraucht: 7 Anfragen, 2.356
 Credits; Rest also höchstens etwa 27.600. Dazu Stimmen-Duell 1.757 Credits (25 × 70 plus Test), Runde 2 1.200 Credits und am 29.10. die
-Stimmenprobe 1.348 Credits (4 × 337): zusammen etwa 6.660 verbraucht, höchstens etwa 23.340 übrig. **Das reicht nicht für das ganze Werk:** etwa 67.000 Zeichen (9,1 Zeichen je
+Stimmenprobe 1.348 Credits (4 × 337) und 602 (2 × 301): zusammen etwa 7.260 verbraucht, höchstens etwa 22.740 übrig. **Das reicht nicht für das ganze Werk:** etwa 67.000 Zeichen (9,1 Zeichen je
 lateinisches Wort aus Teil 1–4, 7.395 Wörter) kosten etwa 28.800 Credits für einen einzigen Durchgang ohne Neuversuche.
 Der Nutzer muss die Grenze des Schlüssels erhöhen, sofern das Konto die Credits hat. Der alte Schlüssel sollte gelöscht
 werden, falls noch nicht geschehen.
@@ -192,6 +192,12 @@ die Messung nicht; das bleibt Sache des Ohrs.
    klingt wie derselbe Sprecher), dann erst 0,57 Thomas Schendel, 0,54 „Christian – Velvet Close-Up“. Derselbe Besitzer
    hat noch „Helmut – Natural & Engaging“ (Gespräch) und „Helmut – German Epic Trailer Voice“ (Werbung). Nächster
    Schritt (Credits, Freigabe offen): 2–4 davon mit Absatz 1–2 auf die Stimmenprobe.
+   Alle Helmut-Stimmen der Bibliothek (`messung/stimmen/helmut_stimmen.json`): sieben Stimmen auf zwei Konten
+   (46b55935…, 2cf3785c…) liegen bei 0,77–0,82 zu Stieglbauer, also vermutlich derselbe Sprecher; drei weitere „Helmut“
+   (0,26–0,46) sind andere Männer. Nutzer: „Helmut – Distinctive and Authentic“ klingt zu sehr nach Märchenerzähler;
+   „German Narration … Helmut Clark“ und Stieglbauer gut. Neue Probe Teil 1, Absatz 3–4 (700 Zeichen, je 301 Credits)
+   mit beiden, auf der Stimmenprobe als zweiter Reiter. Laut ElevenLabs-Hilfe belegen gespeicherte Bibliotheksstimmen
+   keine eigenen Stimmplätze; die Kündigungsfrist gilt ab der ersten Nutzung auch ohne Speichern.
    Davor: **Runde 2b** (29.10.): Nutzer wählte auf der Hörseite „Lupert tiefer“ die Fassung PSOLA −3,3 HT mit Pausen und
    Rauschunterdrückung und will sie **im Duell** gegen die anderen hören, **nicht** schon für Teil 1 und 2. Damit der
    Vergleich fair ist, bekamen alle neun Proben dieselbe Bearbeitung (Rauschunterdrückung, dann Pausen wie Teil 1,

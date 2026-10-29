@@ -1,0 +1,92 @@
+[
+ {
+  "voice_id": "OwYx4Jd2f6DQax9m8SVa",
+  "name": "Helmut - Natural & Engaging",
+  "public_owner_id": "46b55935b024621e2e6a3bb750f25fe73db4e96b222f09b6f0825d3d9109ea82",
+  "use_case": "conversational",
+  "descriptive": "upbeat",
+  "age": "middle_aged",
+  "notice_period": 730
+ },
+ {
+  "voice_id": "TUKJhQmz3RPYBNAgC5A1",
+  "name": "German Narration - Clear Professional Voice. Helmut Clark",
+  "public_owner_id": "2cf3785cce84abdefb1ef5e0d850a14e8566318dcfc9240163df12ad681955ae",
+  "use_case": "informative_educational",
+  "descriptive": "professional",
+  "age": "middle_aged",
+  "notice_period": 730
+ },
+ {
+  "voice_id": "g1jpii0iyvtRs8fqXsd1",
+  "name": "Helmut - German Epic Trailer Voice ",
+  "public_owner_id": "46b55935b024621e2e6a3bb750f25fe73db4e96b222f09b6f0825d3d9109ea82",
+  "use_case": "advertisement",
+  "descriptive": "professional",
+  "age": "old",
+  "notice_period": 730
+ },
+ {
+  "voice_id": "Cqbq4nsuUe1we6J45miU",
+  "name": "Helmut - Clear and Confident",
+  "public_owner_id": "2cf3785cce84abdefb1ef5e0d850a14e8566318dcfc9240163df12ad681955ae",
+  "use_case": "informative_educational",
+  "descriptive": "professional",
+  "age": "middle_aged",
+  "notice_period": 730
+ },
+ {
+  "voice_id": "dFA3XRddYScy6ylAYTIO",
+  "name": "Helmut - Warm, Gentle and Soothing",
+  "public_owner_id": "46b55935b024621e2e6a3bb750f25fe73db4e96b222f09b6f0825d3d9109ea82",
+  "use_case": "narrative_story",
+  "descriptive": "calm",
+  "age": "middle_aged",
+  "notice_period": 730
+ },
+ {
+  "voice_id": "4tVWa6JWnwS0ZoCf6ZzP",
+  "name": "Helmut - Soft and Interesting",
+  "public_owner_id": "2858adb005f655d6221b1a2e4bcb38287a682be3de8a92749f0de8848ab2e1e1",
+  "use_case": "narrative_story",
+  "descriptive": "pleasant",
+  "age": "old",
+  "notice_period": 730
+ },
+ {
+  "voice_id": "5KvpaGteYkNayiswuX2h",
+  "name": "Helmut - Distinctive and Authentic",
+  "public_owner_id": "2cf3785cce84abdefb1ef5e0d850a14e8566318dcfc9240163df12ad681955ae",
+  "use_case": "characters_animation",
+  "descriptive": "deep",
+  "age": "old",
+  "notice_period": 730
+ },
+ {
+  "voice_id": "JiW03c2Gt43XNUQAumRP",
+  "name": "Helmut Stieglbauer - Deep and Dynamic",
+  "public_owner_id": "46b55935b024621e2e6a3bb750f25fe73db4e96b222f09b6f0825d3d9109ea82",
+  "use_case": "narrative_story",
+  "descriptive": "calm",
+  "age": "middle_aged",
+  "notice_period": 730
+ },
+ {
+  "voice_id": "bRIX82ywyYryS8320ZVY",
+  "name": "Helmut - Polite and Mild",
+  "public_owner_id": "7b8313e4ceb895072b13d6dd75462ac23bc5f4d0d22ae0ea426d2cd784b6c780",
+  "use_case": "narrative_story",
+  "descriptive": "calm",
+  "age": "old",
+  "notice_period": 730
+ },
+ {
+  "voice_id": "sAGvECw4aXyojkGBisG4",
+  "name": "Helmut - Clear, Warm and Powerful",
+  "public_owner_id": "3cd1fc036e2c4ee74abef4047e8a67689123967891a082d67e584e4c30f4bc62",
+  "use_case": "social_media",
+  "descriptive": "confident",
+  "age": "middle_aged",
+  "notice_period": 730
+ }
+]
