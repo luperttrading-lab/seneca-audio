@@ -1,0 +1,218 @@
+<title>Seneca Stimmenprobe</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Die vier besten Stimmen aus dem Duell lesen die erste Minute von Teil 1, bearbeitet wie im Hörbuch, mit Mitlesen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Literata:ital,opsz,wght@1,7..72,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  /* Layout: eine Spalte; Text zum Mitlesen, Zeitbalken, drei Fassungen, darunter Schalter und Temporad wie an einem Tonbandgerät */
+  :root {
+    --stein: #161a19; --tafel: #1e2422; --tafel-hoch: #252c2a; --tinte: #e3e8e5; --grau: #9aa5a0; --linie: #333b38; --bronze: #d29f62;
+    --display: "Cinzel", "Trajan Pro", Georgia, serif; --text: "Literata", Georgia, serif; --ui: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--stein); color: var(--tinte); font: 16px/1.5 var(--ui); }
+  button, .rad { font: inherit; color: inherit; cursor: pointer; touch-action: manipulation; }
+  button:focus-visible, .rad:focus-visible { outline: 2px solid var(--bronze); outline-offset: 3px; }
+  main { max-width: 520px; margin: 0 auto; display: grid; gap: 18px;
+    padding-block: 32px 44px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .kopf { display: grid; gap: 6px; text-align: center; }
+  .eyebrow { font: 600 12px/1.3 var(--ui); letter-spacing: .14em; text-transform: uppercase; color: var(--bronze); }
+  h1 { margin: 0; font: 600 clamp(28px, 8vw, 38px)/1.15 var(--display); letter-spacing: .04em; }
+  .lead { margin: 0; color: var(--grau); font-size: 15px; }
+  .satz p { margin: 0; }
+  .satz p + p { margin-top: .7em; }
+  .satz { margin: 0; padding: 12px 14px; border-left: 2px solid var(--bronze); background: var(--tafel); border-radius: 0 10px 10px 0;
+    font: italic 400 16px/1.6 var(--text); }
+  .satz .w { color: var(--grau); transition: color .12s; }
+  .satz .w.vorbei { color: var(--tinte); }
+  .satz .w.jetzt { color: var(--stein); background: var(--bronze); border-radius: 4px; box-shadow: 0 0 0 2px var(--bronze); }
+  .zeit { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 12px; font-variant-numeric: tabular-nums; color: var(--grau); font-size: 14px; }
+  .balken { height: 6px; border-radius: 3px; background: var(--linie); overflow: hidden; cursor: pointer; }
+  .balken span { display: block; height: 100%; width: 0; background: var(--bronze); }
+  ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .fassung { width: 100%; display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 14px; align-items: center; text-align: left;
+    padding: 12px 14px; border: 1px solid var(--linie); border-radius: 14px; background: var(--tafel); }
+  .fassung[aria-pressed="true"] { border-color: var(--bronze); background: var(--tafel-hoch); }
+  .knopf { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; background: var(--linie); color: var(--tinte); }
+  .fassung[aria-pressed="true"] .knopf { background: var(--bronze); color: var(--stein); }
+  .knopf svg { width: 22px; height: 22px; }
+  .name { display: grid; gap: 2px; min-width: 0; }
+  .name b { font-weight: 600; }
+  .name span { color: var(--grau); font-size: 14px; }
+  .pult { display: grid; gap: 12px; padding: 14px; border: 1px solid var(--linie); border-radius: 14px; background: var(--tafel); }
+  .schalter { justify-self: start; display: inline-flex; align-items: center; gap: 10px; border: 0; background: transparent; padding: 4px 0; color: var(--tinte); font-size: 15px; text-align: left; }
+  .schalter i { width: 40px; height: 24px; border-radius: 12px; background: var(--linie); position: relative; flex: 0 0 auto; }
+  .schalter i::after { content: ""; position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 50%; background: var(--grau); transition: transform .15s; }
+  .schalter[aria-pressed="true"] i { background: var(--bronze); }
+  .schalter[aria-pressed="true"] i::after { transform: translateX(16px); background: var(--stein); }
+  .schalter small { display: block; color: var(--grau); font-size: 13px; }
+  /* Drehrad wie auf der früheren Hörseite: waagerechtes Band mit Einrasten, die Kerbe in der Mitte ist der Wert */
+  .tempo { display: grid; grid-template-columns: auto minmax(0, 1fr) 64px; align-items: center; gap: 10px; font-size: 14px; }
+  .tempo-label { color: var(--grau); }
+  .tempo output { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; }
+  .rad { position: relative; min-width: 0; height: 52px; border-radius: 10px; background: var(--stein); border: 1px solid var(--linie); }
+  .rad::before { content: ""; position: absolute; left: 50%; top: 0; height: 17px; width: 2px; margin-left: -1px; background: var(--bronze); z-index: 2; pointer-events: none; }
+  .rad::after { content: ""; position: absolute; left: 50%; top: -1px; margin-left: -6px; border: 6px solid transparent; border-top-color: var(--bronze); z-index: 2; pointer-events: none; }
+  .rad-band { display: flex; height: 100%; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scrollbar-width: none;
+    -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; perspective: 260px;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 28%, #000 72%, transparent); mask-image: linear-gradient(90deg, transparent, #000 28%, #000 72%, transparent); }
+  .rad-band::-webkit-scrollbar { display: none; }
+  .rad-rand { flex: 0 0 calc(50% - 7px); }
+  .rad-wert { flex: 0 0 14px; height: 100%; scroll-snap-align: center; position: relative; }
+  .rad-wert::before { content: ""; position: absolute; top: 9px; left: 50%; width: 1px; height: 6px; background: var(--grau); }
+  .rad-wert.fuenf::before { height: 13px; width: 2px; margin-left: -1px; background: var(--tinte); }
+  .rad-wert b { position: absolute; top: 25px; left: 50%; transform: translateX(-50%); padding: 2px 4px; cursor: pointer; font: 500 13px/1 var(--ui);
+    font-variant-numeric: tabular-nums; color: var(--tinte); white-space: nowrap; }
+  .messwert { margin: 0; font-size: 14px; color: var(--grau); font-variant-numeric: tabular-nums; }
+  .messwert b { color: var(--tinte); font-weight: 600; }
+  .hinweis { margin: 0; color: var(--grau); font-size: 14px; }
+  @media (prefers-reduced-motion: reduce) { .satz .w, .schalter i::after { transition: none; } }
+</style>
+
+<main>
+  <header class="kopf">
+    <span class="eyebrow">Seneca · Stimmensuche</span>
+    <h1>Stimmenprobe</h1>
+    <p class="lead">Die erste Minute von Teil 1, so wie sie im Hörbuch klänge. Tippe eine Stimme an, sie beginnt von vorn.</p>
+  </header>
+
+  <div class="satz" id="satz"><p><span class="w" data-i="0">Glücklich</span> <span class="w" data-i="1">leben,</span> <span class="w" data-i="2">mein</span> <span class="w" data-i="3">Bruder</span> <span class="w" data-i="4">Gallio,</span> <span class="w" data-i="5">das</span> <span class="w" data-i="6">wollen</span> <span class="w" data-i="7">alle.</span> <span class="w" data-i="8">Doch</span> <span class="w" data-i="9">wenn</span> <span class="w" data-i="10">es</span> <span class="w" data-i="11">darum</span> <span class="w" data-i="12">geht,</span> <span class="w" data-i="13">klar</span> <span class="w" data-i="14">zu</span> <span class="w" data-i="15">erkennen,</span> <span class="w" data-i="16">wodurch</span> <span class="w" data-i="17">ein</span> <span class="w" data-i="18">Leben</span> <span class="w" data-i="19">eigentlich</span> <span class="w" data-i="20">glücklich</span> <span class="w" data-i="21">wird,</span> <span class="w" data-i="22">ist</span> <span class="w" data-i="23">ihr</span> <span class="w" data-i="24">Blick</span> <span class="w" data-i="25">getrübt.</span> <span class="w" data-i="26">Und</span> <span class="w" data-i="27">es</span> <span class="w" data-i="28">ist</span> <span class="w" data-i="29">so</span> <span class="w" data-i="30">schwer,</span> <span class="w" data-i="31">das</span> <span class="w" data-i="32">glückliche</span> <span class="w" data-i="33">Leben</span> <span class="w" data-i="34">zu</span> <span class="w" data-i="35">erreichen,</span> <span class="w" data-i="36">dass</span> <span class="w" data-i="37">sich</span> <span class="w" data-i="38">jeder</span> <span class="w" data-i="39">umso</span> <span class="w" data-i="40">weiter</span> <span class="w" data-i="41">davon</span> <span class="w" data-i="42">entfernt,</span> <span class="w" data-i="43">je</span> <span class="w" data-i="44">hastiger</span> <span class="w" data-i="45">er</span> <span class="w" data-i="46">ihm</span> <span class="w" data-i="47">zustrebt –</span> <span class="w" data-i="48">sofern</span> <span class="w" data-i="49">er</span> <span class="w" data-i="50">vom</span> <span class="w" data-i="51">Weg</span> <span class="w" data-i="52">abgekommen</span> <span class="w" data-i="53">ist.</span> <span class="w" data-i="54">Führt</span> <span class="w" data-i="55">sein</span> <span class="w" data-i="56">Weg</span> <span class="w" data-i="57">in</span> <span class="w" data-i="58">die</span> <span class="w" data-i="59">entgegengesetzte</span> <span class="w" data-i="60">Richtung,</span> <span class="w" data-i="61">wird</span> <span class="w" data-i="62">gerade</span> <span class="w" data-i="63">die</span> <span class="w" data-i="64">Eile</span> <span class="w" data-i="65">zur</span> <span class="w" data-i="66">Ursache</span> <span class="w" data-i="67">einer</span> <span class="w" data-i="68">noch</span> <span class="w" data-i="69">größeren</span> <span class="w" data-i="70">Entfernung.</span></p><p><span class="w" data-i="71">Deshalb</span> <span class="w" data-i="72">müssen</span> <span class="w" data-i="73">wir</span> <span class="w" data-i="74">uns</span> <span class="w" data-i="75">zuerst</span> <span class="w" data-i="76">vor</span> <span class="w" data-i="77">Augen</span> <span class="w" data-i="78">führen,</span> <span class="w" data-i="79">was</span> <span class="w" data-i="80">wir</span> <span class="w" data-i="81">erstreben.</span> <span class="w" data-i="82">Dann</span> <span class="w" data-i="83">müssen</span> <span class="w" data-i="84">wir</span> <span class="w" data-i="85">uns</span> <span class="w" data-i="86">umsehen,</span> <span class="w" data-i="87">auf</span> <span class="w" data-i="88">welchem</span> <span class="w" data-i="89">Weg</span> <span class="w" data-i="90">wir</span> <span class="w" data-i="91">am</span> <span class="w" data-i="92">schnellsten</span> <span class="w" data-i="93">dorthin</span> <span class="w" data-i="94">gelangen.</span> <span class="w" data-i="95">Unterwegs</span> <span class="w" data-i="96">werden</span> <span class="w" data-i="97">wir –</span> <span class="w" data-i="98">wenn</span> <span class="w" data-i="99">der</span> <span class="w" data-i="100">Weg</span> <span class="w" data-i="101">nur</span> <span class="w" data-i="102">der</span> <span class="w" data-i="103">richtige</span> <span class="w" data-i="104">ist –</span> <span class="w" data-i="105">erkennen,</span> <span class="w" data-i="106">wie</span> <span class="w" data-i="107">viel</span> <span class="w" data-i="108">wir</span> <span class="w" data-i="109">Tag</span> <span class="w" data-i="110">für</span> <span class="w" data-i="111">Tag</span> <span class="w" data-i="112">zurücklegen</span> <span class="w" data-i="113">und</span> <span class="w" data-i="114">wie</span> <span class="w" data-i="115">viel</span> <span class="w" data-i="116">näher</span> <span class="w" data-i="117">wir</span> <span class="w" data-i="118">dem</span> <span class="w" data-i="119">Ziel</span> <span class="w" data-i="120">kommen,</span> <span class="w" data-i="121">zu</span> <span class="w" data-i="122">dem</span> <span class="w" data-i="123">uns</span> <span class="w" data-i="124">ein</span> <span class="w" data-i="125">natürliches</span> <span class="w" data-i="126">Verlangen</span> <span class="w" data-i="127">treibt.</span></p></div>
+
+  <div class="zeit">
+    <div class="balken" id="balken" role="slider" aria-label="Stelle im Text" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0"><span id="fuell"></span></div>
+    <span id="uhr">0:00 / 0:58</span>
+  </div>
+
+  <ol id="liste"></ol>
+
+  <section class="pult" aria-label="Einstellungen">
+    <button type="button" class="schalter" id="gleich" aria-pressed="false"><i aria-hidden="true"></i><span>Beim Umschalten an derselben Stelle weiter</span></button>
+    <div class="tempo">
+      <span class="tempo-label" id="l-tempo">Tempo</span>
+      <div class="rad" id="rad" role="slider" tabindex="0" aria-labelledby="l-tempo" aria-valuemin="0.8" aria-valuemax="1.1" aria-valuenow="0.95" aria-valuetext="0,95-fach">
+        <div class="rad-band" id="band"><span class="rad-rand"></span><span class="rad-wert fuenf"><b data-k="0">0,80</b></span><span class="rad-wert"></span><span class="rad-wert"></span><span class="rad-wert"></span><span class="rad-wert"></span><span class="rad-wert fuenf"><b data-k="5">0,85</b></span><span class="rad-wert"></span><span class="rad-wert"></span><span class="rad-wert"></span><span class="rad-wert"></span><span class="rad-wert fuenf"><b data-k="10">0,90</b></span><span class="rad-wert"></span><span class="rad-wert"></span><span class="rad-wert"></span><span class="rad-wert"></span><span class="rad-wert fuenf"><b data-k="15">0,95</b></span><span class="rad-wert"></span><span class="rad-wert"></span><span class="rad-wert"></span><span class="rad-wert"></span><span class="rad-wert fuenf"><b data-k="20">1,00</b></span><span class="rad-wert"></span><span class="rad-wert"></span><span class="rad-wert"></span><span class="rad-wert"></span><span class="rad-wert fuenf"><b data-k="25">1,05</b></span><span class="rad-wert"></span><span class="rad-wert"></span><span class="rad-wert"></span><span class="rad-wert"></span><span class="rad-wert fuenf"><b data-k="30">1,10</b></span><span class="rad-rand"></span></div>
+      </div>
+      <output id="tempo-wert">0,95×</output>
+    </div>
+    <p class="messwert" id="messwert"></p>
+  </section>
+
+  <p class="hinweis">Alle vier mit eleven v4, Stability 0,5, und gleich bearbeitet: Rauschunterdrückung, Pausen wie in Teil 1, gleich laut. Die Tonhöhe bleibt beim Tempo gleich.</p>
+  <audio id="ton" preload="auto"></audio>
+</main>
+
+<script>
+(function () {
+  var F = [{"k": "v1", "n": "1 · Helmut Stieglbauer", "d": "Platz 1 in Runde 2 · Deep and Dynamic", "t": [0.0, 0.52, 1.1, 1.28, 1.62, 2.36, 2.68, 3.0, 3.52, 4.76, 4.9, 5.04, 5.28, 5.82, 5.98, 6.22, 6.9, 7.32, 7.54, 7.82, 8.34, 8.78, 9.38, 9.68, 9.84, 10.06, 10.88, 12.21, 12.37, 12.55, 12.79, 13.33, 13.53, 14.03, 14.31, 14.51, 15.37, 15.79, 15.99, 16.31, 16.85, 17.19, 17.53, 18.64, 18.78, 19.3, 19.5, 19.68, 20.81, 21.39, 21.55, 21.77, 22.01, 22.55, 23.8, 24.3, 24.52, 24.8, 24.94, 25.06, 26.02, 26.62, 26.9, 27.26, 27.52, 28.02, 28.32, 28.9, 29.16, 29.5, 30.12, 31.98, 32.58, 32.88, 33.06, 33.26, 33.8, 34.0, 34.28, 34.86, 35.16, 35.38, 36.95, 37.41, 37.73, 37.88, 38.09, 38.95, 39.09, 39.49, 39.79, 39.95, 40.09, 40.67, 41.07, 42.41, 43.23, 43.52, 44.01, 44.64, 44.82, 45.05, 45.22, 45.37, 45.68, 46.41, 47.44, 47.6, 47.96, 48.18, 48.54, 48.72, 49.03, 49.74, 50.21, 50.4, 50.68, 51.08, 51.24, 51.45, 51.76, 52.36, 52.5, 52.67, 52.88, 53.04, 53.76, 54.18], "dauer": 54.96}, {"k": "v2", "n": "2 · Alexander", "d": "Platz 2 · Deep TV Narrator", "t": [0.0, 0.52, 1.12, 1.28, 1.6, 2.5, 2.76, 3.08, 4.38, 4.86, 5.0, 5.14, 5.38, 5.94, 6.08, 6.32, 6.96, 7.42, 7.64, 7.92, 8.38, 8.78, 9.34, 9.64, 9.8, 10.02, 11.54, 12.0, 12.14, 12.34, 12.58, 13.06, 13.28, 13.76, 14.02, 14.2, 15.04, 15.2, 15.4, 15.72, 16.28, 16.6, 16.94, 18.04, 18.18, 18.68, 18.92, 19.08, 20.22, 20.82, 20.96, 21.14, 21.36, 21.86, 23.21, 23.65, 23.87, 24.15, 24.29, 24.41, 25.35, 26.36, 26.46, 26.86, 27.08, 27.54, 27.82, 28.4, 28.66, 29.0, 29.6, 31.48, 32.08, 32.36, 32.52, 32.72, 33.26, 33.48, 33.74, 34.34, 34.93, 35.13, 36.62, 37.06, 37.36, 37.54, 37.74, 38.89, 39.03, 39.47, 39.75, 39.93, 40.07, 40.61, 41.01, 42.28, 43.04, 43.34, 43.8, 44.53, 44.67, 44.91, 45.07, 45.21, 45.49, 46.5, 47.14, 47.28, 47.62, 47.84, 48.2, 48.38, 48.66, 49.36, 49.9, 50.12, 50.42, 50.78, 50.94, 51.12, 51.42, 52.36, 52.48, 52.66, 52.92, 53.1, 53.82, 54.24], "dauer": 54.96}, {"k": "v3", "n": "3 · Marko", "d": "Platz 3 · Gentle and Quiet", "t": [0.0, 0.48, 1.35, 1.49, 1.81, 2.68, 2.94, 3.28, 3.86, 4.99, 5.15, 5.29, 5.51, 6.01, 6.17, 6.39, 7.05, 7.35, 7.53, 7.81, 8.37, 8.81, 9.55, 9.87, 10.01, 10.23, 11.69, 12.21, 12.37, 12.55, 12.77, 13.29, 13.45, 13.89, 14.13, 14.31, 15.17, 15.47, 15.65, 15.91, 16.41, 16.67, 17.01, 18.03, 18.15, 18.63, 18.85, 19.01, 20.07, 20.59, 20.73, 20.89, 21.11, 21.61, 22.73, 23.37, 23.57, 23.85, 23.99, 24.09, 24.99, 25.53, 26.08, 26.42, 26.64, 27.1, 27.38, 27.88, 28.12, 28.4, 28.96, 30.73, 31.29, 31.57, 31.75, 31.95, 32.45, 32.65, 32.89, 33.43, 33.67, 33.85, 35.27, 35.77, 36.05, 36.21, 36.41, 37.48, 37.64, 37.98, 38.26, 38.42, 38.54, 39.08, 39.44, 40.68, 41.52, 41.82, 42.28, 42.92, 43.08, 43.28, 43.44, 43.58, 43.84, 44.71, 45.35, 45.51, 45.85, 46.03, 46.35, 46.51, 46.75, 47.45, 47.93, 48.11, 48.35, 48.71, 48.87, 49.05, 49.31, 49.85, 49.97, 50.13, 50.31, 50.45, 51.11, 51.49], "dauer": 52.14}, {"k": "v4", "n": "4 · Marcus", "d": "Platz 4 · Emphatic and Reflective", "t": [0.0, 0.54, 1.14, 1.3, 1.6, 2.55, 2.77, 3.07, 4.37, 4.87, 5.03, 5.17, 5.39, 5.91, 6.05, 6.29, 6.93, 7.23, 7.41, 7.69, 8.23, 8.67, 9.37, 9.93, 10.07, 10.27, 11.79, 12.37, 12.53, 12.71, 12.91, 13.35, 13.55, 14.01, 14.27, 14.45, 15.19, 15.51, 15.69, 15.97, 16.41, 16.69, 17.03, 17.83, 17.95, 18.45, 18.67, 18.83, 19.92, 20.46, 20.6, 20.74, 20.94, 21.44, 22.66, 23.3, 23.5, 23.76, 23.92, 24.04, 24.96, 25.52, 25.88, 26.2, 26.42, 26.82, 27.08, 27.56, 27.8, 28.06, 28.62, 30.51, 31.03, 31.33, 31.49, 31.67, 32.15, 32.35, 32.61, 33.13, 33.35, 33.53, 35.03, 35.53, 35.81, 35.97, 36.13, 36.79, 36.89, 37.27, 37.51, 37.67, 37.81, 38.35, 38.71, 40.03, 40.93, 41.24, 41.74, 42.33, 42.49, 42.69, 42.85, 42.99, 43.28, 44.07, 45.3, 45.42, 45.68, 45.88, 46.22, 46.38, 46.66, 47.34, 47.98, 48.12, 48.34, 48.64, 48.8, 48.96, 49.24, 50.24, 50.4, 50.52, 50.72, 50.86, 51.5, 51.88], "dauer": 52.61}], WOERTER = 128, SILBEN = 209;
+  var FK = {}; F.forEach(function (f) { FK[f.k] = f; });
+  var PLAY = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5.5v13a1 1 0 0 0 1.5.86l10.2-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>';
+  var PAUSE = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>';
+  var $ = function (id) { return document.getElementById(id); };
+  var ton = $("ton"), aktiv = null, tempo = 0.95, gleicheStelle = false;
+  function zeiten(k) { return FK[k || "v1"].t; }
+  function dauer() { return FK[aktiv || "v1"].dauer; }
+  function wortBei(k, t) { var T = zeiten(k), i = -1; while (i + 1 < T.length && T[i + 1] <= t + 0.05) i++; return i; }
+  var woerter = document.querySelectorAll("#satz .w"), zuletzt = -2;
+  var mmss = function (s) { s = Math.max(0, s || 0); return Math.floor(s / 60) + ":" + String(Math.floor(s % 60)).padStart(2, "0"); };
+  var de = function (x, n) { return x.toLocaleString("de-DE", { minimumFractionDigits: n, maximumFractionDigits: n }); };
+
+  F.forEach(function (f) {
+    var li = document.createElement("li"), b = document.createElement("button");
+    b.type = "button"; b.className = "fassung"; b.id = "f-" + f.k; b.setAttribute("aria-pressed", "false");
+    b.innerHTML = '<span class="knopf">' + PLAY + '</span><span class="name"><b></b><span></span></span>';
+    b.querySelector("b").textContent = f.n; b.querySelector(".name span").textContent = f.d;
+    b.addEventListener("click", function () { waehle(f.k); });
+    li.appendChild(b); $("liste").appendChild(li);
+  });
+
+  function datei(k) { return "audio/" + k + ".mp3"; }
+  function setzeTempo() { try { ton.preservesPitch = true; ton.webkitPreservesPitch = true; } catch (e) {} ton.defaultPlaybackRate = tempo; ton.playbackRate = tempo; }
+  function spiel() { setzeTempo(); var p = ton.play(); if (p && p.catch) p.catch(function () {}); }
+  function lade(ziel, weiterspielen) {
+    ton.src = datei(aktiv); zuletzt = -2;
+    var los = function () { try { ton.currentTime = ziel; } catch (e) {} if (weiterspielen) spiel(); zeichne(); markiere(); zeigeTempo(); };
+    if (ton.readyState >= 1) los(); else ton.addEventListener("loadedmetadata", los, { once: true });
+  }
+  function waehle(k) {
+    if (k === aktiv) { if (ton.paused) spiel(); else ton.pause(); return; }
+    var ziel = 0;
+    if (gleicheStelle && aktiv && !ton.ended) { var i = wortBei(aktiv, ton.currentTime); if (i >= 0) ziel = zeiten(k)[i]; }
+    aktiv = k; lade(ziel, true); zeichne();
+  }
+  function zeichne() {
+    F.forEach(function (f) {
+      var b = $("f-" + f.k), an = f.k === aktiv, spielt = an && !ton.paused;
+      b.setAttribute("aria-pressed", an ? "true" : "false");
+      b.querySelector(".knopf").innerHTML = spielt ? PAUSE : PLAY;
+      b.setAttribute("aria-label", f.n + (spielt ? ", anhalten" : ", abspielen"));
+    });
+  }
+  function markiere() {
+    var i = (aktiv && ton.currentTime > 0) ? wortBei(aktiv, ton.currentTime) : -1, T = zeiten(aktiv);
+    if (ton.ended) i = T.length;
+    if (i === zuletzt) return; zuletzt = i;
+    for (var j = 0; j < woerter.length; j++) { woerter[j].classList.toggle("vorbei", j < i); woerter[j].classList.toggle("jetzt", j === i); }
+  }
+  (function schleife() { if (!ton.paused) markiere(); requestAnimationFrame(schleife); })();
+
+  $("gleich").addEventListener("click", function () { gleicheStelle = !gleicheStelle; this.setAttribute("aria-pressed", String(gleicheStelle)); });
+
+  ton.addEventListener("play", function () { if (Math.abs(ton.playbackRate - tempo) > .001) setzeTempo(); zeichne(); });
+  ton.addEventListener("pause", zeichne);
+  ton.addEventListener("ended", function () { zeichne(); markiere(); });
+  ton.addEventListener("seeked", markiere);
+  ton.addEventListener("timeupdate", function () {
+    var d = ton.duration || dauer(), t = ton.currentTime || 0;
+    $("fuell").style.width = (100 * t / d) + "%"; $("balken").setAttribute("aria-valuenow", String(Math.round(100 * t / d)));
+    $("uhr").textContent = mmss(t / tempo) + " / " + mmss(d / tempo);
+  });
+  function springe(anteil) {
+    if (!aktiv) { aktiv = "v1"; lade(anteil * dauer(), true); return; }
+    if (ton.duration) ton.currentTime = anteil * ton.duration; markiere();
+  }
+  $("balken").addEventListener("click", function (e) { var r = this.getBoundingClientRect(); springe(Math.min(1, Math.max(0, (e.clientX - r.left) / r.width))); });
+  $("balken").addEventListener("keydown", function (e) {
+    if (!ton.duration) return;
+    if (e.key === "ArrowRight") { ton.currentTime = Math.min(ton.duration, ton.currentTime + 2); e.preventDefault(); }
+    if (e.key === "ArrowLeft") { ton.currentTime = Math.max(0, ton.currentTime - 2); e.preventDefault(); }
+  });
+
+  // Temporad 0,80 bis 1,10 in 0,01-Schritten; die Tonhöhe bleibt
+  var rad = $("rad"), band = $("band"), werte = Array.prototype.slice.call(band.querySelectorAll(".rad-wert")), idx = 15, rahmen = 0;
+  var reduziert = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function breite() { return werte[0].offsetWidth || 14; }
+  function zeigeTempo() {
+    $("tempo-wert").textContent = de(tempo, 2) + "×";
+    rad.setAttribute("aria-valuenow", String(tempo)); rad.setAttribute("aria-valuetext", de(tempo, 2) + "-fach");
+    var dz = dauer() / tempo, wpm = 60 * WOERTER / dz, silben = SILBEN / dz;
+    $("messwert").innerHTML = (aktiv ? FK[aktiv].n.split(" · ")[1] + " so eingestellt: " : "So eingestellt: ") + "<b>" + Math.round(wpm) + " Wörter pro Minute</b> · " + de(silben, 1) + " Silben pro Sekunde · " + mmss(dz) + ". Teil 1 im Hörbuch: 134, deine eigene Lesung: 138.";
+  }
+  function waehleTempo(i, quelle) {
+    i = Math.max(0, Math.min(werte.length - 1, Math.round(i))); idx = i; tempo = Math.round(80 + i) / 100;
+    setzeTempo(); zeigeTempo();
+    if (quelle !== "rad") band.scrollTo({ left: i * breite(), behavior: (quelle === "start" || reduziert) ? "auto" : "smooth" });
+  }
+  function wolbung() {
+    var halb = band.clientWidth / 2, mitte = band.scrollLeft + halb, b = breite();
+    werte.forEach(function (w) {
+      var d = (w.offsetLeft + b / 2 - mitte) / halb; if (Math.abs(d) > 1.3) return;
+      w.style.transform = reduziert ? "" : "rotateY(" + Math.max(-70, Math.min(70, d * 55)) + "deg)";
+      w.style.opacity = String(Math.max(0.2, 1 - Math.abs(d) * 0.7));
+    });
+  }
+  band.addEventListener("scroll", function () {
+    if (rahmen) return;
+    rahmen = requestAnimationFrame(function () { rahmen = 0; wolbung(); var i = Math.round(band.scrollLeft / breite()); if (i !== idx) waehleTempo(i, "rad"); });
+  }, { passive: true });
+  band.querySelectorAll(".rad-wert b").forEach(function (l) { l.addEventListener("click", function () { waehleTempo(parseInt(l.dataset.k, 10), "tipp"); }); });
+  rad.addEventListener("keydown", function (e) {
+    var s = { ArrowLeft: -1, ArrowDown: -1, ArrowRight: 1, ArrowUp: 1, PageDown: -5, PageUp: 5 }[e.key];
+    if (s) { e.preventDefault(); waehleTempo(idx + s, "taste"); }
+  });
+  window.addEventListener("resize", function () { band.scrollLeft = idx * breite(); wolbung(); });
+  requestAnimationFrame(function () { waehleTempo(15, "start"); wolbung(); });
+  zeichne(); zeigeTempo();
+})();
+</script>
