@@ -37,6 +37,9 @@ def sprache(x):   # Anfang und Ende der Sprache (Rahmen über Spitzenpegel − 4
     n = 441; db = 10 * np.log10((x[:len(x) // n * n].reshape(-1, n) ** 2).mean(1) + 1e-12); an = np.flatnonzero(db > db.max() - 45)
     return an[0] * n, (an[-1] + 1) * n
 
+def pegel(y):   # typischer Pegel der Sprache (Median der lauten 10-ms-Rahmen)
+    r = np.sqrt((y[:len(y) // 441 * 441].reshape(-1, 441) ** 2).mean(1)); return np.median(r[r > r.max() * 0.05])
+
 def tts(text, ziel):
     if os.path.exists(ziel) and not neu: return 0
     req = urllib.request.Request(f"https://api.elevenlabs.io/v1/text-to-speech/{STIMME}?output_format=mp3_44100_128",
@@ -51,24 +54,27 @@ text = open(rein, encoding="utf-8").read().strip()
 credits = tts(text, b + ".roh.mp3")
 if nr == 1: credits += tts("Seneca. Vom glücklichen Leben.", os.path.join(aus, "start.roh.mp3"))
 print(f"Kapitel {nr}: {len(text)} Zeichen, {credits} Credits", flush=True)
+fertig = credits == 0 and not neu and os.path.exists(b + ".pausen.stellen.json")   # Schritte 2–3 schon gelaufen
 # 2. Worttreue
-p = py(f"{HIER}/pruef.py", "large-v3-turbo", rein, b + ".roh.mp3", capture_output=True, text=True)
-zeile = [l for l in p.stdout.splitlines() if "large-v3-turbo" in l][-1]; print(zeile, flush=True)
-if "wortgetreu" not in zeile: sys.exit("Abweichungen in der Rohaufnahme – bitte anhören, bevor weiterverarbeitet wird")
-# 3. Rauschunterdrückung, Wortzeiten, Pausen
-ff("-i", b + ".roh.mp3", "-ac", "1", "-ar", str(SR), "-af", RAUSCH, b + ".ru.wav")
-k = py(f"{R}/seite/karaoke_daten.py", "--einzeln", b + ".ru.wav", rein, b + ".woerter.json", capture_output=True, text=True)
-print([l for l in k.stdout.splitlines() if "Wörter" in l][-1].split(",", 1)[-1].strip(), flush=True)
-p = py(f"{HIER}/pausen2.py", b + ".ru.wav", b + ".woerter.json", b + ".pausen.mp3", json.dumps(PAUSEN), rein, capture_output=True, text=True)
-print(p.stdout.strip().splitlines()[-1], flush=True)
+if not fertig: p = py(f"{HIER}/pruef.py", "large-v3-turbo", rein, b + ".roh.mp3", capture_output=True, text=True)
+if not fertig:
+    zeile = [l for l in p.stdout.splitlines() if "large-v3-turbo" in l][-1]; print(zeile, flush=True)
+    if "wortgetreu" not in zeile: sys.exit("Abweichungen in der Rohaufnahme – bitte anhören, bevor weiterverarbeitet wird")
+    # 3. Rauschunterdrückung, Wortzeiten, Pausen
+    ff("-i", b + ".roh.mp3", "-ac", "1", "-ar", str(SR), "-af", RAUSCH, b + ".ru.wav")
+    k = py(f"{R}/seite/karaoke_daten.py", "--einzeln", b + ".ru.wav", rein, b + ".woerter.json", capture_output=True, text=True)
+    print([l for l in k.stdout.splitlines() if "Wörter" in l][-1].split(",", 1)[-1].strip(), flush=True)
+    p = py(f"{HIER}/pausen2.py", b + ".ru.wav", b + ".woerter.json", b + ".pausen.mp3", json.dumps(PAUSEN), rein, capture_output=True, text=True)
+    print(p.stdout.strip().splitlines()[-1], flush=True); os.remove(b + ".ru.wav")
+else: print("Prüfung, Wortzeiten und Pausen schon vorhanden", flush=True)
 W = json.load(open(b + ".woerter.json")); E = json.load(open(b + ".pausen.stellen.json"))
 schieb = lambda t: t + sum(e["L"] for e in E if e["orig"] < t)
 # 4. Zusammensetzen (bei Tempo 1), dann Tempo 0,96 und −18 LUFS
 x = lade(b + ".pausen.mp3"); a0, a1 = sprache(x); x = x[max(0, a0 - 2205):a1 + 4410]; kopf = max(0, a0 - 2205) / SR
 teile, o = [], 0.5
 if nr == 1:
-    s = lade(os.path.join(aus, "start.roh.mp3")); s0, s1 = sprache(s); s = s[s0:s1 + 2205]
-    pegel = lambda y: np.median(np.sqrt((y[:len(y) // 441 * 441].reshape(-1, 441) ** 2).mean(1))[lambda r: r > r.max() * 0.05])
+    ff("-i", os.path.join(aus, "start.roh.mp3"), "-ac", "1", "-ar", str(SR), "-af", RAUSCH, os.path.join(aus, "start.ru.wav"))
+    s = lade(os.path.join(aus, "start.ru.wav")); s0, s1 = sprache(s); s = s[s0:s1 + 2205]
     teile.append((s * pegel(x) / pegel(s), 0.6)); o = 0.6 + len(s) / SR + 1.6
 teile.append((x, o)); ende = o + len(x) / SR + 1.5
 y = np.zeros(int(ende * SR) + 1)
@@ -86,5 +92,5 @@ D = {"w": [w["w"] for w in W], "t": T, "p": [w["p"] for w in W], "stelle": ST, "
 if nr == 1: D["start_ende"] = round(T[0] - 1.3, 3); D["text_ab"] = round(D["start_ende"] + 0.55, 3)
 json.dump(D, open(b + ".daten.json", "w"), ensure_ascii=False)
 print(f"Ton: {lufs(b + '.wav'):.1f} LUFS, {D['ende']:.1f} s; erstes Wort bei {T[0]:.2f} s", flush=True)
-for f in (".ru.wav", ".tempo1.wav", ".langsam.wav"): os.remove(b + f)
+for f in (".tempo1.wav", ".langsam.wav"): os.remove(b + f)
 if "--ohne-video" not in sys.argv: py(f"{HIER}/video/baue.py", b + ".daten.json", b + ".wav", b + ".mp4")
