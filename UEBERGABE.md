@@ -291,6 +291,10 @@ die Messung nicht; das bleibt Sache des Ohrs.
    1:55 Film in 2:47 min, also das ganze Werk in etwa 2 Stunden; 32 MB). Band: Stützstellen an den Zeilenanfängen bei
    (k − ½) Zeilen, gesprochene Zeile höchstens eine halbe Zeile neben der Mitte (Lesemodus der Seite: bis 0,65).
    Schriften vor der Zeilenberechnung laden (`bereit()`), sonst bricht der Text mit der Ersatzschrift anders um.
+   **Probefilm 3 (Nutzer freigegeben):** Marken in Textgröße und Literata, bronze; Startseite als Titelblatt („Lucius
+   Annaeus Seneca“ / „De vita beata“ / „Vom glücklichen Leben“ / „An seinen Bruder Gallio · aus dem Lateinischen neu
+   übersetzt“), nur „Seneca. Vom glücklichen Leben.“ gesprochen (13 Credits); dann Titelkarte mit gesprochenem Titel, dann
+   Text. In daten.json `start_ende` (nur Teil 1) und `titel_ende`. 1:59, Render 3:10 min.
 3. Teil 4 freigeben lassen. Entscheidungen im Entwurf, die der Nutzer prüfen sollte:
    - Lücke und Crux in 3,4 sind geglättet wie bei Stewart und Forbiger (beide glätten): „an die Stelle der Lüste und
      all dessen, was klein und zerbrechlich ist und schon durch seine Schändlichkeit schadet, tritt …“.

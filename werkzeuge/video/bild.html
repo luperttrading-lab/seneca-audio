@@ -133,7 +133,7 @@
     var weich = function (x) { x = Math.max(0, Math.min(1, x)); return x * x * (3 - 2 * x); };   // erst Titel aus, dann Text ein
     var s = D.start_ende || 0;   // Startseite nur im ersten Teil: bis start_ende, danach die Titelkarte des Abschnitts
     document.getElementById("start").style.opacity = String(D.start_ende ? 1 - weich((t - s) / 0.5) : 0);
-    document.getElementById("titelkarte").style.opacity = String((D.start_ende ? weich((t - s - 0.4) / 0.6) : 1) * (1 - weich((t - D.titel_ende) / 0.4)));
+    document.getElementById("titelkarte").style.opacity = String((D.start_ende ? weich((t - s - 0.55) / 0.5) : 1) * (1 - weich((t - D.titel_ende) / 0.4)));
     document.getElementById("textbild").style.opacity = String(weich((t - D.titel_ende - 0.35) / 0.5));
     document.getElementById("inhalt").style.transform = "translate3d(0," + (-kurve(t)).toFixed(2) + "px,0)";
     var i = wortBei(t + 0.03);
