@@ -32,7 +32,9 @@ die alte Zählung. Gliederung: `GLIEDERUNG.md`; Kapiteltabelle: `PLAN.md`.
  behoben: `komma_ab` 0,15 in `werkzeuge/kette.py`) und eine sinnwidrige Betonung (Stelle offen). 1 (3) neu gesprochen mit
  `werkzeuge/paragraf.py 1 3 <ordner>` (200 Credits, wortgetreu), liegt auf der Prüfseite neben der alten Fassung; in Kapitel 1 eingesetzt (Ränder 50/100 ms, Pegel −0,5 dB), Kapitel
  neu bearbeitet: wortgetreu, 39 statt 58 Pausen, 3:53, Video im Scratchpad `kapitel01_neu/` (Full HD, 64 MB). Offen: Feinschliff
- „die vor uns hergeht“ (Varianten A/B auf der Prüfseite, Wahl des Nutzers); `werkzeuge/kapitel.py 1 <ordner>`, 1.321 Credits, Rohaufnahme wortgetreu (499/499), 58 Pausen verlängert, Tempo 0,96, −18 LUFS, Video 3:57 (1920 × 1080, 66 MB). Liegt nur im Scratchpad, Urteil des Nutzers offen; öffentlich noch Lupert als „Teil 1“ und „Teil 2“ |
+ „die vor uns hergeht“ (Varianten A/B auf der Prüfseite, Wahl des Nutzers). Nutzer hat den ersten Satz von 1 (3) selbst in der
+ App mit Helmut erzeugt (gleiche Stimme, Fingerabdruck 0,95; App-Einstellungen: Stability 0,5, Similarity 0,81, die API
+ nimmt ohne Angabe den Standardwert): dort Betonung auf „HERgeht“ statt „VOR“; liegt bearbeitet auf der Prüfseite; `werkzeuge/kapitel.py 1 <ordner>`, 1.321 Credits, Rohaufnahme wortgetreu (499/499), 58 Pausen verlängert, Tempo 0,96, −18 LUFS, Video 3:57 (1920 × 1080, 66 MB). Liegt nur im Scratchpad, Urteil des Nutzers offen; öffentlich noch Lupert als „Teil 1“ und „Teil 2“ |
 | 2 | fertig (`texte/kapitel02.txt`), mit Stewart und Forbiger abgeglichen; Nutzer will Stellen überarbeiten | fehlt |
 | 3 | Entwurf (`texte/kapitel03.txt`), mit Stewart und Forbiger abgeglichen, Freigabe offen | – |
 | 4–28 | Latein in `texte/latein/kapitelNN.txt` | – |
