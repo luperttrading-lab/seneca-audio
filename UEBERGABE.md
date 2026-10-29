@@ -195,7 +195,18 @@ die Messung nicht; das bleibt Sache des Ohrs.
    −2 HT: 7). Nächster möglicher Schritt: nur die Mitte der Tonhöhe absenken, die Tiefen weniger (nichtlineare
    Abbildung über Praat-Manipulation). Die Hörseite spielt beim Umschalten jetzt von vorn; Schalter für „an derselben Stelle“.
    Nutzer: WORLD klingt „komprimiert, knisterig“. Neu gerechnet mit 1-ms-Raster, StoneMask, D4C-Schwelle 0,75,
-   FFT 4096, MP3 160 kbit/s; Urteil offen. Die Hörseite markiert jetzt das gesprochene Wort (Karaoke).
+   FFT 4096, MP3 160 kbit/s. Nutzer: klingt weiter komisch, **WORLD ist raus**. Die Hörseite markiert das gesprochene Wort.
+   **Rauschunterdrückung** („wie Dolby“, als Schalter auf der Hörseite): `highpass=f=60,anlmdn=s=0.0007,agate=threshold=
+   0.01:ratio=3:range=0.15:attack=5:release=200:knee=6:detection=rms,atrim=start_sample=353,apad=pad_len=353` (44,1 kHz).
+   Grundrauschen −59 → −82 dBFS, leisestes Fünftel −52 → −65 dBFS, Sprache unverändert, kein Versatz. Vorsicht:
+   `afftdn` verzögert um 25 ms, `anlmdn` um 8 ms (hier ausgeglichen); Messungen über eine fremde Pausenmaske sind dann
+   falsch. PSOLA-Fassungen haben 2 dB mehr Grundrauschen als das Original (passt zum Höreindruck des Nutzers). In der
+   Verarbeitung gehört die Rauschunterdrückung vor `pausen2.py`, damit der eingefügte Raumton zum entrauschten Ton passt.
+   **Tempo:** Temporad 0,80–1,10 auf der Hörseite. Gemessen (Wörter je Minute über die ganze Dauer, Silben grob gezählt):
+   Teil 1 öffentlich 134 W/min (3,7 Silben/s), Teil 2 141, eigene Lesung des Nutzers 138, Lupert roh bei 0,95 156 (ohne
+   eingefügte Pausen), Runde-2-Stimmen bei 0,95 144–159. Richtwert Hörbuch englisch 150–160 W/min (ACX: 9.300 Wörter je
+   Stunde ≈ 155, Sekundärquellen); deutsche Wörter haben etwa 1,64 Silben, englische etwa 1,45 (Schätzung), also
+   entsprechen 155 englische etwa 135–140 deutschen W/min. Teil 1 und 2 liegen genau dort.
    Ursprünglicher Plan: neuer Abschnitt Teil 2, Absatz 3 („Nun aber steht das Volk …“, 350 Zeichen,
    etwa 150 Credits je Stimme) mit Alexander, Leo Liest, Robert, Gottfried, Marcus, Marko, Helmut Stieglbauer und Lupert,
    dazu Lupert um 2,5 HT abgesenkt (formanterhaltend, `rubberband` ist in ffmpeg vorhanden, kostenlos) als Test der
