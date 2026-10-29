@@ -187,6 +187,14 @@ die Messung nicht; das bleibt Sache des Ohrs.
    Vorbereitet, aber nicht angewendet: `werkzeuge/verarbeite.py` (Rohaufnahme → Hörbuchfassung mit Tonlage 100 Hz,
    Rauschunterdrückung, Pausen nach PLAN-Regel, −18 LUFS, AAC und MP3, Wortzeiten). Teil 1 und 2 damit testweise
    gerechnet (nur im Sitzungsordner, nicht veröffentlicht; Whisper hört in Teil 1 „anderem Reisen“, ungeprüft).
+   **Ergebnis Runde 2b** (28 Duelle, 6 unentschieden, `messung/stimmen/duell_ergebnis_runde2b.json`): Helmut Stieglbauer
+   72 % (Top 3 in 88 % der Bootstrap-Ziehungen), Alexander 71 % (88 %), Marko 69 % (72 %), Marcus 56 %, Gottfried 47 %,
+   Leo Liest 42 %, Robert 35 %, **Lupert 34 %, Lupert tiefer 24 %** (1 Sieg, 5 Niederlagen; im direkten Duell gewann
+   Lupert unverändert). Tonlage erklärt diesmal nichts (ρ = +0,35, p = 0,36; die tiefere Stimme gewinnt 7 von 20).
+   Rangkorrelation Runde 1 ↔ 2b für dieselben 8 Stimmen ρ = +0,05: oben sind die Stimmen für ihn fast gleich gut.
+   Stabil über beide Runden: Alexander, Helmut, Marko oben; Lupert unten. Alle drei: Kündigungsfrist 730 Tage, Rate 1,0
+   (gilt vermutlich nur, wenn die Stimme in „Meine Stimmen“ aufgenommen ist). Nächster Schritt mit dem Nutzer
+   besprechen, nichts bauen, bevor er zustimmt.
    Vorher: **Runde 2** (vom Nutzer freigegeben, 1.200 Credits; Speicher `duelle2`, Stimmen in
    `messung/stimmen/duell_stimmen_runde2.json`, Seite `seite/duell.html` jetzt Runde 2). Lupert wurde mit Rubber Band
    formanterhaltend um 3,3 HT auf 100 Hz gesenkt (er sprach den Abschnitt mit 121 Hz). In diesem Abschnitt liegen alle
