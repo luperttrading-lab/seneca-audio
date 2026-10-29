@@ -38,7 +38,11 @@ die alte Zählung. Gliederung: `GLIEDERUNG.md`; Kapiteltabelle: `PLAN.md`.
  **Versuch (29.10.):** derselbe Satz sechsmal einzeln erzeugt (je 2× ohne Similarity, mit 0,81, mit 0,81 und Satz davor/danach):
  alle 6 und die App-Aufnahme betonen „hergeht“ (mit Fall von 10–15 HT wie am Satzende), beide Fassungen aus langem Text
  „vor“ (`messung/stimmen/versuch_vor_uns_hergeht.json`). Ursache ist also, ob der Satz allein oder im längeren Text steht,
- nicht Similarity oder Zusammenhang. Stimm-Standard laut API: similarity 0,75, style 0,55, speaker boost an; `werkzeuge/kapitel.py 1 <ordner>`, 1.321 Credits, Rohaufnahme wortgetreu (499/499), 58 Pausen verlängert, Tempo 0,96, −18 LUFS, Video 3:57 (1920 × 1080, 66 MB). Liegt nur im Scratchpad, Urteil des Nutzers offen; öffentlich noch Lupert als „Teil 1“ und „Teil 2“ |
+ nicht Similarity oder Zusammenhang. Stimm-Standard laut API: similarity 0,75, style 0,55, speaker boost an;
+ **Nutzer-Versuch:** Satz bis zum Punkt allein richtig; mit dem Folgesatz „Denn nichts …“ im selben Text wieder falsch.
+ Ursache also der Folgesatz im gesprochenen Text (als `next_text` mitgegeben schadet er nicht). Eingesetzt in Kapitel 1:
+ Einzelaufnahme mit Satz davor/danach als Zusammenhang (K3_2, Fingerabdruck 0,957, Pegel −1 dB); Kapitel neu: 38 Pausen,
+ 3:53, Vorschau aktualisiert. Vorschlag offen: Produktion Satz für Satz mit Zusammenhang, Test an 1 (3) (~200 Credits).; `werkzeuge/kapitel.py 1 <ordner>`, 1.321 Credits, Rohaufnahme wortgetreu (499/499), 58 Pausen verlängert, Tempo 0,96, −18 LUFS, Video 3:57 (1920 × 1080, 66 MB). Liegt nur im Scratchpad, Urteil des Nutzers offen; öffentlich noch Lupert als „Teil 1“ und „Teil 2“ |
 | 2 | fertig (`texte/kapitel02.txt`), mit Stewart und Forbiger abgeglichen; Nutzer will Stellen überarbeiten | fehlt |
 | 3 | Entwurf (`texte/kapitel03.txt`), mit Stewart und Forbiger abgeglichen, Freigabe offen | – |
 | 4–28 | Latein in `texte/latein/kapitelNN.txt` | – |
