@@ -278,15 +278,19 @@ die Messung nicht; das bleibt Sache des Ohrs.
    und „Im Einklang mit der Natur“ vor Teil 4. Titel als eigener Clip, nicht in `texte/teilNN.txt`.
    **Idee des Nutzers:** Stellenangaben (Kapitel,Paragraf wie 1,4) sichtbar im Text, auf der Seite und später im Video,
    mit Sprungmöglichkeit; nicht gesprochen. **Endprodukt ist ein YouTube-Video** (Nutzer, 29.10.): also nichts zum
-   Ein- und Ausblenden, die Darstellung muss vorher feststehen. Vorschlag: keine Zahlen im laufenden Text, sondern eine
-   feste Stellenanzeige in der Ecke („Kapitel 1,4“), Titelkarte an den fünf Abschnittsanfängen, YouTube-Kapitelmarken je
+   Ein- und Ausblenden, die Darstellung muss vorher feststehen. Nutzer will Marken im Text **und** in der Ecke (siehe
+   Probefilm); ursprünglicher Vorschlag war nur die Ecke („Kapitel 1,4“), Titelkarte an den fünf Abschnittsanfängen, YouTube-Kapitelmarken je
    lateinischem Kapitel in der Beschreibung (Regeln: erste Marke 0:00, mindestens drei, je mindestens 10 s).
    Unsichtbare Marken in `texte/teilNN.txt` liefern die Zeiten. Freigabe offen.
    **Probefilm Teil 1 (29.10., nicht veröffentlicht):** Stieglbauer aus den vorhandenen Proben (Absatz 1–2 und 3–4, also
-   noch alter Wortlaut beim „kurzen Leben“), gesprochener Titel (11 Credits), Tempo 0,96 per atempo, −18 LUFS, 1920 × 1080,
-   1:55, 6 MB. Werkzeuge in `werkzeuge/video/` (bild.html, ereignisse.py, render.js): je Wortwechsel ein Bild per
-   Playwright, dann `ffmpeg -f concat -i liste.txt -i ton.wav -vf fps=25,format=yuv420p -c:v libx264 -tune stillimage
-   -crf 20 -c:a aac -b:a 160k -movflags +faststart`. 269 Bilder in einer Minute. Urteil des Nutzers offen.
+   noch alter Wortlaut beim „kurzen Leben“), gesprochener Titel (11 Credits), Tempo 0,96 per atempo, −18 LUFS, 1920 × 1080.
+   Fassung 1 (ein Absatz je Bild, Wort im Kasten) gefiel dem Nutzer weniger; **gewünscht ist der Lesemodus der App:**
+   fließender Text, gesprochene Zeile im Band in der Mitte, Wort färbt sich fließend ein, dazu Stellenmarken im Text
+   wie im Buch, aber immer mit Kapitel („1 (1)“, „1 (2)“), und gleichzeitig „Kapitel 1 (2)“ in der Ecke. Fassung 2 so
+   gebaut: `werkzeuge/video/baue.py <daten.json> <ton.wav> <aus.mp4>` (bild.html, render.js; 25 Bilder/s, vier Prozesse,
+   1:55 Film in 2:47 min, also das ganze Werk in etwa 2 Stunden; 32 MB). Band: Stützstellen an den Zeilenanfängen bei
+   (k − ½) Zeilen, gesprochene Zeile höchstens eine halbe Zeile neben der Mitte (Lesemodus der Seite: bis 0,65).
+   Schriften vor der Zeilenberechnung laden (`bereit()`), sonst bricht der Text mit der Ersatzschrift anders um.
 3. Teil 4 freigeben lassen. Entscheidungen im Entwurf, die der Nutzer prüfen sollte:
    - Lücke und Crux in 3,4 sind geglättet wie bei Stewart und Forbiger (beide glätten): „an die Stelle der Lüste und
      all dessen, was klein und zerbrechlich ist und schon durch seine Schändlichkeit schadet, tritt …“.

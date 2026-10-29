@@ -1,19 +1,18 @@
-const { chromium } = require('playwright'); const fs = require('fs');
+// Rendert Bilder eines Teils: node render.js <daten.json> <ausordner> <fps> <nr> <anzahl>
+// Prozess nr von anzahl übernimmt jedes anzahl-te Bild, damit mehrere Prozesse parallel rendern können.
+const { chromium } = require('playwright'); const fs = require('fs'); const path = require('path');
 (async () => {
-  const V = process.argv[2], E = JSON.parse(fs.readFileSync(V + '/ereignisse.json'));
+  const [datei, aus, fps, nr, anzahl] = [process.argv[2], process.argv[3], +process.argv[4], +process.argv[5], +process.argv[6]];
+  const D = JSON.parse(fs.readFileSync(datei)); fs.mkdirSync(aus, { recursive: true });
   const b = await chromium.launch(); const p = await b.newPage({ viewport: { width: 1920, height: 1080 }, deviceScaleFactor: 1 });
   const errs = []; p.on('pageerror', e => errs.push(e.message));
-  await p.goto('file://' + V + '/bild.html', { waitUntil: 'networkidle' }); await p.evaluate(() => document.fonts.ready);
-  await p.evaluate(d => lade(d), E.daten); fs.mkdirSync(V + '/bilder', { recursive: true });
-  const liste = [];
-  for (let k = 0; k < E.ereignisse.length; k++) {
-    const e = E.ereignisse[k], f = 'bilder/' + String(k).padStart(4, '0') + '.png';
-    await p.evaluate(z => zeige(z), e.z); await p.screenshot({ path: V + '/' + f });
-    const bis = k + 1 < E.ereignisse.length ? E.ereignisse[k + 1].t : E.ende;
-    liste.push(`file '${f}'\nduration ${(bis - e.t).toFixed(3)}`);
+  await p.goto('file://' + path.join(__dirname, 'bild.html'), { waitUntil: 'networkidle' }); await p.evaluate(() => bereit());
+  const info = await p.evaluate(d => lade(d), D);
+  const n = Math.ceil(D.ende * fps);
+  for (let k = nr; k < n; k += anzahl) {
+    await p.evaluate(t => zeige(t), k / fps);
+    await p.screenshot({ path: path.join(aus, String(k).padStart(6, '0') + '.jpg'), type: 'jpeg', quality: 92 });
   }
-  liste.push(`file 'bilder/${String(E.ereignisse.length - 1).padStart(4, '0')}.png'`);
-  fs.writeFileSync(V + '/liste.txt', liste.join('\n') + '\n');
-  const fonts = await p.evaluate(() => Array.from(document.fonts).filter(f => f.status === 'loaded').map(f => f.family + ' ' + f.style + ' ' + f.weight));
-  console.log(JSON.stringify({ bilder: E.ereignisse.length, fonts: [...new Set(fonts)], errs })); await b.close();
+  if (nr === 0) console.log(JSON.stringify({ bilder: n, ...info, errs }));
+  await b.close();
 })();
