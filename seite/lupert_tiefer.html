@@ -23,6 +23,10 @@
   .lead { margin: 0; color: var(--grau); font-size: 15px; }
   .satz { margin: 0; padding: 12px 14px; border-left: 2px solid var(--bronze); background: var(--tafel); border-radius: 0 10px 10px 0;
     font: italic 400 16px/1.55 var(--text); }
+  .satz .w { color: var(--grau); transition: color .12s; }
+  .satz .w.vorbei { color: var(--tinte); }
+  .satz .w.jetzt { color: var(--stein); background: var(--bronze); border-radius: 4px; box-shadow: 0 0 0 2px var(--bronze); }
+  @media (prefers-reduced-motion: reduce) { .satz .w { transition: none; } }
   .zeit { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 12px; font-variant-numeric: tabular-nums; color: var(--grau); font-size: 14px; }
   .balken { height: 6px; border-radius: 3px; background: var(--linie); overflow: hidden; cursor: pointer; }
   .balken span { display: block; height: 100%; width: 0; background: var(--bronze); }
@@ -52,7 +56,7 @@
     <p class="lead">Tippe eine Fassung an, sie beginnt von vorn. Wer lieber Satz für Satz vergleicht, schaltet unten „an derselben Stelle weiter“ ein.</p>
   </header>
 
-  <p class="satz">„Nun aber steht das Volk gegen die Vernunft und verteidigt sein eigenes Übel. Darum geht es zu wie bei den Wahlen: Dieselben, die jemanden zum Prätor gemacht haben, wundern sich, dass er es geworden ist, sobald die wankelmütige Gunst sich gedreht hat. Dasselbe loben wir, dasselbe tadeln wir. So endet jedes Urteil, das nach der Mehrheit gefällt wird.“</p>
+  <p class="satz" id="satz">„<span class="w" data-i="0">Nun</span> <span class="w" data-i="1">aber</span> <span class="w" data-i="2">steht</span> <span class="w" data-i="3">das</span> <span class="w" data-i="4">Volk</span> <span class="w" data-i="5">gegen</span> <span class="w" data-i="6">die</span> <span class="w" data-i="7">Vernunft</span> <span class="w" data-i="8">und</span> <span class="w" data-i="9">verteidigt</span> <span class="w" data-i="10">sein</span> <span class="w" data-i="11">eigenes</span> <span class="w" data-i="12">Übel.</span> <span class="w" data-i="13">Darum</span> <span class="w" data-i="14">geht</span> <span class="w" data-i="15">es</span> <span class="w" data-i="16">zu</span> <span class="w" data-i="17">wie</span> <span class="w" data-i="18">bei</span> <span class="w" data-i="19">den</span> <span class="w" data-i="20">Wahlen:</span> <span class="w" data-i="21">Dieselben,</span> <span class="w" data-i="22">die</span> <span class="w" data-i="23">jemanden</span> <span class="w" data-i="24">zum</span> <span class="w" data-i="25">Prätor</span> <span class="w" data-i="26">gemacht</span> <span class="w" data-i="27">haben,</span> <span class="w" data-i="28">wundern</span> <span class="w" data-i="29">sich,</span> <span class="w" data-i="30">dass</span> <span class="w" data-i="31">er</span> <span class="w" data-i="32">es</span> <span class="w" data-i="33">geworden</span> <span class="w" data-i="34">ist,</span> <span class="w" data-i="35">sobald</span> <span class="w" data-i="36">die</span> <span class="w" data-i="37">wankelmütige</span> <span class="w" data-i="38">Gunst</span> <span class="w" data-i="39">sich</span> <span class="w" data-i="40">gedreht</span> <span class="w" data-i="41">hat.</span> <span class="w" data-i="42">Dasselbe</span> <span class="w" data-i="43">loben</span> <span class="w" data-i="44">wir,</span> <span class="w" data-i="45">dasselbe</span> <span class="w" data-i="46">tadeln</span> <span class="w" data-i="47">wir.</span> <span class="w" data-i="48">So</span> <span class="w" data-i="49">endet</span> <span class="w" data-i="50">jedes</span> <span class="w" data-i="51">Urteil,</span> <span class="w" data-i="52">das</span> <span class="w" data-i="53">nach</span> <span class="w" data-i="54">der</span> <span class="w" data-i="55">Mehrheit</span> <span class="w" data-i="56">gefällt</span> <span class="w" data-i="57">wird.</span>“</p>
 
   <div class="zeit">
     <div class="balken" id="balken" role="slider" aria-label="Stelle im Text" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0"><span id="fuell"></span></div>
@@ -70,13 +74,21 @@
   var F = [
     { k: "l1", n: "1 · Original", d: "Lupert, wie ElevenLabs ihn liefert · 121 Hz" },
     { k: "l2", n: "2 · PSOLA, 3,3 Halbtöne tiefer", d: "Praat, Klangfarbe erhalten, genauere Tonhöhenerkennung · 100 Hz" },
-    { k: "l3", n: "3 · WORLD, 3,3 Halbtöne tiefer", d: "Sprach-Vocoder, neu berechnet, genauere Tonhöhenerkennung · 100 Hz" },
+    { k: "l3", n: "3 · WORLD, 3,3 Halbtöne tiefer", d: "Sprach-Vocoder, feiner gerechnet (1-ms-Raster) · 100 Hz" },
     { k: "l4", n: "4 · PSOLA, 2 Halbtöne tiefer", d: "Praat, Klangfarbe erhalten, genauere Tonhöhenerkennung · 108 Hz" }
   ];
   var PLAY = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5.5v13a1 1 0 0 0 1.5.86l10.2-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>';
   var PAUSE = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>';
   var ton = document.getElementById("ton"), liste = document.getElementById("liste"), aktiv = null, TEMPO = 0.95, gleicheStelle = false;
   document.getElementById("gleich").addEventListener("click", function () { gleicheStelle = !gleicheStelle; this.setAttribute("aria-pressed", String(gleicheStelle)); });
+  var T = [0.0, 0.2, 0.5, 0.8, 0.98, 1.34, 1.62, 1.8, 2.3, 2.52, 3.06, 3.26, 3.78, 4.44, 5.04, 5.2, 5.36, 5.62, 5.82, 6.0, 6.18, 7.06, 7.78, 7.9, 8.34, 8.5, 8.9, 9.16, 9.96, 10.28, 10.66, 10.76, 10.9, 11.04, 11.44, 12.06, 12.46, 12.56, 13.28, 13.66, 13.84, 14.28, 15.0, 15.48, 15.78, 16.36, 16.78, 17.18, 17.8, 18.14, 18.52, 18.82, 19.48, 19.58, 19.76, 19.92, 20.32, 20.68], woerter = document.querySelectorAll("#satz .w"), zuletzt = -2;
+  function markiere() {
+    var t = aktiv ? ton.currentTime : 0, i = -1;
+    if (aktiv && t > 0) { while (i + 1 < T.length && T[i + 1] <= t + 0.05) i++; }
+    if (i === zuletzt) return; zuletzt = i;
+    for (var j = 0; j < woerter.length; j++) { woerter[j].classList.toggle("vorbei", j < i); woerter[j].classList.toggle("jetzt", j === i); }
+  }
+  (function schleife() { if (!ton.paused) markiere(); requestAnimationFrame(schleife); })();
   var mmss = function (s) { s = Math.max(0, s || 0); return Math.floor(s / 60) + ":" + String(Math.floor(s % 60)).padStart(2, "0"); };
 
   F.forEach(function (f) {
@@ -110,7 +122,8 @@
 
   ton.addEventListener("play", function () { if (Math.abs(ton.playbackRate - TEMPO) > .001) tempo(); zeichne(); });
   ton.addEventListener("pause", zeichne);
-  ton.addEventListener("ended", zeichne);
+  ton.addEventListener("ended", function () { zeichne(); zuletzt = -2; for (var j = 0; j < woerter.length; j++) { woerter[j].classList.add("vorbei"); woerter[j].classList.remove("jetzt"); } });
+  ton.addEventListener("seeked", markiere);
   ton.addEventListener("timeupdate", function () {
     var d = ton.duration || 21.2, t = ton.currentTime || 0;
     document.getElementById("fuell").style.width = (100 * t / d) + "%";

@@ -194,6 +194,8 @@ die Messung nicht; das bleibt Sache des Ohrs.
    Hauptursache: die knarrenden Phrasenenden werden mit abgesenkt und rutschen unter 70 Hz (PSOLA −3,3 HT: 41 Rahmen,
    −2 HT: 7). Nächster möglicher Schritt: nur die Mitte der Tonhöhe absenken, die Tiefen weniger (nichtlineare
    Abbildung über Praat-Manipulation). Die Hörseite spielt beim Umschalten jetzt von vorn; Schalter für „an derselben Stelle“.
+   Nutzer: WORLD klingt „komprimiert, knisterig“. Neu gerechnet mit 1-ms-Raster, StoneMask, D4C-Schwelle 0,75,
+   FFT 4096, MP3 160 kbit/s; Urteil offen. Die Hörseite markiert jetzt das gesprochene Wort (Karaoke).
    Ursprünglicher Plan: neuer Abschnitt Teil 2, Absatz 3 („Nun aber steht das Volk …“, 350 Zeichen,
    etwa 150 Credits je Stimme) mit Alexander, Leo Liest, Robert, Gottfried, Marcus, Marko, Helmut Stieglbauer und Lupert,
    dazu Lupert um 2,5 HT abgesenkt (formanterhaltend, `rubberband` ist in ffmpeg vorhanden, kostenlos) als Test der
