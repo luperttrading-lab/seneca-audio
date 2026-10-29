@@ -37,13 +37,19 @@
   .name b { font-weight: 600; }
   .name span { color: var(--grau); font-size: 14px; }
   .hinweis { margin: 0; color: var(--grau); font-size: 14px; }
+  .schalter { justify-self: start; display: inline-flex; align-items: center; gap: 10px; border: 0; background: transparent; padding: 6px 0; color: var(--tinte); font-size: 15px; }
+  .schalter i { width: 40px; height: 24px; border-radius: 12px; background: var(--linie); position: relative; flex: 0 0 auto; }
+  .schalter i::after { content: ""; position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 50%; background: var(--grau); transition: transform .15s; }
+  .schalter[aria-pressed="true"] i { background: var(--bronze); }
+  .schalter[aria-pressed="true"] i::after { transform: translateX(16px); background: var(--stein); }
+  @media (prefers-reduced-motion: reduce) { .schalter i::after { transition: none; } }
 </style>
 
 <main>
   <header class="kopf">
     <span class="eyebrow">Seneca · Stimmensuche</span>
     <h1>Lupert tiefer</h1>
-    <p class="lead">Tippe eine Fassung an. Beim Umschalten läuft die nächste an derselben Stelle weiter, so hörst du direkt den Unterschied.</p>
+    <p class="lead">Tippe eine Fassung an, sie beginnt von vorn. Wer lieber Satz für Satz vergleicht, schaltet unten „an derselben Stelle weiter“ ein.</p>
   </header>
 
   <p class="satz">„Nun aber steht das Volk gegen die Vernunft und verteidigt sein eigenes Übel. Darum geht es zu wie bei den Wahlen: Dieselben, die jemanden zum Prätor gemacht haben, wundern sich, dass er es geworden ist, sobald die wankelmütige Gunst sich gedreht hat. Dasselbe loben wir, dasselbe tadeln wir. So endet jedes Urteil, das nach der Mehrheit gefällt wird.“</p>
@@ -54,6 +60,7 @@
   </div>
 
   <ol id="liste"></ol>
+  <button type="button" class="schalter" id="gleich" aria-pressed="false"><i aria-hidden="true"></i>An derselben Stelle weiter</button>
   <p class="hinweis">Alle vier gleich laut, abgespielt mit Tempo 0,95 wie im Hörbuch. Sprechweise und Dauer sind identisch, nur die Tonlage unterscheidet sich.</p>
   <audio id="ton" preload="auto"></audio>
 </main>
@@ -62,13 +69,14 @@
 (function () {
   var F = [
     { k: "l1", n: "1 · Original", d: "Lupert, wie ElevenLabs ihn liefert · 121 Hz" },
-    { k: "l2", n: "2 · PSOLA, 3,3 Halbtöne tiefer", d: "Praat, Klangfarbe erhalten · 100 Hz" },
-    { k: "l3", n: "3 · WORLD, 3,3 Halbtöne tiefer", d: "Sprach-Vocoder, neu berechnet · 100 Hz" },
-    { k: "l4", n: "4 · PSOLA, 2 Halbtöne tiefer", d: "Praat, Klangfarbe erhalten · 108 Hz" }
+    { k: "l2", n: "2 · PSOLA, 3,3 Halbtöne tiefer", d: "Praat, Klangfarbe erhalten, genauere Tonhöhenerkennung · 100 Hz" },
+    { k: "l3", n: "3 · WORLD, 3,3 Halbtöne tiefer", d: "Sprach-Vocoder, neu berechnet, genauere Tonhöhenerkennung · 100 Hz" },
+    { k: "l4", n: "4 · PSOLA, 2 Halbtöne tiefer", d: "Praat, Klangfarbe erhalten, genauere Tonhöhenerkennung · 108 Hz" }
   ];
   var PLAY = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5.5v13a1 1 0 0 0 1.5.86l10.2-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>';
   var PAUSE = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>';
-  var ton = document.getElementById("ton"), liste = document.getElementById("liste"), aktiv = null, TEMPO = 0.95;
+  var ton = document.getElementById("ton"), liste = document.getElementById("liste"), aktiv = null, TEMPO = 0.95, gleicheStelle = false;
+  document.getElementById("gleich").addEventListener("click", function () { gleicheStelle = !gleicheStelle; this.setAttribute("aria-pressed", String(gleicheStelle)); });
   var mmss = function (s) { s = Math.max(0, s || 0); return Math.floor(s / 60) + ":" + String(Math.floor(s % 60)).padStart(2, "0"); };
 
   F.forEach(function (f) {
@@ -93,8 +101,7 @@
 
   function waehle(k) {
     if (k === aktiv) { if (ton.paused) spiel(); else ton.pause(); return; }
-    var stelle = aktiv ? ton.currentTime : 0, lief = aktiv ? !ton.paused : true;
-    if (aktiv && ton.ended) stelle = 0;
+    var stelle = (gleicheStelle && aktiv && !ton.ended) ? ton.currentTime : 0, lief = true;
     aktiv = k; ton.src = "audio/" + k + ".mp3";
     var weiter = function () { try { ton.currentTime = stelle; } catch (e) {} if (lief) spiel(); zeichne(); };
     if (ton.readyState >= 1) weiter(); else ton.addEventListener("loadedmetadata", weiter, { once: true });

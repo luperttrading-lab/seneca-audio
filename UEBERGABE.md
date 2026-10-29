@@ -189,6 +189,11 @@ die Messung nicht; das bleibt Sache des Ohrs.
    weglassen). Bessere Verfahren: Praat PSOLA („Change gender“, Formantfaktor 1,0) −3,3 HT: CPPS 6,90, Abstand 0,46 dB;
    WORLD-Vocoder (`pyworld`) −3,3 HT: CPPS 9,52 (Vocoder glättet), Abstand 0,52 dB; PSOLA −2,0 HT: CPPS 7,05, 0,40 dB.
    Hörproben an den Nutzer geschickt; die gewählte Fassung kommt als neuer Eintrag ins Duell.
+   Nutzer (29.10.): auch PSOLA/WORLD klingen „etwas unsauber“ (Verarbeitungsartefakte). Neu gerechnet mit engerer
+   Tonhöhenerkennung (80–220 Hz statt 60–300; im Original 11 Oktavfehler, 30 Rahmen unter 80 Hz). Wahrscheinliche
+   Hauptursache: die knarrenden Phrasenenden werden mit abgesenkt und rutschen unter 70 Hz (PSOLA −3,3 HT: 41 Rahmen,
+   −2 HT: 7). Nächster möglicher Schritt: nur die Mitte der Tonhöhe absenken, die Tiefen weniger (nichtlineare
+   Abbildung über Praat-Manipulation). Die Hörseite spielt beim Umschalten jetzt von vorn; Schalter für „an derselben Stelle“.
    Ursprünglicher Plan: neuer Abschnitt Teil 2, Absatz 3 („Nun aber steht das Volk …“, 350 Zeichen,
    etwa 150 Credits je Stimme) mit Alexander, Leo Liest, Robert, Gottfried, Marcus, Marko, Helmut Stieglbauer und Lupert,
    dazu Lupert um 2,5 HT abgesenkt (formanterhaltend, `rubberband` ist in ffmpeg vorhanden, kostenlos) als Test der
