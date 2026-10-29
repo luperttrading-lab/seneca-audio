@@ -2,7 +2,7 @@
 
 Seneca, *De vita beata* (an Gallio), 28 Kapitel, rund 7.260 lateinische Wörter; das Werk bricht in Kapitel 28 mitten im
 Satz ab. Lateinischer Text: [The Latin Library](https://www.thelatinlibrary.com/sen/sen.vita.shtml), je Teil in
-`texte/latein/teilNN.txt`. Eigene Übersetzung je Teil in `texte/teilNN.txt`.
+`texte/latein/teilNN.txt`. Eigene Übersetzung je Teil in `texte/teilNN.txt`. Endprodukt: ein YouTube-Video mit mitlaufendem Text.
 
 ## Stil der Übersetzung
 

@@ -277,7 +277,11 @@ die Messung nicht; das bleibt Sache des Ohrs.
    in `PLAN.md` (Abschnitte und gesprochene Titel). Für Teil 1–4: gesprochen nur „Wohin und auf welchem Weg“ vor Teil 1
    und „Im Einklang mit der Natur“ vor Teil 4. Titel als eigener Clip, nicht in `texte/teilNN.txt`.
    **Idee des Nutzers:** Stellenangaben (Kapitel,Paragraf wie 1,4) sichtbar im Text, auf der Seite und später im Video,
-   mit Sprungmöglichkeit; nicht gesprochen. Vorschlag gemacht, Freigabe offen.
+   mit Sprungmöglichkeit; nicht gesprochen. **Endprodukt ist ein YouTube-Video** (Nutzer, 29.10.): also nichts zum
+   Ein- und Ausblenden, die Darstellung muss vorher feststehen. Vorschlag: keine Zahlen im laufenden Text, sondern eine
+   feste Stellenanzeige in der Ecke („Kapitel 1,4“), Titelkarte an den fünf Abschnittsanfängen, YouTube-Kapitelmarken je
+   lateinischem Kapitel in der Beschreibung (Regeln: erste Marke 0:00, mindestens drei, je mindestens 10 s).
+   Unsichtbare Marken in `texte/teilNN.txt` liefern die Zeiten. Freigabe offen.
 3. Teil 4 freigeben lassen. Entscheidungen im Entwurf, die der Nutzer prüfen sollte:
    - Lücke und Crux in 3,4 sind geglättet wie bei Stewart und Forbiger (beide glätten): „an die Stelle der Lüste und
      all dessen, was klein und zerbrechlich ist und schon durch seine Schändlichkeit schadet, tritt …“.
