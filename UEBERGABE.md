@@ -266,7 +266,7 @@ die Messung nicht; das bleibt Sache des Ohrs.
 2. Mit der gewählten Stimme und dem gewählten Modell Teil 1 und 2 neu erzeugen, Teil 3 und 4 aufnehmen, alles neu
    verarbeiten.
    **Text von Teil 1 und 2 am 29.10. sprachlich nachgebessert** (vom Nutzer freigegeben, er liest noch einmal gegen):
-   Teil 1 „vergrößert gerade die Eile den Abstand“ statt „wird … zur Ursache einer noch größeren Entfernung“; Teil 2
+   Teil 1 „wird gerade die Eile zur Ursache einer noch größeren Entfernung“ bleibt ausdrücklich so (Nutzer); Teil 2
    „Denn nichts verstrickt uns …“ statt „Und doch …“ (atqui ist hier kein Gegensatz) und „jeder ist auch Ursache und
    Urheber des Irrtums anderer“ statt „… auch fremden Irrtums“. „Am Beispiel der anderen gehen wir zugrunde“ bleibt
    ausdrücklich so (Nutzer). Die öffentlichen Aufnahmen haben noch den alten Wortlaut, bis zur Neuvertonung.
