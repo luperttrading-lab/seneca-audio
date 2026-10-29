@@ -32,16 +32,30 @@
   .w { color: transparent; -webkit-background-clip: text; background-clip: text;
     background-image: linear-gradient(90deg, var(--tinte) calc(var(--f, 0) * (100% + 1em) - 1em), var(--grau) calc(var(--f, 0) * (100% + 1em))); }
   .w.vorbei { --f: 1; }
-  .marke { font: 600 .5em/1 var(--ui); letter-spacing: .04em; color: var(--bronze); margin-right: .45em; white-space: nowrap; vertical-align: .18em; }
+  .marke { color: var(--bronze); margin-right: .3em; white-space: nowrap; font-variant-numeric: lining-nums; }   /* wie im Buch: gleiche Schrift und Größe */
   .titelkarte { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 28px; text-align: center; }
   .titelkarte .ab { font: 600 26px/1 var(--ui); letter-spacing: .18em; text-transform: uppercase; color: var(--bronze); }
   .titelkarte h1 { margin: 0; font: 600 96px/1.15 var(--display); letter-spacing: .03em; max-width: 1500px; text-wrap: balance; }
   .titelkarte i { width: 120px; height: 2px; background: var(--bronze); }
   .titelkarte p { margin: 0; font: 500 28px/1.3 var(--ui); color: var(--grau); }
   #textbild { position: absolute; inset: 0; }
+  /* Startseite wie ein Titelblatt: Autor über dem Werktitel, darunter der deutsche Titel */
+  .start { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; text-align: center; }
+  .start .autor { font: 600 30px/1 var(--ui); letter-spacing: .3em; text-transform: uppercase; color: var(--bronze); margin-bottom: 44px; }
+  .start h1 { margin: 0; font: 600 132px/1.05 var(--display); letter-spacing: .04em; }
+  .start i { width: 160px; height: 2px; background: var(--bronze); margin: 48px 0 40px; }
+  .start .deutsch { margin: 0; font: italic 400 64px/1.2 var(--text); color: var(--tinte); }
+  .start .zusatz { margin: 56px 0 0; font: 500 26px/1.4 var(--ui); color: var(--grau); letter-spacing: .02em; }
 </style>
 </head>
 <body>
+  <section class="start" id="start" style="opacity:0">
+    <span class="autor">Lucius Annaeus Seneca</span>
+    <h1>De vita beata</h1>
+    <i></i>
+    <p class="deutsch">Vom glücklichen Leben</p>
+    <p class="zusatz">An seinen Bruder Gallio · aus dem Lateinischen neu übersetzt</p>
+  </section>
   <section class="titelkarte" id="titelkarte">
     <span class="ab" id="t-ab"></span>
     <h1 id="t-titel"></h1>
@@ -117,7 +131,9 @@
   }
   function zeige(t) {
     var weich = function (x) { x = Math.max(0, Math.min(1, x)); return x * x * (3 - 2 * x); };   // erst Titel aus, dann Text ein
-    document.getElementById("titelkarte").style.opacity = String(1 - weich((t - D.titel_ende) / 0.4));
+    var s = D.start_ende || 0;   // Startseite nur im ersten Teil: bis start_ende, danach die Titelkarte des Abschnitts
+    document.getElementById("start").style.opacity = String(D.start_ende ? 1 - weich((t - s) / 0.5) : 0);
+    document.getElementById("titelkarte").style.opacity = String((D.start_ende ? weich((t - s - 0.4) / 0.6) : 1) * (1 - weich((t - D.titel_ende) / 0.4)));
     document.getElementById("textbild").style.opacity = String(weich((t - D.titel_ende - 0.35) / 0.5));
     document.getElementById("inhalt").style.transform = "translate3d(0," + (-kurve(t)).toFixed(2) + "px,0)";
     var i = wortBei(t + 0.03);
