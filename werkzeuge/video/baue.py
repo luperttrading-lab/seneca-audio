@@ -13,5 +13,6 @@ with tempfile.TemporaryDirectory(dir=os.path.dirname(os.path.abspath(aus))) as b
     if any(p.wait() for p in prozesse): sys.exit("Rendern fehlgeschlagen")
     subprocess.run(["ffmpeg", "-nostdin", "-y", "-loglevel", "error", "-framerate", fps, "-i", os.path.join(bilder, "%06d.jpg"), "-i", ton,
                     "-map", "0:v", "-map", "1:a", "-c:v", "libx264", "-preset", "slow", "-crf", "20", "-pix_fmt", "yuv420p",
-                    "-c:a", "aac", "-b:a", "160k", "-movflags", "+faststart", "-shortest", aus], check=True)
+                    "-af", "aresample=48000:resampler=soxr", "-ac", "2", "-c:a", "aac", "-b:a", "384k",   # YouTube-Empfehlung: AAC-LC, Stereo, 48 kHz
+                    "-movflags", "+faststart", "-shortest", aus], check=True)
 print("fertig:", aus)
