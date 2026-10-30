@@ -1,6 +1,6 @@
 # Kapitel 6 – Notizen der Übersetzungssitzung
 
-Stand: Entwurf (30.10.), Freigabe offen.
+Stand: Entwurf mit den empfohlenen Änderungen aus Prüf-Agent, zweiter Durchsicht und Fable-Prüfung (30.10.), Freigabe offen.
 
 ## Abgleich
 
