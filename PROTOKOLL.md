@@ -629,3 +629,4 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
 - **Fingerabdruck Kapitel 4**: 28 Sätze gegen das ganze Kapitel 0,849–0,975 (Median 0,943); kurze Sätze unter 7 s ab
   0,849. Neue Fassungen: „Diese Dinge nehmen“ 0,848/0,804/0,810, „Sie kommen und gehen“ 0,865/0,892/0,892, „An all dem“
   0,933/0,914/0,927; alle wortgetreu, Betonung unauffällig.
+- **Hörprüfung, Test an Kapitel 5** (freigegeben, noch nicht aufgenommen): keine schwere Hürde, 4 mittlere, 3 leichte Funde; alle Vorschläge klein und sinngetreu (gegen das Latein geprüft), einer angepasst („als Ganze“ → „ganz“).
