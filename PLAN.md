@@ -61,6 +61,15 @@ Leitbegriffe beim ersten Auftreten eintragen und vorlegen.
 | *tranquillitas* | Ruhe | angenommen 30.10. (3,4) |
 | *rerum natura* | die Natur | angenommen 30.10. (3,3) |
 | *magnitudo animi* | Seelengröße (feste Wendung; nicht „Größe“ allein, nicht „Erhabenheit“ oder „Geistesgröße“) | angenommen 30.10. (3,4) |
+| *definire*, *finire*, *finitio* | bestimmen, Bestimmung | vorgeschlagen 30.10. (4,1), Freigabe mit Kapitel 4 |
+| *fortuita* | was der Zufall bringt (Abgrenzung zu *fortuna* = Schicksal) | vorgeschlagen 30.10. (4,2), Freigabe mit Kapitel 4 |
+| *malum* | Übel | vorgeschlagen 30.10. (4,2), Freigabe mit Kapitel 4 |
+| *honestum*, *honestas* | das Ehrenhafte | vorgeschlagen 30.10. (4,2–3), Freigabe mit Kapitel 4 |
+| *turpitudo* | Schande | vorgeschlagen 30.10. (4,3), Freigabe mit Kapitel 4 |
+| *metus*, *cupiditas* | Furcht, Begierde | vorgeschlagen 30.10. (4,3), Freigabe mit Kapitel 4 |
+| *dolor* | Schmerz | vorgeschlagen 30.10. (4,4), Freigabe mit Kapitel 4 |
+| *hilaritas*, *laetitia*, *laetus* | Heiterkeit, Fröhlichkeit, froh (*gaudium* bleibt Freude) | vorgeschlagen 30.10. (4,2; 4,4), Freigabe mit Kapitel 4 |
+| *sublimitas* | Erhabenheit | vorgeschlagen 30.10. (4,5), Freigabe mit Kapitel 4 |
 
 ## Vom Auftraggeber festgelegt (nicht mehr ändern)
 
