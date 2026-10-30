@@ -39,6 +39,21 @@ nicht hoch“ (Bezug genannt, nicht zweimal „schätzt“), „über kleinste, 
 - Bezug für Kapitel 11: 10,3 endet „Du tust alles um der Lust willen, ich nichts.“, 11,1 nimmt das auf
   (*Cum dico me nihil uoluptatis causa facere*): dort ebenfalls „um der Lust willen“.
 
+## Prüfung mit Fable, Stufe extra hoch (30.10., Vorgabe der Hauptsitzung)
+
+Vorschläge, noch nicht eingetragen, Freigabe offen:
+- 10,3 „All das verscheucht die Tugend.“ → „Die Tugend vertreibt all das.“ Hörfalle: „All das“ klingt wie das Subjekt
+  (*Haec omnia uirtus discutit*).
+- 10,3 „schätzt die Lüste ein“ → „prüft den Wert der Lüste“ (*aestimat*). Beim Hören klingt „schätzt die Lüste“ zuerst
+  wie „achtet sie hoch“; passt auch zu 11,2 *uoluptates praegustare* (Vorkosten).
+- 10,2 Semikolon vor „die Faulheit“ (bestätigt).
+
+Abgelehnt mit Grund: „Auch ich behaupte“ (*ego enim nego*, „doch“ trägt den Nachdruck, „auch“ wäre Zutat); „Das ist …
+nicht gegeben“ (*contingere* zweimal = „zuteilwerden … zuteil“, Zipf 2,2, nicht selten); „Klar und offen bezeuge ich“
+(Geschmack); „unbedacht“ statt „kurzsichtig“ (*inprouidum* = ohne Voraussicht, „kurzsichtig“ trifft es). Offen als
+Geschmack: „andere zu kränken“ oder „zu beleidigen“ (*contumeliis*). Hinweis für Kapitel 14: *amore caeco rei* (14,1)
+wie hier „blinde Liebe“.
+
 ## Wörter für woerter_ok.txt
 
 - zuteilwerden (Duden-Schreibung, Zipf 2,2), einschläft (Beugung von einschlafen)
