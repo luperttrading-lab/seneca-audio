@@ -71,8 +71,19 @@ wie 9,1; 10,1 „ihr Gut an der Nahrung“ antwortet auf 9,4 „das Gut des Bauc
 *vitium*, *delectare*, *luxuria*, *sanitas*, *dementia* kommen in Kapitel 10 nicht vor. Neu nur noch *stultus*,
 *temperantia*, *nequitia*, *uti/frui* (Vorschlag oben).
 
+## Satzbau für das Ohr (Befund des Auftraggebers, über die Hauptsitzung, 30.10.)
+
+Umgebaut: 10,1 Doppelpunkt statt „dass“, „Ein solches Leben“ statt „Das“; 10,2 die Frage *quis ignorat* als Aussage
+„Doch jeder weiß:“, in Sätze geteilt, Liste mit „Das sind vor allem … Dazu kommen … Ferner … Und schließlich“,
+*fluentis, indormientis* als eigener Satz; 10,3 „Die Tugend ist nicht froh …“ (Nomen statt „sie“).
+Danach Hörprüfung mit Fable, übernommen: Einwurf früher („Du tust so“, wendet einer ein, „als …“ – Form der Vorgabe,
+Sprecher nach drei Wörtern); „denen, die“ statt der Zutat „Menschen“; „Von euren Lüsten hat niemand so viel“ statt
+„Niemand ist so voll“ (Hörfalle „voll“ = betrunken, „euren“ zeigt früh den Sprecherwechsel); „noch“ gestrichen;
+„der Dünkel, der sich … erhebt“ zurück. Abgelehnt: „Die Tugend achtet selbst die Lüste nicht hoch“ („selbst“ klänge
+wie „die Tugend selbst“).
+
 ## Wörter für woerter_ok.txt
 
-- zuteilwerden (Duden-Schreibung, Zipf 2,2), einschläft (Beugung von einschlafen)
+- zuteilwerden (Duden-Schreibung, Zipf 2,2)
 
 LanguageTool-Hinweise ohne Änderung: „Angenehmes“ ist substantiviert; dreimal „Du“ am Satzanfang ist gewollte Anapher.
