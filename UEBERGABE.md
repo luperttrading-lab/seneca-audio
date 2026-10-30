@@ -19,14 +19,14 @@ Ton) stehen in `PLAN.md`, Verlauf, Versuche und Messungen in `PROTOKOLL.md`.
 Je Kapitel eine Sitzung, Schlagwort `seneca-uebersetzung`; Auftrag: nur `texte/kapitelNN.txt` und `texte/notizen/kapitelNN.md`
 ändern, Zweig `kapitelNN-entwurf`, nie nach main, vorher ein unabhängiger Prüf-Agent (Fable 5.1, extra hoch). Nach der Freigabe übernimmt die
 Hauptsitzung: Zweig nach main, Begriffe und Wörter aus den Notizen in `PLAN.md` und `texte/woerter_ok.txt`, dann Aufnahme.
-Vorläufig für alle: Einwürfe des gedachten Gegners (*inquit*) als „…“, wendet einer ein, „…“ (Entscheidung offen).
+Einwürfe des gedachten Gegners (*inquit*) als „…“, wendet einer ein, „…“ (mit Kapitel 6 angenommen, Begriffsliste).
 Am besten in der Reihenfolge freigeben (5, 6, 7 …): Eine Änderung in einem Kapitel kann die nächsten betreffen.
 
 | Kapitel | Sitzung | Stand |
 |---|---|---|
 | 4 | [session_01LHRCLp8bXNZjxkAQi9Capv](https://claude.ai/code/session_01LHRCLp8bXNZjxkAQi9Capv) | freigegeben, nach main übernommen |
 | 5 | [session_01LHRCLtCeTk9iLknnG3E4k9](https://claude.ai/code/session_01LHRCLtCeTk9iLknnG3E4k9) | Entwurf |
-| 6 | [session_01LHRCLofcYszWPPG4q1cQ2x](https://claude.ai/code/session_01LHRCLofcYszWPPG4q1cQ2x) | Entwurf |
+| 6 | [session_01LHRCLofcYszWPPG4q1cQ2x](https://claude.ai/code/session_01LHRCLofcYszWPPG4q1cQ2x) | freigegeben 30.10., nach main übernommen, Begriffe in `PLAN.md` |
 | 7 | [session_01LHRCLsPeiyRaQQaCkE7Xnn](https://claude.ai/code/session_01LHRCLsPeiyRaQQaCkE7Xnn) | Entwurf |
 | 8 | [session_01LHRCLsMyGzZSU8bDAFFVua](https://claude.ai/code/session_01LHRCLsMyGzZSU8bDAFFVua) | Entwurf |
 | 9 | [session_01LHRCLr69UpdLa5dfc8orJr](https://claude.ai/code/session_01LHRCLr69UpdLa5dfc8orJr) | Entwurf |

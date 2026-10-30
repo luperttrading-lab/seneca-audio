@@ -75,6 +75,10 @@ Leitbegriffe beim ersten Auftreten eintragen und vorlegen.
 | *dolor* | Schmerz | angenommen 30.10. (4,4) |
 | *hilaritas*, *laetitia*, *laetus* | Heiterkeit, Fröhlichkeit, froh (*gaudium* bleibt Freude) | angenommen 30.10. (4,2; 4,4) |
 | *sublimitas* | Erhabenheit | angenommen 30.10. (4,5) |
+| *luxuria* | Luxus (Leitbegriff, wieder in 11, 12, 13, 17) | angenommen 30.10. (6,1) |
+| *sanitas*, *sanus* | Gesundheit, gesund | angenommen 30.10. (6,1) |
+| *dementia* | Wahnsinn | angenommen 30.10. (6,1) |
+| *inquit* (gedachter Gegner) | „…“, wendet einer ein, „…“; weitere Einwürfe im selben Absatz „sagt er“ | angenommen 30.10. (6,1) |
 
 ## Vom Auftraggeber festgelegt (nicht mehr ändern)
 
