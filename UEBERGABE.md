@@ -87,6 +87,7 @@ Video ohne Credits neu. Jedes weitere Kapitel nach der Abnahme genauso sichern.
 
 ## Links (aktuell)
 
+- **Kapitel 6 · Änderungen** (privat; Verständnisprüfung, 3 Vorschläge): https://claude.ai/artifact/X95yj1BpAui7xqWJq1SJoz
 - **Kapitel 5 · Änderungen** (privat; Vorschläge der Verständnisprüfung mit Farben; gebaut mit `seite/aenderungen.py`):
   https://claude.ai/artifact/NxjKg5zwacGMQLniGhWyan
 - **Kapitel 4 · Hörprobe** (privat; `quelle/` mit Rohaufnahme; Quelle `seite/hoerprobe.py`):
