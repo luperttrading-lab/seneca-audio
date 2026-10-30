@@ -618,3 +618,4 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
 - **Prüf-Agent mit Fable 5.1, Stufe extra hoch** (Auftraggeber: „können wir gerne machen“); Übersetzen bleibt Opus 5.5 extra hoch. Den Sitzungen 5–10 gemeldet.
 - **Kapitel 6 übernommen**: Freigabe in der eigenen Sitzung („Mach das, was du für sinnvoll hältst“); Begriffe *luxuria*, *sanitas*, *dementia*, *inquit* in `PLAN.md`.
 - **Kapitel 8 und 9 übernommen** (Freigabe je in der eigenen Sitzung, „Mach das, was du für sinnvoll hältst“): 27 Begriffe in `PLAN.md`, fünf Wörter in `woerter_ok.txt`. *turpis* „schändlich“, als Gegenwort zu *honestus* „ehrlos“ (8,1).
+- **Kapitel 4 aufgenommen**: 1.287 Credits, 3:43, Whisper beide Modelle „Sklavendienst [d]er“, Filter 3 Stellen (+7,4 / +6,0 HT / nur Funktionswörter). Hörprobe-Artifact mit `quelle/`.

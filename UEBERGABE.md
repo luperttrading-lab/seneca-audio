@@ -10,7 +10,7 @@ Ton) stehen in `PLAN.md`, Verlauf, Versuche und Messungen in `PROTOKOLL.md`.
 | 1 | fertig, freigegeben (`texte/kapitel01.txt`, Marken 1,1–1,5) | **fertig (Fassung v3):** Helmut, wortgetreu (499/499), 38 Pausen, 3:53; erster Satz von 1 (3) einzeln erzeugt eingesetzt („die vor uns hergeht“). Video am 30.10. mit Leseband C3 neu gerendert und die Full-HD-Datei erneut geschickt (ersetzt die erste vom Morgen), dazu Miniaturbilder mit und ohne „Kapitel 1“. Gesichert (siehe unten) |
 | 2 | fertig, freigegeben (30.10.; nach den Regeln in `PLAN.md` überarbeitet, 2,1 „offenbar die Mehrheit“) | **fertig, Video mit 1M und Bandenden B (30.10.)**, 2:52, Full-HD-Datei und Miniaturbild dem Auftraggeber geschickt, Vorschau-Artifact. Vorher: | **Ton erzeugt (30.10.)**, 989 Credits; Betonungsfilter: 0 markiert. „Bekränzten“ und „Beredsamkeit“ vom Auftraggeber als richtig gehört (`texte/verhoerer.txt`); 2,3 „dem Geschossen“ war ein echter Sprechfehler: Satz mit `satz.py` dreimal allein erzeugt (159 Credits), Fassung 3 eingesetzt, jetzt wortgetreu, 40 Pausen, 2:52. Vom Auftraggeber abgenommen; gesichert im Hörprobe-Artifact unter `quelle/` |
 | 3 | fertig, freigegeben (30.10.; nach den Regeln geprüft, Seelengröße, 3,1 neu mit „[ohne es zu erkennen]“, 3,3 „Ich gebe der Natur meine Stimme“, „abzuweichen“, „übereinstimmen“) | **fertig, Video mit 1M und Bandenden B (30.10.)**: 2:51, 358/358 wortgetreu; Full-HD-Datei und Miniaturbild geschickt, Vorschau-Artifact; Ton gesichert im Hörprobe-Artifact unter `quelle/`. YouTube-Beschreibung: Hinweis auf eckige Klammern |
-| 4 | fertig, freigegeben (30.10.; 4,2 „das, was“, 4,3 „jenseits der Furcht, jenseits der Begierde“, 4,4 „tief … aus der Tiefe“ bleibt); Begriffe aus Kapitel 4 in `PLAN.md` angenommen | – |
+| 4 | fertig, freigegeben (30.10.; 4,2 „das, was“, 4,3 „jenseits der Furcht, jenseits der Begierde“, 4,4 „tief … aus der Tiefe“ bleibt); Begriffe aus Kapitel 4 in `PLAN.md` angenommen | **Ton erzeugt (30.10.)**, 1.287 Credits; 3:43, 36 Pausen. Whisper (auch Gegenprobe): 4,4 „Sklavendienst der“ als „…dienst er“ gehört; Betonungsfilter: 3 Stellen (4,1 „Wie ES auch“, 4,4 „wird ER auch“, 4,5 „sondern ALS an dem“). **Hörprobe beim Auftraggeber**; Rohaufnahme im Hörprobe-Artifact unter `quelle/` gesichert |
 | 5–10 | **in Arbeit**, je Kapitel eine eigene Sitzung (Tabelle unten) | – |
 | 11–28 | Latein in `texte/latein/kapitelNN.txt` | – |
 
@@ -80,13 +80,15 @@ Video ohne Credits neu. Jedes weitere Kapitel nach der Abnahme genauso sichern.
 
 - Schlüssel als Umgebungsvariable `ELEVENLABS_API_KEY` (Text zu Sprache, Stimmen lesen, Modelle, Verlauf lesen, Benutzer;
   Stimmen schreiben bewusst gesperrt). Kontingent nicht abfragbar (`/v1/user` antwortet 401).
-- Grenze des Schlüssels 30.000 Credits; verbraucht etwa 15.985, übrig etwa 14.015 (Stand 30.10., nach Kapitel 3 mit fünf neuen Sätzen). Etwa 0,43 Credits je
+- Grenze des Schlüssels 30.000 Credits; verbraucht etwa 17.272, übrig etwa 12.728 (Stand 30.10., nach Kapitel 4). Etwa 0,43 Credits je
   Zeichen, ein Kapitel etwa 1.100–1.300. Das ganze Werk braucht etwa 28.800, die Grenze muss also steigen.
 - Kosten laut Auftraggeber: 1.000 Credits ≈ 0,10 € im Sparabo, sonst 0,20 €.
 - Höchstens 5 Anfragen gleichzeitig, sonst Fehler 429.
 
 ## Links (aktuell)
 
+- **Kapitel 4 · Hörprobe** (privat; `quelle/` mit Rohaufnahme; Quelle `seite/hoerprobe.py`):
+  https://claude.ai/artifact/3nbZjqMkh3UFLQojqMbvMg
 - Öffentliche Hörbuch-Seite: https://luperttrading-lab.github.io/seneca-audio/
 - **Kapitel 3 · Hörprobe** (privat; `quelle/` mit Rohaufnahme; Quelle `seite/hoerprobe_kapitel03.html`):
   https://claude.ai/artifact/Qp2qQxMTf5pRxxhT2h8XMV
