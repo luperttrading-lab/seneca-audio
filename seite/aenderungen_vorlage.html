@@ -1,6 +1,6 @@
 <title>{{titel}}</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Änderungsvorschläge für Kapitel {{kapitel}}: ganzer Satz vorher und nachher, Entferntes rot, Neues gold.">
+<meta name="description" content="Änderungsvorschläge, {{kapitel}}: ganzer Satz vorher und nachher, Entferntes rot, Neues gold.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Literata:opsz,wght@7..72,400&family=IBM+Plex+Sans:wght@500;600&display=swap">
@@ -35,12 +35,13 @@
   .neu { color: var(--tinte); }
   .grund { margin: 0; font-size: 14px; color: var(--grau); }
   .grund:empty { display: none; }
+  .gruppe { margin: 14px 0 0; font: 600 22px/1.2 var(--display); letter-spacing: .03em; text-align: center; }
   .fuss { margin: 0; text-align: center; font-size: 14px; color: var(--grau); }
 </style>
 
 <main>
   <header class="kopf">
-    <span class="eyebrow">Seneca · De vita beata · Kapitel {{kapitel}}</span>
+    <span class="eyebrow">Seneca · De vita beata · {{kapitel}}</span>
     <h1>Änderungen</h1>
     <p class="lead">{{lead}}</p>
     <p class="legende"><span><del>so</del> fällt weg</span><span><ins>so</ins> ist neu</span></p>

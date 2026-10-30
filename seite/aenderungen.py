@@ -27,8 +27,10 @@ def marke(tag, t):   # Leerraum am Rand bleibt außerhalb der Markierung, sonst 
     m = re.match(r"^(\s*)(.*?)(\s*)$", t, re.S); return f"{m[1]}<{tag}>{m[2]}</{tag}>{m[3]}"
 
 
-karten = []
+karten, gruppe = [], None
 for n, s in enumerate(D["stellen"], 1):
+    if s.get("gruppe") and s["gruppe"] != gruppe:   # mehrere Kapitel auf einer Seite: Zwischenüberschrift je Kapitel
+        gruppe = s["gruppe"]; karten.append(f'  <h2 class="gruppe">{html.escape(gruppe)}</h2>')
     v, w = markiert(s["vorher"], s["nachher"])
     davor = f'<p class="davor"><span>Satz davor</span>{html.escape(s["davor"])}</p>' if s.get("davor") else ""
     karten.append(f"""  <article class="stelle" id="s{n}">
@@ -43,6 +45,6 @@ for n, s in enumerate(D["stellen"], 1):
 
 vorlage = open(os.path.join(HIER, "aenderungen_vorlage.html"), encoding="utf-8").read()
 seite = (vorlage.replace("{{titel}}", html.escape(D["titel"])).replace("{{kapitel}}", str(D["kapitel"]))
-         .replace("{{lead}}", html.escape(D["lead"])).replace("{{anzahl}}", str(len(karten))).replace("{{karten}}", "\n".join(karten)))
+         .replace("{{lead}}", html.escape(D["lead"])).replace("{{anzahl}}", str(len(D["stellen"]))).replace("{{karten}}", "\n".join(karten)))
 open(os.path.join(aus, "index.html"), "w", encoding="utf-8").write(seite)
-print(os.path.join(aus, "index.html"), len(karten), "Stellen")
+print(os.path.join(aus, "index.html"), len(D["stellen"]), "Stellen")
