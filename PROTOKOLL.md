@@ -596,3 +596,9 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
   nicht verworfen). 1M Standard in `bild.html` (`mitte: 540`). Endkontrolle: 1080p25, AAC-LC Stereo 48 kHz, −18,1 LUFS, Dauer
   gleich `ende` (±0,03 s), Stichbilder Start, Ergänzung in Bronze, Mitte, Ende in Ordnung. Kapitel 1 und 2 haben noch C3 ohne
   Bildmitte.
+- **Harte Bandenden** (Auftraggeber, Bildschirmfoto Kapitel 3: das Gold hört „exakt am Anfang der Zeile auf und hinten am
+  Ende“). Ursache: Das Band lag im Textfenster (`overflow: hidden`) und wurde an dessen Rändern abgeschnitten, also genau an
+  Zeilenanfang und Fensterrand. Das Band liegt jetzt außerhalb des Fensters; neue Stilwerte `breite` (px über den Text
+  hinaus) und `ausklang` (px weiches Ausblenden, gestuft wie smoothstep). Ohne diese Werte bleibt das Bild wie bisher
+  (Abweichung höchstens 3 von 255, nur von der weggefallenen Eckenrundung). Standbilder A (bisher), B (100/120),
+  C (200/300), D (240/480) im Artifact „Lesebänder im Vergleich“, Runde 6.
