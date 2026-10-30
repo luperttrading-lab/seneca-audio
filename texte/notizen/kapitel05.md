@@ -28,6 +28,23 @@ Textprüfung 0 Hinweise, geprüft vom unabhängigen Prüf-Agenten. Freigabe offe
    Schaden“: „geschickt zu“ ist kein gängiges Deutsch, „geschickt in“ und „zum eigenen Schaden“ sind es; keine Zusätze.
 3. 5,3 „entkommen“ → „entgangen“ (*effugerit*): man entgeht einer Wunde, man entkommt einem Verfolger.
 
+## Prüf-Agent Fable (xhigh, 30.10.)
+
+Hat die Notizdatei mitgelesen, seine Bestätigung von Vorschlag 1 und 3 der zweiten Durchsicht ist daher nicht unabhängig.
+Kein Sinnfehler, nichts fehlt. Vorgelegt (offen):
+- 5,1 Schluss: „niemand glücklich nennen, was“ hört sich an wie „nennt niemanden glücklich“; „Verständnis vom“ unüblich
+  → „Und doch wird sie deshalb niemand glücklich nennen: Sie haben keinen Begriff vom Glück.“
+- 5,2 Imperativ hinter vorangestelltem Satzglied → „Stell auf dieselbe Stufe die Menschen, …“
+- 5,2 Hörfalle „geschickt“ (= gesandt) → „die erfinderisch ist im Verkehrten, zum eigenen Schaden“ (*sollers*; ersetzt
+  Vorschlag 2 der zweiten Durchsicht).
+- 5,3 *tunc … quae effugerit*: kein Bedingungssatz, *tunc* weist auf das Urteil zurück (Frage; Stewart und Forbiger
+  lesen „wenn“) → „… frei von allen Übeln. Er ist nicht nur den Wunden, sondern auch den Nadelstichen entgangen.“
+- 5,3 „stehen bleiben“ (= anhalten) → „stehen“ (*statura*).
+- 5,4 *lenire* „besänftigen“ → „erweichen“ (Gegenbild zum festen Stand in 5,3).
+Nicht übernommen: 5,2 „die eine stumpfe Natur … zu Vieh gemacht haben“ (Hörfalle „die eine“, *in numerum* ist nicht
+„zu Vieh“); 5,4 „in dem … übrig ist“ (wie Forbiger, Geschmack); 5,3 „auch wenn das Schicksal zürnt“ („gegen“ trägt das
+Bild der Verteidigung); 5,4 „eines nach dem anderen ansetzen“ (lassen).
+
 ## Prüf-Agent: übernommen
 
 - 5,2 *in numerum … redegit*: „unter das Vieh gesunken“ hieß „tiefer als“ → „dem Vieh und den Tieren gleich geworden“.
