@@ -9,7 +9,8 @@ Zusammenhang erzeugt war derselbe Satz 6 von 6 richtig betont. <ordner> ist der 
 2. Mit --nimm n: Fassung n an den Satzpausen in die Rohaufnahme des Kapitels einsetzen (Schnitt in der Mitte der Pausen,
    der neue Satz mit 50 ms Rand davor und 100 ms danach, 10 ms Blenden, Pegel wie der alte Satz). Die bisherige
    Rohaufnahme bleibt als .vorherN.mp3; danach läuft kapitel.py ohne neue Credits: Worttreue, Wortzeiten und Pausen neu.
-   Mehrere Sätze: alle außer dem letzten mit --ohne-kette einsetzen (die Wortzeiten werden dann nur verschoben).
+   Mehrere Sätze: in Textreihenfolge, alle außer dem letzten mit --ohne-kette (die Wortzeiten werden dann nur verschoben,
+   die des eingesetzten Satzes in seinen neuen Bereich gelegt; so geht auch ein direkt folgender Satz).
 """
 import json, os, re, subprocess, sys, urllib.request, wave
 import numpy as np
@@ -105,6 +106,11 @@ else:
     if not kette:   # Wortzeiten hinter dem Schnitt verschieben, damit der nächste Satz seinen Platz findet
         d = (len(s) - (e - a)) / SR
         for w in W[i1 + 1:]: w["s"] = round(w["s"] + d, 3); w["e"] = round(w["e"] + d, 3)
+        # die Wörter des Satzes selbst in den eingesetzten Bereich legen, sonst schneidet ein direkt folgender Satz
+        # seine Pausenmitte nach dem alten Satzende und kann das Ende des neuen Satzes abschneiden
+        n0, n1, o0, o1 = a / SR + 0.05, (a + len(s)) / SR - 0.10, W[i0]["s"], W[i1]["e"]
+        for w in W[i0:i1 + 1]:
+            for k in ("s", "e"): w[k] = round(n0 + (w[k] - o0) * (n1 - n0) / max(1e-6, o1 - o0), 3)
         json.dump(W, open(b + ".woerter.json", "w", encoding="utf-8"), ensure_ascii=False)
     j = os.path.join(ordner, name + ".json"); d = json.load(open(j, encoding="utf-8")); d["eingesetzt"] = nimm
     json.dump(d, open(j, "w", encoding="utf-8"), ensure_ascii=False)   # für die Hörprobe
