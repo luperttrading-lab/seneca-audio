@@ -26,7 +26,7 @@ Am besten in der Reihenfolge freigeben (5, 6, 7 …): Eine Änderung in einem Ka
 |---|---|---|
 | 4 | [session_01LHRCLp8bXNZjxkAQi9Capv](https://claude.ai/code/session_01LHRCLp8bXNZjxkAQi9Capv) | freigegeben, nach main übernommen |
 | 5 | [session_01LHRCLtCeTk9iLknnG3E4k9](https://claude.ai/code/session_01LHRCLtCeTk9iLknnG3E4k9) | freigegeben 30.10., nach main übernommen, Begriffe in `PLAN.md`; Verständnisprüfung: 4 von 7 übernommen; **Ton erzeugt** (650 Credits), dann 5,1 und 5,2 neu (291 Credits): wortgetreu, Filter 0, 1:52; vom Auftraggeber abgenommen; **Video fertig (30.10.)**, 1:52, Full HD und Miniaturbild geschickt, Vorschau-Artifact; `quelle/` im Hörprobe-Artifact |
-| 6 | [session_01LHRCLofcYszWPPG4q1cQ2x](https://claude.ai/code/session_01LHRCLofcYszWPPG4q1cQ2x) | freigegeben 30.10., nach main übernommen, Begriffe in `PLAN.md` |
+| 6 | [session_01LHRCLofcYszWPPG4q1cQ2x](https://claude.ai/code/session_01LHRCLofcYszWPPG4q1cQ2x) | freigegeben 30.10., nach main übernommen, Begriffe in `PLAN.md`; Verständnisprüfung: 3 übernommen; **Ton erzeugt** (405 Credits, wortgetreu, Filter 3 Stellen, 1:12), Hörprobe beim Auftraggeber, `quelle/` gesichert |
 | 7 | [session_01LHRCLsPeiyRaQQaCkE7Xnn](https://claude.ai/code/session_01LHRCLsPeiyRaQQaCkE7Xnn) | Entwurf |
 | 8 | [session_01LHRCLsMyGzZSU8bDAFFVua](https://claude.ai/code/session_01LHRCLsMyGzZSU8bDAFFVua) | freigegeben 30.10., nach main übernommen, Begriffe in `PLAN.md` |
 | 9 | [session_01LHRCLr69UpdLa5dfc8orJr](https://claude.ai/code/session_01LHRCLr69UpdLa5dfc8orJr) | freigegeben 30.10., nach main übernommen, Begriffe in `PLAN.md` |
@@ -80,13 +80,14 @@ Video ohne Credits neu. Jedes weitere Kapitel nach der Abnahme genauso sichern.
 
 - Schlüssel als Umgebungsvariable `ELEVENLABS_API_KEY` (Text zu Sprache, Stimmen lesen, Modelle, Verlauf lesen, Benutzer;
   Stimmen schreiben bewusst gesperrt). Kontingent nicht abfragbar (`/v1/user` antwortet 401).
-- Grenze des Schlüssels 30.000 Credits; verbraucht etwa 19.212, übrig etwa 10.788 (Stand 30.10., nach Kapitel 5 mit zwei neuen Sätzen). Etwa 0,43 Credits je
+- Grenze des Schlüssels 30.000 Credits; verbraucht etwa 19.617, übrig etwa 10.383 (Stand 30.10., nach Kapitel 6). Etwa 0,43 Credits je
   Zeichen, ein Kapitel etwa 1.100–1.300. Das ganze Werk braucht etwa 28.800, die Grenze muss also steigen.
 - Kosten laut Auftraggeber: 1.000 Credits ≈ 0,10 € im Sparabo, sonst 0,20 €.
 - Höchstens 5 Anfragen gleichzeitig, sonst Fehler 429.
 
 ## Links (aktuell)
 
+- **Kapitel 6 · Hörprobe** (privat; `quelle/` mit Rohaufnahme): https://claude.ai/artifact/45aQFNyxk9TrajdLWmLGmU
 - **Kapitel 5 · Vorschau** (privat; Video 720p): https://claude.ai/artifact/CEQGytbmUt4eh7vy3AgXHQ
 - **Kapitel 6–10 · Änderungen** (privat; Verständnisprüfung, 16 Vorschläge, ersetzt die Seite für Kapitel 6): https://claude.ai/artifact/BDSMEdR8X8tUomtyUC8TnQ
 - **Kapitel 5 · Hörprobe** (privat; `quelle/` mit Rohaufnahme): https://claude.ai/artifact/Gq6XW7W9b6wU45ZytiLaPa

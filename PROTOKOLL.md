@@ -646,3 +646,4 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
   deshalb), 10,3 „[sagst du]“ ohne Klammern (Ergänzung wird ohnehin gesprochen). Hinweise ohne Änderung: 7,3 „Ädil“
   (Sachbegriff), mehrere schwere Gedanken.
 - **Kapitel 6, Verständnisprüfung übernommen** (Auftraggeber): 6,1 „soll der Geist“, „nach den künftigen Lüsten“, „Denn wer das Übel dem wahren Gut vorzieht, ist wahnsinnig.“ (*mala pro bonis legere dementia est*; „Güter“ klang nach Besitz, „das Gute“ zu allgemein; „wahr“ spricht den stoischen Sinn aus).
+- **Kapitel 6 aufgenommen**: 405 Credits, 152/152 wortgetreu, 11 Pausen, 1:12; Filter 3 Stellen: „wendet einer EIN“ (+5,7; Vorsilbe von „einwenden“, betont richtig, Fehlalarm des Filters), „Er SOLL“ (+5,0), „wie ES auch“ (+5,5).
