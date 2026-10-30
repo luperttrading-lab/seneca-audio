@@ -27,7 +27,9 @@
   .fenster { position: absolute; left: 240px; right: 240px; top: 215px; bottom: 50px; overflow: hidden;
     -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,.12) 0%, #000 30%, #000 70%, rgba(0,0,0,.12) 100%);
     mask-image: linear-gradient(to bottom, rgba(0,0,0,.12) 0%, #000 30%, #000 70%, rgba(0,0,0,.12) 100%); }
-  .band { position: absolute; left: -24px; right: -24px; top: 50%; height: calc(var(--band-hoehe) + var(--band-unten)); margin-top: calc(var(--band-hoehe) / -2); border-radius: 18px;
+  /* Das Band liegt außerhalb des Textfensters, damit es seitlich über den Text hinausreichen und weich auslaufen kann
+     (breite, ausklang in D.stil); vorher schnitt das Fenster es genau an Zeilenanfang und -ende ab (Nutzer, 30.10.). */
+  .band { position: absolute; left: 240px; right: 240px; top: 50%; height: calc(var(--band-hoehe) + var(--band-unten)); margin-top: calc(var(--band-hoehe) / -2);
     background: linear-gradient(to bottom, transparent 0%, var(--band-farbe) var(--band-kern), var(--band-farbe) calc(100% - var(--band-kern)), transparent 100%); }
   .inhalt { position: relative; font: 400 54px/var(--lh) var(--text); will-change: transform; }
   .inhalt p { margin: 0; }
@@ -35,6 +37,7 @@
   .w { color: transparent; -webkit-background-clip: text; background-clip: text;
     background-image: linear-gradient(90deg, var(--tinte) calc(var(--f, 0) * (100% + 1em) - 1em), var(--grau) calc(var(--f, 0) * (100% + 1em))); }
   .w.vorbei { --f: 1; }
+  .zusatz { color: var(--bronze); }   /* eckige Klammern um Ergänzungen des Übersetzers: nicht Seneca, also Bronze */
   .marke { color: var(--bronze); margin-right: .3em; white-space: nowrap; font-variant-numeric: lining-nums; }   /* wie im Buch: gleiche Schrift und Größe */
   #textbild { position: absolute; inset: 0; }
   /* Startseite wie ein Titelblatt: Autor über dem Werktitel, darunter der deutsche Titel */
@@ -59,13 +62,17 @@
       <div class="blk"><span class="o">Seneca</span><span class="u">De vita beata</span></div>
       <div class="blk r"><span class="o" id="kapitel"></span><span class="u" id="paragraf"></span></div>
     </header>
-    <div class="fenster" id="fenster"><div class="band"></div><div class="inhalt" id="inhalt"></div></div>
+    <div class="band"></div>
+    <div class="fenster" id="fenster"><div class="inhalt" id="inhalt"></div></div>
   </div>
 <script>
   // D: {w, t, p, stelle ("1,2" je Wort), text_ab (Text blendet ein), start_ende (nur Kapitel 1: Startseite bis hier), ende,
   //     stil (wahlweise, Standard ist C3): {farbe, hoehe (px), kern (%), unten (px: Band nur nach unten verlängert),
-  //     gleiten (s; 0 = gleichmäßig fließen), mischung (0–1: Anteil gleichmäßigen Fließens; der Text steht nie ganz still)}}
-  var D, spans = [], kurve, LH, jetzt = -2, stelleJetzt = "";
+  //     gleiten (s; 0 = gleichmäßig fließen), mischung (0–1: Anteil gleichmäßigen Fließens; der Text steht nie ganz still),
+  //     band (false = kein Band), fokus (0–1: Helligkeit der übrigen Zeilen; nur die gesprochene Zeile ganz hell),
+  //     mitte (px von oben: dort steht die gesprochene Zeile, etwa 540 = Bildmitte; sonst Mitte des Textfensters),
+  //     breite (px: so weit reicht das Band links und rechts über den Text hinaus), ausklang (px: dort blendet es weich aus)}}
+  var D, spans = [], kurve, LH, jetzt = -2, stelleJetzt = "", teile = [], zeileVon = [], anfangZ = [], fokus = 0;
   var marke = function (s) { var k = s.split(","); return k[0] + " (" + k[1] + ")"; };
   function pchip(x, v) {   // monotone kubische Interpolation wie auf der Hörbuch-Seite
     var m = [], h = [], d = [], len = x.length, i;
@@ -105,11 +112,13 @@
   }
   function lade(daten) {
     D = daten;
-    var st = Object.assign({ gleiten: 1.4, mischung: 0.35 }, D.stil || {}), band = document.querySelector(".band");   // C3; {gleiten: 0} = gleichmäßig fließen
+    var st = Object.assign({ gleiten: 1.4, mischung: 0.35, mitte: 540, breite: 100, ausklang: 120 }, D.stil || {}), band = document.querySelector(".band");   // 1M: C3 mit Zeile in der Bildmitte, Bandenden B (Nutzer, 30.10.)
     if (st.farbe) band.style.setProperty("--band-farbe", st.farbe);
     if (st.hoehe) band.style.setProperty("--band-hoehe", st.hoehe + "px");
     if (st.kern) band.style.setProperty("--band-kern", st.kern + "%");
     if (st.unten) band.style.setProperty("--band-unten", st.unten + "px");
+    if (st.band === false) band.style.display = "none";
+    fokus = st.fokus || 0;
     var inhalt = document.getElementById("inhalt"), p = null, abs = -1;
     D.w.forEach(function (w, i) {
       if (D.p[i] !== abs) { abs = D.p[i]; p = document.createElement("p"); inhalt.appendChild(p); }
@@ -117,14 +126,33 @@
       if (i === 0 || D.stelle[i] !== D.stelle[i - 1]) {
         var m = document.createElement("span"); m.className = "marke"; m.textContent = marke(D.stelle[i]); p.appendChild(m);
       }
-      var s = document.createElement("span"); s.className = "w"; s.textContent = w; p.appendChild(s); spans.push(s);
+      var s = document.createElement("span"); s.className = "w"; spans.push(s); p.appendChild(s);
+      w.split(/([\[\]])/).forEach(function (teil) {   // Klammern einer Ergänzung bronze, die Wörter selbst wie der übrige Text
+        if (!teil) return;
+        if (teil === "[" || teil === "]") { var k = document.createElement("span"); k.className = "zusatz"; k.textContent = teil; s.appendChild(k); }
+        else s.appendChild(document.createTextNode(teil));
+      });
     });
     // Zeile k steht im Band, wenn der Text um k·Zeilenhöhe verschoben ist. Stützstellen an den Zeilenanfängen: dort steht das
     // Band zwischen alter und neuer Zeile, (k − ½)·Zeilenhöhe; die monotone Interpolation hält die gesprochene Zeile so immer
     // höchstens eine halbe Zeile neben der Bandmitte (die Mitte der Sprechzeit als Stützstelle wich bis 0,65 Zeilen ab).
     var fenster = document.getElementById("fenster"); LH = parseFloat(getComputedStyle(inhalt).lineHeight);
-    var rand = (fenster.clientHeight - LH) / 2; inhalt.style.paddingTop = rand + "px"; inhalt.style.paddingBottom = rand + "px";
-    var basis = spans[0].offsetTop, zeileVon = spans.map(function (s) { return Math.round((s.offsetTop - basis) / LH); });
+    var oben = st.mitte ? st.mitte - fenster.getBoundingClientRect().top : fenster.clientHeight / 2;   // Lage der gesprochenen Zeile im Fenster
+    inhalt.style.paddingTop = (oben - LH / 2) + "px"; inhalt.style.paddingBottom = (fenster.clientHeight - oben - LH / 2) + "px";
+    band.style.top = (fenster.offsetTop + oben) + "px";
+    if (st.breite) { band.style.left = (fenster.offsetLeft - st.breite) + "px"; band.style.right = (1920 - fenster.offsetLeft - fenster.offsetWidth - st.breite) + "px"; }
+    if (st.ausklang) {   // seitlich weich ausblenden, gestuft wie smoothstep statt linear (eine gerade Rampe zeigt einen Knick)
+      var a = st.ausklang, r = "calc(100% - ", sm = [[0, 0], [.25, .16], [.5, .5], [.75, .84], [1, 1]];
+      var hm = "linear-gradient(to right, " + sm.map(function (q) { return "rgba(0,0,0," + q[1] + ") " + q[0] * a + "px"; }).join(", ") + ", "
+        + sm.slice().reverse().map(function (q) { return "rgba(0,0,0," + q[1] + ") " + r + q[0] * a + "px)"; }).join(", ") + ")";
+      band.style.webkitMaskImage = hm; band.style.maskImage = hm;
+    }
+    if (st.mitte) {   // weicher Rand oben/unten auf die neue Lage ausrichten: oben knapp 2 Zeilen ganz sichtbar, unten 2,5
+      var m = "linear-gradient(to bottom, rgba(0,0,0,.12) 0px, #000 " + Math.max(0, oben - 1.9 * LH) + "px, #000 " + (oben + 2.5 * LH) + "px, rgba(0,0,0,.12) 100%)";
+      fenster.style.webkitMaskImage = m; fenster.style.maskImage = m;
+    }
+    var basis = spans[0].offsetTop; zeileVon = spans.map(function (s) { return Math.round((s.offsetTop - basis) / LH); });
+    teile = [].slice.call(inhalt.querySelectorAll(".w, .marke")).map(function (e) { return [e, Math.round((e.offsetTop - basis) / LH)]; });
     var zeilen = zeileVon[zeileVon.length - 1] + 1, anfang = [], xs = [], vs = [], k, n = D.t.length;
     for (k = 0; k < zeilen; k++) anfang.push(Infinity);
     D.t.forEach(function (t, i) { if (t < anfang[zeileVon[i]]) anfang[zeileVon[i]] = t; });
@@ -135,6 +163,7 @@
     if (schluss > xs[xs.length - 1]) { xs.push(schluss); vs.push((zeilen - 1) * LH); }
     var fliessen = pchip(xs, vs), gleiten = st.gleiten ? gleit(anfang, LH, st.gleiten) : null, m = st.mischung || 0;
     kurve = !gleiten ? fliessen : m ? function (t) { return m * fliessen(t) + (1 - m) * gleiten(t); } : gleiten;
+    anfangZ = anfang;
     return { zeilen: zeilen, zeilenhoehe: LH };
   }
   function wortBei(t) {
@@ -152,6 +181,11 @@
     if (i >= 0) {
       var t0 = D.t[i], t1 = i + 1 < D.t.length ? D.t[i + 1] : D.ende, e = Math.min(t1, t0 + 0.08 + 0.07 * D.w[i].length);
       spans[i].style.setProperty("--f", Math.max(0, Math.min(1, (t - t0) / Math.max(0.05, e - t0))).toFixed(3));
+    }
+    if (fokus) {   // nur die gesprochene Zeile hell; beim Zeilenwechsel in 0,35 s weich übergeblendet (aus t berechnet, nicht per CSS)
+      var z = zeileVon[Math.max(0, i)], u = Math.max(0, Math.min(1, (t - anfangZ[z]) / 0.35)), hell = {};
+      hell[z] = i < 0 ? 1 : u; if (z > 0) hell[z - 1] = 1 - u; if (i < 0) hell[0] = 1;
+      teile.forEach(function (x) { var h = hell[x[1]] || 0; x[0].style.opacity = (fokus + (1 - fokus) * h).toFixed(3); });
     }
     var st = D.stelle[Math.max(0, i)];
     if (st !== stelleJetzt) {

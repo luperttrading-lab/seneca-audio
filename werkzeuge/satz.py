@@ -9,6 +9,7 @@ Zusammenhang erzeugt war derselbe Satz 6 von 6 richtig betont. <ordner> ist der 
 2. Mit --nimm n: Fassung n an den Satzpausen in die Rohaufnahme des Kapitels einsetzen (Schnitt in der Mitte der Pausen,
    der neue Satz mit 50 ms Rand davor und 100 ms danach, 10 ms Blenden, Pegel wie der alte Satz). Die bisherige
    Rohaufnahme bleibt als .vorherN.mp3; danach läuft kapitel.py ohne neue Credits: Worttreue, Wortzeiten und Pausen neu.
+   Mehrere Sätze: alle außer dem letzten mit --ohne-kette einsetzen (die Wortzeiten werden dann nur verschoben).
 """
 import json, os, re, subprocess, sys, urllib.request, wave
 import numpy as np
@@ -25,11 +26,13 @@ b = os.path.join(aus, f"kapitel{kap:02d}"); ordner = os.path.join(aus, "satz"); 
 norm = lambda s: re.sub(r"[^a-zäöüß0-9 ]", "", s.lower().replace("-", " ")).split()
 
 text = stellen.rein(open(f"{R}/texte/kapitel{kap:02d}.txt", encoding="utf-8").read())
-saetze = [s.strip() for absatz in re.split(r"\n\s*\n", text) for s in re.split(r"(?<=[.!?…])[“”»«\"]?\s+", absatz) if s.strip()]
+teile = lambda t: [s.strip() for absatz in re.split(r"\n\s*\n", t) for s in re.split(r"(?<=[.!?…])[“”»«\"]?\s+", absatz) if s.strip()]
+saetze = teile(text)
 treffer = [s for s in saetze if norm(s)[:len(norm(anfang))] == norm(anfang)]
 if len(treffer) != 1: sys.exit(f"Satzanfang passt auf {len(treffer)} Sätze: {[t[:50] for t in treffer]}")
 satz = treffer[0].strip("„“»«\"")
-name = f"k{kap:02d}_" + "_".join(norm(satz)[:3])
+import hashlib   # Wortlaut im Namen, damit eine neue Fassung desselben Satzes nicht alte Aufnahmen wiederverwendet
+name = f"k{kap:02d}_" + "_".join(norm(satz)[:3]) + "_" + hashlib.md5(satz.encode()).hexdigest()[:5]
 datei = lambda n, e: os.path.join(ordner, f"{name}_a{n}{e}")
 open(os.path.join(ordner, name + ".text.txt"), "w", encoding="utf-8").write(satz + "\n")
 
@@ -45,7 +48,7 @@ def schreibe(y, ziel):
     with wave.open(ziel, "wb") as w: w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR); w.writeframes((np.clip(y, -1, 1) * 32767).astype(np.int16).tobytes())
 
 
-def stelle_im_kapitel(W):   # Wortindizes des Satzes in woerter.json des Kapitels
+def stelle_im_kapitel(W, satz):   # Wortindizes des Satzes in woerter.json des Kapitels
     soll = norm(satz); ist = [" ".join(norm(w["w"])) for w in W]; L = len(soll)
     for i in range(len(W)):
         if " ".join(ist[i:i + L]).split() == soll: return i, i + L - 1
@@ -79,7 +82,12 @@ if nimm is None:
     json.dump({"satz": satz, "fassungen": erg}, open(os.path.join(ordner, name + ".json"), "w"), ensure_ascii=False)
     print(f"{name}: {len(satz)} Zeichen, {credits} Credits; einsetzen mit --nimm <n>")
 else:
-    W = json.load(open(b + ".woerter.json", encoding="utf-8")); i0, i1 = stelle_im_kapitel(W)
+    W = json.load(open(b + ".woerter.json", encoding="utf-8"))
+    # Wurde der Satz im Text geändert, steht in der Aufnahme noch der alte: über seine Nummer im Text der Aufnahme finden
+    alt = teile(open(b + ".text.txt", encoding="utf-8").read()); nr = saetze.index(treffer[0])
+    if len(alt) != len(saetze): sys.exit("Satzzahl der Aufnahme und des Textes verschieden: Satz nicht eindeutig zuzuordnen")
+    if norm(alt[nr]) != norm(satz): print("Satz geändert, ersetzt in der Aufnahme:", alt[nr], flush=True)
+    i0, i1 = stelle_im_kapitel(W, alt[nr].strip("„“»«\""))
     y = lade(b + ".roh.mp3"); s = lade(datei(nimm, ".roh.mp3"))
     a = int((W[i0 - 1]["e"] + W[i0]["s"]) / 2 * SR) if i0 else int(max(0, W[i0]["s"] - 0.3) * SR)
     e = int((W[i1]["e"] + W[i1 + 1]["s"]) / 2 * SR) if i1 + 1 < len(W) else len(y)
@@ -91,11 +99,18 @@ else:
     while os.path.exists(f"{b}.roh.vorher{n}.mp3"): n += 1
     os.rename(b + ".roh.mp3", f"{b}.roh.vorher{n}.mp3")
     schreibe(np.concatenate([vor, s, nach]), b + ".roh.wav"); ff("-i", b + ".roh.wav", "-b:a", "192k", b + ".roh.mp3"); os.remove(b + ".roh.wav")
-    for x in (".woerter.json", ".pausen.stellen.json", ".pausen.mp3"):
+    kette = "--ohne-kette" not in args
+    for x in ((".woerter.json",) if kette else ()) + (".pausen.stellen.json", ".pausen.mp3"):
         if os.path.exists(b + x): os.remove(b + x)
+    if not kette:   # Wortzeiten hinter dem Schnitt verschieben, damit der nächste Satz seinen Platz findet
+        d = (len(s) - (e - a)) / SR
+        for w in W[i1 + 1:]: w["s"] = round(w["s"] + d, 3); w["e"] = round(w["e"] + d, 3)
+        json.dump(W, open(b + ".woerter.json", "w", encoding="utf-8"), ensure_ascii=False)
     j = os.path.join(ordner, name + ".json"); d = json.load(open(j, encoding="utf-8")); d["eingesetzt"] = nimm
     json.dump(d, open(j, "w", encoding="utf-8"), ensure_ascii=False)   # für die Hörprobe
     print(f"Fassung {nimm} eingesetzt ({W[i0]['w']} … {W[i1]['w']}, {(e - a) / SR:.2f} s ersetzt durch {len(s) / SR:.2f} s); "
           f"alte Rohaufnahme: {os.path.basename(b)}.roh.vorher{n}.mp3", flush=True)
-    r = subprocess.run([sys.executable, f"{HIER}/kapitel.py", str(kap), aus, "--ohne-video"], capture_output=True, text=True, stdin=subprocess.DEVNULL)
-    print(r.stdout.strip()); print(r.stderr.strip().splitlines()[-1] if r.returncode else "")
+    if kette:
+        r = subprocess.run([sys.executable, f"{HIER}/kapitel.py", str(kap), aus, "--ohne-video"], capture_output=True, text=True, stdin=subprocess.DEVNULL)
+        print(r.stdout.strip()); print(r.stderr.strip().splitlines()[-1] if r.returncode else "")
+    else: print("Kette nicht gerechnet (--ohne-kette): nächsten Satz einsetzen, beim letzten ohne --ohne-kette")

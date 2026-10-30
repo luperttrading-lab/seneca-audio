@@ -8,13 +8,13 @@ Stellen, die der Betonungsfilter markiert; Text läuft mit, die markierten Wört
 import html, json, os, re, subprocess, sys
 
 HIER = os.path.dirname(os.path.abspath(__file__)); R = os.path.dirname(HIER); sys.path.insert(0, os.path.join(R, "werkzeuge"))
-import betonung
+import betonung, stellen
 from kette import abweichungen, bestaetigt, pnorm
 
 kap, ordner, aus = int(sys.argv[1]), sys.argv[2], sys.argv[3]
 b = os.path.join(ordner, f"kapitel{kap:02d}"); os.makedirs(os.path.join(aus, "audio"), exist_ok=True)
 D = json.load(open(b + ".daten.json", encoding="utf-8")); W = json.load(open(b + ".woerter.json", encoding="utf-8"))
-assert [w["w"] for w in W] == D["w"]
+assert [w["w"] for w in W] == [stellen.ohne_klammern(x) for x in D["w"]]
 E = betonung.pruefe(b + ".roh.mp3", W); M = [e for e in E if e["markiert"]]
 knapp = sum(1 for e in E if not e["markiert"] and betonung.betonung_klein(e) and 3 <= e["abstand"] < 5)
 log = open(os.path.join(ordner, "lauf.log"), encoding="utf-8").read() if os.path.exists(os.path.join(ordner, "lauf.log")) else ""
@@ -80,6 +80,7 @@ if anders:
 import glob
 for j in sorted(glob.glob(os.path.join(ordner, "satz", f"k{kap:02d}_*.json"))):
     if re.search(r"_a\d+\.", os.path.basename(j)): continue   # Wortzeiten einzelner Fassungen
+    if json.load(open(j, encoding="utf-8"))["satz"] not in stellen.rein(open(f"{R}/texte/kapitel{kap:02d}.txt", encoding="utf-8").read()): continue   # überholter Wortlaut
     d = json.load(open(j, encoding="utf-8")); n_ein = d.get("eingesetzt")
     teile.append(f'  <h2 class="abschnitt">Neu gesprochen · „{esc(" ".join(d["satz"].split()[:4]))} …“</h2>')
     for f in d["fassungen"]:

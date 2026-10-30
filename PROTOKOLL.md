@@ -548,3 +548,60 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
   Doppelung „durch seine Schädlichkeit schadet“); „bestaunen“ bleibt (Bezug auf 2,4). Übernommen nur „Seelengröße“ statt
   „Größe“ (*magnitudo* [animi]; die KI nannte fälschlich *magnanimitas*). Auftraggeber: Einwände auch dann besprechen, wenn
   nichts geändert wird (jetzt Regel in `PLAN.md`).
+- **Kapitel 3 erzeugt** (945 Credits, 2.200 Zeichen): turbo sofort wortgetreu, 349/349 Wörter exakt, 31 Pausen (+17,2 s), 2:47.
+  Betonungsfilter: „Wenn ich aber „UNSERE“ sage“ +5,8 HT (Kontrast, *nostram autem cum dico*, vermutlich richtig), 1 Abschnitt
+  zwischen 3 und 5 HT. Kapitel 4 parallel in eigener Sitzung (Zweig `kapitel04-entwurf`) beauftragt.
+- **Kapitel 4, Entwurf aus paralleler Sitzung** (etwa 1,20 $, gut 4 Minuten): nach main gemergt; Textprüfung nach Korrektur
+  der Satzerkennung ohne Hinweis (vorher Scheinmeldung „Kommakette“, weil ein Satzende vor „““ nicht erkannt wurde). Eigene
+  Durchsicht: Bilder (Heer, aufgehen/aufgegangen, alta/ex alto) erhalten; drei kleine Vorschläge zur Vorlage.
+- **3,1 umgestellt und erste Ergänzung** (Gespräch mit dem Auftraggeber): *vicina transimus, offensantes ea ipsa quae
+  desideramus* war mit „am Nächstliegenden vorbei … stoßen dabei gerade an das“ missverständlich („das Nächstliegende“ =
+  das Offensichtliche; „stoßen an“ wie „stoßen auf“; „gerade“ doppeldeutig). Neu: „an dem vorbei, was ganz nah liegt“
+  (*vicina* gegen *nec longe* zwei Sätze davor), „stolpern über genau das“ (*offensare*, *ea ipsa*), dazu „[ohne es zu
+  erkennen]“, weil der Auftraggeber die Pointe zweimal nicht verstand. Werkzeuge: `stellen.rein` entfernt die Klammern für
+  Stimme und Prüfung, `stellen.anzeige` behält sie für das Video, `bild.html` färbt sie bronze, `textpruef` meldet
+  Ergänzungen, `satz.py --nimm` findet einen geänderten Satz über seine Nummer im Text der Aufnahme. Drei Fassungen
+  (192 Credits): alle wortgetreu, Betonungsfilter bei Fassung 2 „genau DAS“; Stimme 0,923 / 0,912 / 0,915; Fassung 1
+  eingesetzt (7,26 s → 9,42 s). Kapitel neu: 357/357, 34 Pausen, 2:50.
+- **3,3 nachgebessert** (Auftraggeber: „abirren“ ungebräuchlich, „der Natur zustimmen“ irritiert): *rerum naturae adsentior*
+  als „Ich gebe der Natur meine Stimme.“ (Senatsbild aus 3,2 „meine Stimme abgeben“; *sequor* war schon „anschließen“),
+  *deerrare* als „abzuweichen“. `satz.py --ohne-kette` neu: mehrere Sätze nacheinander einsetzen, Wortzeiten werden verschoben.
+  Je zwei Fassungen (84 + 80 Credits), alle wortgetreu und unauffällig; eingesetzt Fassung 1 (Stimme 0,923) und Fassung 2
+  (0,919). Kapitel neu: 358/358, 33 Pausen, 2:49.
+- **Test unabhängiger Lektor-Agent** (frischer Agent, nur Latein, Entwurf, Regeln, Stewart; die Lösungen aus Kapitel 3 vorher
+  aus den Regeln entfernt). Am **ursprünglichen Entwurf von Kapitel 3** gegen die 9 heute bekannten Schwächen: gefunden
+  „also“, „zugleich“, „eine Größe“, „gerade an“ (4), halb „zum Schein“ (anderer Grund); nicht gefunden das Komma vor
+  „würde“; ausdrücklich für gut befunden „am Nächstliegenden“, „abzuirren“, „Ich stimme der Natur zu“ – genau die drei,
+  die der Auftraggeber beim Lesen fand. Trefferquote etwa 4,5 von 9. Neu und brauchbar: *conuenit/conueniens*
+  (Wortspiel, „übereinstimmen“), Hörfalle „„unsere“ sage“ (wie „unsere Sage“), *aequale* fehlt bei „fest und gediegen“,
+  „dauernde Ruhe“ → „dauerhafte“, fehlende Leitbegriffe (Freiheit, dienen, Milde). Am **Entwurf von Kapitel 4**: 3 wichtige
+  Funde (4,5 Subjekt und Objekt kippen beim Hören; *turpitudo* besser „das Schändliche“; „begnügt sich mit der Tugend“
+  klingt nach Notlösung), 14 kleine, 9 Geschmack; lateinische Zitate stichprobenweise geprüft, alle wörtlich vorhanden.
+  Dauer je Agent etwa 10 Minuten.
+- **3,3 „übereinstimmen“** (Auftraggeber übernimmt den Fund des Lektor-Agenten): „worin alle Stoiker übereinstimmen“, „das mit
+  seiner eigenen Natur übereinstimmt“. `satz.py` hängt jetzt den Wortlaut als Prüfsumme an den Namen, damit eine neue
+  Fassung eines schon nachgesprochenen Satzes nicht die alten Aufnahmen wiederverwendet; die Hörprobe zeigt nur Sätze mit
+  aktuellem Wortlaut. Je zwei Fassungen (88 + 62 Credits), alle wortgetreu und unauffällig; Stimme 0,925 / 0,925 und
+  0,873 / 0,881 (kurzer Satz, 4,6 s: Fingerabdruck streut mehr). Eingesetzt Fassung 1 und 2; 358/358, 34 Pausen, 2:51.
+- **Leseband, Runde 4** (Idee des Auftraggebers: Band ganz weglassen): `stil.band = false` und `stil.fokus` (Helligkeit der
+  übrigen Zeilen, gesprochene Zeile ganz hell, Wechsel in 0,35 s aus t berechnet) in `bild.html`. Drei Proben zu 45 s aus
+  Kapitel 1 (4,4–49,4 s): mit Band (C3), ohne Band, ohne Band mit Fokus 0,4.
+  Auftraggeber: ohne Band braucht es das Ruhen und Gleiten nicht mehr (das war nur wegen des Bands nötig); dazu 4 = ohne Band
+  gleichmäßig fließend (`gleiten: 0`) und 5 = ohne Band, Fokus 0,4, fließend.
+- **Leseband, Runde 5:** Auftraggeber findet 4 (ohne Band, fließend) am besten, 1 (mit Band) gut lesbar; Idee: gesprochene
+  Zeile in die Bildmitte statt in die Mitte des Textfensters (bisher 622 px = 58 % der Bildhöhe, knapp eine Zeile tiefer).
+  `stil.mitte` (px von oben) neu; Band und weicher Rand werden mitverschoben (oben 1,9 Zeilen, unten 2,5 Zeilen voll sichtbar).
+  Bei 540 px: 3 Zeilen Gesagtes darüber, 5 Zeilen Kommendes darunter. Proben 1M und 4M zu je 45 s.
+- **Kapitel 3 als Video mit 1M** (Auftraggeber: „Bau bitte Kapitel drei … mit dem Gold … in der Mitte. Also 1M“; 4M noch
+  nicht verworfen). 1M Standard in `bild.html` (`mitte: 540`). Endkontrolle: 1080p25, AAC-LC Stereo 48 kHz, −18,1 LUFS, Dauer
+  gleich `ende` (±0,03 s), Stichbilder Start, Ergänzung in Bronze, Mitte, Ende in Ordnung. Kapitel 1 und 2 haben noch C3 ohne
+  Bildmitte.
+- **Harte Bandenden** (Auftraggeber, Bildschirmfoto Kapitel 3: das Gold hört „exakt am Anfang der Zeile auf und hinten am
+  Ende“). Ursache: Das Band lag im Textfenster (`overflow: hidden`) und wurde an dessen Rändern abgeschnitten, also genau an
+  Zeilenanfang und Fensterrand. Das Band liegt jetzt außerhalb des Fensters; neue Stilwerte `breite` (px über den Text
+  hinaus) und `ausklang` (px weiches Ausblenden, gestuft wie smoothstep). Ohne diese Werte bleibt das Bild wie bisher
+  (Abweichung höchstens 3 von 255, nur von der weggefallenen Eckenrundung). Standbilder A (bisher), B (100/120),
+  C (200/300), D (240/480) im Artifact „Lesebänder im Vergleich“, Runde 6.
+- **Bandenden B gewählt** (Auftraggeber: „B“): Standard in `bild.html` jetzt `breite: 100, ausklang: 120`. Probe 45 s aus
+  Kapitel 3 (1080p25, AAC Stereo 48 kHz, 12 MB) im Artifact „Lesebänder im Vergleich“, Runde 7. Kapitel 1–3 noch ohne.
+- **Bandenden B abgenommen** (Auftraggeber zur Probe: „Das ist gut so“). In `PLAN.md` eingetragen.

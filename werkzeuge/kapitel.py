@@ -80,7 +80,8 @@ ff("-i", b + ".wav", "-b:a", "160k", b + ".mp3")
 # 5. Daten für das Video und Video
 T = [round((schieb(w["s"]) - kopf + o) / TEMPO, 3) for w in W]; ST = stellen.liste(markiert)
 assert len(ST) == len(W), (len(ST), len(W))
-D = {"w": [w["w"] for w in W], "t": T, "p": [w["p"] for w in W], "stelle": ST, "ende": round(len(y) / SR / TEMPO, 3)}
+A = stellen.anzeige(markiert); assert [stellen.ohne_klammern(a) for a in A] == [w["w"] for w in W], "Anzeige passt nicht zu den Wortzeiten"
+D = {"w": A, "t": T, "p": [w["p"] for w in W], "stelle": ST, "ende": round(len(y) / SR / TEMPO, 3)}
 if nr == 1: D["start_ende"] = round(T[0] - 1.3, 3); D["text_ab"] = round(D["start_ende"] + 0.55, 3)
 json.dump(D, open(b + ".daten.json", "w"), ensure_ascii=False)
 print(f"Ton: {lufs(b + '.wav'):.1f} LUFS, {D['ende']:.1f} s; erstes Wort bei {T[0]:.2f} s", flush=True)

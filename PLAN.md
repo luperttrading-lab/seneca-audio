@@ -16,7 +16,8 @@ Festgelegt an Kapitel 1 nach den Rückmeldungen des Auftraggebers:
 - Zugleich heutiges, flüssiges Deutsch zum Zuhören: nicht gestelzt, nicht flapsig, keine modernen Redensarten
   („tappen im Nebel“ geht nicht; „ist ihr Blick getrübt“ trifft es).
 - Römische Begriffe bleiben (Prätor, Wahlen statt „Komitien“); Senecas Ansprache an den Leser als „du“.
-- Für das Vorlesen gesetzt: Satzzeichen markieren Pausen, Gedankenstriche sparsam, keine Klammern.
+- Für das Vorlesen gesetzt: Satzzeichen markieren Pausen, Gedankenstriche sparsam, keine runden Klammern (eckige nur für
+  Ergänzungen, siehe unten).
 - Kein „als wie“; Einschübe zwischen Gedankenstrichen lieber umstellen (die Stimme stockt sonst mitten im Satz);
   lange Kommaketten in zwei Sätze teilen. Bildhafte Wörter nur, wenn sie natürlich klingen (kein „Knäuel von Menschen“).
 
@@ -33,6 +34,10 @@ Gelernt aus den Korrekturen an Kapitel 1 (29.10.):
   nicht „ihm“, wenn das Bezugswort weit zurückliegt.
 - **Änderungen an vorgelegtem Text nur als Vorschlag**: alt → neu, mit dem lateinischen Grund; der Auftraggeber gibt
   frei, danach den ganzen Text noch einmal vorlegen.
+- **Ergänzungen nur im Ausnahmefall** (Auftraggeber, 30.10.): wenn ein Gedanke beim Zuhören sonst nicht zu verstehen ist und
+  sich auch durch genaueres Übersetzen nicht klären lässt. Wenige Wörter, die nur aussprechen, was im Latein mitgemeint ist;
+  immer in eckigen Klammern („[ohne es zu erkennen]“, 3,1). Gesprochen ohne Klammern, im Video mit Klammern in Bronze;
+  in der YouTube-Beschreibung erklärt. Nur mit Freigabe, Begründung im Protokoll.
 - **Einwände immer besprechen**, auch fremde (etwa von einer anderen KI) und auch wenn sie zu keiner Änderung führen:
   je Punkt das Urteil mit Grund aus dem Latein; lateinische Zitate solcher Vorlagen gegen `texte/latein/` prüfen
   (bei Kapitel 2 und 3 waren sie teils erfunden). Geändert wird nur, was der Auftraggeber freigibt.
@@ -85,8 +90,9 @@ Leitbegriffe beim ersten Auftreten eintragen und vorlegen.
    „Of a Happy Life“), und Albert Forbiger, deutsch 1867 (nur als
    [LibriVox-Lesung](https://archive.org/details/vom_glueckseligen_leben_rr_librivox), per Whisper abgeschrieben;
    zeno.org sperrt automatische Abrufe). Stellenmarken setzen. **Textprüfung:** `python3 werkzeuge/textpruef.py N`
-   (unbekannte und fremdsprachige Wörter, doppelte Wörter, Vorleseregeln, LanguageTool); jeden Hinweis klären, richtige
-   seltene Wörter in `texte/woerter_ok.txt` eintragen. Nötig, weil die Worttreue-Prüfung einen Tippfehler im Text nicht
+   (unbekannte, fremdsprachige und seltene Wörter, doppelte Wörter, Vorleseregeln, LanguageTool); jeden Hinweis klären.
+   Seltene Wörter nur behalten, wenn es kein gebräuchliches gleich genaues gibt, und dann mit dem Auftraggeber; erst dann in
+   `texte/woerter_ok.txt` (heißt: richtig und gewollt). Nötig, weil die Worttreue-Prüfung einen Tippfehler im Text nicht
    findet: Er wird mitgesprochen und gilt dann als wortgetreu. Den ganzen Text vorlegen; Freigabe durch den Auftraggeber;
    vor der Aufnahme die Textprüfung noch einmal laufen lassen.
 2. **Ton erzeugen:** `python3 werkzeuge/kapitel.py N <ordner> --ohne-video`. Das ganze Kapitel geht als **eine** Anfrage an
@@ -103,8 +109,9 @@ Leitbegriffe beim ersten Auftreten eintragen und vorlegen.
 4. **Nachbessern**, was der Auftraggeber meldet (Prüfliste, Punkt 4), bis zur Abnahme des Kapitels.
 5. **Sichern**, sofort nach der Abnahme (Prüfliste, Punkt 6).
 6. **Video:** `python3 werkzeuge/video/baue.py <daten.json> <ton.wav> <aus.mp4>` (oder `kapitel.py` ohne `--ohne-video`),
-   Leseband C3 ist Standard in `bild.html` (Auftraggeber, 30.10.: kräftiges Band, unten 8 px tiefer, Text ruht und gleitet
-   beim Zeilenwechsel, ein Drittel gleichmäßiges Fließen); Vorschauseite mit `python3 seite/vorschau.py`;
+   Leseband 1M ist Standard in `bild.html` (Auftraggeber, 30.10.: kräftiges Band, unten 8 px tiefer, Text ruht und gleitet
+   beim Zeilenwechsel, ein Drittel gleichmäßiges Fließen, gesprochene Zeile in der Bildmitte, Band 100 px über den Text hinaus
+   und weich auslaufend, „B“; 4M ohne Band verworfen); Vorschauseite mit `python3 seite/vorschau.py`;
    Endkontrolle (Prüfliste, Punkt 5); Vorschau in 720p ins Artifact (höchstens 15 MB je Datei); die Full-HD-Datei für
    YouTube als Datei schicken; Miniaturbild mit `node werkzeuge/video/miniatur.js N <aus.png>`.
 7. `UEBERGABE.md` (Stand, Credits) und `PROTOKOLL.md` (Versuche, Befunde) nachtragen, committen, pushen.

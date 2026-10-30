@@ -25,6 +25,8 @@ Eigene Übersetzung und Vertonung von Senecas *De vita beata*, eingeteilt nach S
 - Der Container wird gelöscht: abgenommene Aufnahmen sofort sichern (privates Vorschau-Artifact, Ordner `quelle/`;
   `PLAN.md`, Prüfliste Ton, Punkt 6). ElevenLabs: höchstens 5 Anfragen gleichzeitig; verbrauchte Credits in `UEBERGABE.md`
   nachtragen.
+- **Kurz antworten.** Bei Textänderungen nur vorher/nachher, die **geänderten Wörter fett**; keine langen Erklärungen dazu,
+  Gründe in einer Zeile. Der Nutzer liest am Handy und nicht so schnell wie Claude (Nutzer, 30.10.).
 - Kostenzeile am Ende jeder Antwort: `python3 tools/kosten.py` im Repo ausführen, Ausgabe wörtlich übernehmen.
 - Seiten vor dem Veröffentlichen im Browser testen (Playwright, Handygröße 390 × 844). Playwright-Chromium spielt kein
   AAC: für Tests MP3-Kopien verwenden; `seite/rangeserver.py` liefert Bereichsanfragen wie GitHub Pages.

@@ -1,4 +1,5 @@
-# Richtige Wörter, die das Wörterbuch von werkzeuge/textpruef.py nicht kennt (geprüft, je eines pro Zeile).
+# Geprüft: richtig und gewollt – Wörter, die werkzeuge/textpruef.py als unbekannt oder selten meldet (je eines pro Zeile).
+# Nur eintragen, wenn das Wort bewusst gewählt ist; ein gebräuchlicheres gleich genaues Wort geht vor („abirren“ → „abweichen“).
 # Namen
 Gallio
 Prätor
@@ -9,9 +10,16 @@ Prunkmantel
 aufzuatmen
 ungetan
 herauszuheben
-abzuirren
 auseinandergezogen
 zurückgebogen
 unberechenbarsten
 maßlosesten
 Erhabenheit
+# selten, aber in abgenommenen Kapiteln bewusst so (30.10.)
+zustrebt
+umherschweifen
+Auslegerin
+Bekränzten
+darangesetzt
+Schändlichkeit
+Seelengröße
