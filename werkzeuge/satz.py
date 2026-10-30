@@ -9,6 +9,7 @@ Zusammenhang erzeugt war derselbe Satz 6 von 6 richtig betont. <ordner> ist der 
 2. Mit --nimm n: Fassung n an den Satzpausen in die Rohaufnahme des Kapitels einsetzen (Schnitt in der Mitte der Pausen,
    der neue Satz mit 50 ms Rand davor und 100 ms danach, 10 ms Blenden, Pegel wie der alte Satz). Die bisherige
    Rohaufnahme bleibt als .vorherN.mp3; danach läuft kapitel.py ohne neue Credits: Worttreue, Wortzeiten und Pausen neu.
+   Mehrere Sätze: alle außer dem letzten mit --ohne-kette einsetzen (die Wortzeiten werden dann nur verschoben).
 """
 import json, os, re, subprocess, sys, urllib.request, wave
 import numpy as np
@@ -97,11 +98,18 @@ else:
     while os.path.exists(f"{b}.roh.vorher{n}.mp3"): n += 1
     os.rename(b + ".roh.mp3", f"{b}.roh.vorher{n}.mp3")
     schreibe(np.concatenate([vor, s, nach]), b + ".roh.wav"); ff("-i", b + ".roh.wav", "-b:a", "192k", b + ".roh.mp3"); os.remove(b + ".roh.wav")
-    for x in (".woerter.json", ".pausen.stellen.json", ".pausen.mp3"):
+    kette = "--ohne-kette" not in args
+    for x in ((".woerter.json",) if kette else ()) + (".pausen.stellen.json", ".pausen.mp3"):
         if os.path.exists(b + x): os.remove(b + x)
+    if not kette:   # Wortzeiten hinter dem Schnitt verschieben, damit der nächste Satz seinen Platz findet
+        d = (len(s) - (e - a)) / SR
+        for w in W[i1 + 1:]: w["s"] = round(w["s"] + d, 3); w["e"] = round(w["e"] + d, 3)
+        json.dump(W, open(b + ".woerter.json", "w", encoding="utf-8"), ensure_ascii=False)
     j = os.path.join(ordner, name + ".json"); d = json.load(open(j, encoding="utf-8")); d["eingesetzt"] = nimm
     json.dump(d, open(j, "w", encoding="utf-8"), ensure_ascii=False)   # für die Hörprobe
     print(f"Fassung {nimm} eingesetzt ({W[i0]['w']} … {W[i1]['w']}, {(e - a) / SR:.2f} s ersetzt durch {len(s) / SR:.2f} s); "
           f"alte Rohaufnahme: {os.path.basename(b)}.roh.vorher{n}.mp3", flush=True)
-    r = subprocess.run([sys.executable, f"{HIER}/kapitel.py", str(kap), aus, "--ohne-video"], capture_output=True, text=True, stdin=subprocess.DEVNULL)
-    print(r.stdout.strip()); print(r.stderr.strip().splitlines()[-1] if r.returncode else "")
+    if kette:
+        r = subprocess.run([sys.executable, f"{HIER}/kapitel.py", str(kap), aus, "--ohne-video"], capture_output=True, text=True, stdin=subprocess.DEVNULL)
+        print(r.stdout.strip()); print(r.stderr.strip().splitlines()[-1] if r.returncode else "")
+    else: print("Kette nicht gerechnet (--ohne-kette): nächsten Satz einsetzen, beim letzten ohne --ohne-kette")

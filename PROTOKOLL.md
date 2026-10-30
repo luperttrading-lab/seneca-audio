@@ -563,3 +563,8 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
   Ergänzungen, `satz.py --nimm` findet einen geänderten Satz über seine Nummer im Text der Aufnahme. Drei Fassungen
   (192 Credits): alle wortgetreu, Betonungsfilter bei Fassung 2 „genau DAS“; Stimme 0,923 / 0,912 / 0,915; Fassung 1
   eingesetzt (7,26 s → 9,42 s). Kapitel neu: 357/357, 34 Pausen, 2:50.
+- **3,3 nachgebessert** (Auftraggeber: „abirren“ ungebräuchlich, „der Natur zustimmen“ irritiert): *rerum naturae adsentior*
+  als „Ich gebe der Natur meine Stimme.“ (Senatsbild aus 3,2 „meine Stimme abgeben“; *sequor* war schon „anschließen“),
+  *deerrare* als „abzuweichen“. `satz.py --ohne-kette` neu: mehrere Sätze nacheinander einsetzen, Wortzeiten werden verschoben.
+  Je zwei Fassungen (84 + 80 Credits), alle wortgetreu und unauffällig; eingesetzt Fassung 1 (Stimme 0,923) und Fassung 2
+  (0,919). Kapitel neu: 358/358, 33 Pausen, 2:49.
