@@ -64,6 +64,13 @@ Der Auftraggeber hat die offenen Punkte am 30.10. Claude überlassen („Mach da
 - 10,1 „wendet einer ein“ bleibt nach der gemeinsamen Vorgabe; für die Hauptsitzung: „wendet er ein“ wäre hier genauer,
   weil derselbe Gegner wie in 9,1 spricht. Gilt dann für alle Kapitel.
 
+## Abgleich mit der Begriffsliste nach Kapitel 6, 8 und 9 (main, 30.10.)
+
+Keine Abweichung: *iucundus* „angenehm“ wie 8,1; *inquit* „wendet einer ein“ wie 6,1 und 9,1; „um der Lust willen“
+wie 9,1; 10,1 „ihr Gut an der Nahrung“ antwortet auf 9,4 „das Gut des Bauches“ und „Vieh … wilde Tiere“. *turpis*,
+*vitium*, *delectare*, *luxuria*, *sanitas*, *dementia* kommen in Kapitel 10 nicht vor. Neu nur noch *stultus*,
+*temperantia*, *nequitia*, *uti/frui* (Vorschlag oben).
+
 ## Wörter für woerter_ok.txt
 
 - zuteilwerden (Duden-Schreibung, Zipf 2,2), einschläft (Beugung von einschlafen)
