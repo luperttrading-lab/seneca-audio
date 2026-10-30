@@ -69,3 +69,12 @@ oder wie sie“; „wie sie sich versteckt und das Dunkel sucht“; „verweichl
 Crux 7,4 als „Weil er stets dem Besten gefolgt ist, hat er nie etwas geändert.“ (Satz geteilt).
 Nicht geändert: 7,1 *in iliis* („Unterleib“); 7,2 „kommt“ (*uenit* / *admittit*); 7,3 „Aufenthalt“; Ädil, Spelunken,
 Schwitzbäder, Senat bleiben (seltene Wörter; bei der Freigabe ausdrücklich bestätigen lassen). Freigabe offen.
+
+## Abgleich mit der Begriffsliste nach Kapitel 8 und 9 (30.10.)
+
+- 7,4 *delectat*: „Genuss bereitet“ → „erfreut“ (*delectare* = erfreuen).
+- Stimmt schon: *turpis* schändlich (kein Gegenwort zu *honestus*: 7,1 *turpi loco*, 7,2 *turpissimam* gegen *malam*),
+  *iucundus* angenehm, *expetere* erstreben, *finis* Ende, *seruile* sklavisch, *dolor* Schmerz.
+- *ilia* (7,1) „Unterleib“ neben *uenter* (9,4) „Bauch“: verschiedene lateinische Wörter, darum verschieden.
+- *recta mens* „richtig denkender Geist“; 8,1 hat *recta uoluntas* „rechter Wille“. „ein rechter Geist“ vermieden (klingt
+  nach Gespenst bzw. „ein rechter Narr“).
