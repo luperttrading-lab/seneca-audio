@@ -75,10 +75,6 @@ Leitbegriffe beim ersten Auftreten eintragen und vorlegen.
 | *dolor* | Schmerz | angenommen 30.10. (4,4) |
 | *hilaritas*, *laetitia*, *laetus* | Heiterkeit, Fröhlichkeit, froh (*gaudium* bleibt Freude) | angenommen 30.10. (4,2; 4,4) |
 | *sublimitas* | Erhabenheit | angenommen 30.10. (4,5) |
-| *tristitia* | Traurigkeit | vorgeschlagen 30.10. (5,1) |
-| *iudicium* | Urteil | vorgeschlagen 30.10. (5,3) |
-| *veritas* | Wahrheit (schon 4,5) | vorgeschlagen 30.10. (5,2) |
-| *corpus* | Körper (schon 4,4) | vorgeschlagen 30.10. (5,4) |
 
 ## Vom Auftraggeber festgelegt (nicht mehr ändern)
 
