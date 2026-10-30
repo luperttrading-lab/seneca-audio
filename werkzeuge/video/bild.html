@@ -35,6 +35,7 @@
   .w { color: transparent; -webkit-background-clip: text; background-clip: text;
     background-image: linear-gradient(90deg, var(--tinte) calc(var(--f, 0) * (100% + 1em) - 1em), var(--grau) calc(var(--f, 0) * (100% + 1em))); }
   .w.vorbei { --f: 1; }
+  .zusatz { color: var(--bronze); }   /* eckige Klammern um Ergänzungen des Übersetzers: nicht Seneca, also Bronze */
   .marke { color: var(--bronze); margin-right: .3em; white-space: nowrap; font-variant-numeric: lining-nums; }   /* wie im Buch: gleiche Schrift und Größe */
   #textbild { position: absolute; inset: 0; }
   /* Startseite wie ein Titelblatt: Autor über dem Werktitel, darunter der deutsche Titel */
@@ -117,7 +118,12 @@
       if (i === 0 || D.stelle[i] !== D.stelle[i - 1]) {
         var m = document.createElement("span"); m.className = "marke"; m.textContent = marke(D.stelle[i]); p.appendChild(m);
       }
-      var s = document.createElement("span"); s.className = "w"; s.textContent = w; p.appendChild(s); spans.push(s);
+      var s = document.createElement("span"); s.className = "w"; spans.push(s); p.appendChild(s);
+      w.split(/([\[\]])/).forEach(function (teil) {   // Klammern einer Ergänzung bronze, die Wörter selbst wie der übrige Text
+        if (!teil) return;
+        if (teil === "[" || teil === "]") { var k = document.createElement("span"); k.className = "zusatz"; k.textContent = teil; s.appendChild(k); }
+        else s.appendChild(document.createTextNode(teil));
+      });
     });
     // Zeile k steht im Band, wenn der Text um k·Zeilenhöhe verschoben ist. Stützstellen an den Zeilenanfängen: dort steht das
     // Band zwischen alter und neuer Zeile, (k − ½)·Zeilenhöhe; die monotone Interpolation hält die gesprochene Zeile so immer
