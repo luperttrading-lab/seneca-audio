@@ -112,7 +112,7 @@
   }
   function lade(daten) {
     D = daten;
-    var st = Object.assign({ gleiten: 1.4, mischung: 0.35, mitte: 540 }, D.stil || {}), band = document.querySelector(".band");   // 1M: C3 mit Zeile in der Bildmitte (Nutzer, 30.10.)
+    var st = Object.assign({ gleiten: 1.4, mischung: 0.35, mitte: 540, breite: 100, ausklang: 120 }, D.stil || {}), band = document.querySelector(".band");   // 1M: C3 mit Zeile in der Bildmitte, Bandenden B (Nutzer, 30.10.)
     if (st.farbe) band.style.setProperty("--band-farbe", st.farbe);
     if (st.hoehe) band.style.setProperty("--band-hoehe", st.hoehe + "px");
     if (st.kern) band.style.setProperty("--band-kern", st.kern + "%");

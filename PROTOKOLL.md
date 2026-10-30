@@ -602,3 +602,5 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
   hinaus) und `ausklang` (px weiches Ausblenden, gestuft wie smoothstep). Ohne diese Werte bleibt das Bild wie bisher
   (Abweichung höchstens 3 von 255, nur von der weggefallenen Eckenrundung). Standbilder A (bisher), B (100/120),
   C (200/300), D (240/480) im Artifact „Lesebänder im Vergleich“, Runde 6.
+- **Bandenden B gewählt** (Auftraggeber: „B“): Standard in `bild.html` jetzt `breite: 100, ausklang: 120`. Probe 45 s aus
+  Kapitel 3 (1080p25, AAC Stereo 48 kHz, 12 MB) im Artifact „Lesebänder im Vergleich“, Runde 7. Kapitel 1–3 noch ohne.
