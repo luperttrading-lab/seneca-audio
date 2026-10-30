@@ -1,7 +1,8 @@
 # Kapitel 5 – Notizen
 
-Stand: Entwurf (30.10.), abgeglichen mit Stewart und Forbiger (LibriVox, Whisper, Datei 1, etwa 24:55–28:30),
-Textprüfung 0 Hinweise, geprüft vom unabhängigen Prüf-Agenten. Freigabe offen.
+Stand: **freigegeben (30.10.2026)** durch den Auftraggeber. Abgeglichen mit Stewart und Forbiger (LibriVox, Whisper,
+Datei 1, etwa 24:55–28:30), zwei Prüf-Agenten (zuletzt Fable, xhigh), Textprüfung: nur „Nadelstichen“ (richtig, siehe
+unten).
 
 ## Neue Begriffe (Vorschlag)
 
