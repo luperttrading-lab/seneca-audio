@@ -620,3 +620,12 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
 - **Kapitel 8 und 9 übernommen** (Freigabe je in der eigenen Sitzung, „Mach das, was du für sinnvoll hältst“): 27 Begriffe in `PLAN.md`, fünf Wörter in `woerter_ok.txt`. *turpis* „schändlich“, als Gegenwort zu *honestus* „ehrlos“ (8,1).
 - **Kapitel 4 aufgenommen**: 1.287 Credits, 3:43, Whisper beide Modelle „Sklavendienst [d]er“, Filter 3 Stellen (+7,4 / +6,0 HT / nur Funktionswörter). Hörprobe-Artifact mit `quelle/`.
 - **Kapitel 5 übernommen** (freigegeben in der eigenen Sitzung): Begriffe *tristitia*, *veritas*, *corpus*, *natura* (eines Menschen); „Nadelstichen“ in `woerter_ok.txt`.
+- **Hörprüfung, Test an Kapitel 4** (Fable 5.1, extra hoch, liest nur den deutschen Wortlaut der Aufnahme, ohne die Funde
+  des Auftraggebers zu kennen): 11 Funde. Von den zwei Funden des Auftraggebers einen gefunden (4,5 „als an dem, was“), den
+  anderen nicht (4,3 „Sie nimmt …“). Dafür neu und schwer: 4,5 „Diese Freiheit verschafft uns nichts anderes als
+  Gleichgültigkeit …“ kippt beim Hören (Subjekt „Freiheit“); dazu 4,4 „Sklavendienst der leisten“ (auch Whisper),
+  „nicht mehr wiegen“ (gehört als „nicht länger“), „an dem Seinen“ (gehört als „den Seinen“). Ergebnis: ergänzt das Ohr
+  des Auftraggebers, ersetzt es nicht.
+- **Fingerabdruck Kapitel 4**: 28 Sätze gegen das ganze Kapitel 0,849–0,975 (Median 0,943); kurze Sätze unter 7 s ab
+  0,849. Neue Fassungen: „Diese Dinge nehmen“ 0,848/0,804/0,810, „Sie kommen und gehen“ 0,865/0,892/0,892, „An all dem“
+  0,933/0,914/0,927; alle wortgetreu, Betonung unauffällig.
