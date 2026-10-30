@@ -605,3 +605,9 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
 - **Bandenden B gewählt** (Auftraggeber: „B“): Standard in `bild.html` jetzt `breite: 100, ausklang: 120`. Probe 45 s aus
   Kapitel 3 (1080p25, AAC Stereo 48 kHz, 12 MB) im Artifact „Lesebänder im Vergleich“, Runde 7. Kapitel 1–3 noch ohne.
 - **Bandenden B abgenommen** (Auftraggeber zur Probe: „Das ist gut so“). In `PLAN.md` eingetragen.
+- **Kapitel 1–3 mit 1M und Bandenden B neu gerendert** (Auftraggeber: „4M ist raus“). Endkontrolle je Kapitel: 1080p25,
+  AAC-LC Stereo 48 kHz, −18,0/−18,0/−18,1 LUFS, Dauer gleich `ende` (−0,02 s), Stichbilder in Ordnung. Vorschau-Artifacts
+  1–3 ersetzt, Full-HD-Dateien geschickt. Kapitel 4 (in eigener Sitzung freigegeben) per Schnellvorlauf nach main;
+  Kapitel 5 in neuer Sitzung `session_01LHRCLtCeTk9iLknnG3E4k9`, Zweig `kapitel05-entwurf`.
+- **Textprüfung Kapitel 4 vor der Aufnahme:** zwei seltene Wörter, „ausschweifen“ (4,3, *euagari*, Zipf 1,4) und
+  „Sklavendienst“ (4,4, *seruitutem seruire*, Zipf 1,4); dem Auftraggeber vorgelegt, Aufnahme wartet darauf.

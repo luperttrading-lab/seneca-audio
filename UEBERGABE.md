@@ -8,8 +8,8 @@ Ton) stehen in `PLAN.md`, Verlauf, Versuche und Messungen in `PROTOKOLL.md`.
 | Kapitel | Text | Ton und Video |
 |---|---|---|
 | 1 | fertig, freigegeben (`texte/kapitel01.txt`, Marken 1,1–1,5) | **fertig (Fassung v3):** Helmut, wortgetreu (499/499), 38 Pausen, 3:53; erster Satz von 1 (3) einzeln erzeugt eingesetzt („die vor uns hergeht“). Video am 30.10. mit Leseband C3 neu gerendert und die Full-HD-Datei erneut geschickt (ersetzt die erste vom Morgen), dazu Miniaturbilder mit und ohne „Kapitel 1“. Gesichert (siehe unten) |
-| 2 | fertig, freigegeben (30.10.; nach den Regeln in `PLAN.md` überarbeitet, 2,1 „offenbar die Mehrheit“) | **fertig, Video mit Leseband C3 (30.10.)**, 2:52, Full-HD-Datei und Miniaturbild dem Auftraggeber geschickt, Vorschau-Artifact. Vorher: | **Ton erzeugt (30.10.)**, 989 Credits; Betonungsfilter: 0 markiert. „Bekränzten“ und „Beredsamkeit“ vom Auftraggeber als richtig gehört (`texte/verhoerer.txt`); 2,3 „dem Geschossen“ war ein echter Sprechfehler: Satz mit `satz.py` dreimal allein erzeugt (159 Credits), Fassung 3 eingesetzt, jetzt wortgetreu, 40 Pausen, 2:52. Vom Auftraggeber abgenommen; gesichert im Hörprobe-Artifact unter `quelle/` |
-| 3 | fertig, freigegeben (30.10.; nach den Regeln geprüft, Seelengröße, 3,1 neu mit „[ohne es zu erkennen]“, 3,3 „Ich gebe der Natur meine Stimme“, „abzuweichen“, „übereinstimmen“) | **fertig, Video mit 1M (30.10.)**: 2:51, 358/358 wortgetreu; Full-HD-Datei und Miniaturbild geschickt, Vorschau-Artifact; Ton gesichert im Hörprobe-Artifact unter `quelle/`. YouTube-Beschreibung: Hinweis auf eckige Klammern |
+| 2 | fertig, freigegeben (30.10.; nach den Regeln in `PLAN.md` überarbeitet, 2,1 „offenbar die Mehrheit“) | **fertig, Video mit 1M und Bandenden B (30.10.)**, 2:52, Full-HD-Datei und Miniaturbild dem Auftraggeber geschickt, Vorschau-Artifact. Vorher: | **Ton erzeugt (30.10.)**, 989 Credits; Betonungsfilter: 0 markiert. „Bekränzten“ und „Beredsamkeit“ vom Auftraggeber als richtig gehört (`texte/verhoerer.txt`); 2,3 „dem Geschossen“ war ein echter Sprechfehler: Satz mit `satz.py` dreimal allein erzeugt (159 Credits), Fassung 3 eingesetzt, jetzt wortgetreu, 40 Pausen, 2:52. Vom Auftraggeber abgenommen; gesichert im Hörprobe-Artifact unter `quelle/` |
+| 3 | fertig, freigegeben (30.10.; nach den Regeln geprüft, Seelengröße, 3,1 neu mit „[ohne es zu erkennen]“, 3,3 „Ich gebe der Natur meine Stimme“, „abzuweichen“, „übereinstimmen“) | **fertig, Video mit 1M und Bandenden B (30.10.)**: 2:51, 358/358 wortgetreu; Full-HD-Datei und Miniaturbild geschickt, Vorschau-Artifact; Ton gesichert im Hörprobe-Artifact unter `quelle/`. YouTube-Beschreibung: Hinweis auf eckige Klammern |
 | 4 | fertig, freigegeben (30.10.; 4,2 „das, was“, 4,3 „jenseits der Furcht, jenseits der Begierde“, 4,4 „tief … aus der Tiefe“ bleibt); Begriffe aus Kapitel 4 in `PLAN.md` angenommen | – |
 | 5–28 | Latein in `texte/latein/kapitelNN.txt` | – |
 
@@ -17,12 +17,13 @@ Die öffentliche Seite zeigt noch Luperts alte „Teile 1 und 2“ mit altem Wor
 
 ## Nächste Schritte
 
-1. Leseband endgültig: 1M mit Bandenden B (Auftraggeber, 30.10.; 4M verworfen). Kapitel 1 bis 3 werden damit neu
-   gerendert (ohne Credits), damit alle Kapitel gleich aussehen.
+1. Leseband endgültig: 1M mit Bandenden B (Auftraggeber, 30.10.; 4M verworfen). Kapitel 1 bis 3 sind damit neu gerendert,
+   Vorschauen ersetzt, Full-HD-Dateien geschickt (30.10.).
 2. **Auftraggeber:** YouTube – einzelne Videos je Kapitel (Playlist) oder ein Gesamtvideo? Bis dahin Kapitel 1 am besten
    „Nicht gelistet“ hochladen und die Lesbarkeit am Handy prüfen.
 3. **Auftraggeber:** Credit-Grenze des Schlüssels anheben (reicht noch für etwa 12 bis 14 Kapitel).
-4. Kapitel 4 aufnehmen (Text freigegeben 30.10.), Kapitel 5 übersetzen.
+4. Kapitel 4 aufnehmen (Text freigegeben 30.10.; vorher „ausschweifen“ und „Sklavendienst“ klären). Kapitel 5 wird in
+   eigener Sitzung übersetzt (`session_01LHRCLtCeTk9iLknnG3E4k9`, Zweig `kapitel05-entwurf`).
 5. Später: öffentliche Seite auf Kapitel mit Helmut umstellen (Freigabe); Weg der Gesamtdatei zu YouTube klären (etwa
    1,3 GB in Full HD, zu groß für Artifacts; etwa über einen Ordner auf dem Rechner des Auftraggebers oder Google Drive).
    Kostenlos, aber offen: Helmut in der App unter „Meine Stimmen“ aufnehmen.
@@ -70,15 +71,15 @@ Video ohne Credits neu. Jedes weitere Kapitel nach der Abnahme genauso sichern.
 - Öffentliche Hörbuch-Seite: https://luperttrading-lab.github.io/seneca-audio/
 - **Kapitel 3 · Hörprobe** (privat; `quelle/` mit Rohaufnahme; Quelle `seite/hoerprobe_kapitel03.html`):
   https://claude.ai/artifact/Qp2qQxMTf5pRxxhT2h8XMV
-- **Kapitel 3 · Vorschau** (privat; Video 720p mit 1M, Ton; Quelle `seite/vorschau_kapitel03.html`):
+- **Kapitel 3 · Vorschau** (privat; Video 720p mit 1M und B, Ton; Quelle `seite/vorschau_kapitel03.html`):
   https://claude.ai/artifact/V39W42LEqQcPC1akMm5A5h
-- **Kapitel 2 · Vorschau** (privat; Video 720p mit C3, Ton; Quelle `seite/vorschau_kapitel02.html`, gebaut mit `seite/vorschau.py`):
+- **Kapitel 2 · Vorschau** (privat; Video 720p mit 1M und B, Ton; Quelle `seite/vorschau_kapitel02.html`, gebaut mit `seite/vorschau.py`):
   https://claude.ai/artifact/C4Dge4gf9qYDZbU3w7kdAK
-- Kapitel 1 · Vorschau (privat; Video 720p mit C3, Ton, `quelle/`; Quelle `seite/vorschau_kapitel01.html`):
+- Kapitel 1 · Vorschau (privat; Video 720p mit 1M und B, Ton, `quelle/`; Quelle `seite/vorschau_kapitel01.html`):
   https://claude.ai/artifact/Pa3cLB5TEbA2WvmnNQiVy9
 - Kapitel 1 · Prüfstellen (privat; Betonungsversuche zu 1 (3); Quelle `seite/pruefstellen.html`):
   https://claude.ai/artifact/9oVZgpKioSQuSDG4DCfBJE
-- **Lesebänder im Vergleich** (privat; Runde 4: mit Band, ohne Band, ohne Band mit hell gesprochener Zeile, je 45 s aus Kapitel 1; Quelle `seite/bandvergleich.html`, Videos nur im Artifact): https://claude.ai/artifact/4MbuGh3bSWx4GvcRBhhAcp
+- **Lesebänder im Vergleich** (privat; Runde 7: B als Video, Runde 6: Bandenden als Standbilder, Runde 5: 1, 1M, 4, 4M; Quelle `seite/bandvergleich.html`, Videos nur im Artifact): https://claude.ai/artifact/4MbuGh3bSWx4GvcRBhhAcp
 - **Kapitel 2 · Hörprobe** (privat; ganzes Kapitel, Paragrafen, von Whisper gemeldete Wörter; `quelle/` mit Rohaufnahme;
   Quelle `seite/hoerprobe_kapitel02.html`, gebaut mit `seite/hoerprobe.py`): https://claude.ai/artifact/P2UJeKRMty5sWxpKoMvZ2h
 - Kapitel 1 · Betonungsfilter (privat; Test des Filters, sechs markierte Stellen zum Anhören; Quelle
