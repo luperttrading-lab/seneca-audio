@@ -635,3 +635,4 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
 - **Änderungsseite mit Farben** (Auftraggeber: Fett im Chat kaum erkennbar): `seite/aenderungen.py` rechnet die Markierung per Wortvergleich (rot durchgestrichen weg, gold neu), ganzer Satz vorher/nachher, bei Bezügen der Satz davor. Erste Seite: Kapitel 5.
 - **Kapitel 5, Verständnisprüfung**: Auftraggeber übernimmt 4 von 7 Vorschlägen (3, 4, 6, 7: „verdorbene Vernunft“, „Denn dann“, „immer neue Schmeicheleien … ganz“, zweites „möchte“); 1, 2, 5 bleiben.
 - **Kapitel 6, Verständnisprüfung**: 3 Vorschläge (6,1 „soll der Geist“, „nach den künftigen Lüsten“, „die Übel statt der Güter“), ein Hinweis ohne Änderung (Gesundheit = gesunder Verstand, schwerer Gedanke). Farbseite.
+- **Kapitel 5 aufgenommen**: 650 Credits, 241 Wörter wortgetreu, 17 Pausen, 1:51, Betonungsfilter 0 von 33. Hörprobe mit `quelle/`.

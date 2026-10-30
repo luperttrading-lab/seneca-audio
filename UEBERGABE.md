@@ -25,7 +25,7 @@ Am besten in der Reihenfolge freigeben (5, 6, 7 …): Eine Änderung in einem Ka
 | Kapitel | Sitzung | Stand |
 |---|---|---|
 | 4 | [session_01LHRCLp8bXNZjxkAQi9Capv](https://claude.ai/code/session_01LHRCLp8bXNZjxkAQi9Capv) | freigegeben, nach main übernommen |
-| 5 | [session_01LHRCLtCeTk9iLknnG3E4k9](https://claude.ai/code/session_01LHRCLtCeTk9iLknnG3E4k9) | freigegeben 30.10., nach main übernommen, Begriffe in `PLAN.md` |
+| 5 | [session_01LHRCLtCeTk9iLknnG3E4k9](https://claude.ai/code/session_01LHRCLtCeTk9iLknnG3E4k9) | freigegeben 30.10., nach main übernommen, Begriffe in `PLAN.md`; Verständnisprüfung: 4 von 7 übernommen; **Ton erzeugt** (650 Credits, wortgetreu, Filter 0, 1:51), Hörprobe beim Auftraggeber, `quelle/` gesichert |
 | 6 | [session_01LHRCLofcYszWPPG4q1cQ2x](https://claude.ai/code/session_01LHRCLofcYszWPPG4q1cQ2x) | freigegeben 30.10., nach main übernommen, Begriffe in `PLAN.md` |
 | 7 | [session_01LHRCLsPeiyRaQQaCkE7Xnn](https://claude.ai/code/session_01LHRCLsPeiyRaQQaCkE7Xnn) | Entwurf |
 | 8 | [session_01LHRCLsMyGzZSU8bDAFFVua](https://claude.ai/code/session_01LHRCLsMyGzZSU8bDAFFVua) | freigegeben 30.10., nach main übernommen, Begriffe in `PLAN.md` |
@@ -80,13 +80,14 @@ Video ohne Credits neu. Jedes weitere Kapitel nach der Abnahme genauso sichern.
 
 - Schlüssel als Umgebungsvariable `ELEVENLABS_API_KEY` (Text zu Sprache, Stimmen lesen, Modelle, Verlauf lesen, Benutzer;
   Stimmen schreiben bewusst gesperrt). Kontingent nicht abfragbar (`/v1/user` antwortet 401).
-- Grenze des Schlüssels 30.000 Credits; verbraucht etwa 18.271, übrig etwa 11.729 (Stand 30.10., nach Kapitel 4 mit sieben neuen Sätzen, 999 Credits). Etwa 0,43 Credits je
+- Grenze des Schlüssels 30.000 Credits; verbraucht etwa 18.921, übrig etwa 11.079 (Stand 30.10., nach Kapitel 5). Etwa 0,43 Credits je
   Zeichen, ein Kapitel etwa 1.100–1.300. Das ganze Werk braucht etwa 28.800, die Grenze muss also steigen.
 - Kosten laut Auftraggeber: 1.000 Credits ≈ 0,10 € im Sparabo, sonst 0,20 €.
 - Höchstens 5 Anfragen gleichzeitig, sonst Fehler 429.
 
 ## Links (aktuell)
 
+- **Kapitel 5 · Hörprobe** (privat; `quelle/` mit Rohaufnahme): https://claude.ai/artifact/Gq6XW7W9b6wU45ZytiLaPa
 - **Kapitel 6 · Änderungen** (privat; Verständnisprüfung, 3 Vorschläge): https://claude.ai/artifact/X95yj1BpAui7xqWJq1SJoz
 - **Kapitel 5 · Änderungen** (privat; Vorschläge der Verständnisprüfung mit Farben; gebaut mit `seite/aenderungen.py`):
   https://claude.ai/artifact/NxjKg5zwacGMQLniGhWyan
