@@ -5,10 +5,12 @@ Textprüfung 0 Hinweise, geprüft vom unabhängigen Prüf-Agenten. Freigabe offe
 
 ## Neue Begriffe (Vorschlag)
 
+Abgeglichen mit der Begriffsliste auf main (Stand nach Kapitel 6, 8, 9): keine Abweichung; *iudicium* = Urteil dort schon
+angenommen (9,3), die übrigen dort neuen Begriffe kommen in Kapitel 5 nicht vor.
+
 | Latein | Deutsch | Begründung |
 |---|---|---|
 | *tristitia* | Traurigkeit (5,1) | wörtlich, wie Forbiger; neben Furcht |
-| *iudicium* | Urteil (5,3) | wörtlich; „rectum certumque iudicium“ = richtiges und sicheres Urteil |
 | *veritas* | Wahrheit (5,2; schon 4,5) | wörtlich |
 | *corpus* | Körper (5,4; schon 4,4) | wie in 4,4 |
 | *natura* (eines Menschen) | Natur (5,2 „eine stumpfe Natur“) | wie 3,3 „seiner eigenen Natur“; *rerum natura* bleibt „die Natur“ |
