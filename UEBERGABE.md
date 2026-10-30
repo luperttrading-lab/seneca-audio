@@ -87,6 +87,8 @@ Video ohne Credits neu. Jedes weitere Kapitel nach der Abnahme genauso sichern.
 
 ## Links (aktuell)
 
+- **Kapitel 5 · Änderungen** (privat; Vorschläge der Verständnisprüfung mit Farben; gebaut mit `seite/aenderungen.py`):
+  https://claude.ai/artifact/NxjKg5zwacGMQLniGhWyan
 - **Kapitel 4 · Hörprobe** (privat; `quelle/` mit Rohaufnahme; Quelle `seite/hoerprobe.py`):
   https://claude.ai/artifact/3nbZjqMkh3UFLQojqMbvMg
 - Öffentliche Hörbuch-Seite: https://luperttrading-lab.github.io/seneca-audio/
