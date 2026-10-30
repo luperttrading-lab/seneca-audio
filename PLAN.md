@@ -33,6 +33,9 @@ Gelernt aus den Korrekturen an Kapitel 1 (29.10.):
   nicht „ihm“, wenn das Bezugswort weit zurückliegt.
 - **Änderungen an vorgelegtem Text nur als Vorschlag**: alt → neu, mit dem lateinischen Grund; der Auftraggeber gibt
   frei, danach den ganzen Text noch einmal vorlegen.
+- **Einwände immer besprechen**, auch fremde (etwa von einer anderen KI) und auch wenn sie zu keiner Änderung führen:
+  je Punkt das Urteil mit Grund aus dem Latein; lateinische Zitate solcher Vorlagen gegen `texte/latein/` prüfen
+  (bei Kapitel 2 und 3 waren sie teils erfunden). Geändert wird nur, was der Auftraggeber freigibt.
 
 ## Begriffsliste
 
@@ -53,10 +56,11 @@ Leitbegriffe beim ersten Auftreten eintragen und vorlegen.
 | *bonum*, *summum bonum* | das Gut, das höchste Gut (stoisches Fachwort, nicht umschreiben) | angenommen 30.10. (2,2) |
 | *animus* | Geist | angenommen 30.10. (2,2) |
 | *turba*, *vulgus*, *multitudo*, *coetus* | die Menge (bei Seneca hier gleichbedeutend) | angenommen 30.10. (1,4; 2,1–3) |
-| *mens* | Geist (wie *animus*); die feste Wendung *bona mens* bleibt „klarer Verstand“ | vorgeschlagen 30.10. (3,3), Freigabe mit Kapitel 3 |
-| *sapientia* | Weisheit | vorgeschlagen 30.10. (3,3), Freigabe mit Kapitel 3 |
-| *tranquillitas* | Ruhe | vorgeschlagen 30.10. (3,4), Freigabe mit Kapitel 3 |
-| *rerum natura* | die Natur | vorgeschlagen 30.10. (3,3), Freigabe mit Kapitel 3 |
+| *mens* | Geist (wie *animus*); die feste Wendung *bona mens* bleibt „klarer Verstand“ | angenommen 30.10. (3,3) |
+| *sapientia* | Weisheit | angenommen 30.10. (3,3) |
+| *tranquillitas* | Ruhe | angenommen 30.10. (3,4) |
+| *rerum natura* | die Natur | angenommen 30.10. (3,3) |
+| *magnitudo animi* | Seelengröße (feste Wendung; nicht „Größe“ allein, nicht „Erhabenheit“ oder „Geistesgröße“) | angenommen 30.10. (3,4) |
 
 ## Vom Auftraggeber festgelegt (nicht mehr ändern)
 

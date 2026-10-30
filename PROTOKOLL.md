@@ -543,3 +543,8 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
   Anschein nach“ statt „zum Schein“ (*in speciem*); 3,2 Komma vor „würde“ gestrichen (kann, muss nicht; sonst Pause);
   3,3 „dazu“ statt „zugleich“ (*tunc* in der Reihe *primum … deinde … tunc … tum*). Begriffe *mens*, *sapientia*,
   *tranquillitas*, *rerum natura* vorgeschlagen. Auf Wunsch des Auftraggebers schon eingetragen, Gegenlesen steht aus.
+- **Kapitel 3, Anmerkungen einer anderen KI** (vom Auftraggeber eingefügt) besprochen: „solide und fundiert“, „zu viel Zeit in
+  Anspruch nehmen“, „vergöttern“, „Verwerflichkeit“/„Schädlichkeit“ abgelehnt (Bild vom Erz, gestelzt, nicht im Latein,
+  Doppelung „durch seine Schädlichkeit schadet“); „bestaunen“ bleibt (Bezug auf 2,4). Übernommen nur „Seelengröße“ statt
+  „Größe“ (*magnitudo* [animi]; die KI nannte fälschlich *magnanimitas*). Auftraggeber: Einwände auch dann besprechen, wenn
+  nichts geändert wird (jetzt Regel in `PLAN.md`).
