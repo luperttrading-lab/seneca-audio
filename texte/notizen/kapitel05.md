@@ -13,13 +13,12 @@ Textprüfung 0 Hinweise, geprüft vom unabhängigen Prüf-Agenten. Freigabe offe
 | *corpus* | Körper (5,4; schon 4,4) | wie in 4,4 |
 | *natura* (eines Menschen) | Natur (5,2 „eine stumpfe Natur“) | wie 3,3 „seiner eigenen Natur“; *rerum natura* bleibt „die Natur“ |
 
-## Offene Fragen an den Auftraggeber
+## Entscheidungen des Auftraggebers (30.10.)
 
-1. 5,1 *liberaliter agere coepi*: „großzügig zu verfahren“ (Entwurf) / „großzügig zu bestimmen“ / „frei zu verfahren“ /
-   „großzügig [mit Bestimmungen] zu verfahren“ (Ergänzung).
-2. 5,2 *malo suo*: „zum eigenen Schaden“ statt „Übel“ (feste Wendung).
-3. 5,3 *lacerationes … vellicationes*: „Zerreißen … Zwicken“ / „Wunden … Kratzer“ / „Verletzungen … Neckereien“.
-4. 5,3 *stabilita*: „steht fest auf“ (Bild mit *statura*, *constitit*) / „ist gegründet auf“.
+1. 5,1 *liberaliter agere coepi*: „großzügig zu bestimmen“.
+2. 5,2 *malo suo*: „zum eigenen Schaden“ bleibt.
+3. 5,3 *lacerationes … vellicationes*: „den Wunden … den Nadelstichen“.
+4. 5,3 *stabilita*: „steht fest auf“ bleibt.
 
 ## Prüf-Agent: übernommen
 
