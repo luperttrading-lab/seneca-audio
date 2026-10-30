@@ -645,3 +645,4 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
   selbst“ bleibt), 9,2 „Freude macht“ (Begriffsliste: *delectare* erfreuen, *gaudium* Freude), 9,1 „doch nicht“ (*ideo* =
   deshalb), 10,3 „[sagst du]“ ohne Klammern (Ergänzung wird ohnehin gesprochen). Hinweise ohne Änderung: 7,3 „Ädil“
   (Sachbegriff), mehrere schwere Gedanken.
+- **Kapitel 6, Verständnisprüfung übernommen** (Auftraggeber): 6,1 „soll der Geist“, „nach den künftigen Lüsten“, „Denn wer das Übel dem wahren Gut vorzieht, ist wahnsinnig.“ (*mala pro bonis legere dementia est*; „Güter“ klang nach Besitz, „das Gute“ zu allgemein; „wahr“ spricht den stoischen Sinn aus).
