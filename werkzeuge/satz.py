@@ -91,7 +91,8 @@ else:
     i0, i1 = stelle_im_kapitel(W, alt[nr].strip("„“»«\""))
     y = lade(b + ".roh.mp3"); s = lade(datei(nimm, ".roh.mp3"))
     a = int((W[i0 - 1]["e"] + W[i0]["s"]) / 2 * SR) if i0 else int(max(0, W[i0]["s"] - 0.3) * SR)
-    e = int((W[i1]["e"] + W[i1 + 1]["s"]) / 2 * SR) if i1 + 1 < len(W) else len(y)
+    # letzter Satz des Kapitels: kurz nach dem letzten Wort schneiden, die Stille danach bleibt als Schluss stehen
+    e = int((W[i1]["e"] + W[i1 + 1]["s"]) / 2 * SR) if i1 + 1 < len(W) else min(len(y) - int(0.01 * SR), int((W[i1]["e"] + 0.15) * SR))
     s0, s1 = sprache(s); s = s[max(0, s0 - int(0.05 * SR)):s1 + int(0.10 * SR)].copy()
     s *= pegel(y[a:e]) / pegel(s)
     k = int(0.01 * SR); s[:k] *= np.linspace(0, 1, k); s[-k:] *= np.linspace(1, 0, k)
