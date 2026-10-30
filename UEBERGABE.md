@@ -8,7 +8,7 @@ Ton) stehen in `PLAN.md`, Verlauf, Versuche und Messungen in `PROTOKOLL.md`.
 | Kapitel | Text | Ton und Video |
 |---|---|---|
 | 1 | fertig, freigegeben (`texte/kapitel01.txt`, Marken 1,1–1,5) | **fertig (Fassung v3):** Helmut, wortgetreu (499/499), 38 Pausen, 3:53; erster Satz von 1 (3) einzeln erzeugt eingesetzt („die vor uns hergeht“). Full-HD-Datei am 30.10. dem Auftraggeber für YouTube geschickt, dazu Miniaturbilder mit und ohne „Kapitel 1“. Gesichert (siehe unten) |
-| 2 | am 30.10. nach den Regeln in `PLAN.md` überarbeitet (8 Änderungen, alle vom Auftraggeber übernommen); **Gegenlesen durch den Auftraggeber steht aus** | erst nach der Freigabe |
+| 2 | fertig, freigegeben (30.10.; nach den Regeln in `PLAN.md` überarbeitet, 2,1 „offenbar die Mehrheit“) | **Ton erzeugt (30.10.)**, 989 Credits, 2:54, 41 Pausen; Betonungsfilter: 0 markiert. Whisper hört in beiden Modellen „begrenzten“, „dem“, „Beretsamkeit“ statt „Bekränzten“, „den“, „Beredsamkeit“: **Auftraggeber hört die Hörprobe**. Rohaufnahme vorab im Hörprobe-Artifact unter `quelle/` gesichert. Video erst nach Abnahme |
 | 3 | Entwurf (`texte/kapitel03.txt`), mit Stewart und Forbiger abgeglichen; **Freigabe offen** (Entscheidungen unten) | – |
 | 4–28 | Latein in `texte/latein/kapitelNN.txt` | – |
 
@@ -16,12 +16,12 @@ Die öffentliche Seite zeigt noch Luperts alte „Teile 1 und 2“ mit altem Wor
 
 ## Nächste Schritte
 
-1. **Auftraggeber:** Kapitel 2 gegenlesen (überarbeitete Fassung), Kapitel 3 freigeben.
+1. **Auftraggeber:** Hörprobe Kapitel 2 anhören (ganzes Kapitel und die drei von Whisper gemeldeten Wörter); Kapitel 3 freigeben.
 2. **Auftraggeber:** YouTube – einzelne Videos je Kapitel (Playlist) oder ein Gesamtvideo? Bis dahin Kapitel 1 am besten
    „Nicht gelistet“ hochladen und die Lesbarkeit am Handy prüfen.
 3. **Auftraggeber:** Credit-Grenze des Schlüssels anheben (reicht noch für etwa 12 bis 14 Kapitel).
-4. **Claude, vor Kapitel 2:** Werkzeug zum Nachbessern einzelner Sätze bauen (allein, ohne Zusammenhang, 2–3 Fassungen,
-   Einsetzen; `PLAN.md`, Prüfliste Ton, Punkt 4).
+4. **Claude:** `werkzeuge/satz.py` (Nachbessern einzelner Sätze) ist gebaut, aber noch nicht an einer echten Stelle erprobt;
+   beim ersten gemeldeten Fehler testen.
 5. Kapitel 4 übersetzen.
 6. Später: öffentliche Seite auf Kapitel mit Helmut umstellen (Freigabe); Weg der Gesamtdatei zu YouTube klären (etwa
    1,3 GB in Full HD, zu groß für Artifacts; etwa über einen Ordner auf dem Rechner des Auftraggebers oder Google Drive).
@@ -59,7 +59,7 @@ Video ohne Credits neu. Jedes weitere Kapitel nach der Abnahme genauso sichern.
 
 - Schlüssel als Umgebungsvariable `ELEVENLABS_API_KEY` (Text zu Sprache, Stimmen lesen, Modelle, Verlauf lesen, Benutzer;
   Stimmen schreiben bewusst gesperrt). Kontingent nicht abfragbar (`/v1/user` antwortet 401).
-- Grenze des Schlüssels 30.000 Credits; verbraucht etwa 13.380, übrig etwa 16.620 (Stand 30.10.). Etwa 0,43 Credits je
+- Grenze des Schlüssels 30.000 Credits; verbraucht etwa 14.370, übrig etwa 15.630 (Stand 30.10., nach Kapitel 2). Etwa 0,43 Credits je
   Zeichen, ein Kapitel etwa 1.100–1.300. Das ganze Werk braucht etwa 28.800, die Grenze muss also steigen.
 - Kosten laut Auftraggeber: 1.000 Credits ≈ 0,10 € im Sparabo, sonst 0,20 €.
 - Höchstens 5 Anfragen gleichzeitig, sonst Fehler 429.
@@ -71,6 +71,8 @@ Video ohne Credits neu. Jedes weitere Kapitel nach der Abnahme genauso sichern.
   https://claude.ai/artifact/Pa3cLB5TEbA2WvmnNQiVy9
 - Kapitel 1 · Prüfstellen (privat; Betonungsversuche zu 1 (3); Quelle `seite/pruefstellen.html`):
   https://claude.ai/artifact/9oVZgpKioSQuSDG4DCfBJE
+- **Kapitel 2 · Hörprobe** (privat; ganzes Kapitel, Paragrafen, von Whisper gemeldete Wörter; `quelle/` mit Rohaufnahme;
+  Quelle `seite/hoerprobe_kapitel02.html`, gebaut mit `seite/hoerprobe.py`): https://claude.ai/artifact/P2UJeKRMty5sWxpKoMvZ2h
 - Kapitel 1 · Betonungsfilter (privat; Test des Filters, sechs markierte Stellen zum Anhören; Quelle
   `seite/betonungstest.html`, Ausschnitte nur im Artifact): https://claude.ai/artifact/FKbKXf7ynMhVhg5xydrTpQ
 - Stimmenprobe (privat; Quelle `seite/stimmenprobe.html`): https://claude.ai/artifact/G9tMfCirpybCFyQYne2d6L

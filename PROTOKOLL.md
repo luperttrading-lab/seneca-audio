@@ -511,3 +511,8 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
   Abstimmung = Mehrheit; Kapitel 1 endet mit „nach der Mehrheit“). Anregung aus der Analyse einer anderen KI, die der
   Auftraggeber eingefügt hatte; deren drei lateinische Zitate waren erfunden, ihr „what“ stand nie im Text. „darfst“ und
   „geschieht“ aus derselben Analyse nicht übernommen. Vom Auftraggeber freigegeben.
+- **Kapitel 2 erzeugt** (989 Credits, 2.301 Zeichen, also 0,43 je Zeichen): Whisper turbo und large-v3 hören übereinstimmend
+  „begrenzten“ (Bekränzten; ä/e klingen gleich, Unterschied nur k/g), „dem“ (den Geschossen), „Beretsamkeit“
+  (Beredsamkeit; Auslautverhärtung, sicher Schein). `kapitel.py --trotz-abweichung` neu, Kette zu Ende: 387 Wörter, 382
+  exakt getroffen, 41 Pausen (+17,9 s), 2:54. Betonungsfilter: 0 markiert, 3 zwischen 3 und 5 HT. Hörprobe mit
+  `seite/hoerprobe.py`; Tabellenzelle der Vorlage brach am Handy nicht um (439 statt 390 px), behoben.

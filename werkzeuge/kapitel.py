@@ -1,9 +1,11 @@
-"""Ein Kapitel vom Text bis zum Video: kapitel.py <nr> <ausordner> [--neu]
+"""Ein Kapitel vom Text bis zum Video: kapitel.py <nr> <ausordner> [--neu] [--ohne-video] [--trotz-abweichung]
 
 Schritte (am 29.10. mit dem Nutzer festgelegt):
 1. Text ohne Stellenmarken (stellen.py) an ElevenLabs: Helmut Stieglbauer – Deep and Dynamic, eleven v4, Stability 0,5.
    Die Rohaufnahme wird zwischengespeichert und nur mit --neu wieder erzeugt (kostet Credits).
-2. Worttreue der Rohaufnahme mit Whisper (pruef.py); bei Abweichungen Abbruch vor der Weiterverarbeitung.
+2. Worttreue der Rohaufnahme mit Whisper (pruef.py); bei Abweichungen auch in der Gegenprobe Abbruch vor der
+   Weiterverarbeitung. --trotz-abweichung überspringt die Prüfung und rechnet weiter, damit die gemeldeten Stellen
+   auf der Hörprobe (seite/hoerprobe.py) angehört werden können.
 3. Rauschunterdrückung, Wortzeiten (karaoke_daten.py), Pausen wie in Teil 1 („ruhig“, pausen2.py), an Kommas nur, wo
    Helmut schon pausiert (kette.py).
 4. Tempo 0,96 nachträglich (ffmpeg atempo, Tonhöhe bleibt), so wie in der Stimmenprobe gewählt; −18 LUFS.
@@ -37,9 +39,12 @@ if nr == 1: credits += tts("Seneca. Vom glücklichen Leben.", os.path.join(aus, 
 print(f"Kapitel {nr}: {len(text)} Zeichen, {credits} Credits", flush=True)
 fertig = credits == 0 and not neu and os.path.exists(b + ".pausen.stellen.json")   # Schritte 2–3 schon gelaufen
 # 2. Worttreue
-if not fertig: p = py(f"{HIER}/pruef.py", "large-v3-turbo", rein, b + ".roh.mp3", capture_output=True, text=True)
+trotz = "--trotz-abweichung" in sys.argv   # Worttreue schon geprüft, Abweichungen sollen auf die Hörprobe (Auftraggeber hört)
+if not fertig and not trotz: p = py(f"{HIER}/pruef.py", "large-v3-turbo", rein, b + ".roh.mp3", capture_output=True, text=True)
+if trotz and not fertig: print("Worttreue übersprungen (--trotz-abweichung): gemeldete Stellen auf der Hörprobe anhören", flush=True)
 if not fertig:
-    zeile = [l for l in p.stdout.splitlines() if "large-v3-turbo" in l][-1]; print(zeile, flush=True)
+    zeile = "wortgetreu" if trotz else [l for l in p.stdout.splitlines() if "large-v3-turbo" in l][-1]
+    if not trotz: print(zeile, flush=True)
     if "wortgetreu" not in zeile:   # Gegenprobe mit dem großen Modell: turbo verhört sich gelegentlich („Wahlen“ → „Walen“)
         p = py(f"{HIER}/pruef.py", "large-v3", rein, b + ".roh.mp3", capture_output=True, text=True)
         zeile = [l for l in p.stdout.splitlines() if "large-v3" in l][-1]; print("Gegenprobe:", zeile, flush=True)

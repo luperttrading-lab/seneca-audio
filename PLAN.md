@@ -79,7 +79,10 @@ Leitbegriffe beim ersten Auftreten eintragen und vorlegen.
    Gedankenstrich 0,45 s, Komma 0,35 s – an Kommas nur dort, wo die Stimme schon mindestens 0,15 s absetzt, sonst wird
    mitten in den Sprechfluss geschnitten).
 3. **Prüfliste Ton** (unten) abarbeiten, dann dem Auftraggeber als Seite zum Anhören schicken (Artifact mit Abspielknopf
-   und Mitlesen, verdächtige Stellen anklickbar; nie als Datei).
+   und Mitlesen, verdächtige Stellen anklickbar; nie als Datei): `python3 seite/hoerprobe.py N <ordner> <seitenordner>`
+   baut sie mit ganzem Kapitel, Paragrafen, Meldungen von Whisper und Betonungsfilter. Meldet Whisper auch in der
+   Gegenprobe Abweichungen, rechnet `kapitel.py N <ordner> --trotz-abweichung` weiter, und die Stellen kommen auf die Seite.
+   Die Rohaufnahme gleich danach unter `quelle/` sichern, nicht erst nach der Abnahme.
 4. **Nachbessern**, was der Auftraggeber meldet (Prüfliste, Punkt 4), bis zur Abnahme des Kapitels.
 5. **Sichern**, sofort nach der Abnahme (Prüfliste, Punkt 6).
 6. **Video:** `python3 werkzeuge/video/baue.py <daten.json> <ton.wav> <aus.mp4>` (oder `kapitel.py` ohne `--ohne-video`);
@@ -111,8 +114,9 @@ Vor jedem Schicken an den Auftraggeber, in dieser Reihenfolge:
    an den Satzpausen einsetzen (Rand 50/100 ms, Blende 10 ms, Pegel an den Satz davor angleichen), Stimme per
    Fingerabdruck prüfen (`werkzeuge/fingerabdruck.py`, mindestens 0,95 zur Kapitelaufnahme), dann die Kette neu und die
    Worttreue erneut prüfen. Alternative: den Satz ans Ende einer Anfrage stellen und zurückschneiden (Rückwärts-Test).
-   Nicht bewährt: Satz für Satz mit Zusammenhang (`paragraf.py --saetze`, zweimal falsch). Werkzeug für das Einsetzen
-   fehlt noch (bisher Handarbeit, siehe `PROTOKOLL.md`), vor Kapitel 2 bauen.
+   Nicht bewährt: Satz für Satz mit Zusammenhang (`paragraf.py --saetze`, zweimal falsch). Werkzeug:
+   `python3 werkzeuge/satz.py N "<Satzanfang>" <ordner> [--fassungen 3]` erzeugt und prüft die Fassungen,
+   `… --nimm <n>` setzt eine ein und rechnet die Kette neu (noch nicht an einer echten Stelle erprobt).
 5. **Endkontrolle der Dateien:** Tonspur vorhanden, Stereo, 48 kHz, AAC-LC (YouTube-Empfehlung; eine Mono-Datei kam am
    Handy stumm an), −18 LUFS; Dauer gleich `ende` in `daten.json`; Stichbilder am Anfang (Startseite), in der Mitte und am
    Ende ansehen; Seiten im Browser in Handygröße testen (`CLAUDE.md`).
