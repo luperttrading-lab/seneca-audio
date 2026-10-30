@@ -23,8 +23,8 @@ Die öffentliche Seite zeigt noch Luperts alte „Teile 1 und 2“ mit altem Wor
 4. **Auftraggeber:** C3 gewählt (30.10.); offen nur noch C3 oder C3+ (Mischung 0,35 oder 0,45). Danach den Stil als
    Standard in `bild.html` setzen und Kapitel 1 neu rendern (ohne Credits).
 5. **Claude:** nach Abnahme von Kapitel 2 das Video bauen (Prüfliste Ton, Punkt 5) und die Full-HD-Datei schicken.
-5. Kapitel 4 übersetzen.
-6. Später: öffentliche Seite auf Kapitel mit Helmut umstellen (Freigabe); Weg der Gesamtdatei zu YouTube klären (etwa
+6. Kapitel 3 aufnehmen (nach Freigabe), Kapitel 4 übersetzen.
+7. Später: öffentliche Seite auf Kapitel mit Helmut umstellen (Freigabe); Weg der Gesamtdatei zu YouTube klären (etwa
    1,3 GB in Full HD, zu groß für Artifacts; etwa über einen Ordner auf dem Rechner des Auftraggebers oder Google Drive).
    Kostenlos, aber offen: Helmut in der App unter „Meine Stimmen“ aufnehmen.
 
