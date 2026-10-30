@@ -6,6 +6,8 @@ Satz ab. Lateinischer Text: [The Latin Library](https://www.thelatinlibrary.com/
 Satz, mit dem der lateinische Paragraf beginnt (nie gesprochen; `werkzeuge/stellen.py` entfernt sie vor Stimme, Prüfung
 und Wortzeiten und liefert je Wort die Stelle für das Video). Endprodukt: ein YouTube-Video mit mitlaufendem Text.
 
+Diese Datei enthält die gültigen Regeln (Stand 30.10.). Wie sie entstanden sind, mit Versuchen und Messungen: `PROTOKOLL.md`.
+
 ## Stil der Übersetzung
 
 Festgelegt an Kapitel 1 nach den Rückmeldungen des Auftraggebers:
@@ -17,44 +19,102 @@ Festgelegt an Kapitel 1 nach den Rückmeldungen des Auftraggebers:
 - Für das Vorlesen gesetzt: Satzzeichen markieren Pausen, Gedankenstriche sparsam, keine Klammern.
 - Kein „als wie“; Einschübe zwischen Gedankenstrichen lieber umstellen (die Stimme stockt sonst mitten im Satz);
   lange Kommaketten in zwei Sätze teilen. Bildhafte Wörter nur, wenn sie natürlich klingen (kein „Knäuel von Menschen“).
-- Erster Satz ohne „zu“: „Glücklich leben, mein Bruder Gallio, das wollen alle.“
+
+Gelernt aus den Korrekturen an Kapitel 1 (29.10.):
+
+- **Verbindungswörter nach ihrer Funktion im Gedankengang**, nicht nach dem Wörterbuch: *atqui* in 1,3 führt die
+  Begründung weiter („Denn nichts verstrickt uns …“), „Und doch“ hätte einen Gegensatz behauptet, den es nicht gibt.
+  Gilt ebenso für *ergo*, *enim*, *autem*, *tamen*, *nam*, *quidem*.
+- **Begriffe nach dem lateinischen Wort**, nicht nach dem, was im Deutschen gut klingt: *bona mens* ist „klarer Verstand“,
+  nicht „Vernunft“ (das wäre *ratio*). Leitbegriffe stehen in der Begriffsliste unten und gelten im ganzen Werk.
+- **Senecas Bilder durchhalten**, auch über Sätze hinweg: *sanabimur* ist „Geheilt werden wir“ – Seneca spricht von
+  Krankheit und Heilung; „gesund werden“ verlor das Bild, und man fragt sich, woran wir krank sind.
+- **Bezüge müssen beim Zuhören eindeutig sein**, man kann nicht zurücklesen: *ab ea … ad illam* ist „davon … darauf“,
+  nicht „ihm“, wenn das Bezugswort weit zurückliegt.
+- **Änderungen an vorgelegtem Text nur als Vorschlag**: alt → neu, mit dem lateinischen Grund; der Auftraggeber gibt
+  frei, danach den ganzen Text noch einmal vorlegen.
+
+## Begriffsliste
+
+Gilt im ganzen Werk. Abweichen nur, wenn der Zusammenhang es verlangt, und dann dem Auftraggeber nennen. Neue
+Leitbegriffe beim ersten Auftreten eintragen und vorlegen.
+
+| Latein | Deutsch | Stand |
+|---|---|---|
+| *beatus*, *beata vita* | glücklich, glückliches Leben | festgelegt (Titel) |
+| *bona mens* | klarer Verstand | festgelegt 29.10. (1,2) |
+| *fortuna* | Schicksal (nicht „Glück“: „glücklich“ bleibt für *beatus*) | angenommen 30.10. |
+| *voluptas* | Lust, Plural Lüste; Leitbegriff ab Kapitel 4 | angenommen 30.10. |
+| *gaudium* | Freude | angenommen 30.10. |
+| *virtus* | Tugend | angenommen 30.10. |
+| *ratio* | Vernunft | angenommen 30.10. |
+| *sapiens* | der Weise | angenommen 30.10. |
+
+## Vom Auftraggeber festgelegt (nicht mehr ändern)
+
+- 1,1 „Glücklich leben, mein Bruder Gallio, das wollen alle.“ (ohne „zu“)
+- 1,1 „… je hastiger er darauf zustrebt“ (gewählt aus Varianten, 29.10.)
+- 1,1 „… wird gerade die Eile zur Ursache einer noch größeren Entfernung.“
+- 1,4 „Am Beispiel der anderen gehen wir zugrunde.“
 
 ## Ablauf je Kapitel
 
-1. Übersetzung aus dem Latein, gegen den lateinischen Text geprüft und mit zwei freien Übersetzungen abgeglichen:
-   Aubrey Stewart, englisch 1900 ([Project Gutenberg 64576](https://www.gutenberg.org/ebooks/64576), „Of a Happy Life“)
-   und Albert Forbiger, deutsch 1867 (nur als [LibriVox-Lesung](https://archive.org/details/vom_glueckseligen_leben_rr_librivox),
-   per Whisper abgeschrieben; zeno.org sperrt automatische Abrufe). Freigabe durch den Auftraggeber.
-2. Vertonung in ElevenLabs mit der Stimme Lupert (eleven v4), Datei hochladen.
-3. Prüfung auf Worttreue (Whisper), Pausen auf natürliche Länge (`werkzeuge/pausen2.py`: Satzende 0,9 s, Absatz 1,3 s,
-   Doppelpunkt/Semikolon 0,55 s, Gedankenstrich 0,45 s, Komma 0,30 s nur dort, wo die Stimme schon mindestens 0,15 s pausiert),
-   Lautheit −18 LUFS, Wortzeiten für den Lesemodus.
-4. In `seite/bau_hoerbuch.py` eintragen und die Hörbuch-Seite neu bauen (Kapitel-Liste, Lesemodus, nahtloses Weiterspielen).
+1. **Übersetzen** nach Stil und Begriffsliste, gegen den lateinischen Text prüfen und mit zwei freien Übersetzungen
+   abgleichen: Aubrey Stewart, englisch 1900 ([Project Gutenberg 64576](https://www.gutenberg.org/ebooks/64576),
+   „Of a Happy Life“), und Albert Forbiger, deutsch 1867 (nur als
+   [LibriVox-Lesung](https://archive.org/details/vom_glueckseligen_leben_rr_librivox), per Whisper abgeschrieben;
+   zeno.org sperrt automatische Abrufe). Stellenmarken setzen. Den ganzen Text vorlegen; Freigabe durch den Auftraggeber.
+2. **Ton erzeugen:** `python3 werkzeuge/kapitel.py N <ordner> --ohne-video`. Das ganze Kapitel geht als **eine** Anfrage an
+   ElevenLabs (Stimme und Einstellungen unten), die Rohaufnahme wird zwischengespeichert (`--neu` erzeugt neu und kostet
+   Credits, etwa 0,43 je Zeichen). Danach automatisch: Worttreue (Whisper), Rauschunterdrückung, Wortzeiten, Pausen,
+   Tempo 0,96, −18 LUFS (`werkzeuge/kette.py`: Satzende 0,9 s, Absatz 1,3 s, Doppelpunkt/Semikolon 0,55 s,
+   Gedankenstrich 0,45 s, Komma 0,35 s – an Kommas nur dort, wo die Stimme schon mindestens 0,15 s absetzt, sonst wird
+   mitten in den Sprechfluss geschnitten).
+3. **Prüfliste Ton** (unten) abarbeiten, dann dem Auftraggeber als Seite zum Anhören schicken (Artifact mit Abspielknopf
+   und Mitlesen, verdächtige Stellen anklickbar; nie als Datei).
+4. **Nachbessern**, was der Auftraggeber meldet (Prüfliste, Punkt 4), bis zur Abnahme des Kapitels.
+5. **Sichern**, sofort nach der Abnahme (Prüfliste, Punkt 6).
+6. **Video:** `python3 werkzeuge/video/baue.py <daten.json> <ton.wav> <aus.mp4>` (oder `kapitel.py` ohne `--ohne-video`);
+   Endkontrolle (Prüfliste, Punkt 5); Vorschau in 720p ins Artifact (höchstens 15 MB je Datei); die Full-HD-Datei für
+   YouTube als Datei schicken; Miniaturbild mit `node werkzeuge/video/miniatur.js N <aus.png>`.
+7. `UEBERGABE.md` (Stand, Credits) und `PROTOKOLL.md` (Versuche, Befunde) nachtragen, committen, pushen.
 
-Umfang für ElevenLabs: Kapitel 1,1–2 hat 1.486 Zeichen bei 162 lateinischen Wörtern; hochgerechnet etwa 66.000 Zeichen für das
-ganze Werk, ohne Neuversuche.
+## Prüfliste Ton
 
-## Abschnitte und gesprochene Titel
+Vor jedem Schicken an den Auftraggeber, in dieser Reihenfolge:
 
-**Verworfen am 29.10.** (Nutzer): Abschnitte und ihre Namen sind unsere eigene Einteilung und entfallen, wie die Teile.
-Im Video gibt es nur die Startseite („Seneca. Vom glücklichen Leben.“ gesprochen), danach Kapitel für Kapitel ohne
-Titelkarte. Die Analyse bleibt als Hintergrund:
+1. **Worttreue:** `werkzeuge/pruef.py large-v3-turbo`; bei Abweichung Gegenprobe mit `large-v3` (macht `kapitel.py`
+   selbst). Bekannte Scheinfehler: „Walen“ statt „Wahlen“, „dem“ statt „den“ vor V. Erst wenn auch die Gegenprobe
+   abweicht, die Stelle anhören bzw. vorlegen.
+2. **Schnitte:** keine eingefügte Pause, wo die Stimme durchspricht (Regel `komma_ab` in Schritt 2). Bei jeder Änderung an
+   den Pausenregeln die Stellen auf die Prüfseite legen.
+3. **Betonung:** Whisper hört sie nicht; bisher findet sie nur der Auftraggeber. Befund vom 29.10.: Falsche Akzente kommen
+   vor allem vom **Folgesatz im selben Text** („die vor uns hergeht“ richtig: ohne Folgesatz 6 von 6, Folgesatz nur als
+   Zusammenhang 2 von 4, Folgesatz mitgesprochen 0 von 3; exakter Trendtest p = 0,005), und sie streuen stark zwischen zwei
+   Erzeugungen (8 von 15 Sprechabschnitten anders). Das ganze Kapitel neu erzeugen hilft darum nicht. Geplant, noch nicht
+   gebaut: Vorfilter, der Sprechabschnitte markiert, deren Tonhöhengipfel auf einem kleinen Wort liegt (Präposition,
+   Pronomen, Hilfsverb: „vor“, „nach“, „uns“, „gilt“); er ersetzt das Ohr des Auftraggebers nicht.
+4. **Nachbessern einzelner Sätze:** den Satz **allein und ohne Zusammenhang** erzeugen, zwei bis drei Fassungen; die beste
+   an den Satzpausen einsetzen (Rand 50/100 ms, Blende 10 ms, Pegel an den Satz davor angleichen), Stimme per
+   Fingerabdruck prüfen (`werkzeuge/fingerabdruck.py`, mindestens 0,95 zur Kapitelaufnahme), dann die Kette neu und die
+   Worttreue erneut prüfen. Alternative: den Satz ans Ende einer Anfrage stellen und zurückschneiden (Rückwärts-Test).
+   Nicht bewährt: Satz für Satz mit Zusammenhang (`paragraf.py --saetze`, zweimal falsch). Werkzeug für das Einsetzen
+   fehlt noch (bisher Handarbeit, siehe `PROTOKOLL.md`), vor Kapitel 2 bauen.
+5. **Endkontrolle der Dateien:** Tonspur vorhanden, Stereo, 48 kHz, AAC-LC (YouTube-Empfehlung; eine Mono-Datei kam am
+   Handy stumm an), −18 LUFS; Dauer gleich `ende` in `daten.json`; Stichbilder am Anfang (Startseite), in der Mitte und am
+   Ende ansehen; Seiten im Browser in Handygröße testen (`CLAUDE.md`).
+6. **Sichern:** Der Container wird gelöscht. Abgenommene Rohaufnahmen (Rohaufnahme mit eingesetzten Sätzen, Startsatz,
+   Pausenfassung, Wortzeiten, Pausenstellen, `daten.json`) sofort ins private Vorschau-Artifact unter `quelle/`;
+   daraus baut `kapitel.py` Ton und Video ohne Credits neu. Eine Neuerzeugung brächte andere Betonungen.
 
-Titel werden nur dort gesprochen, wo bei Seneca ein neuer Gedankengang beginnt, ohne Nummer, als eigener kurzer
-Clip vor dem Kapitel (fällt ohne Neuaufnahme weg, falls er stört). Kapitel, Paragraf und Abschnitt stehen nur
-geschrieben im Bild. Die Grenzen am Latein geprüft (29.10.); Titel aus Senecas eigenen Worten, Vorschlag, Freigabe offen:
+## Stimme
 
-| Abschnitt | Kapitel | Dauer | Titel (Vorschlag) | Beleg |
-|---|---|---|---|---|
-| 1 | 1–2 | 6:40 | Wohin und auf welchem Weg | 1,2 decernatur et quo tendamus et qua |
-| 2 | 3–6 | 8:58 | Im Einklang mit der Natur | 3,3 vita conveniens naturae suae; 6,2 fasst zusammen |
-| 3 | 7–16 | 28:00 | Tugend und Lust | 7,1 Epikureer: Lust nicht von der Tugend zu trennen; 16,1 ergo … vera felicitas schließt |
-| 4 | 17–20 | 10:56 | Du redest anders, als du lebst | 17,1 quare ergo tu fortius loqueris quam vivis; 18,1 aliter loqueris, aliter vivis |
-| 5 | 21–28 | 26:19 | Der Weise und der Reichtum | 21,1 quare … tam dives vitam agit |
+Helmut Stieglbauer – Deep and Dynamic (`JiW03c2Gt43XNUQAumRP`, in ElevenLabs ein Professional Voice Clone, also ein echter
+Sprecher), Modell eleven v4, Stability 0,5, übrige Einstellungen wie die Stimme; Tempo 0,96 nachträglich mit ffmpeg
+(Tonhöhe bleibt). Gewählt am 29.10. nach zwei Duellrunden und der Stimmenprobe; Lupert und die übrigen Stimmen sind
+raus (Verlauf in `PROTOKOLL.md`). Bei YouTube „Verwendung von KI“ mit Ja beantworten.
 
-Kapitel 16 ist kein eigener Abschnitt (169 Wörter, beginnt mit ergo und schließt Abschnitt 3); 17–28 zerfällt in die
-Antwort auf den Vorwurf der Heuchelei (17–20) und die Frage nach dem Reichtum (21–28). Möglicher sechster Titel:
-Sokrates’ Rede ab 27,1 (Kapitel 27, 3:17), offen.
+Umfang: etwa 67.000 Zeichen für das ganze Werk, also etwa 28.800 Credits für einen Durchgang ohne Nachbesserungen.
 
 ## Kapitel
 
@@ -65,7 +125,7 @@ gemessen an 1,1–2). Ein Kapitel geht als eine Anfrage an ElevenLabs; das läng
 
 | Kapitel | Paragrafen | lat. Wörter | Hördauer (geschätzt) | Stand |
 |---|---|---|---|---|
-| 1 | 5 | 348 | 3:53 | übersetzt, Text am 29.10. nachgebessert; öffentlich noch Lupert als „Teil 1 und 2“ (alter Wortlaut) |
+| 1 | 5 | 348 | 3:53 | **fertig:** Text freigegeben, Ton und Video mit Helmut (30.10.); öffentliche Seite noch Lupert |
 | 2 | 4 | 250 | 2:47 | übersetzt, Überarbeitung durch den Auftraggeber offen |
 | 3 | 4 | 231 | 2:34 | Entwurf, Freigabe offen |
 | 4 | 5 | 313 | 3:29 |  |
@@ -95,26 +155,3 @@ gemessen an 1,1–2). Ein Kapitel geht als eine Anfrage an ElevenLabs; das läng
 | 28 | 1 | 79 | 0:53 |  |
 
 Gesamt: 28 Kapitel, 126 Paragrafen, 7.258 lateinische Wörter, Text etwa 80:53 min.
-
-## Stimmensuche (offen)
-
-Mit Lupert, Christian, Brian, Ralf Benz und Robert Ranger ist der Auftraggeber nicht zufrieden (Vergleich in
-`messung/stimmen/vergleich_kap1_absatz12.json`; bester Messwert roh: Ralf Benz, Abstand 1,30, natürlicher Abfall am
-Satzende −1,1 HT/s). Kapitel 1 (bisher Teil 1 und 2) wird mit der gewählten Stimme neu erzeugt.
-
-Modellprüfung vom 28.10. (Einzelheiten in `UEBERGABE.md`): Das Modell bestimmt die Satzmelodie. Ralf Benz mit
-Multilingual v2 (Stability 0,75) liegt bei 9,4 und 10,0 HT statt 13–14 HT mit v4 und hat den besten Abstand bisher
-(0,66 und 1,01). Lupert taugt mit v2 nicht (kaum Pausen). Entscheidung per Hörvergleich steht aus.
-
-Vorgehen, sobald ein ElevenLabs-API-Schlüssel als Umgebungsvariable `ELEVENLABS_API_KEY` vorliegt (ohne Anmeldung
-liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
-
-1. Bibliothek abfragen (`GET /v1/shared-voices`, Sprache Deutsch, nur Männerstimmen, Einsatz Erzählung/Hörbuch, nach Nutzung sortiert),
-   Hörproben (`preview_url`) laden; das kostet keine Credits.
-2. Jede Probe messen wie in `werkzeuge/prosodie.py`: Tempo, Pausen, Melodie-Spannweite, Abfall am Satzende, Tonlage,
-   Stimmqualität (HNR); Sprache per Whisper prüfen. Satzmelodie und Abfall zählen am meisten, weil sie sich nachträglich
-   nicht korrigieren lassen; Pausen und Tempo schon.
-3. Die besten 8 bis 10 mit ihren Hörproben in die Vorschau-App. Der Auftraggeber kann nicht benennen, was ihn stört;
-   darum Vorliebe aus Paarvergleichen ermitteln (A/B-Duelle, Bradley-Terry-Schätzung) und gegen die Messwerte legen,
-   um gezielt weiterzusuchen. Erste Stufe: Rangfolge der fünf bisherigen Stimmen.
-4. Die 2 bis 3 Favoriten mit Kapitel 1, Absatz 1–2 erzeugen (je etwa 800 Credits) und wie oben vergleichen.

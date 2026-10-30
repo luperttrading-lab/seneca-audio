@@ -1,7 +1,12 @@
 # Seneca-Hörbuch (De vita beata)
 
-Eigene Übersetzung und Vertonung von Senecas *De vita beata*, eingeteilt nach Senecas 28 Kapiteln. Plan, Stilregeln und Ablauf je Kapitel:
-`PLAN.md`. Stand, Links und offene Punkte: `UEBERGABE.md` (zu Beginn einer neuen Sitzung zuerst lesen).
+Eigene Übersetzung und Vertonung von Senecas *De vita beata*, eingeteilt nach Senecas 28 Kapiteln.
+
+- `UEBERGABE.md`: Stand, nächste Schritte, aktuelle Links – zu Beginn jeder Sitzung zuerst lesen.
+- `PLAN.md`: die gültigen Regeln – Stil, Begriffsliste, Festlegungen des Nutzers, Ablauf je Kapitel, Prüfliste Ton.
+  Vor jeder Arbeit an einer Übersetzung oder Aufnahme lesen und danach arbeiten.
+- `PROTOKOLL.md`: Verlauf, Versuche und Messungen (Belege, teils überholt); neue Befunde dort anhängen, nicht in die
+  Übergabe. Ändert ein Befund eine Regel, die Regel in `PLAN.md` anpassen.
 
 ## Regeln
 
@@ -15,6 +20,9 @@ Eigene Übersetzung und Vertonung von Senecas *De vita beata*, eingeteilt nach S
   Ansehen (Artifact mit Abspielknopf und mitlaufendem Text, MP3; je Datei höchstens 15 MB, Videos dafür verkleinern).
   Der Nutzer hört am Handy und will nicht erst herunterladen und mit einem anderen Programm öffnen.
   Ausnahme: die fertige Full-HD-Datei für den YouTube-Upload als Datei schicken (Nutzer, 30.10.).
+- Der Container wird gelöscht: abgenommene Aufnahmen sofort sichern (privates Vorschau-Artifact, Ordner `quelle/`;
+  `PLAN.md`, Prüfliste Ton, Punkt 6). ElevenLabs: höchstens 5 Anfragen gleichzeitig; verbrauchte Credits in `UEBERGABE.md`
+  nachtragen.
 - Kostenzeile am Ende jeder Antwort: `python3 tools/kosten.py` im Repo ausführen, Ausgabe wörtlich übernehmen.
 - Seiten vor dem Veröffentlichen im Browser testen (Playwright, Handygröße 390 × 844). Playwright-Chromium spielt kein
   AAC: für Tests MP3-Kopien verwenden; `seite/rangeserver.py` liefert Bereichsanfragen wie GitHub Pages.
