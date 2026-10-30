@@ -1,6 +1,6 @@
 # Kapitel 10 – Notizen zur Übersetzung
 
-Stand: Entwurf (30.10.), Freigabe offen. Abgeglichen mit Stewart (1900) und Forbiger (1867, LibriVox per Whisper).
+Stand: überarbeiteter Entwurf (30.10.), Freigabe offen. Abgeglichen mit Stewart (1900) und Forbiger (1867, LibriVox per Whisper).
 Textprüfung `werkzeuge/textpruef.py 10`: alle Hinweise geklärt (siehe unten). Unabhängiger Prüf-Agent gelesen,
 übernommen: „Du tust so, als wüsstest du nicht“ (*dissimulas*), „der sich daran freut, andere zu kränken“
 (*contumeliis gaudentem*, „an Kränkungen“ war doppeldeutig), „Und auch die Lüste, die sie gebilligt hat, achtet sie
@@ -53,6 +53,16 @@ nicht gegeben“ (*contingere* zweimal = „zuteilwerden … zuteil“, Zipf 2,2
 (Geschmack); „unbedacht“ statt „kurzsichtig“ (*inprouidum* = ohne Voraussicht, „kurzsichtig“ trifft es). Offen als
 Geschmack: „andere zu kränken“ oder „zu beleidigen“ (*contumeliis*). Hinweis für Kapitel 14: *amore caeco rei* (14,1)
 wie hier „blinde Liebe“.
+
+## Entscheidungen
+
+Der Auftraggeber hat die offenen Punkte am 30.10. Claude überlassen („Mach das, was du für sinnvoll hältst“). Eingetragen:
+- 10,3 „Die Tugend vertreibt all das.“, „prüft den Wert der Lüste“; 10,2 Semikolon vor „die Faulheit“.
+- 10,2 *contumeliis gaudentem*: „andere zu beleidigen“ (*contumelia* = Beleidigung; genauer als „kränken“).
+- 10,3 Mäßigung als Einwand mit „[sagst du]“ (Ergänzung; wie Stewart, gleich danach redet Seneca den Gegner mit „du“ an).
+- 10,2 „Dünkel“ bleibt (gebräuchlich; „Aufgeblasenheit“ selten).
+- 10,1 „wendet einer ein“ bleibt nach der gemeinsamen Vorgabe; für die Hauptsitzung: „wendet er ein“ wäre hier genauer,
+  weil derselbe Gegner wie in 9,1 spricht. Gilt dann für alle Kapitel.
 
 ## Wörter für woerter_ok.txt
 
