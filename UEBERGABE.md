@@ -8,7 +8,7 @@ Ton) stehen in `PLAN.md`, Verlauf, Versuche und Messungen in `PROTOKOLL.md`.
 | Kapitel | Text | Ton und Video |
 |---|---|---|
 | 1 | fertig, freigegeben (`texte/kapitel01.txt`, Marken 1,1–1,5) | **fertig (Fassung v3):** Helmut, wortgetreu (499/499), 38 Pausen, 3:53; erster Satz von 1 (3) einzeln erzeugt eingesetzt („die vor uns hergeht“). Full-HD-Datei am 30.10. dem Auftraggeber für YouTube geschickt, dazu Miniaturbilder mit und ohne „Kapitel 1“. Gesichert (siehe unten) |
-| 2 | fertig (`texte/kapitel02.txt`), mit Stewart und Forbiger abgeglichen; **Auftraggeber überarbeitet Stellen** | erst nach der Überarbeitung |
+| 2 | am 30.10. nach den Regeln in `PLAN.md` überarbeitet (8 Änderungen, alle vom Auftraggeber übernommen); **Gegenlesen durch den Auftraggeber steht aus** | erst nach der Freigabe |
 | 3 | Entwurf (`texte/kapitel03.txt`), mit Stewart und Forbiger abgeglichen; **Freigabe offen** (Entscheidungen unten) | – |
 | 4–28 | Latein in `texte/latein/kapitelNN.txt` | – |
 
@@ -16,7 +16,7 @@ Die öffentliche Seite zeigt noch Luperts alte „Teile 1 und 2“ mit altem Wor
 
 ## Nächste Schritte
 
-1. **Auftraggeber:** Kapitel 2 überarbeiten, Kapitel 3 freigeben.
+1. **Auftraggeber:** Kapitel 2 gegenlesen (überarbeitete Fassung), Kapitel 3 freigeben.
 2. **Auftraggeber:** YouTube – einzelne Videos je Kapitel (Playlist) oder ein Gesamtvideo? Bis dahin Kapitel 1 am besten
    „Nicht gelistet“ hochladen und die Lesbarkeit am Handy prüfen.
 3. **Auftraggeber:** Credit-Grenze des Schlüssels anheben (reicht noch für etwa 12 bis 14 Kapitel).

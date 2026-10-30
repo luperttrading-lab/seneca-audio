@@ -496,3 +496,8 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
 - **Urteil zum Betonungsfilter:** Der Auftraggeber hörte alle sechs markierten Sätze von v3 als in Ordnung („Alle in
   Ordnung, setz die Schwelle auf 5“). Schwelle in `betonung.py` jetzt 5 HT; bei 5 HT hätte der Filter in Kapitel 1 nur den
   echten Fehler gemeldet (v1: 1 Markierung, v3: 0).
+- **Kapitel 2 überarbeitet** nach den Regeln vom 30.10. (gegen Latein und Stewart, Forbiger nicht erneut): 2,1 „Denn gerade
+  deshalb“ (*enim*); 2,2 „in den Besitz eines dauerhaften Glücks“ (*in possessione*), „die den Körper umhüllen“ (statt „die
+  die“), „ein Gut“ (*bonum*); 2,3 „ungetan“ (*feci … infectum*); 2,4 „diese Leute“ (*istos*), Einschub umgestellt, „Was alle
+  Blicke auf sich zieht“ (*spectantur* statt doppeltem „staunen“). Begriffe *felicitas*, *bonum*, *animus*, *turba* u. a.
+  in die Begriffsliste. Auftraggeber: „Übernimm alle Punkte, Begriffe passen auch“; Gegenlesen steht aus.

@@ -49,6 +49,10 @@ Leitbegriffe beim ersten Auftreten eintragen und vorlegen.
 | *virtus* | Tugend | angenommen 30.10. |
 | *ratio* | Vernunft | angenommen 30.10. |
 | *sapiens* | der Weise | angenommen 30.10. |
+| *felicitas* | Glück (passt zu *beatus* → glücklich) | angenommen 30.10. (2,2) |
+| *bonum*, *summum bonum* | das Gut, das höchste Gut (stoisches Fachwort, nicht umschreiben) | angenommen 30.10. (2,2) |
+| *animus* | Geist | angenommen 30.10. (2,2) |
+| *turba*, *vulgus*, *multitudo*, *coetus* | die Menge (bei Seneca hier gleichbedeutend) | angenommen 30.10. (1,4; 2,1–3) |
 
 ## Vom Auftraggeber festgelegt (nicht mehr ändern)
 
