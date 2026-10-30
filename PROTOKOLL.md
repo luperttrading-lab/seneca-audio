@@ -493,3 +493,6 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
   Schwelle 0 / 0,5 / 1 / 2 / 3 / 5 HT: v1 14/12/9/7/4/1, v3 13/10/7/6/2/0 von 79. v1 und v3 teilen die Aufnahme außerhalb
   von 1 (3), die gemeinsamen Markierungen sind also nicht unabhängig. Die sieben Markierungen von v3 (sechs Sätze) liegen
   zum Urteil auf der Seite „Kapitel 1 · Betonungsfilter“.
+- **Urteil zum Betonungsfilter:** Der Auftraggeber hörte alle sechs markierten Sätze von v3 als in Ordnung („Alle in
+  Ordnung, setz die Schwelle auf 5“). Schwelle in `betonung.py` jetzt 5 HT; bei 5 HT hätte der Filter in Kapitel 1 nur den
+  echten Fehler gemeldet (v1: 1 Markierung, v3: 0).

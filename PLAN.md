@@ -96,7 +96,9 @@ Vor jedem Schicken an den Auftraggeber, in dieser Reihenfolge:
    kleinen Wort liegt (Artikel, Pronomen, Präposition, Konjunktion, Hilfsverb). Die markierten Stellen kommen zuerst auf
    die Prüfseite; der Filter ersetzt das Ohr des Auftraggebers nicht. Test an Kapitel 1 (30.10.): echter Fehler 2 von 2
    markiert (+9,9 und +9,3 HT), richtige Fassungen derselben Stelle 0 von 8, abgenommene Fassung 7 von 79 Abschnitten
-   (höchstens +4,7 HT). Schwelle 1 HT vorläufig, bis das Urteil des Auftraggebers zu diesen sieben vorliegt.
+   (höchstens +4,7 HT), die der Auftraggeber alle als in Ordnung hörte. **Schwelle daher 5 HT** (Auftraggeber, 30.10.).
+   Gestützt auf einen einzigen echten Fehler: Jeden weiteren Fehler, den der Auftraggeber findet, mit dem Abstand
+   vergleichen, den der Filter dort misst (er zählt die Abschnitte zwischen 3 und 5 HT mit), und die Schwelle anpassen.
 4. **Nachbessern einzelner Sätze:** den Satz **allein und ohne Zusammenhang** erzeugen, zwei bis drei Fassungen; die beste
    an den Satzpausen einsetzen (Rand 50/100 ms, Blende 10 ms, Pegel an den Satz davor angleichen), Stimme per
    Fingerabdruck prüfen (`werkzeuge/fingerabdruck.py`, mindestens 0,95 zur Kapitelaufnahme), dann die Kette neu und die

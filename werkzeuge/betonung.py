@@ -1,4 +1,4 @@
-"""Vorfilter für Betonungsfehler: betonung.py <ton> <woerter.json> [<aus.json>] [--abstand 1.0]
+"""Vorfilter für Betonungsfehler: betonung.py <ton> <woerter.json> [<aus.json>] [--abstand 5]
 
 Whisper prüft nur die Wörter, nicht die Betonung (29.10.: „die vor uns hergeht“ mit dem Akzent auf „vor“ hörte nur der
 Nutzer). Der Filter teilt die Aufnahme an Satzzeichen in Sprechabschnitte und misst je Wort den Tonhöhengipfel
@@ -6,6 +6,9 @@ Nutzer). Der Filter teilt die Aufnahme an Satzzeichen in Sprechabschnitte und mi
 der höchste Gipfel auf einem Funktionswort liegt (Artikel, Pronomen, Präposition, Konjunktion, Hilfsverb), nicht am
 Abschnittsanfang (dort hebt die Deklination jedes Wort) und mindestens --abstand Halbtöne über dem höchsten Inhaltswort.
 Er ersetzt das Ohr nicht: Kontrastbetonung („nicht du, sondern ich“) ist richtig und wird trotzdem markiert.
+Schwelle 5 HT (Nutzer, 30.10.): in Kapitel 1 lag der echte Fehler bei +9,9 HT, die übrigen Markierungen bei 1 HT
+(höchstens +4,7) klangen alle in Ordnung. Abschnitte zwischen 3 und 5 HT werden mitgezählt, damit sich die Schwelle an
+jedem weiteren gemeldeten Fehler nachprüfen lässt.
 Die Wortzeiten müssen zur Zeitachse von <ton> passen (Rohaufnahme und woerter.json aus kapitel.py).
 """
 import json, os, re, subprocess, sys, tempfile
@@ -49,7 +52,11 @@ def abschnitte(W):
     return A
 
 
-def pruefe(ton, W, abstand=1.0):
+def betonung_klein(e):   # Gipfel auf einem Funktionswort, nicht am Abschnittsanfang
+    return norm(e["woerter"][e["pos"]]) in FUNKTION and e["pos"] > 0
+
+
+def pruefe(ton, W, abstand=5.0):
     G = gipfel(ton, W); erg = []
     for a in abschnitte(W):
         g = [(i, G[i]) for i in a if G[i] is not None]
@@ -64,7 +71,7 @@ def pruefe(ton, W, abstand=1.0):
 
 
 if __name__ == "__main__":
-    argv, abstand = sys.argv[1:], 1.0
+    argv, abstand = sys.argv[1:], 5.0
     if "--abstand" in argv: i = argv.index("--abstand"); abstand = float(argv[i + 1]); del argv[i:i + 2]
     erg = pruefe(argv[0], json.load(open(argv[1], encoding="utf-8")), abstand)
     if len(argv) > 2: json.dump(erg, open(argv[2], "w", encoding="utf-8"), ensure_ascii=False, indent=1)
@@ -72,4 +79,5 @@ if __name__ == "__main__":
     for e in m:
         satz = " ".join(w.upper() if j == e["pos"] else w for j, w in enumerate(e["woerter"]))
         print(f"{e['von']:7.2f} s  +{e['abstand']:.1f} HT  {satz}")
-    print(f"{len(m)} von {len(erg)} Sprechabschnitten markiert (Abstand ≥ {abstand} HT)")
+    knapp = sum(1 for e in erg if not e["markiert"] and betonung_klein(e) and 3 <= e["abstand"] < abstand)
+    print(f"{len(m)} von {len(erg)} Sprechabschnitten markiert (Abstand ≥ {abstand} HT); {knapp} knapp darunter (3 bis {abstand} HT)")

@@ -20,9 +20,7 @@ Die öffentliche Seite zeigt noch Luperts alte „Teile 1 und 2“ mit altem Wor
 2. **Auftraggeber:** YouTube – einzelne Videos je Kapitel (Playlist) oder ein Gesamtvideo? Bis dahin Kapitel 1 am besten
    „Nicht gelistet“ hochladen und die Lesbarkeit am Handy prüfen.
 3. **Auftraggeber:** Credit-Grenze des Schlüssels anheben (reicht noch für etwa 12 bis 14 Kapitel).
-4. **Auftraggeber:** die sechs vom Betonungsfilter markierten Stellen auf der Seite „Kapitel 1 · Betonungsfilter“ anhören
-   und sagen, welche falsch klingen; danach Schwelle des Filters festlegen (`werkzeuge/betonung.py`, Standard 1 HT).
-   **Claude, vor Kapitel 2:** Werkzeug zum Nachbessern einzelner Sätze bauen (allein, ohne Zusammenhang, 2–3 Fassungen,
+4. **Claude, vor Kapitel 2:** Werkzeug zum Nachbessern einzelner Sätze bauen (allein, ohne Zusammenhang, 2–3 Fassungen,
    Einsetzen; `PLAN.md`, Prüfliste Ton, Punkt 4).
 5. Kapitel 4 übersetzen.
 6. Später: öffentliche Seite auf Kapitel mit Helmut umstellen (Freigabe); Weg der Gesamtdatei zu YouTube klären (etwa
