@@ -35,7 +35,9 @@ for m in re.finditer(r"[A-Za-zÄÖÜäöüß]+(?:-[A-Za-zÄÖÜäöüß]+)*", te
 for m in re.finditer(r"\b(\w+)\s+\1\b", text, re.I):
     funde.append(("doppelt", m.group(0), umfeld(m.start(), m.end())))
 # 3. Vorleseregeln
-for name, muster in [("Klammer", r"[()\[\]]"), ("als wie", r"\bals wie\b"), ("Einschub", r"–[^–.!?]{1,80}–")]:
+roh = open(datei, encoding="utf-8").read()   # Ergänzungen sind im Text ohne Klammern nicht mehr zu sehen
+for m in stellen.ZUSATZ.finditer(roh): funde.append(("Ergänzung", m.group(0), roh[max(0, m.start() - 35):m.end() + 5].replace("\n", " ")))
+for name, muster in [("Klammer", r"[()]"), ("als wie", r"\bals wie\b"), ("Einschub", r"–[^–.!?]{1,80}–")]:
     for m in re.finditer(muster, text): funde.append((name, m.group(0), umfeld(m.start(), m.end())))
 for s in re.split(r"(?<=[.!?])[“”»«\"]?\s+", text):   # Satzende auch vor schließendem Anführungszeichen
     if s.count(",") >= 6: funde.append(("Kommakette", f"{s.count(',')} Kommas", s[:110] + " …"))

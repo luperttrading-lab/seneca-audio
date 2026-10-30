@@ -25,7 +25,8 @@ b = os.path.join(aus, f"kapitel{kap:02d}"); ordner = os.path.join(aus, "satz"); 
 norm = lambda s: re.sub(r"[^a-zäöüß0-9 ]", "", s.lower().replace("-", " ")).split()
 
 text = stellen.rein(open(f"{R}/texte/kapitel{kap:02d}.txt", encoding="utf-8").read())
-saetze = [s.strip() for absatz in re.split(r"\n\s*\n", text) for s in re.split(r"(?<=[.!?…])[“”»«\"]?\s+", absatz) if s.strip()]
+teile = lambda t: [s.strip() for absatz in re.split(r"\n\s*\n", t) for s in re.split(r"(?<=[.!?…])[“”»«\"]?\s+", absatz) if s.strip()]
+saetze = teile(text)
 treffer = [s for s in saetze if norm(s)[:len(norm(anfang))] == norm(anfang)]
 if len(treffer) != 1: sys.exit(f"Satzanfang passt auf {len(treffer)} Sätze: {[t[:50] for t in treffer]}")
 satz = treffer[0].strip("„“»«\"")
@@ -45,7 +46,7 @@ def schreibe(y, ziel):
     with wave.open(ziel, "wb") as w: w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR); w.writeframes((np.clip(y, -1, 1) * 32767).astype(np.int16).tobytes())
 
 
-def stelle_im_kapitel(W):   # Wortindizes des Satzes in woerter.json des Kapitels
+def stelle_im_kapitel(W, satz):   # Wortindizes des Satzes in woerter.json des Kapitels
     soll = norm(satz); ist = [" ".join(norm(w["w"])) for w in W]; L = len(soll)
     for i in range(len(W)):
         if " ".join(ist[i:i + L]).split() == soll: return i, i + L - 1
@@ -79,7 +80,12 @@ if nimm is None:
     json.dump({"satz": satz, "fassungen": erg}, open(os.path.join(ordner, name + ".json"), "w"), ensure_ascii=False)
     print(f"{name}: {len(satz)} Zeichen, {credits} Credits; einsetzen mit --nimm <n>")
 else:
-    W = json.load(open(b + ".woerter.json", encoding="utf-8")); i0, i1 = stelle_im_kapitel(W)
+    W = json.load(open(b + ".woerter.json", encoding="utf-8"))
+    # Wurde der Satz im Text geändert, steht in der Aufnahme noch der alte: über seine Nummer im Text der Aufnahme finden
+    alt = teile(open(b + ".text.txt", encoding="utf-8").read()); nr = saetze.index(treffer[0])
+    if len(alt) != len(saetze): sys.exit("Satzzahl der Aufnahme und des Textes verschieden: Satz nicht eindeutig zuzuordnen")
+    if norm(alt[nr]) != norm(satz): print("Satz geändert, ersetzt in der Aufnahme:", alt[nr], flush=True)
+    i0, i1 = stelle_im_kapitel(W, alt[nr].strip("„“»«\""))
     y = lade(b + ".roh.mp3"); s = lade(datei(nimm, ".roh.mp3"))
     a = int((W[i0 - 1]["e"] + W[i0]["s"]) / 2 * SR) if i0 else int(max(0, W[i0]["s"] - 0.3) * SR)
     e = int((W[i1]["e"] + W[i1 + 1]["s"]) / 2 * SR) if i1 + 1 < len(W) else len(y)

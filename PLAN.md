@@ -16,7 +16,8 @@ Festgelegt an Kapitel 1 nach den Rückmeldungen des Auftraggebers:
 - Zugleich heutiges, flüssiges Deutsch zum Zuhören: nicht gestelzt, nicht flapsig, keine modernen Redensarten
   („tappen im Nebel“ geht nicht; „ist ihr Blick getrübt“ trifft es).
 - Römische Begriffe bleiben (Prätor, Wahlen statt „Komitien“); Senecas Ansprache an den Leser als „du“.
-- Für das Vorlesen gesetzt: Satzzeichen markieren Pausen, Gedankenstriche sparsam, keine Klammern.
+- Für das Vorlesen gesetzt: Satzzeichen markieren Pausen, Gedankenstriche sparsam, keine runden Klammern (eckige nur für
+  Ergänzungen, siehe unten).
 - Kein „als wie“; Einschübe zwischen Gedankenstrichen lieber umstellen (die Stimme stockt sonst mitten im Satz);
   lange Kommaketten in zwei Sätze teilen. Bildhafte Wörter nur, wenn sie natürlich klingen (kein „Knäuel von Menschen“).
 
@@ -33,6 +34,10 @@ Gelernt aus den Korrekturen an Kapitel 1 (29.10.):
   nicht „ihm“, wenn das Bezugswort weit zurückliegt.
 - **Änderungen an vorgelegtem Text nur als Vorschlag**: alt → neu, mit dem lateinischen Grund; der Auftraggeber gibt
   frei, danach den ganzen Text noch einmal vorlegen.
+- **Ergänzungen nur im Ausnahmefall** (Auftraggeber, 30.10.): wenn ein Gedanke beim Zuhören sonst nicht zu verstehen ist und
+  sich auch durch genaueres Übersetzen nicht klären lässt. Wenige Wörter, die nur aussprechen, was im Latein mitgemeint ist;
+  immer in eckigen Klammern („[ohne es zu erkennen]“, 3,1). Gesprochen ohne Klammern, im Video mit Klammern in Bronze;
+  in der YouTube-Beschreibung erklärt. Nur mit Freigabe, Begründung im Protokoll.
 - **Einwände immer besprechen**, auch fremde (etwa von einer anderen KI) und auch wenn sie zu keiner Änderung führen:
   je Punkt das Urteil mit Grund aus dem Latein; lateinische Zitate solcher Vorlagen gegen `texte/latein/` prüfen
   (bei Kapitel 2 und 3 waren sie teils erfunden). Geändert wird nur, was der Auftraggeber freigibt.

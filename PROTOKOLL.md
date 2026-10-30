@@ -554,3 +554,12 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
 - **Kapitel 4, Entwurf aus paralleler Sitzung** (etwa 1,20 $, gut 4 Minuten): nach main gemergt; Textprüfung nach Korrektur
   der Satzerkennung ohne Hinweis (vorher Scheinmeldung „Kommakette“, weil ein Satzende vor „““ nicht erkannt wurde). Eigene
   Durchsicht: Bilder (Heer, aufgehen/aufgegangen, alta/ex alto) erhalten; drei kleine Vorschläge zur Vorlage.
+- **3,1 umgestellt und erste Ergänzung** (Gespräch mit dem Auftraggeber): *vicina transimus, offensantes ea ipsa quae
+  desideramus* war mit „am Nächstliegenden vorbei … stoßen dabei gerade an das“ missverständlich („das Nächstliegende“ =
+  das Offensichtliche; „stoßen an“ wie „stoßen auf“; „gerade“ doppeldeutig). Neu: „an dem vorbei, was ganz nah liegt“
+  (*vicina* gegen *nec longe* zwei Sätze davor), „stolpern über genau das“ (*offensare*, *ea ipsa*), dazu „[ohne es zu
+  erkennen]“, weil der Auftraggeber die Pointe zweimal nicht verstand. Werkzeuge: `stellen.rein` entfernt die Klammern für
+  Stimme und Prüfung, `stellen.anzeige` behält sie für das Video, `bild.html` färbt sie bronze, `textpruef` meldet
+  Ergänzungen, `satz.py --nimm` findet einen geänderten Satz über seine Nummer im Text der Aufnahme. Drei Fassungen
+  (192 Credits): alle wortgetreu, Betonungsfilter bei Fassung 2 „genau DAS“; Stimme 0,923 / 0,912 / 0,915; Fassung 1
+  eingesetzt (7,26 s → 9,42 s). Kapitel neu: 357/357, 34 Pausen, 2:50.

@@ -9,7 +9,7 @@ Ton) stehen in `PLAN.md`, Verlauf, Versuche und Messungen in `PROTOKOLL.md`.
 |---|---|---|
 | 1 | fertig, freigegeben (`texte/kapitel01.txt`, Marken 1,1–1,5) | **fertig (Fassung v3):** Helmut, wortgetreu (499/499), 38 Pausen, 3:53; erster Satz von 1 (3) einzeln erzeugt eingesetzt („die vor uns hergeht“). Video am 30.10. mit Leseband C3 neu gerendert und die Full-HD-Datei erneut geschickt (ersetzt die erste vom Morgen), dazu Miniaturbilder mit und ohne „Kapitel 1“. Gesichert (siehe unten) |
 | 2 | fertig, freigegeben (30.10.; nach den Regeln in `PLAN.md` überarbeitet, 2,1 „offenbar die Mehrheit“) | **fertig, Video mit Leseband C3 (30.10.)**, 2:52, Full-HD-Datei und Miniaturbild dem Auftraggeber geschickt, Vorschau-Artifact. Vorher: | **Ton erzeugt (30.10.)**, 989 Credits; Betonungsfilter: 0 markiert. „Bekränzten“ und „Beredsamkeit“ vom Auftraggeber als richtig gehört (`texte/verhoerer.txt`); 2,3 „dem Geschossen“ war ein echter Sprechfehler: Satz mit `satz.py` dreimal allein erzeugt (159 Credits), Fassung 3 eingesetzt, jetzt wortgetreu, 40 Pausen, 2:52. Vom Auftraggeber abgenommen; gesichert im Hörprobe-Artifact unter `quelle/` |
-| 3 | fertig, freigegeben (30.10.; nach den Regeln geprüft, 5 Änderungen, darunter „Seelengröße“) | **Ton erzeugt (30.10.)**, 945 Credits, auf Anhieb wortgetreu (349/349), 31 Pausen, 2:47; Betonungsfilter: 1 Stelle („Wenn ich aber „UNSERE“ sage“, +5,8 HT, vermutlich richtige Kontrastbetonung). **Auftraggeber hört die Hörprobe**; gesichert im Hörprobe-Artifact unter `quelle/` |
+| 3 | fertig, freigegeben (30.10.; nach den Regeln geprüft, 5 Änderungen, darunter „Seelengröße“) | **Ton erzeugt (30.10.)**, 945 Credits, auf Anhieb wortgetreu. 3,1 danach geändert (Auftraggeber): „… an dem vorbei, was ganz nah liegt, und stolpern dabei über genau das, wonach wir uns sehnen, [ohne es zu erkennen].“ (erste Ergänzung in eckigen Klammern); Satz mit `satz.py` dreimal allein erzeugt (192 Credits), Fassung 1 eingesetzt; jetzt 357/357 wortgetreu, 34 Pausen, 2:50. Betonungsfilter: nur „Wenn ich aber „UNSERE“ sage“ (+5,6 HT, vermutlich richtige Kontrastbetonung). **Auftraggeber hört die Hörprobe**; gesichert unter `quelle/` |
 | 4 | **Entwurf** (`texte/kapitel04.txt`, in eigener Sitzung übersetzt und mit Stewart abgeglichen, nach main übernommen; Textprüfung ohne Hinweis); neue Begriffe in `PLAN.md` vorgeschlagen; **Gegenlesen und Freigabe offen** | – |
 | 5–28 | Latein in `texte/latein/kapitelNN.txt` | – |
 
@@ -51,7 +51,8 @@ Video ohne Credits neu. Jedes weitere Kapitel nach der Abnahme genauso sichern.
   Beschreibung und schränkt Reichweite und Monetarisierung nicht ein
   ([YouTube-Hilfe](https://support.google.com/youtube/answer/14328491?hl=de)).
 - Vorschlag Titel: „Seneca – Vom glücklichen Leben (De vita beata) · Kapitel 1 · Hörbuch mit Text“; Beschreibung: „Aus
-  dem Lateinischen neu übersetzt. Stimme: Helmut Stieglbauer (ElevenLabs, KI-Stimme).“
+  dem Lateinischen neu übersetzt. Stimme: Helmut Stieglbauer (ElevenLabs, KI-Stimme).“ Ab Kapitel 3 dazu: „Wörter in
+  eckigen Klammern hat der Übersetzer zum besseren Verständnis ergänzt.“
 - Miniaturbild: `node werkzeuge/video/miniatur.js <kapitel|-> <aus.png>` (1920 × 1080; „-“ ergibt nur „Hörbuch“).
 - Beim Gesamtvideo Kapitelmarken in die Beschreibung (erste Marke 0:00, mindestens drei, je mindestens 10 s).
 
@@ -59,7 +60,7 @@ Video ohne Credits neu. Jedes weitere Kapitel nach der Abnahme genauso sichern.
 
 - Schlüssel als Umgebungsvariable `ELEVENLABS_API_KEY` (Text zu Sprache, Stimmen lesen, Modelle, Verlauf lesen, Benutzer;
   Stimmen schreiben bewusst gesperrt). Kontingent nicht abfragbar (`/v1/user` antwortet 401).
-- Grenze des Schlüssels 30.000 Credits; verbraucht etwa 15.475, übrig etwa 14.525 (Stand 30.10., nach Kapitel 3). Etwa 0,43 Credits je
+- Grenze des Schlüssels 30.000 Credits; verbraucht etwa 15.670, übrig etwa 14.330 (Stand 30.10., nach Kapitel 3 mit neuem Satz in 3,1). Etwa 0,43 Credits je
   Zeichen, ein Kapitel etwa 1.100–1.300. Das ganze Werk braucht etwa 28.800, die Grenze muss also steigen.
 - Kosten laut Auftraggeber: 1.000 Credits ≈ 0,10 € im Sparabo, sonst 0,20 €.
 - Höchstens 5 Anfragen gleichzeitig, sonst Fehler 429.
