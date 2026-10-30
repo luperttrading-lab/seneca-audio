@@ -60,3 +60,12 @@ nehmen“ unidiomatisch. Neu und vorgelegt: *dixerunt* „sagen, … liege“ (s
 *quam turpi loco* verlangt einen genannten Ort, spricht für *in iliis*. Crux 7,4: Fable hält Forbigers Deutung ohne
 Ergänzung für vertretbar (nur Präsens). Abgelehnt: „ohne Lust“ (klingt wie „keine Lust“), „wo sie Wache steht“ (Zusatz),
 „ungemischtem Wein“, „Schwung“, „nicht einmal“ („gar keinen“ deckt *ne … quidem ulla*).
+
+## Überarbeitung (30.10., Auftraggeber: „Mach das, was du für sinnvoll hältst“)
+
+Eingearbeitet: „sagen, das höchste Gut liege im Unterleib“; „aus der Tugend hervorgeht“; „nicht manches andere, was“
+(LanguageTool fragt nach Großschreibung, „andere“ klein ist zulässig); „verschmolzen wäre“; „vergänglich“; „im Senat
+oder wie sie“; „wie sie sich versteckt und das Dunkel sucht“; „verweichlicht“; „Übersättigung“ / „wird zum Überdruss“;
+Crux 7,4 als „Weil er stets dem Besten gefolgt ist, hat er nie etwas geändert.“ (Satz geteilt).
+Nicht geändert: 7,1 *in iliis* („Unterleib“); 7,2 „kommt“ (*uenit* / *admittit*); 7,3 „Aufenthalt“; Ädil, Spelunken,
+Schwitzbäder, Senat bleiben (seltene Wörter; bei der Freigabe ausdrücklich bestätigen lassen). Freigabe offen.
