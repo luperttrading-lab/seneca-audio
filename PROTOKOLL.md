@@ -507,3 +507,7 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
   Einschub „– wenn der Weg nur der richtige ist –“ (1,1; aufgenommen und abgenommen, bleibt), Kapitel 2 vier richtige
   Wörter und ein Fehlalarm von LanguageTool (Großschreibung nach Doppelpunkt vor ganzem Satz ist richtig), Kapitel 3 ein
   richtiges Wort. Testtext mit „what“, „ein ein“ und Klammer: alle drei gefunden.
+- **Kapitel 2, 2,1:** „Diese Seite hat offenbar die Mehrheit.“ statt „… scheint die größere zu sein.“ (*pars maior* bei der
+  Abstimmung = Mehrheit; Kapitel 1 endet mit „nach der Mehrheit“). Anregung aus der Analyse einer anderen KI, die der
+  Auftraggeber eingefügt hatte; deren drei lateinische Zitate waren erfunden, ihr „what“ stand nie im Text. „darfst“ und
+  „geschieht“ aus derselben Analyse nicht übernommen. Vom Auftraggeber freigegeben.
