@@ -37,7 +37,7 @@ for m in re.finditer(r"\b(\w+)\s+\1\b", text, re.I):
 # 3. Vorleseregeln
 for name, muster in [("Klammer", r"[()\[\]]"), ("als wie", r"\bals wie\b"), ("Einschub", r"–[^–.!?]{1,80}–")]:
     for m in re.finditer(muster, text): funde.append((name, m.group(0), umfeld(m.start(), m.end())))
-for s in re.split(r"(?<=[.!?])\s+", text):
+for s in re.split(r"(?<=[.!?])[“”»«\"]?\s+", text):   # Satzende auch vor schließendem Anführungszeichen
     if s.count(",") >= 6: funde.append(("Kommakette", f"{s.count(',')} Kommas", s[:110] + " …"))
 # 4. LanguageTool
 if "--ohne-netz" not in sys.argv:
