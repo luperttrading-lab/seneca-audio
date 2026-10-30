@@ -25,7 +25,7 @@ Am besten in der Reihenfolge freigeben (5, 6, 7 …): Eine Änderung in einem Ka
 | Kapitel | Sitzung | Stand |
 |---|---|---|
 | 4 | [session_01LHRCLp8bXNZjxkAQi9Capv](https://claude.ai/code/session_01LHRCLp8bXNZjxkAQi9Capv) | freigegeben, nach main übernommen |
-| 5 | [session_01LHRCLtCeTk9iLknnG3E4k9](https://claude.ai/code/session_01LHRCLtCeTk9iLknnG3E4k9) | freigegeben 30.10., nach main übernommen, Begriffe in `PLAN.md`; Verständnisprüfung: 4 von 7 übernommen; **Ton erzeugt** (650 Credits), dann 5,1 und 5,2 neu (291 Credits): wortgetreu, Filter 0, 1:52; Hörprobe Version 2 beim Auftraggeber, `quelle/` gesichert |
+| 5 | [session_01LHRCLtCeTk9iLknnG3E4k9](https://claude.ai/code/session_01LHRCLtCeTk9iLknnG3E4k9) | freigegeben 30.10., nach main übernommen, Begriffe in `PLAN.md`; Verständnisprüfung: 4 von 7 übernommen; **Ton erzeugt** (650 Credits), dann 5,1 und 5,2 neu (291 Credits): wortgetreu, Filter 0, 1:52; vom Auftraggeber abgenommen; **Video fertig (30.10.)**, 1:52, Full HD und Miniaturbild geschickt, Vorschau-Artifact; `quelle/` im Hörprobe-Artifact |
 | 6 | [session_01LHRCLofcYszWPPG4q1cQ2x](https://claude.ai/code/session_01LHRCLofcYszWPPG4q1cQ2x) | freigegeben 30.10., nach main übernommen, Begriffe in `PLAN.md` |
 | 7 | [session_01LHRCLsPeiyRaQQaCkE7Xnn](https://claude.ai/code/session_01LHRCLsPeiyRaQQaCkE7Xnn) | Entwurf |
 | 8 | [session_01LHRCLsMyGzZSU8bDAFFVua](https://claude.ai/code/session_01LHRCLsMyGzZSU8bDAFFVua) | freigegeben 30.10., nach main übernommen, Begriffe in `PLAN.md` |
@@ -87,6 +87,8 @@ Video ohne Credits neu. Jedes weitere Kapitel nach der Abnahme genauso sichern.
 
 ## Links (aktuell)
 
+- **Kapitel 5 · Vorschau** (privat; Video 720p): https://claude.ai/artifact/CEQGytbmUt4eh7vy3AgXHQ
+- **Kapitel 6–10 · Änderungen** (privat; Verständnisprüfung, 16 Vorschläge, ersetzt die Seite für Kapitel 6): https://claude.ai/artifact/BDSMEdR8X8tUomtyUC8TnQ
 - **Kapitel 5 · Hörprobe** (privat; `quelle/` mit Rohaufnahme): https://claude.ai/artifact/Gq6XW7W9b6wU45ZytiLaPa
 - **Kapitel 6 · Änderungen** (privat; Verständnisprüfung, 3 Vorschläge): https://claude.ai/artifact/X95yj1BpAui7xqWJq1SJoz
 - **Kapitel 5 · Änderungen** (privat; Vorschläge der Verständnisprüfung mit Farben; gebaut mit `seite/aenderungen.py`):

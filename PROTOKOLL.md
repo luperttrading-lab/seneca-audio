@@ -638,3 +638,10 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
 - **Kapitel 5 aufgenommen**: 650 Credits, 241 Wörter wortgetreu, 17 Pausen, 1:51, Betonungsfilter 0 von 33. Hörprobe mit `quelle/`.
 - **Kapitel 5 nach der Hörprobe** (Auftraggeber): 5,1 „großzügig mit Bestimmungen zu sein: Glücklich genannt werden kann, wer dank der Vernunft …“ (*liberaliter agere*, *beneficio rationis* nach vorn); 5,2 „Denn niemand kann glücklich genannt werden, der außerhalb der Wahrheit steht“ (*extra ueritatem proiectus*; „Denn“ für *enim* behalten). *beatus dici* in beiden Sätzen gleich: „glücklich genannt werden“.
 - **Kapitel 5, zwei Sätze neu**: 291 Credits, je drei Fassungen alle wortgetreu und unauffällig; eingesetzt 5,1 Fassung 2 (0,950), 5,2 Fassung 3 (0,918); danach 242/242 wortgetreu, Filter 0 von 32. `satz.py` setzt jetzt auch den ersten Satz eines Kapitels ein.
+- **Kapitel 5 Video**: 1080p25, AAC-LC Stereo 48 kHz, −18,0 LUFS, 112,25 s (ende 112,27), Stichbilder in Ordnung; Vorschau 720p
+  13,1 MB; Full HD und Miniaturbild geschickt.
+- **Verständnisprüfung Kapitel 7–10** (Fable, extra hoch; 7 und 10 auf dem Stand ihrer Zweige): mit Kapitel 6 zusammen 16
+  Vorschläge auf einer Farbseite. Aussortiert, weil gegen eine Festlegung: 8,3 „außer sich selbst“ (Auftraggeber: „als sich
+  selbst“ bleibt), 9,2 „Freude macht“ (Begriffsliste: *delectare* erfreuen, *gaudium* Freude), 9,1 „doch nicht“ (*ideo* =
+  deshalb), 10,3 „[sagst du]“ ohne Klammern (Ergänzung wird ohnehin gesprochen). Hinweise ohne Änderung: 7,3 „Ädil“
+  (Sachbegriff), mehrere schwere Gedanken.
