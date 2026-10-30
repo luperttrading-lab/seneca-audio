@@ -112,11 +112,13 @@ Vor jedem Schicken an den Auftraggeber, in dieser Reihenfolge:
    vergleichen, den der Filter dort misst (er zählt die Abschnitte zwischen 3 und 5 HT mit), und die Schwelle anpassen.
 4. **Nachbessern einzelner Sätze:** den Satz **allein und ohne Zusammenhang** erzeugen, zwei bis drei Fassungen; die beste
    an den Satzpausen einsetzen (Rand 50/100 ms, Blende 10 ms, Pegel an den Satz davor angleichen), Stimme per
-   Fingerabdruck prüfen (`werkzeuge/fingerabdruck.py`, mindestens 0,95 zur Kapitelaufnahme), dann die Kette neu und die
-   Worttreue erneut prüfen. Alternative: den Satz ans Ende einer Anfrage stellen und zurückschneiden (Rückwärts-Test).
+   Fingerabdruck prüfen (`werkzeuge/fingerabdruck.py`, Modell in `WESPEAKER_ONNX`): Die Fassung soll im Bereich liegen,
+   den die Sätze des Kapitels selbst gegen das ganze Kapitel erreichen (Kapitel 2: 0,87 bis 0,96, Median 0,93; eine
+   feste Grenze 0,95 wäre zu streng). Dann die Kette neu und die Worttreue erneut prüfen. Was Whisper anders hört, der
+   Auftraggeber aber als richtig bestätigt, kommt in `texte/verhoerer.txt` und hält die Kette nicht mehr an. Alternative: den Satz ans Ende einer Anfrage stellen und zurückschneiden (Rückwärts-Test).
    Nicht bewährt: Satz für Satz mit Zusammenhang (`paragraf.py --saetze`, zweimal falsch). Werkzeug:
    `python3 werkzeuge/satz.py N "<Satzanfang>" <ordner> [--fassungen 3]` erzeugt und prüft die Fassungen,
-   `… --nimm <n>` setzt eine ein und rechnet die Kette neu (noch nicht an einer echten Stelle erprobt).
+   `… --nimm <n>` setzt eine ein und rechnet die Kette neu (erprobt am 30.10. an 2,3 „den Geschossen“).
 5. **Endkontrolle der Dateien:** Tonspur vorhanden, Stereo, 48 kHz, AAC-LC (YouTube-Empfehlung; eine Mono-Datei kam am
    Handy stumm an), −18 LUFS; Dauer gleich `ende` in `daten.json`; Stichbilder am Anfang (Startseite), in der Mitte und am
    Ende ansehen; Seiten im Browser in Handygröße testen (`CLAUDE.md`).

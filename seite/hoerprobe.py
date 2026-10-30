@@ -9,6 +9,7 @@ import html, json, os, re, subprocess, sys
 
 HIER = os.path.dirname(os.path.abspath(__file__)); R = os.path.dirname(HIER); sys.path.insert(0, os.path.join(R, "werkzeuge"))
 import betonung
+from kette import abweichungen, bestaetigt, pnorm
 
 kap, ordner, aus = int(sys.argv[1]), sys.argv[2], sys.argv[3]
 b = os.path.join(ordner, f"kapitel{kap:02d}"); os.makedirs(os.path.join(aus, "audio"), exist_ok=True)
@@ -60,17 +61,10 @@ for st in stellen_:
     S[k] = eintrag(f"{k}.mp3", i0, i1, a, e, [m for m in markiert if i0 <= m <= i1])
     teile.append(tafel(k, f"{st.split(',')[0]} ({st.split(',')[1]})", f"bei {mm(a)} · {mm(e - a)}"))
 # von Whisper anders gehört (auch in der Gegenprobe): Stelle im Text suchen, Satz schneiden, Wort markieren
-pnorm = lambda t: re.sub(r"[^a-zäöü0-9]", "", re.sub(r"\bgall?io\b", "gallio", re.sub(r"\bdass\b", "das", t.lower().replace("ß", "ss"))))
 zeilen = [z for z in log.splitlines() if "[" in z and "→" in z]
-anders = {}
-if zeilen:
-    wn = [pnorm(w) for w in D["w"]]; start = [sum(len(x) for x in wn[:i]) for i in range(len(wn))]; ganz = "".join(wn)
-    for teil in re.findall(r"'([^']*)'", zeilen[-1]):
-        vor, rest = teil.split("[", 1); soll_, ist_ = rest.rstrip("]").split("→")
-        pos = ganz.find(vor + soll_) + len(vor)
-        if pos < len(vor): continue
-        i = max(j for j in range(len(wn)) if start[j] <= pos); off = pos - start[i]
-        alt = anders.get(i, wn[i]); anders[i] = alt[:off] + ist_ + alt[off + len(soll_):] if len(alt) == len(wn[i]) else alt
+anders = abweichungen(zeilen[-1], D["w"]) if zeilen else {}
+ok = bestaetigt(kap); bestaetigte = {i: g for i, g in anders.items() if pnorm(D["w"][i]) in ok}   # texte/verhoerer.txt
+anders = {i: g for i, g in anders.items() if i not in bestaetigte}
 if anders:
     teile.append('  <h2 class="abschnitt">Whisper hört anders · bitte anhören</h2>')
     for n_, (i, gehoert) in enumerate(sorted(anders.items()), 1):
@@ -82,6 +76,20 @@ if anders:
         st = D["stelle"][i].split(",")
         teile.append(tafel(k, f"„{D['w'][i].strip(',.;:–?!“”„')}“", f"{st[0]} ({st[1]}) · bei {mm(a_)}",
                            f"Whisper hört „{esc(gehoert)}“ (beide Modelle)").replace("<dt>Filter</dt>", "<dt>Whisper</dt>"))
+# neu gesprochene Sätze (werkzeuge/satz.py): eingesetzte Fassung im Kapitel und alle Fassungen zum Vergleich
+import glob
+for j in sorted(glob.glob(os.path.join(ordner, "satz", f"k{kap:02d}_*.json"))):
+    if re.search(r"_a\d+\.", os.path.basename(j)): continue   # Wortzeiten einzelner Fassungen
+    d = json.load(open(j, encoding="utf-8")); n_ein = d.get("eingesetzt")
+    teile.append(f'  <h2 class="abschnitt">Neu gesprochen · „{esc(" ".join(d["satz"].split()[:4]))} …“</h2>')
+    for f in d["fassungen"]:
+        k = "n" + os.path.basename(j)[:-5].split("_", 1)[1][:12].replace("ä", "ae") + str(f["n"])
+        subprocess.run(["cp", os.path.join(ordner, "satz", f["datei"]), os.path.join(aus, "audio", f["datei"])], check=True)
+        dauer = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", os.path.join(aus, "audio", f["datei"])], capture_output=True, text=True).stdout)
+        S[k] = {"datei": "audio/" + f["datei"], "dauer": round(dauer, 3), "w": f["w"], "mark": []}
+        teile.append(tafel(k, f"Fassung {f['n']}" + (" · eingesetzt" if f["n"] == n_ein else ""),
+                           ("wortgetreu" if f["wortgetreu"] else "Abweichung") + f" · Betonung {'unauffällig' if not f['betonung'] else 'markiert'}"
+                           + (f" · Stimme {f['stimme']:.2f}".replace(".", ",") if f.get("stimme") else "")))
 # vom Betonungsfilter markiert
 if M:
     teile.append('  <h2 class="abschnitt">Vom Betonungsfilter markiert</h2>')
@@ -108,7 +116,7 @@ kopf = f'''  <header class="kopf">
     <table>
       <thead><tr><th>Prüfung</th><th>Ergebnis</th></tr></thead>
       <tbody>
-        {zeile("Worttreue (Whisper)", "wortgetreu" if not anders else f"{len(anders)} Wörter anders gehört, unten zum Anhören")}
+        {zeile("Worttreue (Whisper)", (f"{len(anders)} Wörter anders gehört, unten zum Anhören" if anders else "wortgetreu") + (f" (dazu {len(bestaetigte)} bestätigte Verhörer: " + ", ".join(esc(D["w"][i].strip(",.;:–?!“”„")) for i in sorted(bestaetigte)) + ")" if bestaetigte else ""))}
         {zeile("Betonungsfilter (ab 5 Halbtönen)", filt)}
         {zeile("Pausen", esc(pausen.split(",")[0]) if pausen else "–")}
         {zeile("Dauer", mm(D["ende"]))}

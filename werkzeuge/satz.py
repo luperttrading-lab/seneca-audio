@@ -93,6 +93,9 @@ else:
     schreibe(np.concatenate([vor, s, nach]), b + ".roh.wav"); ff("-i", b + ".roh.wav", "-b:a", "192k", b + ".roh.mp3"); os.remove(b + ".roh.wav")
     for x in (".woerter.json", ".pausen.stellen.json", ".pausen.mp3"):
         if os.path.exists(b + x): os.remove(b + x)
+    j = os.path.join(ordner, name + ".json"); d = json.load(open(j, encoding="utf-8")); d["eingesetzt"] = nimm
+    json.dump(d, open(j, "w", encoding="utf-8"), ensure_ascii=False)   # für die Hörprobe
     print(f"Fassung {nimm} eingesetzt ({W[i0]['w']} … {W[i1]['w']}, {(e - a) / SR:.2f} s ersetzt durch {len(s) / SR:.2f} s); "
           f"alte Rohaufnahme: {os.path.basename(b)}.roh.vorher{n}.mp3", flush=True)
-    r = py(f"{HIER}/kapitel.py", str(kap), aus, "--ohne-video", capture_output=True, text=True); print(r.stdout.strip())
+    r = subprocess.run([sys.executable, f"{HIER}/kapitel.py", str(kap), aus, "--ohne-video"], capture_output=True, text=True, stdin=subprocess.DEVNULL)
+    print(r.stdout.strip()); print(r.stderr.strip().splitlines()[-1] if r.returncode else "")

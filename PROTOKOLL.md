@@ -516,3 +516,9 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
   (Beredsamkeit; Auslautverhärtung, sicher Schein). `kapitel.py --trotz-abweichung` neu, Kette zu Ende: 387 Wörter, 382
   exakt getroffen, 41 Pausen (+17,9 s), 2:54. Betonungsfilter: 0 markiert, 3 zwischen 3 und 5 HT. Hörprobe mit
   `seite/hoerprobe.py`; Tabellenzelle der Vorlage brach am Handy nicht um (439 statt 390 px), behoben.
+- **Kapitel 2, Urteil des Auftraggebers:** „Bekränzten“ und „Beredsamkeit“ richtig, „den Geschossen“ als „dem“ gesprochen
+  (echter Fehler; der Text ist richtig, Dativ Plural). Erster Einsatz von `satz.py`: drei Fassungen allein, 159 Credits
+  (123 Zeichen), alle wortgetreu („den“) und im Betonungsfilter unauffällig; Fingerabdruck gegen das ganze Kapitel
+  0,921 / 0,897 / 0,924. Maßstab: die 24 Sätze des Kapitels selbst erreichen 0,867–0,962 (Median 0,927), der alte
+  Satz 0,954; die Regel „mindestens 0,95“ war also zu streng und ist jetzt relativ. Fassung 3 eingesetzt (7,54 s → 7,06 s),
+  Kette neu: nur noch die beiden bestätigten Verhörer (neu: `texte/verhoerer.txt`, `kette.abweichungen`), 40 Pausen, 2:52.

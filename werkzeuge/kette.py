@@ -1,4 +1,4 @@
-"""Gemeinsame Bausteine der Bearbeitungskette für Kapitel und einzelne Paragrafen (kapitel.py, paragraf.py)."""
+"""Gemeinsame Bausteine der Bearbeitungskette für Kapitel, Paragrafen und Sätze (kapitel.py, paragraf.py, satz.py)."""
 import re, subprocess, sys
 import numpy as np
 
@@ -25,3 +25,22 @@ def sprache(x):   # Anfang und Ende der Sprache (Rahmen über Spitzenpegel − 4
 def pegel(y):   # typischer Pegel der Sprache (Median der lauten 10-ms-Rahmen)
     r = np.sqrt((y[:len(y) // 441 * 441].reshape(-1, 441) ** 2).mean(1)); return np.median(r[r > r.max() * 0.05])
 
+
+
+pnorm = lambda t: re.sub(r"[^a-zäöü0-9]", "", re.sub(r"\bgall?io\b", "gallio", re.sub(r"\bdass\b", "das", t.lower().replace("ß", "ss"))))   # wie pruef.py
+
+def abweichungen(zeile, woerter):   # Meldungen von pruef.py („…vor[soll→ist]“) → {Wortindex: gehörtes Wort}
+    wn = [pnorm(w) for w in woerter]; start = np.cumsum([0] + [len(x) for x in wn])[:-1]; ganz = "".join(wn); erg = {}
+    for teil in re.findall(r"'([^']*)'", zeile):
+        vor, rest = teil.split("[", 1); soll, ist = rest.rstrip("]").split("→")
+        pos = ganz.find(vor + soll)
+        if pos < 0: continue
+        pos += len(vor); i = int(np.flatnonzero(start <= pos)[-1]); off = pos - start[i]
+        alt = erg.get(i, wn[i]); erg[i] = alt[:off] + ist + alt[off + len(soll):]
+    return erg
+
+def bestaetigt(kapitel, datei="texte/verhoerer.txt"):   # vom Nutzer als richtig gehörte Stellen, die Whisper anders hört
+    import os
+    pfad = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), datei)
+    if not os.path.exists(pfad): return set()
+    return {pnorm(z.split()[1]) for z in open(pfad, encoding="utf-8") if z.split("#")[0].split() and z.split()[0] == str(kapitel)}

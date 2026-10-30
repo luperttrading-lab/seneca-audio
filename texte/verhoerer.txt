@@ -1,0 +1,4 @@
+# Stellen, die Whisper (turbo und large-v3) anders hört, die der Nutzer aber als richtig gesprochen bestätigt hat.
+# Kapitel Wort   # was Whisper hört, wann bestätigt. kapitel.py zählt sie nicht als Abweichung.
+2 Bekränzten     # Whisper: begrenzten (ä und e klingen gleich), Nutzer 30.10.: richtig
+2 Beredsamkeit   # Whisper: Beretsamkeit (Auslautverhärtung), Nutzer 30.10.: richtig

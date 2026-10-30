@@ -20,7 +20,7 @@ HIER = os.path.dirname(os.path.abspath(__file__)); R = os.path.dirname(HIER); sy
 import stellen
 
 nr, aus = int(sys.argv[1]), sys.argv[2]; neu = "--neu" in sys.argv
-from kette import STIMME, MODELL, TEMPO, SR, RAUSCH, PAUSEN, ff, py, lufs, lade, sprache, pegel
+from kette import STIMME, MODELL, TEMPO, SR, RAUSCH, PAUSEN, ff, py, lufs, lade, sprache, pegel, pnorm, abweichungen, bestaetigt
 os.makedirs(aus, exist_ok=True); b = os.path.join(aus, f"kapitel{nr:02d}")
 
 def tts(text, ziel):
@@ -48,6 +48,9 @@ if not fertig:
     if "wortgetreu" not in zeile:   # Gegenprobe mit dem großen Modell: turbo verhört sich gelegentlich („Wahlen“ → „Walen“)
         p = py(f"{HIER}/pruef.py", "large-v3", rein, b + ".roh.mp3", capture_output=True, text=True)
         zeile = [l for l in p.stdout.splitlines() if "large-v3" in l][-1]; print("Gegenprobe:", zeile, flush=True)
+        T = text.split(); ok = bestaetigt(nr); A = abweichungen(zeile, T)   # texte/verhoerer.txt: vom Nutzer als richtig gehört
+        if A and all(pnorm(T[i]) in ok for i in A):
+            print("wortgetreu bis auf bestätigte Verhörer:", ", ".join(f"{T[i]} ({g})" for i, g in A.items()), flush=True); zeile = "wortgetreu"
         if "wortgetreu" not in zeile: sys.exit("Abweichungen in der Rohaufnahme – bitte anhören, bevor weiterverarbeitet wird")
     # 3. Rauschunterdrückung, Wortzeiten, Pausen
     ff("-i", b + ".roh.mp3", "-ac", "1", "-ar", str(SR), "-af", RAUSCH, b + ".ru.wav")
