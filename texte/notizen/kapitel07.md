@@ -50,3 +50,13 @@ Spelunken, Ädil, Schwitzbäder
 - Vorschläge von Gemini geprüft: übernommen nur „vergänglich“ (*caducum*) und „oder“ vor „wie sie vor den Mauern steht“
   (beide noch ohne Freigabe). Abgelehnt u. a. „Mir ist schleierhaft“ (zerstört Senecas *Vident … Non uideo*), „parfümiert“
   (verliert *pollinctam*), „ein Ekel“, „korrigieren“, Zusätze wie „wachsam“, „wunderbar“, „unaufhaltsam“.
+
+## Prüfung mit Fable 5.1, Stufe xhigh (30.10., Festlegung des Auftraggebers über die Hauptsitzung)
+
+17 Funde, gegen das Latein nachgeprüft. Bestätigt unabhängig: Hörfalle „nicht anderes“, „vergänglich“, „Ursprung aus …
+nehmen“ unidiomatisch. Neu und vorgelegt: *dixerunt* „sagen, … liege“ (statt „verlegt … gesetzt“); *satietas* =
+Übersättigung, *taedium* = Überdruss (im Entwurf vertauscht); *mollis* „verweichlicht“; Parallele *stantem* /
+*latitantem … captantem*; *inmiscuisset* „verschmolzen wäre“; *statio* / *stantem* (Standort). Argument zur Lesart 7,1:
+*quam turpi loco* verlangt einen genannten Ort, spricht für *in iliis*. Crux 7,4: Fable hält Forbigers Deutung ohne
+Ergänzung für vertretbar (nur Präsens). Abgelehnt: „ohne Lust“ (klingt wie „keine Lust“), „wo sie Wache steht“ (Zusatz),
+„ungemischtem Wein“, „Schwung“, „nicht einmal“ („gar keinen“ deckt *ne … quidem ulla*).
