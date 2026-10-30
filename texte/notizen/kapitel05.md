@@ -20,6 +20,14 @@ Textprüfung 0 Hinweise, geprüft vom unabhängigen Prüf-Agenten. Freigabe offe
 3. 5,3 *lacerationes … vellicationes*: „den Wunden … den Nadelstichen“.
 4. 5,3 *stabilita*: „steht fest auf“ bleibt.
 
+## Zweite Durchsicht (30.10.), Vorschläge offen
+
+1. 5,1 „kann man den glücklich nennen, der“ → „kann glücklich heißen, wer“: *beatus dici potest* steht in 5,1 und 5,2
+   gleich, 5,2 hat schon „glücklich heißen“; *dici* passiv = heißen, *dicere* aktiv = nennen (4,2, 5,1 *felicia dixerit*).
+2. 5,2 „die geschickt ist zum eigenen Schaden und zum Verkehrten“ → „die geschickt ist im Verkehrten, zum eigenen
+   Schaden“: „geschickt zu“ ist kein gängiges Deutsch, „geschickt in“ und „zum eigenen Schaden“ sind es; keine Zusätze.
+3. 5,3 „entkommen“ → „entgangen“ (*effugerit*): man entgeht einer Wunde, man entkommt einem Verfolger.
+
 ## Prüf-Agent: übernommen
 
 - 5,2 *in numerum … redegit*: „unter das Vieh gesunken“ hieß „tiefer als“ → „dem Vieh und den Tieren gleich geworden“.
