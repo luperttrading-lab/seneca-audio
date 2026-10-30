@@ -1,6 +1,17 @@
 # Kapitel 8 – Notizen zur Übersetzung
 
-Stand: Entwurf (30.10.2026), Freigabe offen. Zweig `kapitel08-entwurf`.
+Stand: **freigegeben (30.10.2026).** Der Auftraggeber hat die offenen Fragen an die Empfehlungen übergeben („Mach das,
+was du für sinnvoll hältst“); entschieden wie unten. Zweig `kapitel08-entwurf`, Übernahme durch die Hauptsitzung.
+
+## Entscheidungen des Auftraggebers (30.10.)
+
+- 8,4 Welt und Gott im Plural („streben … kehren“); *rectorque* heißt „und“.
+- 8,3 „großherzig und dabei freundlich“, „nichts bewundern als sich selbst“, „Ein Mann soll“: bleiben.
+- 8,1 „die Ehrlosen“ bleibt (Gegenwort zu „die Ehrenhaften“; Kapitel 7 hat „schändlich“ für *turpis*).
+- Übernommen aus der Prüfung mit Fable: 8,1 „erfreuen“, 8,2 „was uns nicht gehört“, 8,4 „wird angeregt und nimmt“,
+  8,6 „nichts, worauf sie ausrutscht“ (statt „ausgleitet“, das die Textprüfung als selten meldet), „ohne Ausflüchte“.
+- Gemini-Vorschläge geprüft, im Übrigen nicht übernommen (Gründe in der Vorlage: Auslassungen, moderne Wendungen,
+  *concordia* als „innerer Frieden“ gegen die Begriffsliste).
 
 ## Neue Begriffe (Vorschlag)
 
@@ -57,8 +68,7 @@ Stand: Entwurf (30.10.2026), Freigabe offen. Zweig `kapitel08-entwurf`.
 ## Offene Fragen
 
 - Einwürfe des Gegners („inquit“): kommen in Kapitel 8 nicht vor.
-- Siehe Entscheidungsfragen 1–5 in der Vorlage (Welt und Gott; großherzig; nichts bewundern als sich selbst; „Ein Mann“;
-  Krummes, Glattes).
+- keine; entschieden (siehe oben).
 
 ## Wörter für woerter_ok.txt (nach Freigabe)
 
