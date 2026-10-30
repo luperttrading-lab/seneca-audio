@@ -45,6 +45,13 @@ Stand: Entwurf (30.10.2026), Freigabe offen. Zweig `kapitel08-entwurf`.
 - Abgleich mit Kapitel 7 (Zweig `kapitel07-entwurf`): *turpis* dort „schändlich“, *inhonestus* „unehrenhaft“; hier
   *turpes* „die Ehrlosen“ (Gegenwort zu „die Ehrenhaften“). Bei der Übernahme vereinheitlichen oder bewusst lassen.
 - 8,3 *fidens animo atque in utrumque paratus* ist ein Vergil-Zitat (Aeneis 2,61, Sinon), im Ton nicht markiert.
+- Prüf-Agent Fable (xhigh, 30.10., Festlegung des Auftraggebers): keine Bedeutungsfehler. Geprüft und als Vorschlag
+  vorgelegt: 8,4 *inritata*, *capiens* sind Partizipien, nur *reuertatur* ist Aufforderung („wird angeregt und nimmt“
+  statt „soll sich anregen lassen“); 8,2 *aliena* „was uns nicht gehört“ (Wortspiel mit *possederint*; „fremd“ klingt nach
+  „unbekannt“); 8,6 dreifaches *nihil* halten („nichts, worauf sie ausgleitet“); *tergiversatio* „Ausflüchte“ (Lewis &
+  Short: evasion, subterfuge; „Zaudern“ doppelt *haesitatio*); 8,1 *delectant* „erfreuen“ wie Kapitel 9,2 (dort
+  *delectare* „erfreuen“, *placere* „gefallen“; Seneca unterscheidet beide). Verworfen: Singular von Welt und Gott (siehe
+  oben, *-que*).
 - Hinweis für die Hauptsitzung: *concordia* heißt in 3,4 „innere Eintracht“, hier „Eintracht des Geistes“ (8,6, These).
 
 ## Offene Fragen
