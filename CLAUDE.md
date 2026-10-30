@@ -14,6 +14,7 @@ Eigene Übersetzung und Vertonung von Senecas *De vita beata*, eingeteilt nach S
 - **Hörproben und Videos nie als Datei zum Herunterladen schicken**, sondern als Seite zum direkten Anhören bzw.
   Ansehen (Artifact mit Abspielknopf und mitlaufendem Text, MP3; je Datei höchstens 15 MB, Videos dafür verkleinern).
   Der Nutzer hört am Handy und will nicht erst herunterladen und mit einem anderen Programm öffnen.
+  Ausnahme: die fertige Full-HD-Datei für den YouTube-Upload als Datei schicken (Nutzer, 30.10.).
 - Kostenzeile am Ende jeder Antwort: `python3 tools/kosten.py` im Repo ausführen, Ausgabe wörtlich übernehmen.
 - Seiten vor dem Veröffentlichen im Browser testen (Playwright, Handygröße 390 × 844). Playwright-Chromium spielt kein
   AAC: für Tests MP3-Kopien verwenden; `seite/rangeserver.py` liefert Bereichsanfragen wie GitHub Pages.
