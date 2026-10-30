@@ -20,6 +20,13 @@ Textprüfung 0 Hinweise, geprüft vom unabhängigen Prüf-Agenten. Freigabe offe
 3. 5,3 *lacerationes … vellicationes*: „den Wunden … den Nadelstichen“.
 4. 5,3 *stabilita*: „steht fest auf“ bleibt.
 
+## Übernommen (30.10., Auftraggeber: „Übernimm die, die du für sinnvoll hältst“)
+
+Aus zweiter Durchsicht und Fable-Prüfung: 5,1 „kann glücklich heißen, wer“; 5,1 „Und doch wird sie deshalb niemand
+glücklich nennen: Sie haben keinen Begriff vom Glück.“; 5,2 „Stell auf dieselbe Stufe“; 5,2 „die erfinderisch ist im
+Verkehrten, zum eigenen Schaden“; 5,3 Variante b „… frei von allen Übeln. Er ist nicht nur den Wunden, sondern auch den
+Nadelstichen entgangen.“; 5,3 „immer dort stehen“; 5,4 „erweichen“.
+
 ## Zweite Durchsicht (30.10.), Vorschläge offen
 
 1. 5,1 „kann man den glücklich nennen, der“ → „kann glücklich heißen, wer“: *beatus dici potest* steht in 5,1 und 5,2
