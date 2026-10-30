@@ -18,6 +18,7 @@ Eigene Übersetzung und Vertonung von Senecas *De vita beata*, eingeteilt nach S
   **am Schluss** der Antwort, nach den Erläuterungen; danach nur noch Link und Kostenzeile (Nutzer, 30.10.).
 - Jede Internetadresse als klickbarer Markdown-Link. Am Ende **jeder** Antwort, direkt über der Kostenzeile, **nur der
   Link der Seite, an der gerade gearbeitet wird** (fett); die übrigen Links nicht mehr aufzählen (Nutzer, 29.10.).
+  Wird im Text auf eine Seite verwiesen (etwa „Hörprobe Kapitel 4 abnehmen“), steht ihr Link direkt dabei (Nutzer, 30.10.).
 - **Hörproben und Videos nie als Datei zum Herunterladen schicken**, sondern als Seite zum direkten Anhören bzw.
   Ansehen (Artifact mit Abspielknopf und mitlaufendem Text, MP3; je Datei höchstens 15 MB, Videos dafür verkleinern).
   Der Nutzer hört am Handy und will nicht erst herunterladen und mit einem anderen Programm öffnen.
