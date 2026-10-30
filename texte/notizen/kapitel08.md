@@ -27,17 +27,24 @@ Stand: Entwurf (30.10.2026), Freigabe offen. Zweig `kapitel08-entwurf`.
 - 8,3/8,4: Latin Library „~erat uera. Ratio uera~ sensibus inritata“ ist verderbt. Übersetzt wie Stewart
   („Let reason be encouraged by the senses“), also als „Die Vernunft soll sich von den Sinnen anregen lassen“; das
   „erat uera“ am Ende von 8,3 bleibt unübersetzt. Forbiger liest anders („Eine gesunde Vernunft wird mit seinen
-  Empfindungen verwachsen sein“, also wohl *ratio vera sensibus insita*).
+  Empfindungen verwachsen sein“, also wohl *ratio vera sensibus insita*). Überlieferung laut A. Delatte
+  ([Humanitas II](https://ap1.sib.uc.pt/bitstream/10316.2/6776/1/humanitasii_artigo23.pdf)): Ambrosianus *inrita*,
+  schlechtere Handschriften *insita* (Forbiger), eine *inritata* (Madvig; Stewart und Latin Library); Teubner (Hermes)
+  *Externa ratio quaerat sensibus inritata*. Die Stelle ist echt unsicher, die Lösung nach Stewart bleibt.
 
 ## Abgleich
 
 - Stewart (Gutenberg 64576) und Forbiger (LibriVox, Datei 1, 36:46–44:20, Whisper small) gelesen.
 - Forbiger nimmt Welt und Gott in 8,4 als eins („die das ganze Weltall umfassende, alles regierende Gottheit“), Stewart
-  trennt („the universe and God“); das Latein hat das Verb im Singular.
+  trennt („the universe and God“). Das Verb steht im Singular, aber *rectorque* verbindet mit „und“; das Verb richtet
+  sich nach dem nächsten Subjekt, wie im Latein üblich. Der Text sagt also „Welt und Gott“; der Plural bleibt.
 - Prüf-Agent (30.10.): übernommen 8,1 „damit“ (*ut*), 8,3 „Grundsätzen … durchgestrichen“, 8,4 Begründungssatz an seinen
   Platz (erklärt, warum die Vernunft bei den Sinnen anfängt), „zu den äußeren Dingen“, 8,5 „in Eintracht“, „in dem, was sie
   erfasst“ (*comprensiones*), 8,6 „Krummes, Glattes“ statt „Verkehrtes, Schlüpfriges“ (Hörfalle „schlüpfrig“), „sich windet“
   (*tergiversatio*). Nicht übernommen: „Was ist damit, dass“ (zu salopp), „berührt“ für *tetigit*.
+- Abgleich mit Kapitel 7 (Zweig `kapitel07-entwurf`): *turpis* dort „schändlich“, *inhonestus* „unehrenhaft“; hier
+  *turpes* „die Ehrlosen“ (Gegenwort zu „die Ehrenhaften“). Bei der Übernahme vereinheitlichen oder bewusst lassen.
+- 8,3 *fidens animo atque in utrumque paratus* ist ein Vergil-Zitat (Aeneis 2,61, Sinon), im Ton nicht markiert.
 - Hinweis für die Hauptsitzung: *concordia* heißt in 3,4 „innere Eintracht“, hier „Eintracht des Geistes“ (8,6, These).
 
 ## Offene Fragen
