@@ -53,6 +53,10 @@ Leitbegriffe beim ersten Auftreten eintragen und vorlegen.
 | *bonum*, *summum bonum* | das Gut, das höchste Gut (stoisches Fachwort, nicht umschreiben) | angenommen 30.10. (2,2) |
 | *animus* | Geist | angenommen 30.10. (2,2) |
 | *turba*, *vulgus*, *multitudo*, *coetus* | die Menge (bei Seneca hier gleichbedeutend) | angenommen 30.10. (1,4; 2,1–3) |
+| *mens* | Geist (wie *animus*); die feste Wendung *bona mens* bleibt „klarer Verstand“ | vorgeschlagen 30.10. (3,3), Freigabe mit Kapitel 3 |
+| *sapientia* | Weisheit | vorgeschlagen 30.10. (3,3), Freigabe mit Kapitel 3 |
+| *tranquillitas* | Ruhe | vorgeschlagen 30.10. (3,4), Freigabe mit Kapitel 3 |
+| *rerum natura* | die Natur | vorgeschlagen 30.10. (3,3), Freigabe mit Kapitel 3 |
 
 ## Vom Auftraggeber festgelegt (nicht mehr ändern)
 

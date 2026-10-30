@@ -539,3 +539,7 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
   Kapitel 1 neu (3:53, 68 MB); Endkontrolle: H.264 1080p25, AAC-LC Stereo 48 kHz, −18,0 LUFS, Dauer gleich `ende` (±0,03 s),
   Stichbilder Start, Mitte, Ende in Ordnung. Vorschauen 720p (12,9 und 12,7 MB), Full-HD-Dateien und Miniaturbild Kapitel 2
   geschickt. Neues `seite/vorschau.py`.
+- **Kapitel 3 geprüft** (gegen Latein und Stewart; Textprüfung ohne Hinweis): 3,1 „also“ gestrichen (kein *ergo*), „dem
+  Anschein nach“ statt „zum Schein“ (*in speciem*); 3,2 Komma vor „würde“ gestrichen (kann, muss nicht; sonst Pause);
+  3,3 „dazu“ statt „zugleich“ (*tunc* in der Reihe *primum … deinde … tunc … tum*). Begriffe *mens*, *sapientia*,
+  *tranquillitas*, *rerum natura* vorgeschlagen. Auf Wunsch des Auftraggebers schon eingetragen, Gegenlesen steht aus.
