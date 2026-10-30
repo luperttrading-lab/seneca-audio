@@ -1,0 +1,12 @@
+# Richtige Wörter, die das Wörterbuch von werkzeuge/textpruef.py nicht kennt (geprüft, je eines pro Zeile).
+# Namen
+Gallio
+Prätor
+# seltene Formen
+ausgetretenste
+belebteste
+Prunkmantel
+aufzuatmen
+ungetan
+herauszuheben
+abzuirren

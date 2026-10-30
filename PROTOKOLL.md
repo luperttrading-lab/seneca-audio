@@ -501,3 +501,9 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
   die“), „ein Gut“ (*bonum*); 2,3 „ungetan“ (*feci … infectum*); 2,4 „diese Leute“ (*istos*), Einschub umgestellt, „Was alle
   Blicke auf sich zieht“ (*spectantur* statt doppeltem „staunen“). Begriffe *felicitas*, *bonum*, *animus*, *turba* u. a.
   in die Begriffsliste. Auftraggeber: „Übernimm alle Punkte, Begriffe passen auch“; Gegenlesen steht aus.
+- **Textprüfung** (`werkzeuge/textpruef.py`), nach Hinweis des Auftraggebers auf ein „what“ statt „was“ (in den Dateien
+  nicht gefunden). LanguageTool allein übersieht „what“ im deutschen Satz; darum zusätzlich Wörterbuchabgleich
+  (pyspellchecker, Ausnahmen in `texte/woerter_ok.txt`). Erster Lauf: Kapitel 1 vier richtige seltene Wörter und ein
+  Einschub „– wenn der Weg nur der richtige ist –“ (1,1; aufgenommen und abgenommen, bleibt), Kapitel 2 vier richtige
+  Wörter und ein Fehlalarm von LanguageTool (Großschreibung nach Doppelpunkt vor ganzem Satz ist richtig), Kapitel 3 ein
+  richtiges Wort. Testtext mit „what“, „ein ein“ und Klammer: alle drei gefunden.

@@ -78,7 +78,7 @@ Video ohne Credits neu. Jedes weitere Kapitel nach der Abnahme genauso sichern.
 
 ## Technik
 
-- Im neuen Container fehlen meist `faster-whisper` und `praat-parselmouth` (für `pruef.py`, `prosodie.py`,
+- Im neuen Container fehlen meist `faster-whisper`, `praat-parselmouth` und `pyspellchecker` (für `textpruef.py`) (für `pruef.py`, `prosodie.py`,
   `karaoke_daten.py`); pip ist erreichbar. Fingerabdruck: Modellpfad in `WESPEAKER_ONNX`.
 - Stolpersteine: Schriften vor der Zeilenberechnung laden (`bereit()` in `bild.html`), sonst bricht der Text anders um;
   Testseiten brauchen `<meta charset="utf-8">`, sonst kaputte Umlaute; `anlmdn` verzögert um 8 ms (in `kette.py`

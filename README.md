@@ -34,6 +34,7 @@ python3 werkzeuge/kapitel.py 1 <ordner> --ohne-video
 python3 werkzeuge/video/baue.py <daten.json> <ton.wav> <video.mp4>
 ```
 
-Voraussetzungen: ffmpeg, Python mit `numpy`, `faster-whisper` und `praat-parselmouth`, Node mit Playwright. Die
+Voraussetzungen: ffmpeg, Python mit `numpy`, `faster-whisper`, `praat-parselmouth` und `pyspellchecker`, Node mit Playwright.
+Vor jeder Aufnahme den Text prüfen: `python3 werkzeuge/textpruef.py <kapitel>`. Die
 Rohaufnahme wird im Ausgabeordner zwischengespeichert; liegt sie dort schon, kostet ein neuer Lauf keine Credits.
 `seite/karaoke_daten.py` und `seite/bau.py` enthalten noch Pfade aus der ersten Arbeitsphase.
