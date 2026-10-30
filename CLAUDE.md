@@ -28,6 +28,8 @@ Eigene Übersetzung und Vertonung von Senecas *De vita beata*, eingeteilt nach S
 - **Kurz antworten.** Bei Textänderungen vorher/nachher immer als **ganzen Satz**, jeder als eigener Absatz, die
   **geänderten Wörter fett**; geht es um einen Bezug, den Satz davor dazu (Nutzer, 30.10.). Keine langen Erklärungen dazu,
   Gründe in einer Zeile. Der Nutzer liest am Handy und nicht so schnell wie Claude (Nutzer, 30.10.).
+- **Erst antworten, dann arbeiten** (Nutzer, 30.10.): Fragt der Nutzer etwas, sofort antworten; Aufnahmen, Videos,
+  Prüfungen laufen im Hintergrund oder in einer eigenen Sitzung und werden danach gemeldet, nicht vor der Antwort fertig gemacht.
 - Kostenzeile am Ende jeder Antwort: `python3 tools/kosten.py` im Repo ausführen, Ausgabe wörtlich übernehmen.
 - Seiten vor dem Veröffentlichen im Browser testen (Playwright, Handygröße 390 × 844). Playwright-Chromium spielt kein
   AAC: für Tests MP3-Kopien verwenden; `seite/rangeserver.py` liefert Bereichsanfragen wie GitHub Pages.
