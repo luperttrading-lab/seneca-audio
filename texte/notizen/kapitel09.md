@@ -3,6 +3,9 @@
 Stand: Entwurf 30.10., noch nicht freigegeben. Abgeglichen mit Stewart (1900) und Forbiger (1867, LibriVox,
 per Whisper abgeschrieben, Datei 1, ab 44:16). Textprüfung: nur „Pflänzchen“ und „Sämann“ unbekannt (beide richtig).
 Unabhängiger Prüf-Agent: Bezug „Der“ → „Der Bauch“ (9,4) und Pronomenkette in 9,1 übernommen; übrige Funde unten als Fragen.
+Zweite Prüfung mit Fable, Stufe extra hoch (Festlegung des Auftraggebers über die Hauptsitzung): Funde zu Bezügen in 9,1,
+*desiderat* (9,3), *placet* (9,2), Pflänzchen im Plural, „obendrein“, „das Gut des Bauches“ dem Auftraggeber als Vorschlag
+vorgelegt; *finis* als „Grenze“ und „Mühe“ für *opus* abgelehnt (Begründung in der Vorlage).
 
 ## Neue Begriffe (Vorschlag)
 
@@ -15,7 +18,9 @@ Unabhängiger Prüf-Agent: Bezug „Der“ → „Der Bauch“ (9,4) und Pronome
 | *merces* | Lohn | 9,2 | siehe Frage 4 zu *pretium* |
 | *accessio* | Zugabe | 9,2 | wie Forbiger |
 | *labor*, *laborare*, *opus* | Arbeit, arbeiten | 9,1–2 | verbindet Tugend und Ackerbild |
-| *prouidentia* | Voraussicht | 9,4 | |
+| *prouidentia* | Voraussicht | 9,4 | Forbigers „Vorsicht“ heute missverständlich |
+| *rigor* | Festigkeit | 9,4 | *infragilis animi rigor*: „unzerbrechliche Festigkeit des Geistes“ |
+| *uenter* | Bauch | 9,4 | |
 | *sanitas* | Gesundheit | 9,4 | wie 3,3 |
 | *concordia* | Eintracht | 9,4 | wie 3,4 |
 | *decor* | Schönheit (offen, Frage 3) | 9,4 | |
