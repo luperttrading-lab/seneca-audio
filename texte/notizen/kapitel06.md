@@ -50,3 +50,15 @@ keine (Textprüfung: nur der Hinweis auf drei Sätze mit „Glücklich“, Senec
 6. *omnem habitum … commendat*: „in jeder Gestalt annehmbar“ → „unter allen Umständen lieb“.
 - „lauern“ bleibt (*imminere* hat selbst den gierig-drohenden Beiklang). Gemini-Vorschläge („Genüsse“, „Freuden“,
   „das Schlechte“, „satt und träge“) abgelehnt: Begriffsliste, Tierbild, *in praesenti*.
+
+## Prüfung mit Fable, xhigh (30.10., Festlegung des Auftraggebers über die Hauptsitzung)
+
+Geprüft an der Vorschlagsfassung. Übernommen bzw. vorgelegt:
+- *omnem habitum*: „seine ganze Lage lieb macht“ statt „unter allen Umständen“ (Stewart „the whole posture“, Forbiger
+  „ganze Lage“; dazu doppelt Lage/Umstände).
+- „des Geistes“ ist eine Ergänzung ohne Klammern; direkt nach „Wahnsinn“ trägt „Gesundheit“ allein → zurück zum Entwurf.
+- „lauern“ → „greifen“ (drei unabhängige Leser hören „Hinterhalt“).
+- *luxuria* (auch 11, 12, 13, 17): Begriff für die Liste; Vorschlag „Luxus“ (Schwelgerei 1,4 selten, Üppigkeit veraltet).
+- *arbiter*: Fable will „Richter“ (wegen *sedeat*); „Kenner“ vorgeschlagen, weil „Richter über“ nach Verurteilen klingt.
+Abgelehnt: „in der Gegenwart vollgestopft“ (umgangssprachlich, „jetzt“ trägt den Gegensatz), Umbau von *memor exultet*
+(Hörfalle kehrt zurück), „gewöhnlich ergötzt“ und „anfüllen“ (Geschmack).
