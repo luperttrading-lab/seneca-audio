@@ -1,0 +1,175 @@
+<title>Kapitel 3 · Hörprobe</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Kapitel 3 von Senecas De vita beata mit Helmut zum Anhören, mit mitlaufendem Text und den Prüfergebnissen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Literata:opsz,wght@7..72,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  /* Vorlage für Hörproben je Kapitel (seite/hoerprobe.py). Layout: eine Spalte, je Stelle eine Tafel mit Abspielknopf, Text zum Mitlesen, Befund und Vorschlag. Dunkel wie das Video:
+     Bronze heißt „wo bin ich / worauf achten“, Weiß und Grau sind Senecas Text. */
+  :root {
+    --stein: #161a19; --tafel: #1e2422; --tafel-hoch: #252c2a; --tinte: #e9edeb; --grau: #939e99; --linie: #333b38; --bronze: #d29f62;
+    --display: "Cinzel", Georgia, serif; --text: "Literata", Georgia, serif; --ui: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--stein); color: var(--tinte); font: 16px/1.5 var(--ui); }
+  main { max-width: 560px; margin: 0 auto; display: grid; gap: 20px;
+    padding-block: 32px 48px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .kopf { display: grid; gap: 6px; text-align: center; }
+  .eyebrow { font: 600 12px/1.3 var(--ui); letter-spacing: .14em; text-transform: uppercase; color: var(--bronze); }
+  h1 { margin: 0; font: 600 clamp(26px, 7.5vw, 36px)/1.15 var(--display); letter-spacing: .03em; text-wrap: balance; }
+  .lead { margin: 0; color: var(--grau); font-size: 15px; }
+  .stelle { display: grid; gap: 14px; padding: 16px; border: 1px solid var(--linie); border-radius: 16px; background: var(--tafel); }
+  .stelle[data-an="true"] { border-color: var(--bronze); background: var(--tafel-hoch); }
+  .zeile { display: flex; align-items: center; gap: 14px; }
+  .knopf { flex: 0 0 auto; width: 56px; height: 56px; border-radius: 50%; border: 0; display: grid; place-items: center; cursor: pointer;
+    background: var(--bronze); color: var(--stein); touch-action: manipulation; }
+  .knopf:focus-visible { outline: 2px solid var(--tinte); outline-offset: 3px; }
+  .knopf svg { width: 26px; height: 26px; }
+  .titel { display: grid; gap: 2px; min-width: 0; }
+  .titel b { font: 600 17px/1.3 var(--ui); }
+  .titel span { font-size: 14px; color: var(--grau); font-variant-numeric: tabular-nums; }
+  .text { margin: 0; font: 400 19px/1.6 var(--text); }
+  .w { color: transparent; -webkit-background-clip: text; background-clip: text;
+    background-image: linear-gradient(90deg, var(--tinte) calc(var(--f, 0) * (100% + 1em) - 1em), var(--grau) calc(var(--f, 0) * (100% + 1em))); }
+  .w.vorbei { --f: 1; }
+  .w.verdacht { text-decoration: underline wavy var(--bronze); text-decoration-thickness: 1.5px; text-underline-offset: 5px; }
+  .balken { height: 4px; border-radius: 2px; background: var(--linie); overflow: hidden; }
+  .balken i { display: block; height: 100%; width: 0; background: var(--bronze); }
+  dl { margin: 0; display: grid; gap: 8px; }
+  dt { font: 600 12px/1.3 var(--ui); letter-spacing: .12em; text-transform: uppercase; color: var(--bronze); }
+  dd { margin: 0; font-size: 15px; color: var(--tinte); }
+  dd em { font-family: var(--text); }
+  .fuss { margin: 0; font-size: 14px; color: var(--grau); }
+  .befund { display: grid; gap: 10px; }
+  .befund p { margin: 0; font-size: 15px; }
+  .befund table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  .befund th, .befund td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--linie); vertical-align: top; }
+  .befund th { font: 600 12px/1.3 var(--ui); letter-spacing: .12em; text-transform: uppercase; color: var(--bronze); }
+  .befund td:last-child { min-width: 7em; }
+  .abschnitt { margin: 8px 0 -6px; font: 600 13px/1.3 var(--ui); letter-spacing: .14em; text-transform: uppercase; color: var(--bronze); }
+  @media (prefers-reduced-motion: reduce) { .w { transition: none; } }
+</style>
+
+<main>
+  <header class="kopf">
+    <span class="eyebrow">Seneca · De vita beata · Kapitel 3</span>
+    <h1>Hörprobe</h1>
+    <p class="lead">Kapitel 3 mit Helmut, so wie es ins Video kommt. Oben das ganze Kapitel, darunter jeder Paragraf einzeln, danach die Stellen, die der Betonungsfilter markiert. Tippe auf den Knopf, der Text läuft mit.</p>
+  </header>
+
+  <section class="befund" aria-labelledby="pruef-titel">
+    <h2 id="pruef-titel" class="abschnitt">Geprüft</h2>
+    <table>
+      <thead><tr><th>Prüfung</th><th>Ergebnis</th></tr></thead>
+      <tbody>
+        <tr><td>Worttreue (Whisper)</td><td>wortgetreu</td></tr>
+        <tr><td>Betonungsfilter (ab 5 Halbtönen)</td><td>1 Stelle markiert, 1 knapp darunter</td></tr>
+        <tr><td>Pausen</td><td>31 Pausen verlängert</td></tr>
+        <tr><td>Dauer</td><td>2:47</td></tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="stelle" id="ganz" data-an="false" aria-labelledby="t-ganz">
+    <div class="zeile">
+      <button type="button" class="knopf" data-k="ganz" data-name="Kapitel 3 ganz" aria-label="Kapitel 3 ganz abspielen"></button>
+      <div class="titel"><b id="t-ganz">Kapitel 3 ganz</b><span>2:47 · Helmut Stieglbauer, Tempo 0,96</span></div>
+    </div>
+    <p class="text" data-text="ganz"></p>
+    <div class="balken"><i data-balken="ganz"></i></div>
+  </section>
+  <h2 class="abschnitt">Paragraf für Paragraf</h2>
+  <section class="stelle" id="p1" data-an="false" aria-labelledby="t-p1">
+    <div class="zeile">
+      <button type="button" class="knopf" data-k="p1" data-name="3 (1)" aria-label="3 (1) abspielen"></button>
+      <div class="titel"><b id="t-p1">3 (1)</b><span>bei 0:00 · 0:27</span></div>
+    </div>
+    <p class="text" data-text="p1"></p>
+    <div class="balken"><i data-balken="p1"></i></div>
+  </section>
+  <section class="stelle" id="p2" data-an="false" aria-labelledby="t-p2">
+    <div class="zeile">
+      <button type="button" class="knopf" data-k="p2" data-name="3 (2)" aria-label="3 (2) abspielen"></button>
+      <div class="titel"><b id="t-p2">3 (2)</b><span>bei 0:27 · 0:44</span></div>
+    </div>
+    <p class="text" data-text="p2"></p>
+    <div class="balken"><i data-balken="p2"></i></div>
+  </section>
+  <section class="stelle" id="p3" data-an="false" aria-labelledby="t-p3">
+    <div class="zeile">
+      <button type="button" class="knopf" data-k="p3" data-name="3 (3)" aria-label="3 (3) abspielen"></button>
+      <div class="titel"><b id="t-p3">3 (3)</b><span>bei 1:12 · 0:56</span></div>
+    </div>
+    <p class="text" data-text="p3"></p>
+    <div class="balken"><i data-balken="p3"></i></div>
+  </section>
+  <section class="stelle" id="p4" data-an="false" aria-labelledby="t-p4">
+    <div class="zeile">
+      <button type="button" class="knopf" data-k="p4" data-name="3 (4)" aria-label="3 (4) abspielen"></button>
+      <div class="titel"><b id="t-p4">3 (4)</b><span>bei 2:09 · 0:37</span></div>
+    </div>
+    <p class="text" data-text="p4"></p>
+    <div class="balken"><i data-balken="p4"></i></div>
+  </section>
+  <h2 class="abschnitt">Vom Betonungsfilter markiert</h2>
+  <section class="stelle" id="m1" data-an="false" aria-labelledby="t-m1">
+    <div class="zeile">
+      <button type="button" class="knopf" data-k="m1" data-name="Stelle 1" aria-label="Stelle 1 abspielen"></button>
+      <div class="titel"><b id="t-m1">Stelle 1</b><span>3 (2) · bei 0:40 · +5,8 Halbtöne</span></div>
+    </div>
+    <p class="text" data-text="m1"></p>
+    <div class="balken"><i data-balken="m1"></i></div>
+    <dl><dt>Filter</dt><dd>Gipfel auf „„unsere““</dd></dl>
+  </section>
+
+  <p class="fuss">Fällt dir eine Stelle auf, schreib mir Paragraf und Satzanfang. Ich erzeuge den Satz dann allein neu, in zwei bis drei Fassungen zur Auswahl. Ton: Helmut Stieglbauer (ElevenLabs), Tempo 0,96, −18 LUFS.</p>
+  <audio id="ton" preload="auto"></audio>
+</main>
+
+<script>
+(function () {
+  var S = {"ganz": {"datei": "audio/kapitel03.mp3", "dauer": 167.354, "w": [{"w": "Suchen", "t": 0.521}, {"w": "wir", "t": 0.958}, {"w": "ein", "t": 1.104}, {"w": "Gut,", "t": 1.312}, {"w": "das", "t": 1.938}, {"w": "nicht", "t": 2.083}, {"w": "nur", "t": 2.333}, {"w": "dem", "t": 2.521}, {"w": "Anschein", "t": 2.708}, {"w": "nach", "t": 3.188}, {"w": "gut", "t": 3.479}, {"w": "ist,", "t": 3.729}, {"w": "sondern", "t": 4.292}, {"w": "fest", "t": 4.604}, {"w": "und", "t": 5.146}, {"w": "gediegen", "t": 5.479}, {"w": "und", "t": 6.021}, {"w": "im", "t": 6.5}, {"w": "Verborgenen", "t": 6.667}, {"w": "noch", "t": 7.396}, {"w": "schöner.", "t": 7.812}, {"w": "Das", "t": 9.312}, {"w": "wollen", "t": 9.854}, {"w": "wir", "t": 10.208}, {"w": "ausgraben.", "t": 10.396}, {"w": "Es", "t": 12.021}, {"w": "liegt", "t": 12.521}, {"w": "nicht", "t": 12.771}, {"w": "fern,", "t": 12.979}, {"w": "man", "t": 13.625}, {"w": "wird", "t": 13.833}, {"w": "es", "t": 14.021}, {"w": "finden.", "t": 14.188}, {"w": "Du", "t": 15.531}, {"w": "musst", "t": 15.865}, {"w": "nur", "t": 16.115}, {"w": "wissen,", "t": 16.427}, {"w": "wohin", "t": 17.052}, {"w": "du", "t": 17.427}, {"w": "die", "t": 17.531}, {"w": "Hand", "t": 17.698}, {"w": "ausstreckst.", "t": 17.948}, {"w": "Jetzt", "t": 19.677}, {"w": "aber", "t": 19.948}, {"w": "gehen", "t": 20.281}, {"w": "wir", "t": 20.573}, {"w": "wie", "t": 20.844}, {"w": "im", "t": 21.094}, {"w": "Dunkeln", "t": 21.302}, {"w": "am", "t": 21.781}, {"w": "Nächstliegenden", "t": 22.031}, {"w": "vorbei", "t": 22.823}, {"w": "und", "t": 23.26}, {"w": "stoßen", "t": 23.74}, {"w": "dabei", "t": 24.135}, {"w": "gerade", "t": 24.385}, {"w": "an", "t": 24.781}, {"w": "das,", "t": 25.177}, {"w": "wonach", "t": 25.677}, {"w": "wir", "t": 26.073}, {"w": "uns", "t": 26.219}, {"w": "sehnen.", "t": 26.427}, {"w": "Doch", "t": 28.198}, {"w": "ich", "t": 28.656}, {"w": "will", "t": 28.885}, {"w": "dich", "t": 29.073}, {"w": "nicht", "t": 29.198}, {"w": "auf", "t": 29.385}, {"w": "Umwegen", "t": 29.594}, {"w": "herumführen.", "t": 30.073}, {"w": "Die", "t": 30.948}, {"w": "Meinungen", "t": 32.208}, {"w": "der", "t": 32.604}, {"w": "anderen", "t": 32.833}, {"w": "übergehe", "t": 33.25}, {"w": "ich,", "t": 33.917}, {"w": "denn", "t": 34.438}, {"w": "sie", "t": 34.583}, {"w": "aufzuzählen", "t": 34.833}, {"w": "und", "t": 35.75}, {"w": "zu", "t": 35.896}, {"w": "widerlegen", "t": 36.063}, {"w": "würde", "t": 36.646}, {"w": "zu", "t": 36.917}, {"w": "lange", "t": 37.188}, {"w": "dauern.", "t": 37.417}, {"w": "Höre", "t": 38.75}, {"w": "stattdessen", "t": 39.125}, {"w": "unsere.", "t": 39.646}, {"w": "Wenn", "t": 41.188}, {"w": "ich", "t": 41.625}, {"w": "aber", "t": 41.771}, {"w": "„unsere“", "t": 42.104}, {"w": "sage,", "t": 42.771}, {"w": "binde", "t": 43.708}, {"w": "ich", "t": 43.938}, {"w": "mich", "t": 44.083}, {"w": "nicht", "t": 44.229}, {"w": "an", "t": 44.542}, {"w": "einen", "t": 44.708}, {"w": "bestimmten", "t": 44.938}, {"w": "unter", "t": 45.604}, {"w": "den", "t": 45.844}, {"w": "führenden", "t": 46.062}, {"w": "Stoikern.", "t": 46.583}, {"w": "Auch", "t": 48.146}, {"w": "ich", "t": 48.625}, {"w": "habe", "t": 48.875}, {"w": "das", "t": 49.125}, {"w": "Recht,", "t": 49.354}, {"w": "meine", "t": 49.854}, {"w": "Stimme", "t": 50.062}, {"w": "abzugeben.", "t": 50.396}, {"w": "Darum", "t": 52.01}, {"w": "werde", "t": 52.615}, {"w": "ich", "t": 52.844}, {"w": "mich", "t": 53.031}, {"w": "dem", "t": 53.177}, {"w": "einen", "t": 53.448}, {"w": "anschließen", "t": 53.781}, {"w": "und", "t": 54.49}, {"w": "von", "t": 54.885}, {"w": "einem", "t": 55.052}, {"w": "anderen", "t": 55.302}, {"w": "verlangen,", "t": 55.677}, {"w": "dass", "t": 56.406}, {"w": "über", "t": 56.573}, {"w": "seinen", "t": 56.781}, {"w": "Antrag", "t": 57.135}, {"w": "Punkt", "t": 57.677}, {"w": "für", "t": 58.198}, {"w": "Punkt", "t": 58.427}, {"w": "abgestimmt", "t": 58.802}, {"w": "wird.", "t": 59.469}, {"w": "Und", "t": 60.76}, {"w": "wenn", "t": 61.281}, {"w": "ich", "t": 61.427}, {"w": "nach", "t": 61.573}, {"w": "allen", "t": 61.76}, {"w": "anderen", "t": 62.094}, {"w": "aufgerufen", "t": 62.51}, {"w": "werde,", "t": 63.219}, {"w": "verwerfe", "t": 63.948}, {"w": "ich", "t": 64.406}, {"w": "vielleicht", "t": 64.573}, {"w": "nichts", "t": 64.948}, {"w": "von", "t": 65.365}, {"w": "dem,", "t": 65.635}, {"w": "was", "t": 66.052}, {"w": "meine", "t": 66.177}, {"w": "Vorgänger", "t": 66.427}, {"w": "beschlossen", "t": 66.969}, {"w": "haben,", "t": 67.406}, {"w": "und", "t": 67.885}, {"w": "sage", "t": 68.24}, {"w": "nur:", "t": 68.51}, {"w": "„Ich", "t": 69.031}, {"w": "beantrage", "t": 70.0}, {"w": "noch", "t": 70.625}, {"w": "etwas", "t": 70.812}, {"w": "dazu.“", "t": 71.146}, {"w": "Einstweilen", "t": 73.031}, {"w": "halte", "t": 73.656}, {"w": "ich", "t": 74.01}, {"w": "mich", "t": 74.156}, {"w": "an", "t": 74.281}, {"w": "das,", "t": 74.51}, {"w": "worin", "t": 74.969}, {"w": "alle", "t": 75.26}, {"w": "Stoiker", "t": 75.531}, {"w": "einig", "t": 76.073}, {"w": "sind:", "t": 76.531}, {"w": "Ich", "t": 77.052}, {"w": "stimme", "t": 78.0}, {"w": "der", "t": 78.438}, {"w": "Natur", "t": 78.604}, {"w": "zu.", "t": 79.062}, {"w": "Von", "t": 80.406}, {"w": "ihr", "t": 80.865}, {"w": "nicht", "t": 81.094}, {"w": "abzuirren", "t": 81.385}, {"w": "und", "t": 82.167}, {"w": "sich", "t": 82.448}, {"w": "nach", "t": 82.625}, {"w": "ihrem", "t": 82.802}, {"w": "Gesetz", "t": 83.115}, {"w": "und", "t": 83.521}, {"w": "Vorbild", "t": 83.844}, {"w": "zu", "t": 84.302}, {"w": "formen,", "t": 84.5}, {"w": "das", "t": 85.115}, {"w": "ist", "t": 85.573}, {"w": "Weisheit.", "t": 85.979}, {"w": "Glücklich", "t": 88.01}, {"w": "ist", "t": 88.531}, {"w": "also", "t": 88.74}, {"w": "das", "t": 89.0}, {"w": "Leben,", "t": 89.344}, {"w": "das", "t": 89.979}, {"w": "seiner", "t": 90.125}, {"w": "eigenen", "t": 90.396}, {"w": "Natur", "t": 90.875}, {"w": "entspricht.", "t": 91.365}, {"w": "Ein", "t": 92.979}, {"w": "solches", "t": 93.479}, {"w": "Leben", "t": 93.906}, {"w": "stellt", "t": 94.229}, {"w": "sich", "t": 94.521}, {"w": "nur", "t": 94.75}, {"w": "ein,", "t": 95.031}, {"w": "wenn", "t": 95.615}, {"w": "zuerst", "t": 95.698}, {"w": "der", "t": 96.198}, {"w": "Geist", "t": 96.427}, {"w": "gesund", "t": 96.854}, {"w": "ist", "t": 97.208}, {"w": "und", "t": 97.542}, {"w": "diese", "t": 98.0}, {"w": "Gesundheit", "t": 98.281}, {"w": "dauerhaft", "t": 98.979}, {"w": "besitzt.", "t": 99.708}, {"w": "Dann", "t": 101.24}, {"w": "muss", "t": 101.656}, {"w": "er", "t": 101.948}, {"w": "tapfer", "t": 102.115}, {"w": "sein", "t": 102.594}, {"w": "und", "t": 102.948}, {"w": "tatkräftig,", "t": 103.198}, {"w": "dazu", "t": 104.26}, {"w": "imstande,", "t": 104.688}, {"w": "alles", "t": 105.5}, {"w": "in", "t": 105.823}, {"w": "schönster", "t": 106.052}, {"w": "Haltung", "t": 106.573}, {"w": "zu", "t": 106.948}, {"w": "ertragen", "t": 107.146}, {"w": "und", "t": 107.719}, {"w": "sich", "t": 108.177}, {"w": "jeder", "t": 108.385}, {"w": "Lage", "t": 108.76}, {"w": "anzupassen.", "t": 109.135}, {"w": "Für", "t": 110.844}, {"w": "seinen", "t": 111.333}, {"w": "Körper", "t": 111.604}, {"w": "und", "t": 112.042}, {"w": "was", "t": 112.333}, {"w": "dazugehört,", "t": 112.542}, {"w": "soll", "t": 113.531}, {"w": "er", "t": 113.646}, {"w": "sorgen,", "t": 113.813}, {"w": "aber", "t": 114.458}, {"w": "ohne", "t": 114.854}, {"w": "Ängstlichkeit.", "t": 115.25}, {"w": "Auch", "t": 117.073}, {"w": "um", "t": 117.615}, {"w": "die", "t": 117.771}, {"w": "übrigen", "t": 117.927}, {"w": "Dinge,", "t": 118.375}, {"w": "die", "t": 118.802}, {"w": "das", "t": 118.885}, {"w": "Leben", "t": 119.115}, {"w": "ausstatten,", "t": 119.406}, {"w": "soll", "t": 120.323}, {"w": "er", "t": 120.49}, {"w": "sich", "t": 120.635}, {"w": "sorgfältig", "t": 120.802}, {"w": "kümmern,", "t": 121.552}, {"w": "ohne", "t": 122.219}, {"w": "eines", "t": 122.771}, {"w": "davon", "t": 123.187}, {"w": "zu", "t": 123.531}, {"w": "bestaunen.", "t": 123.729}, {"w": "Die", "t": 125.281}, {"w": "Gaben", "t": 125.677}, {"w": "des", "t": 126.115}, {"w": "Schicksals", "t": 126.26}, {"w": "soll", "t": 126.927}, {"w": "er", "t": 127.177}, {"w": "gebrauchen,", "t": 127.323}, {"w": "nicht", "t": 128.385}, {"w": "ihnen", "t": 128.844}, {"w": "dienen.", "t": 129.156}, {"w": "Du", "t": 129.802}, {"w": "verstehst", "t": 131.615}, {"w": "auch", "t": 132.073}, {"w": "ohne", "t": 132.323}, {"w": "meinen", "t": 132.615}, {"w": "Zusatz,", "t": 132.885}, {"w": "was", "t": 133.615}, {"w": "daraus", "t": 133.698}, {"w": "folgt:", "t": 134.073}, {"w": "dauernde", "t": 135.156}, {"w": "Ruhe", "t": 135.781}, {"w": "und", "t": 136.281}, {"w": "Freiheit,", "t": 136.552}, {"w": "sobald", "t": 137.469}, {"w": "vertrieben", "t": 138.031}, {"w": "ist,", "t": 138.51}, {"w": "was", "t": 138.948}, {"w": "uns", "t": 139.115}, {"w": "lockt", "t": 139.323}, {"w": "oder", "t": 139.802}, {"w": "schreckt.", "t": 140.094}, {"w": "Denn", "t": 141.552}, {"w": "an", "t": 141.927}, {"w": "die", "t": 142.094}, {"w": "Stelle", "t": 142.24}, {"w": "der", "t": 142.531}, {"w": "Lüste", "t": 142.781}, {"w": "und", "t": 143.24}, {"w": "all", "t": 143.677}, {"w": "dessen,", "t": 143.906}, {"w": "was", "t": 144.406}, {"w": "klein", "t": 144.594}, {"w": "und", "t": 145.01}, {"w": "zerbrechlich", "t": 145.26}, {"w": "ist", "t": 145.906}, {"w": "und", "t": 146.24}, {"w": "schon", "t": 146.51}, {"w": "durch", "t": 146.74}, {"w": "seine", "t": 146.927}, {"w": "Schändlichkeit", "t": 147.219}, {"w": "schadet,", "t": 147.906}, {"w": "tritt", "t": 149.167}, {"w": "eine", "t": 149.417}, {"w": "unermessliche", "t": 149.729}, {"w": "Freude,", "t": 150.729}, {"w": "unerschütterlich", "t": 151.729}, {"w": "und", "t": 152.896}, {"w": "gleichbleibend.", "t": 153.271}, {"w": "Dann", "t": 154.312}, {"w": "folgen", "t": 155.75}, {"w": "Frieden,", "t": 156.271}, {"w": "innere", "t": 157.385}, {"w": "Eintracht", "t": 157.656}, {"w": "und", "t": 158.364}, {"w": "eine", "t": 158.76}, {"w": "Seelengröße,", "t": 159.052}, {"w": "die", "t": 160.198}, {"w": "mit", "t": 160.427}, {"w": "Milde", "t": 160.677}, {"w": "verbunden", "t": 161.01}, {"w": "ist.", "t": 161.51}, {"w": "Denn", "t": 162.864}, {"w": "alle", "t": 163.323}, {"w": "Wildheit", "t": 163.677}, {"w": "kommt", "t": 164.302}, {"w": "aus", "t": 164.864}, {"w": "Schwäche.", "t": 165.135}], "mark": [92]}, "p1": {"datei": "audio/p1.mp3", "dauer": 27.827, "w": [{"w": "Suchen", "t": 0.3}, {"w": "wir", "t": 0.737}, {"w": "ein", "t": 0.883}, {"w": "Gut,", "t": 1.091}, {"w": "das", "t": 1.717}, {"w": "nicht", "t": 1.862}, {"w": "nur", "t": 2.112}, {"w": "dem", "t": 2.3}, {"w": "Anschein", "t": 2.487}, {"w": "nach", "t": 2.967}, {"w": "gut", "t": 3.258}, {"w": "ist,", "t": 3.508}, {"w": "sondern", "t": 4.071}, {"w": "fest", "t": 4.383}, {"w": "und", "t": 4.925}, {"w": "gediegen", "t": 5.258}, {"w": "und", "t": 5.8}, {"w": "im", "t": 6.279}, {"w": "Verborgenen", "t": 6.446}, {"w": "noch", "t": 7.175}, {"w": "schöner.", "t": 7.591}, {"w": "Das", "t": 9.091}, {"w": "wollen", "t": 9.633}, {"w": "wir", "t": 9.987}, {"w": "ausgraben.", "t": 10.175}, {"w": "Es", "t": 11.8}, {"w": "liegt", "t": 12.3}, {"w": "nicht", "t": 12.55}, {"w": "fern,", "t": 12.758}, {"w": "man", "t": 13.404}, {"w": "wird", "t": 13.612}, {"w": "es", "t": 13.8}, {"w": "finden.", "t": 13.967}, {"w": "Du", "t": 15.31}, {"w": "musst", "t": 15.644}, {"w": "nur", "t": 15.894}, {"w": "wissen,", "t": 16.206}, {"w": "wohin", "t": 16.831}, {"w": "du", "t": 17.206}, {"w": "die", "t": 17.31}, {"w": "Hand", "t": 17.477}, {"w": "ausstreckst.", "t": 17.727}, {"w": "Jetzt", "t": 19.456}, {"w": "aber", "t": 19.727}, {"w": "gehen", "t": 20.06}, {"w": "wir", "t": 20.352}, {"w": "wie", "t": 20.623}, {"w": "im", "t": 20.873}, {"w": "Dunkeln", "t": 21.081}, {"w": "am", "t": 21.56}, {"w": "Nächstliegenden", "t": 21.81}, {"w": "vorbei", "t": 22.602}, {"w": "und", "t": 23.039}, {"w": "stoßen", "t": 23.519}, {"w": "dabei", "t": 23.914}, {"w": "gerade", "t": 24.164}, {"w": "an", "t": 24.56}, {"w": "das,", "t": 24.956}, {"w": "wonach", "t": 25.456}, {"w": "wir", "t": 25.852}, {"w": "uns", "t": 25.998}, {"w": "sehnen.", "t": 26.206}], "mark": []}, "p2": {"datei": "audio/p2.mp3", "dauer": 44.983, "w": [{"w": "Doch", "t": 0.3}, {"w": "ich", "t": 0.758}, {"w": "will", "t": 0.987}, {"w": "dich", "t": 1.175}, {"w": "nicht", "t": 1.3}, {"w": "auf", "t": 1.487}, {"w": "Umwegen", "t": 1.696}, {"w": "herumführen.", "t": 2.175}, {"w": "Die", "t": 3.05}, {"w": "Meinungen", "t": 4.31}, {"w": "der", "t": 4.706}, {"w": "anderen", "t": 4.935}, {"w": "übergehe", "t": 5.352}, {"w": "ich,", "t": 6.019}, {"w": "denn", "t": 6.54}, {"w": "sie", "t": 6.685}, {"w": "aufzuzählen", "t": 6.935}, {"w": "und", "t": 7.852}, {"w": "zu", "t": 7.998}, {"w": "widerlegen", "t": 8.165}, {"w": "würde", "t": 8.748}, {"w": "zu", "t": 9.019}, {"w": "lange", "t": 9.29}, {"w": "dauern.", "t": 9.519}, {"w": "Höre", "t": 10.852}, {"w": "stattdessen", "t": 11.227}, {"w": "unsere.", "t": 11.748}, {"w": "Wenn", "t": 13.29}, {"w": "ich", "t": 13.727}, {"w": "aber", "t": 13.873}, {"w": "„unsere“", "t": 14.206}, {"w": "sage,", "t": 14.873}, {"w": "binde", "t": 15.81}, {"w": "ich", "t": 16.04}, {"w": "mich", "t": 16.185}, {"w": "nicht", "t": 16.331}, {"w": "an", "t": 16.644}, {"w": "einen", "t": 16.81}, {"w": "bestimmten", "t": 17.04}, {"w": "unter", "t": 17.706}, {"w": "den", "t": 17.946}, {"w": "führenden", "t": 18.164}, {"w": "Stoikern.", "t": 18.685}, {"w": "Auch", "t": 20.248}, {"w": "ich", "t": 20.727}, {"w": "habe", "t": 20.977}, {"w": "das", "t": 21.227}, {"w": "Recht,", "t": 21.456}, {"w": "meine", "t": 21.956}, {"w": "Stimme", "t": 22.164}, {"w": "abzugeben.", "t": 22.498}, {"w": "Darum", "t": 24.112}, {"w": "werde", "t": 24.717}, {"w": "ich", "t": 24.946}, {"w": "mich", "t": 25.133}, {"w": "dem", "t": 25.279}, {"w": "einen", "t": 25.55}, {"w": "anschließen", "t": 25.883}, {"w": "und", "t": 26.592}, {"w": "von", "t": 26.987}, {"w": "einem", "t": 27.154}, {"w": "anderen", "t": 27.404}, {"w": "verlangen,", "t": 27.779}, {"w": "dass", "t": 28.508}, {"w": "über", "t": 28.675}, {"w": "seinen", "t": 28.883}, {"w": "Antrag", "t": 29.237}, {"w": "Punkt", "t": 29.779}, {"w": "für", "t": 30.3}, {"w": "Punkt", "t": 30.529}, {"w": "abgestimmt", "t": 30.904}, {"w": "wird.", "t": 31.571}, {"w": "Und", "t": 32.862}, {"w": "wenn", "t": 33.383}, {"w": "ich", "t": 33.529}, {"w": "nach", "t": 33.675}, {"w": "allen", "t": 33.862}, {"w": "anderen", "t": 34.196}, {"w": "aufgerufen", "t": 34.612}, {"w": "werde,", "t": 35.321}, {"w": "verwerfe", "t": 36.05}, {"w": "ich", "t": 36.508}, {"w": "vielleicht", "t": 36.675}, {"w": "nichts", "t": 37.05}, {"w": "von", "t": 37.467}, {"w": "dem,", "t": 37.737}, {"w": "was", "t": 38.154}, {"w": "meine", "t": 38.279}, {"w": "Vorgänger", "t": 38.529}, {"w": "beschlossen", "t": 39.071}, {"w": "haben,", "t": 39.508}, {"w": "und", "t": 39.987}, {"w": "sage", "t": 40.342}, {"w": "nur:", "t": 40.612}, {"w": "„Ich", "t": 41.133}, {"w": "beantrage", "t": 42.102}, {"w": "noch", "t": 42.727}, {"w": "etwas", "t": 42.914}, {"w": "dazu.“", "t": 43.248}], "mark": [30]}, "p3": {"datei": "audio/p3.mp3", "dauer": 56.921, "w": [{"w": "Einstweilen", "t": 0.3}, {"w": "halte", "t": 0.925}, {"w": "ich", "t": 1.279}, {"w": "mich", "t": 1.425}, {"w": "an", "t": 1.55}, {"w": "das,", "t": 1.779}, {"w": "worin", "t": 2.238}, {"w": "alle", "t": 2.529}, {"w": "Stoiker", "t": 2.8}, {"w": "einig", "t": 3.342}, {"w": "sind:", "t": 3.8}, {"w": "Ich", "t": 4.321}, {"w": "stimme", "t": 5.269}, {"w": "der", "t": 5.707}, {"w": "Natur", "t": 5.873}, {"w": "zu.", "t": 6.331}, {"w": "Von", "t": 7.675}, {"w": "ihr", "t": 8.134}, {"w": "nicht", "t": 8.363}, {"w": "abzuirren", "t": 8.654}, {"w": "und", "t": 9.436}, {"w": "sich", "t": 9.717}, {"w": "nach", "t": 9.894}, {"w": "ihrem", "t": 10.071}, {"w": "Gesetz", "t": 10.384}, {"w": "und", "t": 10.79}, {"w": "Vorbild", "t": 11.113}, {"w": "zu", "t": 11.571}, {"w": "formen,", "t": 11.769}, {"w": "das", "t": 12.384}, {"w": "ist", "t": 12.842}, {"w": "Weisheit.", "t": 13.248}, {"w": "Glücklich", "t": 15.279}, {"w": "ist", "t": 15.8}, {"w": "also", "t": 16.009}, {"w": "das", "t": 16.269}, {"w": "Leben,", "t": 16.613}, {"w": "das", "t": 17.248}, {"w": "seiner", "t": 17.394}, {"w": "eigenen", "t": 17.665}, {"w": "Natur", "t": 18.144}, {"w": "entspricht.", "t": 18.634}, {"w": "Ein", "t": 20.248}, {"w": "solches", "t": 20.748}, {"w": "Leben", "t": 21.175}, {"w": "stellt", "t": 21.498}, {"w": "sich", "t": 21.79}, {"w": "nur", "t": 22.019}, {"w": "ein,", "t": 22.3}, {"w": "wenn", "t": 22.884}, {"w": "zuerst", "t": 22.967}, {"w": "der", "t": 23.467}, {"w": "Geist", "t": 23.696}, {"w": "gesund", "t": 24.123}, {"w": "ist", "t": 24.477}, {"w": "und", "t": 24.811}, {"w": "diese", "t": 25.269}, {"w": "Gesundheit", "t": 25.55}, {"w": "dauerhaft", "t": 26.248}, {"w": "besitzt.", "t": 26.977}, {"w": "Dann", "t": 28.509}, {"w": "muss", "t": 28.925}, {"w": "er", "t": 29.217}, {"w": "tapfer", "t": 29.384}, {"w": "sein", "t": 29.863}, {"w": "und", "t": 30.217}, {"w": "tatkräftig,", "t": 30.467}, {"w": "dazu", "t": 31.529}, {"w": "imstande,", "t": 31.957}, {"w": "alles", "t": 32.769}, {"w": "in", "t": 33.092}, {"w": "schönster", "t": 33.321}, {"w": "Haltung", "t": 33.842}, {"w": "zu", "t": 34.217}, {"w": "ertragen", "t": 34.415}, {"w": "und", "t": 34.988}, {"w": "sich", "t": 35.446}, {"w": "jeder", "t": 35.654}, {"w": "Lage", "t": 36.029}, {"w": "anzupassen.", "t": 36.404}, {"w": "Für", "t": 38.113}, {"w": "seinen", "t": 38.602}, {"w": "Körper", "t": 38.873}, {"w": "und", "t": 39.311}, {"w": "was", "t": 39.602}, {"w": "dazugehört,", "t": 39.811}, {"w": "soll", "t": 40.8}, {"w": "er", "t": 40.915}, {"w": "sorgen,", "t": 41.082}, {"w": "aber", "t": 41.727}, {"w": "ohne", "t": 42.123}, {"w": "Ängstlichkeit.", "t": 42.519}, {"w": "Auch", "t": 44.342}, {"w": "um", "t": 44.884}, {"w": "die", "t": 45.04}, {"w": "übrigen", "t": 45.196}, {"w": "Dinge,", "t": 45.644}, {"w": "die", "t": 46.071}, {"w": "das", "t": 46.154}, {"w": "Leben", "t": 46.384}, {"w": "ausstatten,", "t": 46.675}, {"w": "soll", "t": 47.592}, {"w": "er", "t": 47.759}, {"w": "sich", "t": 47.904}, {"w": "sorgfältig", "t": 48.071}, {"w": "kümmern,", "t": 48.821}, {"w": "ohne", "t": 49.488}, {"w": "eines", "t": 50.04}, {"w": "davon", "t": 50.456}, {"w": "zu", "t": 50.8}, {"w": "bestaunen.", "t": 50.998}, {"w": "Die", "t": 52.55}, {"w": "Gaben", "t": 52.946}, {"w": "des", "t": 53.384}, {"w": "Schicksals", "t": 53.529}, {"w": "soll", "t": 54.196}, {"w": "er", "t": 54.446}, {"w": "gebrauchen,", "t": 54.592}, {"w": "nicht", "t": 55.654}, {"w": "ihnen", "t": 56.113}, {"w": "dienen.", "t": 56.425}], "mark": []}, "p4": {"datei": "audio/p4.mp3", "dauer": 37.852, "w": [{"w": "Du", "t": 0.3}, {"w": "verstehst", "t": 2.113}, {"w": "auch", "t": 2.571}, {"w": "ohne", "t": 2.821}, {"w": "meinen", "t": 3.113}, {"w": "Zusatz,", "t": 3.383}, {"w": "was", "t": 4.113}, {"w": "daraus", "t": 4.196}, {"w": "folgt:", "t": 4.571}, {"w": "dauernde", "t": 5.654}, {"w": "Ruhe", "t": 6.279}, {"w": "und", "t": 6.779}, {"w": "Freiheit,", "t": 7.05}, {"w": "sobald", "t": 7.967}, {"w": "vertrieben", "t": 8.529}, {"w": "ist,", "t": 9.008}, {"w": "was", "t": 9.446}, {"w": "uns", "t": 9.613}, {"w": "lockt", "t": 9.821}, {"w": "oder", "t": 10.3}, {"w": "schreckt.", "t": 10.592}, {"w": "Denn", "t": 12.05}, {"w": "an", "t": 12.425}, {"w": "die", "t": 12.592}, {"w": "Stelle", "t": 12.738}, {"w": "der", "t": 13.029}, {"w": "Lüste", "t": 13.279}, {"w": "und", "t": 13.738}, {"w": "all", "t": 14.175}, {"w": "dessen,", "t": 14.404}, {"w": "was", "t": 14.904}, {"w": "klein", "t": 15.092}, {"w": "und", "t": 15.508}, {"w": "zerbrechlich", "t": 15.758}, {"w": "ist", "t": 16.404}, {"w": "und", "t": 16.738}, {"w": "schon", "t": 17.008}, {"w": "durch", "t": 17.238}, {"w": "seine", "t": 17.425}, {"w": "Schändlichkeit", "t": 17.717}, {"w": "schadet,", "t": 18.404}, {"w": "tritt", "t": 19.665}, {"w": "eine", "t": 19.915}, {"w": "unermessliche", "t": 20.227}, {"w": "Freude,", "t": 21.227}, {"w": "unerschütterlich", "t": 22.227}, {"w": "und", "t": 23.394}, {"w": "gleichbleibend.", "t": 23.769}, {"w": "Dann", "t": 24.81}, {"w": "folgen", "t": 26.248}, {"w": "Frieden,", "t": 26.769}, {"w": "innere", "t": 27.883}, {"w": "Eintracht", "t": 28.154}, {"w": "und", "t": 28.862}, {"w": "eine", "t": 29.258}, {"w": "Seelengröße,", "t": 29.55}, {"w": "die", "t": 30.696}, {"w": "mit", "t": 30.925}, {"w": "Milde", "t": 31.175}, {"w": "verbunden", "t": 31.508}, {"w": "ist.", "t": 32.008}, {"w": "Denn", "t": 33.362}, {"w": "alle", "t": 33.821}, {"w": "Wildheit", "t": 34.175}, {"w": "kommt", "t": 34.8}, {"w": "aus", "t": 35.362}, {"w": "Schwäche.", "t": 35.633}], "mark": []}, "m1": {"datei": "audio/m1.mp3", "dauer": 7.108, "w": [{"w": "Wenn", "t": 0.3}, {"w": "ich", "t": 0.737}, {"w": "aber", "t": 0.883}, {"w": "„unsere“", "t": 1.216}, {"w": "sage,", "t": 1.883}, {"w": "binde", "t": 2.82}, {"w": "ich", "t": 3.05}, {"w": "mich", "t": 3.195}, {"w": "nicht", "t": 3.341}, {"w": "an", "t": 3.654}, {"w": "einen", "t": 3.82}, {"w": "bestimmten", "t": 4.05}, {"w": "unter", "t": 4.716}, {"w": "den", "t": 4.956}, {"w": "führenden", "t": 5.174}, {"w": "Stoikern.", "t": 5.695}], "mark": [3]}};
+  var PLAY = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5.5v13a1 1 0 0 0 1.5.86l10.2-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>';
+  var PAUSE = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>';
+  var ton = document.getElementById("ton"), aktiv = null, spans = {};
+  Object.keys(S).forEach(function (k) {
+    var p = document.querySelector('[data-text="' + k + '"]'); spans[k] = [];
+    S[k].w.forEach(function (x, i) {
+      if (i) p.appendChild(document.createTextNode(" "));
+      var s = document.createElement("span"); s.className = "w" + (S[k].mark.indexOf(i) >= 0 ? " verdacht" : ""); s.textContent = x.w;
+      p.appendChild(s); spans[k].push(s);
+    });
+  });
+  function zeichne() {
+    document.querySelectorAll(".knopf").forEach(function (b) {
+      var k = b.dataset.k, spielt = k === aktiv && !ton.paused;
+      b.innerHTML = spielt ? PAUSE : PLAY; b.setAttribute("aria-label", (b.dataset.name || "Stelle " + k.slice(1)) + (spielt ? " anhalten" : " abspielen"));
+      document.getElementById(k).dataset.an = String(k === aktiv);
+    });
+  }
+  function fuelle(k, t) {
+    var W = S[k].w, i = -1;
+    while (i + 1 < W.length && W[i + 1].t <= t + 0.03) i++;
+    spans[k].forEach(function (s, j) { s.classList.toggle("vorbei", j < i); if (j !== i) s.style.removeProperty("--f"); });
+    if (i >= 0) {
+      var t0 = W[i].t, t1 = i + 1 < W.length ? W[i + 1].t : S[k].dauer, e = Math.min(t1, t0 + 0.08 + 0.07 * W[i].w.length);
+      spans[k][i].style.setProperty("--f", Math.max(0, Math.min(1, (t - t0) / Math.max(0.05, e - t0))).toFixed(3));
+    }
+    document.querySelector('[data-balken="' + k + '"]').style.width = (100 * Math.min(1, t / S[k].dauer)) + "%";
+  }
+  function zuruecksetzen(k) { fuelle(k, -1); document.querySelector('[data-balken="' + k + '"]').style.width = "0"; }
+  document.querySelectorAll(".knopf").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var k = b.dataset.k;
+      if (k === aktiv) { if (ton.paused) { if (ton.ended) ton.currentTime = 0; ton.play().catch(function () {}); } else ton.pause(); return; }
+      if (aktiv) zuruecksetzen(aktiv);
+      aktiv = k; ton.src = S[k].datei || ("audio/stelle" + k.slice(1) + ".mp3"); ton.currentTime = 0; ton.play().catch(function () {}); zeichne();
+    });
+  });
+  ton.addEventListener("play", zeichne); ton.addEventListener("pause", zeichne);
+  ton.addEventListener("ended", function () { if (aktiv) fuelle(aktiv, S[aktiv].dauer + 1); zeichne(); });
+  (function schleife() { if (aktiv && !ton.paused) fuelle(aktiv, ton.currentTime); requestAnimationFrame(schleife); })();
+  zeichne();
+})();
+</script>

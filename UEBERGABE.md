@@ -9,18 +9,20 @@ Ton) stehen in `PLAN.md`, Verlauf, Versuche und Messungen in `PROTOKOLL.md`.
 |---|---|---|
 | 1 | fertig, freigegeben (`texte/kapitel01.txt`, Marken 1,1–1,5) | **fertig (Fassung v3):** Helmut, wortgetreu (499/499), 38 Pausen, 3:53; erster Satz von 1 (3) einzeln erzeugt eingesetzt („die vor uns hergeht“). Video am 30.10. mit Leseband C3 neu gerendert und die Full-HD-Datei erneut geschickt (ersetzt die erste vom Morgen), dazu Miniaturbilder mit und ohne „Kapitel 1“. Gesichert (siehe unten) |
 | 2 | fertig, freigegeben (30.10.; nach den Regeln in `PLAN.md` überarbeitet, 2,1 „offenbar die Mehrheit“) | **fertig, Video mit Leseband C3 (30.10.)**, 2:52, Full-HD-Datei und Miniaturbild dem Auftraggeber geschickt, Vorschau-Artifact. Vorher: | **Ton erzeugt (30.10.)**, 989 Credits; Betonungsfilter: 0 markiert. „Bekränzten“ und „Beredsamkeit“ vom Auftraggeber als richtig gehört (`texte/verhoerer.txt`); 2,3 „dem Geschossen“ war ein echter Sprechfehler: Satz mit `satz.py` dreimal allein erzeugt (159 Credits), Fassung 3 eingesetzt, jetzt wortgetreu, 40 Pausen, 2:52. Vom Auftraggeber abgenommen; gesichert im Hörprobe-Artifact unter `quelle/` |
-| 3 | am 30.10. nach den Regeln in `PLAN.md` geprüft, 4 kleine Änderungen eingetragen; **Gegenlesen und Freigabe durch den Auftraggeber offen** (Entscheidungen unten) | – |
-| 4–28 | Latein in `texte/latein/kapitelNN.txt` | – |
+| 3 | fertig, freigegeben (30.10.; nach den Regeln geprüft, 5 Änderungen, darunter „Seelengröße“) | **Ton erzeugt (30.10.)**, 945 Credits, auf Anhieb wortgetreu (349/349), 31 Pausen, 2:47; Betonungsfilter: 1 Stelle („Wenn ich aber „UNSERE“ sage“, +5,8 HT, vermutlich richtige Kontrastbetonung). **Auftraggeber hört die Hörprobe**; gesichert im Hörprobe-Artifact unter `quelle/` |
+| 4 | **in Arbeit** in einer eigenen Sitzung („Seneca: Kapitel 4 übersetzen (Entwurf)“, `session_01LHRCLp8bXNZjxkAQi9Capv`), Ergebnis auf dem Zweig `kapitel04-entwurf` | – |
+| 5–28 | Latein in `texte/latein/kapitelNN.txt` | – |
 
 Die öffentliche Seite zeigt noch Luperts alte „Teile 1 und 2“ mit altem Wortlaut; umgestellt wird nur mit Freigabe.
 
 ## Nächste Schritte
 
-1. **Auftraggeber:** Kapitel 3 freigeben (Claude bietet an, es vorher nach den neuen Regeln zu prüfen wie Kapitel 2).
+1. **Auftraggeber:** Hörprobe Kapitel 3 anhören (vor allem die markierte Stelle „unsere“). Danach Video.
+   **Claude:** Entwurf Kapitel 4 vom Zweig `kapitel04-entwurf` holen, prüfen und vorlegen.
 2. **Auftraggeber:** YouTube – einzelne Videos je Kapitel (Playlist) oder ein Gesamtvideo? Bis dahin Kapitel 1 am besten
    „Nicht gelistet“ hochladen und die Lesbarkeit am Handy prüfen.
 3. **Auftraggeber:** Credit-Grenze des Schlüssels anheben (reicht noch für etwa 12 bis 14 Kapitel).
-4. Kapitel 3 aufnehmen (nach Freigabe), Kapitel 4 übersetzen.
+4. Kapitel 4 vorlegen und aufnehmen, Kapitel 5 übersetzen.
 5. Später: öffentliche Seite auf Kapitel mit Helmut umstellen (Freigabe); Weg der Gesamtdatei zu YouTube klären (etwa
    1,3 GB in Full HD, zu groß für Artifacts; etwa über einen Ordner auf dem Rechner des Auftraggebers oder Google Drive).
    Kostenlos, aber offen: Helmut in der App unter „Meine Stimmen“ aufnehmen.
@@ -57,7 +59,7 @@ Video ohne Credits neu. Jedes weitere Kapitel nach der Abnahme genauso sichern.
 
 - Schlüssel als Umgebungsvariable `ELEVENLABS_API_KEY` (Text zu Sprache, Stimmen lesen, Modelle, Verlauf lesen, Benutzer;
   Stimmen schreiben bewusst gesperrt). Kontingent nicht abfragbar (`/v1/user` antwortet 401).
-- Grenze des Schlüssels 30.000 Credits; verbraucht etwa 14.530, übrig etwa 15.470 (Stand 30.10., nach Kapitel 2 und einem nachgebesserten Satz). Etwa 0,43 Credits je
+- Grenze des Schlüssels 30.000 Credits; verbraucht etwa 15.475, übrig etwa 14.525 (Stand 30.10., nach Kapitel 3). Etwa 0,43 Credits je
   Zeichen, ein Kapitel etwa 1.100–1.300. Das ganze Werk braucht etwa 28.800, die Grenze muss also steigen.
 - Kosten laut Auftraggeber: 1.000 Credits ≈ 0,10 € im Sparabo, sonst 0,20 €.
 - Höchstens 5 Anfragen gleichzeitig, sonst Fehler 429.
@@ -65,6 +67,8 @@ Video ohne Credits neu. Jedes weitere Kapitel nach der Abnahme genauso sichern.
 ## Links (aktuell)
 
 - Öffentliche Hörbuch-Seite: https://luperttrading-lab.github.io/seneca-audio/
+- **Kapitel 3 · Hörprobe** (privat; `quelle/` mit Rohaufnahme; Quelle `seite/hoerprobe_kapitel03.html`):
+  https://claude.ai/artifact/Qp2qQxMTf5pRxxhT2h8XMV
 - **Kapitel 2 · Vorschau** (privat; Video 720p mit C3, Ton; Quelle `seite/vorschau_kapitel02.html`, gebaut mit `seite/vorschau.py`):
   https://claude.ai/artifact/C4Dge4gf9qYDZbU3w7kdAK
 - Kapitel 1 · Vorschau (privat; Video 720p mit C3, Ton, `quelle/`; Quelle `seite/vorschau_kapitel01.html`):

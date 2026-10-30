@@ -548,3 +548,6 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
   Doppelung „durch seine Schädlichkeit schadet“); „bestaunen“ bleibt (Bezug auf 2,4). Übernommen nur „Seelengröße“ statt
   „Größe“ (*magnitudo* [animi]; die KI nannte fälschlich *magnanimitas*). Auftraggeber: Einwände auch dann besprechen, wenn
   nichts geändert wird (jetzt Regel in `PLAN.md`).
+- **Kapitel 3 erzeugt** (945 Credits, 2.200 Zeichen): turbo sofort wortgetreu, 349/349 Wörter exakt, 31 Pausen (+17,2 s), 2:47.
+  Betonungsfilter: „Wenn ich aber „UNSERE“ sage“ +5,8 HT (Kontrast, *nostram autem cum dico*, vermutlich richtig), 1 Abschnitt
+  zwischen 3 und 5 HT. Kapitel 4 parallel in eigener Sitzung (Zweig `kapitel04-entwurf`) beauftragt.
