@@ -65,8 +65,9 @@
 <script>
   // D: {w, t, p, stelle ("1,2" je Wort), text_ab (Text blendet ein), start_ende (nur Kapitel 1: Startseite bis hier), ende,
   //     stil (wahlweise, Standard ist C3): {farbe, hoehe (px), kern (%), unten (px: Band nur nach unten verlängert),
-  //     gleiten (s; 0 = gleichmäßig fließen), mischung (0–1: Anteil gleichmäßigen Fließens; der Text steht nie ganz still)}}
-  var D, spans = [], kurve, LH, jetzt = -2, stelleJetzt = "";
+  //     gleiten (s; 0 = gleichmäßig fließen), mischung (0–1: Anteil gleichmäßigen Fließens; der Text steht nie ganz still),
+  //     band (false = kein Band), fokus (0–1: Helligkeit der übrigen Zeilen; nur die gesprochene Zeile ganz hell)}}
+  var D, spans = [], kurve, LH, jetzt = -2, stelleJetzt = "", teile = [], zeileVon = [], anfangZ = [], fokus = 0;
   var marke = function (s) { var k = s.split(","); return k[0] + " (" + k[1] + ")"; };
   function pchip(x, v) {   // monotone kubische Interpolation wie auf der Hörbuch-Seite
     var m = [], h = [], d = [], len = x.length, i;
@@ -111,6 +112,8 @@
     if (st.hoehe) band.style.setProperty("--band-hoehe", st.hoehe + "px");
     if (st.kern) band.style.setProperty("--band-kern", st.kern + "%");
     if (st.unten) band.style.setProperty("--band-unten", st.unten + "px");
+    if (st.band === false) band.style.display = "none";
+    fokus = st.fokus || 0;
     var inhalt = document.getElementById("inhalt"), p = null, abs = -1;
     D.w.forEach(function (w, i) {
       if (D.p[i] !== abs) { abs = D.p[i]; p = document.createElement("p"); inhalt.appendChild(p); }
@@ -130,7 +133,8 @@
     // höchstens eine halbe Zeile neben der Bandmitte (die Mitte der Sprechzeit als Stützstelle wich bis 0,65 Zeilen ab).
     var fenster = document.getElementById("fenster"); LH = parseFloat(getComputedStyle(inhalt).lineHeight);
     var rand = (fenster.clientHeight - LH) / 2; inhalt.style.paddingTop = rand + "px"; inhalt.style.paddingBottom = rand + "px";
-    var basis = spans[0].offsetTop, zeileVon = spans.map(function (s) { return Math.round((s.offsetTop - basis) / LH); });
+    var basis = spans[0].offsetTop; zeileVon = spans.map(function (s) { return Math.round((s.offsetTop - basis) / LH); });
+    teile = [].slice.call(inhalt.querySelectorAll(".w, .marke")).map(function (e) { return [e, Math.round((e.offsetTop - basis) / LH)]; });
     var zeilen = zeileVon[zeileVon.length - 1] + 1, anfang = [], xs = [], vs = [], k, n = D.t.length;
     for (k = 0; k < zeilen; k++) anfang.push(Infinity);
     D.t.forEach(function (t, i) { if (t < anfang[zeileVon[i]]) anfang[zeileVon[i]] = t; });
@@ -141,6 +145,7 @@
     if (schluss > xs[xs.length - 1]) { xs.push(schluss); vs.push((zeilen - 1) * LH); }
     var fliessen = pchip(xs, vs), gleiten = st.gleiten ? gleit(anfang, LH, st.gleiten) : null, m = st.mischung || 0;
     kurve = !gleiten ? fliessen : m ? function (t) { return m * fliessen(t) + (1 - m) * gleiten(t); } : gleiten;
+    anfangZ = anfang;
     return { zeilen: zeilen, zeilenhoehe: LH };
   }
   function wortBei(t) {
@@ -158,6 +163,11 @@
     if (i >= 0) {
       var t0 = D.t[i], t1 = i + 1 < D.t.length ? D.t[i + 1] : D.ende, e = Math.min(t1, t0 + 0.08 + 0.07 * D.w[i].length);
       spans[i].style.setProperty("--f", Math.max(0, Math.min(1, (t - t0) / Math.max(0.05, e - t0))).toFixed(3));
+    }
+    if (fokus) {   // nur die gesprochene Zeile hell; beim Zeilenwechsel in 0,35 s weich übergeblendet (aus t berechnet, nicht per CSS)
+      var z = zeileVon[Math.max(0, i)], u = Math.max(0, Math.min(1, (t - anfangZ[z]) / 0.35)), hell = {};
+      hell[z] = i < 0 ? 1 : u; if (z > 0) hell[z - 1] = 1 - u; if (i < 0) hell[0] = 1;
+      teile.forEach(function (x) { var h = hell[x[1]] || 0; x[0].style.opacity = (fokus + (1 - fokus) * h).toFixed(3); });
     }
     var st = D.stelle[Math.max(0, i)];
     if (st !== stelleJetzt) {

@@ -76,7 +76,7 @@ Video ohne Credits neu. Jedes weitere Kapitel nach der Abnahme genauso sichern.
   https://claude.ai/artifact/Pa3cLB5TEbA2WvmnNQiVy9
 - Kapitel 1 · Prüfstellen (privat; Betonungsversuche zu 1 (3); Quelle `seite/pruefstellen.html`):
   https://claude.ai/artifact/9oVZgpKioSQuSDG4DCfBJE
-- **Lesebänder im Vergleich** (privat; Runde 3: C3 mit Band unten +8 px und C3+ mit mehr Fließen, je 30 s aus Kapitel 1; Quelle `seite/bandvergleich.html`, Videos nur im Artifact): https://claude.ai/artifact/4MbuGh3bSWx4GvcRBhhAcp
+- **Lesebänder im Vergleich** (privat; Runde 4: mit Band, ohne Band, ohne Band mit hell gesprochener Zeile, je 45 s aus Kapitel 1; Quelle `seite/bandvergleich.html`, Videos nur im Artifact): https://claude.ai/artifact/4MbuGh3bSWx4GvcRBhhAcp
 - **Kapitel 2 · Hörprobe** (privat; ganzes Kapitel, Paragrafen, von Whisper gemeldete Wörter; `quelle/` mit Rohaufnahme;
   Quelle `seite/hoerprobe_kapitel02.html`, gebaut mit `seite/hoerprobe.py`): https://claude.ai/artifact/P2UJeKRMty5sWxpKoMvZ2h
 - Kapitel 1 · Betonungsfilter (privat; Test des Filters, sechs markierte Stellen zum Anhören; Quelle
