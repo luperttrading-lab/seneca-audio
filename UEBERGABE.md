@@ -20,8 +20,8 @@ Die öffentliche Seite zeigt noch Luperts alte „Teile 1 und 2“ mit altem Wor
 2. **Auftraggeber:** YouTube – einzelne Videos je Kapitel (Playlist) oder ein Gesamtvideo? Bis dahin Kapitel 1 am besten
    „Nicht gelistet“ hochladen und die Lesbarkeit am Handy prüfen.
 3. **Auftraggeber:** Credit-Grenze des Schlüssels anheben (reicht noch für etwa 12 bis 14 Kapitel).
-6. Kapitel 3 aufnehmen (nach Freigabe), Kapitel 4 übersetzen.
-7. Später: öffentliche Seite auf Kapitel mit Helmut umstellen (Freigabe); Weg der Gesamtdatei zu YouTube klären (etwa
+4. Kapitel 3 aufnehmen (nach Freigabe), Kapitel 4 übersetzen.
+5. Später: öffentliche Seite auf Kapitel mit Helmut umstellen (Freigabe); Weg der Gesamtdatei zu YouTube klären (etwa
    1,3 GB in Full HD, zu groß für Artifacts; etwa über einen Ordner auf dem Rechner des Auftraggebers oder Google Drive).
    Kostenlos, aber offen: Helmut in der App unter „Meine Stimmen“ aufnehmen.
 
