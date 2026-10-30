@@ -20,8 +20,10 @@ Die öffentliche Seite zeigt noch Luperts alte „Teile 1 und 2“ mit altem Wor
 2. **Auftraggeber:** YouTube – einzelne Videos je Kapitel (Playlist) oder ein Gesamtvideo? Bis dahin Kapitel 1 am besten
    „Nicht gelistet“ hochladen und die Lesbarkeit am Handy prüfen.
 3. **Auftraggeber:** Credit-Grenze des Schlüssels anheben (reicht noch für etwa 12 bis 14 Kapitel).
-4. **Claude, vor Kapitel 2:** Werkzeug zum Nachbessern einzelner Sätze (allein, ohne Zusammenhang, 2–3 Fassungen,
-   Einsetzen) und Vorfilter für Betonung bauen (`PLAN.md`, Prüfliste Ton, Punkte 3 und 4).
+4. **Auftraggeber:** die sechs vom Betonungsfilter markierten Stellen auf der Seite „Kapitel 1 · Betonungsfilter“ anhören
+   und sagen, welche falsch klingen; danach Schwelle des Filters festlegen (`werkzeuge/betonung.py`, Standard 1 HT).
+   **Claude, vor Kapitel 2:** Werkzeug zum Nachbessern einzelner Sätze bauen (allein, ohne Zusammenhang, 2–3 Fassungen,
+   Einsetzen; `PLAN.md`, Prüfliste Ton, Punkt 4).
 5. Kapitel 4 übersetzen.
 6. Später: öffentliche Seite auf Kapitel mit Helmut umstellen (Freigabe); Weg der Gesamtdatei zu YouTube klären (etwa
    1,3 GB in Full HD, zu groß für Artifacts; etwa über einen Ordner auf dem Rechner des Auftraggebers oder Google Drive).
@@ -71,6 +73,8 @@ Video ohne Credits neu. Jedes weitere Kapitel nach der Abnahme genauso sichern.
   https://claude.ai/artifact/Pa3cLB5TEbA2WvmnNQiVy9
 - Kapitel 1 · Prüfstellen (privat; Betonungsversuche zu 1 (3); Quelle `seite/pruefstellen.html`):
   https://claude.ai/artifact/9oVZgpKioSQuSDG4DCfBJE
+- Kapitel 1 · Betonungsfilter (privat; Test des Filters, sechs markierte Stellen zum Anhören; Quelle
+  `seite/betonungstest.html`, Ausschnitte nur im Artifact): https://claude.ai/artifact/FKbKXf7ynMhVhg5xydrTpQ
 - Stimmenprobe (privat; Quelle `seite/stimmenprobe.html`): https://claude.ai/artifact/G9tMfCirpybCFyQYne2d6L
 - Ältere Seiten (Duelle, Modellvergleich, Lupert tiefer): `PROTOKOLL.md`.
 

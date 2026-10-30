@@ -483,3 +483,13 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
   Festlegungen, Ablauf wie er wirklich läuft und Prüfliste Ton; `UEBERGABE.md` von 380 auf etwa 90 Zeilen; der alte
   Inhalt beider Dateien unverändert oben in dieser Datei. Begriffe *fortuna*, *voluptas*, *gaudium*, *virtus*, *ratio*,
   *sapiens* mit dem „Ja“ angenommen.
+- **Betonungsfilter** (`werkzeuge/betonung.py`, 0 Credits): Tonhöhengipfel je Wort (Praat, 95-%-Quantil, Halbtöne gegen den
+  Median der Aufnahme), Sprechabschnitte an Satzzeichen, markiert wenn der Gipfel auf einem Funktionswort liegt, nicht am
+  Abschnittsanfang, mindestens 1 HT über dem stärksten Inhaltswort. Prüfstein sind nur Urteile des Ohrs: „die vor uns
+  hergeht“ falsch in v1 und in der Fassung mit neu gesprochenem Paragrafen (beide markiert, +9,9 und +9,3 HT); richtig in
+  den sechs Einzelaufnahmen, der App-Aufnahme und v3 (0 von 8 markiert). Die übrigen Betonungsversuche (Satz für Satz,
+  rückwärts) sind kein Prüfstein, weil ihr „richtig/falsch“ mit derselben Messung bestimmt wurde. Achtung: Die Messart
+  wurde an genau dieser Stelle entwickelt, der Treffer ist also kein unabhängiger Beleg. Ganze Fassungen, markiert bei
+  Schwelle 0 / 0,5 / 1 / 2 / 3 / 5 HT: v1 14/12/9/7/4/1, v3 13/10/7/6/2/0 von 79. v1 und v3 teilen die Aufnahme außerhalb
+  von 1 (3), die gemeinsamen Markierungen sind also nicht unabhängig. Die sieben Markierungen von v3 (sechs Sätze) liegen
+  zum Urteil auf der Seite „Kapitel 1 · Betonungsfilter“.

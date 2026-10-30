@@ -91,9 +91,12 @@ Vor jedem Schicken an den Auftraggeber, in dieser Reihenfolge:
 3. **Betonung:** Whisper hört sie nicht; bisher findet sie nur der Auftraggeber. Befund vom 29.10.: Falsche Akzente kommen
    vor allem vom **Folgesatz im selben Text** („die vor uns hergeht“ richtig: ohne Folgesatz 6 von 6, Folgesatz nur als
    Zusammenhang 2 von 4, Folgesatz mitgesprochen 0 von 3; exakter Trendtest p = 0,005), und sie streuen stark zwischen zwei
-   Erzeugungen (8 von 15 Sprechabschnitten anders). Das ganze Kapitel neu erzeugen hilft darum nicht. Geplant, noch nicht
-   gebaut: Vorfilter, der Sprechabschnitte markiert, deren Tonhöhengipfel auf einem kleinen Wort liegt (Präposition,
-   Pronomen, Hilfsverb: „vor“, „nach“, „uns“, „gilt“); er ersetzt das Ohr des Auftraggebers nicht.
+   Erzeugungen (8 von 15 Sprechabschnitten anders). Das ganze Kapitel neu erzeugen hilft darum nicht. Vorfilter:
+   `python3 werkzeuge/betonung.py <roh.mp3> <woerter.json>` markiert Sprechabschnitte, deren Tonhöhengipfel auf einem
+   kleinen Wort liegt (Artikel, Pronomen, Präposition, Konjunktion, Hilfsverb). Die markierten Stellen kommen zuerst auf
+   die Prüfseite; der Filter ersetzt das Ohr des Auftraggebers nicht. Test an Kapitel 1 (30.10.): echter Fehler 2 von 2
+   markiert (+9,9 und +9,3 HT), richtige Fassungen derselben Stelle 0 von 8, abgenommene Fassung 7 von 79 Abschnitten
+   (höchstens +4,7 HT). Schwelle 1 HT vorläufig, bis das Urteil des Auftraggebers zu diesen sieben vorliegt.
 4. **Nachbessern einzelner Sätze:** den Satz **allein und ohne Zusammenhang** erzeugen, zwei bis drei Fassungen; die beste
    an den Satzpausen einsetzen (Rand 50/100 ms, Blende 10 ms, Pegel an den Satz davor angleichen), Stimme per
    Fingerabdruck prüfen (`werkzeuge/fingerabdruck.py`, mindestens 0,95 zur Kapitelaufnahme), dann die Kette neu und die
