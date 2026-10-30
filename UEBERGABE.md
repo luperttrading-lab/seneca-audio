@@ -10,7 +10,7 @@ Ton) stehen in `PLAN.md`, Verlauf, Versuche und Messungen in `PROTOKOLL.md`.
 | 1 | fertig, freigegeben (`texte/kapitel01.txt`, Marken 1,1–1,5) | **fertig (Fassung v3):** Helmut, wortgetreu (499/499), 38 Pausen, 3:53; erster Satz von 1 (3) einzeln erzeugt eingesetzt („die vor uns hergeht“). Video am 30.10. mit Leseband C3 neu gerendert und die Full-HD-Datei erneut geschickt (ersetzt die erste vom Morgen), dazu Miniaturbilder mit und ohne „Kapitel 1“. Gesichert (siehe unten) |
 | 2 | fertig, freigegeben (30.10.; nach den Regeln in `PLAN.md` überarbeitet, 2,1 „offenbar die Mehrheit“) | **fertig, Video mit Leseband C3 (30.10.)**, 2:52, Full-HD-Datei und Miniaturbild dem Auftraggeber geschickt, Vorschau-Artifact. Vorher: | **Ton erzeugt (30.10.)**, 989 Credits; Betonungsfilter: 0 markiert. „Bekränzten“ und „Beredsamkeit“ vom Auftraggeber als richtig gehört (`texte/verhoerer.txt`); 2,3 „dem Geschossen“ war ein echter Sprechfehler: Satz mit `satz.py` dreimal allein erzeugt (159 Credits), Fassung 3 eingesetzt, jetzt wortgetreu, 40 Pausen, 2:52. Vom Auftraggeber abgenommen; gesichert im Hörprobe-Artifact unter `quelle/` |
 | 3 | fertig, freigegeben (30.10.; nach den Regeln geprüft, Seelengröße, 3,1 neu mit „[ohne es zu erkennen]“, 3,3 „Ich gebe der Natur meine Stimme“, „abzuweichen“, „übereinstimmen“) | **fertig, Video mit 1M (30.10.)**: 2:51, 358/358 wortgetreu; Full-HD-Datei und Miniaturbild geschickt, Vorschau-Artifact; Ton gesichert im Hörprobe-Artifact unter `quelle/`. YouTube-Beschreibung: Hinweis auf eckige Klammern |
-| 4 | **Entwurf** (`texte/kapitel04.txt`, in eigener Sitzung übersetzt und mit Stewart abgeglichen, nach main übernommen; Textprüfung ohne Hinweis); neue Begriffe in `PLAN.md` vorgeschlagen; **Gegenlesen und Freigabe offen** | – |
+| 4 | fertig, freigegeben (30.10.; 4,2 „das, was“, 4,3 „jenseits der Furcht, jenseits der Begierde“, 4,4 „tief … aus der Tiefe“ bleibt); Begriffe aus Kapitel 4 in `PLAN.md` angenommen | – |
 | 5–28 | Latein in `texte/latein/kapitelNN.txt` | – |
 
 Die öffentliche Seite zeigt noch Luperts alte „Teile 1 und 2“ mit altem Wortlaut; umgestellt wird nur mit Freigabe.
@@ -19,11 +19,10 @@ Die öffentliche Seite zeigt noch Luperts alte „Teile 1 und 2“ mit altem Wor
 
 1. Leseband endgültig: 1M mit Bandenden B (Auftraggeber, 30.10.; 4M verworfen). Kapitel 1 bis 3 werden damit neu
    gerendert (ohne Credits), damit alle Kapitel gleich aussehen.
-   **Auftraggeber:** Entwurf Kapitel 4 gegenlesen, Begriffe aus Kapitel 4 freigeben (vor allem *honestum* = das Ehrenhafte).
 2. **Auftraggeber:** YouTube – einzelne Videos je Kapitel (Playlist) oder ein Gesamtvideo? Bis dahin Kapitel 1 am besten
    „Nicht gelistet“ hochladen und die Lesbarkeit am Handy prüfen.
 3. **Auftraggeber:** Credit-Grenze des Schlüssels anheben (reicht noch für etwa 12 bis 14 Kapitel).
-4. Kapitel 4 vorlegen und aufnehmen, Kapitel 5 übersetzen.
+4. Kapitel 4 aufnehmen (Text freigegeben 30.10.), Kapitel 5 übersetzen.
 5. Später: öffentliche Seite auf Kapitel mit Helmut umstellen (Freigabe); Weg der Gesamtdatei zu YouTube klären (etwa
    1,3 GB in Full HD, zu groß für Artifacts; etwa über einen Ordner auf dem Rechner des Auftraggebers oder Google Drive).
    Kostenlos, aber offen: Helmut in der App unter „Meine Stimmen“ aufnehmen.

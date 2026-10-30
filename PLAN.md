@@ -173,7 +173,7 @@ gemessen an 1,1–2). Ein Kapitel geht als eine Anfrage an ElevenLabs; das läng
 | 1 | 5 | 348 | 3:53 | **fertig:** Text freigegeben, Ton und Video mit Helmut (30.10.); öffentliche Seite noch Lupert |
 | 2 | 4 | 250 | 2:47 | übersetzt, Überarbeitung durch den Auftraggeber offen |
 | 3 | 4 | 231 | 2:34 | Entwurf, Freigabe offen |
-| 4 | 5 | 313 | 3:29 |  |
+| 4 | 5 | 313 | 3:29 | Text freigegeben (30.10.) |
 | 5 | 4 | 164 | 1:50 |  |
 | 6 | 2 | 97 | 1:05 |  |
 | 7 | 4 | 289 | 3:13 |  |
