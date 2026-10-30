@@ -17,7 +17,7 @@ Ton) stehen in `PLAN.md`, Verlauf, Versuche und Messungen in `PROTOKOLL.md`.
 ## Parallele Übersetzungssitzungen (seit 30.10.)
 
 Je Kapitel eine Sitzung, Schlagwort `seneca-uebersetzung`; Auftrag: nur `texte/kapitelNN.txt` und `texte/notizen/kapitelNN.md`
-ändern, Zweig `kapitelNN-entwurf`, nie nach main, vorher ein unabhängiger Prüf-Agent. Nach der Freigabe übernimmt die
+ändern, Zweig `kapitelNN-entwurf`, nie nach main, vorher ein unabhängiger Prüf-Agent (Fable 5.1, extra hoch). Nach der Freigabe übernimmt die
 Hauptsitzung: Zweig nach main, Begriffe und Wörter aus den Notizen in `PLAN.md` und `texte/woerter_ok.txt`, dann Aufnahme.
 Vorläufig für alle: Einwürfe des gedachten Gegners (*inquit*) als „…“, wendet einer ein, „…“ (Entscheidung offen).
 Am besten in der Reihenfolge freigeben (5, 6, 7 …): Eine Änderung in einem Kapitel kann die nächsten betreffen.

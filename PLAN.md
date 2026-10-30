@@ -97,7 +97,7 @@ Leitbegriffe beim ersten Auftreten eintragen und vorlegen.
    vor der Aufnahme die Textprüfung noch einmal laufen lassen.
    Mehrere Kapitel parallel (seit 30.10.): je Kapitel eine eigene Sitzung, die nur den Kapiteltext und
    `texte/notizen/kapitelNN.md` ändert (Zweig `kapitelNN-entwurf`) und vor dem Vorlegen einen unabhängigen Prüf-Agenten
-   einsetzt; die Hauptsitzung überträgt bei der Übernahme Begriffe und Wörter in `PLAN.md` und `texte/woerter_ok.txt`
+   einsetzt (Fable 5.1, Stufe extra hoch; Übersetzen selbst mit Opus 5.5 extra hoch; Auftraggeber, 30.10.); die Hauptsitzung überträgt bei der Übernahme Begriffe und Wörter in `PLAN.md` und `texte/woerter_ok.txt`
    (Auftrag und Sitzungen in `UEBERGABE.md`).
 2. **Ton erzeugen:** `python3 werkzeuge/kapitel.py N <ordner> --ohne-video`. Das ganze Kapitel geht als **eine** Anfrage an
    ElevenLabs (Stimme und Einstellungen unten), die Rohaufnahme wird zwischengespeichert (`--neu` erzeugt neu und kostet

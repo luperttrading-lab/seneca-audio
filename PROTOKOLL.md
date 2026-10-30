@@ -615,3 +615,4 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
   gestartet, Kapitel 5 lief schon. Gegen Konflikte: jede Sitzung ändert nur Kapiteltext und `texte/notizen/kapitelNN.md`;
   einheitlicher Vorschlag für *inquit* („wendet einer ein“); unabhängiger Prüf-Agent vor dem Vorlegen. Sitzungen in
   `UEBERGABE.md`.
+- **Prüf-Agent mit Fable 5.1, Stufe extra hoch** (Auftraggeber: „können wir gerne machen“); Übersetzen bleibt Opus 5.5 extra hoch. Den Sitzungen 5–10 gemeldet.
