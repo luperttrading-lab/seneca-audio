@@ -551,3 +551,6 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
 - **Kapitel 3 erzeugt** (945 Credits, 2.200 Zeichen): turbo sofort wortgetreu, 349/349 Wörter exakt, 31 Pausen (+17,2 s), 2:47.
   Betonungsfilter: „Wenn ich aber „UNSERE“ sage“ +5,8 HT (Kontrast, *nostram autem cum dico*, vermutlich richtig), 1 Abschnitt
   zwischen 3 und 5 HT. Kapitel 4 parallel in eigener Sitzung (Zweig `kapitel04-entwurf`) beauftragt.
+- **Kapitel 4, Entwurf aus paralleler Sitzung** (etwa 1,20 $, gut 4 Minuten): nach main gemergt; Textprüfung nach Korrektur
+  der Satzerkennung ohne Hinweis (vorher Scheinmeldung „Kommakette“, weil ein Satzende vor „““ nicht erkannt wurde). Eigene
+  Durchsicht: Bilder (Heer, aufgehen/aufgegangen, alta/ex alto) erhalten; drei kleine Vorschläge zur Vorlage.
