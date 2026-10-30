@@ -12,7 +12,7 @@
     --stein: #161a19; --tinte: #e9edeb; --grau: #8f9a95; --bronze: #d29f62; --bronze-hell: #3a2c1c;
     --display: "Cinzel", Georgia, serif; --text: "Literata", Georgia, serif; --ui: "IBM Plex Sans", system-ui, sans-serif;
     --lh: 86px;
-    --band-farbe: var(--bronze-hell); --band-hoehe: 140px; --band-kern: 26%; --band-unten: 0px;   /* änderbar über D.stil (lade) */
+    --band-farbe: #5a4126; --band-hoehe: 130px; --band-kern: 23%; --band-unten: 8px;   /* Leseband C3 (Nutzer, 30.10.); änderbar über D.stil */
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: var(--stein); color: var(--tinte); }
@@ -63,8 +63,8 @@
   </div>
 <script>
   // D: {w, t, p, stelle ("1,2" je Wort), text_ab (Text blendet ein), start_ende (nur Kapitel 1: Startseite bis hier), ende,
-  //     stil (wahlweise): {farbe, hoehe (px), kern (%), unten (px: Band nur nach unten verlängert), gleiten (s; 0 = fließend),
-  //     mischung (0–1: Anteil des gleichmäßigen Fließens beim Gleiten; der Text steht dann nie ganz still)}}
+  //     stil (wahlweise, Standard ist C3): {farbe, hoehe (px), kern (%), unten (px: Band nur nach unten verlängert),
+  //     gleiten (s; 0 = gleichmäßig fließen), mischung (0–1: Anteil gleichmäßigen Fließens; der Text steht nie ganz still)}}
   var D, spans = [], kurve, LH, jetzt = -2, stelleJetzt = "";
   var marke = function (s) { var k = s.split(","); return k[0] + " (" + k[1] + ")"; };
   function pchip(x, v) {   // monotone kubische Interpolation wie auf der Hörbuch-Seite
@@ -105,7 +105,7 @@
   }
   function lade(daten) {
     D = daten;
-    var st = D.stil || {}, band = document.querySelector(".band");
+    var st = Object.assign({ gleiten: 1.4, mischung: 0.35 }, D.stil || {}), band = document.querySelector(".band");   // C3; {gleiten: 0} = gleichmäßig fließen
     if (st.farbe) band.style.setProperty("--band-farbe", st.farbe);
     if (st.hoehe) band.style.setProperty("--band-hoehe", st.hoehe + "px");
     if (st.kern) band.style.setProperty("--band-kern", st.kern + "%");

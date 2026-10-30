@@ -535,3 +535,7 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
 - **Leseband, Runde 3:** Auftraggeber wählt C3, „das dauernde Gleiten evtl. minimal mehr“, Band unten ein paar Pixel tiefer.
   `stil.unten` neu (verlängert nur nach unten). C3 = Farbe #5a4126, 130 px + 8 px unten, Kern 23 %, gleiten 1,4 s, Mischung
   0,35 (75 % mittig, 0,80 Zeilen/s); C3+ ebenso mit Mischung 0,45 (67 % mittig, 0,73 Zeilen/s).
+- **Leseband C3 ist Standard** (Auftraggeber: „Kapitel 2 passt, bau das Video mit C3“). Kapitel 2 gerendert (2:52, 52 MB) und
+  Kapitel 1 neu (3:53, 68 MB); Endkontrolle: H.264 1080p25, AAC-LC Stereo 48 kHz, −18,0 LUFS, Dauer gleich `ende` (±0,03 s),
+  Stichbilder Start, Mitte, Ende in Ordnung. Vorschauen 720p (12,9 und 12,7 MB), Full-HD-Dateien und Miniaturbild Kapitel 2
+  geschickt. Neues `seite/vorschau.py`.
