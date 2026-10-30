@@ -1,0 +1,63 @@
+<title>Lesebänder im Vergleich</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Vier Probevideos aus Kapitel 1: das bisherige Leseband und drei neue Fassungen, kräftiger, schmaler und ruhend.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Literata:opsz,wght@7..72,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  /* Eine Spalte wie die Prüfseiten, je Fassung eine Tafel mit Video; dunkel wie das Video selbst, Bronze für „worauf achten“. */
+  :root {
+    --stein: #161a19; --tafel: #1e2422; --tinte: #e9edeb; --grau: #939e99; --linie: #333b38; --bronze: #d29f62;
+    --display: "Cinzel", Georgia, serif; --ui: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--stein); color: var(--tinte); font: 16px/1.5 var(--ui); }
+  main { max-width: 720px; margin: 0 auto; display: grid; gap: 20px;
+    padding-block: 32px 48px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .kopf { display: grid; gap: 6px; text-align: center; }
+  .eyebrow { font: 600 12px/1.3 var(--ui); letter-spacing: .14em; text-transform: uppercase; color: var(--bronze); }
+  h1 { margin: 0; font: 600 clamp(26px, 7.5vw, 36px)/1.15 var(--display); letter-spacing: .03em; text-wrap: balance; }
+  .lead { margin: 0; color: var(--grau); font-size: 15px; }
+  .fassung { display: grid; gap: 12px; padding: 16px; border: 1px solid var(--linie); border-radius: 16px; background: var(--tafel); min-width: 0; }
+  .fassung.empfohlen { border-color: var(--bronze); }
+  .fassung h2 { margin: 0; font: 600 17px/1.3 var(--ui); display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+  .fassung h2 span { font: 600 12px/1.3 var(--ui); letter-spacing: .12em; text-transform: uppercase; color: var(--bronze); }
+  .fassung p { margin: 0; font-size: 15px; color: var(--grau); }
+  video { width: 100%; max-width: 100%; aspect-ratio: 16 / 9; border-radius: 10px; background: #000; display: block; }
+  .fuss { margin: 0; font-size: 14px; color: var(--grau); }
+</style>
+
+<main>
+  <header class="kopf">
+    <span class="eyebrow">Seneca · De vita beata · Kapitel 1</span>
+    <h1>Lesebänder im Vergleich</h1>
+    <p class="lead">Dieselben 16 Sekunden aus Kapitel 1, viermal mit anderem Band. Achte auf das Zeilenende: Wie weit läuft die nächste Zeile schon ins Band, und wie ruhig wirkt der Übergang?</p>
+  </header>
+
+  <section class="fassung">
+    <h2>Bisher <span>zum Vergleich</span></h2>
+    <p>Der Text fließt gleichmäßig. Am Zeilenende steht die gesprochene Zeile oben im Band, die nächste läuft schon unten hinein.</p>
+    <video controls playsinline preload="none" poster="video/bisher.jpg" src="video/bisher.mp4"></video>
+  </section>
+
+  <section class="fassung">
+    <h2>A · kräftiger</h2>
+    <p>Wie bisher, aber das Band ist deutlich stärker gefärbt und etwas breiter voll gedeckt.</p>
+    <video controls playsinline preload="none" poster="video/A.jpg" src="video/A.mp4"></video>
+  </section>
+
+  <section class="fassung">
+    <h2>B · kräftiger und schmaler</h2>
+    <p>Kräftig wie A, aber niedriger, damit die Nachbarzeilen weniger hineinragen. Am Zeilenende steht die gesprochene Zeile dafür am Rand des Bands.</p>
+    <video controls playsinline preload="none" poster="video/B.jpg" src="video/B.mp4"></video>
+  </section>
+
+  <section class="fassung empfohlen">
+    <h2>C · ruhend <span>mein Vorschlag</span></h2>
+    <p>Kräftig wie A. Der Text bleibt auf der gesprochenen Zeile stehen und gleitet erst beim Zeilenwechsel in knapp einer Sekunde weich zur nächsten. Kein Sprung, aber die gesprochene Zeile steht fast immer mittig im Band.</p>
+    <video controls playsinline preload="none" poster="video/C.jpg" src="video/C.mp4"></video>
+  </section>
+
+  <p class="fuss">Full HD, 25 Bilder pro Sekunde, Ton wie im Video. Sag mir, welche Fassung ins Video soll; Farbe, Höhe und Gleitdauer lassen sich auch einzeln mischen.</p>
+</main>

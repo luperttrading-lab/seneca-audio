@@ -522,3 +522,8 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
   0,921 / 0,897 / 0,924. Maßstab: die 24 Sätze des Kapitels selbst erreichen 0,867–0,962 (Median 0,927), der alte
   Satz 0,954; die Regel „mindestens 0,95“ war also zu streng und ist jetzt relativ. Fassung 3 eingesetzt (7,54 s → 7,06 s),
   Kette neu: nur noch die beiden bestätigten Verhörer (neu: `texte/verhoerer.txt`, `kette.abweichungen`), 40 Pausen, 2:52.
+- **Leseband** (Wunsch des Auftraggebers: kräftiger, Höhe harmonischer, kein Springen): `bild.html` nimmt jetzt `stil` aus
+  daten.json (Farbe, Höhe, Kern, `gleiten` in s); `gleiten` lässt den Text auf der Zeile ruhen und an jedem Zeilenwechsel
+  per Smoothstep um eine Zeile gleiten, Mitte des Gleitens auf dem ersten Wort der neuen Zeile, Dauer höchstens G und
+  höchstens 60 % der kürzeren Nachbarzeile (monoton, Spitzengeschwindigkeit 1,5 Zeilen/G). `render.js`/`baue.py` können
+  Ausschnitte (`--von`/`--bis`). Probevideos: bisher; A #5a4126, Kern 22 %; B dazu 108 px hoch; C 120 px, gleiten 0,9 s.
