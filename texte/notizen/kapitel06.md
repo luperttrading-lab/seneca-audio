@@ -39,3 +39,14 @@ Stand: Entwurf (30.10.), Freigabe offen.
 ## Wörter für woerter_ok.txt
 
 keine (Textprüfung: nur der Hinweis auf drei Sätze mit „Glücklich“, Senecas Anapher *beatus … beatus … beatus*).
+
+## Zweite Durchsicht (30.10.), Vorschläge an den Auftraggeber
+
+1. *sedeat … arbiter*: „sich zum Richter … setzen“ → „als Kenner … urteilen“ („Richter über“ klingt nach Verurteilen).
+2. *oblectare*: „erfreuen“ → „ergötzen“ (Freude bleibt *gaudium*, 4,4 „freut sich“ = *gaudeat*).
+3. Einschub „und, während …, seine Gedanken“ in zwei Sätze geteilt (Stilregel).
+4. *mala pro bonis*: „anstelle von Gütern“ → „statt Gütern“ (Parallele zu *pro optimis* „statt nach dem Besten“).
+5. *sanitas*: „Gesundheit des Geistes“ (einmal genügt; wie 3,3).
+6. *omnem habitum … commendat*: „in jeder Gestalt annehmbar“ → „unter allen Umständen lieb“.
+- „lauern“ bleibt (*imminere* hat selbst den gierig-drohenden Beiklang). Gemini-Vorschläge („Genüsse“, „Freuden“,
+  „das Schlechte“, „satt und träge“) abgelehnt: Begriffsliste, Tierbild, *in praesenti*.
