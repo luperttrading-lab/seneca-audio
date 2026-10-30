@@ -96,7 +96,9 @@ else:
     s0, s1 = sprache(s); s = s[max(0, s0 - int(0.05 * SR)):s1 + int(0.10 * SR)].copy()
     s *= pegel(y[a:e]) / pegel(s)
     k = int(0.01 * SR); s[:k] *= np.linspace(0, 1, k); s[-k:] *= np.linspace(1, 0, k)
-    vor, nach = y[:a].copy(), y[e:].copy(); vor[-k:] *= np.linspace(1, 0, k); nach[:k] *= np.linspace(0, 1, k)
+    vor, nach = y[:a].copy(), y[e:].copy()   # am Kapitelanfang oder -ende kann eine Seite leer sein
+    if len(vor) >= k: vor[-k:] *= np.linspace(1, 0, k)
+    if len(nach) >= k: nach[:k] *= np.linspace(0, 1, k)
     n = 1
     while os.path.exists(f"{b}.roh.vorher{n}.mp3"): n += 1
     os.rename(b + ".roh.mp3", f"{b}.roh.vorher{n}.mp3")
