@@ -39,7 +39,7 @@ Textprüfung 0 Hinweise, geprüft vom unabhängigen Prüf-Agenten. Freigabe offe
 
 ## Wörter für woerter_ok.txt
 
-keine
+- Nadelstichen (5,3; richtig nach Duden „Nadelstich“, vom Auftraggeber gewählt; die Textprüfung kennt es nur nicht)
 
 ## Einwände von Gemini (30.10.)
 
