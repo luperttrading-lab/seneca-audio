@@ -79,6 +79,10 @@ Leitbegriffe beim ersten Auftreten eintragen und vorlegen.
 | *sanitas*, *sanus* | Gesundheit, gesund | angenommen 30.10. (6,1) |
 | *dementia* | Wahnsinn | angenommen 30.10. (6,1) |
 | *inquit* (gedachter Gegner) | „…“, wendet einer ein, „…“; weitere Einwürfe im selben Absatz „sagt er“ | angenommen 30.10. (6,1) |
+| *tristitia* | Traurigkeit | angenommen 30.10. (5,1) |
+| *veritas* | Wahrheit | angenommen 30.10. (4,5; 5,2) |
+| *corpus* | Körper | angenommen 30.10. (4,4; 5,4) |
+| *natura* (eines Menschen) | Natur (5,2 „eine stumpfe Natur“; *rerum natura* bleibt „die Natur“) | angenommen 30.10. (3,3; 5,2) |
 | *voluntas* | Wille | angenommen 30.10. (8,1) |
 | *iucundus* | angenehm | angenommen 30.10. (8,1) |
 | *turpis* | schändlich; als Gegenwort zu *honestus* „ehrlos“ (8,1 „die Ehrlosen … die Ehrenhaften“); *turpitudo* bleibt Schande | angenommen 30.10. (8,1) |

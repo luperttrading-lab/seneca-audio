@@ -25,7 +25,7 @@ Am besten in der Reihenfolge freigeben (5, 6, 7 …): Eine Änderung in einem Ka
 | Kapitel | Sitzung | Stand |
 |---|---|---|
 | 4 | [session_01LHRCLp8bXNZjxkAQi9Capv](https://claude.ai/code/session_01LHRCLp8bXNZjxkAQi9Capv) | freigegeben, nach main übernommen |
-| 5 | [session_01LHRCLtCeTk9iLknnG3E4k9](https://claude.ai/code/session_01LHRCLtCeTk9iLknnG3E4k9) | Entwurf |
+| 5 | [session_01LHRCLtCeTk9iLknnG3E4k9](https://claude.ai/code/session_01LHRCLtCeTk9iLknnG3E4k9) | freigegeben 30.10., nach main übernommen, Begriffe in `PLAN.md` |
 | 6 | [session_01LHRCLofcYszWPPG4q1cQ2x](https://claude.ai/code/session_01LHRCLofcYszWPPG4q1cQ2x) | freigegeben 30.10., nach main übernommen, Begriffe in `PLAN.md` |
 | 7 | [session_01LHRCLsPeiyRaQQaCkE7Xnn](https://claude.ai/code/session_01LHRCLsPeiyRaQQaCkE7Xnn) | Entwurf |
 | 8 | [session_01LHRCLsMyGzZSU8bDAFFVua](https://claude.ai/code/session_01LHRCLsMyGzZSU8bDAFFVua) | freigegeben 30.10., nach main übernommen, Begriffe in `PLAN.md` |

@@ -619,3 +619,4 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
 - **Kapitel 6 übernommen**: Freigabe in der eigenen Sitzung („Mach das, was du für sinnvoll hältst“); Begriffe *luxuria*, *sanitas*, *dementia*, *inquit* in `PLAN.md`.
 - **Kapitel 8 und 9 übernommen** (Freigabe je in der eigenen Sitzung, „Mach das, was du für sinnvoll hältst“): 27 Begriffe in `PLAN.md`, fünf Wörter in `woerter_ok.txt`. *turpis* „schändlich“, als Gegenwort zu *honestus* „ehrlos“ (8,1).
 - **Kapitel 4 aufgenommen**: 1.287 Credits, 3:43, Whisper beide Modelle „Sklavendienst [d]er“, Filter 3 Stellen (+7,4 / +6,0 HT / nur Funktionswörter). Hörprobe-Artifact mit `quelle/`.
+- **Kapitel 5 übernommen** (freigegeben in der eigenen Sitzung): Begriffe *tristitia*, *veritas*, *corpus*, *natura* (eines Menschen); „Nadelstichen“ in `woerter_ok.txt`.
