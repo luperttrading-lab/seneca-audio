@@ -649,3 +649,4 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
 - **Kapitel 6 aufgenommen**: 405 Credits, 152/152 wortgetreu, 11 Pausen, 1:12; Filter 3 Stellen: „wendet einer EIN“ (+5,7; Vorsilbe von „einwenden“, betont richtig, Fehlalarm des Filters), „Er SOLL“ (+5,0), „wie ES auch“ (+5,5).
 - **Kapitel 6, 6,2 nach der Hörprobe** (Auftraggeber: „komischer Satz“): „Glücklich ist, wer durch die Vernunft mit jeder Lage seines Lebens einverstanden ist.“ (*cui omnem habitum rerum suarum ratio commendat*; hält den Dreiklang „Glücklich ist, wer …“).
 - **Kapitel 6, Satz eingesetzt**: 111 Credits, Fassung 1 (0,915), danach 154/154 wortgetreu, 12 Pausen, 1:14. Hörprobe Version 2.
+- **Kapitel 6 Video**: 1080p25, AAC-LC Stereo 48 kHz, −18,0 LUFS, 74,02 s (ende 74,04), Stichbilder in Ordnung; Vorschau 13,2 MB; Full HD und Miniaturbild geschickt.
