@@ -527,3 +527,8 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
   per Smoothstep um eine Zeile gleiten, Mitte des Gleitens auf dem ersten Wort der neuen Zeile, Dauer höchstens G und
   höchstens 60 % der kürzeren Nachbarzeile (monoton, Spitzengeschwindigkeit 1,5 Zeilen/G). `render.js`/`baue.py` können
   Ausschnitte (`--von`/`--bis`). Probevideos: bisher; A #5a4126, Kern 22 %; B dazu 108 px hoch; C 120 px, gleiten 0,9 s.
+- **Leseband, Runde 2** (Auftraggeber: 30 s statt 16, C früher und langsamer gleiten lassen, auch ungleichmäßig): `stil.mischung`
+  neu (Anteil gleichmäßigen Fließens). Gemessen über 4,6–34,4 s, Anteil der Zeit mit gesprochener Zeile höchstens 0,15 Zeilen
+  neben der Bandmitte / größte Abweichung / Spitzengeschwindigkeit in Zeilen je s: A fließend 31 % / 0,51 / 0,40;
+  C gleiten 0,9 s 89 % / 0,54 / 1,67; C2 gleiten 1,6 s 81 % / 0,53 / 0,94; C3 gleiten 1,4 s mit 35 % Fließen 75 % / 0,52 / 0,80.
+  Alle monoton. Farbe überall #5a4126.

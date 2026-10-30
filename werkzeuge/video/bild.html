@@ -63,7 +63,8 @@
   </div>
 <script>
   // D: {w, t, p, stelle ("1,2" je Wort), text_ab (Text blendet ein), start_ende (nur Kapitel 1: Startseite bis hier), ende,
-  //     stil (wahlweise): {farbe, hoehe (px), kern (%), gleiten (s; 0 = fließend wie bisher)}}
+  //     stil (wahlweise): {farbe, hoehe (px), kern (%), gleiten (s; 0 = fließend wie bisher),
+  //     mischung (0–1: Anteil des gleichmäßigen Fließens beim Gleiten; der Text steht dann nie ganz still)}}
   var D, spans = [], kurve, LH, jetzt = -2, stelleJetzt = "";
   var marke = function (s) { var k = s.split(","); return k[0] + " (" + k[1] + ")"; };
   function pchip(x, v) {   // monotone kubische Interpolation wie auf der Hörbuch-Seite
@@ -131,7 +132,8 @@
     for (k = 1; k < zeilen; k++) { if (anfang[k] > xs[xs.length - 1]) { xs.push(anfang[k]); vs.push((k - 0.5) * LH); } }
     var schluss = Math.min(D.ende, D.t[n - 1] + 0.08 + 0.07 * D.w[n - 1].length);
     if (schluss > xs[xs.length - 1]) { xs.push(schluss); vs.push((zeilen - 1) * LH); }
-    kurve = st.gleiten ? gleit(anfang, LH, st.gleiten) : pchip(xs, vs);
+    var fliessen = pchip(xs, vs), gleiten = st.gleiten ? gleit(anfang, LH, st.gleiten) : null, m = st.mischung || 0;
+    kurve = !gleiten ? fliessen : m ? function (t) { return m * fliessen(t) + (1 - m) * gleiten(t); } : gleiten;
     return { zeilen: zeilen, zeilenhoehe: LH };
   }
   function wortBei(t) {
