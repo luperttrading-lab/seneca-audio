@@ -14,6 +14,8 @@ Eigene Übersetzung und Vertonung von Senecas *De vita beata*, eingeteilt nach S
   Aufnahmen mit dem Stimmklon „Lupert“ oder eigene Aufnahmen des Nutzers nur nach ausdrücklicher Zustimmung committen.
 - API-Schlüssel nie in Dateien, Commits oder Chat. Der ElevenLabs-Schlüssel kommt, wenn eingerichtet, als
   Umgebungsvariable `ELEVENLABS_API_KEY` aus den Einstellungen der Cloud-Umgebung.
+- Wird ein Kapiteltext vorgelegt (Entwurf, Überarbeitung, Freigabe), steht der ganze Text zum Kopieren als Codeblock
+  **am Schluss** der Antwort, nach den Erläuterungen; danach nur noch Link und Kostenzeile (Nutzer, 30.10.).
 - Jede Internetadresse als klickbarer Markdown-Link. Am Ende **jeder** Antwort, direkt über der Kostenzeile, **nur der
   Link der Seite, an der gerade gearbeitet wird** (fett); die übrigen Links nicht mehr aufzählen (Nutzer, 29.10.).
 - **Hörproben und Videos nie als Datei zum Herunterladen schicken**, sondern als Seite zum direkten Anhören bzw.
