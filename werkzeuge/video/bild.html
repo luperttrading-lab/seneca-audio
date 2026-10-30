@@ -12,7 +12,7 @@
     --stein: #161a19; --tinte: #e9edeb; --grau: #8f9a95; --bronze: #d29f62; --bronze-hell: #3a2c1c;
     --display: "Cinzel", Georgia, serif; --text: "Literata", Georgia, serif; --ui: "IBM Plex Sans", system-ui, sans-serif;
     --lh: 86px;
-    --band-farbe: var(--bronze-hell); --band-hoehe: 140px; --band-kern: 26%;   /* änderbar über D.stil (lade) */
+    --band-farbe: var(--bronze-hell); --band-hoehe: 140px; --band-kern: 26%; --band-unten: 0px;   /* änderbar über D.stil (lade) */
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: var(--stein); color: var(--tinte); }
@@ -27,7 +27,7 @@
   .fenster { position: absolute; left: 240px; right: 240px; top: 215px; bottom: 50px; overflow: hidden;
     -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,.12) 0%, #000 30%, #000 70%, rgba(0,0,0,.12) 100%);
     mask-image: linear-gradient(to bottom, rgba(0,0,0,.12) 0%, #000 30%, #000 70%, rgba(0,0,0,.12) 100%); }
-  .band { position: absolute; left: -24px; right: -24px; top: 50%; height: var(--band-hoehe); margin-top: calc(var(--band-hoehe) / -2); border-radius: 18px;
+  .band { position: absolute; left: -24px; right: -24px; top: 50%; height: calc(var(--band-hoehe) + var(--band-unten)); margin-top: calc(var(--band-hoehe) / -2); border-radius: 18px;
     background: linear-gradient(to bottom, transparent 0%, var(--band-farbe) var(--band-kern), var(--band-farbe) calc(100% - var(--band-kern)), transparent 100%); }
   .inhalt { position: relative; font: 400 54px/var(--lh) var(--text); will-change: transform; }
   .inhalt p { margin: 0; }
@@ -63,7 +63,7 @@
   </div>
 <script>
   // D: {w, t, p, stelle ("1,2" je Wort), text_ab (Text blendet ein), start_ende (nur Kapitel 1: Startseite bis hier), ende,
-  //     stil (wahlweise): {farbe, hoehe (px), kern (%), gleiten (s; 0 = fließend wie bisher),
+  //     stil (wahlweise): {farbe, hoehe (px), kern (%), unten (px: Band nur nach unten verlängert), gleiten (s; 0 = fließend),
   //     mischung (0–1: Anteil des gleichmäßigen Fließens beim Gleiten; der Text steht dann nie ganz still)}}
   var D, spans = [], kurve, LH, jetzt = -2, stelleJetzt = "";
   var marke = function (s) { var k = s.split(","); return k[0] + " (" + k[1] + ")"; };
@@ -109,6 +109,7 @@
     if (st.farbe) band.style.setProperty("--band-farbe", st.farbe);
     if (st.hoehe) band.style.setProperty("--band-hoehe", st.hoehe + "px");
     if (st.kern) band.style.setProperty("--band-kern", st.kern + "%");
+    if (st.unten) band.style.setProperty("--band-unten", st.unten + "px");
     var inhalt = document.getElementById("inhalt"), p = null, abs = -1;
     D.w.forEach(function (w, i) {
       if (D.p[i] !== abs) { abs = D.p[i]; p = document.createElement("p"); inhalt.appendChild(p); }

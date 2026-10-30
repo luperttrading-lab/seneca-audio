@@ -532,3 +532,6 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
   neben der Bandmitte / größte Abweichung / Spitzengeschwindigkeit in Zeilen je s: A fließend 31 % / 0,51 / 0,40;
   C gleiten 0,9 s 89 % / 0,54 / 1,67; C2 gleiten 1,6 s 81 % / 0,53 / 0,94; C3 gleiten 1,4 s mit 35 % Fließen 75 % / 0,52 / 0,80.
   Alle monoton. Farbe überall #5a4126.
+- **Leseband, Runde 3:** Auftraggeber wählt C3, „das dauernde Gleiten evtl. minimal mehr“, Band unten ein paar Pixel tiefer.
+  `stil.unten` neu (verlängert nur nach unten). C3 = Farbe #5a4126, 130 px + 8 px unten, Kern 23 %, gleiten 1,4 s, Mischung
+  0,35 (75 % mittig, 0,80 Zeilen/s); C3+ ebenso mit Mischung 0,45 (67 % mittig, 0,73 Zeilen/s).

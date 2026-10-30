@@ -20,8 +20,8 @@ Die öffentliche Seite zeigt noch Luperts alte „Teile 1 und 2“ mit altem Wor
 2. **Auftraggeber:** YouTube – einzelne Videos je Kapitel (Playlist) oder ein Gesamtvideo? Bis dahin Kapitel 1 am besten
    „Nicht gelistet“ hochladen und die Lesbarkeit am Handy prüfen.
 3. **Auftraggeber:** Credit-Grenze des Schlüssels anheben (reicht noch für etwa 12 bis 14 Kapitel).
-4. **Auftraggeber:** Leseband wählen (Seite „Lesebänder im Vergleich“); danach den Stil als Standard in `bild.html`
-   setzen und Kapitel 1 neu rendern (ohne Credits).
+4. **Auftraggeber:** C3 gewählt (30.10.); offen nur noch C3 oder C3+ (Mischung 0,35 oder 0,45). Danach den Stil als
+   Standard in `bild.html` setzen und Kapitel 1 neu rendern (ohne Credits).
 5. **Claude:** nach Abnahme von Kapitel 2 das Video bauen (Prüfliste Ton, Punkt 5) und die Full-HD-Datei schicken.
 5. Kapitel 4 übersetzen.
 6. Später: öffentliche Seite auf Kapitel mit Helmut umstellen (Freigabe); Weg der Gesamtdatei zu YouTube klären (etwa
@@ -72,8 +72,7 @@ Video ohne Credits neu. Jedes weitere Kapitel nach der Abnahme genauso sichern.
   https://claude.ai/artifact/Pa3cLB5TEbA2WvmnNQiVy9
 - Kapitel 1 · Prüfstellen (privat; Betonungsversuche zu 1 (3); Quelle `seite/pruefstellen.html`):
   https://claude.ai/artifact/9oVZgpKioSQuSDG4DCfBJE
-- **Lesebänder im Vergleich** (privat; Runde 2: vier Probevideos aus Kapitel 1, 4,4–34,4 s, alle kräftig: A fließend,
-  C ruhend 0,9 s, C2 ruhend 1,6 s, C3 gemischt; Quelle `seite/bandvergleich.html`, Videos nur im Artifact): https://claude.ai/artifact/4MbuGh3bSWx4GvcRBhhAcp
+- **Lesebänder im Vergleich** (privat; Runde 3: C3 mit Band unten +8 px und C3+ mit mehr Fließen, je 30 s aus Kapitel 1; Quelle `seite/bandvergleich.html`, Videos nur im Artifact): https://claude.ai/artifact/4MbuGh3bSWx4GvcRBhhAcp
 - **Kapitel 2 · Hörprobe** (privat; ganzes Kapitel, Paragrafen, von Whisper gemeldete Wörter; `quelle/` mit Rohaufnahme;
   Quelle `seite/hoerprobe_kapitel02.html`, gebaut mit `seite/hoerprobe.py`): https://claude.ai/artifact/P2UJeKRMty5sWxpKoMvZ2h
 - Kapitel 1 · Betonungsfilter (privat; Test des Filters, sechs markierte Stellen zum Anhören; Quelle
