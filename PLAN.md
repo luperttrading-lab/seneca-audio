@@ -79,6 +79,33 @@ Leitbegriffe beim ersten Auftreten eintragen und vorlegen.
 | *sanitas*, *sanus* | Gesundheit, gesund | angenommen 30.10. (6,1) |
 | *dementia* | Wahnsinn | angenommen 30.10. (6,1) |
 | *inquit* (gedachter Gegner) | „…“, wendet einer ein, „…“; weitere Einwürfe im selben Absatz „sagt er“ | angenommen 30.10. (6,1) |
+| *voluntas* | Wille | angenommen 30.10. (8,1) |
+| *iucundus* | angenehm | angenommen 30.10. (8,1) |
+| *turpis* | schändlich; als Gegenwort zu *honestus* „ehrlos“ (8,1 „die Ehrlosen … die Ehrenhaften“); *turpitudo* bleibt Schande | angenommen 30.10. (8,1) |
+| *secundum naturam* | nach der Natur (leben) | angenommen 30.10. (8,2) |
+| *servitus*, *servire* / *imperare* | Sklave, dienen / befehlen (Bild Herr–Sklave wie 4,4 „Sklavendienst“) | angenommen 30.10. (8,2) |
+| *constantia*, *inconstantia* | Beständigkeit, Unbeständigkeit | angenommen 30.10. (8,3; 8,6) |
+| *decreta* | Grundsätze | angenommen 30.10. (8,3) |
+| *scientia* | Wissen | angenommen 30.10. (8,3) |
+| *externa* | die äußeren Dinge | angenommen 30.10. (8,3–4) |
+| *sensus* | die Sinne | angenommen 30.10. (8,4) |
+| *concordia*, *concors* | Eintracht, einig (3,4 „innere Eintracht“, 8,6 „Eintracht des Geistes“) | angenommen 30.10. (8,5–6; 9,4) |
+| *consensus*, *consentire* | Übereinstimmung, übereinstimmen | angenommen 30.10. (8,5–6) |
+| *dissidere* | uneins sein | angenommen 30.10. (8,5–6) |
+| *haesitare*, *haesitatio* | schwanken, Schwanken | angenommen 30.10. (8,5–6) |
+| *vitium* | Laster | angenommen 30.10. (8,6) |
+| *delectare* | erfreuen (*placere* gefallen, *gaudium* Freude) | angenommen 30.10. (8,1; 9,2) |
+| *iudicium* | Urteil | angenommen 30.10. (9,3) |
+| *habitus* | Haltung | angenommen 30.10. (9,3) |
+| *petere* | erstreben | angenommen 30.10. (9,1; 9,4) |
+| *merces*, *pretium* | Lohn | angenommen 30.10. (9,2; 9,4) |
+| *accessio* | Zugabe | angenommen 30.10. (9,2) |
+| *labor*, *laborare*, *opus* | Arbeit, arbeiten | angenommen 30.10. (9,1–2) |
+| *providentia* | Voraussicht | angenommen 30.10. (9,4) |
+| *rigor* | Festigkeit | angenommen 30.10. (9,4) |
+| *decor* | Schönheit (*dignitas* wäre Würde) | angenommen 30.10. (9,4) |
+| *finis* | Ende; als stoisches „Ziel“ je nach Zusammenhang | angenommen 30.10. (9,3) |
+| *venter* | Bauch | angenommen 30.10. (9,4) |
 
 ## Vom Auftraggeber festgelegt (nicht mehr ändern)
 
