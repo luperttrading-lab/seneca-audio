@@ -1,6 +1,17 @@
 # Kapitel 6 – Notizen der Übersetzungssitzung
 
-Stand: Entwurf mit den empfohlenen Änderungen aus Prüf-Agent, zweiter Durchsicht und Fable-Prüfung (30.10.), Freigabe offen.
+Stand: **freigegeben (30.10.)**, Fassung in `texte/kapitel06.txt` (Commit fc92860).
+
+## Entscheidungen des Auftraggebers (30.10.)
+
+Der Auftraggeber hat die Fassung mit den Empfehlungen der Sitzung freigegeben („Mach das, was du für sinnvoll hältst“):
+- *inquit*: „wendet einer ein“ (wie vorläufig für alle Sitzungen festgelegt).
+- *luxuria*: „Luxus“; als Leitbegriff in die Begriffsliste (kommt wieder in 11, 12, 13, 17).
+- *arbiter*: „als Kenner … urteilen“ (nicht „Richter“: „Richter über“ klingt nach Verurteilen).
+- *immineat*: „nach den künftigen greifen“; *omnem habitum … commendat*: „seine ganze Lage lieb macht“;
+  *sanitas*: „Gesundheit“ ohne Zusatz; *mala pro bonis*: „Übel statt Gütern“; *oblectare*: „ergötzen“.
+
+Für die Begriffsliste (Hauptsitzung): *luxuria* Luxus; *sanitas*, *sanus* Gesundheit, gesund; *dementia* Wahnsinn.
 
 ## Abgleich
 
