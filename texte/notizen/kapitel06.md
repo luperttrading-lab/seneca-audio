@@ -22,9 +22,19 @@ Stand: Entwurf (30.10.), Freigabe offen.
 
 1. *inquit*: vorläufig „wendet einer ein“ (einheitlich für alle Sitzungen); entscheidet der Auftraggeber. Nur ein Einwurf in
    Kapitel 6.
-2. *sedeatque … arbiter*: „zu Gericht sitzen“ oder „als Kenner urteilen“?
-3. *omnem habitum rerum suarum ratio commendat*: Wortwahl für *commendat*.
-4. „Meinetwegen“ für *sane*: Satzanfang „Soll er …“ hörte LanguageTool als Frage.
+2. *sine sanitate … sanus*: „Gesundheit“ allein (Entwurf) oder „geistige Gesundheit … geistig gesund“ (Prüf-Agent: nach dem
+   gemästeten Körper hört man sonst körperliche Gesundheit; „geistig“ steht nicht im Latein, ist aber durch *dementia*
+   mitgemeint).
+3. *commendat*: „annehmbar macht“ (Entwurf) oder „lieb und wert macht“.
+4. *immineat*: „lauern“ (Entwurf) oder „gieren“.
+
+## Prüf-Agent (30.10.), übernommen
+
+- *sedeat … arbiter*: „sich zum Richter … setzen“ statt „zu Gericht sitzen“ (hieße „verurteilen“).
+- *in praesenti sagina*: „jetzt gemästet“ (*in praesenti* fehlte; Gegensatz zu *ad futura* und *praesentibus* in 6,2).
+- *memor exultet*: „sich an verblühte Lüste erinnern, über die früheren jubeln“ (Hörfalle „Lüste über die früheren“).
+- *amicusque rebus suis*: „und wer seiner Lage ein Freund ist“ (Satzende ohne Verb klang abgebrochen).
+- „Meinetwegen“ für *sane*: Satzanfang „Soll er …“ hörte LanguageTool als Frage.
 
 ## Wörter für woerter_ok.txt
 
