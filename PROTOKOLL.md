@@ -592,3 +592,7 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
   Zeile in die Bildmitte statt in die Mitte des Textfensters (bisher 622 px = 58 % der Bildhöhe, knapp eine Zeile tiefer).
   `stil.mitte` (px von oben) neu; Band und weicher Rand werden mitverschoben (oben 1,9 Zeilen, unten 2,5 Zeilen voll sichtbar).
   Bei 540 px: 3 Zeilen Gesagtes darüber, 5 Zeilen Kommendes darunter. Proben 1M und 4M zu je 45 s.
+- **Kapitel 3 als Video mit 1M** (Auftraggeber: „Bau bitte Kapitel drei … mit dem Gold … in der Mitte. Also 1M“; 4M noch
+  nicht verworfen). 1M Standard in `bild.html` (`mitte: 540`). Endkontrolle: 1080p25, AAC-LC Stereo 48 kHz, −18,1 LUFS, Dauer
+  gleich `ende` (±0,03 s), Stichbilder Start, Ergänzung in Bronze, Mitte, Ende in Ordnung. Kapitel 1 und 2 haben noch C3 ohne
+  Bildmitte.
