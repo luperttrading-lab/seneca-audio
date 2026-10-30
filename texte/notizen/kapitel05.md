@@ -41,3 +41,14 @@ Textprüfung 0 Hinweise, geprüft vom unabhängigen Prüf-Agenten. Freigabe offe
 ## Wörter für woerter_ok.txt
 
 keine
+
+## Einwände von Gemini (30.10.)
+
+- 5,1 „Da ich gerade so großzügig verfahre“ / „diesen Spielraum genommen“: nicht übernommen; *coepi* (Rückbezug auf
+  Kapitel 4) ginge verloren, „Spielraum“ ist ein fremdes Bild. Frage 1 bleibt offen.
+- 5,2 „stumpfen Sinn und Selbstunkenntnis … herabgesunken“: bezog sich auf die alte Fassung; *natura* ist nicht „Sinn“,
+  „Selbstunkenntnis“ schwer hörbar, „auf die Stufe“ doppelt mit „Auf dieselbe Stufe“. Nicht übernommen.
+- 5,3 „Schicksalsschläge … Sticheleien“: Schicksal steht nicht da (kommt erst im Folgesatz als *fortuna*); der Hinweis,
+  „Zwicken“ klinge banal, führt zur Variante „Wunden … Nadelstiche“ (Frage 3).
+- 5,4 „sein Dasein ganz dem Körper überlassen“ / „dem Fleisch hingeben“: „ganz“, „Dasein“ sind Zusatz, „Fleisch“ klingt
+  christlich (Paulus). Nicht übernommen.
