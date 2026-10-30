@@ -588,3 +588,7 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
   Kapitel 1 (4,4–49,4 s): mit Band (C3), ohne Band, ohne Band mit Fokus 0,4.
   Auftraggeber: ohne Band braucht es das Ruhen und Gleiten nicht mehr (das war nur wegen des Bands nötig); dazu 4 = ohne Band
   gleichmäßig fließend (`gleiten: 0`) und 5 = ohne Band, Fokus 0,4, fließend.
+- **Leseband, Runde 5:** Auftraggeber findet 4 (ohne Band, fließend) am besten, 1 (mit Band) gut lesbar; Idee: gesprochene
+  Zeile in die Bildmitte statt in die Mitte des Textfensters (bisher 622 px = 58 % der Bildhöhe, knapp eine Zeile tiefer).
+  `stil.mitte` (px von oben) neu; Band und weicher Rand werden mitverschoben (oben 1,9 Zeilen, unten 2,5 Zeilen voll sichtbar).
+  Bei 540 px: 3 Zeilen Gesagtes darüber, 5 Zeilen Kommendes darunter. Proben 1M und 4M zu je 45 s.

@@ -66,7 +66,8 @@
   // D: {w, t, p, stelle ("1,2" je Wort), text_ab (Text blendet ein), start_ende (nur Kapitel 1: Startseite bis hier), ende,
   //     stil (wahlweise, Standard ist C3): {farbe, hoehe (px), kern (%), unten (px: Band nur nach unten verlängert),
   //     gleiten (s; 0 = gleichmäßig fließen), mischung (0–1: Anteil gleichmäßigen Fließens; der Text steht nie ganz still),
-  //     band (false = kein Band), fokus (0–1: Helligkeit der übrigen Zeilen; nur die gesprochene Zeile ganz hell)}}
+  //     band (false = kein Band), fokus (0–1: Helligkeit der übrigen Zeilen; nur die gesprochene Zeile ganz hell),
+  //     mitte (px von oben: dort steht die gesprochene Zeile, etwa 540 = Bildmitte; sonst Mitte des Textfensters)}}
   var D, spans = [], kurve, LH, jetzt = -2, stelleJetzt = "", teile = [], zeileVon = [], anfangZ = [], fokus = 0;
   var marke = function (s) { var k = s.split(","); return k[0] + " (" + k[1] + ")"; };
   function pchip(x, v) {   // monotone kubische Interpolation wie auf der Hörbuch-Seite
@@ -132,7 +133,13 @@
     // Band zwischen alter und neuer Zeile, (k − ½)·Zeilenhöhe; die monotone Interpolation hält die gesprochene Zeile so immer
     // höchstens eine halbe Zeile neben der Bandmitte (die Mitte der Sprechzeit als Stützstelle wich bis 0,65 Zeilen ab).
     var fenster = document.getElementById("fenster"); LH = parseFloat(getComputedStyle(inhalt).lineHeight);
-    var rand = (fenster.clientHeight - LH) / 2; inhalt.style.paddingTop = rand + "px"; inhalt.style.paddingBottom = rand + "px";
+    var oben = st.mitte ? st.mitte - fenster.getBoundingClientRect().top : fenster.clientHeight / 2;   // Lage der gesprochenen Zeile im Fenster
+    inhalt.style.paddingTop = (oben - LH / 2) + "px"; inhalt.style.paddingBottom = (fenster.clientHeight - oben - LH / 2) + "px";
+    if (st.mitte) {   // Band und weicher Rand oben/unten auf die neue Lage ausrichten: oben knapp 2 Zeilen ganz sichtbar, unten 2,5
+      band.style.top = oben + "px";
+      var m = "linear-gradient(to bottom, rgba(0,0,0,.12) 0px, #000 " + Math.max(0, oben - 1.9 * LH) + "px, #000 " + (oben + 2.5 * LH) + "px, rgba(0,0,0,.12) 100%)";
+      fenster.style.webkitMaskImage = m; fenster.style.maskImage = m;
+    }
     var basis = spans[0].offsetTop; zeileVon = spans.map(function (s) { return Math.round((s.offsetTop - basis) / LH); });
     teile = [].slice.call(inhalt.querySelectorAll(".w, .marke")).map(function (e) { return [e, Math.round((e.offsetTop - basis) / LH)]; });
     var zeilen = zeileVon[zeileVon.length - 1] + 1, anfang = [], xs = [], vs = [], k, n = D.t.length;
