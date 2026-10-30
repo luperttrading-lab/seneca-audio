@@ -12,7 +12,8 @@ Diese Datei enthält die gültigen Regeln (Stand 30.10.). Wie sie entstanden sin
 
 Festgelegt an Kapitel 1 nach den Rückmeldungen des Auftraggebers:
 
-- Nah am Latein: Senecas Bilder, Gedankengang und Satzbau bleiben erkennbar, man soll merken, dass es ein antiker Text ist.
+- Nah am Latein in **Bildern, Gedankengang und Begriffen**, man soll merken, dass es ein antiker Text ist. Der **Satzbau**
+  folgt dagegen dem Deutschen und dem Ohr (Auftraggeber, 30.10., nach fünf Kapiteln; siehe „Für das Ohr“ unten).
 - Zugleich heutiges, flüssiges Deutsch zum Zuhören: nicht gestelzt, nicht flapsig, keine modernen Redensarten
   („tappen im Nebel“ geht nicht; „ist ihr Blick getrübt“ trifft es).
 - Römische Begriffe bleiben (Prätor, Wahlen statt „Komitien“); Senecas Ansprache an den Leser als „du“.
@@ -38,6 +39,15 @@ Gelernt aus den Korrekturen an Kapitel 1 (29.10.):
   sich auch durch genaueres Übersetzen nicht klären lässt. Wenige Wörter, die nur aussprechen, was im Latein mitgemeint ist;
   immer in eckigen Klammern („[ohne es zu erkennen]“, 3,1). Gesprochen ohne Klammern, im Video mit Klammern in Bronze;
   in der YouTube-Beschreibung erklärt. Nur mit Freigabe, Begründung im Protokoll.
+- **Für das Ohr** (Auftraggeber, 30.10., nach fünf Kapiteln: zu nah am lateinischen Satzbau und zu verschachtelt, er
+  musste immer wieder nach dem Sinn fragen). Jeder Satz muss nach **einmaligem Hören** verständlich sein:
+  - Lange Perioden in mehrere Sätze teilen, Partizipien und Relativketten auflösen.
+  - Steht das Bezugswort weit weg, das Nomen statt eines Pronomens (4,3 „Sie nimmt …“ → „Diese Dinge nehmen …“).
+  - Keine Ketten kleiner Wörter (4,5 „nicht als an Gütern, sondern als an dem, was“).
+  - Das erste Satzglied wird als Subjekt gehört: 4,5 „Diese Freiheit verschafft uns nichts anderes als Gleichgültigkeit“
+    kippte; „Zu dieser Freiheit verhilft uns …“.
+  - Hörfallen meiden: „nicht mehr wiegen“ (gehört „nicht länger“), „an dem Seinen“ (gehört „den Seinen“), hinweisendes
+    „der“ ohne Nomen („Sklavendienst der leisten“).
 - **Einwände immer besprechen**, auch fremde (etwa von einer anderen KI) und auch wenn sie zu keiner Änderung führen:
   je Punkt das Urteil mit Grund aus dem Latein; lateinische Zitate solcher Vorlagen gegen `texte/latein/` prüfen
   (bei Kapitel 2 und 3 waren sie teils erfunden). Geändert wird nur, was der Auftraggeber freigibt.
@@ -130,6 +140,10 @@ Leitbegriffe beim ersten Auftreten eintragen und vorlegen.
    `texte/woerter_ok.txt` (heißt: richtig und gewollt). Nötig, weil die Worttreue-Prüfung einen Tippfehler im Text nicht
    findet: Er wird mitgesprochen und gilt dann als wortgetreu. Den ganzen Text vorlegen; Freigabe durch den Auftraggeber;
    vor der Aufnahme die Textprüfung noch einmal laufen lassen.
+   **Hörprüfung** (zur Erprobung seit 30.10.): ein Prüf-Agent (Fable 5.1, extra hoch) liest nur den deutschen Text wie ein
+   Hörer, der jeden Satz einmal hört, und markiert, was man nicht sofort versteht (schwer, mittel, leicht). Test an
+   Kapitel 4: von zwei Funden des Auftraggebers einen gefunden, dazu einen Satz, dessen Sinn beim Hören kippte; ergänzt
+   das Ohr des Auftraggebers, ersetzt es nicht.
    Mehrere Kapitel parallel (seit 30.10.): je Kapitel eine eigene Sitzung, die nur den Kapiteltext und
    `texte/notizen/kapitelNN.md` ändert (Zweig `kapitelNN-entwurf`) und vor dem Vorlegen einen unabhängigen Prüf-Agenten
    einsetzt (Fable 5.1, Stufe extra hoch; Übersetzen selbst mit Opus 5.5 extra hoch; Auftraggeber, 30.10.); die Hauptsitzung überträgt bei der Übernahme Begriffe und Wörter in `PLAN.md` und `texte/woerter_ok.txt`
