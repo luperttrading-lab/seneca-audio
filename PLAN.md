@@ -110,7 +110,8 @@ Leitbegriffe beim ersten Auftreten eintragen und vorlegen.
 5. **Sichern**, sofort nach der Abnahme (Prüfliste, Punkt 6).
 6. **Video:** `python3 werkzeuge/video/baue.py <daten.json> <ton.wav> <aus.mp4>` (oder `kapitel.py` ohne `--ohne-video`),
    Leseband 1M ist Standard in `bild.html` (Auftraggeber, 30.10.: kräftiges Band, unten 8 px tiefer, Text ruht und gleitet
-   beim Zeilenwechsel, ein Drittel gleichmäßiges Fließen, gesprochene Zeile in der Bildmitte; 4M ohne Band noch im Rennen); Vorschauseite mit `python3 seite/vorschau.py`;
+   beim Zeilenwechsel, ein Drittel gleichmäßiges Fließen, gesprochene Zeile in der Bildmitte, Band 100 px über den Text hinaus
+   und weich auslaufend, „B“; 4M ohne Band noch im Rennen); Vorschauseite mit `python3 seite/vorschau.py`;
    Endkontrolle (Prüfliste, Punkt 5); Vorschau in 720p ins Artifact (höchstens 15 MB je Datei); die Full-HD-Datei für
    YouTube als Datei schicken; Miniaturbild mit `node werkzeuge/video/miniatur.js N <aus.png>`.
 7. `UEBERGABE.md` (Stand, Credits) und `PROTOKOLL.md` (Versuche, Befunde) nachtragen, committen, pushen.

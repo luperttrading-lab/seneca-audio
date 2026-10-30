@@ -17,7 +17,7 @@ Die öffentliche Seite zeigt noch Luperts alte „Teile 1 und 2“ mit altem Wor
 
 ## Nächste Schritte
 
-1. **Auftraggeber:** Probe mit Bandenden B abnehmen (Standard seit 30.10.); Leseband endgültig wählen: 1M (Standard seit Kapitel 3) oder 4M (ohne Band, fließend); danach
+1. **Auftraggeber:** Bandenden B abgenommen (30.10., Standard); Leseband endgültig wählen: 1M (Standard seit Kapitel 3) oder 4M (ohne Band, fließend); danach
    Kapitel 1 bis 3 mit demselben Band neu rendern (ohne Credits), damit alle Kapitel gleich aussehen.
    **Auftraggeber:** Entwurf Kapitel 4 gegenlesen, Begriffe aus Kapitel 4 freigeben (vor allem *honestum* = das Ehrenhafte).
 2. **Auftraggeber:** YouTube – einzelne Videos je Kapitel (Playlist) oder ein Gesamtvideo? Bis dahin Kapitel 1 am besten
