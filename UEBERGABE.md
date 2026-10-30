@@ -82,8 +82,7 @@ Video ohne Credits neu. Jedes weitere Kapitel nach der Abnahme genauso sichern.
   Testseiten brauchen `<meta charset="utf-8">`, sonst kaputte Umlaute; `anlmdn` verzögert um 8 ms (in `kette.py`
   ausgeglichen), `afftdn` um 25 ms; Playwright-Chromium spielt kein AAC; `pkill -f <muster>` trifft den eigenen Befehl
   mit (Abbruch 144), Testserver stattdessen auf neuem Port starten.
-- `seite/karaoke_daten.py` und `seite/bau.py` enthalten noch Pfade aus der alten Arbeitssitzung; `README.md` beschreibt
-  noch den alten Stand (Teile, Lupert).
+- `seite/karaoke_daten.py` und `seite/bau.py` enthalten noch Pfade aus der alten Arbeitssitzung.
 
 ## Nicht im Repo (privat)
 

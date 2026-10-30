@@ -1,29 +1,39 @@
-# Seneca, Vom glücklichen Leben – Hörfassungen
+# Seneca, Vom glücklichen Leben – neue Übersetzung als Hörbuch
 
-Hörseite zu Seneca, *De vita beata* 1,1–1,2 in einer Neufassung der Übersetzung: mehrere Sprechfassungen,
-Tempo-Drehrad (0,50–1,50), Lesemodus mit fließend durchlaufendem Text und Natürlichkeitsmessung gegen sieben
-LibriVox-Vorleser.
+Eigene Übersetzung von Senecas *De vita beata* aus dem Lateinischen, vertont als Hörbuch und als YouTube-Video mit
+mitlaufendem Text. Eingeteilt wird nur nach Senecas 28 Kapiteln und ihren Paragrafen; im Video stehen die Stellen als
+„1 (2)“ im Text und in der Kopfzeile. Sprecher ist die KI-Stimme Helmut Stieglbauer (ElevenLabs, eleven v4).
+
+Stand: Kapitel 1 ist übersetzt, vertont und als Video fertig; Kapitel 2 und 3 sind übersetzt, aber noch nicht
+freigegeben. Die öffentliche Seite https://luperttrading-lab.github.io/seneca-audio/ zeigt noch die erste Fassung von
+Kapitel 1 in zwei Teilen mit einer anderen Stimme und älterem Wortlaut.
 
 ## Inhalt
 
 | Ordner | Was |
 |---|---|
-| `seite/` | `vorlage.html` (Layout, Drehrad, Lesemodus), `bau.py` erzeugt daraus `index.html`; `karaoke_daten.py` legt Whisper-Wortzeiten auf den Text (`karaoke.json`); Playwright-Tests und ein Testserver mit Range-Unterstützung |
-| `werkzeuge/` | `pausen2.py` verlängert Pausen an Satzzeichen mit nachgebildetem Raumton (ohne Schleife, kein Knattern); `prosodie.py` misst Tempo, Pausen, Melodie; `pruef.py` prüft Worttreue mit Whisper; `knatter_pruef.py` misst eingefügte Pausen |
-| `messung/` | `merkmale.json` (Prosodie aller Fassungen und Referenzen), Wortzeiten, Einfügestellen der Pausen |
-| `audio/` | Fassungen auf −18 LUFS: ElevenLabs Christian, Gemini-Montage, und die Hörbuch-Teile in Luperts Stimme (`teilNN.m4a`, auf Wunsch veröffentlicht). Weitere Lupert-Dateien nur nach Absprache, das Repo ist öffentlich |
+| `texte/` | Übersetzung je Kapitel (`kapitelNN.txt`, mit Stellenmarken „[1,2]“, die nicht gesprochen werden), Latein in `latein/kapitelNN.txt` ([The Latin Library](https://www.thelatinlibrary.com/sen/sen.vita.shtml)) |
+| `werkzeuge/` | `kapitel.py` macht aus einem Kapiteltext Ton und Video: Stimme, Prüfung der Worttreue mit Whisper, Rauschunterdrückung, Wortzeiten, Pausen, Tempo, Lautheit (Bausteine in `kette.py`); `paragraf.py` spricht einzelne Paragrafen neu; `stellen.py` behandelt die Stellenmarken; `pausen2.py` verlängert Pausen an Satzzeichen mit nachgebildetem Raumton; `prosodie.py` und `fingerabdruck.py` messen Satzmelodie und Stimme |
+| `werkzeuge/video/` | `bild.html` (ein Videobild: Startseite, fließender Text mit Band in der Mitte, Wortfärbung, Kopfzeile), `render.js` und `baue.py` rendern Bild für Bild und setzen das Video zusammen (1920 × 1080, 25 Bilder/s); `miniatur.html`/`.js` für das YouTube-Miniaturbild |
+| `seite/` | die öffentliche Hörbuch-Seite (`hoerbuch_vorlage.html`, `bau_hoerbuch.py`), Vorlagen für Prüf- und Vergleichsseiten, Playwright-Tests, Testserver mit Bereichsanfragen |
+| `audio/` | veröffentlichte Tonfassungen der ersten Arbeitsphase |
+| `messung/` | Messwerte aus Stimmenwahl und Versuchen (Prosodie, Wortzeiten, Pausenstellen, Stimmvergleiche) |
 
-## Startseite: das Hörbuch
+## Regeln und Stand
 
-`index.html` ist die öffentliche Seite unter https://luperttrading-lab.github.io/seneca-audio/: alle fertigen Teile mit
-Liste, großem Play-Knopf, Lesemodus mit durchlaufendem Text und nahtlosem Weiterspielen; Tempo 0,95, immer dunkel.
-Erzeugt mit `python3 seite/bau_hoerbuch.py seite/karaoke.json .` aus `seite/hoerbuch_vorlage.html`; neue Teile werden
-in der Liste `TEILE` in `seite/bau_hoerbuch.py` eingetragen. Ton je Teil in `audio/teilNN.m4a` (AAC 64 kbit/s, −18 LUFS).
-Seit 29.10. gilt nur noch Senecas Einteilung in 28 Kapitel (`GLIEDERUNG.md`); Texte in `texte/kapitelNN.txt`, Latein in
-`texte/latein/kapitelNN.txt`. Die öffentliche Seite zeigt bis zur Neuvertonung von Kapitel 1 noch die alten Teile 1 und 2.
+- `PLAN.md`: Stil der Übersetzung, Begriffsliste, Ablauf je Kapitel, Prüfliste für den Ton, Kapiteltabelle.
+- `UEBERGABE.md`: aktueller Stand und nächste Schritte.
+- `PROTOKOLL.md`: Verlauf mit Versuchen und Messungen.
+- `GLIEDERUNG.md`: die 28 Kapitel mit Paragrafen und geschätzter Hördauer (gesamt etwa 81 Minuten).
 
-## Bauen
+## Ein Kapitel bauen
 
-`bau.py` und `karaoke_daten.py` enthalten noch absolute Pfade aus der Arbeitssitzung (Arbeitsordner und das Repo
-`fragen-allgemein` mit Text und Takes); vor dem nächsten Bauen auf Pfade in diesem Repo umstellen.
-Der Text der Neufassung liegt in `fragen-allgemein/audio/seneca_neufassung_v2/text.txt`.
+```
+python3 werkzeuge/kapitel.py 1 <ordner>            # Ton und Video; braucht ELEVENLABS_API_KEY
+python3 werkzeuge/kapitel.py 1 <ordner> --ohne-video
+python3 werkzeuge/video/baue.py <daten.json> <ton.wav> <video.mp4>
+```
+
+Voraussetzungen: ffmpeg, Python mit `numpy`, `faster-whisper` und `praat-parselmouth`, Node mit Playwright. Die
+Rohaufnahme wird im Ausgabeordner zwischengespeichert; liegt sie dort schon, kostet ein neuer Lauf keine Credits.
+`seite/karaoke_daten.py` und `seite/bau.py` enthalten noch Pfade aus der ersten Arbeitsphase.
