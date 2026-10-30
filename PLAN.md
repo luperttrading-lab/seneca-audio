@@ -90,8 +90,9 @@ Leitbegriffe beim ersten Auftreten eintragen und vorlegen.
    „Of a Happy Life“), und Albert Forbiger, deutsch 1867 (nur als
    [LibriVox-Lesung](https://archive.org/details/vom_glueckseligen_leben_rr_librivox), per Whisper abgeschrieben;
    zeno.org sperrt automatische Abrufe). Stellenmarken setzen. **Textprüfung:** `python3 werkzeuge/textpruef.py N`
-   (unbekannte und fremdsprachige Wörter, doppelte Wörter, Vorleseregeln, LanguageTool); jeden Hinweis klären, richtige
-   seltene Wörter in `texte/woerter_ok.txt` eintragen. Nötig, weil die Worttreue-Prüfung einen Tippfehler im Text nicht
+   (unbekannte, fremdsprachige und seltene Wörter, doppelte Wörter, Vorleseregeln, LanguageTool); jeden Hinweis klären.
+   Seltene Wörter nur behalten, wenn es kein gebräuchliches gleich genaues gibt, und dann mit dem Auftraggeber; erst dann in
+   `texte/woerter_ok.txt` (heißt: richtig und gewollt). Nötig, weil die Worttreue-Prüfung einen Tippfehler im Text nicht
    findet: Er wird mitgesprochen und gilt dann als wortgetreu. Den ganzen Text vorlegen; Freigabe durch den Auftraggeber;
    vor der Aufnahme die Textprüfung noch einmal laufen lassen.
 2. **Ton erzeugen:** `python3 werkzeuge/kapitel.py N <ordner> --ohne-video`. Das ganze Kapitel geht als **eine** Anfrage an
