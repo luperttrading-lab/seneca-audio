@@ -1,7 +1,7 @@
 # Kapitel 9 – Notizen zur Übersetzung
 
 **Freigegeben (30.10.2026)** vom Auftraggeber: „Mach das, was du für sinnvoll hältst und jetzt oft geprüft hast“ – also mit
-allen Vorschlägen und Empfehlungen aus der letzten Vorlage. Offen bleibt nur die kapitelübergreifende Einwurfsformel (unten).
+allen Vorschlägen und Empfehlungen aus der letzten Vorlage. Die Einwurfsformel ist mit Kapitel 6 angenommen (unten).
 
 Abgeglichen mit Stewart (1900) und Forbiger (1867, LibriVox, per Whisper abgeschrieben, Datei 1, ab 44:16).
 Textprüfung: nur „Pflänzchen“ und „Sämann“ unbekannt (beide richtig).
@@ -54,9 +54,11 @@ Textprüfung: nur „Pflänzchen“ und „Sämann“ unbekannt (beide richtig).
 | *finis* | Ende | 9,3 | hier; als stoisches „Ziel“ später je nach Zusammenhang |
 | *uenter* | Bauch | 9,4 | |
 
-## Offen (kapitelübergreifend, entscheidet der Auftraggeber)
+## Abgleich mit Kapitel 6 (Meldung der Hauptsitzung, 30.10.)
 
-- Einwurfsformel für *inquit*: vorläufig „…“, wendet einer ein, „…“ (9,1).
+- *inquit*: „…“, wendet einer ein, „…“ – mit Kapitel 6 angenommen, in 9,1 so gesetzt.
+- *sanitas* = Gesundheit – mit Kapitel 6 angenommen, in 9,4 so gesetzt.
+- *luxuria*, *dementia* kommen in Kapitel 9 nicht vor.
 
 ## Für woerter_ok.txt
 
