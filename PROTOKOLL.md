@@ -568,3 +568,13 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
   *deerrare* als „abzuweichen“. `satz.py --ohne-kette` neu: mehrere Sätze nacheinander einsetzen, Wortzeiten werden verschoben.
   Je zwei Fassungen (84 + 80 Credits), alle wortgetreu und unauffällig; eingesetzt Fassung 1 (Stimme 0,923) und Fassung 2
   (0,919). Kapitel neu: 358/358, 33 Pausen, 2:49.
+- **Test unabhängiger Lektor-Agent** (frischer Agent, nur Latein, Entwurf, Regeln, Stewart; die Lösungen aus Kapitel 3 vorher
+  aus den Regeln entfernt). Am **ursprünglichen Entwurf von Kapitel 3** gegen die 9 heute bekannten Schwächen: gefunden
+  „also“, „zugleich“, „eine Größe“, „gerade an“ (4), halb „zum Schein“ (anderer Grund); nicht gefunden das Komma vor
+  „würde“; ausdrücklich für gut befunden „am Nächstliegenden“, „abzuirren“, „Ich stimme der Natur zu“ – genau die drei,
+  die der Auftraggeber beim Lesen fand. Trefferquote etwa 4,5 von 9. Neu und brauchbar: *conuenit/conueniens*
+  (Wortspiel, „übereinstimmen“), Hörfalle „„unsere“ sage“ (wie „unsere Sage“), *aequale* fehlt bei „fest und gediegen“,
+  „dauernde Ruhe“ → „dauerhafte“, fehlende Leitbegriffe (Freiheit, dienen, Milde). Am **Entwurf von Kapitel 4**: 3 wichtige
+  Funde (4,5 Subjekt und Objekt kippen beim Hören; *turpitudo* besser „das Schändliche“; „begnügt sich mit der Tugend“
+  klingt nach Notlösung), 14 kleine, 9 Geschmack; lateinische Zitate stichprobenweise geprüft, alle wörtlich vorhanden.
+  Dauer je Agent etwa 10 Minuten.
