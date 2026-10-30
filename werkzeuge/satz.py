@@ -31,7 +31,8 @@ saetze = teile(text)
 treffer = [s for s in saetze if norm(s)[:len(norm(anfang))] == norm(anfang)]
 if len(treffer) != 1: sys.exit(f"Satzanfang passt auf {len(treffer)} Sätze: {[t[:50] for t in treffer]}")
 satz = treffer[0].strip("„“»«\"")
-name = f"k{kap:02d}_" + "_".join(norm(satz)[:3])
+import hashlib   # Wortlaut im Namen, damit eine neue Fassung desselben Satzes nicht alte Aufnahmen wiederverwendet
+name = f"k{kap:02d}_" + "_".join(norm(satz)[:3]) + "_" + hashlib.md5(satz.encode()).hexdigest()[:5]
 datei = lambda n, e: os.path.join(ordner, f"{name}_a{n}{e}")
 open(os.path.join(ordner, name + ".text.txt"), "w", encoding="utf-8").write(satz + "\n")
 

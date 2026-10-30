@@ -578,3 +578,8 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
   Funde (4,5 Subjekt und Objekt kippen beim Hören; *turpitudo* besser „das Schändliche“; „begnügt sich mit der Tugend“
   klingt nach Notlösung), 14 kleine, 9 Geschmack; lateinische Zitate stichprobenweise geprüft, alle wörtlich vorhanden.
   Dauer je Agent etwa 10 Minuten.
+- **3,3 „übereinstimmen“** (Auftraggeber übernimmt den Fund des Lektor-Agenten): „worin alle Stoiker übereinstimmen“, „das mit
+  seiner eigenen Natur übereinstimmt“. `satz.py` hängt jetzt den Wortlaut als Prüfsumme an den Namen, damit eine neue
+  Fassung eines schon nachgesprochenen Satzes nicht die alten Aufnahmen wiederverwendet; die Hörprobe zeigt nur Sätze mit
+  aktuellem Wortlaut. Je zwei Fassungen (88 + 62 Credits), alle wortgetreu und unauffällig; Stimme 0,925 / 0,925 und
+  0,873 / 0,881 (kurzer Satz, 4,6 s: Fingerabdruck streut mehr). Eingesetzt Fassung 1 und 2; 358/358, 34 Pausen, 2:51.

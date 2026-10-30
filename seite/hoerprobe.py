@@ -80,6 +80,7 @@ if anders:
 import glob
 for j in sorted(glob.glob(os.path.join(ordner, "satz", f"k{kap:02d}_*.json"))):
     if re.search(r"_a\d+\.", os.path.basename(j)): continue   # Wortzeiten einzelner Fassungen
+    if json.load(open(j, encoding="utf-8"))["satz"] not in stellen.rein(open(f"{R}/texte/kapitel{kap:02d}.txt", encoding="utf-8").read()): continue   # überholter Wortlaut
     d = json.load(open(j, encoding="utf-8")); n_ein = d.get("eingesetzt")
     teile.append(f'  <h2 class="abschnitt">Neu gesprochen · „{esc(" ".join(d["satz"].split()[:4]))} …“</h2>')
     for f in d["fassungen"]:
