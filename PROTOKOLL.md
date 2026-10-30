@@ -586,3 +586,5 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
 - **Leseband, Runde 4** (Idee des Auftraggebers: Band ganz weglassen): `stil.band = false` und `stil.fokus` (Helligkeit der
   übrigen Zeilen, gesprochene Zeile ganz hell, Wechsel in 0,35 s aus t berechnet) in `bild.html`. Drei Proben zu 45 s aus
   Kapitel 1 (4,4–49,4 s): mit Band (C3), ohne Band, ohne Band mit Fokus 0,4.
+  Auftraggeber: ohne Band braucht es das Ruhen und Gleiten nicht mehr (das war nur wegen des Bands nötig); dazu 4 = ohne Band
+  gleichmäßig fließend (`gleiten: 0`) und 5 = ohne Band, Fokus 0,4, fließend.
