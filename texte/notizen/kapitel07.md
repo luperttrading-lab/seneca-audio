@@ -8,10 +8,13 @@ Unabhängiger Lektor-Agent: 14 Funde; übernommen 2, 3, 4, 5, 6, 8, 10, 11 (teil
 ## Offene Fragen an den Auftraggeber
 
 1. 7,1 *in iliis*: unsere Vorlage hat *in iliis* („im Unterleib“, so Stewart „in the belly“); Forbiger liest *in illis*
-   („in jene sinnlichen Genüsse“). Entwurf folgt der Vorlage: „in den Unterleib verlegt“.
+   („in jene sinnlichen Genüsse“), ebenso eine französische Übersetzung (pierre-lamble2.eu: „Le souverain bien c'est la
+   volupté“). Wikisource hat denselben Text wie unsere Vorlage. Entwurf folgt der Vorlage: „in den Unterleib verlegt“.
 2. 7,4 Crux *nec quicquam ~mutauit~ optima*: geglättet wie Forbiger („und weil er der beste ist, hat er nie etwas an sich
    geändert“). Lektor-Agent schlägt eine Ergänzung *quia semper secuta est optima* vor („weil er stets dem Besten gefolgt
-   ist“) – Lesart nicht geprüft (keine Ausgabe greifbar).
+   ist“). Die lateinische Ergänzung ist nicht geprüft (keine kritische Ausgabe greifbar; Loeb-Band II bei archive.org
+   gesperrt), aber die französische Übersetzung (pierre-lamble2.eu) deutet genauso: nichts geändert, weil stets dem Besten
+   gefolgt. Stewart: „nor do the best things ever undergo any change“.
 3. 7,3 *aedilem*: „den Ädil“ (römischer Begriff) oder umschreiben („die Aufsicht“)?
 4. 7,3 *popinae*: „Spelunken“ (Zipf 1,9) oder „Garküchen“ (1,9, Forbiger) oder „Kneipen“ (3,5)?
 5. 7,3 *sudatoria*: „Schwitzbäder“ (Zipf 1,0) oder „Saunen“ (2,5, wirkt modern)?
@@ -39,3 +42,11 @@ Unabhängiger Lektor-Agent: 14 Funde; übernommen 2, 3, 4, 5, 6, 8, 10, 11 (teil
 ## Für woerter_ok.txt (nach Entscheidung)
 
 Spelunken, Ädil, Schwitzbäder
+
+## Zweite Durchsicht (30.10.)
+
+- 7,1 Hörfalle: „Und wir sähen nicht anderes“ klingt wie „nichts anderes“; Vorschlag „nicht manches andere, was“.
+- 7,1 *ex uirtute … ex huius radicibus*: zweimal „aus“ wie im Latein („aus der Tugend hervorgeht … aus ihren Wurzeln“).
+- Vorschläge von Gemini geprüft: übernommen nur „vergänglich“ (*caducum*) und „oder“ vor „wie sie vor den Mauern steht“
+  (beide noch ohne Freigabe). Abgelehnt u. a. „Mir ist schleierhaft“ (zerstört Senecas *Vident … Non uideo*), „parfümiert“
+  (verliert *pollinctam*), „ein Ekel“, „korrigieren“, Zusätze wie „wachsam“, „wunderbar“, „unaufhaltsam“.
