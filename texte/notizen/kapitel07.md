@@ -78,3 +78,12 @@ Schwitzbäder, Senat bleiben (seltene Wörter; bei der Freigabe ausdrücklich be
 - *ilia* (7,1) „Unterleib“ neben *uenter* (9,4) „Bauch“: verschiedene lateinische Wörter, darum verschieden.
 - *recta mens* „richtig denkender Geist“; 8,1 hat *recta uoluntas* „rechter Wille“. „ein rechter Geist“ vermieden (klingt
   nach Gespenst bzw. „ein rechter Narr“).
+
+## Satzbau fürs Hören (30.10., Befund des Auftraggebers über die Hauptsitzung)
+
+Lange Perioden geteilt, 7,1 Gegenprobe positiv gestellt („Doch wir sehen manches … Wären Lust und Tugend untrennbar, sähen
+wir das nicht.“), Pronomen durch Nomen ersetzt. Danach Hörprüfung mit Fable (xhigh), 14 Funde; übernommen 1–8, 10, 12–13,
+14 halb („im Genuss“; „keinerlei“ bleibt für *ne … quidem ulla*). Abgelehnt: 5 Litotes „nicht ohne Lust“ (klingt wie
+Redewendung; stattdessen „obwohl ihnen die Lust nicht fehlt“), 11 „aufrechter Geist“ (schon 4,3 für *erectus*).
+Crux 7,4 jetzt „Er ist der beste und ändert nie etwas.“ (Forbiger, ohne Ergänzung; zwei Fable-Prüfungen dagegen, dass
+„stets dem Besten gefolgt“ ohne geprüfte Ausgabe eine Zutat ist). Hinweis für die YouTube-Beschreibung: Ädil.
