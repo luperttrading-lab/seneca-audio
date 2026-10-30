@@ -27,6 +27,18 @@ nicht hoch“ (Bezug genannt, nicht zweimal „schätzt“), „über kleinste, 
 3. 10,3 verderbte Stelle *~utique enim~ admittit*: geglättet wie Stewart und Forbiger („lässt sie nur zu“).
 4. 10,2 *tumoremque elatum*: „der Dünkel“ (Aufgeblasenheit wäre das Bild, aber selten: Zipf 1,3).
 
+## Zweiter Durchgang (30.10.)
+
+- Vorschlag 10,2: Semikolon statt Komma vor „die Faulheit“; sonst läuft „andere zu kränken, die Faulheit“ beim Hören
+  zusammen (kam mit der Änderung „andere zu kränken“ herein). Noch nicht eingetragen, Freigabe offen.
+- Textvariante 10,2 *deliciis fluentis*: Stewart („dissolute luxury“) und Forbiger („zerfließende Weichlichkeit“) haben
+  das Wohlleben als eigenes Glied nach der „Liebe zum Eigenen“; unsere Vorlage hängt es an den trägen Geist. Wir folgen
+  der Vorlage.
+- Zu Frage 1: In 10,1 antwortet derselbe Gegner wie in 9,1 unmittelbar auf 9,4 (*hominis bonum quaero, non uentris*);
+  „wendet einer ein“ klingt wie ein neuer Sprecher, „wendet er ein“ wäre die Alternative.
+- Bezug für Kapitel 11: 10,3 endet „Du tust alles um der Lust willen, ich nichts.“, 11,1 nimmt das auf
+  (*Cum dico me nihil uoluptatis causa facere*): dort ebenfalls „um der Lust willen“.
+
 ## Wörter für woerter_ok.txt
 
 - zuteilwerden (Duden-Schreibung, Zipf 2,2), einschläft (Beugung von einschlafen)
