@@ -11,7 +11,26 @@ Ton) stehen in `PLAN.md`, Verlauf, Versuche und Messungen in `PROTOKOLL.md`.
 | 2 | fertig, freigegeben (30.10.; nach den Regeln in `PLAN.md` überarbeitet, 2,1 „offenbar die Mehrheit“) | **fertig, Video mit 1M und Bandenden B (30.10.)**, 2:52, Full-HD-Datei und Miniaturbild dem Auftraggeber geschickt, Vorschau-Artifact. Vorher: | **Ton erzeugt (30.10.)**, 989 Credits; Betonungsfilter: 0 markiert. „Bekränzten“ und „Beredsamkeit“ vom Auftraggeber als richtig gehört (`texte/verhoerer.txt`); 2,3 „dem Geschossen“ war ein echter Sprechfehler: Satz mit `satz.py` dreimal allein erzeugt (159 Credits), Fassung 3 eingesetzt, jetzt wortgetreu, 40 Pausen, 2:52. Vom Auftraggeber abgenommen; gesichert im Hörprobe-Artifact unter `quelle/` |
 | 3 | fertig, freigegeben (30.10.; nach den Regeln geprüft, Seelengröße, 3,1 neu mit „[ohne es zu erkennen]“, 3,3 „Ich gebe der Natur meine Stimme“, „abzuweichen“, „übereinstimmen“) | **fertig, Video mit 1M und Bandenden B (30.10.)**: 2:51, 358/358 wortgetreu; Full-HD-Datei und Miniaturbild geschickt, Vorschau-Artifact; Ton gesichert im Hörprobe-Artifact unter `quelle/`. YouTube-Beschreibung: Hinweis auf eckige Klammern |
 | 4 | fertig, freigegeben (30.10.; 4,2 „das, was“, 4,3 „jenseits der Furcht, jenseits der Begierde“, 4,4 „tief … aus der Tiefe“ bleibt); Begriffe aus Kapitel 4 in `PLAN.md` angenommen | – |
-| 5–28 | Latein in `texte/latein/kapitelNN.txt` | – |
+| 5–10 | **in Arbeit**, je Kapitel eine eigene Sitzung (Tabelle unten) | – |
+| 11–28 | Latein in `texte/latein/kapitelNN.txt` | – |
+
+## Parallele Übersetzungssitzungen (seit 30.10.)
+
+Je Kapitel eine Sitzung, Schlagwort `seneca-uebersetzung`; Auftrag: nur `texte/kapitelNN.txt` und `texte/notizen/kapitelNN.md`
+ändern, Zweig `kapitelNN-entwurf`, nie nach main, vorher ein unabhängiger Prüf-Agent. Nach der Freigabe übernimmt die
+Hauptsitzung: Zweig nach main, Begriffe und Wörter aus den Notizen in `PLAN.md` und `texte/woerter_ok.txt`, dann Aufnahme.
+Vorläufig für alle: Einwürfe des gedachten Gegners (*inquit*) als „…“, wendet einer ein, „…“ (Entscheidung offen).
+Am besten in der Reihenfolge freigeben (5, 6, 7 …): Eine Änderung in einem Kapitel kann die nächsten betreffen.
+
+| Kapitel | Sitzung | Stand |
+|---|---|---|
+| 4 | [session_01LHRCLp8bXNZjxkAQi9Capv](https://claude.ai/code/session_01LHRCLp8bXNZjxkAQi9Capv) | freigegeben, nach main übernommen |
+| 5 | [session_01LHRCLtCeTk9iLknnG3E4k9](https://claude.ai/code/session_01LHRCLtCeTk9iLknnG3E4k9) | Entwurf |
+| 6 | [session_01LHRCLofcYszWPPG4q1cQ2x](https://claude.ai/code/session_01LHRCLofcYszWPPG4q1cQ2x) | Entwurf |
+| 7 | [session_01LHRCLsPeiyRaQQaCkE7Xnn](https://claude.ai/code/session_01LHRCLsPeiyRaQQaCkE7Xnn) | Entwurf |
+| 8 | [session_01LHRCLsMyGzZSU8bDAFFVua](https://claude.ai/code/session_01LHRCLsMyGzZSU8bDAFFVua) | Entwurf |
+| 9 | [session_01LHRCLr69UpdLa5dfc8orJr](https://claude.ai/code/session_01LHRCLr69UpdLa5dfc8orJr) | Entwurf |
+| 10 | [session_01LHRCLsomoVchfvx1mLyoZ5](https://claude.ai/code/session_01LHRCLsomoVchfvx1mLyoZ5) | Entwurf |
 
 Die öffentliche Seite zeigt noch Luperts alte „Teile 1 und 2“ mit altem Wortlaut; umgestellt wird nur mit Freigabe.
 
@@ -22,8 +41,8 @@ Die öffentliche Seite zeigt noch Luperts alte „Teile 1 und 2“ mit altem Wor
 2. **Auftraggeber:** YouTube – einzelne Videos je Kapitel (Playlist) oder ein Gesamtvideo? Bis dahin Kapitel 1 am besten
    „Nicht gelistet“ hochladen und die Lesbarkeit am Handy prüfen.
 3. **Auftraggeber:** Credit-Grenze des Schlüssels anheben (reicht noch für etwa 12 bis 14 Kapitel).
-4. Kapitel 4 aufnehmen (Text freigegeben 30.10.; vorher „ausschweifen“ und „Sklavendienst“ klären). Kapitel 5 wird in
-   eigener Sitzung übersetzt (`session_01LHRCLtCeTk9iLknnG3E4k9`, Zweig `kapitel05-entwurf`).
+4. Kapitel 4 aufnehmen (Text freigegeben 30.10.; vorher „ausschweifen“ und „Sklavendienst“ klären). Kapitel 5 bis 10 werden
+   parallel übersetzt (Tabelle oben).
 5. Später: öffentliche Seite auf Kapitel mit Helmut umstellen (Freigabe); Weg der Gesamtdatei zu YouTube klären (etwa
    1,3 GB in Full HD, zu groß für Artifacts; etwa über einen Ordner auf dem Rechner des Auftraggebers oder Google Drive).
    Kostenlos, aber offen: Helmut in der App unter „Meine Stimmen“ aufnehmen.

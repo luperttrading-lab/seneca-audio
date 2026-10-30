@@ -611,3 +611,7 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
   Kapitel 5 in neuer Sitzung `session_01LHRCLtCeTk9iLknnG3E4k9`, Zweig `kapitel05-entwurf`.
 - **Textprüfung Kapitel 4 vor der Aufnahme:** zwei seltene Wörter, „ausschweifen“ (4,3, *euagari*, Zipf 1,4) und
   „Sklavendienst“ (4,4, *seruitutem seruire*, Zipf 1,4); dem Auftraggeber vorgelegt, Aufnahme wartet darauf.
+- **Parallele Übersetzung** (Auftraggeber: „noch mehr parallel … 6, 7, 8 und 9 … und 10“): Sitzungen für Kapitel 6–10
+  gestartet, Kapitel 5 lief schon. Gegen Konflikte: jede Sitzung ändert nur Kapiteltext und `texte/notizen/kapitelNN.md`;
+  einheitlicher Vorschlag für *inquit* („wendet einer ein“); unabhängiger Prüf-Agent vor dem Vorlegen. Sitzungen in
+  `UEBERGABE.md`.
