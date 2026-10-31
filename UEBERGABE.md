@@ -40,7 +40,7 @@ Am besten in der Reihenfolge freigeben (5, 6, 7 …): Eine Änderung in einem Ka
 
 Die öffentliche Seite zeigt noch Luperts alte „Teile 1 und 2“ mit altem Wortlaut; umgestellt wird nur mit Freigabe.
 
-## Nächste Schritte (Stand 31.10., Übergabe an „Seneca Hörspiel 3“)
+## Nächste Schritte (Stand 31.10., Übergabe an „Seneca Hörspiel 3“, session_01LHRCLsLRVpW45yKcfwhiff)
 
 1. **Kapitel 7, 8, 9, 10: Hörproben beim Auftraggeber** (Links unten, mit Markier-Stift). Wenn er „Kapitel N markiert“
    schreibt: Markierungen lesen (`db_list`, siehe Technik), Sätze klären, mit `werkzeuge/satz.py` neu sprechen, Hörprobe neu.
