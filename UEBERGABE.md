@@ -28,10 +28,10 @@ Am besten in der Reihenfolge freigeben (5, 6, 7 …): Eine Änderung in einem Ka
 | 4 | [session_01LHRCLp8bXNZjxkAQi9Capv](https://claude.ai/code/session_01LHRCLp8bXNZjxkAQi9Capv) | freigegeben, nach main übernommen |
 | 5 | [session_01LHRCLtCeTk9iLknnG3E4k9](https://claude.ai/code/session_01LHRCLtCeTk9iLknnG3E4k9) | freigegeben 30.10., nach main übernommen, Begriffe in `PLAN.md`; Verständnisprüfung: 4 von 7 übernommen; **Ton erzeugt** (650 Credits), dann 5,1 und 5,2 neu (291 Credits): wortgetreu, Filter 0, 1:52; vom Auftraggeber abgenommen; **Video fertig (30.10.)**, 1:52, Full HD und Miniaturbild geschickt, Vorschau-Artifact; `quelle/` im Hörprobe-Artifact |
 | 6 | [session_01LHRCLofcYszWPPG4q1cQ2x](https://claude.ai/code/session_01LHRCLofcYszWPPG4q1cQ2x) | freigegeben 30.10., nach main übernommen, Begriffe in `PLAN.md`; Verständnisprüfung: 3 übernommen; **Ton erzeugt** (405 Credits), dann 6,2 letzter Satz neu (111 Credits): wortgetreu, Filter 3 Stellen, 1:14; vom Auftraggeber abgenommen; **Video fertig (30.10.)**, Full HD und Miniaturbild geschickt, Vorschau-Artifact; `quelle/` im Hörprobe-Artifact |
-| 7 | [session_01LHRCLsPeiyRaQQaCkE7Xnn](https://claude.ai/code/session_01LHRCLsPeiyRaQQaCkE7Xnn) | Entwurf |
+| 7 | [session_01LHRCLsPeiyRaQQaCkE7Xnn](https://claude.ai/code/session_01LHRCLsPeiyRaQQaCkE7Xnn) | freigegeben 31.10., nach main übernommen, Begriffe in `PLAN.md`; Aufnahme läuft |
 | 8 | [session_01LHRCLsMyGzZSU8bDAFFVua](https://claude.ai/code/session_01LHRCLsMyGzZSU8bDAFFVua) | freigegeben 30.10., nach main übernommen, Begriffe in `PLAN.md` |
 | 9 | [session_01LHRCLr69UpdLa5dfc8orJr](https://claude.ai/code/session_01LHRCLr69UpdLa5dfc8orJr) | freigegeben 30.10., nach main übernommen, Begriffe in `PLAN.md` |
-| 10 | [session_01LHRCLsomoVchfvx1mLyoZ5](https://claude.ai/code/session_01LHRCLsomoVchfvx1mLyoZ5) | Entwurf |
+| 10 | [session_01LHRCLsomoVchfvx1mLyoZ5](https://claude.ai/code/session_01LHRCLsomoVchfvx1mLyoZ5) | freigegeben 31.10., nach main übernommen, Begriffe in `PLAN.md`; Aufnahme läuft |
 | 11 | [session_01LHRCLq5HrnvRNp1R3M6qMx](https://claude.ai/code/session_01LHRCLq5HrnvRNp1R3M6qMx) | Entwurf (gestartet 31.10., mit Inhalts- und Verständnisprüfung, Farbseite) |
 | 12 | [session_01LHRCLs7foAPsvGhgVkwZh7](https://claude.ai/code/session_01LHRCLs7foAPsvGhgVkwZh7) | Entwurf (gestartet 31.10., mit Inhalts- und Verständnisprüfung, Farbseite) |
 | 13 | [session_01LHRCLpUTMx7aChVPiyU4it](https://claude.ai/code/session_01LHRCLpUTMx7aChVPiyU4it) | Entwurf (gestartet 31.10., mit Inhalts- und Verständnisprüfung, Farbseite) |

@@ -120,6 +120,15 @@ Leitbegriffe beim ersten Auftreten eintragen und vorlegen.
 | *decor* | Schönheit (*dignitas* wäre Würde) | angenommen 30.10. (9,4) |
 | *finis* | Ende; als stoisches „Ziel“ je nach Zusammenhang | angenommen 30.10. (9,3) |
 | *venter* | Bauch | angenommen 30.10. (9,4) |
+| *inhonestus* | unehrenhaft | angenommen 31.10. (7,1) |
+| *diversus*, *dissimilis* | gegensätzlich, ungleich | angenommen 31.10. (7,1; 7,3) |
+| *excelsus* | erhaben (Adjektiv; *sublimitas* bleibt Erhabenheit) | angenommen 31.10. (7,3) |
+| *recta mens* | ein richtig denkender Geist | angenommen 31.10. (7,4) |
+| *infelix* | unglücklich | angenommen 31.10. (7,2) |
+| *stultus* | Tor (Gegenstück zum Weisen) | angenommen 31.10. (10,1) |
+| *temperantia* | Mäßigung (*intemperantia* Maßlosigkeit) | angenommen 31.10. (10,3) |
+| *nequitia* | Verkommenheit | angenommen 31.10. (10,2) |
+| *uti* / *frui* | gebrauchen / genießen | angenommen 31.10. (10,3) |
 
 ## Vom Auftraggeber festgelegt (nicht mehr ändern)
 
