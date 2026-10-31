@@ -654,3 +654,4 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
 - **Kapitel 4, 4,4 eingesetzt**: 141 Credits, Fassung 3 (0,926), danach 489/489 wortgetreu, 40 Pausen. Credit-Grenze laut Auftraggeber erhöht; Abfrage scheitert, dem Schlüssel fehlt „user_read“ (Auftraggeber schaltet „Benutzer: Zugriff“ frei).
 - **Kapitel 4, 4,5 letzter Satz** (Auftraggeber): „… nicht als wären es Güter, sondern weil es aus dem Guten in ihm selbst aufgegangen ist.“ („eigenes Gut“ klang nach Landgut; *ex bono suo*, das Gut ist der Geist selbst, 4,2).
 - **Sitzungen Kapitel 11–15 gestartet** (31.10.), Auftrag mit den neuen Regeln: für das Ohr, zwei Fable-Prüfungen (Inhalt, Verständnis), Farbseite mit `seite/aenderungen.py`, Meldung an die Hauptsitzung nach Freigabe.
+- **Kapitel 4, 4,5 eingesetzt**: 165 Credits, Fassung 3; danach 491/491 wortgetreu, 41 Pausen, 3:47; Hörprobe Version 3 (veröffentlicht mit publish_files).
