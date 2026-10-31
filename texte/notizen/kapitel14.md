@@ -61,3 +61,7 @@ Library hat *rei*. Vergil hat *magnos … saltus*, Seneca (Latin Library) *latos
 ## Wörter für woerter_ok.txt
 
 Feldzeichen (falls es bleibt), Seeleuten, Syrtenmeer (falls es bleibt).
+
+## Meldung nach der Freigabe
+
+An die Hauptsitzung „Seneca Hörspiel 3“ (session_01LHRCLsLRVpW45yKcfwhiff), per send_message (Hinweis der alten Hauptsitzung, 31.10.).
