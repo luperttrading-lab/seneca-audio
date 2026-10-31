@@ -198,10 +198,14 @@ Vor jedem Schicken an den Auftraggeber, in dieser Reihenfolge:
    Nicht bewährt: Satz für Satz mit Zusammenhang (`paragraf.py --saetze`, zweimal falsch). Werkzeug:
    `python3 werkzeuge/satz.py N "<Satzanfang>" <ordner> [--fassungen 3]` erzeugt und prüft die Fassungen,
    `… --nimm <n>` setzt eine ein und rechnet die Kette neu (erprobt am 30.10. an 2,3 „den Geschossen“).
-5. **Endkontrolle der Dateien:** Tonspur vorhanden, Stereo, 48 kHz, AAC-LC (YouTube-Empfehlung; eine Mono-Datei kam am
+5. **Tonprüfung** (seit 31.10.): `python3 werkzeuge/tonpruef.py <ordner> N` findet Lücken ohne Satzzeichen, Pausen ohne
+   Sprechpause oder an falscher Stelle, gedehnte Wörter, von Whisper gehörte Satzenden an Kommas und Knackser. Test an Kapitel 4:
+   alle bekannten Fehler gefunden, ein Fehlalarm; Kapitel 5 nur die zwei bekannten Doppelpunkte, Kapitel 6 nichts. Die Funde
+   kommen auf die Hörprobe; der Auftraggeber hört sie und das Kapitel, die Endkontrolle bleibt bei ihm.
+6. **Endkontrolle der Dateien:** Tonspur vorhanden, Stereo, 48 kHz, AAC-LC (YouTube-Empfehlung; eine Mono-Datei kam am
    Handy stumm an), −18 LUFS; Dauer gleich `ende` in `daten.json`; Stichbilder am Anfang (Startseite), in der Mitte und am
    Ende ansehen; Seiten im Browser in Handygröße testen (`CLAUDE.md`).
-6. **Sichern:** Der Container wird gelöscht. Abgenommene Rohaufnahmen (Rohaufnahme mit eingesetzten Sätzen, Startsatz,
+7. **Sichern:** Der Container wird gelöscht. Abgenommene Rohaufnahmen (Rohaufnahme mit eingesetzten Sätzen, Startsatz,
    Pausenfassung, Wortzeiten, Pausenstellen, `daten.json`) sofort ins private Vorschau-Artifact unter `quelle/`;
    daraus baut `kapitel.py` Ton und Video ohne Credits neu. Eine Neuerzeugung brächte andere Betonungen.
 
