@@ -87,3 +87,9 @@ wir das nicht.“), Pronomen durch Nomen ersetzt. Danach Hörprüfung mit Fable 
 Redewendung; stattdessen „obwohl ihnen die Lust nicht fehlt“), 11 „aufrechter Geist“ (schon 4,3 für *erectus*).
 Crux 7,4 jetzt „Er ist der beste und ändert nie etwas.“ (Forbiger, ohne Ergänzung; zwei Fable-Prüfungen dagegen, dass
 „stets dem Besten gefolgt“ ohne geprüfte Ausgabe eine Zutat ist). Hinweis für die YouTube-Beschreibung: Ädil.
+
+## Vom Auftraggeber freigegebene Änderungen (31.10., über die Hauptsitzung)
+
+- 7,2 „Die Lust gesellt sich sogar zum schändlichsten Leben“ (statt „kommt sogar zum“).
+- 7,4 „Ein solcher Geist ist der beste und ändert nie etwas.“ (statt „Er ist der beste …“; Crux nach Forbiger).
+Kapitelfreigabe offen; offen noch Ädil, Spelunken, Schwitzbäder, „im Senat“.
