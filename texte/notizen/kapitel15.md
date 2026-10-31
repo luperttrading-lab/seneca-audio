@@ -1,5 +1,7 @@
 # Kapitel 15 – Notizen zur Übersetzung
 
+
+Meldung nach der Freigabe an die Hauptsitzung „Seneca Hörspiel 3“ (session_01LHRCLsLRVpW45yKcfwhiff), Hinweis vom 31.10.
 Stand: **Entwurf, Freigabe offen.** Abgeglichen mit Stewart (1900) und Forbiger (1867, LibriVox per Whisper, Datei 2,
 21:51–29:47). Textprüfung: unbekannt nur Zerbrechlichkeit, Wechselhaftigkeit, Nadelstiche, Vaterlands, herabreißt,
 Herkules, unversehens (alle richtig); LanguageTool meldet beim Einwurf am Anfang eine Frage ohne „?“ (Fehlalarm: das
