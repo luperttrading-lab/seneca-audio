@@ -80,7 +80,7 @@ Video ohne Credits neu. Jedes weitere Kapitel nach der Abnahme genauso sichern.
 
 - Schlüssel als Umgebungsvariable `ELEVENLABS_API_KEY` (Text zu Sprache, Stimmen lesen, Modelle, Verlauf lesen, Benutzer;
   Stimmen schreiben bewusst gesperrt). Kontingent nicht abfragbar (`/v1/user` antwortet 401).
-- Grenze des Schlüssels 30.000 Credits; verbraucht etwa 19.728, übrig etwa 10.272 (Stand 30.10., nach Kapitel 6 mit einem neuen Satz). Etwa 0,43 Credits je
+- Grenze des Schlüssels 30.000 Credits; verbraucht etwa 19.869 (Stand 31.10., nach 4,4 neu); die Grenze hat der Auftraggeber erhöht, neuer Wert noch nicht bekannt. Etwa 0,43 Credits je
   Zeichen, ein Kapitel etwa 1.100–1.300. Das ganze Werk braucht etwa 28.800, die Grenze muss also steigen.
 - Kosten laut Auftraggeber: 1.000 Credits ≈ 0,10 € im Sparabo, sonst 0,20 €.
 - Höchstens 5 Anfragen gleichzeitig, sonst Fehler 429.
