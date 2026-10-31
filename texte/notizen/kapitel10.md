@@ -82,6 +82,10 @@ Sprecher nach drei Wörtern); „denen, die“ statt der Zutat „Menschen“; �
 „der Dünkel, der sich … erhebt“ zurück. Abgelehnt: „Die Tugend achtet selbst die Lüste nicht hoch“ („selbst“ klänge
 wie „die Tugend selbst“).
 
+## Vom Auftraggeber freigegebene Änderung (31.10., über die Hauptsitzung)
+
+- 10,3 „Selbst die Lüste, die sie gebilligt hat, achtet die Tugend nicht hoch“ (Nomen statt „sie“). Offen: „[sagst du]“.
+
 ## Wörter für woerter_ok.txt
 
 - zuteilwerden (Duden-Schreibung, Zipf 2,2)
