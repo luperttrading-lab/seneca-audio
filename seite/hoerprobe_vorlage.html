@@ -10,6 +10,7 @@
   :root {
     --stein: #161a19; --tafel: #1e2422; --tafel-hoch: #252c2a; --tinte: #e9edeb; --grau: #939e99; --linie: #333b38; --bronze: #d29f62;
     --rot: rgba(226, 84, 70, .45); --rot-voll: #c9483b;
+    --blau: rgba(92, 146, 240, .45); --blau-voll: #8fb4ff; --gruen: rgba(78, 186, 112, .42); --gruen-voll: #7fd69a;
     --display: "Cinzel", Georgia, serif; --text: "Literata", Georgia, serif; --ui: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
     color-scheme: dark;
   }
@@ -54,7 +55,7 @@
   /* Feste Leiste unten: Abspielen, Spulen, Zeit für die Tafel, die gerade läuft */
   .leiste { position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; background: var(--tafel-hoch); border-top: 1px solid var(--linie);
     padding: 10px max(16px, env(safe-area-inset-right, 0px)) calc(10px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); }
-  .leiste-innen { max-width: 560px; margin: 0 auto; display: grid; gap: 6px; }
+  .leiste-innen { max-width: 560px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr); gap: 6px; }
   .leiste-kopf { display: flex; justify-content: space-between; align-items: center; gap: 10px; min-height: 34px; font-size: 13px; color: var(--grau); }
   .leiste .zeit { flex: 0 0 auto; font-size: 12px; color: var(--grau); font-variant-numeric: tabular-nums; }
   .leiste-kopf b { color: var(--bronze); font-weight: 600; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -65,18 +66,58 @@
   .leiste .haupt svg { width: 22px; height: 22px; }
   .leiste input[type=range] { flex: 1 1 auto; min-width: 0; accent-color: var(--bronze); height: 28px; }
   main.mit-leiste { padding-bottom: calc(170px + env(safe-area-inset-bottom, 0px)); }
-  /* Markieren: rot wie ein Textmarker; box-shadow, weil der Hintergrund der Wörter für die Lauffarbe auf den Text beschnitten ist */
-  .w.markiert { box-shadow: inset 0 -1.05em 0 var(--rot); border-radius: 2px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+  main.mit-leiste.mit-notiz { padding-bottom: calc(290px + env(safe-area-inset-bottom, 0px)); }
+  /* Markieren: Textmarker als box-shadow, weil der Hintergrund der Wörter für die Lauffarbe auf den Text beschnitten ist.
+     Drei Stände je Stelle: markiert (rot), abgeschickt (blau, Häkchen), korrigiert (grün, „neu“). */
+  .w.m-markiert, .w.m-abgeschickt, .w.m-korrigiert { box-shadow: inset 0 -1.05em 0 var(--rot); border-radius: 2px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+  .w.m-abgeschickt { box-shadow: inset 0 -1.05em 0 var(--blau); }
+  .w.m-korrigiert { box-shadow: inset 0 -1.05em 0 var(--gruen); }
+  .w.m-ende::after { font: 600 11px/1 var(--ui); letter-spacing: .04em; margin-left: 3px; vertical-align: 2px; padding: 2px 5px; border-radius: 999px; }
+  .w.m-ende.m-abgeschickt::after { content: "✓"; color: #0f1a2e; background: var(--blau-voll); }
+  .w.m-ende.m-korrigiert::after { content: "neu"; color: #0d2214; background: var(--gruen-voll); }
   .markier-an .w { cursor: crosshair; }
   .leiste.markier-an { border-top-color: var(--rot-voll); }
   .leiste .stift { flex: 0 0 auto; display: flex; align-items: center; gap: 6px; border: 1px solid var(--linie); border-radius: 999px; padding: 6px 12px; white-space: nowrap; }
   .leiste .stift[hidden] { display: none; }
   .leiste .stift[aria-pressed="true"] { background: var(--rot-voll); border-color: var(--rot-voll); color: #fff; }
   .leiste .stift svg { width: 16px; height: 16px; }
-  .notiz { display: flex; gap: 8px; align-items: center; min-width: 0; }
+  .notiz { display: grid; gap: 6px; min-width: 0; }
   .notiz[hidden] { display: none; }
+  .notiz-kopf { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; font-size: 13px; color: var(--grau); min-width: 0; }
+  .notiz-kopf span { flex: 0 0 auto; }
+  .notiz-fuss { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; min-width: 0; }
+  .notiz-fuss .antwort { min-width: 0; }
+  .notiz-kopf b { flex: 1 1 auto; color: var(--tinte); font: 400 15px/1.3 var(--text); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .notiz-zeile { display: flex; gap: 8px; align-items: center; min-width: 0; }
   .notiz input { flex: 1 1 auto; min-width: 0; font: 16px/1.3 var(--ui); color: var(--tinte); background: var(--stein); border: 1px solid var(--linie); border-radius: 8px; padding: 8px 10px; }
-  .notiz button { flex: 0 0 auto; background: var(--bronze); color: var(--stein); border-radius: 8px; padding: 9px 12px; }
+  .leiste .notiz .senden { flex: 0 0 auto; background: var(--bronze); color: var(--stein); border-radius: 8px; padding: 9px 12px; }
+  .leiste .notiz .senden:disabled { background: var(--linie); color: var(--grau); cursor: default; }
+  .leiste .notiz .weg { flex: 0 0 auto; margin-left: auto; color: var(--grau); padding: 4px 0; font-size: 13px; font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
+  .leiste .notiz .weg[hidden] { display: none; }
+  .leiste .notiz .weg.sicher { color: #ff9a8f; }
+  .leiste .notiz .zu { padding: 2px 4px; color: var(--grau); font-size: 18px; }
+  .antwort { margin: 0; font-size: 14px; color: var(--gruen-voll); }
+  .meldung { font-size: 13px; padding: 6px 10px; border-radius: 8px; background: #23332a; color: #bfe8cb; }
+  .meldung.fehler { background: #3a1f1c; color: #ffb4aa; font-weight: 600; }
+  .meldung[hidden] { display: none; }
+  /* Übersicht der Stellen oben auf der Seite */
+  .marken { display: grid; gap: 10px; padding: 14px 16px; border: 1px solid var(--linie); border-radius: 16px; background: var(--tafel); }
+  .marken[hidden] { display: none; }
+  .marken h2 { margin: 0; font: 600 13px/1.3 var(--ui); letter-spacing: .14em; text-transform: uppercase; color: var(--bronze); }
+  .marken .summe { margin: 0; font-size: 15px; }
+  .marken ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+  .marken li { display: flex; gap: 10px; align-items: flex-start; padding: 10px; border-radius: 10px; background: var(--stein); cursor: pointer; }
+  .marken li .inhalt { display: grid; gap: 3px; min-width: 0; flex: 1 1 auto; }
+  .marken li q { font: 400 16px/1.35 var(--text); quotes: "„" "“"; }
+  .marken li small { font-size: 13px; color: var(--grau); }
+  .marken li .n { font-size: 14px; color: var(--tinte); }
+  .marken li .abspielen { flex: 0 0 auto; width: 36px; height: 36px; border-radius: 50%; border: 0; background: var(--tafel-hoch); color: var(--bronze); display: grid; place-items: center; cursor: pointer; }
+  .marken li .abspielen svg { width: 18px; height: 18px; }
+  .stand { display: inline-block; font: 600 11px/1.4 var(--ui); letter-spacing: .06em; text-transform: uppercase; padding: 1px 7px; border-radius: 999px; }
+  .stand.markiert { background: var(--rot-voll); color: #fff; }
+  .stand.abgeschickt { background: var(--blau-voll); color: #0f1a2e; }
+  .stand.korrigiert { background: var(--gruen-voll); color: #0d2214; }
+  .stand.verwaist { background: var(--linie); color: var(--tinte); }
   @media (prefers-reduced-motion: reduce) { .w { transition: none; } }
 </style>
 
@@ -94,9 +135,14 @@
       <input type="range" id="regler" min="0" max="1" step="0.1" value="0" aria-label="Stelle im Abschnitt">
       <span class="zeit" id="leiste-zeit">0:00 / 0:00</span>
     </div>
+    <div class="meldung" id="meldung" role="status" aria-live="polite" hidden></div>
     <div class="notiz" id="notiz" hidden>
-      <input type="text" id="notiz-text" placeholder="Notiz, z. B. Pause zu lang" aria-label="Notiz zur markierten Stelle" enterkeyhint="done">
-      <button type="button" id="notiz-ok">Speichern</button>
+      <div class="notiz-kopf"><b id="notiz-wo"></b><span id="notiz-stand"></span><button type="button" class="zu" id="notiz-zu" aria-label="Schließen">×</button></div>
+      <div class="notiz-fuss"><span class="antwort" id="notiz-antwort" hidden></span><button type="button" class="weg" id="notiz-weg">Markierung löschen</button></div>
+      <div class="notiz-zeile">
+        <input type="text" id="notiz-text" placeholder="Was ist dir aufgefallen?" aria-label="Notiz zur markierten Stelle" enterkeyhint="send">
+        <button type="button" class="senden" id="notiz-ok" disabled>Abschicken</button>
+      </div>
     </div>
   </div>
 </div>
@@ -154,51 +200,191 @@
       starte(k, 0);
     });
   });
-  // Tippen auf ein Wort: ab diesem Wort abspielen, im Markier-Modus markieren oder Markierung entfernen
+  // Tippen auf ein Wort: ab diesem Wort abspielen; im Markier-Modus markieren bzw. die Stelle öffnen (nie still löschen)
   Object.keys(spans).forEach(function (k) {
-    spans[k].forEach(function (s, i) { s.addEventListener("click", function () { if (markieren) markiere(k, i); else starte(k, Math.max(0, S[k].w[i].t - 0.05)); }); });
+    spans[k].forEach(function (s, i) { s.addEventListener("click", function () { if (markieren) tippe(k, i); else starte(k, Math.max(0, S[k].w[i].t - 0.05)); }); });
   });
   haupt.addEventListener("click", function () { if (!aktiv) { starte("ganz", 0); return; } if (ton.paused) { if (ton.ended) ton.currentTime = 0; ton.play().catch(function () {}); } else ton.pause(); });
 
-  // Markierungen: im Speicher der Seite (Sammlung „markierungen“), Claude liest sie von dort. Ein Wort des Kapitels hat
-  // die Nummer i0 + i und ist in allen Tafeln markiert, die es zeigen; Wörter neu gesprochener Fassungen gelten nur dort.
-  var db = null, markieren = false, marken = {}, offen = null;
+  // Markierungen: Speicher der Seite, Sammlung „markierungen“, ein Eintrag je Wort (kapitel, wort, satz, wortnr, zeit,
+  // tafel, notiz, stand; dazu status, antwort, fassung, wenn Claude eine Stelle neu gesprochen hat). Benachbarte Wörter
+  // (oder mit einem Wort dazwischen im selben Satz) bilden eine Stelle. Stand einer Stelle: korrigiert, wenn alle Wörter
+  // status „korrigiert“ haben; sonst abgeschickt, wenn eines der übrigen eine Notiz hat; sonst markiert.
+  // Wörter werden über satz + wort im Text gesucht (wortnr nur als Hinweis), weil sich Nummern bei Neuaufnahmen verschieben;
+  // hat Claude den Wortlaut geändert, stehen satz_neu/wort_neu im Eintrag. Nicht mehr auffindbare Einträge stehen nur in der Liste.
+  var db = null, markieren = false, marken = {}, stellen = [], ortVon = {}, offen = null, entwurf = {}, wegSicher = false;
   var stift = document.getElementById("stift"), notiz = document.getElementById("notiz"), notizText = document.getElementById("notiz-text");
-  function schluessel(k, i) { return S[k].i0 !== undefined ? "w" + (S[k].i0 + i) : (k + "-" + i).replace(/[^A-Za-z0-9_.~:@+-]/g, "_"); }
-  function satz(k, i) {
-    var W = S[k].w, a = i, e = i, ende = /[.;:?!][“”"]?$/;
-    while (a > 0 && !ende.test(W[a - 1].w)) a--;
-    while (e < W.length - 1 && !ende.test(W[e].w)) e++;
-    return W.slice(a, e + 1).map(function (x) { return x.w; }).join(" ");
+  var notizOk = document.getElementById("notiz-ok"), notizWeg = document.getElementById("notiz-weg"), meldung = document.getElementById("meldung");
+  var G = S.ganz && S.ganz.i0 === 0 ? S.ganz.w : null;   // Wörter des ganzen Kapitels
+  var ENDE = /[.;:?!][“”"]?$/;
+  function norm(x) { return String(x || "").toLowerCase().replace(/[^\p{L}\p{N}]+/gu, " ").trim(); }
+  function satzGrenzen(W, i) { var a = i, e = i; while (a > 0 && !ENDE.test(W[a - 1].w)) a--; while (e < W.length - 1 && !ENDE.test(W[e].w)) e++; return [a, e]; }
+  function satzText(W, i) { var g = satzGrenzen(W, i); return W.slice(g[0], g[1] + 1).map(function (x) { return x.w; }).join(" "); }
+  function satz(k, i) { return satzText(S[k].w, i); }
+  function raumW(r) { return r === "K" ? G : (S[r] ? S[r].w : null); }
+  // Ort eines Eintrags: {r: "K" (Kapitel) oder Tafel, i: Wortnummer darin} oder null
+  function finde(d, id) {
+    var wort = norm(d.wort_neu || d.wort), sz = norm(d.satz_neu || d.satz), hin = d.wortnr_neu != null ? d.wortnr_neu : d.wortnr;
+    var r = d.wortnr != null || d.wortnr_neu != null ? "K" : d.tafel, W = raumW(r);
+    if (!W) return null;
+    if (hin == null) { var m = /-(\d+)$/.exec(id || ""); hin = m ? +m[1] : 0; }
+    var best = null;
+    W.forEach(function (x, j) { if (norm(x.w) === wort && norm(satzText(W, j)) === sz && (best === null || Math.abs(j - hin) < Math.abs(best - hin))) best = j; });
+    return best === null ? null : { r: r, i: best };
   }
+  function standVon(docs) {
+    var rest = docs.filter(function (x) { return x.d.status !== "korrigiert"; });
+    if (!rest.length) return "korrigiert";
+    return rest.some(function (x) { return (x.d.notiz || "").trim(); }) ? "abgeschickt" : "markiert";
+  }
+  function einmal(l) { return l.filter(function (x, j) { return x && l.indexOf(x) === j; }); }
+  function gruppiere() {
+    var orte = [], verwaist = [];
+    Object.keys(marken).forEach(function (id) { var o = finde(marken[id], id); if (o) orte.push({ id: id, d: marken[id], r: o.r, i: o.i }); else verwaist.push({ id: id, d: marken[id] }); });
+    orte.sort(function (a, b) { return a.r < b.r ? -1 : a.r > b.r ? 1 : a.i - b.i; });
+    stellen = []; ortVon = {}; var cur = null;
+    orte.forEach(function (o) {
+      var W = raumW(o.r), letzt = cur && cur.docs[cur.docs.length - 1];
+      var dazu = cur && cur.r === o.r && (o.i - letzt.i <= 1 || (o.i - letzt.i === 2 && satzGrenzen(W, o.i)[0] === satzGrenzen(W, letzt.i)[0]));
+      if (!dazu) { cur = { r: o.r, docs: [] }; stellen.push(cur); }
+      cur.docs.push(o);
+    });
+    stellen.forEach(function (st) {
+      var W = raumW(st.r), a = st.docs[0].i, e = st.docs[st.docs.length - 1].i;
+      st.a = a; st.e = e; st.text = W.slice(a, e + 1).map(function (x) { return x.w; }).join(" ").replace(/^[„“"]|[,;:“”"–]+$/g, "");
+      st.stand = standVon(st.docs); st.key = st.docs[0].id;
+      st.notiz = einmal(st.docs.map(function (x) { return (x.d.notiz || "").trim(); })).join(" · ");
+      st.antwort = einmal(st.docs.map(function (x) { return (x.d.antwort || "").trim(); })).join(" · ");
+      st.fassung = einmal(st.docs.map(function (x) { return x.d.fassung != null ? String(x.d.fassung) : ""; })).join(", ");
+      st.zeit = st.r === "K" ? W[a].t : (S[st.r].a || 0) + W[a].t;
+      for (var j = a; j <= e; j++) ortVon[st.r + ":" + j] = st;
+    });
+    verwaist.forEach(function (x) { stellen.push({ r: null, docs: [x], text: (x.d.wort || "").replace(/[,.;:?!“”„]/g, ""), stand: "verwaist", key: x.id,
+      notiz: (x.d.notiz || "").trim(), antwort: (x.d.antwort || "").trim(), fassung: "", zeit: x.d.zeit, satz: x.d.satz }); });
+  }
+  function ortDerSpan(k, i) { return S[k].i0 !== undefined && G ? "K:" + (S[k].i0 + i) : k + ":" + i; }
+  function stelleZu(key) { for (var j = 0; j < stellen.length; j++) if (stellen[j].docs.some(function (x) { return x.id === key; })) return stellen[j]; return null; }
+  var NAMEN = { markiert: "markiert", abgeschickt: "abgeschickt ✓", korrigiert: "korrigiert · neu", verwaist: "nicht mehr im Text" };
   function malen() {
-    Object.keys(spans).forEach(function (k) { spans[k].forEach(function (s, i) { var m = marken[schluessel(k, i)]; s.classList.toggle("markiert", !!m); s.title = m && m.notiz ? m.notiz : ""; }); });
-    var n = Object.keys(marken).length; document.getElementById("stift-zahl").textContent = n ? n + " markiert" : "Markieren";
+    gruppiere();
+    Object.keys(spans).forEach(function (k) { spans[k].forEach(function (s, i) {
+      var key = ortDerSpan(k, i), st = ortVon[key], j = +key.split(":")[1];
+      ["m-markiert", "m-abgeschickt", "m-korrigiert"].forEach(function (c) { s.classList.toggle(c, !!st && c === "m-" + st.stand); });
+      s.classList.toggle("m-ende", !!st && j === st.e);
+      s.title = st ? (st.notiz || NAMEN[st.stand]) + (st.antwort ? " – Claude: " + st.antwort : "") : "";
+    }); });
+    var n = { markiert: 0, abgeschickt: 0, korrigiert: 0, verwaist: 0 }; stellen.forEach(function (st) { n[st.stand]++; });
+    var z = stellen.length - n.verwaist, teile = [];
+    if (n.abgeschickt) teile.push(n.abgeschickt + " ✓"); if (n.korrigiert) teile.push(n.korrigiert + " neu");
+    document.getElementById("stift-zahl").textContent = z ? z + (z === 1 ? " Stelle" : " Stellen") + (teile.length ? " · " + teile.join(" · ") : "") : "Markieren";
+    liste(z, n);
+    if (offen) { var st = stelleZu(offen); if (st) zeigeNotiz(st, false); else schliesse(); }
   }
-  function markiere(k, i) {
-    var id = schluessel(k, i), ref = db.collection("markierungen").doc(id);
-    if (marken[id]) { delete marken[id]; malen(); notiz.hidden = true; offen = null; ref.delete().catch(function () {}); return; }
-    var w = S[k].w[i], d = { kapitel: KAP, wort: w.w, satz: satz(k, i), tafel: k, wortnr: S[k].i0 !== undefined ? S[k].i0 + i : null,
+  // Übersicht oben: Zusammenfassung und je Stelle Wortlaut, Stand, Notiz, Claudes Antwort
+  var marken_ = document.createElement("section"); marken_.className = "marken"; marken_.hidden = true; marken_.setAttribute("aria-labelledby", "marken-titel");
+  marken_.innerHTML = '<h2 id="marken-titel">Deine Markierungen</h2><p class="summe" id="marken-summe"></p><ol id="marken-liste"></ol>';
+  var kopfEl = document.querySelector(".kopf"); if (kopfEl) kopfEl.after(marken_); else document.querySelector("main").prepend(marken_);
+  function liste(z, n) {
+    marken_.hidden = !stellen.length;
+    var t = [z + (z === 1 ? " Stelle" : " Stellen") + " markiert"];
+    if (n.abgeschickt) t.push(n.abgeschickt + " abgeschickt"); if (n.korrigiert) t.push(n.korrigiert + " korrigiert");
+    if (n.markiert) t.push(n.markiert + " noch ohne Notiz"); if (n.verwaist) t.push(n.verwaist + " nicht mehr im Text");
+    document.getElementById("marken-summe").textContent = t.join(" · ");
+    var ol = document.getElementById("marken-liste"); ol.textContent = "";
+    stellen.slice().sort(function (a, b) { return (a.zeit || 0) - (b.zeit || 0); }).forEach(function (st) {
+      var li = document.createElement("li"), inh = document.createElement("div"); inh.className = "inhalt";
+      var q = document.createElement("q"); q.textContent = st.text; inh.appendChild(q);
+      var sm = document.createElement("small"), chip = document.createElement("span"); chip.className = "stand " + st.stand; chip.textContent = NAMEN[st.stand];
+      sm.appendChild(chip); sm.appendChild(document.createTextNode(" bei " + mm(st.zeit) + (st.stand === "korrigiert" && st.fassung ? " · Fassung " + st.fassung : ""))); inh.appendChild(sm);
+      if (st.notiz) { var nz = document.createElement("span"); nz.className = "n"; nz.textContent = "Du: " + st.notiz; inh.appendChild(nz); }
+      if (st.antwort) { var an = document.createElement("span"); an.className = "n antwort"; an.textContent = "Claude: " + st.antwort; inh.appendChild(an); }
+      li.appendChild(inh);
+      if (st.r) {
+        var b = document.createElement("button"); b.type = "button"; b.className = "abspielen"; b.innerHTML = PLAY; b.setAttribute("aria-label", "„" + st.text + "“ anhören");
+        b.addEventListener("click", function (e) { e.stopPropagation(); if (st.r === "K") starte("ganz", Math.max(0, st.zeit - 1.5)); else starte(st.r, Math.max(0, S[st.r].w[st.a].t - 1.5)); });
+        li.appendChild(b);
+      }
+      li.addEventListener("click", function () { oeffne(st); });
+      ol.appendChild(li);
+    });
+  }
+  function melde(text, fehler) {
+    meldung.textContent = text; meldung.classList.toggle("fehler", !!fehler); meldung.hidden = false;
+    clearTimeout(melde.t); if (!fehler) melde.t = setTimeout(function () { meldung.hidden = true; }, 2500);
+  }
+  function merkeEntwurf() { if (offen && notizText.value.trim() && notizText.dataset.vorlage !== notizText.value) entwurf[offen] = notizText.value; }
+  function zeigeNotiz(st, neu) {
+    document.getElementById("notiz-wo").textContent = "„" + st.text + "“";
+    document.getElementById("notiz-stand").textContent = NAMEN[st.stand];
+    var an = document.getElementById("notiz-antwort"); an.hidden = !st.antwort; an.textContent = st.antwort ? "Claude: " + st.antwort : "";
+    if (neu) {
+      var vor = st.stand === "abgeschickt" ? st.notiz : "";
+      notizText.value = entwurf[st.key] != null ? entwurf[st.key] : vor; notizText.dataset.vorlage = vor;
+      notizText.placeholder = st.stand === "korrigiert" ? "Noch etwas? Neue Notiz" : "Was ist dir aufgefallen?";
+    }
+    notizOk.textContent = st.stand === "abgeschickt" ? "Ändern" : "Abschicken";
+    notizWeg.hidden = st.stand === "korrigiert"; wegSicher = false; notizWeg.textContent = "Markierung löschen"; notizWeg.classList.remove("sicher");
+    pruefeOk(); notiz.hidden = false; document.querySelector("main").classList.add("mit-notiz");
+  }
+  function pruefeOk() { var st = offen && stelleZu(offen), t = notizText.value.trim(); notizOk.disabled = !st || st.stand === "verwaist" || !t || (st.stand === "abgeschickt" && t === st.notiz); }
+  function oeffne(st) { merkeEntwurf(); offen = st.key; zeigeNotiz(st, true); }
+  function schliesse() { merkeEntwurf(); notiz.hidden = true; offen = null; document.querySelector("main").classList.remove("mit-notiz"); }
+  function neueId(k, i) {
+    var id = S[k].i0 !== undefined ? "w" + (S[k].i0 + i) : (k + "-" + i).replace(/[^A-Za-z0-9_.~:@+-]/g, "_");
+    return marken[id] ? id + "-" + Date.now().toString(36) : id;   // alte Einträge mit gleicher Nummer nie überschreiben
+  }
+  function tippe(k, i) {
+    var st = ortVon[ortDerSpan(k, i)];
+    if (st) { if (offen !== st.key) oeffne(st); return; }
+    if (!db) { melde("Speicher nicht erreichbar – Markieren geht gerade nicht.", true); return; }
+    var w = S[k].w[i], id = neueId(k, i), d = { kapitel: KAP, wort: w.w, satz: satz(k, i), tafel: k, wortnr: S[k].i0 !== undefined ? S[k].i0 + i : null,
       zeit: Math.round(((S[k].a || 0) + w.t) * 10) / 10, notiz: "", stand: new Date().toISOString() };
-    marken[id] = d; malen(); offen = id; notizText.value = ""; notiz.hidden = false; notizText.placeholder = "Notiz zu „" + w.w.replace(/[,.;:?!“”„]/g, "") + "“ (freiwillig)";
-    ref.set(d).catch(function () { delete marken[id]; malen(); notiz.hidden = true; });
+    var war = offen, text = notizText.value;
+    marken[id] = d; malen();
+    var jetzt = stelleZu(id);
+    if (war && jetzt.docs.some(function (x) { return x.id === war; })) {
+      offen = jetzt.key; zeigeNotiz(jetzt, false); notizText.value = text; pruefeOk();   // dieselbe Stelle wächst: Text bleibt stehen
+    } else { oeffne(jetzt); }
+    nachher(id, function () { return db.collection("markierungen").doc(id).set(d); }).then(function () { melde("Markiert · gespeichert ✓"); },
+      function () { delete marken[id]; malen(); melde("Nicht gespeichert! Bitte das Wort noch einmal antippen.", true); });
   }
-  document.getElementById("notiz-ok").addEventListener("click", function () {
-    if (!offen || !marken[offen]) { notiz.hidden = true; return; }
-    var text = notizText.value.trim(), id = offen; marken[id] = Object.assign({}, marken[id], { notiz: text }); malen(); notiz.hidden = true; offen = null; notizText.blur();
-    db.collection("markierungen").doc(id).update({ notiz: text, stand: new Date().toISOString() }).catch(function () {});
+  // Schreiben: je Eintrag streng nacheinander (der Speicher will eine Schreibung je Eintrag zur Zeit), Fehler immer melden
+  var kette = {};
+  function nachher(id, f) { var p = (kette[id] || Promise.resolve()).catch(function () {}).then(f); kette[id] = p; return p; }
+  function schreibe(ops, gut, schlecht) { return Promise.all(ops.map(function (o) { return nachher(o[0], o[1]); })).then(gut, schlecht); }
+  notizText.addEventListener("input", pruefeOk);
+  notizOk.addEventListener("click", function () {
+    var st = offen && stelleZu(offen), text = notizText.value.trim();
+    if (!st || !text || !db) return;
+    var alt = {}, jetzt = new Date().toISOString();
+    st.docs.forEach(function (x) { alt[x.id] = marken[x.id]; marken[x.id] = Object.assign({}, marken[x.id], { notiz: text, status: "abgeschickt", stand: jetzt }); });
+    delete entwurf[st.key]; notizText.dataset.vorlage = text; notizOk.disabled = true; notizOk.textContent = "…"; malen();
+    // ganzer Datensatz mit set (nicht update): klappt auch, wenn das Markieren gerade erst unterwegs ist
+    schreibe(st.docs.map(function (x) { var neu = marken[x.id]; return [x.id, function () { return db.collection("markierungen").doc(x.id).set(neu); }]; }),
+      function () { melde("Gespeichert ✓ – bei Claude angekommen"); schliesse(); notizText.blur(); },
+      function () { Object.keys(alt).forEach(function (id) { if (alt[id]) marken[id] = alt[id]; }); entwurf[st.key] = text; malen(); notizText.value = text; pruefeOk();
+        melde("Nicht abgeschickt! Netz prüfen und nochmal auf „Abschicken“ tippen.", true); });
   });
-  notizText.addEventListener("keydown", function (e) { if (e.key === "Enter") document.getElementById("notiz-ok").click(); });
+  notizText.addEventListener("keydown", function (e) { if (e.key === "Enter" && !notizOk.disabled) notizOk.click(); });
+  notizWeg.addEventListener("click", function () {
+    var st = offen && stelleZu(offen); if (!st || !db) return;
+    if ((st.notiz || st.stand === "verwaist") && !wegSicher) { wegSicher = true; notizWeg.textContent = "Wirklich löschen?"; notizWeg.classList.add("sicher"); return; }
+    var alt = {}; st.docs.forEach(function (x) { alt[x.id] = marken[x.id]; delete marken[x.id]; }); delete entwurf[st.key]; schliesse(); malen();
+    schreibe(st.docs.map(function (x) { return [x.id, function () { return db.collection("markierungen").doc(x.id).delete(); }]; }),
+      function () { melde("Markierung gelöscht ✓"); },
+      function () { Object.keys(alt).forEach(function (id) { marken[id] = alt[id]; }); malen(); melde("Löschen hat nicht geklappt! Bitte nochmal.", true); });
+  });
+  document.getElementById("notiz-zu").addEventListener("click", function () { if (notizText.value.trim() && notizText.value !== notizText.dataset.vorlage) melde("Notiz noch nicht abgeschickt – bleibt hier stehen."); schliesse(); });
   stift.addEventListener("click", function () {
     markieren = !markieren; stift.setAttribute("aria-pressed", String(markieren));
     leiste.classList.toggle("markier-an", markieren); document.querySelector("main").classList.toggle("markier-an", markieren);
-    if (!markieren) { notiz.hidden = true; offen = null; }
+    if (!markieren && offen) { if (notizText.value.trim() && notizText.value !== notizText.dataset.vorlage) melde("Notiz noch nicht abgeschickt – bleibt hier stehen."); schliesse(); }
   });
   if (window.claude && claude.use) claude.use("db").then(function (d) {
     if (!d) return; db = d; stift.hidden = false;
     db.collection("markierungen").onSnapshot(function (snap) {
       var neu = {}; snap.docs.forEach(function (x) { if (x.exists) neu[x.id] = x.data(); }); marken = neu; malen();
-    }, function () {});
+    }, function () { melde("Speicher nicht erreichbar – Markierungen werden gerade nicht gespeichert.", true); });
   }).catch(function () {});
   document.getElementById("zurueck").addEventListener("click", function () { if (aktiv) { ton.currentTime = Math.max(0, ton.currentTime - 10); fuelle(aktiv, ton.currentTime); } });
   document.getElementById("vor").addEventListener("click", function () { if (aktiv) { ton.currentTime = Math.min(S[aktiv].dauer, ton.currentTime + 10); fuelle(aktiv, ton.currentTime); } });
