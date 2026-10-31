@@ -12,7 +12,8 @@ Ton) stehen in `PLAN.md`, Verlauf, Versuche und Messungen in `PROTOKOLL.md`.
 | 3 | fertig, freigegeben (30.10.; nach den Regeln geprüft, Seelengröße, 3,1 neu mit „[ohne es zu erkennen]“, 3,3 „Ich gebe der Natur meine Stimme“, „abzuweichen“, „übereinstimmen“) | **fertig, Video mit 1M und Bandenden B (30.10.)**: 2:51, 358/358 wortgetreu; Full-HD-Datei und Miniaturbild geschickt, Vorschau-Artifact; Ton gesichert im Hörprobe-Artifact unter `quelle/`. YouTube-Beschreibung: Hinweis auf eckige Klammern |
 | 4 | fertig, freigegeben (30.10.; 4,2 „das, was“, 4,3 „jenseits der Furcht, jenseits der Begierde“, 4,4 „tief … aus der Tiefe“ bleibt); Begriffe aus Kapitel 4 in `PLAN.md` angenommen | **Ton erzeugt (30.10.)**, 1.287 Credits, dann sieben Sätze neu (999 Credits; drei Funde des Auftraggebers, vier aus der Hörprüfung): 488/488 wortgetreu, 41 Pausen, 3:46. Betonungsfilter: 4,1 „Wie ES auch“ (+7,4 HT, noch nicht angehört), 4,4 „wird ER auch“ (+5,8, vom Auftraggeber als richtig gehört). **Hörprobe beim Auftraggeber**; Rohaufnahme mit eingesetzten Sätzen im Hörprobe-Artifact unter `quelle/` |
 | 5–10 | **in Arbeit**, je Kapitel eine eigene Sitzung (Tabelle unten) | – |
-| 11–28 | Latein in `texte/latein/kapitelNN.txt` | – |
+| 11–15 | **in Arbeit**, je Kapitel eine eigene Sitzung (Tabelle unten) | – |
+| 16–28 | Latein in `texte/latein/kapitelNN.txt` | – |
 
 ## Parallele Übersetzungssitzungen (seit 30.10.)
 
@@ -31,6 +32,11 @@ Am besten in der Reihenfolge freigeben (5, 6, 7 …): Eine Änderung in einem Ka
 | 8 | [session_01LHRCLsMyGzZSU8bDAFFVua](https://claude.ai/code/session_01LHRCLsMyGzZSU8bDAFFVua) | freigegeben 30.10., nach main übernommen, Begriffe in `PLAN.md` |
 | 9 | [session_01LHRCLr69UpdLa5dfc8orJr](https://claude.ai/code/session_01LHRCLr69UpdLa5dfc8orJr) | freigegeben 30.10., nach main übernommen, Begriffe in `PLAN.md` |
 | 10 | [session_01LHRCLsomoVchfvx1mLyoZ5](https://claude.ai/code/session_01LHRCLsomoVchfvx1mLyoZ5) | Entwurf |
+| 11 | [session_01LHRCLq5HrnvRNp1R3M6qMx](https://claude.ai/code/session_01LHRCLq5HrnvRNp1R3M6qMx) | Entwurf (gestartet 31.10., mit Inhalts- und Verständnisprüfung, Farbseite) |
+| 12 | [session_01LHRCLs7foAPsvGhgVkwZh7](https://claude.ai/code/session_01LHRCLs7foAPsvGhgVkwZh7) | Entwurf (gestartet 31.10., mit Inhalts- und Verständnisprüfung, Farbseite) |
+| 13 | [session_01LHRCLpUTMx7aChVPiyU4it](https://claude.ai/code/session_01LHRCLpUTMx7aChVPiyU4it) | Entwurf (gestartet 31.10., mit Inhalts- und Verständnisprüfung, Farbseite) |
+| 14 | [session_01LHRCLppoxzMNd7K4A97nPM](https://claude.ai/code/session_01LHRCLppoxzMNd7K4A97nPM) | Entwurf (gestartet 31.10., mit Inhalts- und Verständnisprüfung, Farbseite) |
+| 15 | [session_01LHRCLpoJghLE3CC3c8NWgj](https://claude.ai/code/session_01LHRCLpoJghLE3CC3c8NWgj) | Entwurf (gestartet 31.10., mit Inhalts- und Verständnisprüfung, Farbseite) |
 
 Die öffentliche Seite zeigt noch Luperts alte „Teile 1 und 2“ mit altem Wortlaut; umgestellt wird nur mit Freigabe.
 
