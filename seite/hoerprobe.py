@@ -32,7 +32,7 @@ def schneide(name, a, e):
 
 def eintrag(datei, i0, i1, a, e, mark=()):
     return {"datei": "audio/" + datei, "dauer": round(e - a, 3), "w": [{"w": D["w"][i], "t": round(D["t"][i] - a, 3)} for i in range(i0, i1 + 1)],
-            "mark": [m - i0 for m in mark]}
+            "mark": [m - i0 for m in mark], "i0": i0, "a": round(a, 3)}   # i0, a: Wortnummer und Zeit im Kapitel (Markierungen)
 
 
 def tafel(k, titel, unter, befund=""):
@@ -145,6 +145,6 @@ seite = open(os.path.join(HIER, "hoerprobe_vorlage.html"), encoding="utf-8").rea
 seite = (seite.replace("{{TITEL}}", f"Kapitel {kap} · Hörprobe")
          .replace("{{BESCHREIBUNG}}", f"Kapitel {kap} von Senecas De vita beata mit Helmut zum Anhören, mit mitlaufendem Text und den Prüfergebnissen.")
          .replace("{{INHALT}}", kopf + "\n".join(teile) + "\n\n" + fuss)
-         .replace("{{DATEN}}", json.dumps(S, ensure_ascii=False)))
+         .replace("{{DATEN}}", json.dumps(S, ensure_ascii=False)).replace("{{KAPITEL}}", str(kap)))
 open(os.path.join(aus, "index.html"), "w", encoding="utf-8").write(seite)
 print(f"{aus}/index.html: {len(S)} Tafeln, Filter {filt}; {treu.strip()}")

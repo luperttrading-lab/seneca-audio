@@ -9,6 +9,7 @@
      Bronze heißt „wo bin ich / worauf achten“, Weiß und Grau sind Senecas Text. */
   :root {
     --stein: #161a19; --tafel: #1e2422; --tafel-hoch: #252c2a; --tinte: #e9edeb; --grau: #939e99; --linie: #333b38; --bronze: #d29f62;
+    --rot: rgba(226, 84, 70, .45); --rot-voll: #c9483b;
     --display: "Cinzel", Georgia, serif; --text: "Literata", Georgia, serif; --ui: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
     color-scheme: dark;
   }
@@ -54,37 +55,55 @@
   .leiste { position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; background: var(--tafel-hoch); border-top: 1px solid var(--linie);
     padding: 10px max(16px, env(safe-area-inset-right, 0px)) calc(10px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); }
   .leiste-innen { max-width: 560px; margin: 0 auto; display: grid; gap: 6px; }
-  .leiste-kopf { display: flex; justify-content: space-between; gap: 10px; font-size: 13px; color: var(--grau); font-variant-numeric: tabular-nums; }
+  .leiste-kopf { display: flex; justify-content: space-between; align-items: center; gap: 10px; min-height: 34px; font-size: 13px; color: var(--grau); }
+  .leiste .zeit { flex: 0 0 auto; font-size: 12px; color: var(--grau); font-variant-numeric: tabular-nums; }
   .leiste-kopf b { color: var(--bronze); font-weight: 600; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .leiste-knoepfe { display: flex; align-items: center; gap: 12px; }
+  .leiste-knoepfe { display: flex; align-items: center; gap: 8px; min-width: 0; }
   .leiste button { border: 0; background: none; color: var(--tinte); font: 600 14px/1 var(--ui); cursor: pointer; padding: 8px 6px; touch-action: manipulation; }
   .leiste button:focus-visible, .leiste input:focus-visible { outline: 2px solid var(--bronze); outline-offset: 2px; }
   .leiste .haupt { width: 44px; height: 44px; border-radius: 50%; background: var(--bronze); color: var(--stein); display: grid; place-items: center; padding: 0; }
   .leiste .haupt svg { width: 22px; height: 22px; }
   .leiste input[type=range] { flex: 1 1 auto; min-width: 0; accent-color: var(--bronze); height: 28px; }
-  main.mit-leiste { padding-bottom: calc(130px + env(safe-area-inset-bottom, 0px)); }
+  main.mit-leiste { padding-bottom: calc(170px + env(safe-area-inset-bottom, 0px)); }
+  /* Markieren: rot wie ein Textmarker; box-shadow, weil der Hintergrund der Wörter für die Lauffarbe auf den Text beschnitten ist */
+  .w.markiert { box-shadow: inset 0 -1.05em 0 var(--rot); border-radius: 2px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+  .markier-an .w { cursor: crosshair; }
+  .leiste.markier-an { border-top-color: var(--rot-voll); }
+  .leiste .stift { flex: 0 0 auto; display: flex; align-items: center; gap: 6px; border: 1px solid var(--linie); border-radius: 999px; padding: 6px 12px; white-space: nowrap; }
+  .leiste .stift[hidden] { display: none; }
+  .leiste .stift[aria-pressed="true"] { background: var(--rot-voll); border-color: var(--rot-voll); color: #fff; }
+  .leiste .stift svg { width: 16px; height: 16px; }
+  .notiz { display: flex; gap: 8px; align-items: center; min-width: 0; }
+  .notiz[hidden] { display: none; }
+  .notiz input { flex: 1 1 auto; min-width: 0; font: 16px/1.3 var(--ui); color: var(--tinte); background: var(--stein); border: 1px solid var(--linie); border-radius: 8px; padding: 8px 10px; }
+  .notiz button { flex: 0 0 auto; background: var(--bronze); color: var(--stein); border-radius: 8px; padding: 9px 12px; }
   @media (prefers-reduced-motion: reduce) { .w { transition: none; } }
 </style>
 
-<main>
+<main class="mit-leiste">
 {{INHALT}}
   <audio id="ton" preload="auto"></audio>
 </main>
-<div class="leiste" id="leiste" hidden>
+<div class="leiste" id="leiste">
   <div class="leiste-innen">
-    <div class="leiste-kopf"><b id="leiste-name"></b><span id="leiste-zeit">0:00 / 0:00</span></div>
+    <div class="leiste-kopf"><b id="leiste-name">Tippe auf ▶ oder auf ein Wort</b><button type="button" class="stift" id="stift" aria-pressed="false" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M15.2 3.3a2 2 0 0 1 2.8 0l2.7 2.7a2 2 0 0 1 0 2.8L9.4 20.1 3 21l.9-6.4z"/></svg><span id="stift-zahl">Markieren</span></button></div>
     <div class="leiste-knoepfe">
       <button type="button" id="zurueck" aria-label="10 Sekunden zurück">−10</button>
       <button type="button" class="haupt" id="haupt" aria-label="Abspielen"></button>
       <button type="button" id="vor" aria-label="10 Sekunden vor">+10</button>
       <input type="range" id="regler" min="0" max="1" step="0.1" value="0" aria-label="Stelle im Abschnitt">
+      <span class="zeit" id="leiste-zeit">0:00 / 0:00</span>
+    </div>
+    <div class="notiz" id="notiz" hidden>
+      <input type="text" id="notiz-text" placeholder="Notiz, z. B. Pause zu lang" aria-label="Notiz zur markierten Stelle" enterkeyhint="done">
+      <button type="button" id="notiz-ok">Speichern</button>
     </div>
   </div>
 </div>
 
 <script>
 (function () {
-  var S = {{DATEN}};
+  var S = {{DATEN}}, KAP = {{KAPITEL}};
   var PLAY = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5.5v13a1 1 0 0 0 1.5.86l10.2-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>';
   var PAUSE = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>';
   var ton = document.getElementById("ton"), aktiv = null, spans = {};
@@ -124,7 +143,6 @@
       aktiv = k; ton.src = S[k].datei || ("audio/stelle" + k.slice(1) + ".mp3");
       ton.addEventListener("loadedmetadata", function los() { ton.removeEventListener("loadedmetadata", los); ton.currentTime = t; ton.play().catch(function () {}); });
       ton.load();
-      leiste.hidden = false; document.querySelector("main").classList.add("mit-leiste");
       document.getElementById("leiste-name").textContent = name(k); regler.max = S[k].dauer;
     } else { ton.currentTime = t; ton.play().catch(function () {}); }
     zeichne();
@@ -136,15 +154,57 @@
       starte(k, 0);
     });
   });
-  // Tippen auf ein Wort: ab diesem Wort abspielen
+  // Tippen auf ein Wort: ab diesem Wort abspielen, im Markier-Modus markieren oder Markierung entfernen
   Object.keys(spans).forEach(function (k) {
-    spans[k].forEach(function (s, i) { s.addEventListener("click", function () { starte(k, Math.max(0, S[k].w[i].t - 0.05)); }); });
+    spans[k].forEach(function (s, i) { s.addEventListener("click", function () { if (markieren) markiere(k, i); else starte(k, Math.max(0, S[k].w[i].t - 0.05)); }); });
   });
-  haupt.addEventListener("click", function () { if (!aktiv) return; if (ton.paused) { if (ton.ended) ton.currentTime = 0; ton.play().catch(function () {}); } else ton.pause(); });
+  haupt.addEventListener("click", function () { if (!aktiv) { starte("ganz", 0); return; } if (ton.paused) { if (ton.ended) ton.currentTime = 0; ton.play().catch(function () {}); } else ton.pause(); });
+
+  // Markierungen: im Speicher der Seite (Sammlung „markierungen“), Claude liest sie von dort. Ein Wort des Kapitels hat
+  // die Nummer i0 + i und ist in allen Tafeln markiert, die es zeigen; Wörter neu gesprochener Fassungen gelten nur dort.
+  var db = null, markieren = false, marken = {}, offen = null;
+  var stift = document.getElementById("stift"), notiz = document.getElementById("notiz"), notizText = document.getElementById("notiz-text");
+  function schluessel(k, i) { return S[k].i0 !== undefined ? "w" + (S[k].i0 + i) : (k + "-" + i).replace(/[^A-Za-z0-9_.~:@+-]/g, "_"); }
+  function satz(k, i) {
+    var W = S[k].w, a = i, e = i, ende = /[.;:?!][“”"]?$/;
+    while (a > 0 && !ende.test(W[a - 1].w)) a--;
+    while (e < W.length - 1 && !ende.test(W[e].w)) e++;
+    return W.slice(a, e + 1).map(function (x) { return x.w; }).join(" ");
+  }
+  function malen() {
+    Object.keys(spans).forEach(function (k) { spans[k].forEach(function (s, i) { var m = marken[schluessel(k, i)]; s.classList.toggle("markiert", !!m); s.title = m && m.notiz ? m.notiz : ""; }); });
+    var n = Object.keys(marken).length; document.getElementById("stift-zahl").textContent = n ? n + " markiert" : "Markieren";
+  }
+  function markiere(k, i) {
+    var id = schluessel(k, i), ref = db.collection("markierungen").doc(id);
+    if (marken[id]) { delete marken[id]; malen(); notiz.hidden = true; offen = null; ref.delete().catch(function () {}); return; }
+    var w = S[k].w[i], d = { kapitel: KAP, wort: w.w, satz: satz(k, i), tafel: k, wortnr: S[k].i0 !== undefined ? S[k].i0 + i : null,
+      zeit: Math.round(((S[k].a || 0) + w.t) * 10) / 10, notiz: "", stand: new Date().toISOString() };
+    marken[id] = d; malen(); offen = id; notizText.value = ""; notiz.hidden = false; notizText.placeholder = "Notiz zu „" + w.w.replace(/[,.;:?!“”„]/g, "") + "“ (freiwillig)";
+    ref.set(d).catch(function () { delete marken[id]; malen(); notiz.hidden = true; });
+  }
+  document.getElementById("notiz-ok").addEventListener("click", function () {
+    if (!offen || !marken[offen]) { notiz.hidden = true; return; }
+    var text = notizText.value.trim(), id = offen; marken[id] = Object.assign({}, marken[id], { notiz: text }); malen(); notiz.hidden = true; offen = null; notizText.blur();
+    db.collection("markierungen").doc(id).update({ notiz: text, stand: new Date().toISOString() }).catch(function () {});
+  });
+  notizText.addEventListener("keydown", function (e) { if (e.key === "Enter") document.getElementById("notiz-ok").click(); });
+  stift.addEventListener("click", function () {
+    markieren = !markieren; stift.setAttribute("aria-pressed", String(markieren));
+    leiste.classList.toggle("markier-an", markieren); document.querySelector("main").classList.toggle("markier-an", markieren);
+    if (!markieren) { notiz.hidden = true; offen = null; }
+  });
+  if (window.claude && claude.use) claude.use("db").then(function (d) {
+    if (!d) return; db = d; stift.hidden = false;
+    db.collection("markierungen").onSnapshot(function (snap) {
+      var neu = {}; snap.docs.forEach(function (x) { if (x.exists) neu[x.id] = x.data(); }); marken = neu; malen();
+    }, function () {});
+  }).catch(function () {});
   document.getElementById("zurueck").addEventListener("click", function () { if (aktiv) { ton.currentTime = Math.max(0, ton.currentTime - 10); fuelle(aktiv, ton.currentTime); } });
   document.getElementById("vor").addEventListener("click", function () { if (aktiv) { ton.currentTime = Math.min(S[aktiv].dauer, ton.currentTime + 10); fuelle(aktiv, ton.currentTime); } });
   regler.addEventListener("input", function () { ziehen = true; if (aktiv) { ton.currentTime = +regler.value; fuelle(aktiv, +regler.value); } });
   regler.addEventListener("change", function () { ziehen = false; });
+  haupt.innerHTML = PLAY;
   function leisteZeichnen() {
     if (!aktiv) return;
     var spielt = !ton.paused; haupt.innerHTML = spielt ? PAUSE : PLAY; haupt.setAttribute("aria-label", spielt ? "Anhalten" : "Abspielen");
