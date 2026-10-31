@@ -40,18 +40,25 @@ Am besten in der Reihenfolge freigeben (5, 6, 7 …): Eine Änderung in einem Ka
 
 Die öffentliche Seite zeigt noch Luperts alte „Teile 1 und 2“ mit altem Wortlaut; umgestellt wird nur mit Freigabe.
 
-## Nächste Schritte
+## Nächste Schritte (Stand 31.10., Übergabe an „Seneca Hörspiel 3“)
 
-1. Leseband endgültig: 1M mit Bandenden B (Auftraggeber, 30.10.; 4M verworfen). Kapitel 1 bis 3 sind damit neu gerendert,
-   Vorschauen ersetzt, Full-HD-Dateien geschickt (30.10.).
-2. **Auftraggeber:** YouTube – einzelne Videos je Kapitel (Playlist) oder ein Gesamtvideo? Bis dahin Kapitel 1 am besten
-   „Nicht gelistet“ hochladen und die Lesbarkeit am Handy prüfen.
-3. **Auftraggeber:** Credit-Grenze des Schlüssels anheben (reicht noch für etwa 12 bis 14 Kapitel).
-4. Kapitel 4 aufnehmen (Text freigegeben 30.10.; vorher „ausschweifen“ und „Sklavendienst“ klären). Kapitel 5 bis 10 werden
-   parallel übersetzt (Tabelle oben).
-5. Später: öffentliche Seite auf Kapitel mit Helmut umstellen (Freigabe); Weg der Gesamtdatei zu YouTube klären (etwa
-   1,3 GB in Full HD, zu groß für Artifacts; etwa über einen Ordner auf dem Rechner des Auftraggebers oder Google Drive).
-   Kostenlos, aber offen: Helmut in der App unter „Meine Stimmen“ aufnehmen.
+1. **Kapitel 7, 8, 9, 10: Hörproben beim Auftraggeber** (Links unten, mit Markier-Stift). Wenn er „Kapitel N markiert“
+   schreibt: Markierungen lesen (`db_list`, siehe Technik), Sätze klären, mit `werkzeuge/satz.py` neu sprechen, Hörprobe neu.
+   Nach der Abnahme Video bauen (`werkzeuge/video/baue.py`), Endkontrolle, Vorschau (`seite/vorschau.py`), Full HD und
+   Miniaturbild als Datei schicken. **Arbeitsdateien liegen nur im alten Container**: im neuen zuerst aus dem Ordner
+   `quelle/` der jeweiligen Hörprobe holen (Rohaufnahme, Wortzeiten, Pausen, `daten.json`, Text), dann
+   `python3 werkzeuge/kapitel.py N <ordner> --ohne-video` (ohne Credits; Kapitel 7 mit `--trotz-abweichung`, „Edil“/„Ädil“).
+2. **Kapitel 11–15** werden übersetzt (Sitzungen in der Tabelle oben). Sie melden die Freigabe per Nachricht an die
+   Hauptsitzung; dann Zweig nach main, Begriffe aus `texte/notizen/kapitelNN.md` in `PLAN.md`, Wörter in `woerter_ok.txt`,
+   **Verständnisprüfung** (Fable, extra hoch) und Farbseite (`seite/aenderungen.py`), dann Aufnahme.
+3. **Offen beim Auftraggeber:** Kapitel 2 und 5 mit der neuen Pausenregel neu rechnen und die Videos neu bauen (je eine
+   bzw. zwei Doppelpunkt-Pausen ohne Sprechpause; ohne Credits)? YouTube: einzelne Videos oder Gesamtvideo?
+4. Danach Kapitel 16–28 übersetzen lassen (wieder je eine Sitzung, Auftrag wie für 11–15, siehe `PROTOKOLL.md`).
+5. Später: öffentliche Seite auf die Kapitel mit Helmut umstellen (Freigabe); Weg der Gesamtdatei zu YouTube klären.
+
+**Arbeitsweise, die sich bewährt hat (31.10.):** erst antworten, dann arbeiten; lange Läufe im Hintergrund; Prüfungen
+an Helfer (Agent) oder eigene Sitzungen geben; je Kapitel: Übersetzung → Inhaltsprüfung → Verständnisprüfung → Freigabe →
+Aufnahme → Betonungsfilter und Tonprüfung → Hörprobe mit Markier-Stift → Nachbessern → Video.
 
 ## Kapitel 3: Entscheidungen zur Freigabe
 
@@ -126,6 +133,9 @@ Video ohne Credits neu. Jedes weitere Kapitel nach der Abnahme genauso sichern.
 
 ## Technik
 
+- **Neuer Container einrichten:** `pip install faster-whisper praat-parselmouth pyspellchecker wordfreq onnxruntime
+  kaldi-native-fbank`; Fingerabdruck-Modell `voxceleb_resnet34_LM.onnx` von huggingface.co/Wespeaker/wespeaker-voxceleb-resnet34-LM
+  nach `_arbeit/modell/resnet34.onnx`, `WESPEAKER_ONNX` darauf setzen. Arbeitsordner `_arbeit/` (in `.gitignore`).
 - **Markierungen des Auftraggebers** (seit 31.10.): Die Hörproben haben einen roten Stift; markierte Wörter samt Notiz liegen im
   Speicher der Seite, Sammlung `markierungen` (Felder kapitel, wort, satz, wortnr, zeit, notiz, tafel). Lesen mit
   `mcp__claude-artifacts__db_list` (slug, collection „markierungen“). Slugs: Kapitel 7 `cbc0f9fe-26b6-4a21-ab9e-49c0c43297ff`,
