@@ -46,3 +46,7 @@ Datei 1 Schluss und Datei 2 ab 0:52). Farbseite mit drei Entscheidungen: https:/
 ## Für woerter_ok.txt
 
 Nomentanus, Apicius, Rosenlager, Spelunke, Totenopfer, weichlich (Zipf 1,5; „weich“ trifft *mollis* hier nicht).
+
+## Meldung nach Freigabe
+
+An die neue Hauptsitzung „Seneca Hörspiel 3“ (session_01LHRCLsLRVpW45yKcfwhiff), Mitteilung vom 31.10.
