@@ -103,6 +103,19 @@ if M:
         st = D["stelle"][e_["i0"]].split(",")
         teile.append(tafel(k, f"Stelle {n}", f"{st[0]} ({st[1]}) · bei {mm(a)} · +{e_['abstand']:.1f} Halbtöne".replace(".", ","),
                            f"Gipfel auf „{esc(e_['betont'].strip(',.;:–'))}“"))
+# von der Tonprüfung gefunden (werkzeuge/tonpruef.py --json <ordner>/tonpruef.json): der Satz um die Stelle, Wort markiert
+T = json.load(open(os.path.join(ordner, "tonpruef.json"), encoding="utf-8")) if os.path.exists(os.path.join(ordner, "tonpruef.json")) else None
+if T:
+    teile.append('  <h2 class="abschnitt">Tonprüfung · bitte anhören</h2>')
+    for n, f in enumerate(T, 1):
+        i = max(0, max((k for k, t_ in enumerate(D["t"]) if t_ <= f["zeit"]), default=0))
+        s0 = i; s1 = i
+        while s0 > 0 and not D["w"][s0 - 1].rstrip("–“”").strip().endswith(tuple(".;:?!")): s0 -= 1
+        while s1 < len(D["w"]) - 1 and not D["w"][s1].rstrip("“”").endswith(tuple(".;:?!")): s1 += 1
+        a = max(0, D["t"][s0] - 0.3); e = D["t"][s1 + 1] - 0.15 if s1 + 1 < len(D["t"]) else D["ende"]
+        k = f"t{n}"; schneide(f"{k}.mp3", a, e); S[k] = eintrag(f"{k}.mp3", s0, s1, a, e, [i])
+        st = D["stelle"][i].split(",")
+        teile.append(tafel(k, f["art"][:1].upper() + f["art"][1:], f"{st[0]} ({st[1]}) · bei {mm(f['zeit'])}", esc(f["text"])).replace("<dt>Filter</dt>", "<dt>Stelle</dt>"))
 
 zeile = lambda a, b_: f"<tr><td>{a}</td><td>{b_}</td></tr>"
 filt = f"{len(M)} Stelle{'n' if len(M) != 1 else ''} markiert" + (f", {knapp} knapp darunter" if knapp else "")
@@ -120,6 +133,7 @@ kopf = f'''  <header class="kopf">
         {zeile("Worttreue (Whisper)", (f"{len(anders)} Wörter anders gehört, unten zum Anhören" if anders else "wortgetreu") + (f" (dazu {len(bestaetigte)} bestätigte Verhörer: " + ", ".join(esc(D["w"][i].strip(",.;:–?!“”„")) for i in sorted(bestaetigte)) + ")" if bestaetigte else ""))}
         {zeile("Betonungsfilter (ab 5 Halbtönen)", filt)}
         {zeile("Pausen", esc(pausen.split(",")[0]) if pausen else "–")}
+        {zeile("Tonprüfung (Lücken, Pausen, Dehnungen, Knackser)", (f"{len(T)} Stelle{'n' if len(T) != 1 else ''}, unten zum Anhören" if T else "ohne Fund") if T is not None else "–")}
         {zeile("Dauer", mm(D["ende"]))}
       </tbody>
     </table>
