@@ -48,3 +48,7 @@ offen, Stewart „his mere name“); „im Innern dieser Philosophie“ (Zutat).
 ## Für woerter_ok.txt
 
 - Herkules, rülpsend
+
+## Meldung nach Freigabe
+
+An die Hauptsitzung „Seneca Hörspiel 3“ (session_01LHRCLsLRVpW45yKcfwhiff), Nachricht vom 31.10.
