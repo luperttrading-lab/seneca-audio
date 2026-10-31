@@ -126,6 +126,11 @@ Video ohne Credits neu. Jedes weitere Kapitel nach der Abnahme genauso sichern.
 
 ## Technik
 
+- **Markierungen des Auftraggebers** (seit 31.10.): Die Hörproben haben einen roten Stift; markierte Wörter samt Notiz liegen im
+  Speicher der Seite, Sammlung `markierungen` (Felder kapitel, wort, satz, wortnr, zeit, notiz, tafel). Lesen mit
+  `mcp__claude-artifacts__db_list` (slug, collection „markierungen“). Slugs: Kapitel 7 `cbc0f9fe-26b6-4a21-ab9e-49c0c43297ff`,
+  8 `f6e3fa96-c7a5-4a93-b038-f8eb237ad79a`, 9 `0e0a0557-cd61-45aa-b351-515b756d97bd`, 10 `f9e32989-d6e4-45f9-9059-b753615c940e`.
+  Neue Hörproben: nach dem ersten Veröffentlichen `declare_capabilities` mit `{"db": {}}`.
 - Arbeitsordner seit 31.10.: `_arbeit/` im Repo, über `.git/info/exclude` ausgeschlossen (Aufnahmen nie committen); das alte Scratchpad der Sitzung ist weg. Veröffentlichen mit `mcp__claude-artifacts__publish_files` (Quellen müssen im Arbeitsverzeichnis liegen; `index.html` braucht `<!DOCTYPE html>`, also die Testfassung `test.html` nehmen).
 - Im neuen Container fehlen meist `faster-whisper`, `praat-parselmouth`, `pyspellchecker` und `wordfreq` (für `textpruef.py`) (für `pruef.py`, `prosodie.py`,
   `karaoke_daten.py`); pip ist erreichbar. Fingerabdruck: Modellpfad in `WESPEAKER_ONNX`.
