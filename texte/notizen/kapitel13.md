@@ -52,3 +52,7 @@ Satz); Pronomenwechsel zu „sein“ im Frauenkleid-Bild (Latein spricht an: *ti
 ## Wörter für woerter_ok.txt
 
 Frauenkleid, haltmachen, hinausstürzen, vernunftbegabte, zuteilgeworden (alle Duden; die Textprüfung kennt sie nur nicht).
+
+## Meldung nach der Freigabe
+
+An die Hauptsitzung „Seneca Hörspiel 3“ (session_01LHRCLsLRVpW45yKcfwhiff), nicht mehr an die startende Sitzung (Hinweis vom 31.10.).
