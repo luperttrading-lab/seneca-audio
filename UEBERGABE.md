@@ -52,7 +52,7 @@ Die öffentliche Seite zeigt noch Luperts alte „Teile 1 und 2“ mit altem Wor
    Hauptsitzung; dann Zweig nach main, Begriffe aus `texte/notizen/kapitelNN.md` in `PLAN.md`, Wörter in `woerter_ok.txt`,
    **Verständnisprüfung** (Fable, extra hoch) und Farbseite (`seite/aenderungen.py`), dann Aufnahme.
 3. **Offen beim Auftraggeber:** Kapitel 2 und 5 mit der neuen Pausenregel neu rechnen und die Videos neu bauen (je eine
-   bzw. zwei Doppelpunkt-Pausen ohne Sprechpause; ohne Credits)? YouTube: einzelne Videos oder Gesamtvideo?
+   bzw. zwei Doppelpunkt-Pausen ohne Sprechpause; ohne Credits)? **YouTube: nur ein Gesamtvideo** am Schluss (Auftraggeber, 31.10.); einzelne Full-HD-Dateien nicht mehr nötig. Pausen der Kapitel 1–6 werden ohne Credits nachgeprüft (31.10.).
 4. Danach Kapitel 16–28 übersetzen lassen (wieder je eine Sitzung, Auftrag wie für 11–15, siehe `PROTOKOLL.md`).
 5. Später: öffentliche Seite auf die Kapitel mit Helmut umstellen (Freigabe); Weg der Gesamtdatei zu YouTube klären.
 
