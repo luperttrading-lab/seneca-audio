@@ -140,7 +140,7 @@ Leitbegriffe beim ersten Auftreten eintragen und vorlegen.
    `texte/woerter_ok.txt` (heißt: richtig und gewollt). Nötig, weil die Worttreue-Prüfung einen Tippfehler im Text nicht
    findet: Er wird mitgesprochen und gilt dann als wortgetreu. Den ganzen Text vorlegen; Freigabe durch den Auftraggeber;
    vor der Aufnahme die Textprüfung noch einmal laufen lassen.
-   **Hörprüfung** (zur Erprobung seit 30.10.): ein Prüf-Agent (Fable 5.1, extra hoch) liest nur den deutschen Text wie ein
+   **Verständnisprüfung** (fester Schritt seit 31.10., vorher „Hörprüfung“ zur Erprobung): ein Prüf-Agent (Fable 5.1, extra hoch) liest nur den deutschen Text wie ein
    Hörer, der jeden Satz einmal hört, und markiert, was man nicht sofort versteht (schwer, mittel, leicht). Test an
    Kapitel 4: von zwei Funden des Auftraggebers einen gefunden, dazu einen Satz, dessen Sinn beim Hören kippte; ergänzt
    das Ohr des Auftraggebers, ersetzt es nicht.
