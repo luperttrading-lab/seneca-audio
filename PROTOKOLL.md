@@ -665,3 +665,9 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
 - **Kapitel 7 aufgenommen**: 1.127 Credits, Whisper „Edil“ statt „Ädil“ (beide Modelle, gleich gesprochen), 45 Pausen, 3:30; Filter 3, Tonprüfung 3 (zwei „Satzende gehört“, eine Pause ein Wort zu früh bei „fehlt. | Ja“). Hörproben 7–10 mit Abspielleiste.
 - **Hörprobe mit Markier-Stift** (Auftraggeber: „das bringt so viel Erleichterung“): Stift in der Leiste, Tipp markiert ein Wort rot, freiwillige Notiz; gespeichert in der Seite (`db`), von Claude lesbar. Getestet mit Ersatz-Speicher (markieren in allen Tafeln, Notiz, Entfernen, Abspielen außerhalb des Modus). Hörproben 7–10 umgestellt.
 - **Neue Hauptsitzung „Seneca Hörspiel 3“** (session_01LHRCLsLRVpW45yKcfwhiff) gestartet, weil diese zu voll und teuer wurde; Übersetzungssitzungen 11–15 melden ab jetzt dorthin.
+
+## 31.10. Pausenregel an Kapitel 1–6 nachgeprüft (ohne Credits)
+
+- Nur Kapitel 2 (1:16 „Er wird sagen: | „Alles …“, Stille 0,88 → 0,42 s) und Kapitel 5 (0:20 „… glücklich nennen: | Sie haben …“ 0,85 → 0,43 s; 1:23 „… Lust angeht: | Sie mag …“ 0,80 → 0,36 s) verstießen gegen `komma_ab` für Doppelpunkt. Neu gerechnet, Wortzeiten unverändert; Kapitel 2 172,06 s (39 Pausen), Kapitel 5 111,40 s (15 Pausen), Tonprüfung Kapitel 5 jetzt 0.
+- Kapitel 1, 3, 4, 6 halten die Regel ein (1 und 4 nur über die Pausenlisten geprüft: Rohaufnahmen über 4 MiB lassen sich mit `read_file` nicht holen).
+- Neue Fassungen nur im Container (`_arbeit/kap02/neu/`, `_arbeit/kap05/neu/`), noch nicht abgenommen und nicht gesichert. Videos werden ohnehin erst fürs Gesamtvideo gebaut.
