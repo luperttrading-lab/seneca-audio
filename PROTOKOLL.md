@@ -708,3 +708,21 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
   „fehlt. | Ja“ +0,14 s auf der Satzpause, unhörbar); 8 unverändert; 9 wortgetreu, Filter 4, Tonprüfung 1 (Aufzählung „und“);
   10 wortgetreu, Filter 1 (Fehlalarm), Tonprüfung 1 (Aufzählung „und“). Dauer 7 3:30, 9 2:21, 10 2:09.
   Credits: 431 (Konto 73.488 → 73.919). Vergleichsseite `_arbeit/vgl710/`.
+
+## 05.11. Kapitel 9,3 „der Tugend“ neu gesprochen (Helfer-Agent)
+
+- **Befund**: Der Auftraggeber hört „Tugend“ in „weder Lohn noch Grund der Tugend, sondern eine Zugabe“ betont. Gemessen
+  (Gipfel je Wort, 90. Perzentil, HT gegen den Satzmedian): Lohn +7,3, Grund +6,5, Tugend +3,5; entscheidend ist die Kontur:
+  „Tugend“ steigt auf der zweiten Silbe von 111 auf 163 Hz (Weiterweisung vor dem Komma), das klingt wie ein Akzent auf
+  „-gend“. Der Gipfelabstand allein (−3,8 HT unter Lohn/Grund) zeigt das nicht; künftig auch den Anstieg im Wort messen.
+- **Vier Fassungen mit Vorsatz** („Der Sämann … hinzugekommen.“ in derselben Anfrage, zurückgeschnitten; 4 × 63 Credits):
+  alle wortgetreu, Filter unauffällig, Stimme 0,917–0,930. Tugend gegen max(Lohn, Grund): −8,8 / −9,5 / −6,1 / −4,1 HT;
+  Fassung 1 und 2 tief und fallend (110 → 82 bzw. 112 → 83 Hz), 3 und 4 steigen wieder (bis 138 bzw. 153 Hz).
+  Fassung 2 hebt dafür „sondern eine“ bis 187 Hz (fast so hoch wie „Zugabe“ 196). **Eingesetzt Fassung 1** (Stimme 0,919;
+  Lohn +6,9, Grund +3,9, Tugend −1,9, Zugabe +6,3 HT; Kontur Lohn 194, Grund 161, Tugend 110 → 82, Zugabe 184 Hz).
+- **Fehler in `_arbeit/skripte/mitvorsatz.py`** behoben: feste Zwischendatei `/tmp/claude_c.wav` – parallel gestartet
+  überschreiben sich die Schnitte gegenseitig. Jetzt eigene Zwischendatei je Lauf (Schnitte hier nacheinander neu gerechnet).
+- **Einsetzen** wie 9,2: `satz.py --nimm 1 --ohne-kette`, `einsetzen_genau.py`, `kapitel.py` (Standardregeln, Doppelpunkt
+  höchstens +0,25 s). Satzpausen davor/danach 1,83 → 1,88 s bzw. 1,60 → 1,67 s (Wortanfänge). Danach: Whisper wortgetreu,
+  Filter 4 (wie bisher, „wie BEI“ jetzt unter 5 HT), Tonprüfung 2 (beide gedehntes „und“ in der Aufzählung 9,4). Dauer 2:22.
+  Alte Rohaufnahme `kapitel09.roh.vorher2.mp3`. Credits: 252 (Konto 73.919 → 74.171). Vergleichsseite `_arbeit/vgl09b/`.
