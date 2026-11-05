@@ -672,3 +672,39 @@ liefert die Stimmenbibliothek nur 3 Stimmen und keine Filter):
 - Kapitel 1, 3, 4, 6 halten die Regel ein (1 und 4 nur über die Pausenlisten geprüft: Rohaufnahmen über 4 MiB lassen sich mit `read_file` nicht holen).
 - Neue Fassungen nur im Container (`_arbeit/kap02/neu/`, `_arbeit/kap05/neu/`), noch nicht abgenommen und nicht gesichert. Videos werden ohnehin erst fürs Gesamtvideo gebaut.
 - Auftraggeber (31.10.) hat die verkürzten Doppelpunkt-Pausen in Kapitel 2 und 5 abgenommen („eher zu kurz als zu lang, aber es geht“); Regel bleibt bei 0,15 s. Gesichert unter `quelle/` (daten.json, pausen.mp3, pausen.stellen.json) der Hörproben 2 und 5. Vergleichsseite: https://claude.ai/artifact/2rVAso1iSdg55jwj6ATDCK
+
+## 05.11. Kapitel 7–10: Tonprüfung wie der Auftraggeber (Helfer-Agent)
+
+- **Pausen gegen Kapitel 1–6** (Stille je Wortgrenze in der fertigen Aufnahme, Zuordnung wie `tonpruef.py`): Kapitel 7–10
+  liegen bei Punkt, Absatz, Frage, Komma und Lücken ohne Satzzeichen im Bereich der abgenommenen Kapitel (Komma bis 0,56 s,
+  Lücken bis 0,30 s). Doppelpunkte 1–6: 0,27–0,89 s (Median 0,58). Auffällig nur, wo die Regel eine knappe Sprechpause
+  stark verlängert: 7,1 „behaupten: | Niemand“ 0,16 → 0,55 s (Markierung des Auftraggebers: „Pause zu lang?“) und gleich
+  gebaut 10,1 „Ich behaupte doch: | Niemand“ 0,19 → 0,55 s.
+- **Neue Regel `zuschlag_max`** (`pausen2.py`, optional, Datei `pausen.json` im Kapitelordner, liest `kapitel.py` und damit
+  `satz.py`): Kapitel 7 und 10 mit `{"zuschlag_max": {":": 0.25}}` – am Doppelpunkt höchstens 0,25 s zur gesprochenen Pause.
+  Gemessen: 7,1 0,57 → 0,42 s, 10,1 0,57 → 0,45 s (Kapitel 2 und 5 abgenommen mit 0,36–0,43 s). Kapitel 8 und 9 würden sich um
+  höchstens 0,08 s ändern, nicht angewendet. Standard in `kette.py` bleibt unverändert (Entscheidung Auftraggeber).
+- **Betonungsfilter ab 3 HT**: 7 „obwohl IHNEN“ +6,6, „gerade WEGEN“ +9,2 (richtig, Kontrast), „und DU triffst“ +6,3;
+  8 „sondern SEINE Begleiterin“ +5,5, „will ICH“ +5,8, „Sie HAT“ +5,8, „die MIT sich“ +7,0; 9 „auch DU“ (richtig), „EIN“
+  (Fehlalarm), „wie BEI einem Acker“ +7,3, „ÜBER dem Höchsten“ +12,6 (richtig), „sie IST“ +7,8; 10 „EIN“ (Fehlalarm).
+  Neu gesprochen nur die zwei, die falsch klingen und den Sinn verschieben bzw. deutlich brechen: 7,2 und 9,2.
+- **7,2 „Und manche sind unglücklich, obwohl ihnen …“**: fünf Fassungen allein (135 Credits) alle wortgetreu und unauffällig,
+  aber Fingerabdruck nur 0,78–0,82 (Kapitel 7: Sätze 0,83–0,95) und 133–140 Hz statt 125 Hz – verworfen. Zwei Fassungen mit
+  dem Satz davor in derselben Anfrage, danach zurückgeschnitten (164 Credits; `_arbeit/skripte/mitvorsatz.py`): 0,857 und
+  0,899; eingesetzt Fassung 7 (0,899, Gipfel auf „ihnen“ nur noch +1,9 HT). Befund: kurze Sätze allein erzeugt passen in der
+  Stimme schlechter als mit Vorsatz; Folgesatz bleibt weg (Betonungsbefund 29.10.).
+- **9,2 „Es ist wie bei einem Acker …“**: drei Fassungen (132 Credits), alle wortgetreu, Gipfel bei allen auf „bei“
+  (+5,0/+3,7/+4,6 HT) – Helmut legt dort offenbar einen Vorakzent; eingesetzt Fassung 2 (0,906, +3,7 HT).
+- **Einsetzen ohne neuen Whisper-Lauf**: Nach `satz.py --nimm` rechnet `kapitel.py` die Wortzeiten des ganzen Kapitels neu;
+  dabei verschoben sich in Kapitel 9 Pausen weit weg vom Satz („sondern | eine“, „Sinn; | die“). Darum `satz.py --nimm n
+  --ohne-kette`, dann `_arbeit/skripte/einsetzen_genau.py` (Wortzeiten des Satzes aus der Fassung, sonst unverändert; nur
+  Rauschunterdrückung und `pausen2.py`), dann `kapitel.py`. Achtung: Whisper legt das erste Wort einer Fassung auf 0 s; ohne
+  Korrektur fehlte die Satzpause vor 7,2 (−1,1 s). Einzige Nebenwirkung: 9,2 „Tugend, | sondern“ jetzt 0,35 s (Sprechpause
+  0,19 s, vorher knapp unter 0,15 s gemessen, weil die Rohaufnahme neu kodiert ist).
+- **Satzmelodie**: Fragen 7,1 „Doch wohl, weil … hervorgeht?“ (−7 HT) und 9,4 „Du fragst, was ich von der Tugend will?“,
+  „Verlangst du dann noch …?“ fallen am Ende; bei „doch wohl“ und vor einer Antwort im Deutschen üblich, nicht geändert.
+  Aussagen mit steigendem Ende waren Messfehler (Oktavsprünge). Sprechtempo je Satz im Bereich von Kapitel 1–6.
+- **Danach**: 7 Whisper beide Modelle nur „Edil“ (Ädil), Filter 2, Tonprüfung 2 („schändlichsten Leben, | die“ Hinweis;
+  „fehlt. | Ja“ +0,14 s auf der Satzpause, unhörbar); 8 unverändert; 9 wortgetreu, Filter 4, Tonprüfung 1 (Aufzählung „und“);
+  10 wortgetreu, Filter 1 (Fehlalarm), Tonprüfung 1 (Aufzählung „und“). Dauer 7 3:30, 9 2:21, 10 2:09.
+  Credits: 431 (Konto 73.488 → 73.919). Vergleichsseite `_arbeit/vgl710/`.
