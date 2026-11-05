@@ -162,7 +162,7 @@ Leitbegriffe beim ersten Auftreten eintragen und vorlegen.
    Credits, etwa 0,43 je Zeichen). Danach automatisch: Worttreue (Whisper), Rauschunterdrückung, Wortzeiten, Pausen,
    Tempo 0,96, −18 LUFS (`werkzeuge/kette.py`: Satzende 0,9 s, Absatz 1,3 s, Doppelpunkt/Semikolon 0,55 s,
    Gedankenstrich 0,45 s, Komma 0,35 s – an Komma, Doppelpunkt, Semikolon und Strich nur dort, wo die Stimme schon mindestens
-   0,15 s absetzt, sonst wird mitten in den Sprechfluss geschnitten; Doppelpunkt seit 31.10., 4,5 „aufgehen: die Ruhe“).
+   0,15 s absetzt, sonst wird mitten in den Sprechfluss geschnitten; Doppelpunkt seit 31.10., 4,5 „aufgehen: die Ruhe“); am Doppelpunkt höchstens 0,25 s Zuschlag zur gesprochenen Pause (seit 5.11.).
 3. **Prüfliste Ton** (unten) abarbeiten, dann dem Auftraggeber als Seite zum Anhören schicken (Artifact mit Abspielknopf
    und Mitlesen, verdächtige Stellen anklickbar; nie als Datei): `python3 seite/hoerprobe.py N <ordner> <seitenordner>`
    baut sie mit ganzem Kapitel, Paragrafen, Meldungen von Whisper und Betonungsfilter. Meldet Whisper auch in der
