@@ -53,6 +53,9 @@ for i, w in enumerate(W[:-1]):
     # Satzzeichen im Satz ohne echte Sprechpause bleiben, wie gesprochen: sonst holpert der Schnitt (Komma, Nutzer 29.10.;
     # Doppelpunkt, Semikolon und Strich ebenso, 4,5 „aufgehen: die Ruhe“ stockte bei 0,06 s Sprechpause, Nutzer 31.10.)
     if zeichen in ",:;–" and lang < ZIEL.get("komma_ab", 0): continue
+    # Zuschlag begrenzen (Kapitel 7, 31.10.: „behaupten: | Niemand“ – Stimme setzt 0,16 s ab, auf 0,55 s verlängert,
+    # Auftraggeber: „Pause zu lang?“); z. B. {"zuschlag_max": {":": 0.25}}: höchstens 0,25 s zur gesprochenen Pause
+    soll = min(soll, lang + ZIEL.get("zuschlag_max", {}).get(zeichen, 99))
     # Einfügepunkt: leisteste Stelle, an der die Überblendung ganz in der Pause liegt (Wortränder unberührt)
     xf = int(min(0.025, max(0.005, lang / 2 - 0.005)) * SR)
     lo, hi = beststart * n + xf, (beststart + best) * n - xf

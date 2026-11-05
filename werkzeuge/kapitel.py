@@ -22,6 +22,8 @@ import stellen
 nr, aus = int(sys.argv[1]), sys.argv[2]; neu = "--neu" in sys.argv
 from kette import STIMME, MODELL, TEMPO, SR, RAUSCH, PAUSEN, ff, py, lufs, lade, sprache, pegel, pnorm, abweichungen, bestaetigt
 os.makedirs(aus, exist_ok=True); b = os.path.join(aus, f"kapitel{nr:02d}")
+if os.path.exists(os.path.join(aus, "pausen.json")):   # Pausenregeln nur für dieses Kapitel (gilt auch für satz.py)
+    PAUSEN = {**PAUSEN, **json.load(open(os.path.join(aus, "pausen.json")))}; print("Pausenregeln aus pausen.json:", PAUSEN, flush=True)
 
 def tts(text, ziel):
     if os.path.exists(ziel) and not neu: return 0
